@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="【SSM+Dubbo+Zookeeper+Vue】总结第一天【2022-01-26】  创建父工程项目【maven普通项目】   在父工程中pom文件中，首先设置父工程的打包类型【pom】   然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程">
+<meta name="description" content="【SSM+Dubbo+Zookeeper+Vue】总结  第一天 …… 第十一天  第一天【2022-01-26】  创建父工程项目【maven普通项目】 在父工程中pom文件中，首先设置父工程的打包类型【pom】 然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖">
 <meta property="og:type" content="article">
 <meta property="og:title" content="健康管理系统项目">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/05/24/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/1%E3%80%81%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="代家鑫的博客">
-<meta property="og:description" content="【SSM+Dubbo+Zookeeper+Vue】总结第一天【2022-01-26】  创建父工程项目【maven普通项目】   在父工程中pom文件中，首先设置父工程的打包类型【pom】   然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程">
+<meta property="og:description" content="【SSM+Dubbo+Zookeeper+Vue】总结  第一天 …… 第十一天  第一天【2022-01-26】  创建父工程项目【maven普通项目】 在父工程中pom文件中，首先设置父工程的打包类型【pom】 然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-24T11:47:17.000Z">
-<meta property="article:modified_time" content="2022-05-24T11:46:20.120Z">
+<meta property="article:modified_time" content="2022-05-24T15:56:29.686Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="JAVA项目">
 <meta name="twitter:card" content="summary">
@@ -387,66 +387,26 @@
       
 
       
-        <h2 id="【SSM-Dubbo-Zookeeper-Vue】"><a href="#【SSM-Dubbo-Zookeeper-Vue】" class="headerlink" title="【SSM+Dubbo+Zookeeper+Vue】"></a>【SSM+Dubbo+Zookeeper+Vue】</h2><p>总结<br>第一天【2022-01-26】</p>
+        <h2 id="【SSM-Dubbo-Zookeeper-Vue】"><a href="#【SSM-Dubbo-Zookeeper-Vue】" class="headerlink" title="【SSM+Dubbo+Zookeeper+Vue】"></a>【SSM+Dubbo+Zookeeper+Vue】</h2><p>总结</p>
 <ol>
-<li><pre><code>创建父工程项目【maven普通项目】
-</code></pre>
-<ol start="2">
-<li><pre><code>在父工程中pom文件中，首先设置父工程的打包类型【pom】
-</code></pre>
-<ol start="3">
-<li><pre><code>然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）
-</code></pre>
-<ol start="4">
-<li><pre><code>如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可
-</code></pre>
-<ol start="5">
-<li><pre><code>在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】
-</code></pre>
-<ol start="6">
-<li><pre><code>common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用
-</code></pre>
-<ol start="7">
-<li><pre><code>interface项目要打包成【jar】类型，会提供给其他项目
-</code></pre>
-<ol start="8">
-<li><pre><code>provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）
-</code></pre>
-<ol start="9">
-<li><pre><code>backend同provider项目一样，仅仅导入interface的jar包
-</code></pre>
-<ol start="10">
-<li><pre><code>在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志
-</code></pre>
-<ol start="11">
-<li><pre><code>并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果
-</code></pre>
-<ol start="12">
-<li><pre><code>在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件
-</code></pre>
-</li>
+<li>第一天</li>
+<li>……</li>
+<li>第十一天</li>
 </ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
+<p>第一天【2022-01-26】</p>
+<ol>
+<li>创建父工程项目【maven普通项目】</li>
+<li>在父工程中pom文件中，首先设置父工程的打包类型【pom】</li>
+<li>然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）</li>
+<li>如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可</li>
+<li>在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】</li>
+<li>common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用</li>
+<li>interface项目要打包成【jar】类型，会提供给其他项目</li>
+<li>provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）</li>
+<li>backend同provider项目一样，仅仅导入interface的jar包</li>
+<li>在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志</li>
+<li>并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果</li>
+<li>在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件</li>
 </ol>
 <p>第二天【2022-01-27】<br>1.	先在【common】项目中创建需要的基础Java类（bean、常量资源、结果集等，这都是为了规范，其中常量是编码的规范，避免不同的人传递同一个意思的信息出现不一样的情况）<br>2.	在【interface】项目中创建【接口】，然后在提供者【provider】项目中去实现【接口】<br>3.	在【provider】项目中创建【dao】包，存放交互【数据库】的【接口】以及【映射文件】（映射文件最好存放在【resource】中对应路径的dao包下，毕竟是【.xml】文件）<br>4.	前端静态页面放在【backend】项目中，并且这里也作为控制层【controller】的代码放置处，存放静态页面时，注意需不需要允许静态资源通过，需要设置一下（springmvc.xml和web.xml都可以设置）<br>5.	此项目前端使用【Vue】框架，页面不需要转成【jsp】使用，数据的传递使用的是【Ajax】，采用的组件是【axios】，所以关于很多jsp的标签不能使用，活用Vue能够解决；页面的元素、布局采用的是【ElementUI】，官网提供的模板能解决绝大多数的需求<br>6.	当页面的元素较多且复杂，以及采用的样式非本地而是网络链接的时候，可能会导致页面刷新的时候文本先出现而样式后出现，需要注意<br>7.	添加功能：当点击创建的时候，会弹出类似于模态框界面的选择界面（默认是隐藏的，当点击的时候会更改值为”true”，对这个值的判断进行页面的是否显示）；在添加框中，Vue对添加框进行了格式设置（注意设置名要与字段名一致，并且在页面的标签中增加prop&#x3D;”字段名”），并且在提交的时候也要验证，通过的话才能进行提交；数据提交到后台（因为是form表单数据，提交的是JSON串，而不是键值对的形式，所以在参数列表中加上”@RequestBody”来接收数据）就可以进行处理；因为此项目全程Ajax操作，所以没有页面的跳转，为了避免所有的Java方法都要加上”@ResponseBody”（保证传到页面的是数据而不会跳转），所以”@Controller”需要改成”@RestController”（原理一样，但是不需要额外写@ResponseBody）；添加若无误，返回的是成功【common提供的常量】，失败也是常量，然后页面弹出信息；（注意这里面的增删改都会用到事务）；添加完成之后会关闭添加框，并且清空之前填入的数据（因为是双向绑定，若是页面不刷新，则数据一直存在，添加完成之后需要清空，避免下次打开后还是上一次的数据）<br>8.	因为此项目采用的【dubbo】框架，所以在【controller】注入【service】的时候使用的是”@Reference”而不是”@AutoWrid”</p>
 <p>第三天【2022-02-10】<br>1.	涉及到的【增删改】操作，一定需要事务管理，通常来说，事务针对的是业务层（service），需要在业务层类上加上“@Transactional”来事务管理；并且增删改逻辑的操作的代码需要写在业务层中，以配合事务<br>2.	删除功能：点击“删除”的时候，方法接收的参数是这一行（ElementUI所做的表格的特点，可以把row当做参数），在Vuejs方法中通过【row.id】取得这一行的数据的主键id，然后再通过axios请求到后台完成删除操作；删除也是要进行事务管理的，所以具体代码需要写在业务层；（并且此项目中有多对多的关系，通过外键关联进行限制，所以在删除时需要查询此数据是否有关联，若有，则不能删除）注意反馈的消息；其他要点与添加功能一致。<br>3.	查询功能：查询功能体现在：【第一次进入页面】、【分页】、【添加完成之后】、【删除完成之后】、【修改完成之后】、【条件查询】这几个方面；这些查询都会调用同一个方法，区别在于条件的不同，当前页的不同（条件的双向绑定会影响输入条件进行分页时也会进行查询，当前页不及时更新则会页面显示数据异常）；解决方式：条件仅仅在【删除之后】、【修改之后】、【条件查询】这几个方面有数据，所以查询的条件默认是空的，当点击“查询”按钮后进行条件的数据更新，这样在分页时不会进行查询；当前页的更新来源于【后台数据的传入】，然后赋值，这样及时更新后就能够避免数据显示异常（同时也注意下参数合理化的配置）；<br>4.	修改功能：点击“编辑”时，和“添加”一样，弹出框，和“删除”一样，传入row数据，然后取出id，接着进行axios请求获取全部数据，然后填入到框中，更新合理的数据后，点击“确定”（记得关闭框）；修改也是需要事务管理，具体代码放在业务层接受事务控制<br>5.	Mybatis无法绑定的错误：将与dao文件对应的.xml文件放在resource资源包中，注意路径问题</p>
