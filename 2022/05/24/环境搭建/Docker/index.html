@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="部署," />
+  <meta name="keywords" content="Linux应用部署," />
 
 
 
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="Docker Docker 安装卸载 Docker 服务启动 Docker 服务信息 Docker 运行机制 第一个 Docker 容器 进入 Docker 容器 客户机访问容器   Docker 核心组件 Docker 架构 Docker 核心要素 三个核心要素   Docker 镜像 镜像的基本概念 镜像的组成结构 镜像的日常操作   Docker 容器 容器的基本概念 容器的日常操作">
+<meta name="description" content="DockerDocker 官方网站：https:&#x2F;&#x2F;www.docker.com&#x2F; Docker 教程 | 菜鸟教程  使用场景  Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。  Docker 的优点  Docker 是一个用于开发，交付和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，从而可以快速交付软">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Docker/index.html">
 <meta property="og:site_name" content="代家鑫的博客">
-<meta property="og:description" content="Docker Docker 安装卸载 Docker 服务启动 Docker 服务信息 Docker 运行机制 第一个 Docker 容器 进入 Docker 容器 客户机访问容器   Docker 核心组件 Docker 架构 Docker 核心要素 三个核心要素   Docker 镜像 镜像的基本概念 镜像的组成结构 镜像的日常操作   Docker 容器 容器的基本概念 容器的日常操作">
+<meta property="og:description" content="DockerDocker 官方网站：https:&#x2F;&#x2F;www.docker.com&#x2F; Docker 教程 | 菜鸟教程  使用场景  Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。  Docker 的优点  Docker 是一个用于开发，交付和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，从而可以快速交付软">
 <meta property="og:locale">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
@@ -92,9 +92,9 @@
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458042.png">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458960.png">
 <meta property="article:published_time" content="2022-05-24T06:47:17.000Z">
-<meta property="article:modified_time" content="2022-05-24T11:00:16.684Z">
+<meta property="article:modified_time" content="2022-05-24T11:18:55.962Z">
 <meta property="article:author" content="代家鑫">
-<meta property="article:tag" content="部署">
+<meta property="article:tag" content="Linux应用部署">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
 
@@ -393,65 +393,7 @@
       
 
       
-        <ul>
-<li><a href="#docker">Docker</a><ul>
-<li><a href="#docker-%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD">Docker 安装卸载</a></li>
-<li><a href="#docker-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8">Docker 服务启动</a></li>
-<li><a href="#docker-%E6%9C%8D%E5%8A%A1%E4%BF%A1%E6%81%AF">Docker 服务信息</a></li>
-<li><a href="#docker-%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6">Docker 运行机制</a><ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-docker-%E5%AE%B9%E5%99%A8">第一个 Docker 容器</a></li>
-<li><a href="#%E8%BF%9B%E5%85%A5-docker-%E5%AE%B9%E5%99%A8">进入 Docker 容器</a></li>
-<li><a href="#%E5%AE%A2%E6%88%B7%E6%9C%BA%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8">客户机访问容器</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6">Docker 核心组件</a><ul>
-<li><a href="#docker-%E6%9E%B6%E6%9E%84">Docker 架构</a></li>
-<li><a href="#docker-%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0">Docker 核心要素</a><ul>
-<li><a href="#%E4%B8%89%E4%B8%AA%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0">三个核心要素</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E9%95%9C%E5%83%8F">Docker 镜像</a><ul>
-<li><a href="#%E9%95%9C%E5%83%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">镜像的基本概念</a></li>
-<li><a href="#%E9%95%9C%E5%83%8F%E7%9A%84%E7%BB%84%E6%88%90%E7%BB%93%E6%9E%84">镜像的组成结构</a></li>
-<li><a href="#%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C">镜像的日常操作</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E5%AE%B9%E5%99%A8">Docker 容器</a><ul>
-<li><a href="#%E5%AE%B9%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><strong>容器的基本概念</strong></a></li>
-<li><a href="#%E5%AE%B9%E5%99%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C">容器的日常操作</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E4%BB%93%E5%BA%93">Docker 仓库</a><ul>
-<li><a href="#%E4%BB%93%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><strong>仓库的基本概念</strong></a></li>
-<li><a href="#%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C">仓库的日常操作</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#docker-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F">Docker 镜像加速</a></li>
-<li><a href="#docker-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">Docker 使用示例</a><ul>
-<li><a href="#docker-%E5%AE%89-%E8%A3%85-mysql">Docker 安 装 MySQL</a></li>
-<li><a href="#docker-%E5%AE%89-%E8%A3%85-nginx">Docker 安 装 Nginx</a></li>
-<li><a href="#dokcer-%E5%AE%89-%E8%A3%85-zookeeper">Dokcer 安 装 Zookeeper</a></li>
-<li><a href="#docker-%E5%AE%89%E8%A3%85-rabbitmq">Docker 安装 RabbitMQ</a></li>
-<li><a href="#%E6%9B%B4%E5%A4%9A%E5%AE%9E%E4%BE%8B">更多实例</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F">Docker 自定义镜像</a><ul>
-<li><a href="#dockerfile-%E6%96%87%E4%BB%B6%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84">Dockerfile 文件和基本结构</a></li>
-<li><a href="#dockerfile-%E6%8C%87%E4%BB%A4"><strong>Dockerfile</strong> <strong>指令</strong></a></li>
-<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F">自定义镜像</a></li>
-</ul>
-</li>
-<li><a href="#docker-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2">Docker 项目部署</a><ul>
-<li><a href="#jar-%E5%8C%85">Jar 包</a></li>
-<li><a href="#war-%E5%8C%85">War 包</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 官方网站：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
+        <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 官方网站：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-tutorial.html">Docker 教程 | 菜鸟教程 </a></p>
 <p><strong>使用场景</strong></p>
 <ul>
@@ -806,7 +748,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
+            <a href="/tags/Linux%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/" rel="tag"># Linux应用部署</a>
           
         </div>
       
@@ -819,8 +761,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/24/hello-world/" rel="next" title="博客使用说明">
-                <i class="fa fa-chevron-left"></i> 博客使用说明
+              <a href="/2022/05/24/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E2%80%94%E9%A9%AC%E8%85%BE/" rel="next" title="健康管理系统项目">
+                <i class="fa fa-chevron-left"></i> 健康管理系统项目
               </a>
             
           </div>
@@ -829,7 +771,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/05/24/Docker/" rel="prev" title="Docker">
+              <a href="/2022/05/24/%E4%BC%97%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" rel="prev" title="Docker">
                 Docker <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -912,7 +854,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -923,7 +865,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -934,7 +876,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
