@@ -4,12 +4,12 @@
 
 # Site
 title: 代家鑫的博客
-subtitle: 'Hexo-Next'
+subtitle: '个人学习博客'
 description: '学习不止探索'
-keywords:
+keywords: blog
 author: 代家鑫
 language: zh-Hans
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -106,3 +106,9 @@ deploy:
   type: git
   repo: git@github.com:Dain-xin/Dain-xin.github.io.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
