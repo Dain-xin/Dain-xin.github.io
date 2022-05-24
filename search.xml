@@ -365,8 +365,11 @@
 
 <p>3、注意项目内嵌使用的端口，但是放入tomcat中就是使用tomcat的端口；打包war再build中添加<finalName>djx</finalName>这样打包会生成改名字的war</p>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
-        <tag>部署</tag>
+        <tag>Linux部署</tag>
       </tags>
   </entry>
 </search>
