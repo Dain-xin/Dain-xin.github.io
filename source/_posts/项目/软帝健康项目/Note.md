@@ -1,30 +1,36 @@
 ---
-title: 健康管理系统项目
+title: 健康管理系统项目笔记1
 date: 2022-05-24 19:47:17
 categories:
-- 微服务项目
+- 项目
+- 微服务
 - 健康管理系统
 tags:
-- JAVA项目
+- 项目笔记
 ---
 
 ## 【SSM+Dubbo+Zookeeper+Vue】
 
 总结
+
+1. 第一天
+2. ......
+3. 第十一天
+
 第一天【2022-01-26】
 
-1.	创建父工程项目【maven普通项目】
-2.	在父工程中pom文件中，首先设置父工程的打包类型【pom】
-3.	然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）
-4.	如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可
-5.	在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】
-6.	common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用
-7.	interface项目要打包成【jar】类型，会提供给其他项目
-8.	provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）
-9.	backend同provider项目一样，仅仅导入interface的jar包
-10.	在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志
-11.	并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果
-12.	在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件
+1. 创建父工程项目【maven普通项目】
+2. 在父工程中pom文件中，首先设置父工程的打包类型【pom】
+3. 然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）
+4. 如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可
+5. 在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】
+6. common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用
+7. interface项目要打包成【jar】类型，会提供给其他项目
+8. provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）
+9. backend同provider项目一样，仅仅导入interface的jar包
+10. 在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志
+11. 并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果
+12. 在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件
 
 
 第二天【2022-01-27】

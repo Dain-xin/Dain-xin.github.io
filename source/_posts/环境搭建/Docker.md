@@ -2,10 +2,8 @@
 title: Docke使用说明
 date: 2022-05-24 14:47:17
 categories:
-- Linux
+- 环境搭建
 - Docker
-tags:
-- Linux应用部署
 ---
 
 # Docker
