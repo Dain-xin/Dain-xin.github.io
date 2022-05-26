@@ -39,3 +39,24 @@ Sentinel云原生
 zipkin+Selush、skywalking
 
 9：30
+
+
+
+Nacos服务注册
+
+本质上就是：Post类型请求类型的http请求
+
+Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。
+
+在我们SpringBoot项目启动后执行我们的Nacos的那个注册方法 registerInstance方法。
+
+我们SpringBoot启动run方法，通过广播起发送时间，对我们感兴趣的事情进行监听机制来执行我们方法，因此我们Nacos服务注册的需要写监听器，但是我们SpringCould团队提供了一个接口（ServiceRegister）让我们的Nacos或者Eureka来实现接口的NacosServiceRegister   完成register（）方法。
+
+![image-20220526204011740](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png)
+
+Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。
+
+OpenFeign：服务调用，设计思想。
+
+9：00
+
