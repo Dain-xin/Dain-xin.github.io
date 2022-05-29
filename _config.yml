@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Dain的博客
-subtitle: 学习和生活
-description: 学习不止探索，生活不止于此
+title: 代家鑫的博客
+subtitle: '个人学习博客'
+description: '学习不止探索'
 keywords: blog
 author: 代家鑫
 language: zh-Hans
-timezone: Asia/Shanghai
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
