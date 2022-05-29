@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>博客Hexo和Git说明</title>
-    <url>/2023/05/30/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <url>/2022/05/30/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;FILE NAME&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
 <h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -43,6 +43,34 @@
     <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1>]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>尚筹网项目开发手册1</title>
+    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E5%B0%9A%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/1.%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="分布式微服务项目开发过程及技术回顾"><a href="#分布式微服务项目开发过程及技术回顾" class="headerlink" title="分布式微服务项目开发过程及技术回顾"></a>分布式微服务项目开发过程及技术回顾</h1><hr>
+<p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
+<hr>
+<h2 id="1、项目介绍"><a href="#1、项目介绍" class="headerlink" title="1、项目介绍"></a>1、项目介绍</h2><blockquote>
+<p>分布式的第三方借贷平台融资宝：一个网络借贷信息中介服务平台，为个人投资者、个人融资用户和小微企业提供专业的线上信贷及出借撮合服务。</p>
+</blockquote>
+<hr>
+<h2 id="2、项目技术栈"><a href="#2、项目技术栈" class="headerlink" title="2、项目技术栈"></a>2、项目技术栈</h2><blockquote>
+<p>（1）前端：Node.js： JavaScript 运行环境；ES6：JavaScript的模块化版本；axios：一个发送Ajax请求的工具；Vue.js：web 界面的渐进式框架；Element-UI：前端组件库；vue-element-admin：基于Vue.js的后台管理系统UI集成方案；NuxtJS：基于Vue.js构建的服务器端渲染应用的轻量级框架；NPM：模块资源管理器；<br>（2）数据库和中间键；Mysql 5.7：关系型数据库；Redis 5.0：缓存技术；EabbitMQ：消息中间键<br>（3）后端：SprinigBoot：微服务架构支撑；SpringCloud Hoxton.SR8：快速构建微服务基础设施；Mybatis-Plus：持久层框架和代码生成器；Swagger2：Api接口文档生成器；Logback：日志系统；SpringDateRedis：Spring项目访问redis缓存；HTTPClient: 基于Http协议的客户端，用来实现远程调用；Spring Task：定时任务<br>（4）第三方接口；阿里云短信服务；阿里云OSS服务；资金托管平台API对接：汇付包</p>
+</blockquote>
+<h2 id="3、项目部署和开发环境"><a href="#3、项目部署和开发环境" class="headerlink" title="3、项目部署和开发环境"></a>3、项目部署和开发环境</h2><blockquote>
+<p>阿里云ECS服务器；操作系统；Alibaba Cloud Linux；云解析DNS（域名解析）；JDK1.8；Maven3.8；IdeaIU2020；宝塔面板。</p>
+</blockquote>
+<hr>
+<p><code>提示：以以上技术栈有些会做详细说明</code></p>
+<h2 id="4、核心的项目业务"><a href="#4、核心的项目业务" class="headerlink" title="4、核心的项目业务"></a>4、核心的项目业务</h2><blockquote>
+<p>（1）用户注册：用户注册手机号，发送短信，验证合法，注册成功<br>（2）用户登录：登录填写手机号和密码，验证合法性，登录成功，记录登录日志<br>（3）贷前：登录后查看是否和资金托管平台绑定，是则提交贷款人信息，平台审核人的信息，通过和提交贷款信息，平台审核借款信息。<br>（4）贷中：通过后生成标的，平台展示标的。<br>（5）投标：用户登录看是否和资金托管平台绑定，绑定成功后，充值，选择看中的标的投标，满标后放贷借款成功。<br>（6）贷后：申请提现，提现后按还款类型还款，归还完毕后平台截标，结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>微服务</category>
+        <category>尚筹网项目</category>
       </categories>
   </entry>
   <entry>
@@ -103,34 +131,6 @@
       <tags>
         <tag>面试</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>尚筹网项目开发手册1</title>
-    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E5%B0%9A%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/1.%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1 id="分布式微服务项目开发过程及技术回顾"><a href="#分布式微服务项目开发过程及技术回顾" class="headerlink" title="分布式微服务项目开发过程及技术回顾"></a>分布式微服务项目开发过程及技术回顾</h1><hr>
-<p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
-<hr>
-<h2 id="1、项目介绍"><a href="#1、项目介绍" class="headerlink" title="1、项目介绍"></a>1、项目介绍</h2><blockquote>
-<p>分布式的第三方借贷平台融资宝：一个网络借贷信息中介服务平台，为个人投资者、个人融资用户和小微企业提供专业的线上信贷及出借撮合服务。</p>
-</blockquote>
-<hr>
-<h2 id="2、项目技术栈"><a href="#2、项目技术栈" class="headerlink" title="2、项目技术栈"></a>2、项目技术栈</h2><blockquote>
-<p>（1）前端：Node.js： JavaScript 运行环境；ES6：JavaScript的模块化版本；axios：一个发送Ajax请求的工具；Vue.js：web 界面的渐进式框架；Element-UI：前端组件库；vue-element-admin：基于Vue.js的后台管理系统UI集成方案；NuxtJS：基于Vue.js构建的服务器端渲染应用的轻量级框架；NPM：模块资源管理器；<br>（2）数据库和中间键；Mysql 5.7：关系型数据库；Redis 5.0：缓存技术；EabbitMQ：消息中间键<br>（3）后端：SprinigBoot：微服务架构支撑；SpringCloud Hoxton.SR8：快速构建微服务基础设施；Mybatis-Plus：持久层框架和代码生成器；Swagger2：Api接口文档生成器；Logback：日志系统；SpringDateRedis：Spring项目访问redis缓存；HTTPClient: 基于Http协议的客户端，用来实现远程调用；Spring Task：定时任务<br>（4）第三方接口；阿里云短信服务；阿里云OSS服务；资金托管平台API对接：汇付包</p>
-</blockquote>
-<h2 id="3、项目部署和开发环境"><a href="#3、项目部署和开发环境" class="headerlink" title="3、项目部署和开发环境"></a>3、项目部署和开发环境</h2><blockquote>
-<p>阿里云ECS服务器；操作系统；Alibaba Cloud Linux；云解析DNS（域名解析）；JDK1.8；Maven3.8；IdeaIU2020；宝塔面板。</p>
-</blockquote>
-<hr>
-<p><code>提示：以以上技术栈有些会做详细说明</code></p>
-<h2 id="4、核心的项目业务"><a href="#4、核心的项目业务" class="headerlink" title="4、核心的项目业务"></a>4、核心的项目业务</h2><blockquote>
-<p>（1）用户注册：用户注册手机号，发送短信，验证合法，注册成功<br>（2）用户登录：登录填写手机号和密码，验证合法性，登录成功，记录登录日志<br>（3）贷前：登录后查看是否和资金托管平台绑定，是则提交贷款人信息，平台审核人的信息，通过和提交贷款信息，平台审核借款信息。<br>（4）贷中：通过后生成标的，平台展示标的。<br>（5）投标：用户登录看是否和资金托管平台绑定，绑定成功后，充值，选择看中的标的投标，满标后放贷借款成功。<br>（6）贷后：申请提现，提现后按还款类型还款，归还完毕后平台截标，结束。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>项目</category>
-        <category>微服务</category>
-        <category>尚筹网项目</category>
-      </categories>
   </entry>
   <entry>
     <title>Docke使用说明</title>
