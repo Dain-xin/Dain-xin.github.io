@@ -179,8 +179,17 @@
       </categories>
   </entry>
   <entry>
-    <title>Java开发基础</title>
-    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/</url>
+    <title>Java基础</title>
+    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%801/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础知识</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java基础——面试</title>
+    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%802/</url>
     <content><![CDATA[<h3 id="1、面向过程和面向对象"><a href="#1、面向过程和面向对象" class="headerlink" title="1、面向过程和面向对象"></a>1、面向过程和面向对象</h3><p>A：面向过程：</p>
 <p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
 <p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
@@ -189,6 +198,11 @@
 <p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
 <p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
 <p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
+<h3 id="2、hashCode作用"><a href="#2、hashCode作用" class="headerlink" title="2、hashCode作用"></a>2、hashCode作用</h3><p>理解：</p>
+<p>它返回的就是根据对象的内存地址换算出的一个值。这样一来，当 集合要添加新的元素时，先调用这个元素的hashCode方法，就一下子能定位到它应该放置的物理 位置上。</p>
+<p>如果这个位置上没有元素，它就可以直接存储在这个位置上，不用再进行任何比较了；</p>
+<p>如果这个位置上已经有元素了，就调用它的equals方法与新元素进行比较，相同的话就不存了，不相 同就散列其它的地址。</p>
+<p>这样一来实际调用equals方法的次数就大大降低了，几乎只需要一两次。</p>
 <h3 id="3、JAVA语言特点"><a href="#3、JAVA语言特点" class="headerlink" title="3、JAVA语言特点"></a>3、JAVA语言特点</h3><ol>
 <li>简单易学、有丰富的类库；</li>
 <li>面向对象、低耦合，高内聚；</li>
@@ -196,10 +210,27 @@
 <li>安全可靠、支持多线程。</li>
 </ol>
 <h3 id="4、基本数据类型和封装类"><a href="#4、基本数据类型和封装类" class="headerlink" title="4、基本数据类型和封装类"></a>4、基本数据类型和封装类</h3><p>​	注：int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况。</p>
-<h3 id="5、重写和重载的理解"><a href="#5、重写和重载的理解" class="headerlink" title="5、重写和重载的理解"></a>5、重写和重载的理解</h3><h3 id="6、Instanceof-关键字"><a href="#6、Instanceof-关键字" class="headerlink" title="6、Instanceof 关键字"></a>6、Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
+<h3 id="5、重写和重载的理解"><a href="#5、重写和重载的理解" class="headerlink" title="5、重写和重载的理解"></a>5、重写和重载的理解</h3><p>重写：（Overread）</p>
+<ol>
+<li>子类重写父类方法发生在父类与子类之间 </li>
+<li>方法名，参数列表，返回类型（除过子类中方法的返回类型 是父类中返回类型的子类）都必须相同 </li>
+<li>访问修饰符的限制一定要大于被重写方法的访问修饰符 （public&gt;protected&gt;default&gt;private) </li>
+<li>重写方法一定不能抛出新的检查异常或者比被重写方法申 明更加宽泛的检查型异常</li>
+</ol>
+<p>重载：（Overload）</p>
+<ol>
+<li>重载Overload是一个类中多态性的一种表现 </li>
+<li>重载要求同名方法的参数列表不同(参数类型，参数个数甚至是参数顺序)</li>
+<li>重载的时候，返回值类型可以相同也可以不相同。无法以返回 型别作为重载函数的区分标准</li>
+</ol>
+<h3 id="6、Instanceof-关键字"><a href="#6、Instanceof-关键字" class="headerlink" title="6、Instanceof 关键字"></a>6、Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
-]]></content>
+<h3 id="7、String、StringBuffer、StringBuilder区别"><a href="#7、String、StringBuffer、StringBuilder区别" class="headerlink" title="7、String、StringBuffer、StringBuilder区别"></a>7、String、StringBuffer、StringBuilder区别</h3><ol>
+<li>String：只读字符串；其实就是对象，但是底层是被final修饰的字符数组，引用的字符串不能改变；因此每次操作都是新的String的对象。</li>
+<li>StringBuffer和StringBuilder：底层都是可变的字符数组，所以在进行频繁的字符串操作时，建议使用StringBuffer和 StringBuilder来进行操作。 另外StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</li>
+</ol>
+<h3 id="8、hashMap和hashTable的区别"><a href="#8、hashMap和hashTable的区别" class="headerlink" title="8、hashMap和hashTable的区别"></a>8、hashMap和hashTable的区别</h3>]]></content>
       <categories>
         <category>JAVA</category>
         <category>基础知识</category>

@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0046;
+  background: #1dd967;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3282,6 +3282,7 @@ body {
   opacity: 0.85;
 }
 .header-inner {
+  opacity: 0.95;
   border-radius: 30px 30px 30px 30px;
   box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0,0,0,0.31) 6px 6px 10px 0px;
 }
@@ -3313,6 +3314,7 @@ article .post-header {
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
+  color: #f00;
 }
 article .post-copyright {
   background: url("https://s1.ax1x.com/2018/12/20/FrD60g.png");
