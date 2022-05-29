@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="1、什么是面向过程概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  2、什么是面向对象概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对">
+<meta name="description" content="1、面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java开发基础">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="1、什么是面向过程概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  2、什么是面向对象概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对">
+<meta property="og:description" content="1、面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-25T13:47:17.000Z">
-<meta property="article:modified_time" content="2022-05-29T08:25:29.211Z">
+<meta property="article:modified_time" content="2022-05-29T09:27:19.680Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -344,7 +344,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-29T16:25:29+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-05-29T17:27:19+08:00">
                 2022-05-29
               </time>
             
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  359
+                  521
                 </span>
               
 
@@ -442,10 +442,12 @@
       
 
       
-        <h3 id="1、什么是面向过程"><a href="#1、什么是面向过程" class="headerlink" title="1、什么是面向过程"></a>1、什么是面向过程</h3><p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
+        <h3 id="1、面向过程和面向对象"><a href="#1、面向过程和面向对象" class="headerlink" title="1、面向过程和面向对象"></a>1、面向过程和面向对象</h3><p>A：面向过程：</p>
+<p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
 <p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
 <p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
-<h3 id="2、什么是面向对象"><a href="#2、什么是面向对象" class="headerlink" title="2、什么是面向对象"></a>2、什么是面向对象</h3><p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 </p>
+<p>B：面向对象：</p>
+<p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
 <p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
 <p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
 <h3 id="3、JAVA语言特点"><a href="#3、JAVA语言特点" class="headerlink" title="3、JAVA语言特点"></a>3、JAVA语言特点</h3><ol>
@@ -455,6 +457,9 @@
 <li>安全可靠、支持多线程。</li>
 </ol>
 <h3 id="4、基本数据类型和封装类"><a href="#4、基本数据类型和封装类" class="headerlink" title="4、基本数据类型和封装类"></a>4、基本数据类型和封装类</h3><p>​	注：int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况。</p>
+<h3 id="5、重写和重载的理解"><a href="#5、重写和重载的理解" class="headerlink" title="5、重写和重载的理解"></a>5、重写和重载的理解</h3><h3 id="6、Instanceof-关键字"><a href="#6、Instanceof-关键字" class="headerlink" title="6、Instanceof 关键字"></a>6、Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -674,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">1、什么是面向过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">2、什么是面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81JAVA%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">3、JAVA语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%B0%81%E8%A3%85%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">4、基本数据类型和封装类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">1、面向过程和面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81JAVA%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">3、JAVA语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%B0%81%E8%A3%85%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">4、基本数据类型和封装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">5、重写和重载的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81Instanceof-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">5.</span> <span class="nav-text">6、Instanceof 关键字</span></a></li></ol></div>
             
 
           </div>
@@ -715,7 +720,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.8k</span>
+    <span title="Site words total count">24.9k</span>
   
 </div>
 
@@ -731,7 +736,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.8k字</span>
+  <span class="post-count">博客全站共24.9k字</span>
 </div>
 
         

@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #54ff59;
+  background: #ff50fb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3255,7 +3255,7 @@ img:hover {
   font-size: 13px;
 }
 body {
-  background: url("https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205291539194.jpg");
+  background: url("https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205291540134.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -3271,7 +3271,7 @@ body {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background-image: url("/images/95033e2a5404c30e2ab560e72b157a0a.jpg");
+  background-image: url("/images/mstile-150x150-next.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -3303,16 +3303,15 @@ body {
 .menu-item-active a {
   color: #555;
 }
+.footer,
+.footer a,
+.footer .with-love {
+  color: #000;
+}
 article .post-header {
-  background: url("/images/46265dece9bce1c56eb6dc6d4c931423.jpeg");
+  background: url("/images/mstile-150x150-next.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: contain;
-}
-article .post-copyright {
-  background: url("https://s1.ax1x.com/2018/12/20/FrD60g.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
   background-size: contain;
 }
 .sidebar-inner {
