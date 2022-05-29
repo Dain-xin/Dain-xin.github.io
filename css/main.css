@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8f22f4;
+  background: #11ff7a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3260,4 +3260,126 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
   background-size: cover;
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+.site-meta {
+  padding: 20px 0;
+  color: #fff;
+  background-image: url("/images/95033e2a5404c30e2ab560e72b157a0a.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.main-inner {
+  background: #fff;
+  opacity: 0.85;
+}
+.header-inner {
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0,0,0,0.31) 6px 6px 10px 0px;
+}
+.brand {
+  color: #390044;
+}
+.site-subtitle {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #fff;
+}
+.header-inner {
+  background: #bc0100;
+  background: linear-gradient(0deg, #bc0100 20%, #9b1d22 80%);
+}
+.menu-item a {
+  color: #fbda41;
+}
+.menu-item-active a {
+  color: #555;
+}
+article .post-header {
+  background: url("/images/46265dece9bce1c56eb6dc6d4c931423.jpeg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+article .post-copyright {
+  background: url("https://s1.ax1x.com/2018/12/20/FrD60g.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+.sidebar-inner {
+  background: url("/images/d487657bd263d8d9d17e23b75c241034.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px 30px 30px 30px;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0,0,0,0.31) 6px 6px 10px 0px;
+}
+.sidebar-inner .site-overview-wrap .site-overview,
+.sidebar-inner .site-overview-wrap .site-overview .site-author-name,
+.sidebar a,
+.sidebar span.exturl,
+.site-state-item-name,
+.site-description {
+  color: #fbda41;
+}
+.sidebar-nav .sidebar-nav-active {
+  color: #fbda41;
+  border-bottom-color: #fbda41;
+}
+.sidebar-nav li {
+  color: #fbda41;
+  border-bottom-color: #fbda41;
+}
+.links-of-blogroll-list {
+  text-shadow: #f00 0 1px 0;
+}
+.post-toc ol a {
+  color: #fbda41;
+}
+.content .posts-expand .post-block {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 40px 20px;
+  font-size: 14px;
+  box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0,0,0,0.31) 6px 6px 10px 0px;
+  border-radius: 20px;
+  background-color: #fff0f5;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  transform-style: preserve-3d;
+}
+.post-expand .post-body {
+  position: relative;
+  overflow: visible;
+  padding: 20px;
+  color: #666;
+  font-size: 15px;
+  word-break: break-word;
+}
+.tag-cloud a {
+  box-shadow: 0 1px 3px #6f42c1, 0 1px 2px #d9534f;
+  padding: 2px 10px;
+  margin: 8px;
+  background: rgba(193,66,92,0);
+  border-bottom: none;
+  border-radius: 20px;
+}
+.headband {
+  height: 0px;
+  background: #fc6423;
+}
+.busuanzi-value {
+  color: #1890ff;
 }
