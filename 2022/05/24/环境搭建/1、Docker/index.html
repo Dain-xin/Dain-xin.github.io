@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux应用部署," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DockerDocker 官方网站：https:&#x2F;&#x2F;www.docker.com&#x2F; Docker 教程 | 菜鸟教程  使用场景  Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。  Docker 的优点  Docker 是一个用于开发，交付和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，从而可以快速交付软">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docke使用说明">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1%E3%80%81Docker/index.html">
+<meta property="og:site_name" content="代家鑫的博客">
+<meta property="og:description" content="DockerDocker 官方网站：https:&#x2F;&#x2F;www.docker.com&#x2F; Docker 教程 | 菜鸟教程  使用场景  Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。  Docker 的优点  Docker 是一个用于开发，交付和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，从而可以快速交付软">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458042.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458042.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458960.png">
+<meta property="article:published_time" content="2022-05-24T06:47:17.000Z">
+<meta property="article:modified_time" content="2022-05-29T04:25:52.860Z">
+<meta property="article:author" content="代家鑫">
+<meta property="article:tag" content="Linux应用部署">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/24/环境搭建/1、Docker/"/>
+
+
+
+
+
+  <title>Docke使用说明 | 代家鑫的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">代家鑫的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">个人学习博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1%E3%80%81Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代家鑫的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Docke使用说明</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-24T14:47:17+08:00">
+                2022-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 官方网站：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-tutorial.html">Docker 教程 | 菜鸟教程 </a></p>
+<p><strong>使用场景</strong></p>
+<ul>
+<li>Web 应用的自动化打包和发布。</li>
+<li>自动化测试和持续集成、发布。</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应用。</li>
+</ul>
+<p><strong>Docker 的优点</strong></p>
+<blockquote>
+<p>Docker 是一个用于开发，交付和运行应用程序的开放平台。</p>
+<p>Docker 使您能够将应用程序与基础架构分开，从而可以快速交付软件。</p>
+<p>借助 Docker，您可以与管理应用程序相同的方式来管理基础架构。</p>
+<p>利用 Docker 的方法来快速交付，测试和部署代码，您可以大大减少编写代码和在生产环境中运行代码之间的延迟。</p>
+</blockquote>
+<p>1、快速，一致地交付您的应用程序</p>
+<p>Docker 允许开发人员使用您提供的应用程序或服务的本地容器在标准化环境中工作，从而简化了开发的生命周期。</p>
+<p>容器非常适合持续集成和持续交付（CI &#x2F; CD）工作流程，请考虑以下示例方案：</p>
+<ul>
+<li>您的开发人员在本地编写代码，并使用 Docker 容器与同事共享他们的工作。</li>
+<li>他们使用 Docker 将其应用程序推送到测试环境中，并执行自动或手动测试。</li>
+<li>当开发人员发现错误时，他们可以在开发环境中对其进行修复，然后将其重新部署到测试环境中，以进行测试和验证。</li>
+<li>测试完成后，将修补程序推送给生产环境，就像将更新的镜像推送到生产环境一样简单。</li>
+</ul>
+<p>2、响应式部署和扩展</p>
+<p>Docker 是基于容器的平台，允许高度可移植的工作负载。Docker 容器可以在开发人员的本机上，数据中心的物理或虚拟机上，云服务上或混合环境中运行。</p>
+<p>Docker 的可移植性和轻量级的特性，还可以使您轻松地完成动态管理的工作负担，并根据业务需求指示，实时扩展或拆除应用程序和服务。</p>
+<p>3、在同一硬件上运行更多工作负载</p>
+<p>Docker 轻巧快速。它为基于虚拟机管理程序的虚拟机提供了可行、经济、高效的替代方案，因此您可以利用更多的计算能力来实现业务目标。Docker 非常适合于高密度环境以及中小型部署，而您可以用更少的资源做更多的事情。</p>
+<h2 id="Docker-安装卸载"><a href="#Docker-安装卸载" class="headerlink" title="Docker 安装卸载"></a>Docker 安装卸载</h2><p>安装过程：</p>
+<blockquote>
+<p>CentOS 6 及以后的版本，Docker 并不是容器，它是一个管理容器的引擎</p>
+</blockquote>
+<p>CentOS7 系统可以直接通过 yum 进行安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<p>系统是否已经安装了 Docker:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list installed | grep docker</span><br></pre></td></tr></table></figure>
+
+<p>安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker -y</span><br></pre></td></tr></table></figure>
+
+<p>安装后，看 docker 是否安装成功:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker –version</span><br></pre></td></tr></table></figure>
+
+<p>卸载：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker.x86_64 -y</span><br><span class="line">yum remove docker-client.x86_64 -y</span><br><span class="line">yum remove docker-common.x86_64 -y</span><br><span class="line">#或者用</span><br><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-服务启动"><a href="#Docker-服务启动" class="headerlink" title="Docker 服务启动"></a>Docker 服务启动</h2><p><a target="_blank" rel="noopener" href="http://www.javashuo.com/article/p-zotynuma-ox.html">Docker 启动失败——Job for docker.service failed because the control process exited with error… </a></p>
+<p>启动-停止-重启：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker 或者 service docker start</span><br><span class="line"></span><br><span class="line">systemctl stop docker 或者 service docker stop</span><br><span class="line"></span><br><span class="line">systemctl restart docker 或者 service docker restart</span><br></pre></td></tr></table></figure>
+
+<p>检查 docker 进程的运行状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status docker 或者 service docker status</span><br></pre></td></tr></table></figure>
+
+<p>查看 docker 进程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-服务信息"><a href="#Docker-服务信息" class="headerlink" title="Docker 服务信息"></a>Docker 服务信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br><span class="line">#查看 docker 系统信息</span><br><span class="line">docker</span><br><span class="line">#查看所有的帮助信息</span><br><span class="line">docker commond –help</span><br><span class="line">#查看某个 commond 命令的帮助信息</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-运行机制"><a href="#Docker-运行机制" class="headerlink" title="Docker 运行机制"></a>Docker 运行机制</h2><h3 id="第一个-Docker-容器"><a href="#第一个-Docker-容器" class="headerlink" title="第一个 Docker 容器"></a>第一个 Docker 容器</h3><p>根据 Docker 的运行机制，我们将按照如下步骤运行第一个 Docker 容器；</p>
+<p>1、将 Docker 服务启动；</p>
+<p>2、下载一个镜像，Docker 运行一个容器前需要本地存在有对应的镜像，如果镜像不存在本地，Docker 会从镜像仓库下载（默认是 Docker Hub 公共注册服务器中的仓库 <a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com</a>）。</p>
+<blockquote>
+<p><strong>从 docker hub 官网搜索要使用的镜像，也可以在命令行使用命令搜索要使用的镜像，</strong></p>
+<p><strong>比如 docker search tomcat 进行搜索，然后下载所需要的镜像：</strong></p>
+</blockquote>
+<p>下载镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat</span><br></pre></td></tr></table></figure>
+
+<p>运行镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run tomcat</span><br><span class="line"></span><br><span class="line">#前台运行， 要后台运行，加参数 -d</span><br></pre></td></tr></table></figure>
+
+<p>显示本地已有的镜像（仓库和 ID 等信息）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>在列出信息中，可以看到几个字段信息</p>
+<blockquote>
+<p>REPOSITORY：来自于哪个仓库，比如 docker.io&#x2F;tomcat TAG：镜像的标记，比如 latest<br>IMAGE ID：镜像的 ID 号（唯一）<br>CREATED：创建时间<br>SIZE：镜像大小</p>
+</blockquote>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png"></p>
+<p>启动下载下来的镜像得到一个容器（可以通过）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d docker.io/tomcat 或 者 docker run -d 41a54fe1f79d（镜像ID）</span><br><span class="line">#默认是前台启动，如果需要后台启动，指定-d 参数；</span><br><span class="line">ps -ef | grep tomcat</span><br><span class="line">#查看，检查 tomcat 镜像是否启动容器成功；</span><br><span class="line">docker ps</span><br><span class="line">#查看容器ID</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241457281.png"></p>
+<h3 id="进入-Docker-容器"><a href="#进入-Docker-容器" class="headerlink" title="进入 Docker 容器"></a>进入 Docker 容器</h3><blockquote>
+<p>进入镜像可以修改对应容器的配置，没有 ll，有 ls 命令；</p>
+<p>i 表示交互式的，也就是保持标准输入流打开；</p>
+<p>t 表示虚拟控制台，分配到一个虚拟控制台；</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#进入容器：</span><br><span class="line">docker exec -it cef0d139bfd6（容器ID） bash</span><br><span class="line"></span><br><span class="line">#退出容器：</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<h3 id="客户机访问容器"><a href="#客户机访问容器" class="headerlink" title="客户机访问容器"></a>客户机访问容器</h3><blockquote>
+<p>从客户机上访问容器，需要有端口映射，docker 容器默认采用桥接模式与宿主机通信，</p>
+<p>需要将宿主机的 ip 端口映射到容器的 ip 端口上； （就是 Docker 容器和主机的端口映射）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#停止容器：使用docker ps 查看容器ID</span><br><span class="line">docker stop 容器 ID/名称</span><br><span class="line"></span><br><span class="line">#停止所有容器</span><br><span class="line">docker stop $&#123;docker ps -q&#125;</span><br><span class="line"></span><br><span class="line">#删除容器</span><br><span class="line">docker stop $&#123;docker ps -aq&#125;</span><br><span class="line"></span><br><span class="line">#启动容器：使用docker images 查看镜像信息</span><br><span class="line">docker run -d -p 8080:8080 docker.io/tomcat（仓库位置）或者（镜像ID）</span><br><span class="line"></span><br><span class="line">#查看状态和关闭防火墙</span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-核心组件"><a href="#Docker-核心组件" class="headerlink" title="Docker 核心组件"></a>Docker 核心组件</h2><h3 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h3><p>Docker 使用客户端-服务器 (C&#x2F;S) 架构模式，使用远程 API 来管理和创建 Docker 容器。</p>
+<p>Docker 容器通过 Docker 镜像来创建。</p>
+<p>镜像与容器的关系类似于面向对象编程中的类与对象的关系。</p>
+<table>
+<thead>
+<tr>
+<th>Docker</th>
+<th>面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>镜像</td>
+<td>类</td>
+</tr>
+<tr>
+<td>容器</td>
+<td>对象</td>
+</tr>
+</tbody></table>
+<p><code>通过镜像来创建容器；就是通过类创建对象</code></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458042.png"></p>
+<table>
+<thead>
+<tr>
+<th align="left">概念</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Docker 镜像(Images)</td>
+<td align="left">Docker 镜像是用于创建 Docker 容器的模板。</td>
+</tr>
+<tr>
+<td align="left">Docker 容器(Container)</td>
+<td align="left">容器是独立运行的一个或一组应用，是镜像运行时的实体。</td>
+</tr>
+<tr>
+<td align="left">Docker 客户端(Client)</td>
+<td align="left">Docker 客户端通过命令行或者其他工具使用 Docker SDK (<a target="_blank" rel="noopener" href="https://docs.docker.com/develop/sdk/">https://docs.docker.com/develop/sdk/</a>) 与 Docker 的守护进程通信。</td>
+</tr>
+<tr>
+<td align="left">Docker 主机(Host)</td>
+<td align="left">一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。</td>
+</tr>
+<tr>
+<td align="left">Docker Registry</td>
+<td align="left">Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。 Docker Hub(<a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com</a>) 提供了庞大的镜像集合供使用。一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <strong>&lt;仓库名&gt;:&lt;标签&gt;</strong> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <strong>latest</strong> 作为默认标签。</td>
+</tr>
+<tr>
+<td align="left">Docker Machine</td>
+<td align="left">Docker Machine 是一个简化 Docker 安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装 Docker，比如 VirtualBox、 Digital Ocean、Microsoft Azure。</td>
+</tr>
+</tbody></table>
+<h3 id="Docker-核心要素"><a href="#Docker-核心要素" class="headerlink" title="Docker 核心要素"></a>Docker 核心要素</h3><h4 id="三个核心要素"><a href="#三个核心要素" class="headerlink" title="三个核心要素"></a>三个核心要素</h4><p>镜像（Image）、容器（Container）、仓库（Repository）</p>
+<p>理解了这三个概念，就理解了 Docker 的整个生命周期。</p>
+<p><code>有人会误以为，Docker 就是容器，但 Docker 不是容器，而是管理容器的引擎。</code></p>
+<h3 id="Docker-镜像"><a href="#Docker-镜像" class="headerlink" title="Docker 镜像"></a>Docker 镜像</h3><h4 id="镜像的基本概念"><a href="#镜像的基本概念" class="headerlink" title="镜像的基本概念"></a>镜像的基本概念</h4><p>Docker 镜像就是一个只读的模板，可以用来创建 Docker 容器。</p>
+<blockquote>
+<p>例如：一个镜像可以包含一个完整的 centos 操作系统环境，里面仅安装了 mysql 或用户需要的其它应用程序。Docker 提供了一个非常简单的机制来创建镜像或者更新现有的镜像， 用户甚至可以直接从其他人那里下载一个已经做好的镜像来直接使用。</p>
+</blockquote>
+<h4 id="镜像的组成结构"><a href="#镜像的组成结构" class="headerlink" title="镜像的组成结构"></a>镜像的组成结构</h4><p>镜像是由许多层的文件系统叠加构成的，最下面是一个引导文件系统</p>
+<p>bootfs，第二层是一个 root 文件系统 rootfs，root 文件系统通常是某种操作系统，比如 centos、Ubuntu，在 root 文件系统之上又有很多层文件系统，这些文件系统叠加在一起，构成 docker 中的镜像；</p>
+<h4 id="镜像的日常操作"><a href="#镜像的日常操作" class="headerlink" title="镜像的日常操作"></a>镜像的日常操作</h4><p>1、下载镜像，比如下载 redis 镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest</span><br><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
+
+<p>reids 是查询到的镜像名称，latest 是镜像的标签 tag</p>
+<p>获取一个镜像有两种方式，一种是从官方镜像仓库下载，一种是自己通过 Dockerfile 文件构建。</p>
+<p>如果有官方镜像，我们就不必自己用 Dockerfile 文件构建了，除非官方没有才会自己去 Dockerfile 文件构建；</p>
+<p>2、列出已经下载的镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">docker images redis</span><br></pre></td></tr></table></figure>
+
+<p>3、运行镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d redis</span><br><span class="line"></span><br><span class="line">#其中-d 表示在后台运行然后通过</span><br><span class="line">#可以查到redis 进程</span><br><span class="line"></span><br><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure>
+
+<p>4、查看容器镜像的状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p>进入 redis 容器:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker  exec  -it  a8584016f9b6(镜像ID)  bash</span><br><span class="line">#退出容器</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>5、删除镜像：（先删容器再删镜像）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi redis:latest</span><br></pre></td></tr></table></figure>
+
+<p><code>注意是rmi，不是 rm，rm 是删除容器；</code></p>
+<p>停止所有容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $&#123;docker ps -q&#125;</span><br></pre></td></tr></table></figure>
+
+<p>删除容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $&#123;docker ps -aq&#125;</span><br></pre></td></tr></table></figure>
+
+<p>停止容器：使用 docker ps 查看容器 ID</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器ID/名称</span><br></pre></td></tr></table></figure>
+
+<p>6、启动 redis：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 6379:6379 redis 或者 镜像ID</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-容器"><a href="#Docker-容器" class="headerlink" title="Docker 容器"></a>Docker 容器</h3><h4 id="容器的基本概念"><a href="#容器的基本概念" class="headerlink" title="容器的基本概念"></a><strong>容器的基本概念</strong></h4><blockquote>
+<p>容器是从镜像创建的运行实例。它可以被启动、停止、删除。</p>
+<p>每个容器都是相互隔离的、保证安全平台。</p>
+<p>可以把看做一个简易版的 Linux 环境，包括 root 用户权限、进程空间、用户空间和网络空间和运行在 其 中 的 应 用 程 序 。</p>
+<p>Docker 利用容器来运行应用，镜像是只读的，容器在启动的时候创建一层可写层作为最上层。</p>
+</blockquote>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458042.png"></p>
+<p><code>注意：一个镜像可以创建多个容器，docker ps -a 可以查询多个容器，理解就是运行新的镜像会创建新的容器，但是，创建的容器，也可以通过docker start 容器ID启动创建的容器</code></p>
+<h4 id="容器的日常操作"><a href="#容器的日常操作" class="headerlink" title="容器的日常操作"></a>容器的日常操作</h4><p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态的容器重新启动。</p>
+<blockquote>
+<p><strong>-p :</strong> 是容器内部端口绑定到<strong>指定</strong>的主机端口。</p>
+</blockquote>
+<p>通过镜像启动容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d redis</span><br><span class="line">docker run -d -p 6379:6379 redis</span><br></pre></td></tr></table></figure>
+
+<p>查看运行中的容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p>查看所有的容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>停止容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop  容器id 或容器名称</span><br></pre></td></tr></table></figure>
+
+<p>已经停止的容器，我们可以使用命令 docker start 来启动。</p>
+<p>开启容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器id 或容器名称</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>因为 Docker 的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</code></p>
+<p><code>删除容器时，容器必须是停止状态，否则会报错； </code></p>
+</blockquote>
+<p>删除容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器id 或容器名称</span><br></pre></td></tr></table></figure>
+
+<p>进入容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器id 或容器名称 bash</span><br></pre></td></tr></table></figure>
+
+<p>查看容器的更多信息:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect + 容器id 或容器名称</span><br></pre></td></tr></table></figure>
+
+<p>停用全部运行中的容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -q)</span><br></pre></td></tr></table></figure>
+
+<p>删除全部容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+
+<p>一条命令实现停用并删除容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -q) &amp; docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-仓库"><a href="#Docker-仓库" class="headerlink" title="Docker 仓库"></a>Docker 仓库</h3><h4 id="仓库的基本概念"><a href="#仓库的基本概念" class="headerlink" title="仓库的基本概念"></a><strong>仓库的基本概念</strong></h4><p>仓库是集中存放镜像文件的场所，有时候会把仓库和仓库注册服务器（Registry）看做同一事物，并不严格区分。实际上，仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签（tag）；</p>
+<p>仓库分为公开仓库（Public）和私有仓库（Private）两种形式；</p>
+<p>最大的公开仓库是 Docker Hub （<a target="_blank" rel="noopener" href="https://hub.docker.com/%EF%BC%89%EF%BC%8C%E5%AD%98%E6%94%BE%E4%BA%86%E6%95%B0%E9%87%8F%E5%BA%9E%E5%A4%A7%E7%9A%84%E9%95%9C%E5%83%8F%E4%BE%9B%E7%94%A8%E6%88%B7%E4%B8%8B%E8%BD%BD%EF%BC%9B">https://hub.docker.com/），存放了数量庞大的镜像供用户下载；</a></p>
+<p>用户也可以在本地网络内创建一个私有仓库；</p>
+<p>当用户创建了自己的镜像之后就可以使用 push 命令将它上传到公有或者私有仓库，</p>
+<p>这样下次在另外一台机器上使用这个镜像时候，只需要从仓库上 pull 下来即可；</p>
+<p><code>注：Docker 仓库的概念跟 Git 类似，注册服务器也类似于 GitHub 这样的托管服务；</code></p>
+<h4 id="仓库的日常操作"><a href="#仓库的日常操作" class="headerlink" title="仓库的日常操作"></a>仓库的日常操作</h4><p>用户可通过 docker search 命令来查找官方仓库中的镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search rabbitmq</span><br></pre></td></tr></table></figure>
+
+<p>可以看到返回了很多包含关键字的镜像，其中包括镜像名字、描述、星级（表示该镜像的受欢迎程度）、是否官方创建、是否自动创建； 官方的镜像说明是官方项目组创建和维护的，<strong>automated 资源允许用户验证镜像的来源和内容；</strong></p>
+<p>根据是否是官方提供，可将镜像资源分为两类:</p>
+<p>一种是类似 centos 这样的基础镜像，被称为基础或根镜像。这些基础镜像是由 Docker 公司创建、验证、支持、提供。这样的镜像往往使用单个单词作为名字；</p>
+<p>还有一种类型，比如 tianon&#x2F;centos 镜像，它是由 Docker 的用户创建并维护的，往往带有用户名称前缀。可以通过前缀 user_name&#x2F; 来指定使用某个用户提供的镜像，比如 tianon 用户；</p>
+<p>并利用 docker pull 命令来将它下载到本地：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull rabbitmq</span><br><span class="line"></span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>阿里云镜像获取地址：<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">容器镜像服务 (aliyun.com)</a></p>
+<p>登陆后，左侧菜单选中镜像加速器就可以看到你的专属地址了：<br><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205241458960.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#复制的代码</span><br><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://svye10a1.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Docker-使用示例"><a href="#Docker-使用示例" class="headerlink" title="Docker 使用示例"></a>Docker 使用示例</h2><h3 id="Docker-安-装-MySQL"><a href="#Docker-安-装-MySQL" class="headerlink" title="Docker 安 装 MySQL"></a>Docker 安 装 MySQL</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-install-mysql.html">Docker 安装 MySQL | 菜鸟教程</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#下载MySQL 镜像：（其中-e 是指定环境变量）</span><br><span class="line">docker pull mysql:latest	（安装的是mysql 8.0）</span><br><span class="line">docker run -p 3306:3306 -e MYSQL_DATABASE=workdb -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest</span><br><span class="line"></span><br><span class="line">#进入容器：</span><br><span class="line">docker exec -it 3e8bf7392b4e bash</span><br><span class="line">#登录MySQL：</span><br><span class="line">mysql -u root -p</span><br><span class="line">#修改密码：</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">#授权远程登录访问：</span><br><span class="line">CREATE USER &#x27;wkcto&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123456&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27; wkcto&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-安-装-Nginx"><a href="#Docker-安-装-Nginx" class="headerlink" title="Docker 安 装 Nginx"></a>Docker 安 装 Nginx</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#下载 Nginx 镜像：</span><br><span class="line">docker pull nginx</span><br><span class="line">docker run -d -p 80:80 nginx</span><br><span class="line"></span><br><span class="line">#进入容器：</span><br><span class="line">docker exec -it 3e8bf7392b4e bash</span><br><span class="line"></span><br><span class="line">#浏览器访问Nginx：</span><br><span class="line">http://192.168.230.128:80</span><br><span class="line"></span><br><span class="line">#Nginx 部署静态网站：</span><br><span class="line">#将linux 的文件拷贝到 docker 容器某个目录下：</span><br><span class="line">docker cp /root/test.html bf8a58328e18:/usr/share/nginx/html</span><br><span class="line"></span><br><span class="line">#Nginx修改配置文件需要vi编辑器去etc/nginx 中修改，</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dokcer-安-装-Zookeeper"><a href="#Dokcer-安-装-Zookeeper" class="headerlink" title="Dokcer 安 装 Zookeeper"></a>Dokcer 安 装 Zookeeper</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#下载Zookeeper 镜像：</span><br><span class="line">docker pull zookeeper</span><br><span class="line">docker run -p 2181:2181 -d zookeeper</span><br><span class="line"></span><br><span class="line">#进入容器：</span><br><span class="line">docker exec -it 3e8bf7392b4e bash</span><br><span class="line">#客户端工具访问 Zookeeper：</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-安装-RabbitMQ"><a href="#Docker-安装-RabbitMQ" class="headerlink" title="Docker 安装 RabbitMQ"></a>Docker 安装 RabbitMQ</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull rabbitmq:management</span><br><span class="line"></span><br><span class="line">docker run -di --name=peijie_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management</span><br></pre></td></tr></table></figure>
+
+<h3 id="更多实例"><a href="#更多实例" class="headerlink" title="更多实例"></a>更多实例</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-install-nginx.html">Docker 安装实例| 菜鸟教程</a></p>
+<p>查找安装实例的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name tomcat</span><br></pre></td></tr></table></figure>
+
+<p>解决 Docker 容器没有 vi 编辑器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#1、更新软件包再下载</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install vi</span><br><span class="line">#2、可以使用cat命令实现docker容器内写入的目的</span><br><span class="line">cat &gt; hk.html &lt;&lt; EOF, hk.html命令是希望使用cat写入的目标文件，</span><br><span class="line">&lt;&lt; 后面指定的EOF是指定的交互式输入终止符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-自定义镜像"><a href="#Docker-自定义镜像" class="headerlink" title="Docker 自定义镜像"></a>Docker 自定义镜像</h2><h3 id="Dockerfile-文件和基本结构"><a href="#Dockerfile-文件和基本结构" class="headerlink" title="Dockerfile 文件和基本结构"></a>Dockerfile 文件和基本结构</h3><blockquote>
+<p>Dockerfile 用于构建 Docker 镜像，Dockerfile 文件是由一行行命令语句组成， 基于这些命令即可以构建一个镜像；</p>
+<p>Dockerfile 分为四部分：</p>
+<p>基础镜像信息； 维护者信息； 镜像操作指令；容器启动时执行指令；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#例如</span><br><span class="line"></span><br><span class="line">FROM centos:latest</span><br><span class="line">MAINTAINER wkcto</span><br><span class="line">ADD jdk-8u121-linux-x64.tar.gz /usr/local</span><br><span class="line">ENV JAVA_HOME /usr/local/jdk1.8.0_121</span><br><span class="line">ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">ENV PATH $PATH:$JAVA_HOME/bin</span><br><span class="line">CMD java -version</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="Dockerfile-指令"><a href="#Dockerfile-指令" class="headerlink" title="Dockerfile 指令"></a><strong>Dockerfile</strong> <strong>指令</strong></h3><p>1、FROM</p>
+<p>Dockerfile 文件的第一条指令必须为 FROM 指令。</p>
+<p>并且，如果在同一个 Dockerfile 中创建多个镜像时，可以使用多个 FROM 指令（每个镜像一次）；</p>
+<p>2、MAINTAINER</p>
+<p>指定维护者信息；</p>
+<p>3、ENV</p>
+<p>指定一个环境变量，会被后续 RUN 指令使用，并在容器运行时保持；</p>
+<p>4、ADD</p>
+<p>复制指定的<src>到容器中的<dest>；</p>
+<p>5、EXPOSE</p>
+<p>告诉 Docker 服务端容器暴露的端口号，供互联系统使用，在启动容器时需要通过 -p 映射端口，Docker 主机会自动分配一个端口转发到指定的端口；</p>
+<p>6、RUN</p>
+<p>RUN 指令将在当前镜像基础上执行指定命令，并提交为新的镜像， 当命令较长时可以使用 \ 来换行；</p>
+<p>7、CMD</p>
+<p>指定启动容器时执行的命令，每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。</p>
+<h3 id="自定义镜像"><a href="#自定义镜像" class="headerlink" title="自定义镜像"></a>自定义镜像</h3><p>定义 Dockerfile 文件： (vim Dockerfile)</p>
+<p><strong>JDK</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:latest</span><br><span class="line">MAINTAINER djx</span><br><span class="line">ADD jdk-8u121-linux-x64.tar.gz /usr/local</span><br><span class="line">ENV JAVA_HOME /usr/local/jdk1.8.0_121</span><br><span class="line">ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">ENV PATH $PATH:$JAVA_HOME/bin</span><br><span class="line">CMD java -version</span><br></pre></td></tr></table></figure>
+
+<p><strong>Tomcat</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM djx_jdk1.8.0_121</span><br><span class="line">MAINTAINER djx</span><br><span class="line">ADD apache-tomcat-8.5.24.tar.gz /usr/local/</span><br><span class="line">ENV CATALINA_HOME /usr/local/apache-tomcat-8.5.24</span><br><span class="line">ENV PATH $PATH:$CATALINA_HOME/lib:$CATALINA_HOME/bin</span><br><span class="line">EXPOSE 8080</span><br><span class="line">CMD /usr/local/apache-tomcat-8.5.24/bin/catalina.sh run</span><br></pre></td></tr></table></figure>
+
+<p><strong>Mysql</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:centos6</span><br><span class="line"></span><br><span class="line">MAINTAINER djx</span><br><span class="line"></span><br><span class="line">RUN yum install mysql-server mysql -y</span><br><span class="line"></span><br><span class="line">RUN /etc/init.d/mysqld start &amp;&amp;\</span><br><span class="line">mysql -e &quot;grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;123456&#x27; WITH GRANT OPTION ;&quot;&amp;&amp;\</span><br><span class="line">mysql -e &quot;grant all privileges on *.* to &#x27;root&#x27;@&#x27;localhost&#x27; identified by &#x27;123456&#x27;</span><br><span class="line">WITH GRANT OPTION ;&quot;&amp;&amp;\</span><br><span class="line">mysql -uroot -p123456 -e &quot;show databases;&quot;</span><br><span class="line"></span><br><span class="line">EXPOSE 3306</span><br><span class="line"></span><br><span class="line">CMD /usr/bin/mysqld_safe</span><br></pre></td></tr></table></figure>
+
+<p><strong>Redis</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:latest</span><br><span class="line">MAINTAINER djx</span><br><span class="line">RUN yum install epel-release -y &amp;&amp; yum install redis -y &amp;&amp; yum install net-tools -y EXPOSE 6379</span><br><span class="line">CMD /usr/bin/redis-server –protected-mode no</span><br></pre></td></tr></table></figure>
+
+<p>构建镜像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker build -t djx_jdk1.8.0_121（镜像名）</span><br><span class="line"></span><br><span class="line">docker build -t djx-tomcat-8.5.24 （镜像名）</span><br><span class="line"></span><br><span class="line">docker build -t djx-mysql</span><br><span class="line"></span><br><span class="line">docker build -t djx-redis</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运行镜像：(docker images：查看镜像名前面的镜像 ID)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d 镜像ID</span><br><span class="line"></span><br><span class="line">docker run -d -p 8080:8080 镜像ID</span><br><span class="line"></span><br><span class="line">docker run -d -p 3306:3306 镜像ID</span><br><span class="line"></span><br><span class="line">docker run -d -p 6379:6379 镜像ID</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-项目部署"><a href="#Docker-项目部署" class="headerlink" title="Docker 项目部署"></a>Docker 项目部署</h2><h4 id="Jar-包"><a href="#Jar-包" class="headerlink" title="Jar 包"></a>Jar 包</h4><p>1、上传 jar 文件到 &#x2F;root&#x2F;docker；定义 dockerfile 文件，用于创建项目镜像。</p>
+<p>2、文件内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM djx_jdk1.8.0_121</span><br><span class="line">MAINTAINER djx</span><br><span class="line">ADD springboot-web-1.0.0.jar（jar的名字） /opt</span><br><span class="line">RUN chmod +x /opt/springboot-web-1.0.0.jar（jar名字） CMD java -jar /opt/springboot-web-1.0.0.jar（jar名字）</span><br></pre></td></tr></table></figure>
+
+<p>3、构建和运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">构建镜像：docker build -t 项目名（jar名字）</span><br><span class="line">运行容器：docker run -d -p 项目需要的端口:映射到host的端口 容器ID</span><br></pre></td></tr></table></figure>
+
+<p>4、注意数据库或者其他你需要用的组件的启动</p>
+<h4 id="War-包"><a href="#War-包" class="headerlink" title="War 包"></a>War 包</h4><p><code>必须放Tomcat服务器中</code></p>
+<p>1、同上上传，dockerfile 内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM djx-tomcat-8.5.24</span><br><span class="line">MAINTAINER djx</span><br><span class="line">ADD springboot-web-1.0.0.war（war名） /usr/local/apache-tomcat-8.5.24/webapps</span><br><span class="line">EXPOSE 8080</span><br><span class="line">CMD /usr/local/apache-tomcat-8.5.24/bin/catalina.sh run</span><br></pre></td></tr></table></figure>
+
+<p>2、构建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker build -t springboot-web-war（war名）</span><br><span class="line">docker run -d -p 8080:8080 项目名或容器ID</span><br></pre></td></tr></table></figure>
+
+<p>3、注意项目内嵌使用的端口，但是放入 tomcat 中就是使用 tomcat 的端口；打包 war 再 build 中添加<finalName>djx</finalName>这样打包会生成改名字的 war</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/" rel="tag"># Linux应用部署</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/05/24/JAVA/1%E3%80%81JAVA%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="prev" title="Java开发基础">
+                Java开发基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+  
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://baidu.com" title="百度" target="_blank">百度</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hollischuang.github.io/toBeTopJavaer/#/menu" title="JAVA成神之路" target="_blank">JAVA成神之路</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://programmercarl.com/" title="算法录" target="_blank">算法录</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">1.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD"><span class="nav-number">1.1.</span> <span class="nav-text">Docker 安装卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8"><span class="nav-number">1.2.</span> <span class="nav-text">Docker 服务启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E6%9C%8D%E5%8A%A1%E4%BF%A1%E6%81%AF"><span class="nav-number">1.3.</span> <span class="nav-text">Docker 服务信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.4.</span> <span class="nav-text">Docker 运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-Docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">第一个 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5-Docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">进入 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E6%9C%BA%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8"><span class="nav-number">1.4.3.</span> <span class="nav-text">客户机访问容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">Docker 核心组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E6%9E%B6%E6%9E%84"><span class="nav-number">1.5.1.</span> <span class="nav-text">Docker 架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0"><span class="nav-number">1.5.2.</span> <span class="nav-text">Docker 核心要素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">三个核心要素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E9%95%9C%E5%83%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">Docker 镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">镜像的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E7%9A%84%E7%BB%84%E6%88%90%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">镜像的组成结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">镜像的日常操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">1.5.4.</span> <span class="nav-text">Docker 容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">容器的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">容器的日常操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E4%BB%93%E5%BA%93"><span class="nav-number">1.5.5.</span> <span class="nav-text">Docker 仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.5.1.</span> <span class="nav-text">仓库的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.5.2.</span> <span class="nav-text">仓库的日常操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F"><span class="nav-number">1.6.</span> <span class="nav-text">Docker 镜像加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.7.</span> <span class="nav-text">Docker 使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%89-%E8%A3%85-MySQL"><span class="nav-number">1.7.1.</span> <span class="nav-text">Docker 安 装 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%89-%E8%A3%85-Nginx"><span class="nav-number">1.7.2.</span> <span class="nav-text">Docker 安 装 Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dokcer-%E5%AE%89-%E8%A3%85-Zookeeper"><span class="nav-number">1.7.3.</span> <span class="nav-text">Dokcer 安 装 Zookeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E5%AE%89%E8%A3%85-RabbitMQ"><span class="nav-number">1.7.4.</span> <span class="nav-text">Docker 安装 RabbitMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.7.5.</span> <span class="nav-text">更多实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F"><span class="nav-number">1.8.</span> <span class="nav-text">Docker 自定义镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dockerfile-%E6%96%87%E4%BB%B6%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-number">1.8.1.</span> <span class="nav-text">Dockerfile 文件和基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dockerfile-%E6%8C%87%E4%BB%A4"><span class="nav-number">1.8.2.</span> <span class="nav-text">Dockerfile 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F"><span class="nav-number">1.8.3.</span> <span class="nav-text">自定义镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="nav-number">1.9.</span> <span class="nav-text">Docker 项目部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Jar-%E5%8C%85"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">Jar 包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#War-%E5%8C%85"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">War 包</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; Sat May 21 2022 08:00:00 GMT+0800 (GMT+08:00) &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">代家鑫</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共13.2k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

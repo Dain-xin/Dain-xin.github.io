@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客使用说明</title>
+    <url>/2022/05/29/%E5%BC%80%E5%A7%8B/%E7%BD%91%E7%AB%99%E5%BC%80%E5%A7%8B/</url>
+    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;FILE NAME&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">git push -u origin main</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">git checkout</span><br><span class="line">git fetch</span><br><span class="line">git commit -m <span class="string">&quot;delete all files&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;dain&quot;</span></span><br><span class="line">git push</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）</span><br><span class="line">// . 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>操作命令</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>博客说明</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java开发基础</title>
     <url>/2022/05/24/JAVA/1%E3%80%81JAVA%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[]]></content>
@@ -40,22 +56,6 @@
       </categories>
       <tags>
         <tag>JAVA项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客使用说明</title>
-    <url>/2022/05/29/%E5%BC%80%E5%A7%8B/%E7%BD%91%E7%AB%99%E5%BC%80%E5%A7%8B/</url>
-    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;FILE NAME&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">git push -u origin main</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">git checkout</span><br><span class="line">git fetch</span><br><span class="line">git commit -m <span class="string">&quot;delete all files&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;dain&quot;</span></span><br><span class="line">git push</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）</span><br><span class="line">// . 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>操作命令</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>博客说明</tag>
       </tags>
   </entry>
   <entry>
