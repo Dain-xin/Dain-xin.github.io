@@ -1,36 +1,437 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客使用说明</title>
-    <url>/2022/05/29/%E5%BC%80%E5%A7%8B/%E7%BD%91%E7%AB%99%E5%BC%80%E5%A7%8B/</url>
+    <title>博客Hexo和Git说明</title>
+    <url>/2023/05/24/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;FILE NAME&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">git push -u origin main</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">git checkout</span><br><span class="line">git fetch</span><br><span class="line">git commit -m <span class="string">&quot;delete all files&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;dain&quot;</span></span><br><span class="line">git push</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）</span><br><span class="line">// . 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
         <category>操作命令</category>
-        <category>Hexo</category>
+        <category>Hexo-Git</category>
       </categories>
       <tags>
-        <tag>博客说明</tag>
+        <tag>常用</tag>
       </tags>
   </entry>
   <entry>
+    <title>Spring Cloud学习笔记1</title>
+    <url>/2022/05/25/JAVA/SpringCloud/index/</url>
+    <content><![CDATA[<p>网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。</p>
+<p>（网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器）</p>
+<p>熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。</p>
+<p>处理方式：</p>
+<ol>
+<li>超时：如果服务连接超时、即使未成功也会被释放资源；</li>
+<li>仓壁模式：就是线程池，</li>
+<li>限流功能-Sentinel，</li>
+<li>断路器模式，通过下图，让我们的请求处于closed状态，如果我们的服务调用失败率到达一定的值域就会open状态，然后进行重置超时，成功就closed，否则就继续open；</li>
+</ol>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png" alt="image-20220525203610863"></p>
+<p>Sentinel：限流</p>
+<p>例如：我们启动Sentinel服务，监控8080端口，（三板斧，pom导入jar、yml指定Sentinel-dashboard）把我们的服务发送给我们的Sentinel控制台但是不显示，懒加载，访问后可见服务分级，通过Sentinel控制台设置限流规则（就是我们再Sentinel控制台服务端设置规则，发送给我们的客户端，然后就可以生效我们的限流规则）</p>
+<p>Sentinel的持久化规则：</p>
+<ol>
+<li>pull模式</li>
+<li>push模式，通过我们watch监听器</li>
+</ol>
+<p>Sentinel云原生</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png" alt="image-20220525210640723"></p>
+<p>链路追踪：我们进行一次服务调用，但是无法发现我们的服务调用的路径（网关、服务提供、服务消费、其他微服务）可以排查我们的服务出错的位置。</p>
+<p>zipkin+Selush、skywalking</p>
+<p>9：30</p>
+<p>Nacos服务注册</p>
+<p>本质上就是：Post类型请求类型的http请求</p>
+<p>Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。</p>
+<p>在我们SpringBoot项目启动后执行我们的Nacos的那个注册方法 registerInstance方法。</p>
+<p>我们SpringBoot启动run方法，通过广播起发送时间，对我们感兴趣的事情进行监听机制来执行我们方法，因此我们Nacos服务注册的需要写监听器，但是我们SpringCould团队提供了一个接口（ServiceRegister）让我们的Nacos或者Eureka来实现接口的NacosServiceRegister   完成register（）方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png" alt="image-20220526204011740"></p>
+<p>Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。</p>
+<p>OpenFeign：服务调用，设计思想。</p>
+<p>9：00</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>Spring Cloud</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java开发基础</title>
-    <url>/2022/05/24/JAVA/1%E3%80%81JAVA%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
+    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h3 id="什么是面向过程？"><a href="#什么是面向过程？" class="headerlink" title="什么是面向过程？"></a>什么是面向过程？</h3><p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
+<p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
+<p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
+<h3 id="什么是面向对象？"><a href="#什么是面向对象？" class="headerlink" title="什么是面向对象？"></a>什么是面向对象？</h3><p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 </p>
+<p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
+<p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
+]]></content>
       <categories>
         <category>JAVA</category>
         <category>基础知识</category>
       </categories>
       <tags>
-        <tag>JAVA基础</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
-    <title>微服务项目开发手册</title>
-    <url>/2022/05/24/%E4%BC%97%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/1%E3%80%81%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</url>
+    <title>算法2022复习题</title>
+    <url>/2022/05/25/%E7%AE%97%E6%B3%95/2022%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="复习资料"><a href="#复习资料" class="headerlink" title="复习资料"></a>复习资料</h2><h3 id="一、简答题："><a href="#一、简答题：" class="headerlink" title="一、简答题："></a>一、简答题：</h3><p>1、什么是时间复杂度？</p>
+<p> 定性描述一个算法的运行时间</p>
+<p>2、什么是 STL？</p>
+<p> 英文全称 standard template library，中文可译为标准模板库或者泛型库，其包含有大量的模板类和模板函数，是 C++ 提供的一个基础模板的集合，用于完成诸如输入&#x2F;输出、数学计算等功能。</p>
+<p>3、什么是空间复杂度？</p>
+<p> 一个算法在运行过程中临时占用存储空间大小的量度</p>
+<p>4、什么是直接递归和间接递归？</p>
+<p> 直接递归调用 调用的是<strong>函数本身</strong>；</p>
+<p> 间接递归调用 调用的是<strong>其他函数</strong>。</p>
+<p>5、消除递归一般用到什么数据结构？</p>
+<p> 栈来做消除递归，模拟内存处理过程。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//状态机：看卡即可</span></span><br><span class="line"><span class="comment">//要存储的数据</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="comment">//方法参数</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//返回地址</span></span><br><span class="line">    <span class="type">int</span> returnAddress;</span><br><span class="line">    <span class="comment">//构造器及getter，setter</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈</span></span><br><span class="line">Stack&lt;Data&gt; myStack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//状态机实现运算过程</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">execute</span><span class="params">(<span class="type">int</span> num)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i!=<span class="number">6</span>)&#123;       <span class="comment">//结束</span></span><br><span class="line">            <span class="keyword">switch</span>(i)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:     <span class="comment">//初始化</span></span><br><span class="line">                    i=<span class="number">2</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:     <span class="comment">//条件是否结束</span></span><br><span class="line">                    <span class="keyword">if</span>(num==<span class="number">1</span>)&#123;</span><br><span class="line">                        result=<span class="number">1</span>;</span><br><span class="line">                        i=<span class="number">4</span>;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        i=<span class="number">3</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:     <span class="comment">//递归入栈</span></span><br><span class="line">                    <span class="type">Data</span> <span class="variable">data</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Data</span>(num);</span><br><span class="line">                    myStack.push(data);</span><br><span class="line">                    num--;   <span class="comment">//条件发生变化</span></span><br><span class="line">                    i=<span class="number">2</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:     <span class="comment">//栈是否空</span></span><br><span class="line">                    <span class="keyword">if</span>(myStack.isEmpty())&#123;</span><br><span class="line">                        i=<span class="number">6</span>;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        i=<span class="number">5</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">5</span>:     <span class="comment">//回溯出栈</span></span><br><span class="line">                    <span class="type">Data</span> <span class="variable">data1</span> <span class="operator">=</span> myStack.pop();</span><br><span class="line">                    result*=data1.n;</span><br><span class="line">                    i=<span class="number">4</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>6、简述分治法的设计思想</p>
+<pre><code> 将一个难以直接解决的大问题，分割成一些规模较小的相同问题，以便各个击破，分而治之
+</code></pre>
+<p>7、动态规划是将多阶段决策问题进行公式化的一种技术，动态规划算法一般要具有 3 个性质，是哪三个性质并对这三个性质进行简要的说明。</p>
+<p><strong>（1）最优化原理：</strong>假设问题的最优解所包括的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。</p>
+<p><strong>（2）无后效性：</strong>即某阶段状态一旦确定。就不受这个状态以后决策的影响。也就是说，某状态以后的过程不会影响曾经的状态。仅仅与当前状态有关；</p>
+<p><strong>（3）有重叠子问题：</strong>即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到（该性质并非动态规划适用的必要条件，可是假设没有这条性质，动态规划算法同其它算法相比就不具备优势）。</p>
+<h3 id="二、计算题"><a href="#二、计算题" class="headerlink" title="二、计算题"></a>二、计算题</h3><p>&#x3D;&#x3D;计算时间复杂度&#x3D;&#x3D;</p>
+<blockquote>
+<p>先找出变量值 i 和循环内代码执行次数 t 之间的函数关系，当变量值等于跳出循环值 n 的时候，解出 t</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int i=1,n;</span><br><span class="line">while(i&lt;n/2)&#123;</span><br><span class="line">    i=i*2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>次数:</th>
+<th>第 0 次</th>
+<th>第 1 次</th>
+<th>第 2 次</th>
+<th>第 3 次</th>
+<th>第 t 次</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>变量值:</td>
+<td>i&#x3D;1</td>
+<td>i&#x3D;2</td>
+<td>i&#x3D;4</td>
+<td>i&#x3D;8</td>
+<td>i&#x3D;<img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/gif.latex"></td>
+</tr>
+</tbody></table>
+<p>找出函数关系后，当变量值等于跳出循环值的时候，也就是 i&#x3D;n&#x2F;2 时，也就是 i&#x3D;<img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205232058272.gif" alt="2^{t}">&#x3D;n&#x2F;2 时，解出 t 就是时间复杂度了。也就是<img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205232058747.gif" alt="\log_{2}\frac{n}{2}"></p>
+</blockquote>
+<p><a href="https://blog.csdn.net/qq_40878688/article/details/83719910">嵌套循环</a></p>
+<p><a href="https://www.cnblogs.com/fengty90/p/3768827.html">快速排序</a></p>
+<p><a href="https://blog.csdn.net/ypxcan/article/details/120452530">递归</a></p>
+<h3 id="三、程序设计题"><a href="#三、程序设计题" class="headerlink" title="三、程序设计题"></a>三、程序设计题</h3><blockquote>
+<p>​		僞代碼可以使用任何一种你熟悉的文字（中文，英文 等等，关键是你把你程序的意思表达出来）编写的注释和信息文本形式的算法实现。它没有任何编程语言的语法，因此无法由计算机编译或解释。</p>
+</blockquote>
+<h4 id="1、用蛮力法求解"><a href="#1、用蛮力法求解" class="headerlink" title="1、用蛮力法求解"></a>1、用蛮力法求解</h4><p>给定 n 个整数表示一个商店连续 n 天的销售量。如果某天之前销售量在增长，而后一天销售量减少，则称这一天为折点，反过来如果之前销售量减少而后一天销售量增长，也称这一天为折点。其他的天都不是折点。如下图中，第 3 天和第 6 天是折点。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205231951696.png" alt="image-20220523195158561"></p>
+<p>给定 n 个整数 a1, a2, …, an 表示销售量，请计算出这些天总共有多少个折点。<br>　为了减少歧义，我们给定的数据保证：在这 n 天中相邻两天的销售量总是不同的，即 ai-1≠ai。注意，如果两天不相邻，销售量可能相同。</p>
+<p>输入格式</p>
+<p>输入的第一行包含一个整数 n。</p>
+<p>第二行包含 n 个整数，用空格分隔，分别表示 a1, a2, …, an。</p>
+<p>输出格式</p>
+<p>输出一个整数，表示折点出现的数量。</p>
+<p>样例输入</p>
+<p>7</p>
+<p>5 4 1 2 3 6 4</p>
+<p>样例输出</p>
+<p>2</p>
+<p>评测用例规模与约定</p>
+<p>所有评测用例满足：1 ≤ n ≤ 1000，每天的销售量是不超过 10000 的非负整数。</p>
+<p>解：参考代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="type">int</span> n, i, count;</span><br><span class="line">  <span class="comment">// 读入数据</span></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">  <span class="comment">// 计算折点</span></span><br><span class="line">  count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;n<span class="number">-1</span>; i++)</span><br><span class="line">    	<span class="keyword">if</span>((a[i<span class="number">-1</span>] &lt; a[i] &amp;&amp; a[i] &gt; a[i+<span class="number">1</span>]) || (a[i<span class="number">-1</span>] &gt; a[i] &amp;&amp; a[i] &lt; a[i+<span class="number">1</span>]))</span><br><span class="line">     		count++;</span><br><span class="line">  <span class="comment">// 输出结果</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, count);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>从第二元素a[i] 开始遍历</li>
+<li>(a[i-1] &lt; a[i] &amp;&amp; a[i] &gt; a[i+1])  或者   (a[i-1] &gt; a[i] &amp;&amp; a[i] &lt; a[i+1])</li>
+<li>满足条件再count++。</li>
+</ol>
+</blockquote>
+<h4 id="2、用蛮力法求解"><a href="#2、用蛮力法求解" class="headerlink" title="2、用蛮力法求解"></a>2、用蛮力法求解</h4><p>小明正在利用股票的波动程度来研究股票。小明拿到了一只股票每天收盘时的价格，他想知道，这只股票连续几天的最大波动值是多少，即在这几天中某天收盘价格与前一天收盘价格之差的绝对值最大是多少。</p>
+<p>输入格式</p>
+<p>输入的第一行包含了一个整数 n，表示小明拿到的收盘价格的连续天数。</p>
+<p>第二行包含 n 个正整数，依次表示每天的收盘价格。</p>
+<p>输出格式</p>
+<p>输出一个整数，表示这只股票这 n 天中的最大波动值。</p>
+<p>样例输入</p>
+<p>6</p>
+<p>2 5 5 7 3 5</p>
+<p>样例输出</p>
+<p>4</p>
+<p>样例说明</p>
+<p>第四天和第五天之间的波动最大，波动值为|3-7|&#x3D;4。</p>
+<p>评测用例规模与约定</p>
+<p>对于所有评测用例，2 ≤ n ≤ 1000。股票每一天的价格为 1 到 10000 之间的整数。</p>
+<p>解：参考代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX(x, y) ((x &gt; y) ? (x) : (y))</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="type">int</span> n, first, second, delta, maxval=<span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 输入n，输第１个数（从逻辑上来说应该写两句，为了简洁只需要写一句）</span></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;first);</span><br><span class="line">  <span class="keyword">while</span>(--n) &#123;</span><br><span class="line">    <span class="comment">//　输入第2至第n个数</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;second);</span><br><span class="line">    <span class="comment">// 求差值（波动值），取绝对值，求最大值</span></span><br><span class="line">   delta = second - first;</span><br><span class="line">    <span class="keyword">if</span>(delta&lt;<span class="number">0</span>)</span><br><span class="line">      delta = -delta;</span><br><span class="line">    maxval = <span class="built_in">MAX</span>(maxval, delta);</span><br><span class="line">    first = second;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 输出结果</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, maxval);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>目标：求相邻的数差值最大的的数</p>
+<ol>
+<li>遍历输入需要输入的个数和第一个数据first；</li>
+<li>循环进入第二个数据second，先得到第一个和第二个的差值delta，；</li>
+<li>如果是负数就变成正数（可以用JAVA数学函数，绝对值计算）；</li>
+<li>把差值和当前maxval比较，最大的赋值给maxval；</li>
+<li>然后为了重复使用，second赋值给first</li>
+</ol>
+</blockquote>
+<h4 id="3、用分治法求解"><a href="#3、用分治法求解" class="headerlink" title="3、用分治法求解"></a>3、用分治法求解</h4><p>问题描述</p>
+<p>在一个整数序列 a1, a2, …, an 中，如果存在某个数，大于它的整数数量等于小于它的整数数量，则称其为中间数。在一个序列中，可能存在多个下标不相同的中间数，这些中间数的值是相同的。</p>
+<p>给定一个整数序列，请找出这个整数序列的中间数的值。</p>
+<p>输入格式</p>
+<p>输入的第一行包含了一个整数 n，表示整数序列中数的个数。</p>
+<p>第二行包含 n 个正整数，依次表示 a1, a2, …, an。</p>
+<p>输出格式</p>
+<p>如果约定序列的中间数存在，则输出中间数的值，否则输出-1 表示不存在中间数。</p>
+<p>样例输入</p>
+<p>6</p>
+<p>2 6 5 6 3 5   2 3 5 5 6 6</p>
+<p>样例输出</p>
+<p>5</p>
+<p>样例说明</p>
+<p><strong>比 5 小的数有 2 个，比 5 大的数也有 2 个。</strong></p>
+<p>样例输入</p>
+<p>4</p>
+<p>3 4 6 7</p>
+<p>样例输出</p>
+<p>-1</p>
+<p>样例说明</p>
+<p>在序列中的 4 个数都不满足中间数的定义。</p>
+<p>样例输入</p>
+<p>5</p>
+<p>3 4 6 6 7</p>
+<p>样例输出</p>
+<p>-1</p>
+<p>样例说明</p>
+<p>在序列中的 5 个数都不满足中间数的定义。</p>
+<p>评测用例规模与约定</p>
+<p>对于所有评测用例，1 ≤ n ≤ 1000，1 ≤ ai ≤ 1000。</p>
+<p>解：参考代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1000</span>;</span><br><span class="line"><span class="type">int</span> val[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="type">int</span> n, mid, leftcount, rightcount;</span><br><span class="line">  <span class="comment">// 输入数据</span></span><br><span class="line">  cin &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    cin &gt;&gt; val[i];</span><br><span class="line">  <span class="comment">// 排序</span></span><br><span class="line">  <span class="built_in">sort</span>(val, val+n);</span><br><span class="line">  <span class="comment">// 找出中间数</span></span><br><span class="line">  mid = n / <span class="number">2</span>;</span><br><span class="line">  leftcount = mid;</span><br><span class="line">  rightcount = n - mid - <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// 去掉左边与中间相同值数的个数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=mid<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</span><br><span class="line">    <span class="keyword">if</span>(val[i] == val[mid])</span><br><span class="line">      leftcount--;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">// 去掉右边与中间相同值数的个数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=mid+<span class="number">1</span>; i&lt;n; i++)</span><br><span class="line">    <span class="keyword">if</span>(val[i] == val[mid])</span><br><span class="line">      rightcount--;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">// 输出结果</span></span><br><span class="line">  <span class="keyword">if</span>(leftcount == rightcount)</span><br><span class="line">    cout &lt;&lt; val[mid] &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    cout &lt;&lt; <span class="number">-1</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>目标：求一个数比它小的数量等于比它大的数量</p>
+<ol>
+<li>定义n、mid、leftCount、rightCount</li>
+<li>先排序，找出中间的数 n&#x2F;2 赋值给mid，那麽左边的数量就是mid，右边的数就是n-mid-1</li>
+<li>去掉左边的和mid的值相等的数，右边同理；</li>
+<li>如果左右的数量相等就输出val[mid]，否则就是-1</li>
+</ol>
+</blockquote>
+<h4 id="4、求解逆序数问题（不懂）"><a href="#4、求解逆序数问题（不懂）" class="headerlink" title="4、求解逆序数问题（不懂）"></a>4、求解逆序数问题（不懂）</h4><p>给定一个整数数组 a[n]，若 i&lt;j，a[i]&gt;a[j]，则&lt;a[i],a[j]&gt;称为一个逆序对。例如：数组（3，1，4，5，2）的逆序对有&lt;3,1&gt;，&lt;3,2&gt;，&lt;4,2&gt;，&lt;5,2&gt;，其逆序对的个数称为逆序数，如数组（3，1，4，5，2）的逆序数为 4.</p>
+<p>请用分治法设计一个程序解决之并分析其时间复杂度。</p>
+<p>解：参考代码</p>
+<p>时间复杂度为 o(nlgn)。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 分治法求数组逆序数</span></span><br><span class="line"><span class="comment"> * 使用分治法求取自然数序列的逆序数，其实现是建立在分治法归并排序的基础上。</span></span><br><span class="line"><span class="comment"> * 主要思路：分而治之，mergeSort_lm方法负责“分”（递归），merge_lm方法负责“治”（归并）。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> * 对于一个自然数序列A，设其逆序数为a，</span></span><br><span class="line"><span class="comment"> * 若将自然数序列划分为B1、B2，那么BI的逆序数+B2的逆序数+B2中元素与B1中元素组成的逆序对个数。</span></span><br><span class="line"><span class="comment"> * 可以按照以上模式（mergeSort_lm方法）不断递归划分至最小单元，在从底向上记录逆序数，</span></span><br><span class="line"><span class="comment"> * 并归并序列（merge_lm方法）。此时，算法复杂度为nlogn。而暴力双重循环法复杂度为n^2。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MergeSortDemo</span> &#123;</span><br><span class="line">	<span class="comment">//设立全局静态变量：ans：逆序数结果、a：原始数组、tmp：临时数组</span></span><br><span class="line">	<span class="keyword">static</span> <span class="type">int</span> ans;</span><br><span class="line">	<span class="keyword">static</span> <span class="type">int</span>[] a;</span><br><span class="line">	<span class="keyword">static</span> <span class="type">int</span>[] tmp;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span>[] a = &#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>&#125;;<span class="comment">//输入的序列</span></span><br><span class="line">		<span class="type">int</span>[] tmp = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">		mergeSort_lm(a,<span class="number">0</span>,a.length-<span class="number">1</span>,tmp);</span><br><span class="line">		System.out.println(ans);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort_lm</span><span class="params">(<span class="type">int</span>[] a,<span class="type">int</span> s,<span class="type">int</span> e,<span class="type">int</span>[] tmp)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(s &lt; e) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> s + (e-s)/<span class="number">2</span>;</span><br><span class="line">            <span class="comment">//递归左边，直到s不满足小于e，最后就是每一个两两元素都会i执行治的算法</span></span><br><span class="line">			mergeSort_lm(a, s, m, tmp);     </span><br><span class="line">			mergeSort_lm(a, m+<span class="number">1</span>, e, tmp);</span><br><span class="line">			merge_lm(a, s, m, e, tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//将不同规模的‘a’逐步分治排序，并归并值tmp中，之后反传递给a</span></span><br><span class="line">	<span class="comment">//s:start index,e:end index,m:mid index</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge_lm</span><span class="params">(<span class="type">int</span>[] a,<span class="type">int</span> s,<span class="type">int</span> m,<span class="type">int</span> e,<span class="type">int</span>[] tmp)</span> &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> <span class="variable">pt</span> <span class="operator">=</span> <span class="number">0</span>;<span class="comment">//保存淘汰下来的数据的</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> s;</span><br><span class="line">		<span class="type">int</span> <span class="variable">p2</span> <span class="operator">=</span> m+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(p1 &lt;= m &amp;&amp; p2 &lt;= e)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[p1] &lt; a[p2])&#123;</span><br><span class="line">				tmp[pt++] = a[p1++];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				tmp[pt++] = a[p2++];</span><br><span class="line">				ans += (m-p1+<span class="number">1</span>);<span class="comment">//记录逆序数</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//收尾判断最后的两份数据的小的保存</span></span><br><span class="line">		<span class="keyword">while</span>(p1 &lt;= m) &#123;</span><br><span class="line">			tmp[pt++] = a[p1++];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(p2 &lt;= m) &#123;</span><br><span class="line">			tmp[pt++] = a[p2++];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; e-s+<span class="number">1</span>;i++) &#123;</span><br><span class="line">			a[s+i] = tmp[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、逆置单链表"><a href="#5、逆置单链表" class="headerlink" title="5、逆置单链表"></a>5、逆置单链表</h4><p>对于一个不带头结点的单链表 L，设计一个递归算法逆置所有结点。编写完整的程序并进行测试，分析其时间复杂度</p>
+<p>解：基本思想：</p>
+<p>将逆置一个单链表 L 表示为一个整体的大问题，如果 L-&gt;next 已经逆置了，此时只需要将 L 链接到 L-&gt;next 的节点末尾就可以了。逆置单链表 L 被分解成了小问题逆置单链表 L-&gt;next。二者具有相同的求解结构。</p>
+<p>参考代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> Node nextNode;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Node</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">2</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">4</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">5</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">6</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">g</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">7</span>);</span><br><span class="line">        <span class="type">Node</span> <span class="variable">h</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">8</span>);</span><br><span class="line">        a.nextNode = b;</span><br><span class="line">        b.nextNode = c;</span><br><span class="line">        c.nextNode = d;</span><br><span class="line">        d.nextNode = e;</span><br><span class="line">        e.nextNode = f;</span><br><span class="line">        f.nextNode = g;</span><br><span class="line">        g.nextNode = h;</span><br><span class="line">        revert(a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Node <span class="title function_">revert</span><span class="params">(Node head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.nextNode == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 到达尾结点</span></span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 一直入栈</span></span><br><span class="line">        <span class="type">Node</span> <span class="variable">revertHead</span> <span class="operator">=</span> revert(head.nextNode);</span><br><span class="line">        <span class="comment">// 出栈并赋值nextNode对象</span></span><br><span class="line">        head.nextNode.nextNode = head;</span><br><span class="line">        head.nextNode = <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 返回尾结点（逆置后的头结点）</span></span><br><span class="line">        <span class="keyword">return</span> revertHead;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Node <span class="title function_">revert2</span>     <span class="params">(Node head)</span> &#123;</span><br><span class="line">        <span class="type">Node</span> <span class="variable">pre</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head.nextNode;</span><br><span class="line">        Node tmp;</span><br><span class="line">        <span class="comment">// 头结点的nextNode应该要置空</span></span><br><span class="line">        pre.nextNode = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 先存放nex结点</span></span><br><span class="line">            tmp = cur.nextNode;</span><br><span class="line">            <span class="comment">// 修改next结点指向pre</span></span><br><span class="line">            cur.nextNode = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li><p>第一种算法通过入栈出栈的方法实现链表逆置</p>
+<p>&#x2F;&#x2F; 一直入栈</p>
+<p>如果head为空return  head</p>
+<p>Node revertHead &#x3D; revert(head.nextNode);<br>&#x2F;&#x2F; 出栈并赋值nextNode对象<br>head.nextNode.nextNode &#x3D; head;<br>head.nextNode &#x3D; null;<br> &#x2F;&#x2F; 返回尾结点（逆置后的头结点）</p>
+<p>return revertHead</p>
+</li>
+<li><p>第二种算法通过不断地把头节点插入到下一个结点的的nextNode，保存这个下一个节点作为头节点来插入到下一次循环中使用。</p>
+<p>&#x2F;&#x2F; 先存放nex结点<br>tmp &#x3D; cur.nextNode;<br>&#x2F;&#x2F; 修改next结点指向pre<br>cur.nextNode &#x3D; pre;<br>pre &#x3D; cur;<br>cur &#x3D; tmp;</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="6、gcd"><a href="#6、gcd" class="headerlink" title="6、gcd"></a>6、gcd</h4><p>设计一个递归算法求二个正整数 x,y 的最大公约数（gcd）,并转换为非递归算法</p>
+<p>解：参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">gcd</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a%b==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> b;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> gcd(b,a%b);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">divisor</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>           <span class="comment">//自定义函数求最大公约数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(b!=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            temp=a%b;              <span class="comment">//a中大数除以b中小数循环取余，直到b及余数为0</span></span><br><span class="line">            a=b;</span><br><span class="line">            b=temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> m,n,t1;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入两个整形数字：&quot;</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scannr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        m = scannr.nextInt();</span><br><span class="line">        n = scannr.nextInt();</span><br><span class="line">        t1=gcd(m,n);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大公因数为：&quot;</span>+t1);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小公倍数为：&quot;</span>+m*n/t1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li><p>输入两个数字，最大公因数算法：大数mod小数，小数mod余数，直到余数为0，最坏的情况就是1</p>
+</li>
+<li><p>递归方式：核心算法</p>
+<p>if(a%b&#x3D;&#x3D;0)<br> return b;<br>else<br> return gcd(b,a%b);</p>
+</li>
+<li><p>非递归就是循环了，a中大数除以b中小数循环取余，直到b及余数为0</p>
+<p> while(b!&#x3D;0)<br>    {<br>        temp&#x3D;a%b;<br>        a&#x3D;b;<br>        b&#x3D;temp;<br>    }<br>    return a;</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="7、幸运数"><a href="#7、幸运数" class="headerlink" title="7、幸运数"></a>7、幸运数</h4><p>小明同学在学习了不同进制之后用数字做起了游戏。小明同学定义了二个函数 f(x)和 g(x)，f(x)求解 x 的十进制表示的各位数字之和，g(x) 求解 x 的二进制表示的各位数字之和，例如：f(123)&#x3D;1+2+3&#x3D;6； 123 的二进制表示为：1111011，g(123)&#x3D;1+1+1+1+0+1+1&#x3D;6。小明同学发现一些整数满足 f(x)&#x3D;g(x)，如：f(123)&#x3D;g(123)，他把这种数称为幸运数，现在他想知道不大于 n 的幸运数有多少个？</p>
+<p>请设计一个递归算法求解该问题并分析其时间复杂度</p>
+<p>解：参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">int</span> n,sum = <span class="number">0</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;输入n(得到n以内符合条件的数)：&quot;</span>);</span><br><span class="line">        n = scanner.nextInt();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (getSum(i,<span class="number">2</span>) == getSum(i,<span class="number">10</span>)) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;符合条件的——&quot;</span>+i);</span><br><span class="line">                sum++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> HEX)</span>            <span class="comment">//计算NEX进制各位数的数字之和</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= NEX)</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> (n%NEX)+getSum(n/NEX,HEX);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>进制的求法，你n mod 进制数，累加</p>
+<p>循环如果2进制和10进制相等就++</p>
+</blockquote>
+<h4 id="8、求解查找假币问题"><a href="#8、求解查找假币问题" class="headerlink" title="8、求解查找假币问题"></a>8、求解查找假币问题</h4><p>有 n(n&gt;3)个硬币，其中有一个假币，且假币较轻，用天平称重得到其重量为 w[i],</p>
+<p>请设计一个程序，用分治法实现，并分析其时间复杂度。</p>
+<p>解：基本思想：</p>
+<p>将假币分成两份去称，轻的那一半包含假币，将轻的那一半又分为两份，接着称，直到剩下最后两枚，轻的那一枚即为假币。</p>
+<p>注意硬币个数可能为奇数，照样分为两半，剩下一个多余的，如果两半等重，多余的那枚即为假币，否则继续处理剩下两半。</p>
+<p>参考代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：  </span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FalseCoin</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">find_false</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;                        </span><br><span class="line">        <span class="comment">//作为遍历的计数器</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">re</span> <span class="operator">=</span> <span class="number">0</span>;                       </span><br><span class="line">        <span class="comment">//re作为返回值</span></span><br><span class="line">        <span class="type">int</span> sum1, sum2, sum3;         </span><br><span class="line">        <span class="comment">//三个用来累加的变量</span></span><br><span class="line">        sum1 = sum2 = sum3 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (low + <span class="number">1</span> == high)             </span><br><span class="line">            <span class="comment">//当遍历到最后两个元素的时候</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[low] &lt; a[high]) &#123;</span><br><span class="line">                re = low;</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                re = high;</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ((high - low + <span class="number">1</span>) % <span class="number">2</span> == <span class="number">0</span>)               </span><br><span class="line">            <span class="comment">//当长度为偶数的时候</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (i = low; i &lt;= low + (high - low + <span class="number">1</span>) / <span class="number">2</span> - <span class="number">1</span>; i++)   </span><br><span class="line">                <span class="comment">//对前半段求和</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum1 += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (i = low + (high - low + <span class="number">1</span>) / <span class="number">2</span>; i &lt;= high; i++)    </span><br><span class="line">                <span class="comment">//对后半段求和</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum2 += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (sum1 &lt; sum2)                </span><br><span class="line">                <span class="comment">//假币在前半段</span></span><br><span class="line">            &#123;</span><br><span class="line">                re = find_false(a, low, low + (high - low + <span class="number">1</span>) / <span class="number">2</span> - <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum2 &lt; sum1)           </span><br><span class="line">                <span class="comment">//假币在后半段</span></span><br><span class="line">            &#123;</span><br><span class="line">                re = find_false(a, low + (high - low + <span class="number">1</span>) / <span class="number">2</span>, high);</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span>                        </span><br><span class="line">            <span class="comment">//当长度为奇数的时候</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (i = low; i &lt;= low + (high - low) / <span class="number">2</span> - <span class="number">1</span>; i++) </span><br><span class="line">                <span class="comment">//对前半段求和</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum1 += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (i = low + (high - low) / <span class="number">2</span> + <span class="number">1</span>; i &lt;= high; i++)</span><br><span class="line">                <span class="comment">//对后半段求和</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum2 += a[i];</span><br><span class="line">            &#125;</span><br><span class="line">            sum3 = a[low + (high - low) / <span class="number">2</span>];           </span><br><span class="line">            <span class="comment">//sum3用于存放中间数据</span></span><br><span class="line">            <span class="keyword">if</span> (sum1&lt;sum2)                    </span><br><span class="line">                <span class="comment">//假币在前半段</span></span><br><span class="line">            &#123;</span><br><span class="line">                re = find_false(a, low, low + (high - low) / <span class="number">2</span> - <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum2 &gt; sum1) &#123;</span><br><span class="line">                re = find_false(a, low + (high - low) / <span class="number">2</span>, high);</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum1 + sum3 == sum2 + sum3)   </span><br><span class="line">                <span class="comment">//中间的那个就是假币！</span></span><br><span class="line">            &#123;</span><br><span class="line">                re = (high - low) / <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> re;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="type">int</span> n, i, re;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入硬币的个数：&quot;</span>);</span><br><span class="line">        n = input.nextInt();</span><br><span class="line">        System.out.println(<span class="string">&quot;请分别输入这个&quot;</span> + n + <span class="string">&quot;个硬币的重量：&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            a[i] = input.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        re = find_false(a, <span class="number">1</span>, n);</span><br><span class="line">        System.out.println(<span class="string">&quot;假币是第&quot;</span> + re + <span class="string">&quot;硬币&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li><p>初始化硬币重量，从第一个开始</p>
+</li>
+<li><p>三种情况，第一只有两个币 low + 1 &#x3D;&#x3D; high ，谁轻谁是假币输出，</p>
+</li>
+<li><p>硬币数偶数：(high - low + 1) % 2 &#x3D;&#x3D; 0，对前后半段求和，前面小，在对前面递归，后面就对后面递归</p>
+<p>if (sum1 &lt; sum2)<br>            &#x2F;&#x2F;假币在前半段<br>        {<br>            re &#x3D; find_false(a, low, low + (high - low + 1) &#x2F; 2 - 1);<br>            return re;<br>   } </p>
+</li>
+<li><p>如果是奇数，中间保留，前后求和，相等，中间输出，反之递归。</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="9、回溯法求解查找假币问题"><a href="#9、回溯法求解查找假币问题" class="headerlink" title="9、回溯法求解查找假币问题"></a>9、回溯法求解查找假币问题</h4><p>有 12 个硬币，用 A-L 表示，其中有一个假币，且假币较轻，真币重量相同。每次选择 4 个硬币放置于天平的左托盘或右托盘进行称重，得到如下结果：</p>
+<p>ABCD EFGH even &#x2F;&#x2F;even 表示二边一样重，天平平衡</p>
+<p>ABCI EFJK up &#x2F;&#x2F;up 表示前者重，ABCI 重量大于 EFJK 重量，天平不平衡；down 表示后者重</p>
+<p>ABIJ EFGH even &#x2F;&#x2F;even 表示二边一样重，天平平衡</p>
+<p>用回溯法实现求解之。</p>
+<p>解：基本思想：</p>
+<p>暴力+回溯法，不妨默认所有硬币都</p>
+<p>是真的，依次进行假设，假设硬币 i 是假币，代入已知的测试结果，满足所有测试数据说明假设正确， 硬币 i 是假币。如果至少有一条测试数据不满足，说明假设错误，该硬币为真币，回溯，对下一个硬币进行假设</p>
+<p>参考代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//理解：初始化数据左右的天平数据，和比较单位</span></span><br><span class="line"><span class="comment">//真币0，开始对所有的硬币遍历，如果第一枚是假的且轻</span></span><br><span class="line"><span class="comment">//对左右的重量累加，left_weight、right_weight</span></span><br><span class="line"><span class="comment">//满足，up、even、down以及大于、小于、等于的情况return false 是假币；</span></span><br><span class="line"><span class="comment">//然后考虑较重的情况，同理</span></span><br><span class="line"><span class="comment">//然后第二枚判断</span></span><br><span class="line"><span class="comment">//最后如果都没退出，拿这枚硬币就是真的。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 已知的测试数据 (每次左托盘放的硬币、右托盘放的硬币、该次比较的结果)</span></span><br><span class="line">string test_data_left[<span class="number">3</span>] = &#123;<span class="string">&quot;ABCD&quot;</span>, <span class="string">&quot;ABCI&quot;</span>, <span class="string">&quot;ABIJ&quot;</span>&#125;;</span><br><span class="line">string test_data_right[<span class="number">3</span>] = &#123;<span class="string">&quot;EFGH&quot;</span>, <span class="string">&quot;EFJK&quot;</span>, <span class="string">&quot;EFGH&quot;</span>&#125;;</span><br><span class="line">string test_result[<span class="number">3</span>] = &#123;<span class="string">&quot;even&quot;</span>, <span class="string">&quot;up&quot;</span>, <span class="string">&quot;even&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 假设所有硬币都是真币，重量相同</span></span><br><span class="line"><span class="type">int</span> weight[<span class="number">12</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isFakeCoin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</span><br><span class="line">        <span class="type">int</span> left_weight = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right_weight = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 在已经对某一个硬币进行假设的情况下，统计估计值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;test_data_left[i].<span class="built_in">length</span>(); j++)&#123;</span><br><span class="line">            left_weight += weight[test_data_left[i][j]-<span class="string">&#x27;A&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;test_data_right[i].<span class="built_in">length</span>(); j++)&#123;</span><br><span class="line">            right_weight += weight[test_data_right[i][j]-<span class="string">&#x27;A&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断估计值与已知的测试数据符不符合，全部符合说明该币是假币，估计正确。</span></span><br><span class="line">        <span class="comment">// 有一条结果不满足说明估计错误，直接返回，对其他硬币进行估计</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left_weight &gt; right_weight &amp;&amp; test_result[i] != <span class="string">&quot;up&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left_weight == right_weight &amp;&amp; test_result[i] != <span class="string">&quot;even&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left_weight &lt; right_weight &amp;&amp; test_result[i] != <span class="string">&quot;down&quot;</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">judge</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// 对所有硬币依次进行假设</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">12</span>; i++)&#123;</span><br><span class="line">        <span class="comment">// 假设硬币i是假币，且重量较轻</span></span><br><span class="line">        weight[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 判断是不是假币</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isFakeCoin</span>())&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 假设硬币i是假币，且重量较重</span></span><br><span class="line">        weight[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 判断是不是假币</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isFakeCoin</span>())&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 执行到这里说明硬币i不是假币, 回溯, 重置为真币</span></span><br><span class="line">        weight[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;假币是: &quot;</span> &lt;&lt; <span class="built_in">char</span>(<span class="built_in">judge</span>() + <span class="string">&#x27;A&#x27;</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="10、a-b-c-d-e-取值互不相同"><a href="#10、a-b-c-d-e-取值互不相同" class="headerlink" title="10、a,b,c,d,e 取值互不相同"></a>10、a,b,c,d,e 取值互不相同</h4><p>a,b,c,d,e 取值互不相同，为 1 到 5 中的一个数，满足 ab-cd-e&#x3D;1 方程，用回溯法设计求解该方程。</p>
+<p>解：参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"><span class="comment">//A,b,c,d,e取值为1到5中的一个数，满足ab-cd+e=1方程，用回溯法设计求解该方程。</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">backtrack02</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] vis=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">6</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> a[]=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">6</span>];</span><br><span class="line">		backtrack(a,<span class="number">0</span>,<span class="number">5</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">backtrack</span><span class="params">(<span class="type">int</span> a[],<span class="type">int</span> k,<span class="type">int</span> n)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(k==n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>( ( (a[<span class="number">0</span>]*<span class="number">10</span>) + a[<span class="number">1</span>] - (a[<span class="number">2</span>]*<span class="number">10</span> + a[<span class="number">3</span>]) + a[<span class="number">4</span>]  )== <span class="number">1</span> )</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.println(a[<span class="number">0</span>]+<span class="string">&quot; &quot;</span>+a[<span class="number">1</span>]+<span class="string">&quot; &quot;</span>+a[<span class="number">2</span>]+<span class="string">&quot; &quot;</span>+a[<span class="number">3</span>]+<span class="string">&quot; &quot;</span>+a[<span class="number">4</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(vis[i]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				vis[i]=<span class="number">1</span>;</span><br><span class="line">				a[k]=i;<span class="comment">//赋值</span></span><br><span class="line">				backtrack(a,k+<span class="number">1</span>,n);</span><br><span class="line">				vis[i]=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 停止条件是k&#x3D;&#x3D;n，判断一次是否满足条件，</p>
+<p>遍历a，对vis标记0操作</p>
+<p>vis[i]&#x3D;1;<br>a[k]&#x3D;i;							&#x2F;&#x2F;赋值 i<br>backtrack(a,k+1,n);	 &#x2F;&#x2F;递归调用<br>vis[i]&#x3D;0;</p>
+</blockquote>
+<h4 id="11、0-1-背包问题（不懂）"><a href="#11、0-1-背包问题（不懂）" class="headerlink" title="11、0-1 背包问题（不懂）"></a>11、0-1 背包问题（不懂）</h4><p>（有 n 个重量分别为 w[1]、w[2] ……w[n]的物品（物品编号为 1 ～ n），它们的价值分别为 v[1]、v[2] ……v[n]，给定一个重量容量为 W 的背包，每个物品要么选中要么不选中，在不超重下，使得放入背包的物品价值最大。</p>
+<p>请用分枝限界法编程解决之，要求编写完整的程序并进行测试，分析其时间复杂度。</p>
+<p>解：参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * 本代码实现了运用优先队列式分支限界法解决了01背包问题。解决问题的大致思想和前2篇博客的回溯法</span></span><br><span class="line"><span class="comment"> * 大致相同，都属于搜索算法，不过实现方式上略有不同。对于子集树问题，利用优先队列式分支限界法</span></span><br><span class="line"><span class="comment"> * 的关键之一就是要确定优先级的设置。在本代码中，优先级设置为每个节点处能够取到的价值上界。  </span></span><br><span class="line"><span class="comment"> * 对于寻找剩余物品的最高价值上界，按照背包中剩余空间依次取剩下的物品，当空间不足以取下一个 </span></span><br><span class="line"><span class="comment"> * 物品时，则将下一个物品的单位重量价值折算到现在的剩余空间中去计算理想最高上界。计算出某个</span></span><br><span class="line"><span class="comment"> * 节点的上界后，比较上界和已经找到的最大值之间的关系。</span></span><br><span class="line"><span class="comment"> * 当然，首先要背包中的物品按照单位重量价值进行排序，方便于后面右子树的剪枝操作。</span></span><br><span class="line"><span class="comment"> * 在本代码中，省略了该排序过程，在初始化物品的重量和价值时，已经按照单位重量的价值排好了序。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 剪枝函数：</span></span><br><span class="line"><span class="comment"> * 对于向左搜索，可以通过是否超过背包容量和该节点价值上界能否超过最大值进行剪枝。</span></span><br><span class="line"><span class="comment"> * 对于向右搜索，则可以用其父节点的上界减去本层物品的价值，即可得到右边节点的上界。 </span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.PriorityQueue;</span><br><span class="line"><span class="comment">//定义节点中的参数以及优先级设置的对象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">thingNode</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;thingNode&gt;&#123;</span><br><span class="line">	<span class="type">int</span> weight;<span class="comment">//该节点目前背包中的重量</span></span><br><span class="line">	<span class="type">double</span> value;<span class="comment">//该节点目前背包中的总价值</span></span><br><span class="line">	<span class="type">double</span> upprofit;<span class="comment">//该节点能够达到的价值上界</span></span><br><span class="line">	<span class="type">int</span> Left; 	<span class="comment">//该节点是否属于左节点（用于最终构造最优解）</span></span><br><span class="line">	<span class="type">int</span> level;  <span class="comment">//该节点是第几个物品的选择</span></span><br><span class="line">	thingNode father; <span class="comment">//该节点的父节点</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(thingNode node)</span>&#123;</span><br><span class="line">        <span class="comment">//方法重写，判断node节点的价值和本节点的价值关系-1、0、1</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">this</span>.upprofit&lt;node.upprofit)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">this</span>.upprofit == node.upprofit)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">bag01</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> <span class="variable">capacity</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span>[] weight = &#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	<span class="type">double</span>[] value = &#123;<span class="number">6</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">4</span>&#125;;</span><br><span class="line">	<span class="type">int</span> <span class="variable">maxValue</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span>[] bestWay = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">		<span class="type">bag01</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">bag01</span>();</span><br><span class="line">		b.getMaxValue();</span><br><span class="line">		System.out.println(<span class="string">&quot;该背包能够取到的最大价值为:&quot;</span>+b.maxValue);</span><br><span class="line">        </span><br><span class="line">		System.out.println(<span class="string">&quot;取出的方法为:&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i : bestWay)</span><br><span class="line">			System.out.print(i+<span class="string">&quot;  &quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getMaxValue</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//new一个队列</span></span><br><span class="line">		PriorityQueue&lt;thingNode&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;thingNode&gt;();</span><br><span class="line">		<span class="comment">//构造一个初始化节点，属于-1层</span></span><br><span class="line">		<span class="type">thingNode</span> <span class="variable">initial</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">thingNode</span>();</span><br><span class="line">		initial.level = -<span class="number">1</span>;</span><br><span class="line">		initial.upprofit = <span class="number">26</span>;</span><br><span class="line">		pq.add(initial);</span><br><span class="line">		<span class="keyword">while</span>(!pq.isEmpty())&#123;</span><br><span class="line">			<span class="type">thingNode</span> <span class="variable">fatherNode</span> <span class="operator">=</span> pq.poll();<span class="comment">//返回队列的头</span></span><br><span class="line">            <span class="comment">//有叶子节点就统计节点数据如果，</span></span><br><span class="line">            <span class="comment">//节点总价值大于当前maxvalue，赋值，保存到bestway节点的left</span></span><br><span class="line">            <span class="comment">//如果没有节点就判断当前价值和容量后加入新的节点</span></span><br><span class="line">            </span><br><span class="line">			<span class="comment">//当已经搜索到叶子节点时</span></span><br><span class="line">			<span class="keyword">if</span>(fatherNode.level == n-<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(fatherNode.value &gt; maxValue)&#123;</span><br><span class="line">					maxValue = (<span class="type">int</span>)fatherNode.value;</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> i=n-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">						bestWay[i] = fatherNode.Left;</span><br><span class="line">						fatherNode = fatherNode.father;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="comment">//先统计其左节点信息，判断是否加入队列。容量</span></span><br><span class="line">				<span class="keyword">if</span>(weight[fatherNode.level+<span class="number">1</span>]+fatherNode.weight &lt;= capacity)&#123;</span><br><span class="line">					<span class="type">thingNode</span> <span class="variable">newNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">thingNode</span>();</span><br><span class="line">					newNode.level = fatherNode.level+<span class="number">1</span>;</span><br><span class="line">					newNode.value = fatherNode.value + value[fatherNode.level+<span class="number">1</span>];</span><br><span class="line">					newNode.weight = weight[fatherNode.level+<span class="number">1</span>]+fatherNode.weight;</span><br><span class="line">					newNode.upprofit = Bound(newNode);</span><br><span class="line">					newNode.father = fatherNode;</span><br><span class="line">					newNode.Left = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">if</span>(newNode.upprofit &gt; maxValue)</span><br><span class="line">						pq.add(newNode);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//向右节点搜索，其能够取到的价值上界通过父亲节点的上界减去本层物品的价值。价值</span></span><br><span class="line">				<span class="keyword">if</span>((fatherNode.upprofit - value[fatherNode.level+<span class="number">1</span>])&gt; maxValue)&#123;</span><br><span class="line">					<span class="type">thingNode</span> <span class="variable">newNode2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">thingNode</span>();</span><br><span class="line">					newNode2.level = fatherNode.level+<span class="number">1</span>;</span><br><span class="line">					newNode2.value = fatherNode.value;</span><br><span class="line">					newNode2.weight = fatherNode.weight;</span><br><span class="line">					newNode2.father = fatherNode;</span><br><span class="line">					newNode2.upprofit = fatherNode.upprofit - value[fatherNode.level+<span class="number">1</span>];</span><br><span class="line">					newNode2.Left = <span class="number">0</span>;</span><br><span class="line">					pq.add(newNode2);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//用于计算该节点的最高价值上界</span></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">Bound</span><span class="params">(thingNode no)</span>&#123;</span><br><span class="line">		<span class="type">double</span> <span class="variable">maxLeft</span> <span class="operator">=</span> no.value;</span><br><span class="line">		<span class="type">int</span> <span class="variable">leftWeight</span> <span class="operator">=</span> capacity - no.weight;</span><br><span class="line">		<span class="type">int</span> <span class="variable">templevel</span> <span class="operator">=</span> no.level;</span><br><span class="line">		<span class="comment">//尽力依照单位重量价值次序装剩余的物品</span></span><br><span class="line">		<span class="keyword">while</span>(templevel &lt;= n-<span class="number">1</span> &amp;&amp; leftWeight &gt; weight[templevel] )&#123;</span><br><span class="line">			leftWeight -= weight[templevel];</span><br><span class="line">			maxLeft += value[templevel];</span><br><span class="line">			templevel++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//不能装时，用下一个物品的单位重量价值折算到剩余空间。</span></span><br><span class="line">		<span class="keyword">if</span>( templevel &lt;= n-<span class="number">1</span>)&#123;</span><br><span class="line">			maxLeft += value[templevel]/weight[templevel]*leftWeight;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> maxLeft;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="12、求解矩阵最小路径和问题"><a href="#12、求解矩阵最小路径和问题" class="headerlink" title="12、求解矩阵最小路径和问题"></a>12、求解矩阵最小路径和问题</h4><p>给定一个 m 行 n 列的矩阵，从左上角开始每次只能向右或者向下移动，最后到达右下角的位置，路径上的所有数字累加起来作为这条路径的路径和。如下面一个 4 行 4 列的矩阵：</p>
+<p>1 3 5 9</p>
+<p>8 1 3 4</p>
+<p>5 0 6 1</p>
+<p>8 8 4 0</p>
+<p>1→3→1→0→6→1→0 是所有路径和最小的，12.</p>
+<p>请用动态规划编程解决之。要求编写完整的程序。</p>
+<p>解：基本思想：</p>
+<p>递推方程如下：</p>
+<blockquote>
+<p>dp[0][0] &#x3D; a[0][0];</p>
+<p>dp[0][i] &#x3D; a[0][i] + dp[0][i-1];</p>
+<p>dp[i][0] &#x3D; a[i][0] + dp[i-1][0];</p>
+<p>dp[i][j] &#x3D; a[i][j] + min(dp[i-1][j], dp[i][j-1]); ( i&gt;&#x3D;1, j&gt;&#x3D;1 )</p>
+</blockquote>
+<p>参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test1</span> &#123;</span><br><span class="line">	    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">minPathSum</span><span class="params">(<span class="type">int</span> [][]m)</span>&#123;</span><br><span class="line">	        <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> m.length;<span class="comment">//行数</span></span><br><span class="line">	        <span class="type">int</span> <span class="variable">col</span> <span class="operator">=</span> m[<span class="number">0</span>].length;<span class="comment">//列数</span></span><br><span class="line">	        <span class="type">int</span> [][] dp = <span class="keyword">new</span> <span class="title class_">int</span> [row][col];<span class="comment">//定义当前路径权值总和的二维数组dp</span></span><br><span class="line">	        dp[<span class="number">0</span>][<span class="number">0</span>] = m[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	        <span class="comment">//初始化第一列</span></span><br><span class="line">	        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;row;i++)&#123;</span><br><span class="line">	            dp[i][<span class="number">0</span>]=dp[i-<span class="number">1</span>][<span class="number">0</span>]+m[i][<span class="number">0</span>];</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="comment">//初始化第一行</span></span><br><span class="line">	        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;col;i++)&#123;</span><br><span class="line">	            dp[<span class="number">0</span>][i]=dp[<span class="number">0</span>][i-<span class="number">1</span>]+m[<span class="number">0</span>][i];</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="comment">//初始化剩余元素</span></span><br><span class="line">	        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;row;i++)&#123;</span><br><span class="line">	            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;col;j++)&#123;</span><br><span class="line">	                dp[i][j] = Math.min(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])+m[i][j];</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">return</span> dp[row-<span class="number">1</span>][col-<span class="number">1</span>];</span><br><span class="line">	    &#125;</span><br><span class="line">	 </span><br><span class="line">	    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">	        <span class="type">int</span> [][]m=&#123;&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>&#125;,&#123;<span class="number">8</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,&#123;<span class="number">5</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">1</span>&#125;,&#123;<span class="number">8</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line">	        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m.length; i++) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; m.length; j++) &#123;</span><br><span class="line">					System.out.print(m[i][j]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">			&#125;</span><br><span class="line">	        System.out.println( minPathSum(m));</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>初始化矩阵</p>
+<p>考虑第一行第一列，求出dp+m哪一行列数，</p>
+<p> 初始化剩余元素，i行j列，左边和上边哪个小加这个数保存为i行j列的dp数据，最后输出dp右下角的值就是了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for(int i=1;i&lt;row;i++)&#123;</span><br><span class="line">	for(int j=1;j&lt;col;j++)&#123;</span><br><span class="line">	    dp[i][j] = Math.min(dp[i-1][j],dp[i][j-1])+m[i][j];  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="13、求解买股票问题"><a href="#13、求解买股票问题" class="headerlink" title="13、求解买股票问题"></a>13、求解买股票问题</h4><p>“逢低吸纳”是炒股的一条成功秘诀，如果你想成为一个投资者，就要遵守这条秘诀。“逢低吸纳，越低越买”，这句话的意思是每次你购买股票时的股价一定要比你上次购买时的股价低。按照这个规则购买股票的次数越多越好，看看你最多能按这个规则买几次。</p>
+<p>输入描述：第 1 行为整数 N(1≤N≤5000)，表示能买股票的天数；第 2 行及以下是 N 个正整数（可能有多行），第 i 个正整数表示第 i 天的股价。</p>
+<p>输出描述：按照规则能买进股票的最多天（次）数</p>
+<p>输入样例：</p>
+<p>12</p>
+<p>68 69 54 64 68 64 70 67 78 62 98 87</p>
+<p>输出样例：</p>
+<p>4</p>
+<p>请用动态规划编程解决之。</p>
+<p>解：参考代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JAVA算法：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        <span class="type">int</span> a[] = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="type">int</span> dp[] = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        n = sc.nextInt();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            a[i] = sc.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            dp[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i+<span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a[i] &lt; a[j])</span><br><span class="line">                    dp[i] = Math.max(dp[i], dp[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Math.sort(pd);</span><br><span class="line">        System.out.println(dp[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>初始化a  、dp ；</p>
+<p>动态规划就是：对a进行冒泡比较，小的话就+1，同时把dp最大的给本次的dp，然后遍历结束</p>
+<p>对我们的dp进行排序找出最大的dp</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>复习</category>
+      </categories>
+      <tags>
+        <tag>常用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法说明</title>
+    <url>/2022/05/25/%E7%AE%97%E6%B3%95/index/</url>
+    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>健康管理系统项目笔记1</title>
+    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/Note/</url>
+    <content><![CDATA[<h2 id="【SSM-Dubbo-Zookeeper-Vue】"><a href="#【SSM-Dubbo-Zookeeper-Vue】" class="headerlink" title="【SSM+Dubbo+Zookeeper+Vue】"></a>【SSM+Dubbo+Zookeeper+Vue】</h2><p>总结</p>
+<ol>
+<li>第一天</li>
+<li>……</li>
+<li>第十一天</li>
+</ol>
+<p>第一天【2022-01-26】</p>
+<ol>
+<li>创建父工程项目【maven普通项目】</li>
+<li>在父工程中pom文件中，首先设置父工程的打包类型【pom】</li>
+<li>然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）</li>
+<li>如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可</li>
+<li>在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】</li>
+<li>common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用</li>
+<li>interface项目要打包成【jar】类型，会提供给其他项目</li>
+<li>provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）</li>
+<li>backend同provider项目一样，仅仅导入interface的jar包</li>
+<li>在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志</li>
+<li>并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果</li>
+<li>在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件</li>
+</ol>
+<p>第二天【2022-01-27】<br>1.	先在【common】项目中创建需要的基础Java类（bean、常量资源、结果集等，这都是为了规范，其中常量是编码的规范，避免不同的人传递同一个意思的信息出现不一样的情况）<br>2.	在【interface】项目中创建【接口】，然后在提供者【provider】项目中去实现【接口】<br>3.	在【provider】项目中创建【dao】包，存放交互【数据库】的【接口】以及【映射文件】（映射文件最好存放在【resource】中对应路径的dao包下，毕竟是【.xml】文件）<br>4.	前端静态页面放在【backend】项目中，并且这里也作为控制层【controller】的代码放置处，存放静态页面时，注意需不需要允许静态资源通过，需要设置一下（springmvc.xml和web.xml都可以设置）<br>5.	此项目前端使用【Vue】框架，页面不需要转成【jsp】使用，数据的传递使用的是【Ajax】，采用的组件是【axios】，所以关于很多jsp的标签不能使用，活用Vue能够解决；页面的元素、布局采用的是【ElementUI】，官网提供的模板能解决绝大多数的需求<br>6.	当页面的元素较多且复杂，以及采用的样式非本地而是网络链接的时候，可能会导致页面刷新的时候文本先出现而样式后出现，需要注意<br>7.	添加功能：当点击创建的时候，会弹出类似于模态框界面的选择界面（默认是隐藏的，当点击的时候会更改值为”true”，对这个值的判断进行页面的是否显示）；在添加框中，Vue对添加框进行了格式设置（注意设置名要与字段名一致，并且在页面的标签中增加prop&#x3D;”字段名”），并且在提交的时候也要验证，通过的话才能进行提交；数据提交到后台（因为是form表单数据，提交的是JSON串，而不是键值对的形式，所以在参数列表中加上”@RequestBody”来接收数据）就可以进行处理；因为此项目全程Ajax操作，所以没有页面的跳转，为了避免所有的Java方法都要加上”@ResponseBody”（保证传到页面的是数据而不会跳转），所以”@Controller”需要改成”@RestController”（原理一样，但是不需要额外写@ResponseBody）；添加若无误，返回的是成功【common提供的常量】，失败也是常量，然后页面弹出信息；（注意这里面的增删改都会用到事务）；添加完成之后会关闭添加框，并且清空之前填入的数据（因为是双向绑定，若是页面不刷新，则数据一直存在，添加完成之后需要清空，避免下次打开后还是上一次的数据）<br>8.	因为此项目采用的【dubbo】框架，所以在【controller】注入【service】的时候使用的是”@Reference”而不是”@AutoWrid”</p>
+<p>第三天【2022-02-10】<br>1.	涉及到的【增删改】操作，一定需要事务管理，通常来说，事务针对的是业务层（service），需要在业务层类上加上“@Transactional”来事务管理；并且增删改逻辑的操作的代码需要写在业务层中，以配合事务<br>2.	删除功能：点击“删除”的时候，方法接收的参数是这一行（ElementUI所做的表格的特点，可以把row当做参数），在Vuejs方法中通过【row.id】取得这一行的数据的主键id，然后再通过axios请求到后台完成删除操作；删除也是要进行事务管理的，所以具体代码需要写在业务层；（并且此项目中有多对多的关系，通过外键关联进行限制，所以在删除时需要查询此数据是否有关联，若有，则不能删除）注意反馈的消息；其他要点与添加功能一致。<br>3.	查询功能：查询功能体现在：【第一次进入页面】、【分页】、【添加完成之后】、【删除完成之后】、【修改完成之后】、【条件查询】这几个方面；这些查询都会调用同一个方法，区别在于条件的不同，当前页的不同（条件的双向绑定会影响输入条件进行分页时也会进行查询，当前页不及时更新则会页面显示数据异常）；解决方式：条件仅仅在【删除之后】、【修改之后】、【条件查询】这几个方面有数据，所以查询的条件默认是空的，当点击“查询”按钮后进行条件的数据更新，这样在分页时不会进行查询；当前页的更新来源于【后台数据的传入】，然后赋值，这样及时更新后就能够避免数据显示异常（同时也注意下参数合理化的配置）；<br>4.	修改功能：点击“编辑”时，和“添加”一样，弹出框，和“删除”一样，传入row数据，然后取出id，接着进行axios请求获取全部数据，然后填入到框中，更新合理的数据后，点击“确定”（记得关闭框）；修改也是需要事务管理，具体代码放在业务层接受事务控制<br>5.	Mybatis无法绑定的错误：将与dao文件对应的.xml文件放在resource资源包中，注意路径问题</p>
+<p>问题：<br>1、	Spring配置的事务在没有问题后自动提交，如果出现问题则会回滚，所以有关事务的处理需要加上事务的注解，以便出错时回滚<br>2、	一定要注意控制层不需要事务处理，业务层需要事务处理，将增删改操作放在业务层完成<br>3、	先启动Zookeeper注册中心，再启动服务提供者，最后就可以启动与页面交互的服务消费者，此顺序不可变动，否则消费者无法正常使用<br>4、	如果后台代码发生变动，则最好将父工程install一下，因为服务器读取的是target里面编译好的代码，不受程序员自己写的代码的影响，只有先install编译后才能产生变化，才能让程序正常运行 <br>第四天【2022-02-11】<br>1.	添加功能：相对于单项目的添加，项目组的添加上多个一些新的需求（项目组是多个单项目的组合，在添加项目组的时候，还需要关联多个项目），关联多个单项目采用的是添加时【勾选多个单项目】，所以在点击“新建”的时候要查询出全部的单项目，并显示到添加框中去供管理人员选择；提交时需要提交项目组的表单数据之外，还需要提交与之关联的【单项目集合】；在后台先添加项目组，然后提前配置返回主键id的代码，然后就可以设置关联关系了。<br>2.	查询、分页等功能：与单项目的此类功能完全一样（还有一点是，在分页的标签的当前页处加上.sync，表示双向绑定，可以达到及时更新当前页的效果，单项目的也是）。<br>3.	编辑功能：点击编辑的时候要弹出对应的数据【项目组的信息】【全部的单项目】【选择的单项目】，所以先根据传入的id查询出项目的信息（因为一次只返回一个data，当然也可以把多个data放到集合中封装起来，但是建议使用多次请求，因为在返回形式上更加规范合理），无误后再请求全部的单项目，无误后再根据项目组的id查询出选择的单项目，放入到页面中；修改完点击保存后，首先更新项目组的信息，然后需要【更新关联关系】（无论是否修改过了关联关系，统一设置可以省去判断的必要性），做法是：【先删除之前的关联关系，然后添加新的关联关系】，在做法上来说省时省力，省去不必要的麻烦。<br>4.	删除功能：项目组与单项目有关联关系，并在数据库进行了外键绑定（不能直接删除），而且套餐项（最上级）、检查项目组（中级）、检查项目单项（最下级），这三张表之间都有关联关系，（按照逻辑而言，删除套餐的时候可以把全部的项目组删除，也会把全部的单项目删除；但是删除一个项目组，或者删除一个但项目的时候，不能删除它的上级的套餐或者项目组，所以此功能中如果有套餐含有某个项目组的话，那个项目组不能删除）删除的时候要【先删除关联关系，然后才能删除目标】，同时在删除之前检测此项目组是否被套餐引用（可以通过查询语句返回的数量判断，也可以直接获取删除失败所报的异常来判断），没有问题之后才能删除</p>
+<p>问题：<br>1、	要善于使用异常，在看待异常信息时要抓住关键点，比如异常提示服务提供者没有开启或被禁用，则一定是提供者处代码有误，先看是否缺少相应的配置文件，也要注意文件的位置要写对地方，再看代码是否写错或少写；异常的出现也可以帮助判断，比如空指针异常，下标越界异常等，捕获此异常然后进行操作可以省略判断的代码 <br>第五天【2022-02-12】<br>1.	添加功能：与之前项目组添加功能一样，区别在于套餐添加有【图片上传功能】（运用的是ElementUI的标签，此标签有两个重要的方法：一个是文件上传之前对文件的检查[格式、大小]，另一个是文件上传之后将图片回显出来），此次图片上传没有上传到本地存储，而是使用七牛云服务器，将图片存储在云服务器中；在点击添加完图片之后，会发送一次请求到后台，后台就进行图片上传的操作，此过程由七牛云提供的代码，需要注意自己的服务器的密钥和名字就好（不管是否点击过提交，只要是添加了图片，就会把图片上传到服务器中，所以之后会定时清理不需要的图片）；图片上传之后会生成【新的图片名字】，回显的时候就把新名字赋予到变量中，点击提交的时候就仅提交图片的名字，完成添加功能<br>2.	分页查询功能：与项目组的此功能完全一致<br>3.	完善图片添加：使用【Redis非关系型数据库】存储图片名（使用非空不重复的set集合保存上传的图片，只要上传就存，并用另一个集合保存确定保存的图片），然后使用【Quartz定时器】组件进行定时删除图片（一个新的项目，需要单独运行，删除的原理是对比两个集合中的差值，删除差值）<br>4.	编辑功能：和之前一样，区别在于套餐项有图片，所以点击编辑的时候图片需要正确的回显（回显的是图片的imageUrl，而不是字段img），更改图片后也需要添加到七牛云、两个Redis集合中去，点击确定后，要先删除七牛云和Redis（确认保存的那个集合）的图片（不然这些图片不是垃圾图片会一直保存），原理是获取套餐信息的时候把原图片保存全局变量，点击确定修改的时候就可以删除原图了；至于数据库的更新与其他项目的修改没有区别<br>5.	删除功能：除了图片之外没有其他要注意的，图片也是要删除Redis和七牛云的，然后注意是否被引用，如果被引用则无法删除，没有被引用才能删除</p>
+<p>问题：<br>1、	在使用post请求的时候，传过去的参数由后台接收到的是一个JSON格式的字符串，如果传入的数据不正确，那么会报400错误（路径不正确或者没有则报404，服务器内部代码写错等报500）<br>2、	父工程引入的maven的jar包的版本与子工程的不一样的话，可能会导致冲突，引发不必要的麻烦，所以在父工程通过依赖管理引入版本，子工程只需要引入依赖就行了，不需要版本<br>3、	如果写的xml文件，没有在web.xml引入的话，服务器会找不到，从而不能进行操作</p>
+<p>第六天【2022-02-18】<br>1.	预约管理-添加功能：使用文件上传进行批量添加（Excel文件）；首先点击下载模板文件（存在服务器中，下载后的文件格式是确定好的，不要随意更改），然后进行数据的添加【日期-名额】，保存之后记得关闭文件然后进行文件上传；java后台中会自动的解析Excel文件中的数据（使用的是Apache 的POI服务，配置好工具类后进行自动解析），然后把每一条数据存放到数据库中，如果日期相同，那么就更新这个日期的名额数，否则执行添加操作【一个功能三个业务：查询-更新&#x2F;添加】<br>2.	除了使用Excel文件批量添加之外，还可以单独设置每一天的预约名额，区别在于单独设置仅仅上传一条数据，也不需要进行解析<br>3.	预约管理有按月份进行显示，也就是分页，点击后会把当前月传入到后台，然后后台自动的取开始值【1号】和结束值【31号】（无论这个月有没有31号，都可以查到），把取到的值封装成一个map对象（因为有一个字段与pojo的一个字段不符，所以保存成map，而不是Javabean）传入到前台，把值呈现出来</p>
+<p>问题：<br>1、	七牛云上传文件可以自定义创建目录，在key里面进行自定义目录分级，七牛云会自动解析符号“&#x2F;”进行目录划分<br>2、	数据库5.5和8.0的区别一：8.0中，按日期时间段查询时，每个月的时间范围必须精准，比如2-1<del>2-28，不能写2-1</del>2-31，否则查不出数据，5.5则没有这个限制<br>3、	数据库5.5和8.0的区别二：使用mybatis的SQL语句进行查询时，针对时间查询，在数据库中可以查询到结果，但是在java代码中查询不到结果，代码无问题，应该是8.0的数据库的问题，5.5没有此问题<br>4、	文件上传的Excel文件应该要注意格式，它允许数据之间出现空行，但如果格式不正确，那么解析时会一直解析，遇到空行后因为没有数据会报空指针异常，正确的格式则会跳过空行<br> <br>第七天【2022-02-21】<br>1.	移动端的开发，本项目使用的是微信公众号的订阅号的形式（订阅号的注册等按照官网按部就班就可以了，不是重要内容），其本质也是html网页的形式，所以原理一样。<br>2.	首先进入首页，是一个写好的页面，点击预约的时候，会显示全部的套餐项（这里是用的【mounted钩子函数】查询出数据然后显示在页面中，与以前的【created钩子函数】的区别在于，mounted在created之后，等到页面全部成型了，mounted就执行，可以做到更改created的数据），这之中也要注意图片路径的问题（因为数据库只是保存图片的名字，路径需要自己手动调整）。<br>3.	点击套餐时可以跳转到详情页，除了之前叙述的方法之外，还可以使用js的方法，其中【document.location.toString()】可以得到当前页面的地址（如setmeal_detail.html?id&#x3D;10，然后用过?截取后面的信息），然后就可以根据传来的id信息在钩子函数中查询，得到结果后显示在页面中；需要注意的是，用户看到的套餐信息包含检查组、检查项等详细信息，所以查询的时候要查找完整的信息。<br>4.	点击预约时需要进行短信验证，而目前各个平台已不支持个人的短信服务（防止有人发送有危害性的短信），所以借助的是第三方的短信服务，在购买服务之后，利用第三方给出的代码，就可以向手机号发送短信（但内容是固定的，因为不提供营业执照的话短信仅供测试使用）</p>
+<p>问题：<br>1、	短信服务时要注意在个人测试时短信的内容不可编辑，只能是固定的官方文本，还有如果一次性发大量的短信的话，可能因为代码执行效率导致手机不能完全收到短信，而且还要考虑短信的有效时长<br> <br>第八天【2022-02-23】<br>1.	Freemarker的使用，Freemarker将动态的页面（数据会动态变化的页面）进行【静态化处理】（将数据填充好了，不需要再发请求了），目的是为了减轻页面在被大量用户访问时，不断查询数据对数据库造成的压力，所以只需要针对会被大量访问时的页面进行处理就行了。<br>2.	静态化处理在服务提供者中进行（因为要在业务层进行方法调用），由于生成的静态页面是一种结果，而这种结果需要动态改变，所以在【执行增、删、改操作】的时候，都需要对已经生成的结果进行调整，并且由于每个静态结果页面都要有不一样的文件名，所以最优方案是用【主键id】作区分。<br>3.	首先需要在【WEB-INF】文件夹里面创建ftl模板文件夹（其他位置也可以，但路径要明确），然后写入【模板文件】，尾缀是【.ftl】（注意里面的变量格式），然后在实现类中写实现方法，在增、删、改操作的时候都要对模板文件进行修改。或者增、删、改的时候不进行生成操作，而是统一执行生成的操作（随便在页面加个按钮，点击时发送请求就可以了，前台和后台的套餐业务层是共用的），这样可以减轻对服务器的负担（尤其是数据量很大的时候）。<br>4.	完善手机验证码的发送：在用户输入手机号点击发送验证码的时候【先验证手机格式】是否正确，正确的前提下才会进行发送请求，同时进入倒计时等待，倒计时中不可以再次点击发送验证码（前端用的计时器实现，每秒执行一次）；请求发送到服务器后，服务器直接获取用户的手机号，用【第三方模板代码】将短信发送出去，但因为现在仅仅是测试使用，模板的内容和验证码都是固定的，用户手机只能收到相同的短信内容。但是生成的验证码还是随机的（这个验证码会保存到Redis数据库中，因为Redis数据库可以设置时间，时间到了这个数据就会失效了，查询也查询不到，恰好实现验证码的时效性，该保存时间可以自定义），用户需要输入这个随机的验证码才有效，而不是手机上的短信验证码。<br>5.	输入验证码后，在提交的时候会进行验证码的验证，【与Redis保存的数据一致】才可以通过然后进行下一步的验证，否则会提示用户验证码不正确。</p>
+<p>问题：<br>1、	使用第三方的模板代码是在阿里云市场购买的短信服务，每一家的代码稍微有不同的地方，这里需要注意，所以最好先进行测试之后再封装成工具类以供调用。<br> <br>第九天【2022-02-24】<br>1.	预约成功页面：当用户完成预约后，会跳转到预约成功的页面，此页面展示的信息有预约注意事项（固定的），以及用户的信息。此处的关键点在于预约的信息包含了【姓名、日期、套餐、预约方式】（这几个项都不在一张表中，而是分散在不同的表中），在回显信息的时候要进行级联查询，然后封装起来（没有对应的实体类所以用map进行封装，但是不规范），再把封装的信息回显到页面。<br>2.	用户的预约由【姓名、电话、身份证号、日期】构成，其中以电话进行是否同一用户的判断（因为要发验证码），以日期判断是否已经预约，如果当天已经预约过了则不能再预约，不是当天的话不受影响。注意预约成功之后会再向用户手机发送一条预约成功信息的短信。<br>3.	整体逻辑是：用户先获取验证码以证明手机号可用，然后填写正确的个人信息进行预约，首先会在后台验证用户的验证码是否是正确的，不正确的话直接就会失败，然后再根据手机号查询此用户是否存在，存在的话就不新建用户信息，反之会添加一个用户信息，最后查询当天的预约人数是否满了，没满的话才能进行预约，预约成功之后就会发短信告诉用户，同时跳转到结果页面。<br>4.	手机上可以使用手机号加验证码进行快捷登录，登录成功后把信息存在Redis中（模拟session域，30分钟），经过登录后访问主页，可以有更多的权限。<br>5.	权限的处理（使用spring框架中的security安全框架，还有shiro框架），在整合Spring Security时过滤器的名称必须为【SpringSecurityFilterChain】，否则会抛异常。此框架自带一个用于登录的登录界面，当用户没有经过认证（登录）的时候会进行拦截（前提是访问的页面需要认证，可以设置不需要认证），其中【{noop}】表示使用暗文密码，不加就是明文（框架本身会处理密码，保存在数据库的就是暗文密码）；配置文件可以配置哪些页面需要什么权限才能访问，使用注解就是在控制层配置哪些方法需要什么角色才能访问（角色即职业，对应的多个权限方法）。可以自定义登录界面，在配置文件中配置登录界面的的路径就好（自定义登录页面需要关闭CsrfFilter过滤器，true就是关闭，否则登录操纵会被禁用）；权限不够时会报【403】错误，通过捕获错误进行权限不够提示。</p>
+<p>第十天【2022-02-25】<br>1.	Security框架使用【bcrypt】进行加密，加密后字符串长度固定为60位，其中：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；而后的前22位是salt值。<br>2.	通过在控制层的方法上加上【@PreAuthorize】注解进行权限控制（hasAuthority表示方法权限，hasRole表示角色权限）。<br>3.	框架也自带一个退出登录的操作，在配置登录操作的后面也配置登出操作，之后只需要在页面的超链接指明地址（&#x2F;logout.do），就可以完成退出操作（退出操作后所有的认证都是未认证状态，无法访问）。<br>4.	未认证访问某个页面时，会被框架拦截下来需要先进行登录，登录成功之后会被框架转到之前访问失败的页面，而不是跳转到首页。<br>5.	在登录成功之后，会一并把该用户的角色信息查询出来（角色与用户是多对多的关系，用户可以级联查询出角色信息，角色信息又级联查询权限），这样就明确了用户的权限，在用户的权限不够时会报403错误，根据错误进行相应的提示。<br>6.	图形报表【Echarts】，将数据以可视化的形式（条形图，柱状图，折线图等）呈现出来，属于【前端的模块】。在访问页面的时候，在钩子函数created中发送axios请求到后台查询出数据，返回到页面后就可以使用Echarts将数据以图形的形式呈现出来。</p>
+<p>问题：<br>1、	关于RpcExption异常，此异常发生在远程调用的时候，出现的异常都是此异常，属于dubbo框架的。远程调用发生在服务消费者调用服务提供者的业务层方法时，由于各种原因导致没有调用到，就会抛出此异常，包括但不限于【Zookeeper服务没打开】【服务提供者服务器没有启动】【服务提供者中没有配置对应的业务层代码】【配置文件的没有配到服务提供者】【缺少运行时相关的jar包】【业务层注解配置错误】【spring配置文件缺少】；其中有些异常并非提供者调用不到出现的，这时候需要查看是否有其他的异常出现导致dubbo抛出RpcExption。<br> <br>第十一天【2022-03-01】<br>1.	导出Excel文件：先制作好模板文件，然后通过Excel的行号和列号确定“坐标”把数据填充进去，和Excel的上传差不多，只不过上传是读取文件把数据填入到数据库中，而导出是对Excel的写操作，都是Apache的POI服务。<br>2.	生成PDF文件：首先也是要有一个模板文件，然后借助官方提供的代码将数据填充到页面中，然后就可以导出成PDF文件。借助软件TIB_js-studiocomm可以可视化的设计PDF文件样式，然后复制.jrxml文件到idea的项目中去，执行代码时就会去读此模板并将数据填充进去，最后在指定的路径下生成想要的PDF文件。<br>3.	Powerdesigner：设计数据库有重大帮助，可以明确的自定义数据库表与表之间的关系，设计字段，通过概念模型设计多对多关系等等，在设计数据库与解析已有数据库的关系时有重要作用。</p>
+<p>问题：<br>1、	此项目功能尚未完全，相对于理论设计出来的功能来说，前台仅有预约功能，后台仅对预约功能做了完整的增删改查，再就是一些细节上的修饰（如文件的上传和导出，短信服务，图片上传等）；</p>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>微服务</category>
+        <category>健康管理系统</category>
+      </categories>
+      <tags>
+        <tag>项目笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>尚筹网项目开发手册1</title>
+    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E5%B0%9A%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/1.%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h1 id="分布式微服务项目开发过程及技术回顾"><a href="#分布式微服务项目开发过程及技术回顾" class="headerlink" title="分布式微服务项目开发过程及技术回顾"></a>分布式微服务项目开发过程及技术回顾</h1><hr>
 <p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
 <hr>
@@ -51,28 +452,14 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>微服务项目</category>
-        <category>尚筹网</category>
+        <category>项目</category>
+        <category>微服务</category>
+        <category>尚筹网项目</category>
       </categories>
-      <tags>
-        <tag>JAVA项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微服务项目开发手册</title>
-    <url>/2022/05/24/%E9%9D%A2%E8%AF%95/1%E3%80%81%E5%9F%BA%E7%A1%801/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JAVA基础</category>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>JAVA面试</tag>
-      </tags>
   </entry>
   <entry>
     <title>Docke使用说明</title>
-    <url>/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1%E3%80%81Docker/</url>
+    <url>/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Docker/</url>
     <content><![CDATA[<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 官方网站：<a href="https://www.docker.com/">https://www.docker.com/</a></p>
 <p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker 教程 | 菜鸟教程 </a></p>
 <p><strong>使用场景</strong></p>
@@ -413,96 +800,29 @@
 <p>3、注意项目内嵌使用的端口，但是放入 tomcat 中就是使用 tomcat 的端口；打包 war 再 build 中添加<finalName>djx</finalName>这样打包会生成改名字的 war</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>环境搭建</category>
         <category>Docker</category>
       </categories>
-      <tags>
-        <tag>Linux应用部署</tag>
-      </tags>
   </entry>
   <entry>
-    <title>健康管理系统项目</title>
-    <url>/2022/05/24/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/1%E3%80%81%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h2 id="【SSM-Dubbo-Zookeeper-Vue】"><a href="#【SSM-Dubbo-Zookeeper-Vue】" class="headerlink" title="【SSM+Dubbo+Zookeeper+Vue】"></a>【SSM+Dubbo+Zookeeper+Vue】</h2><p>总结<br>第一天【2022-01-26】</p>
+    <title>个人目标</title>
+    <url>/2022/05/24/Begin/%E7%9B%AE%E6%A0%87/</url>
+    <content><![CDATA[<h1 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h1><blockquote>
+<p>2022-5.25——2022-6.6<br>今日：搭建好博客，完成了基本的博客内容。<br>计划：</p>
 <ol>
-<li><pre><code>创建父工程项目【maven普通项目】
-</code></pre>
-<ol start="2">
-<li><pre><code>在父工程中pom文件中，首先设置父工程的打包类型【pom】
-</code></pre>
-<ol start="3">
-<li><pre><code>然后根据整个项目的需要引入jar包，但是引入的jar包依赖放在依赖管理标签中（目的是在子工程需要的时候可以引入，并且子工程不用写版本号；子工程不需要的时候就可以不引入。如果没有放在依赖管理中，则所有的子工程默认都会引入了父工程的jar包）
-</code></pre>
-<ol start="4">
-<li><pre><code>如果依赖管理中的jar包报错，则先将依赖管理标签删除，然后刷新maven，目的是去下载这些jar包，下完之后再加上依赖管理标签即可
-</code></pre>
-<ol start="5">
-<li><pre><code>在父工程建立module，需要创建interface（存放bean和接口）【maven普通项目】，common（资源包）【maven普通项目】，provider（服务提供者）【maven webapp项目】，backend（后台管理）【maven webapp项目】
-</code></pre>
-<ol start="6">
-<li><pre><code>common项目打成【jar】类型，并且导入需要的依赖（这里的依赖不需要写版本号，父工程已经写了），导给interface项目使用
-</code></pre>
-<ol start="7">
-<li><pre><code>interface项目要打包成【jar】类型，会提供给其他项目
-</code></pre>
-<ol start="8">
-<li><pre><code>provider项目仅需要导入interface的jar包，（因为interface里有commonjar包，commonjar包有需要的依赖，所以provider也只需要导入一个jar包）
-</code></pre>
-<ol start="9">
-<li><pre><code>backend同provider项目一样，仅仅导入interface的jar包
-</code></pre>
-<ol start="10">
-<li><pre><code>在provider项目中，需要配置【spring-dao】、【spring-service】、【spring-tx】和【SqlMapConfig】的【xml】文件，来使用spring容器；除此之外，还需要配置【log4j.properties】日志文件来记录日志
-</code></pre>
-<ol start="11">
-<li><pre><code>并且还需要在【web.xml】文件中去加载配置的spring的配置文件才能有效果
-</code></pre>
-<ol start="12">
-<li><pre><code>在backend的资源中配置【springmvc.xml】配置控制层，然后也需要在【web.xml】中指定；除此之外也需要配置日志文件
-</code></pre>
-</li>
+<li>准备好算法考试内容</li>
+<li>完成复习基础知识和面试题</li>
+<li>SpringCloud 以及 Netflix、Alibaba 的组件学习。</li>
+<li>完善Next主题的博客功能：添加浏览量，个人链接，自定义背景，自定义图标，完善阅读体验：添加高亮，添加文章结尾。</li>
 </ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>第二天【2022-01-27】<br>1.	先在【common】项目中创建需要的基础Java类（bean、常量资源、结果集等，这都是为了规范，其中常量是编码的规范，避免不同的人传递同一个意思的信息出现不一样的情况）<br>2.	在【interface】项目中创建【接口】，然后在提供者【provider】项目中去实现【接口】<br>3.	在【provider】项目中创建【dao】包，存放交互【数据库】的【接口】以及【映射文件】（映射文件最好存放在【resource】中对应路径的dao包下，毕竟是【.xml】文件）<br>4.	前端静态页面放在【backend】项目中，并且这里也作为控制层【controller】的代码放置处，存放静态页面时，注意需不需要允许静态资源通过，需要设置一下（springmvc.xml和web.xml都可以设置）<br>5.	此项目前端使用【Vue】框架，页面不需要转成【jsp】使用，数据的传递使用的是【Ajax】，采用的组件是【axios】，所以关于很多jsp的标签不能使用，活用Vue能够解决；页面的元素、布局采用的是【ElementUI】，官网提供的模板能解决绝大多数的需求<br>6.	当页面的元素较多且复杂，以及采用的样式非本地而是网络链接的时候，可能会导致页面刷新的时候文本先出现而样式后出现，需要注意<br>7.	添加功能：当点击创建的时候，会弹出类似于模态框界面的选择界面（默认是隐藏的，当点击的时候会更改值为”true”，对这个值的判断进行页面的是否显示）；在添加框中，Vue对添加框进行了格式设置（注意设置名要与字段名一致，并且在页面的标签中增加prop&#x3D;”字段名”），并且在提交的时候也要验证，通过的话才能进行提交；数据提交到后台（因为是form表单数据，提交的是JSON串，而不是键值对的形式，所以在参数列表中加上”@RequestBody”来接收数据）就可以进行处理；因为此项目全程Ajax操作，所以没有页面的跳转，为了避免所有的Java方法都要加上”@ResponseBody”（保证传到页面的是数据而不会跳转），所以”@Controller”需要改成”@RestController”（原理一样，但是不需要额外写@ResponseBody）；添加若无误，返回的是成功【common提供的常量】，失败也是常量，然后页面弹出信息；（注意这里面的增删改都会用到事务）；添加完成之后会关闭添加框，并且清空之前填入的数据（因为是双向绑定，若是页面不刷新，则数据一直存在，添加完成之后需要清空，避免下次打开后还是上一次的数据）<br>8.	因为此项目采用的【dubbo】框架，所以在【controller】注入【service】的时候使用的是”@Reference”而不是”@AutoWrid”</p>
-<p>第三天【2022-02-10】<br>1.	涉及到的【增删改】操作，一定需要事务管理，通常来说，事务针对的是业务层（service），需要在业务层类上加上“@Transactional”来事务管理；并且增删改逻辑的操作的代码需要写在业务层中，以配合事务<br>2.	删除功能：点击“删除”的时候，方法接收的参数是这一行（ElementUI所做的表格的特点，可以把row当做参数），在Vuejs方法中通过【row.id】取得这一行的数据的主键id，然后再通过axios请求到后台完成删除操作；删除也是要进行事务管理的，所以具体代码需要写在业务层；（并且此项目中有多对多的关系，通过外键关联进行限制，所以在删除时需要查询此数据是否有关联，若有，则不能删除）注意反馈的消息；其他要点与添加功能一致。<br>3.	查询功能：查询功能体现在：【第一次进入页面】、【分页】、【添加完成之后】、【删除完成之后】、【修改完成之后】、【条件查询】这几个方面；这些查询都会调用同一个方法，区别在于条件的不同，当前页的不同（条件的双向绑定会影响输入条件进行分页时也会进行查询，当前页不及时更新则会页面显示数据异常）；解决方式：条件仅仅在【删除之后】、【修改之后】、【条件查询】这几个方面有数据，所以查询的条件默认是空的，当点击“查询”按钮后进行条件的数据更新，这样在分页时不会进行查询；当前页的更新来源于【后台数据的传入】，然后赋值，这样及时更新后就能够避免数据显示异常（同时也注意下参数合理化的配置）；<br>4.	修改功能：点击“编辑”时，和“添加”一样，弹出框，和“删除”一样，传入row数据，然后取出id，接着进行axios请求获取全部数据，然后填入到框中，更新合理的数据后，点击“确定”（记得关闭框）；修改也是需要事务管理，具体代码放在业务层接受事务控制<br>5.	Mybatis无法绑定的错误：将与dao文件对应的.xml文件放在resource资源包中，注意路径问题</p>
-<p>问题：<br>1、	Spring配置的事务在没有问题后自动提交，如果出现问题则会回滚，所以有关事务的处理需要加上事务的注解，以便出错时回滚<br>2、	一定要注意控制层不需要事务处理，业务层需要事务处理，将增删改操作放在业务层完成<br>3、	先启动Zookeeper注册中心，再启动服务提供者，最后就可以启动与页面交互的服务消费者，此顺序不可变动，否则消费者无法正常使用<br>4、	如果后台代码发生变动，则最好将父工程install一下，因为服务器读取的是target里面编译好的代码，不受程序员自己写的代码的影响，只有先install编译后才能产生变化，才能让程序正常运行 <br>第四天【2022-02-11】<br>1.	添加功能：相对于单项目的添加，项目组的添加上多个一些新的需求（项目组是多个单项目的组合，在添加项目组的时候，还需要关联多个项目），关联多个单项目采用的是添加时【勾选多个单项目】，所以在点击“新建”的时候要查询出全部的单项目，并显示到添加框中去供管理人员选择；提交时需要提交项目组的表单数据之外，还需要提交与之关联的【单项目集合】；在后台先添加项目组，然后提前配置返回主键id的代码，然后就可以设置关联关系了。<br>2.	查询、分页等功能：与单项目的此类功能完全一样（还有一点是，在分页的标签的当前页处加上.sync，表示双向绑定，可以达到及时更新当前页的效果，单项目的也是）。<br>3.	编辑功能：点击编辑的时候要弹出对应的数据【项目组的信息】【全部的单项目】【选择的单项目】，所以先根据传入的id查询出项目的信息（因为一次只返回一个data，当然也可以把多个data放到集合中封装起来，但是建议使用多次请求，因为在返回形式上更加规范合理），无误后再请求全部的单项目，无误后再根据项目组的id查询出选择的单项目，放入到页面中；修改完点击保存后，首先更新项目组的信息，然后需要【更新关联关系】（无论是否修改过了关联关系，统一设置可以省去判断的必要性），做法是：【先删除之前的关联关系，然后添加新的关联关系】，在做法上来说省时省力，省去不必要的麻烦。<br>4.	删除功能：项目组与单项目有关联关系，并在数据库进行了外键绑定（不能直接删除），而且套餐项（最上级）、检查项目组（中级）、检查项目单项（最下级），这三张表之间都有关联关系，（按照逻辑而言，删除套餐的时候可以把全部的项目组删除，也会把全部的单项目删除；但是删除一个项目组，或者删除一个但项目的时候，不能删除它的上级的套餐或者项目组，所以此功能中如果有套餐含有某个项目组的话，那个项目组不能删除）删除的时候要【先删除关联关系，然后才能删除目标】，同时在删除之前检测此项目组是否被套餐引用（可以通过查询语句返回的数量判断，也可以直接获取删除失败所报的异常来判断），没有问题之后才能删除</p>
-<p>问题：<br>1、	要善于使用异常，在看待异常信息时要抓住关键点，比如异常提示服务提供者没有开启或被禁用，则一定是提供者处代码有误，先看是否缺少相应的配置文件，也要注意文件的位置要写对地方，再看代码是否写错或少写；异常的出现也可以帮助判断，比如空指针异常，下标越界异常等，捕获此异常然后进行操作可以省略判断的代码 <br>第五天【2022-02-12】<br>1.	添加功能：与之前项目组添加功能一样，区别在于套餐添加有【图片上传功能】（运用的是ElementUI的标签，此标签有两个重要的方法：一个是文件上传之前对文件的检查[格式、大小]，另一个是文件上传之后将图片回显出来），此次图片上传没有上传到本地存储，而是使用七牛云服务器，将图片存储在云服务器中；在点击添加完图片之后，会发送一次请求到后台，后台就进行图片上传的操作，此过程由七牛云提供的代码，需要注意自己的服务器的密钥和名字就好（不管是否点击过提交，只要是添加了图片，就会把图片上传到服务器中，所以之后会定时清理不需要的图片）；图片上传之后会生成【新的图片名字】，回显的时候就把新名字赋予到变量中，点击提交的时候就仅提交图片的名字，完成添加功能<br>2.	分页查询功能：与项目组的此功能完全一致<br>3.	完善图片添加：使用【Redis非关系型数据库】存储图片名（使用非空不重复的set集合保存上传的图片，只要上传就存，并用另一个集合保存确定保存的图片），然后使用【Quartz定时器】组件进行定时删除图片（一个新的项目，需要单独运行，删除的原理是对比两个集合中的差值，删除差值）<br>4.	编辑功能：和之前一样，区别在于套餐项有图片，所以点击编辑的时候图片需要正确的回显（回显的是图片的imageUrl，而不是字段img），更改图片后也需要添加到七牛云、两个Redis集合中去，点击确定后，要先删除七牛云和Redis（确认保存的那个集合）的图片（不然这些图片不是垃圾图片会一直保存），原理是获取套餐信息的时候把原图片保存全局变量，点击确定修改的时候就可以删除原图了；至于数据库的更新与其他项目的修改没有区别<br>5.	删除功能：除了图片之外没有其他要注意的，图片也是要删除Redis和七牛云的，然后注意是否被引用，如果被引用则无法删除，没有被引用才能删除</p>
-<p>问题：<br>1、	在使用post请求的时候，传过去的参数由后台接收到的是一个JSON格式的字符串，如果传入的数据不正确，那么会报400错误（路径不正确或者没有则报404，服务器内部代码写错等报500）<br>2、	父工程引入的maven的jar包的版本与子工程的不一样的话，可能会导致冲突，引发不必要的麻烦，所以在父工程通过依赖管理引入版本，子工程只需要引入依赖就行了，不需要版本<br>3、	如果写的xml文件，没有在web.xml引入的话，服务器会找不到，从而不能进行操作</p>
-<p>第六天【2022-02-18】<br>1.	预约管理-添加功能：使用文件上传进行批量添加（Excel文件）；首先点击下载模板文件（存在服务器中，下载后的文件格式是确定好的，不要随意更改），然后进行数据的添加【日期-名额】，保存之后记得关闭文件然后进行文件上传；java后台中会自动的解析Excel文件中的数据（使用的是Apache 的POI服务，配置好工具类后进行自动解析），然后把每一条数据存放到数据库中，如果日期相同，那么就更新这个日期的名额数，否则执行添加操作【一个功能三个业务：查询-更新&#x2F;添加】<br>2.	除了使用Excel文件批量添加之外，还可以单独设置每一天的预约名额，区别在于单独设置仅仅上传一条数据，也不需要进行解析<br>3.	预约管理有按月份进行显示，也就是分页，点击后会把当前月传入到后台，然后后台自动的取开始值【1号】和结束值【31号】（无论这个月有没有31号，都可以查到），把取到的值封装成一个map对象（因为有一个字段与pojo的一个字段不符，所以保存成map，而不是Javabean）传入到前台，把值呈现出来</p>
-<p>问题：<br>1、	七牛云上传文件可以自定义创建目录，在key里面进行自定义目录分级，七牛云会自动解析符号“&#x2F;”进行目录划分<br>2、	数据库5.5和8.0的区别一：8.0中，按日期时间段查询时，每个月的时间范围必须精准，比如2-1<del>2-28，不能写2-1</del>2-31，否则查不出数据，5.5则没有这个限制<br>3、	数据库5.5和8.0的区别二：使用mybatis的SQL语句进行查询时，针对时间查询，在数据库中可以查询到结果，但是在java代码中查询不到结果，代码无问题，应该是8.0的数据库的问题，5.5没有此问题<br>4、	文件上传的Excel文件应该要注意格式，它允许数据之间出现空行，但如果格式不正确，那么解析时会一直解析，遇到空行后因为没有数据会报空指针异常，正确的格式则会跳过空行<br> <br>第七天【2022-02-21】<br>1.	移动端的开发，本项目使用的是微信公众号的订阅号的形式（订阅号的注册等按照官网按部就班就可以了，不是重要内容），其本质也是html网页的形式，所以原理一样。<br>2.	首先进入首页，是一个写好的页面，点击预约的时候，会显示全部的套餐项（这里是用的【mounted钩子函数】查询出数据然后显示在页面中，与以前的【created钩子函数】的区别在于，mounted在created之后，等到页面全部成型了，mounted就执行，可以做到更改created的数据），这之中也要注意图片路径的问题（因为数据库只是保存图片的名字，路径需要自己手动调整）。<br>3.	点击套餐时可以跳转到详情页，除了之前叙述的方法之外，还可以使用js的方法，其中【document.location.toString()】可以得到当前页面的地址（如setmeal_detail.html?id&#x3D;10，然后用过?截取后面的信息），然后就可以根据传来的id信息在钩子函数中查询，得到结果后显示在页面中；需要注意的是，用户看到的套餐信息包含检查组、检查项等详细信息，所以查询的时候要查找完整的信息。<br>4.	点击预约时需要进行短信验证，而目前各个平台已不支持个人的短信服务（防止有人发送有危害性的短信），所以借助的是第三方的短信服务，在购买服务之后，利用第三方给出的代码，就可以向手机号发送短信（但内容是固定的，因为不提供营业执照的话短信仅供测试使用）</p>
-<p>问题：<br>1、	短信服务时要注意在个人测试时短信的内容不可编辑，只能是固定的官方文本，还有如果一次性发大量的短信的话，可能因为代码执行效率导致手机不能完全收到短信，而且还要考虑短信的有效时长<br> <br>第八天【2022-02-23】<br>1.	Freemarker的使用，Freemarker将动态的页面（数据会动态变化的页面）进行【静态化处理】（将数据填充好了，不需要再发请求了），目的是为了减轻页面在被大量用户访问时，不断查询数据对数据库造成的压力，所以只需要针对会被大量访问时的页面进行处理就行了。<br>2.	静态化处理在服务提供者中进行（因为要在业务层进行方法调用），由于生成的静态页面是一种结果，而这种结果需要动态改变，所以在【执行增、删、改操作】的时候，都需要对已经生成的结果进行调整，并且由于每个静态结果页面都要有不一样的文件名，所以最优方案是用【主键id】作区分。<br>3.	首先需要在【WEB-INF】文件夹里面创建ftl模板文件夹（其他位置也可以，但路径要明确），然后写入【模板文件】，尾缀是【.ftl】（注意里面的变量格式），然后在实现类中写实现方法，在增、删、改操作的时候都要对模板文件进行修改。或者增、删、改的时候不进行生成操作，而是统一执行生成的操作（随便在页面加个按钮，点击时发送请求就可以了，前台和后台的套餐业务层是共用的），这样可以减轻对服务器的负担（尤其是数据量很大的时候）。<br>4.	完善手机验证码的发送：在用户输入手机号点击发送验证码的时候【先验证手机格式】是否正确，正确的前提下才会进行发送请求，同时进入倒计时等待，倒计时中不可以再次点击发送验证码（前端用的计时器实现，每秒执行一次）；请求发送到服务器后，服务器直接获取用户的手机号，用【第三方模板代码】将短信发送出去，但因为现在仅仅是测试使用，模板的内容和验证码都是固定的，用户手机只能收到相同的短信内容。但是生成的验证码还是随机的（这个验证码会保存到Redis数据库中，因为Redis数据库可以设置时间，时间到了这个数据就会失效了，查询也查询不到，恰好实现验证码的时效性，该保存时间可以自定义），用户需要输入这个随机的验证码才有效，而不是手机上的短信验证码。<br>5.	输入验证码后，在提交的时候会进行验证码的验证，【与Redis保存的数据一致】才可以通过然后进行下一步的验证，否则会提示用户验证码不正确。</p>
-<p>问题：<br>1、	使用第三方的模板代码是在阿里云市场购买的短信服务，每一家的代码稍微有不同的地方，这里需要注意，所以最好先进行测试之后再封装成工具类以供调用。<br> <br>第九天【2022-02-24】<br>1.	预约成功页面：当用户完成预约后，会跳转到预约成功的页面，此页面展示的信息有预约注意事项（固定的），以及用户的信息。此处的关键点在于预约的信息包含了【姓名、日期、套餐、预约方式】（这几个项都不在一张表中，而是分散在不同的表中），在回显信息的时候要进行级联查询，然后封装起来（没有对应的实体类所以用map进行封装，但是不规范），再把封装的信息回显到页面。<br>2.	用户的预约由【姓名、电话、身份证号、日期】构成，其中以电话进行是否同一用户的判断（因为要发验证码），以日期判断是否已经预约，如果当天已经预约过了则不能再预约，不是当天的话不受影响。注意预约成功之后会再向用户手机发送一条预约成功信息的短信。<br>3.	整体逻辑是：用户先获取验证码以证明手机号可用，然后填写正确的个人信息进行预约，首先会在后台验证用户的验证码是否是正确的，不正确的话直接就会失败，然后再根据手机号查询此用户是否存在，存在的话就不新建用户信息，反之会添加一个用户信息，最后查询当天的预约人数是否满了，没满的话才能进行预约，预约成功之后就会发短信告诉用户，同时跳转到结果页面。<br>4.	手机上可以使用手机号加验证码进行快捷登录，登录成功后把信息存在Redis中（模拟session域，30分钟），经过登录后访问主页，可以有更多的权限。<br>5.	权限的处理（使用spring框架中的security安全框架，还有shiro框架），在整合Spring Security时过滤器的名称必须为【SpringSecurityFilterChain】，否则会抛异常。此框架自带一个用于登录的登录界面，当用户没有经过认证（登录）的时候会进行拦截（前提是访问的页面需要认证，可以设置不需要认证），其中【{noop}】表示使用暗文密码，不加就是明文（框架本身会处理密码，保存在数据库的就是暗文密码）；配置文件可以配置哪些页面需要什么权限才能访问，使用注解就是在控制层配置哪些方法需要什么角色才能访问（角色即职业，对应的多个权限方法）。可以自定义登录界面，在配置文件中配置登录界面的的路径就好（自定义登录页面需要关闭CsrfFilter过滤器，true就是关闭，否则登录操纵会被禁用）；权限不够时会报【403】错误，通过捕获错误进行权限不够提示。</p>
-<p>第十天【2022-02-25】<br>1.	Security框架使用【bcrypt】进行加密，加密后字符串长度固定为60位，其中：$是分割符，无意义；2a是bcrypt加密版本号；10是cost的值；而后的前22位是salt值。<br>2.	通过在控制层的方法上加上【@PreAuthorize】注解进行权限控制（hasAuthority表示方法权限，hasRole表示角色权限）。<br>3.	框架也自带一个退出登录的操作，在配置登录操作的后面也配置登出操作，之后只需要在页面的超链接指明地址（&#x2F;logout.do），就可以完成退出操作（退出操作后所有的认证都是未认证状态，无法访问）。<br>4.	未认证访问某个页面时，会被框架拦截下来需要先进行登录，登录成功之后会被框架转到之前访问失败的页面，而不是跳转到首页。<br>5.	在登录成功之后，会一并把该用户的角色信息查询出来（角色与用户是多对多的关系，用户可以级联查询出角色信息，角色信息又级联查询权限），这样就明确了用户的权限，在用户的权限不够时会报403错误，根据错误进行相应的提示。<br>6.	图形报表【Echarts】，将数据以可视化的形式（条形图，柱状图，折线图等）呈现出来，属于【前端的模块】。在访问页面的时候，在钩子函数created中发送axios请求到后台查询出数据，返回到页面后就可以使用Echarts将数据以图形的形式呈现出来。</p>
-<p>问题：<br>1、	关于RpcExption异常，此异常发生在远程调用的时候，出现的异常都是此异常，属于dubbo框架的。远程调用发生在服务消费者调用服务提供者的业务层方法时，由于各种原因导致没有调用到，就会抛出此异常，包括但不限于【Zookeeper服务没打开】【服务提供者服务器没有启动】【服务提供者中没有配置对应的业务层代码】【配置文件的没有配到服务提供者】【缺少运行时相关的jar包】【业务层注解配置错误】【spring配置文件缺少】；其中有些异常并非提供者调用不到出现的，这时候需要查看是否有其他的异常出现导致dubbo抛出RpcExption。<br> <br>第十一天【2022-03-01】<br>1.	导出Excel文件：先制作好模板文件，然后通过Excel的行号和列号确定“坐标”把数据填充进去，和Excel的上传差不多，只不过上传是读取文件把数据填入到数据库中，而导出是对Excel的写操作，都是Apache的POI服务。<br>2.	生成PDF文件：首先也是要有一个模板文件，然后借助官方提供的代码将数据填充到页面中，然后就可以导出成PDF文件。借助软件TIB_js-studiocomm可以可视化的设计PDF文件样式，然后复制.jrxml文件到idea的项目中去，执行代码时就会去读此模板并将数据填充进去，最后在指定的路径下生成想要的PDF文件。<br>3.	Powerdesigner：设计数据库有重大帮助，可以明确的自定义数据库表与表之间的关系，设计字段，通过概念模型设计多对多关系等等，在设计数据库与解析已有数据库的关系时有重要作用。</p>
-<p>问题：<br>1、	此项目功能尚未完全，相对于理论设计出来的功能来说，前台仅有预约功能，后台仅对预约功能做了完整的增删改查，再就是一些细节上的修饰（如文件的上传和导出，短信服务，图片上传等）；</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>微服务项目</category>
-        <category>健康管理系统</category>
+        <category>Dain</category>
+        <category>学习记录</category>
       </categories>
       <tags>
-        <tag>JAVA项目</tag>
+        <tag>常用</tag>
       </tags>
   </entry>
 </search>

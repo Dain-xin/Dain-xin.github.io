@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="学习不止探索">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代家鑫的博客">
-<meta property="og:url" content="http://dainx-xin.github.io/archives/index.html">
+<meta name="description" content="网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。 （网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器） 熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。 处理方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Cloud学习笔记1">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/05/25/JAVA/SpringCloud/index/index.html">
 <meta property="og:site_name" content="代家鑫的博客">
-<meta property="og:description" content="学习不止探索">
+<meta property="og:description" content="网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。 （网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器） 熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。 处理方式">
 <meta property="og:locale">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png">
+<meta property="article:published_time" content="2022-05-25T14:50:17.000Z">
+<meta property="article:modified_time" content="2022-05-26T13:14:10.222Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/archives/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/25/JAVA/SpringCloud/index/"/>
 
 
 
 
 
-  <title>归档 | 代家鑫的博客</title>
+  <title>Spring Cloud学习笔记1 | 代家鑫的博客</title>
   
 
 
@@ -143,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,375 +287,255 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/25/JAVA/SpringCloud/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代家鑫的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">Spring Cloud学习笔记1</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-25T22:50:17+08:00">
+                2022-05-25
+              </time>
+            
+			
+			
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-05-26T21:14:10+08:00">
+                2022-05-26
+              </time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 9 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/Spring-Cloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Cloud</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2023">2023</h2>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/24/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url">
-              
-                <span itemprop="name">博客Hexo和Git说明</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-24T09:00:00+08:00"
-              content="2023-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2022">2022</h2>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/25/JAVA/SpringCloud/index/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Spring Cloud学习笔记1</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  643
+                </span>
               
-            </a>
-        
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-25T22:50:17+08:00"
-              content="2022-05-25" >
-          05-25
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/" itemprop="url">
-              
-                <span itemprop="name">Java开发基础</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-25T21:47:17+08:00"
-              content="2022-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/25/%E7%AE%97%E6%B3%95/2022%E7%AE%97%E6%B3%95/" itemprop="url">
-              
-                <span itemprop="name">算法2022复习题</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-25T09:00:00+08:00"
-              content="2022-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。</p>
+<p>（网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器）</p>
+<p>熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。</p>
+<p>处理方式：</p>
+<ol>
+<li>超时：如果服务连接超时、即使未成功也会被释放资源；</li>
+<li>仓壁模式：就是线程池，</li>
+<li>限流功能-Sentinel，</li>
+<li>断路器模式，通过下图，让我们的请求处于closed状态，如果我们的服务调用失败率到达一定的值域就会open状态，然后进行重置超时，成功就closed，否则就继续open；</li>
+</ol>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png" alt="image-20220525203610863"></p>
+<p>Sentinel：限流</p>
+<p>例如：我们启动Sentinel服务，监控8080端口，（三板斧，pom导入jar、yml指定Sentinel-dashboard）把我们的服务发送给我们的Sentinel控制台但是不显示，懒加载，访问后可见服务分级，通过Sentinel控制台设置限流规则（就是我们再Sentinel控制台服务端设置规则，发送给我们的客户端，然后就可以生效我们的限流规则）</p>
+<p>Sentinel的持久化规则：</p>
+<ol>
+<li>pull模式</li>
+<li>push模式，通过我们watch监听器</li>
+</ol>
+<p>Sentinel云原生</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png" alt="image-20220525210640723"></p>
+<p>链路追踪：我们进行一次服务调用，但是无法发现我们的服务调用的路径（网关、服务提供、服务消费、其他微服务）可以排查我们的服务出错的位置。</p>
+<p>zipkin+Selush、skywalking</p>
+<p>9：30</p>
+<p>Nacos服务注册</p>
+<p>本质上就是：Post类型请求类型的http请求</p>
+<p>Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。</p>
+<p>在我们SpringBoot项目启动后执行我们的Nacos的那个注册方法 registerInstance方法。</p>
+<p>我们SpringBoot启动run方法，通过广播起发送时间，对我们感兴趣的事情进行监听机制来执行我们方法，因此我们Nacos服务注册的需要写监听器，但是我们SpringCould团队提供了一个接口（ServiceRegister）让我们的Nacos或者Eureka来实现接口的NacosServiceRegister   完成register（）方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png" alt="image-20220526204011740"></p>
+<p>Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。</p>
+<p>OpenFeign：服务调用，设计思想。</p>
+<p>9：00</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/25/%E7%AE%97%E6%B3%95/index/" itemprop="url">
-              
-                <span itemprop="name">算法说明</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-25T08:00:00+08:00"
-              content="2022-05-25" >
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/Note/" itemprop="url">
-              
-                <span itemprop="name">健康管理系统项目笔记1</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-24T19:47:17+08:00"
-              content="2022-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/24/%E9%A1%B9%E7%9B%AE/%E5%B0%9A%E7%AD%B9%E7%BD%91%E9%A1%B9%E7%9B%AE/1.%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E3%80%81%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" itemprop="url">
-              
-                <span itemprop="name">尚筹网项目开发手册1</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-24T18:47:19+08:00"
-              content="2022-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Docker/" itemprop="url">
-              
-                <span itemprop="name">Docke使用说明</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-24T14:47:17+08:00"
-              content="2022-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/05/24/Begin/%E7%9B%AE%E6%A0%87/" itemprop="url">
-              
-                <span itemprop="name">个人目标</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-24T08:00:00+08:00"
-              content="2022-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/" rel="next" title="Java开发基础">
+                <i class="fa fa-chevron-left"></i> Java开发基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/05/24/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="博客Hexo和Git说明">
+                博客Hexo和Git说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
+  </article>
   
 
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -657,6 +543,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -918,6 +808,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
