@@ -39,6 +39,105 @@
       </tags>
   </entry>
   <entry>
+    <title>阿里云服务部署使用说明</title>
+    <url>/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="阿里云ECS云服务部署过程"><a href="#阿里云ECS云服务部署过程" class="headerlink" title="阿里云ECS云服务部署过程"></a>阿里云ECS云服务部署过程</h1><hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目</p>
+<hr>
+<p><code>提示：学生可以有优惠活动</code></p>
+<h1 id="一、购买阿里云ECS"><a href="#一、购买阿里云ECS" class="headerlink" title="一、购买阿里云ECS"></a>一、购买阿里云ECS</h1><p>1、<a href="https://developer.aliyun.com/plan/student#J_6054107750">飞天加速计划</a></p>
+<p>2、完成购买后进入控制台：<a href="https://ecs.console.aliyun.com/#/home">云服务器 ECS控制台</a></p>
+<ul>
+<li>找到实例与镜像在更多里面密码更改重启服务器。<img src="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="重置密码"></li>
+<li>使用windows连接工具（xshell）我的分享地址</li>
+<li>找到服务器的公网输入密码连接<br><img src="https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
+</ul>
+<h1 id="二、安装Linux相关服务"><a href="#二、安装Linux相关服务" class="headerlink" title="二、安装Linux相关服务"></a>二、安装Linux相关服务</h1><p>安装内容：<br>下载分享：</p>
+<h2 id="1-JDK8"><a href="#1-JDK8" class="headerlink" title="1.JDK8"></a>1.JDK8</h2><p><a href="https://developer.aliyun.com/article/773930">阿里云JDK配置</a></p>
+<blockquote>
+<p>主要的代码：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1<span class="number">.8</span><span class="number">.0_281</span>   #你的JDK安装路径+名称</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Mysql-57"><a href="#2-Mysql-57" class="headerlink" title="2.Mysql 57"></a>2.Mysql 57</h2><p><a href="https://developer.aliyun.com/article/834505">Mysql57安装</a></p>
+<p>1、如果出GPG的错：<a href="https://cloud.tencent.com/developer/article/1940459">GPG Keys are configured</a><br>2、出现“（”，“）”：<a href="https://blog.csdn.net/wangchengming1/article/details/76946412">xshell字符转义</a><br>3、mysql服务：密码过于简单需要设置：<a href="https://www.cnblogs.com/baby123/p/12221405.html">地址</a><br>4、navicat连接mysql出现错误 is not allowed to connect to this mysql server 的解决办法<a href="https://blog.csdn.net/weixin_42132143/article/details/118339697">链接</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld.service</span><br><span class="line">systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+<h2 id="3-redis5"><a href="#3-redis5" class="headerlink" title="3.redis5"></a>3.redis5</h2><p>参考1：<a href="https://developer.aliyun.com/article/775160">阿里云Redis安装</a><br>参考2：<a href="https://blog.csdn.net/lilong329329/article/details/90451657">配置亲测有效</a><br><code>重点：远程连接阿里云服务需要注释掉bind 127.0.0.1和设置密码，重启服务和配置文件</code><br><img src="https://img-blog.csdnimg.cn/5771d9a252aa4e15ac13eda283e1cad2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="配置"></p>
+<h2 id="3-Tomcat-9"><a href="#3-Tomcat-9" class="headerlink" title="3.Tomcat 9"></a>3.Tomcat 9</h2><p>这个比较简单，把自己gz文件放到自己想要的位置 &#x2F;usr&#x2F;local&#x2F;tomcat 中<br>tar -zxvf 文件名  解压好后，去往bin目录启动starup.sh。配置安全组8080，连接ip+8080即可。</p>
+<h2 id="4-Node-js"><a href="#4-Node-js" class="headerlink" title="4.Node.js"></a>4.Node.js</h2><p>参考连接:<a href="https://developer.aliyun.com/article/775037">Node.js安装</a></p>
+<h2 id="5-Nacos"><a href="#5-Nacos" class="headerlink" title="5.Nacos"></a>5.Nacos</h2><p>参考连接:<a href="https://developer.aliyun.com/article/786617">nacos安装</a></p>
+<h2 id="6-宝塔面板"><a href="#6-宝塔面板" class="headerlink" title="6.宝塔面板"></a>6.宝塔面板</h2><p>参考连接:<a href="https://developer.aliyun.com/article/767507">面板配置</a><br><a href="https://developer.aliyun.com/article/766773#:~:text=%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E6%9D%A1%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%9C%AC%E6%95%99%E7%A8%8B%E4%BB%A5CentOS%E4%B8%BA%E4%BE%8B%EF%BC%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E4%B8%BA%EF%BC%9A%20yum%20install%20-y%20wget%20&&,wget%20-O%20install.sh%20http://download.bt.cn/install/install.sh%20&&%20sh%20install.sh">参考2</a></p>
+<h2 id="7-导出镜像"><a href="#7-导出镜像" class="headerlink" title="7.导出镜像"></a>7.导出镜像</h2><p><a href="https://help.aliyun.com/document_detail/58181.html">导出自定义镜像</a></p>
+<h2 id="8-RabbitMq"><a href="#8-RabbitMq" class="headerlink" title="8.RabbitMq"></a>8.RabbitMq</h2><p><a href="https://blog.csdn.net/qq_41854180/article/details/113832989">参考1</a><br><a href="https://blog.csdn.net/u014528861/article/details/114370948">rpm安装过程</a><br><a href="https://blog.csdn.net/feinifi/article/details/107997555">参考2</a></p>
+<h2 id="9-Docker"><a href="#9-Docker" class="headerlink" title="9.Docker"></a>9.Docker</h2><p><a href="https://help.aliyun.com/document_detail/187598.html#section-kjt-i59-n4a">Docker使用</a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>提示：未完待续.......</code></p>
+]]></content>
+      <categories>
+        <category>环境搭建</category>
+        <category>ECS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>贪心算法</title>
+    <url>/2022/05/28/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><blockquote>
+<p>就是采用贪心的算法思想，保证每次操作都是局部最优，从而保证最后结果是全局最优的。</p>
+</blockquote>
+<pre><code>举一个最简单的例子：小明和小王喜欢吃苹果，小明可以吃五个，小王可以吃三个。已知苹果园里有吃不完的苹果，求小明和小王一共最多吃多少个苹果。在这个例子中，我们可以选用的贪心策略为，每个人吃自己能吃的最多数量的苹果，这在每个人身上都是局部最优的。又因为全局结果是局部结果的简单求和，且局部结果互不相干，因此局部最优的策略也同样是全局最优的策略。
+</code></pre>
+<h3 id="A、分发饼干问题"><a href="#A、分发饼干问题" class="headerlink" title="A、分发饼干问题"></a><a href="https://leetcode.cn/problems/assign-cookies/">A、分发饼干问题</a></h3><p><img src="https://img-blog.csdnimg.cn/8dba8ad1764a475889f33bdc988233c5.png" alt="问题"></p>
+<ul>
+<li><p>问题分析</p>
+<blockquote>
+<p>这里的贪心策略是，给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干。因为我们需要获得大小关系，一个便捷的方法就是把孩子和饼干分别排序。这样我们就可以从饥饿度最小的孩子和大小最小的饼干出发。</p>
+</blockquote>
+</li>
+<li><p>核心算法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//贪心的思想是，用尽量小的饼干去满足小需求的孩子，所以需要进行排序先</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findContentChildren</span><span class="params">(<span class="type">int</span>[] g, <span class="type">int</span>[] s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">child</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(g);  </span><br><span class="line"><span class="comment">//先将饼干 和 孩子所需大小都进行排序</span></span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        <span class="keyword">while</span> (child &lt; g.length &amp;&amp; cookie &lt; s.length )&#123; </span><br><span class="line"><span class="comment">//当其中一个遍历就结束</span></span><br><span class="line">            <span class="keyword">if</span> (g[child] &lt;= s[cookie])&#123; </span><br><span class="line"><span class="comment">//当用当前饼干可以满足当前孩子的需求，可以满足的孩子数量+1</span></span><br><span class="line">                child++;</span><br><span class="line">            &#125;</span><br><span class="line">            cookie++; </span><br><span class="line"><span class="comment">// 饼干只可以用一次，因为饼干如果小的话，就是无法满足被抛弃，满足的话就是被用了</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> child; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="B、分发糖果"><a href="#B、分发糖果" class="headerlink" title="B、分发糖果"></a><a href="https://leetcode.cn/problems/candy/">B、分发糖果</a></h3><p> <img src="https://img-blog.csdnimg.cn/4fe9c3c66ee34d659124ef66179d5cfa.png" alt="描述"></p>
+<ul>
+<li>问题分析</li>
+</ul>
+<blockquote>
+<p>只需要简单的两次遍历即可：把所有孩子的糖果数初始化为 1；<br>先从左往右遍历一遍，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的糖果数加 1；<br>再从右往左遍历一遍，如果左边孩子的评分比右边的高，且左边孩子当前的糖果数不大于右边孩子的糖果数，则左边孩子的糖果数更新为右边孩子的糖果数加 1。通过这两次遍历，分配的糖果就可以满足题目要求了。这里的贪心策略即为，在每次遍历中，只考虑并更新相邻一侧的大小关系。<br>在样例中，我们初始化糖果分配为 [1,1,1]，第一次遍历更新后的结果为 [1,1,2]，第二次遍历更新后的结果为 [2,1,2]。</p>
+</blockquote>
+<ul>
+<li>java算法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">     <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">candy</span><span class="params">(<span class="type">int</span>[] ratings)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] candy = <span class="keyword">new</span> <span class="title class_">int</span>[ratings.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; candy.length; i++) &#123;</span><br><span class="line">            candy[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//初始化所有分配为1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ratings.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                candy[i] = candy[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//如果后面的人比较大，就把前面的人的糖果数+1给后面的人。（只看前面比较大的）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> ratings.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                candy[i] = Math.max(candy[i],candy[i + <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//反过来，前面的人比较大，就让前面的人的糖果数大于后面的。（只看后面比较大的）</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; candy.length; i++) &#123;</span><br><span class="line">            count += candy[i];</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//计算总的糖果数</span></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、无重叠区间"><a href="#3、无重叠区间" class="headerlink" title="3、无重叠区间"></a><a href="https://leetcode.cn/problems/non-overlapping-intervals/">3、无重叠区间</a></h3><p> <img src="https://img-blog.csdnimg.cn/4a8cac5472e949d895e97ebdbc6f8f79.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>算法分析</li>
+</ul>
+<blockquote>
+<p>在选择要保留区间时，区间的结尾十分重要：选择的区间结尾越小，余留给其它区间的空间就越大，就越能保留更多的区间。因此，我们采取的贪心策略为，优先保留结尾小且不相交的区间。<br>具体实现方法为，先把区间按照结尾的大小进行增序排序，每次选择结尾最小且和前一个选择的区间不重叠的区间。我们这里进行自定义排序。<br>在样例中，排序后的数组为 [[1,2], [1,3], [2,4]]。按照我们的贪心策略，首先初始化为区间[1,2]；由于 [1,3] 与 [1,2] 相交，我们跳过该区间；由于 [2,4] 与 [1,2] 不相交，我们将其保留。因此最终保留的区间为 [[1,2], [2,4]]。</p>
+</blockquote>
+<ul>
+<li>算法实现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">eraseOverlapIntervals</span><span class="params">(<span class="type">int</span>[][] intervals)</span> &#123;</span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[<span class="number">0</span>] == a[<span class="number">0</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] - b[<span class="number">0</span>];</span><br><span class="line">        &#125;);</span><br><span class="line"><span class="comment">//java的自定义排序，把区间按照结尾的大小进行增序排序，</span></span><br><span class="line"><span class="comment">//每次选择结尾最小且和前一个选择的区间不重叠的区间</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">edge</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; intervals.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (edge &lt;= intervals[i][<span class="number">0</span>]) &#123;</span><br><span class="line">                edge = intervals[i][<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//edge比较小于区间第一个数，就把第二个数赋值给edge，反之就+1，</span></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、非递归数列"><a href="#4、非递归数列" class="headerlink" title="4、非递归数列"></a><a href="https://leetcode.cn/problems/non-decreasing-array/">4、非递归数列</a></h3><p><img src="https://img-blog.csdnimg.cn/da64c3ceee16436a92652a24f0c5785c.png" alt="描述"></p>
+<ul>
+<li>算法分析</li>
+</ul>
+<blockquote>
+<p>本题是要维持一个非递减的数列，所以遇到递减的情况时（nums[i] &gt; nums[i + 1]），要么将前面的元素缩小，要么将后面的元素放大。<br>但是本题唯一的易错点就在这，<br>如果将nums[i]缩小，可能会导致其无法融入前面已经遍历过的非递减子数列；<br>如果将nums[i + 1]放大，可能会导致其后续的继续出现递减；<br>所以要采取贪心的策略，在遍历时，每次需要看连续的三个元素，也就是瞻前顾后，遵循以下两个原则：<br>需要尽可能不放大nums[i + 1]，这样会让后续非递减更困难；<br>如果缩小nums[i]，但不破坏前面的子序列的非递减性；<br>算法步骤：<br>遍历数组，如果遇到递减：<br>还能修改：<br>修改方案1：将nums[i]缩小至nums[i + 1]；<br>修改方案2：将nums[i + 1]放大至nums[i]；<br>不能修改了：直接返回false；</p>
+</blockquote>
+<ul>
+<li>Java算法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkPossibility</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> nums[i], y = nums[i + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">                nums[i] = y;</span><br><span class="line">                <span class="keyword">if</span> (isSorted(nums)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                nums[i] = x; <span class="comment">// 复原</span></span><br><span class="line">                nums[i + <span class="number">1</span>] = x;</span><br><span class="line">                <span class="keyword">return</span> isSorted(nums);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSorted</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i - <span class="number">1</span>] &gt; nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring Cloud学习笔记1</title>
     <url>/2022/05/25/JAVA/SpringCloud/index/</url>
     <content><![CDATA[<p>网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。</p>
@@ -82,12 +181,19 @@
   <entry>
     <title>Java开发基础</title>
     <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h3 id="什么是面向过程？"><a href="#什么是面向过程？" class="headerlink" title="什么是面向过程？"></a>什么是面向过程？</h3><p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
+    <content><![CDATA[<h3 id="1、什么是面向过程"><a href="#1、什么是面向过程" class="headerlink" title="1、什么是面向过程"></a>1、什么是面向过程</h3><p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
 <p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
 <p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
-<h3 id="什么是面向对象？"><a href="#什么是面向对象？" class="headerlink" title="什么是面向对象？"></a>什么是面向对象？</h3><p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 </p>
+<h3 id="2、什么是面向对象"><a href="#2、什么是面向对象" class="headerlink" title="2、什么是面向对象"></a>2、什么是面向对象</h3><p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 </p>
 <p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
 <p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
+<h3 id="3、JAVA语言特点"><a href="#3、JAVA语言特点" class="headerlink" title="3、JAVA语言特点"></a>3、JAVA语言特点</h3><ol>
+<li>简单易学、有丰富的类库；</li>
+<li>面向对象、低耦合，高内聚；</li>
+<li>跨平台特点（JVM是跨平台的根本）；</li>
+<li>安全可靠、支持多线程。</li>
+</ol>
+<h3 id="4、基本数据类型和封装类"><a href="#4、基本数据类型和封装类" class="headerlink" title="4、基本数据类型和封装类"></a>4、基本数据类型和封装类</h3><p>​	注：int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况。</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
@@ -447,7 +553,7 @@
   <entry>
     <title>算法2022复习题</title>
     <url>/2022/05/25/%E7%AE%97%E6%B3%95/2022%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="复习资料"><a href="#复习资料" class="headerlink" title="复习资料"></a>复习资料</h2><h3 id="一、简答题："><a href="#一、简答题：" class="headerlink" title="一、简答题："></a>一、简答题：</h3><p>1、什么是时间复杂度？</p>
+    <content><![CDATA[<h3 id="一、简答题："><a href="#一、简答题：" class="headerlink" title="一、简答题："></a>一、简答题：</h3><p>1、什么是时间复杂度？</p>
 <p> 定性描述一个算法的运行时间</p>
 <p>2、什么是 STL？</p>
 <p> 英文全称 standard template library，中文可译为标准模板库或者泛型库，其包含有大量的模板类和模板函数，是 C++ 提供的一个基础模板的集合，用于完成诸如输入&#x2F;输出、数学计算等功能。</p>
@@ -738,19 +844,10 @@
 ]]></content>
       <categories>
         <category>算法</category>
-        <category>复习</category>
       </categories>
       <tags>
         <tag>常用</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>算法说明</title>
-    <url>/2022/05/25/%E7%AE%97%E6%B3%95/index/</url>
-    <content><![CDATA[<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
   </entry>
   <entry>
     <title>健康管理系统项目笔记1</title>
