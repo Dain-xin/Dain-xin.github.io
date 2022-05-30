@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #37ff1f;
+  background: #b5a46e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3271,6 +3271,7 @@ body {
 .site-meta {
   padding: 20px 0;
   color: #fff;
+  background-image: url("https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205291746865.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -3309,7 +3310,6 @@ body {
   color: #000;
 }
 article .post-header {
-  background: url("/images/mstile-150x150-next.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
