@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1dd967;
+  background: #37ff1f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3271,7 +3271,6 @@ body {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background-image: url("/images/mstile-150x150-next.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
