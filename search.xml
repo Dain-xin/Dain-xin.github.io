@@ -179,17 +179,8 @@
       </categories>
   </entry>
   <entry>
-    <title>Java基础</title>
-    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%801/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>基础知识</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java基础——面试</title>
-    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%802/</url>
+    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h3 id="1、面向过程和面向对象"><a href="#1、面向过程和面向对象" class="headerlink" title="1、面向过程和面向对象"></a>1、面向过程和面向对象</h3><p>A：面向过程：</p>
 <p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
 <p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
@@ -244,7 +235,7 @@
 <li>可以使用<strong>ConcurrentHashMap来替代Hashtable来使用</strong>。</li>
 </ol>
 <h3 id="9、HashMap理解"><a href="#9、HashMap理解" class="headerlink" title="9、HashMap理解"></a>9、<a href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 1.7是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205312312598.png" alt="image-20220531231209497"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg" alt="img"></p>
 <p>散列价值是速度，散列让我们查询更快。</p>
 <h4 id="散列技术"><a href="#散列技术" class="headerlink" title="散列技术"></a><strong>散列技术</strong></h4><p>根据结点通过散列函数，得到的关键码值来确定其存储地址。关键码与散列地址是一对一的关系，则在检索时只需根据散列函数对给定值进行某种运算，即可得到待查结点的存储位置。但是，散列函数可能对于<strong>不相等的关键码计算出相同的散列地址</strong>，我们称该现象为<strong>冲突</strong></p>
 <p>数组链表, 便是定义一个数组, 然后数组的每一个成员都是一条链表,数组只需要记载这条链表的引用即可, 这样不需要直接在数组内部存储 键-值 对而需要大量的连续的内存空间。</p>
@@ -258,6 +249,60 @@
 <p>&amp;–&gt;0000 0101</p>
 <p>对于上面这个运行结果的取值方法，我们来讨论一下：因为15的高四位都是0，低四位都是1。而与操作的逻辑是两个运算位都是1结果才是1。所以对于上面这个运算结果的高四位肯定都是0（15高四位都是0），而低四位和h的低四位是一样的（15低四位都是1）。所以结果的取值范围就是h的低四位的一个取值范围：0000~1111，也就是0至15（把高位全部丢弃，压缩至低位）。</p>
 <p>这也是长度为什莫要是2的幂的原因。</p>
+<h4 id="HashMap1-7采用头插法"><a href="#HashMap1-7采用头插法" class="headerlink" title="HashMap1.7采用头插法"></a>HashMap1.7采用头插法</h4><p>当put发生冲突。用链表解决，但是在1.7使用的是头插法插入，虽然有点反人类，但是如果插入的数据集较多，但是后插入的数据更有可能被查询。这也就是头插法的原因。</p>
+<p>头插法实现过程：</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011312700.png" alt="image-20220601131217549"></p>
+<p>将节点3插入链表头部，当hash结果定位到节点所在的数组中，比较value值；再插入结束后链表向下移动一位。但是如果key相同，覆盖value，返回被覆盖额value。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011315169.png" alt="image-20220601131505093"></p>
+<p>注意：头插法的目的是在获取元素时，新插入的元素被访问的频率更高。获取元素时的key一定是唯一的，因此访问到第一个符合的key值就不需要继续遍历了。</p>
+<h4 id="HashMap不适合并发"><a href="#HashMap不适合并发" class="headerlink" title="HashMap不适合并发"></a>HashMap不适合并发</h4><p>push方法非安全，如果在多线程下，线程1添加B，但是线程2添加的C刚好和B重复，但是由于连个相乘插入push数据是不可见的，就会发生覆盖造成不安全。</p>
+<h4 id="HashMap扩容问题"><a href="#HashMap扩容问题" class="headerlink" title="HashMap扩容问题"></a>HashMap扩容问题</h4><p>HashMap扩容的必要性：当我们插入的数据越来越多的时候，为了提升查询效率，扩容范围在0.75，每次扩容都是在2的幂指数。</p>
+<p>但是扩容也会导致死循环，扩容的transfer方法中，外层for循环控制着数组遍历，内存的while循环控制着链表的遍历。</p>
+<h5 id="单线程扩容过程："><a href="#单线程扩容过程：" class="headerlink" title="单线程扩容过程："></a>单线程扩容过程：</h5><p>先生成一个长度为oldTable数组长度2倍的newTable，然后将原本oldTable上的元素一次依照transfer方法的逻辑，添加至newTable中。</p>
+<p><strong>1：执行e.next &#x3D; newTable[i];</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011355078.jpeg" alt="img"></p>
+<blockquote>
+<p>我们的e经过外层for循环定位到了数组下标为1的链表中。并且指向链表的第一个元素，也就是a。此时的newTable作为一个新生成的容器，并没有任何元素。因此e.next &#x3D; newTable[i] &#x3D; null;</p>
+</blockquote>
+<p><strong>2：执行newTable[i]&#x3D;e；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400041.jpeg" alt="img"></p>
+<blockquote>
+<p>我们都知道，e指向的是a，因此newTable[i]&#x3D;e，也就是把元素a挂在了newTable下标为i的链表中。</p>
+</blockquote>
+<p><strong>3：执行e&#x3D;next；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400084.jpeg" alt="img"></p>
+<blockquote>
+<p>仔细观察代码，我们发现在while循环进入时，我们执行了Entry&lt;K,V&gt; next &#x3D; e.next；也就是说，我们提前将节点b保存在了next字段中。此时执行e &#x3D; next；相当于a的指针向后移动至b。结束第一轮循环。</p>
+</blockquote>
+<p><strong>4：再次执行e.next &#x3D; newTable[i];</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400126.jpeg" alt="img"></p>
+<blockquote>
+<p>此时的newTable[i]已经不再是null了，而是经过第一次循环变为了a。因此此步骤相当于e.next&#x3D;a;</p>
+</blockquote>
+<p><strong>5：再次执行newTable[i]&#x3D;e；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400155.jpeg" alt="img"></p>
+<blockquote>
+<p>将b用头插法插入newTable[i]中。</p>
+</blockquote>
+<p><strong>6：再次执行e&#x3D;next；</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
+<blockquote>
+<p>此时再次从元素b开始向后移动指针。发现后续元素已经为null。从而结束整个oldTable[1]的链表遍历。</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400284.jpeg" alt="img"></p>
+<blockquote>
+<p>整个操作仔细看下来，我们发现头插法的一个特性。就是在扩容过程中再次使用头插法，数据就会出现和原先HashMap链表逆序的现象</p>
+</blockquote>
+<h5 id="多线程下扩容可能死循环"><a href="#多线程下扩容可能死循环" class="headerlink" title="多线程下扩容可能死循环"></a>多线程下扩容可能死循环</h5><p>如果线程1让我们的链表倒序，其实也就是在单线程下，本来oldTable遍历完毕next就是null，但是如果多线程下线程2也执行了倒序操作，让我们e.next还有数据，就产生了死循环。</p>
+<h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
+<p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
+<h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
+<li>并发容器，在concurrent并发包中，是对HashMap的安全实现，</li>
+</ol>
+<ul>
+<li></li>
+</ul>
 ]]></content>
       <categories>
         <category>JAVA</category>
