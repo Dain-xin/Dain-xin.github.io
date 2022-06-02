@@ -1,9 +1,9 @@
 ---
-title: 博客Hexo和Git说明
-date: 2022-05-30 9:00:00
+title: Hexo和Git说明
+date: 2022-05-24 9:00:00
 categories:
+- 环境搭建
 - 操作命令
-- Hexo-Git
 tag: 
 - 常用
 ---
