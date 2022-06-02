@@ -3,36 +3,21 @@
   <entry>
     <title>个人目标</title>
     <url>/2022/05/24/Begin/%E7%9B%AE%E6%A0%87/</url>
-    <content><![CDATA[<h1 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h1><blockquote>
-<p>2022-5.24：搭建好基本的博客框架。</p>
-<p>2022-5.25——2022-6.6<br>计划：</p>
-<ol>
-<li>准备好算法考试内容</li>
-<li>完成复习基础知识和面试题</li>
-<li>SpringCloud 以及 Netflix、Alibaba 的组件学习。</li>
-<li>完善Next主题的博客功能：添加浏览量，个人链接，自定义背景，自定义图标，完善阅读体验：添加高亮，添加文章结尾。</li>
-</ol>
-</blockquote>
-]]></content>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，这个密码看着不太对，请再试试。" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="bd601f511bc7acb26d93c40c75ac343e3267ae8948fd2c83737ff4f8a38793b5">cbad8857a5ef55510a0f5570c6d1870a0e8e66d3f4527d07385e529d5f43e1107a8c645ede36f5a31ec885892d617aff3e3b61a0f25dc452b74c38710826374443ef13625b2d5f7b4126b0cb02fc95d3aa93d9dc7fdd56607cbe6c032943b28a20addb0fd224d1618026b9875ea3971db92c1b7919779e7dcf8bf6fa8d72a4877136976273477cba7f718b7ad8c0fcee35b5e5c97256772328f0102b11cfc03f87772e49e30e21bf839f9a0bdaf038f378e6a42e67699a2752237541b8b8245b9694d26e65a7ffa14c08a25c7d5fe25e2f0bc7bf9004273541d4a07929f03f108e24eb6626530048acc18eb79b36a54a35a231570b543f5e554babde6242bc6b7b4898acc998d0327d7e234e26517d18d5ace6600eb99bf4b101d851df66b8503cfe49ac04c3e65182e8a14a0561aaede3c20c4a8778b436d8030bdfa97cf2536f137ca25b24b9c7a15d5393939734b0c2b61602bd1decf72f3e68947632e9b59ea8cbacd7f7fc545ee5c6fb256b10facdf7a9666eb941fd0a1429212a89d0dd7942e7d9db2d470daa6b80f8c61fc2784025c34c1e046fa753bd342c3d14a48aa3ce0d033060051a06ef048cca277bf26966761d3e31dda7b1a8f22f55a4b151f94ff752ebd95df73193103eab1bb986bcca3e50fd971bfedaec0d6f90d9a4a94e91db48e97dadf1e95db995db08a27d9c7354fbccdbcac302b8aa42e11f24cc4ba080a3ee548a1aabe5b0c90b1808c6af61bc042f040e2ed9da2ccd430a481f32b882d4b4be083ff7374906ddf5088a8181cfa5b4f4924ab5caf506827696c105aa0abc22ec551ed83f879a539701a4</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好，这里需要密码。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
         <category>Dain</category>
         <category>学习记录</category>
-      </categories>
-      <tags>
-        <tag>常用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客Hexo和Git说明</title>
-    <url>/2022/05/30/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;new file name&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>操作命令</category>
-        <category>Hexo-Git</category>
       </categories>
       <tags>
         <tag>常用</tag>
@@ -297,13 +282,48 @@
 <h5 id="多线程下扩容可能死循环"><a href="#多线程下扩容可能死循环" class="headerlink" title="多线程下扩容可能死循环"></a>多线程下扩容可能死循环</h5><p>如果线程1让我们的链表倒序，其实也就是在单线程下，本来oldTable遍历完毕next就是null，但是如果多线程下线程2也执行了倒序操作，让我们e.next还有数据，就产生了死循环。</p>
 <h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
 <p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
-<h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
-<li>并发容器，在concurrent并发包中，是对HashMap的安全实现，</li>
+<h3 id="10、ConcurrentHashMap理解"><a href="#10、ConcurrentHashMap理解" class="headerlink" title="10、ConcurrentHashMap理解"></a>10、<a href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
+<li><p>并发容器，在concurrent并发包中，是对HashMap的安全实现，也是数组和链表的结构。</p>
+</li>
+<li><p>但是在HashEntry和Segment都是静态内部类，基本和hashMap类似，但是ConcurrentHashMap中HashEntry的value和next指针都呗volatille修饰，保证了数据的可见性；</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">static final class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable &#123;</span><br><span class="line">       private static final long serialVersionUID = 2249069246763182397L;</span><br><span class="line">       </span><br><span class="line">       // 和 HashMap 中的 HashEntry 作用一样，真正存放数据的桶</span><br><span class="line">       transient volatile HashEntry&lt;K,V&gt;[] table;</span><br><span class="line">       transient int count;</span><br><span class="line">       transient int modCount;</span><br><span class="line">       transient int threshold;</span><br><span class="line">       final float loadFactor;</span><br><span class="line">       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206020933572.png" alt="image-20220602093324445"></p>
+</li>
+<li><p>ConcurrentHashMap 采用了分段锁技术，其中 Segment 继承于 ReentrantLock。不会像 HashTable 那样不管是 put 还是 get 操作都需要做同步处理，理论上 ConcurrentHashMap 支持 CurrencyLevel (Segment 数组数量)的线程并发。每当一个线程占用锁访问一个 Segment 时，不会影响到其他的 Segment。</p>
+</li>
 </ol>
-<ul>
-<li></li>
+<h4 id="put方法"><a href="#put方法" class="headerlink" title="put方法"></a>put方法</h4><blockquote>
+<ol>
+<li>将当前 Segment 中的 table 通过 key 的 hashcode 定位到 HashEntry。</li>
+<li>遍历该 HashEntry，如果不为空则判断传入的 key 和当前遍历的 key 是否相等，相等则覆盖旧的 value。</li>
+<li>不为空则需要新建一个 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容。</li>
+<li>最后会解除在 1 中所获取当前 Segment 的锁。</li>
+</ol>
+</blockquote>
+<h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><blockquote>
+<p>只需要将 Key 通过 Hash 之后定位到具体的 Segment ，再通过一次 Hash 定位到具体的元素上。</p>
+<p>由于 HashEntry 中的 value 属性是用 volatile 关键词修饰的，保证了内存可见性，所以每次获取时都是最新值。</p>
+<p>ConcurrentHashMap 的 get 方法是非常高效的，<strong>因为整个过程都不需要加锁</strong>。</p>
+</blockquote>
+<h4 id="1-8新特性"><a href="#1-8新特性" class="headerlink" title="1.8新特性"></a>1.8新特性</h4><p>抛弃了Segment分段锁，使用CAS+Synchronized保证并发安全。</p>
+<blockquote>
+<p>1.8 在 1.7 的数据结构上做了大的改动，采用红黑树之后可以保证查询效率（<code>O(logn)</code>），甚至取消了 ReentrantLock 改为了 synchronized，这样可以看出在新版的 JDK 中对 synchronized 优化是很到位的。</p>
+</blockquote>
+<h4 id="put方法-1"><a href="#put方法-1" class="headerlink" title="put方法"></a>put方法</h4><ul>
+<li>根据 key 计算出 hashcode 。</li>
+<li>判断是否需要进行初始化。</li>
+<li><code>f</code> 即为当前 key 定位出的 Node，如果为空表示当前位置可以写入数据，利用 CAS 尝试写入，失败则自旋保证成功。</li>
+<li>如果当前位置的 <code>hashcode == MOVED == -1</code>,则需要进行扩容。</li>
+<li>如果都不满足，则利用 synchronized 锁写入数据。</li>
+<li>如果数量大于 <code>TREEIFY_THRESHOLD</code> 则要转换为红黑树。</li>
 </ul>
-]]></content>
+<h4 id="get方法-1"><a href="#get方法-1" class="headerlink" title="get方法"></a>get方法</h4><ul>
+<li>根据计算出来的 hashcode 寻址，如果就在桶上那么直接返回值。</li>
+<li>如果是红黑树那就按照树的方式获取值。</li>
+<li>就不满足那就按照链表的方式遍历获取值。</li>
+</ul>
+<h3 id="11、"><a href="#11、" class="headerlink" title="11、"></a>11、</h3>]]></content>
       <categories>
         <category>JAVA</category>
         <category>基础知识</category>
@@ -1033,5 +1053,21 @@
         <category>微服务</category>
         <category>融资宝项目</category>
       </categories>
+  </entry>
+  <entry>
+    <title>博客Hexo和Git说明</title>
+    <url>/2022/05/24/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;new file name&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>操作命令</category>
+        <category>Hexo-Git</category>
+      </categories>
+      <tags>
+        <tag>常用</tag>
+      </tags>
   </entry>
 </search>
