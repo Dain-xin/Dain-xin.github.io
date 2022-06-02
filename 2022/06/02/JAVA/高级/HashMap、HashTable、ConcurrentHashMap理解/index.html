@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="1、面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解">
+<meta name="description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础——面试">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="HashMap、HashTable、ConcurrentHashMap理解">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="1、面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解">
+<meta property="og:description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:locale">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011312700.png">
@@ -94,11 +94,11 @@
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400084.jpeg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400126.jpeg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400155.jpeg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400284.jpeg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206020933572.png">
-<meta property="article:published_time" content="2022-05-25T13:47:17.000Z">
-<meta property="article:modified_time" content="2022-06-02T02:29:35.055Z">
+<meta property="article:published_time" content="2022-06-02T14:20:29.000Z">
+<meta property="article:modified_time" content="2022-06-02T14:28:25.812Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/25/JAVA/基础/1-基础问题/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/02/JAVA/高级/HashMap、HashTable、ConcurrentHashMap理解/"/>
 
 
 
 
 
-  <title>Java基础——面试 | Dain的博客</title>
+  <title>HashMap、HashTable、ConcurrentHashMap理解 | Dain的博客</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -326,7 +326,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java基础——面试</h2>
+          <h2 class="post-title" itemprop="name headline">HashMap、HashTable、ConcurrentHashMap理解</h2>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-25T21:47:17+08:00">
-                2022-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-02T22:20:29+08:00">
+                2022-06-02
               </time>
             
 			
@@ -356,7 +356,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-02T10:29:35+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-02T22:28:25+08:00">
                 2022-06-02
               </time>
             
@@ -386,8 +386,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
-                    <span itemprop="name">基础知识</span>
+                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index">
+                    <span itemprop="name">高级</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/" itemprop="url" rel="index">
+                    <span itemprop="name">集合</span>
                   </a>
                 </span>
 
@@ -417,7 +428,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.8k
+                  2.6k
                 </span>
               
 
@@ -433,7 +444,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13
+                  9
                 </span>
               
             </div>
@@ -454,52 +465,7 @@
       
 
       
-        <h3 id="1、面向过程和面向对象"><a href="#1、面向过程和面向对象" class="headerlink" title="1、面向过程和面向对象"></a>1、面向过程和面向对象</h3><p>A：面向过程：</p>
-<p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
-<p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
-<p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
-<p>B：面向对象：</p>
-<p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
-<p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
-<p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
-<h3 id="2、hashCode作用"><a href="#2、hashCode作用" class="headerlink" title="2、hashCode作用"></a>2、hashCode作用</h3><p>理解：</p>
-<p>它返回的就是根据对象的内存地址换算出的一个值。这样一来，当 集合要添加新的元素时，先调用这个元素的hashCode方法，就一下子能定位到它应该放置的物理 位置上。</p>
-<p>如果这个位置上没有元素，它就可以直接存储在这个位置上，不用再进行任何比较了；</p>
-<p>如果这个位置上已经有元素了，就调用它的equals方法与新元素进行比较，相同的话就不存了，不相 同就散列其它的地址。</p>
-<p>这样一来实际调用equals方法的次数就大大降低了，几乎只需要一两次。</p>
-<h3 id="3、JAVA语言特点"><a href="#3、JAVA语言特点" class="headerlink" title="3、JAVA语言特点"></a>3、JAVA语言特点</h3><ol>
-<li>简单易学、有丰富的类库；</li>
-<li>面向对象、低耦合，高内聚；</li>
-<li>跨平台特点（JVM是跨平台的根本）；</li>
-<li>安全可靠、支持多线程。</li>
-</ol>
-<h3 id="4、基本数据类型和包装类"><a href="#4、基本数据类型和包装类" class="headerlink" title="4、基本数据类型和包装类"></a>4、基本数据类型和包装类</h3><ol>
-<li>int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况；</li>
-<li>包装类可以作为泛型，实现了Serializable接口，支持序列化和反序列化</li>
-<li>Integer 来说，在数值区间为 -128~127 时，会直接复用已有对象，在这区间之外的数字才会在堆上产生。例如128这个会生成新对象。</li>
-<li>包装类包含了丰富的方法。</li>
-</ol>
-<h3 id="5、重写和重载的理解"><a href="#5、重写和重载的理解" class="headerlink" title="5、重写和重载的理解"></a>5、重写和重载的理解</h3><p>重写：（Overread）</p>
-<ol>
-<li>子类重写父类方法发生在父类与子类之间 </li>
-<li>方法名，参数列表，返回类型（除过子类中方法的返回类型 是父类中返回类型的子类）都必须相同 </li>
-<li>访问修饰符的限制一定要大于被重写方法的访问修饰符 （public&gt;protected&gt;default&gt;private) </li>
-<li>重写方法一定不能抛出新的检查异常或者比被重写方法申 明更加宽泛的检查型异常</li>
-</ol>
-<p>重载：（Overload）</p>
-<ol>
-<li>重载Overload是一个类中多态性的一种表现 </li>
-<li>重载要求同名方法的参数列表不同(参数类型，参数个数甚至是参数顺序)</li>
-<li>重载的时候，返回值类型可以相同也可以不相同。无法以返回 型别作为重载函数的区分标准</li>
-</ol>
-<h3 id="6、Instanceof-关键字"><a href="#6、Instanceof-关键字" class="headerlink" title="6、Instanceof 关键字"></a>6、Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7、String、StringBuffer、StringBuilder"><a href="#7、String、StringBuffer、StringBuilder" class="headerlink" title="7、String、StringBuffer、StringBuilder"></a>7、String、StringBuffer、StringBuilder</h3><ol>
-<li>String：只读字符串；其实就是对象，但是底层是被final修饰的字符数组，引用的字符串不能改变；因此每次操作都是新的String的对象。</li>
-<li>StringBuffer和StringBuilder：底层都是可变的字符数组，所以在进行频繁的字符串操作时，建议使用StringBuffer和 StringBuilder来进行操作。 另外StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</li>
-</ol>
-<h3 id="8、hashMap和hashTable"><a href="#8、hashMap和hashTable" class="headerlink" title="8、hashMap和hashTable"></a>8、hashMap和hashTable</h3><ol>
+        <h3 id="hashMap和hashTable区别"><a href="#hashMap和hashTable区别" class="headerlink" title="hashMap和hashTable区别"></a>hashMap和hashTable区别</h3><ol>
 <li>HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。</li>
 <li>HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。</li>
 <li>HashMap的底层数组的长度必须为2^n，这样做的好处是为以后的hash算法做准备，而Hashtable底层数组的长度可以为任意值，这就造成了当底层数组长度为合数的时候，Hashtable的hash算法散射不均匀，容易产生hash冲突。</li>
@@ -507,7 +473,7 @@
 <li>HashMap在jdk1.8在原先的数组+链表的结构进行了优化，将实现结构变为数组+链表+红黑树；Hashtable到了jdk1.8了内部结构并没有实质优化，继续使用数组+链表的方式实现。</li>
 <li>可以使用<strong>ConcurrentHashMap来替代Hashtable来使用</strong>。</li>
 </ol>
-<h3 id="9、HashMap理解"><a href="#9、HashMap理解" class="headerlink" title="9、HashMap理解"></a>9、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 1.7是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
+<h3 id="HashMap理解"><a href="#HashMap理解" class="headerlink" title="HashMap理解"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 1.7是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg" alt="img"></p>
 <p>散列价值是速度，散列让我们查询更快。</p>
 <h4 id="散列技术"><a href="#散列技术" class="headerlink" title="散列技术"></a><strong>散列技术</strong></h4><p>根据结点通过散列函数，得到的关键码值来确定其存储地址。关键码与散列地址是一对一的关系，则在检索时只需根据散列函数对给定值进行某种运算，即可得到待查结点的存储位置。但是，散列函数可能对于<strong>不相等的关键码计算出相同的散列地址</strong>，我们称该现象为<strong>冲突</strong></p>
@@ -558,7 +524,7 @@
 <p>将b用头插法插入newTable[i]中。</p>
 </blockquote>
 <p><strong>6：再次执行e&#x3D;next；</strong></p>
-<p><img src="https://pic4.zhimg.com/80/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
 <blockquote>
 <p>此时再次从元素b开始向后移动指针。发现后续元素已经为null。从而结束整个oldTable[1]的链表遍历。</p>
 </blockquote>
@@ -570,7 +536,7 @@
 <h5 id="多线程下扩容可能死循环"><a href="#多线程下扩容可能死循环" class="headerlink" title="多线程下扩容可能死循环"></a>多线程下扩容可能死循环</h5><p>如果线程1让我们的链表倒序，其实也就是在单线程下，本来oldTable遍历完毕next就是null，但是如果多线程下线程2也执行了倒序操作，让我们e.next还有数据，就产生了死循环。</p>
 <h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
 <p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
-<h3 id="10、ConcurrentHashMap理解"><a href="#10、ConcurrentHashMap理解" class="headerlink" title="10、ConcurrentHashMap理解"></a>10、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
+<h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
 <li><p>并发容器，在concurrent并发包中，是对HashMap的安全实现，也是数组和链表的结构。</p>
 </li>
 <li><p>但是在HashEntry和Segment都是静态内部类，基本和hashMap类似，但是ConcurrentHashMap中HashEntry的value和next指针都呗volatille修饰，保证了数据的可见性；</p>
@@ -611,7 +577,7 @@
 <li>如果是红黑树那就按照树的方式获取值。</li>
 <li>就不满足那就按照链表的方式遍历获取值。</li>
 </ul>
-<h3 id="11、"><a href="#11、" class="headerlink" title="11、"></a>11、</h3>
+
       
     </div>
     
@@ -641,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/25/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Docker/" rel="next" title="Docke使用说明">
-                <i class="fa fa-chevron-left"></i> Docke使用说明
+              <a href="/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/" rel="next" title="阿里云服务部署使用说明">
+                <i class="fa fa-chevron-left"></i> 阿里云服务部署使用说明
               </a>
             
           </div>
@@ -651,8 +617,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/05/25/JAVA/SpringCloud/index/" rel="prev" title="Spring Cloud学习笔记1">
-                Spring Cloud学习笔记1 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/06/02/JAVA/%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/" rel="prev" title="语法糖">
+                语法糖 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -737,7 +703,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -748,7 +714,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -830,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">1、面向过程和面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81hashCode%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">2、hashCode作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81JAVA%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">3、JAVA语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">4、基本数据类型和包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">5、重写和重载的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81Instanceof-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">6.</span> <span class="nav-text">6、Instanceof 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81String%E3%80%81StringBuffer%E3%80%81StringBuilder"><span class="nav-number">7.</span> <span class="nav-text">7、String、StringBuffer、StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81hashMap%E5%92%8ChashTable"><span class="nav-number">8.</span> <span class="nav-text">8、hashMap和hashTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81HashMap%E7%90%86%E8%A7%A3"><span class="nav-number">9.</span> <span class="nav-text">9、HashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%8A%80%E6%9C%AF"><span class="nav-number">9.1.</span> <span class="nav-text">散列技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%95%BF%E5%BA%A6"><span class="nav-number">9.2.</span> <span class="nav-text">HashMap的延迟初始化和长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F"><span class="nav-number">9.3.</span> <span class="nav-text">HashMap的数组下标如何产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap1-7%E9%87%87%E7%94%A8%E5%A4%B4%E6%8F%92%E6%B3%95"><span class="nav-number">9.4.</span> <span class="nav-text">HashMap1.7采用头插法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E4%B8%8D%E9%80%82%E5%90%88%E5%B9%B6%E5%8F%91"><span class="nav-number">9.5.</span> <span class="nav-text">HashMap不适合并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E6%89%A9%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">9.6.</span> <span class="nav-text">HashMap扩容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">9.6.1.</span> <span class="nav-text">单线程扩容过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%89%A9%E5%AE%B9%E5%8F%AF%E8%83%BD%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="nav-number">9.6.2.</span> <span class="nav-text">多线程下扩容可能死循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E8%A7%A3%E5%86%B3%E4%BA%86%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">9.7.</span> <span class="nav-text">JDK1.8解决了死循环问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">10、ConcurrentHashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95"><span class="nav-number">10.1.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95"><span class="nav-number">10.2.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">10.3.</span> <span class="nav-text">1.8新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95-1"><span class="nav-number">10.4.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95-1"><span class="nav-number">10.5.</span> <span class="nav-text">get方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81"><span class="nav-number">11.</span> <span class="nav-text">11、</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashMap%E5%92%8ChashTable%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">hashMap和hashTable区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap%E7%90%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">HashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%8A%80%E6%9C%AF"><span class="nav-number">2.1.</span> <span class="nav-text">散列技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%95%BF%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">HashMap的延迟初始化和长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap的数组下标如何产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap1-7%E9%87%87%E7%94%A8%E5%A4%B4%E6%8F%92%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">HashMap1.7采用头插法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E4%B8%8D%E9%80%82%E5%90%88%E5%B9%B6%E5%8F%91"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap不适合并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E6%89%A9%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap扩容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">2.6.1.</span> <span class="nav-text">单线程扩容过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%89%A9%E5%AE%B9%E5%8F%AF%E8%83%BD%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.6.2.</span> <span class="nav-text">多线程下扩容可能死循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E8%A7%A3%E5%86%B3%E4%BA%86%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">JDK1.8解决了死循环问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">ConcurrentHashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">1.8新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.4.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.5.</span> <span class="nav-text">get方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -871,7 +837,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.3k</span>
+    <span title="Site words total count">30.6k</span>
   
 </div>
 
@@ -887,7 +853,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.3k字</span>
+  <span class="post-count">博客全站共30.6k字</span>
 </div>
 
         

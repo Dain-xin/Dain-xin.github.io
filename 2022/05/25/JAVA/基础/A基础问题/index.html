@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="blog" />
+  <meta name="keywords" content="面试," />
 
 
 
@@ -79,23 +79,21 @@
 
 
 
-<meta name="description" content="贪心算法 就是采用贪心的算法思想，保证每次操作都是局部最优，从而保证最后结果是全局最优的。  举一个最简单的例子：小明和小王喜欢吃苹果，小明可以吃五个，小王可以吃三个。已知苹果园里有吃不完的苹果，求小明和小王一共最多吃多少个苹果。在这个例子中，我们可以选用的贪心策略为，每个人吃自己能吃的最多数量的苹果，这在每个人身上都是局部最优的。又因为全局结果是局部结果的简单求和，且局部结果互不相干，因此局部最">
+<meta name="description" content="面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解成一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="贪心算法">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/05/28/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="Java基础——重难点">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/A%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="贪心算法 就是采用贪心的算法思想，保证每次操作都是局部最优，从而保证最后结果是全局最优的。  举一个最简单的例子：小明和小王喜欢吃苹果，小明可以吃五个，小王可以吃三个。已知苹果园里有吃不完的苹果，求小明和小王一共最多吃多少个苹果。在这个例子中，我们可以选用的贪心策略为，每个人吃自己能吃的最多数量的苹果，这在每个人身上都是局部最优的。又因为全局结果是局部结果的简单求和，且局部结果互不相干，因此局部最">
+<meta property="og:description" content="面向过程和面向对象A：面向过程： 概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。  就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。  最典型的用法就是实现一个简单的算法，比如实现冒泡排序。  B：面向对象： 概述: 将事务高度抽象化的编程模式 将问题分解成一">
 <meta property="og:locale">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/8dba8ad1764a475889f33bdc988233c5.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/4fe9c3c66ee34d659124ef66179d5cfa.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/4a8cac5472e949d895e97ebdbc6f8f79.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/da64c3ceee16436a92652a24f0c5785c.png">
-<meta property="article:published_time" content="2022-05-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-29T07:48:22.499Z">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206022319227.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206030051366.png">
+<meta property="article:published_time" content="2022-05-25T13:47:17.000Z">
+<meta property="article:modified_time" content="2022-06-02T16:54:57.404Z">
 <meta property="article:author" content="代家鑫">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/8dba8ad1764a475889f33bdc988233c5.png">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206022319227.png">
 
 
 
@@ -125,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/28/算法/贪心算法/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/25/JAVA/基础/A基础问题/"/>
 
 
 
 
 
-  <title>贪心算法 | Dain的博客</title>
+  <title>Java基础——重难点 | Dain的博客</title>
   
 
 
@@ -302,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/28/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/A%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -319,7 +317,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">贪心算法</h2>
+          <h2 class="post-title" itemprop="name headline">Java基础——重难点</h2>
         
 
         <div class="post-meta">
@@ -331,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-28T08:00:00+08:00">
-                2022-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-25T21:47:17+08:00">
+                2022-05-25
               </time>
             
 			
@@ -349,8 +347,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-29T15:48:22+08:00">
-                2022-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-03T00:54:57+08:00">
+                2022-06-03
               </time>
             
           </span>
@@ -368,8 +366,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
 
@@ -399,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2.3k
                 </span>
               
 
@@ -415,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  8
                 </span>
               
             </div>
@@ -436,58 +445,105 @@
       
 
       
-        <h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><blockquote>
-<p>就是采用贪心的算法思想，保证每次操作都是局部最优，从而保证最后结果是全局最优的。</p>
-</blockquote>
-<pre><code>举一个最简单的例子：小明和小王喜欢吃苹果，小明可以吃五个，小王可以吃三个。已知苹果园里有吃不完的苹果，求小明和小王一共最多吃多少个苹果。在这个例子中，我们可以选用的贪心策略为，每个人吃自己能吃的最多数量的苹果，这在每个人身上都是局部最优的。又因为全局结果是局部结果的简单求和，且局部结果互不相干，因此局部最优的策略也同样是全局最优的策略。
-</code></pre>
-<h3 id="A、分发饼干问题"><a href="#A、分发饼干问题" class="headerlink" title="A、分发饼干问题"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/assign-cookies/">A、分发饼干问题</a></h3><p><img src="https://img-blog.csdnimg.cn/8dba8ad1764a475889f33bdc988233c5.png" alt="问题"></p>
-<ul>
-<li><p>问题分析</p>
-<blockquote>
-<p>这里的贪心策略是，给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干。因为我们需要获得大小关系，一个便捷的方法就是把孩子和饼干分别排序。这样我们就可以从饥饿度最小的孩子和大小最小的饼干出发。</p>
-</blockquote>
-</li>
-<li><p>核心算法</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//贪心的思想是，用尽量小的饼干去满足小需求的孩子，所以需要进行排序先</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findContentChildren</span><span class="params">(<span class="type">int</span>[] g, <span class="type">int</span>[] s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">child</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(g);  </span><br><span class="line"><span class="comment">//先将饼干 和 孩子所需大小都进行排序</span></span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        <span class="keyword">while</span> (child &lt; g.length &amp;&amp; cookie &lt; s.length )&#123; </span><br><span class="line"><span class="comment">//当其中一个遍历就结束</span></span><br><span class="line">            <span class="keyword">if</span> (g[child] &lt;= s[cookie])&#123; </span><br><span class="line"><span class="comment">//当用当前饼干可以满足当前孩子的需求，可以满足的孩子数量+1</span></span><br><span class="line">                child++;</span><br><span class="line">            &#125;</span><br><span class="line">            cookie++; </span><br><span class="line"><span class="comment">// 饼干只可以用一次，因为饼干如果小的话，就是无法满足被抛弃，满足的话就是被用了</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> child; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="面向过程和面向对象"><a href="#面向过程和面向对象" class="headerlink" title="面向过程和面向对象"></a>面向过程和面向对象</h3><p>A：面向过程：</p>
+<p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
+<p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
+<p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
+<p>B：面向对象：</p>
+<p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
+<p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
+<p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
+<h3 id="hashCode作用"><a href="#hashCode作用" class="headerlink" title="hashCode作用"></a>hashCode作用</h3><p>理解：</p>
+<p>它返回的就是根据对象的内存地址换算出的一个值。这样一来，当 集合要添加新的元素时，先调用这个元素的hashCode方法，就一下子能定位到它应该放置的物理 位置上。</p>
+<p>如果这个位置上没有元素，它就可以直接存储在这个位置上，不用再进行任何比较了；</p>
+<p>如果这个位置上已经有元素了，就调用它的equals方法与新元素进行比较，相同的话就不存了，不相 同就散列其它的地址。</p>
+<p>这样一来实际调用equals方法的次数就大大降低了，几乎只需要一两次。</p>
+<h3 id="JAVA语言特点"><a href="#JAVA语言特点" class="headerlink" title="JAVA语言特点"></a>JAVA语言特点</h3><ol>
+<li>简单易学、有丰富的类库；</li>
+<li>面向对象、低耦合，高内聚；</li>
+<li>跨平台特点（JVM是跨平台的根本）；</li>
+<li>安全可靠、支持多线程。</li>
+</ol>
+<h3 id="基本数据类型和包装类"><a href="#基本数据类型和包装类" class="headerlink" title="基本数据类型和包装类"></a>基本数据类型和包装类</h3><ol>
+<li>int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况；</li>
+<li>包装类可以作为泛型，实现了Serializable接口，支持序列化和反序列化</li>
+<li>Integer 来说，在数值区间为 -128~127 时，会直接复用已有对象，在这区间之外的数字才会在堆上产生。例如128这个会生成新对象。</li>
+<li>包装类包含了丰富的方法。</li>
+</ol>
+<h3 id="重写和重载的理解"><a href="#重写和重载的理解" class="headerlink" title="重写和重载的理解"></a>重写和重载的理解</h3><p>重写：（Overread）</p>
+<ol>
+<li>子类重写父类方法发生在父类与子类之间 </li>
+<li>方法名，参数列表，返回类型（除过子类中方法的返回类型 是父类中返回类型的子类）都必须相同 </li>
+<li>访问修饰符的限制一定要大于被重写方法的访问修饰符 （public&gt;protected&gt;default&gt;private) </li>
+<li>重写方法一定不能抛出新的检查异常或者比被重写方法申 明更加宽泛的检查型异常</li>
+</ol>
+<p>重载：（Overload）</p>
+<ol>
+<li>重载Overload是一个类中多态性的一种表现 </li>
+<li>重载要求同名方法的参数列表不同(参数类型，参数个数甚至是参数顺序)</li>
+<li>重载的时候，返回值类型可以相同也可以不相同。无法以返回 型别作为重载函数的区分标准</li>
+</ol>
+<h3 id="Instanceof-关键字"><a href="#Instanceof-关键字" class="headerlink" title="Instanceof 关键字"></a>Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="B、分发糖果"><a href="#B、分发糖果" class="headerlink" title="B、分发糖果"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/candy/">B、分发糖果</a></h3><p> <img src="https://img-blog.csdnimg.cn/4fe9c3c66ee34d659124ef66179d5cfa.png" alt="描述"></p>
-<ul>
-<li>问题分析</li>
-</ul>
-<blockquote>
-<p>只需要简单的两次遍历即可：把所有孩子的糖果数初始化为 1；<br>先从左往右遍历一遍，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的糖果数加 1；<br>再从右往左遍历一遍，如果左边孩子的评分比右边的高，且左边孩子当前的糖果数不大于右边孩子的糖果数，则左边孩子的糖果数更新为右边孩子的糖果数加 1。通过这两次遍历，分配的糖果就可以满足题目要求了。这里的贪心策略即为，在每次遍历中，只考虑并更新相邻一侧的大小关系。<br>在样例中，我们初始化糖果分配为 [1,1,1]，第一次遍历更新后的结果为 [1,1,2]，第二次遍历更新后的结果为 [2,1,2]。</p>
-</blockquote>
-<ul>
-<li>java算法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">     <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">candy</span><span class="params">(<span class="type">int</span>[] ratings)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] candy = <span class="keyword">new</span> <span class="title class_">int</span>[ratings.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; candy.length; i++) &#123;</span><br><span class="line">            candy[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//初始化所有分配为1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ratings.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                candy[i] = candy[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//如果后面的人比较大，就把前面的人的糖果数+1给后面的人。（只看前面比较大的）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> ratings.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                candy[i] = Math.max(candy[i],candy[i + <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//反过来，前面的人比较大，就让前面的人的糖果数大于后面的。（只看后面比较大的）</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; candy.length; i++) &#123;</span><br><span class="line">            count += candy[i];</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//计算总的糖果数</span></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="String、StringBuffer、StringBuilder"><a href="#String、StringBuffer、StringBuilder" class="headerlink" title="String、StringBuffer、StringBuilder"></a>String、StringBuffer、StringBuilder</h3><ol>
+<li>String：只读字符串；其实就是对象，但是底层是被<strong>final修饰</strong>的字符数组，引用的字符串不能改变；因此每次操作都是新的String的对象。</li>
+<li>StringBuffer和StringBuilder：底层都是可变的字符数组，所以在进行频繁的字符串操作时，建议使用StringBuffer和 StringBuilder来进行操作。 </li>
+<li>StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。</li>
+<li>StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</li>
+</ol>
+<h3 id="String拼接字符串"><a href="#String拼接字符串" class="headerlink" title="String拼接字符串"></a>String拼接字符串</h3><p>String 是 Java 中一个不可变的类，所以他一旦被实例化就无法被修改。</p>
+<p>不可变类的实例一旦创建，其成员变量的值就不能被修改。这样设计有很多好处，比如 可以缓存 hashcode、使用更加便利以及更加安全等。</p>
+<p>所以拼接就是创建一个新字符串，然后拼接。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line">s = s.concat(<span class="string">&quot;ef&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="3、无重叠区间"><a href="#3、无重叠区间" class="headerlink" title="3、无重叠区间"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/non-overlapping-intervals/">3、无重叠区间</a></h3><p> <img src="https://img-blog.csdnimg.cn/4a8cac5472e949d895e97ebdbc6f8f79.png" alt="在这里插入图片描述"></p>
-<ul>
-<li>算法分析</li>
-</ul>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206022319227.png" alt="image-20220602231927181"></p>
+<p><code>s 中保存的是一个重新创建出来的 String 对象的引用。 </code></p>
+<p>“+”：起始就是语法糖让我们的程序更简洁，可读性更好。</p>
+<p>Concat字符串拼接方法。</p>
+<p>原理：</p>
 <blockquote>
-<p>在选择要保留区间时，区间的结尾十分重要：选择的区间结尾越小，余留给其它区间的空间就越大，就越能保留更多的区间。因此，我们采取的贪心策略为，优先保留结尾小且不相交的区间。<br>具体实现方法为，先把区间按照结尾的大小进行增序排序，每次选择结尾最小且和前一个选择的区间不重叠的区间。我们这里进行自定义排序。<br>在样例中，排序后的数组为 [[1,2], [1,3], [2,4]]。按照我们的贪心策略，首先初始化为区间[1,2]；由于 [1,3] 与 [1,2] 相交，我们跳过该区间；由于 [2,4] 与 [1,2] 不相交，我们将其保留。因此最终保留的区间为 [[1,2], [2,4]]。</p>
+<p>创建了一个字符数组，长度是已有字符串和待拼接字符串的长度之和，再 把两个字符串的值复制到新的字符数组中，并使用这个字符数组创建一个新的 String 对象 并返回。（本质也是new String对象返回）</p>
 </blockquote>
-<ul>
-<li>算法实现</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">eraseOverlapIntervals</span><span class="params">(<span class="type">int</span>[][] intervals)</span> &#123;</span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[<span class="number">0</span>] == a[<span class="number">0</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] - b[<span class="number">0</span>];</span><br><span class="line">        &#125;);</span><br><span class="line"><span class="comment">//java的自定义排序，把区间按照结尾的大小进行增序排序，</span></span><br><span class="line"><span class="comment">//每次选择结尾最小且和前一个选择的区间不重叠的区间</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">edge</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; intervals.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (edge &lt;= intervals[i][<span class="number">0</span>]) &#123;</span><br><span class="line">                edge = intervals[i][<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//edge比较小于区间第一个数，就把第二个数赋值给edge，反之就+1，</span></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">concat</span><span class="params">(String str)</span></span><br><span class="line"><span class="type">int</span> <span class="variable">otherLen</span> <span class="operator">=</span> str.length();</span><br><span class="line"><span class="keyword">if</span> (otherLen == <span class="number">0</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> value.length;</span><br><span class="line"><span class="type">char</span> buf[] = Arrays.copyOf(value, len + otherLen);</span><br><span class="line">str.getChars(buf, len);</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4、非递归数列"><a href="#4、非递归数列" class="headerlink" title="4、非递归数列"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/non-decreasing-array/">4、非递归数列</a></h3><p><img src="https://img-blog.csdnimg.cn/da64c3ceee16436a92652a24f0c5785c.png" alt="描述"></p>
-<ul>
-<li>算法分析</li>
-</ul>
-<blockquote>
-<p>本题是要维持一个非递减的数列，所以遇到递减的情况时（nums[i] &gt; nums[i + 1]），要么将前面的元素缩小，要么将后面的元素放大。<br>但是本题唯一的易错点就在这，<br>如果将nums[i]缩小，可能会导致其无法融入前面已经遍历过的非递减子数列；<br>如果将nums[i + 1]放大，可能会导致其后续的继续出现递减；<br>所以要采取贪心的策略，在遍历时，每次需要看连续的三个元素，也就是瞻前顾后，遵循以下两个原则：<br>需要尽可能不放大nums[i + 1]，这样会让后续非递减更困难；<br>如果缩小nums[i]，但不破坏前面的子序列的非递减性；<br>算法步骤：<br>遍历数组，如果遇到递减：<br>还能修改：<br>修改方案1：将nums[i]缩小至nums[i + 1]；<br>修改方案2：将nums[i + 1]放大至nums[i]；<br>不能修改了：直接返回false；</p>
-</blockquote>
-<ul>
-<li>Java算法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkPossibility</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> nums[i], y = nums[i + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">                nums[i] = y;</span><br><span class="line">                <span class="keyword">if</span> (isSorted(nums)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                nums[i] = x; <span class="comment">// 复原</span></span><br><span class="line">                nums[i + <span class="number">1</span>] = x;</span><br><span class="line">                <span class="keyword">return</span> isSorted(nums);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSorted</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i - <span class="number">1</span>] &gt; nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>StringBuffer和StringBuilder对字符串进行拼接。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;Hollis&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line"><span class="type">StringBuffer</span> <span class="variable">hollis</span> <span class="operator">=</span> wechat.append(<span class="string">&quot;,&quot;</span>).append(introduce);</span><br><span class="line"></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;Hollis&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">hollis</span> <span class="operator">=</span> wechat.append(<span class="string">&quot;,&quot;</span>).append(introduce);</span><br></pre></td></tr></table></figure>
+
+<p>JAVA8提供了String类的jion的静态方法和StringsUtils.join；</p>
+<p>StringUtils 中提供的 join 方法，最主要的功能是：将数组或集合以 某拼接符拼接到一起形成新的字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="string">&quot;Hollis&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line">System.out.println(StringUtils.join(wechat, <span class="string">&quot;,&quot;</span>, introduce));</span><br><span class="line"></span><br><span class="line">String []list =&#123;<span class="string">&quot;Hollis&quot;</span>,<span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>&#125;;</span><br><span class="line">String result= StringUtils.join(list,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">System.out.println(result);</span><br><span class="line"><span class="comment">//结果：Hollis,每日更新 Java 相关技术文章</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="StringUtils-join-是如何实现拼接"><a href="#StringUtils-join-是如何实现拼接" class="headerlink" title="StringUtils.join 是如何实现拼接"></a>StringUtils.join 是如何实现拼接</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">join</span><span class="params">(<span class="keyword">final</span> Object[] array, String separator, <span class="keyword">final</span> <span class="type">int</span> startIndex, <span class="keyword">final</span> <span class="type">int</span> endIndex)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (array == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (separator == <span class="literal">null</span>) &#123;</span><br><span class="line">		separator = EMPTY;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">// endIndex - startIndex &gt; 0: Len = NofStrings *(len(firstString) + len(separator))</span></span><br><span class="line"><span class="comment">// (Assuming that all Strings are roughly equally long)</span></span><br><span class="line">	<span class="keyword">final</span> <span class="type">int</span> <span class="variable">noOfItems</span> <span class="operator">=</span> endIndex - startIndex;</span><br><span class="line">	<span class="keyword">if</span> (noOfItems &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> EMPTY;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">final</span> <span class="type">StringBuilder</span> <span class="variable">buf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(noOfItems * <span class="number">16</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> startIndex; i &lt; endIndex; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i &gt; startIndex) &#123;</span><br><span class="line">			buf.append(separator);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (array[i] != <span class="literal">null</span>) &#123;</span><br><span class="line">			buf.append(array[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> buf.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>看出就是通过StringBuilder的append方法实现的</code></p>
+<h4 id="StringBuffer-的-append-方法。"><a href="#StringBuffer-的-append-方法。" class="headerlink" title="StringBuffer 的 append 方法。"></a>StringBuffer 的 append 方法。</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> StringBuffer <span class="title function_">append</span><span class="params">(String str)</span> &#123;</span><br><span class="line">	toStringCache = <span class="literal">null</span>;</span><br><span class="line">	<span class="built_in">super</span>.append(str);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><strong>Java 开发手册建议：循环体内，字符串的连接方式，使用 StringBuilder 的 append 方法进行扩展。而不要使用+。</strong></p>
+<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/coder_what/article/details/96310967?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-1&spm=1001.2101.3001.4242">Java常见的12个语法糖</a></p>
+<p>语法糖往往给程序员<strong>提供了更实用的编码方式，有益于更好的编码风格，更易读</strong>。不过其并没有给语言添加什么新东西。需要声明的是“语法糖”这个词绝非贬义词，它可以给我带来方便，是一种便捷的写法，编译器会帮我们做转换；而且可以提高开发编码的效率，在性能上也不会带来损失。</p>
+<p><strong>常见的语法糖：</strong></p>
+<p>1、switch、 case、default 。</p>
+<p>2、for-each：其内部仍然是采用普通for循环和迭代器实现遍历。</p>
+<p>3、Lambda表达式：函数式编程。</p>
+<p>4、enum枚举。</p>
+<p>5、泛型</p>
+<p>6、多态</p>
+<p>7、内部类</p>
+<p>8、自动封装</p>
+<p>9、变长参数（…的方法）</p>
+<p>10、if语句</p>
+<p>11、try-with-resource</p>
+<p>12、编译时优化：主要针对常量。</p>
+<h3 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h3><p>在 Java 体系中，共用三种常量池。分别是字符串常量池、Class 常量池 和运行时常量池。</p>
+<h4 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h4><p>在 JVM 中，为了减少相同的字符串的重复创建，为了达到节省内存的目的。会单独开 辟一块内存，用于保存字符串常量，这个内存区域被叫做字符串常量池。</p>
+<p>字符串常量池的位置：永久代中。</p>
+<h4 id="Class常量池"><a href="#Class常量池" class="headerlink" title="Class常量池"></a>Class常量池</h4><p>Class 常量池可以理解为是 Class 文件中的资源仓库。Class 文件中除了包含类的版 本、字段、方法、接口等描述信息外，还有一项信息就是常量池(constant pool table)， 用于<strong>存放编译器生成的各种字面量(Literal)和符号引用(Symbolic References)。</strong> </p>
+<p>由于不同的 Class 文件中包含的常量的个数是不固定的，所以在 Class 文件的常量池 入口处会设置两个字节的常量池容量计数器，记录了常量池中常量的个数。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206030051366.png" alt="image-20220603005157329"></p>
+<p><a href="file:///E:/_1_NewFile/_$_Java后端开发必备手册/JAVA面试/00-Java开发基础.pdf">00-Java开发基础.pdf</a>  90页</p>
 
       
     </div>
@@ -503,6 +559,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          
+        </div>
+      
 
       
       
@@ -512,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/25/JAVA/SpringCloud/index/" rel="next" title="Spring Cloud学习笔记1">
-                <i class="fa fa-chevron-left"></i> Spring Cloud学习笔记1
+              <a href="/2022/05/25/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Docker/" rel="next" title="Docke使用说明">
+                <i class="fa fa-chevron-left"></i> Docke使用说明
               </a>
             
           </div>
@@ -522,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/" rel="prev" title="阿里云服务部署使用说明">
-                阿里云服务部署使用说明 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/05/25/JAVA/SpringCloud/index/" rel="prev" title="Spring Cloud学习笔记1">
+                Spring Cloud学习笔记1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">贪心算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A%E3%80%81%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2%E9%97%AE%E9%A2%98"><span class="nav-number">1.0.1.</span> <span class="nav-text">A、分发饼干问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B%E3%80%81%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C"><span class="nav-number">1.0.2.</span> <span class="nav-text">B、分发糖果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、无重叠区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E9%9D%9E%E9%80%92%E5%BD%92%E6%95%B0%E5%88%97"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、非递归数列</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">面向过程和面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">hashCode作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">JAVA语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">基本数据类型和包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">重写和重载的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instanceof-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">6.</span> <span class="nav-text">Instanceof 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E3%80%81StringBuffer%E3%80%81StringBuilder"><span class="nav-number">7.</span> <span class="nav-text">String、StringBuffer、StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E6%8B%BC%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">8.</span> <span class="nav-text">String拼接字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringUtils-join-%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%8B%BC%E6%8E%A5"><span class="nav-number">8.1.</span> <span class="nav-text">StringUtils.join 是如何实现拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuffer-%E7%9A%84-append-%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">8.2.</span> <span class="nav-text">StringBuffer 的 append 方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">9.</span> <span class="nav-text">语法糖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">10.</span> <span class="nav-text">常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">10.1.</span> <span class="nav-text">字符串常量池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">10.2.</span> <span class="nav-text">Class常量池</span></a></li></ol></li></ol></div>
             
 
           </div>

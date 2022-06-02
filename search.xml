@@ -2,9 +2,9 @@
 <search>
   <entry>
     <title>个人目标</title>
-    <url>/2022/05/24/Begin/%E7%9B%AE%E6%A0%87/</url>
+    <url>/2022/05/24/Begin/plan/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，这个密码看着不太对，请再试试。" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="bd601f511bc7acb26d93c40c75ac343e3267ae8948fd2c83737ff4f8a38793b5">cbad8857a5ef55510a0f5570c6d1870a0e8e66d3f4527d07385e529d5f43e1107a8c645ede36f5a31ec885892d617aff3e3b61a0f25dc452b74c38710826374443ef13625b2d5f7b4126b0cb02fc95d3aa93d9dc7fdd56607cbe6c032943b28a20addb0fd224d1618026b9875ea3971db92c1b7919779e7dcf8bf6fa8d72a4877136976273477cba7f718b7ad8c0fcee35b5e5c97256772328f0102b11cfc03f87772e49e30e21bf839f9a0bdaf038f378e6a42e67699a2752237541b8b8245b9694d26e65a7ffa14c08a25c7d5fe25e2f0bc7bf9004273541d4a07929f03f108e24eb6626530048acc18eb79b36a54a35a231570b543f5e554babde6242bc6b7b4898acc998d0327d7e234e26517d18d5ace6600eb99bf4b101d851df66b8503cfe49ac04c3e65182e8a14a0561aaede3c20c4a8778b436d8030bdfa97cf2536f137ca25b24b9c7a15d5393939734b0c2b61602bd1decf72f3e68947632e9b59ea8cbacd7f7fc545ee5c6fb256b10facdf7a9666eb941fd0a1429212a89d0dd7942e7d9db2d470daa6b80f8c61fc2784025c34c1e046fa753bd342c3d14a48aa3ce0d033060051a06ef048cca277bf26966761d3e31dda7b1a8f22f55a4b151f94ff752ebd95df73193103eab1bb986bcca3e50fd971bfedaec0d6f90d9a4a94e91db48e97dadf1e95db995db08a27d9c7354fbccdbcac302b8aa42e11f24cc4ba080a3ee548a1aabe5b0c90b1808c6af61bc042f040e2ed9da2ccd430a481f32b882d4b4be083ff7374906ddf5088a8181cfa5b4f4924ab5caf506827696c105aa0abc22ec551ed83f879a539701a4</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="c6ca39e5dfa9997d77a9abc776348e91bf69f893688168735cc5dfc271c76489">cbad8857a5ef55510a0f5570c6d1870a0e8e66d3f4527d07385e529d5f43e1107a8c645ede36f5a31ec885892d617aff3e3b61a0f25dc452b74c38710826374443ef13625b2d5f7b4126b0cb02fc95d3aa93d9dc7fdd56607cbe6c032943b28a20addb0fd224d1618026b9875ea3971db92c1b7919779e7dcf8bf6fa8d72a4877136976273477cba7f718b7ad8c0fcee35b5e5c97256772328f0102b11cfc03f87772e49e30e21bf839f9a0bdaf038f378e6a42e67699a2752237541b8b8245b9694d26e65a7ffa14c08a25c7d5fe25e2f0bc7bf9004273541d4a07929f03f108e24eb6626530048acc18eb79b36a54ab199549c879174f02279775bc96b65a4cbe736fbe5afc5fe4857e1d6e9a9695ffb51774bf9bc7e2eacf6ced48ddffab3ff16a2796d884008fb3d22936b687ae288f1fe043f1ccf2d541c8246d8940d2129f054191313e7b3a5ac34fba51e3c201095932ab49146b0b6e3aea147e9418b983398f0420c984f3871387f85d4aaca134f5f1d7ca1282348c027c682dfc6be26f6366768ea9de24a3966e01bed97b446d32466f7df86ae35566ac490acdde5cfd416ae0d25cc28e2066c91e28e413dba87d3692e80a7b5cb79610006c0610c52ac2972b395cb62b343848d7d5ef6819b2299f331050f5af320d34d7c9b1b23ea7daac83011f7614b844cd5d86ceefbb565198f3366089b32db375b362c5dba086063092a2787361f87a9971464da2847fe42fdee208164dd0fe381a1a45f1f0efda2fe86b4a9835f0d47a8752f39cf763b8bd93a0fd39743fbe5d3e08ef034f7b6539a6de6ec3a1baf12aab84b8351de01c1e8ff5bd3333e7055523f3f8bdef6ce7329492b12c21fd8d0af565203b61070f9107a66855e74d076937a227cc20ed803a491776c0a9c414a30622e5b085ff6b25ca8f2ff6347813cff42fa3c26dd1e633169db7096b228d8e26b4436065e2d5dda9d5562579365a9d73823aeac7ee81233736acc44fe46660c757a8170ee9899b2c1502347b4878816aa983cd3a7e73864c8a451be83296d0286c51326</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -22,45 +22,6 @@
       <tags>
         <tag>常用</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>阿里云服务部署使用说明</title>
-    <url>/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1 id="阿里云ECS云服务部署过程"><a href="#阿里云ECS云服务部署过程" class="headerlink" title="阿里云ECS云服务部署过程"></a>阿里云ECS云服务部署过程</h1><hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目</p>
-<hr>
-<p><code>提示：学生可以有优惠活动</code></p>
-<h1 id="一、购买阿里云ECS"><a href="#一、购买阿里云ECS" class="headerlink" title="一、购买阿里云ECS"></a>一、购买阿里云ECS</h1><p>1、<a href="https://developer.aliyun.com/plan/student#J_6054107750">飞天加速计划</a></p>
-<p>2、完成购买后进入控制台：<a href="https://ecs.console.aliyun.com/#/home">云服务器 ECS控制台</a></p>
-<ul>
-<li>找到实例与镜像在更多里面密码更改重启服务器。<img src="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="重置密码"></li>
-<li>使用windows连接工具（xshell）我的分享地址</li>
-<li>找到服务器的公网输入密码连接<br><img src="https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
-</ul>
-<h1 id="二、安装Linux相关服务"><a href="#二、安装Linux相关服务" class="headerlink" title="二、安装Linux相关服务"></a>二、安装Linux相关服务</h1><p>安装内容：<br>下载分享：</p>
-<h2 id="1-JDK8"><a href="#1-JDK8" class="headerlink" title="1.JDK8"></a>1.JDK8</h2><p><a href="https://developer.aliyun.com/article/773930">阿里云JDK配置</a></p>
-<blockquote>
-<p>主要的代码：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1<span class="number">.8</span><span class="number">.0_281</span>   #你的JDK安装路径+名称</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Mysql-57"><a href="#2-Mysql-57" class="headerlink" title="2.Mysql 57"></a>2.Mysql 57</h2><p><a href="https://developer.aliyun.com/article/834505">Mysql57安装</a></p>
-<p>1、如果出GPG的错：<a href="https://cloud.tencent.com/developer/article/1940459">GPG Keys are configured</a><br>2、出现“（”，“）”：<a href="https://blog.csdn.net/wangchengming1/article/details/76946412">xshell字符转义</a><br>3、mysql服务：密码过于简单需要设置：<a href="https://www.cnblogs.com/baby123/p/12221405.html">地址</a><br>4、navicat连接mysql出现错误 is not allowed to connect to this mysql server 的解决办法<a href="https://blog.csdn.net/weixin_42132143/article/details/118339697">链接</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld.service</span><br><span class="line">systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
-<h2 id="3-redis5"><a href="#3-redis5" class="headerlink" title="3.redis5"></a>3.redis5</h2><p>参考1：<a href="https://developer.aliyun.com/article/775160">阿里云Redis安装</a><br>参考2：<a href="https://blog.csdn.net/lilong329329/article/details/90451657">配置亲测有效</a><br><code>重点：远程连接阿里云服务需要注释掉bind 127.0.0.1和设置密码，重启服务和配置文件</code><br><img src="https://img-blog.csdnimg.cn/5771d9a252aa4e15ac13eda283e1cad2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="配置"></p>
-<h2 id="3-Tomcat-9"><a href="#3-Tomcat-9" class="headerlink" title="3.Tomcat 9"></a>3.Tomcat 9</h2><p>这个比较简单，把自己gz文件放到自己想要的位置 &#x2F;usr&#x2F;local&#x2F;tomcat 中<br>tar -zxvf 文件名  解压好后，去往bin目录启动starup.sh。配置安全组8080，连接ip+8080即可。</p>
-<h2 id="4-Node-js"><a href="#4-Node-js" class="headerlink" title="4.Node.js"></a>4.Node.js</h2><p>参考连接:<a href="https://developer.aliyun.com/article/775037">Node.js安装</a></p>
-<h2 id="5-Nacos"><a href="#5-Nacos" class="headerlink" title="5.Nacos"></a>5.Nacos</h2><p>参考连接:<a href="https://developer.aliyun.com/article/786617">nacos安装</a></p>
-<h2 id="6-宝塔面板"><a href="#6-宝塔面板" class="headerlink" title="6.宝塔面板"></a>6.宝塔面板</h2><p>参考连接:<a href="https://developer.aliyun.com/article/767507">面板配置</a><br><a href="https://developer.aliyun.com/article/766773#:~:text=%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E6%9D%A1%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%9C%AC%E6%95%99%E7%A8%8B%E4%BB%A5CentOS%E4%B8%BA%E4%BE%8B%EF%BC%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E4%B8%BA%EF%BC%9A%20yum%20install%20-y%20wget%20&&,wget%20-O%20install.sh%20http://download.bt.cn/install/install.sh%20&&%20sh%20install.sh">参考2</a></p>
-<h2 id="7-导出镜像"><a href="#7-导出镜像" class="headerlink" title="7.导出镜像"></a>7.导出镜像</h2><p><a href="https://help.aliyun.com/document_detail/58181.html">导出自定义镜像</a></p>
-<h2 id="8-RabbitMq"><a href="#8-RabbitMq" class="headerlink" title="8.RabbitMq"></a>8.RabbitMq</h2><p><a href="https://blog.csdn.net/qq_41854180/article/details/113832989">参考1</a><br><a href="https://blog.csdn.net/u014528861/article/details/114370948">rpm安装过程</a><br><a href="https://blog.csdn.net/feinifi/article/details/107997555">参考2</a></p>
-<h2 id="9-Docker"><a href="#9-Docker" class="headerlink" title="9.Docker"></a>9.Docker</h2><p><a href="https://help.aliyun.com/document_detail/187598.html#section-kjt-i59-n4a">Docker使用</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>提示：未完待续.......</code></p>
-]]></content>
-      <categories>
-        <category>环境搭建</category>
-        <category>ECS</category>
-      </categories>
   </entry>
   <entry>
     <title>贪心算法</title>
@@ -123,95 +84,64 @@
       </categories>
   </entry>
   <entry>
-    <title>Spring Cloud学习笔记1</title>
-    <url>/2022/05/25/JAVA/SpringCloud/index/</url>
-    <content><![CDATA[<p>网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。</p>
-<p>（网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器）</p>
-<p>熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。</p>
-<p>处理方式：</p>
-<ol>
-<li>超时：如果服务连接超时、即使未成功也会被释放资源；</li>
-<li>仓壁模式：就是线程池，</li>
-<li>限流功能-Sentinel，</li>
-<li>断路器模式，通过下图，让我们的请求处于closed状态，如果我们的服务调用失败率到达一定的值域就会open状态，然后进行重置超时，成功就closed，否则就继续open；</li>
-</ol>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png" alt="image-20220525203610863"></p>
-<p>Sentinel：限流</p>
-<p>例如：我们启动Sentinel服务，监控8080端口，（三板斧，pom导入jar、yml指定Sentinel-dashboard）把我们的服务发送给我们的Sentinel控制台但是不显示，懒加载，访问后可见服务分级，通过Sentinel控制台设置限流规则（就是我们再Sentinel控制台服务端设置规则，发送给我们的客户端，然后就可以生效我们的限流规则）</p>
-<p>Sentinel的持久化规则：</p>
-<ol>
-<li>pull模式</li>
-<li>push模式，通过我们watch监听器</li>
-</ol>
-<p>Sentinel云原生</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png" alt="image-20220525210640723"></p>
-<p>链路追踪：我们进行一次服务调用，但是无法发现我们的服务调用的路径（网关、服务提供、服务消费、其他微服务）可以排查我们的服务出错的位置。</p>
-<p>zipkin+Selush、skywalking</p>
-<p>9：30</p>
-<p>Nacos服务注册</p>
-<p>本质上就是：Post类型请求类型的http请求</p>
-<p>Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。</p>
-<p>在我们SpringBoot项目启动后执行我们的Nacos的那个注册方法 registerInstance方法。</p>
-<p>我们SpringBoot启动run方法，通过广播起发送时间，对我们感兴趣的事情进行监听机制来执行我们方法，因此我们Nacos服务注册的需要写监听器，但是我们SpringCould团队提供了一个接口（ServiceRegister）让我们的Nacos或者Eureka来实现接口的NacosServiceRegister   完成register（）方法。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png" alt="image-20220526204011740"></p>
-<p>Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。</p>
-<p>OpenFeign：服务调用，设计思想。</p>
-<p>9：00</p>
+    <title>阿里云服务部署使用说明</title>
+    <url>/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="阿里云ECS云服务部署过程"><a href="#阿里云ECS云服务部署过程" class="headerlink" title="阿里云ECS云服务部署过程"></a>阿里云ECS云服务部署过程</h1><hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目</p>
+<hr>
+<p><code>提示：学生可以有优惠活动</code></p>
+<h1 id="一、购买阿里云ECS"><a href="#一、购买阿里云ECS" class="headerlink" title="一、购买阿里云ECS"></a>一、购买阿里云ECS</h1><p>1、<a href="https://developer.aliyun.com/plan/student#J_6054107750">飞天加速计划</a></p>
+<p>2、完成购买后进入控制台：<a href="https://ecs.console.aliyun.com/#/home">云服务器 ECS控制台</a></p>
+<ul>
+<li>找到实例与镜像在更多里面密码更改重启服务器。<img src="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="重置密码"></li>
+<li>使用windows连接工具（xshell）我的分享地址</li>
+<li>找到服务器的公网输入密码连接<br><img src="https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
+</ul>
+<h1 id="二、安装Linux相关服务"><a href="#二、安装Linux相关服务" class="headerlink" title="二、安装Linux相关服务"></a>二、安装Linux相关服务</h1><p>安装内容：<br>下载分享：</p>
+<h2 id="1-JDK8"><a href="#1-JDK8" class="headerlink" title="1.JDK8"></a>1.JDK8</h2><p><a href="https://developer.aliyun.com/article/773930">阿里云JDK配置</a></p>
+<blockquote>
+<p>主要的代码：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1<span class="number">.8</span><span class="number">.0_281</span>   #你的JDK安装路径+名称</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Mysql-57"><a href="#2-Mysql-57" class="headerlink" title="2.Mysql 57"></a>2.Mysql 57</h2><p><a href="https://developer.aliyun.com/article/834505">Mysql57安装</a></p>
+<p>1、如果出GPG的错：<a href="https://cloud.tencent.com/developer/article/1940459">GPG Keys are configured</a><br>2、出现“（”，“）”：<a href="https://blog.csdn.net/wangchengming1/article/details/76946412">xshell字符转义</a><br>3、mysql服务：密码过于简单需要设置：<a href="https://www.cnblogs.com/baby123/p/12221405.html">地址</a><br>4、navicat连接mysql出现错误 is not allowed to connect to this mysql server 的解决办法<a href="https://blog.csdn.net/weixin_42132143/article/details/118339697">链接</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld.service</span><br><span class="line">systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+<h2 id="3-redis5"><a href="#3-redis5" class="headerlink" title="3.redis5"></a>3.redis5</h2><p>参考1：<a href="https://developer.aliyun.com/article/775160">阿里云Redis安装</a><br>参考2：<a href="https://blog.csdn.net/lilong329329/article/details/90451657">配置亲测有效</a><br><code>重点：远程连接阿里云服务需要注释掉bind 127.0.0.1和设置密码，重启服务和配置文件</code><br><img src="https://img-blog.csdnimg.cn/5771d9a252aa4e15ac13eda283e1cad2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="配置"></p>
+<h2 id="3-Tomcat-9"><a href="#3-Tomcat-9" class="headerlink" title="3.Tomcat 9"></a>3.Tomcat 9</h2><p>这个比较简单，把自己gz文件放到自己想要的位置 &#x2F;usr&#x2F;local&#x2F;tomcat 中<br>tar -zxvf 文件名  解压好后，去往bin目录启动starup.sh。配置安全组8080，连接ip+8080即可。</p>
+<h2 id="4-Node-js"><a href="#4-Node-js" class="headerlink" title="4.Node.js"></a>4.Node.js</h2><p>参考连接:<a href="https://developer.aliyun.com/article/775037">Node.js安装</a></p>
+<h2 id="5-Nacos"><a href="#5-Nacos" class="headerlink" title="5.Nacos"></a>5.Nacos</h2><p>参考连接:<a href="https://developer.aliyun.com/article/786617">nacos安装</a></p>
+<h2 id="6-宝塔面板"><a href="#6-宝塔面板" class="headerlink" title="6.宝塔面板"></a>6.宝塔面板</h2><p>参考连接:<a href="https://developer.aliyun.com/article/767507">面板配置</a><br><a href="https://developer.aliyun.com/article/766773#:~:text=%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E6%9D%A1%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%9C%AC%E6%95%99%E7%A8%8B%E4%BB%A5CentOS%E4%B8%BA%E4%BE%8B%EF%BC%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E4%B8%BA%EF%BC%9A%20yum%20install%20-y%20wget%20&&,wget%20-O%20install.sh%20http://download.bt.cn/install/install.sh%20&&%20sh%20install.sh">参考2</a></p>
+<h2 id="7-导出镜像"><a href="#7-导出镜像" class="headerlink" title="7.导出镜像"></a>7.导出镜像</h2><p><a href="https://help.aliyun.com/document_detail/58181.html">导出自定义镜像</a></p>
+<h2 id="8-RabbitMq"><a href="#8-RabbitMq" class="headerlink" title="8.RabbitMq"></a>8.RabbitMq</h2><p><a href="https://blog.csdn.net/qq_41854180/article/details/113832989">参考1</a><br><a href="https://blog.csdn.net/u014528861/article/details/114370948">rpm安装过程</a><br><a href="https://blog.csdn.net/feinifi/article/details/107997555">参考2</a></p>
+<h2 id="9-Docker"><a href="#9-Docker" class="headerlink" title="9.Docker"></a>9.Docker</h2><p><a href="https://help.aliyun.com/document_detail/187598.html#section-kjt-i59-n4a">Docker使用</a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>提示：未完待续.......</code></p>
 ]]></content>
       <categories>
-        <category>JAVA</category>
-        <category>Spring Cloud</category>
+        <category>环境搭建</category>
+        <category>ECS</category>
       </categories>
   </entry>
   <entry>
-    <title>Java基础——面试</title>
-    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/1-%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h3 id="1、面向过程和面向对象"><a href="#1、面向过程和面向对象" class="headerlink" title="1、面向过程和面向对象"></a>1、面向过程和面向对象</h3><p>A：面向过程：</p>
-<p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
-<p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
-<p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
-<p>B：面向对象：</p>
-<p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
-<p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
-<p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
-<h3 id="2、hashCode作用"><a href="#2、hashCode作用" class="headerlink" title="2、hashCode作用"></a>2、hashCode作用</h3><p>理解：</p>
-<p>它返回的就是根据对象的内存地址换算出的一个值。这样一来，当 集合要添加新的元素时，先调用这个元素的hashCode方法，就一下子能定位到它应该放置的物理 位置上。</p>
-<p>如果这个位置上没有元素，它就可以直接存储在这个位置上，不用再进行任何比较了；</p>
-<p>如果这个位置上已经有元素了，就调用它的equals方法与新元素进行比较，相同的话就不存了，不相 同就散列其它的地址。</p>
-<p>这样一来实际调用equals方法的次数就大大降低了，几乎只需要一两次。</p>
-<h3 id="3、JAVA语言特点"><a href="#3、JAVA语言特点" class="headerlink" title="3、JAVA语言特点"></a>3、JAVA语言特点</h3><ol>
-<li>简单易学、有丰富的类库；</li>
-<li>面向对象、低耦合，高内聚；</li>
-<li>跨平台特点（JVM是跨平台的根本）；</li>
-<li>安全可靠、支持多线程。</li>
-</ol>
-<h3 id="4、基本数据类型和包装类"><a href="#4、基本数据类型和包装类" class="headerlink" title="4、基本数据类型和包装类"></a>4、基本数据类型和包装类</h3><ol>
-<li>int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况；</li>
-<li>包装类可以作为泛型，实现了Serializable接口，支持序列化和反序列化</li>
-<li>Integer 来说，在数值区间为 -128~127 时，会直接复用已有对象，在这区间之外的数字才会在堆上产生。例如128这个会生成新对象。</li>
-<li>包装类包含了丰富的方法。</li>
-</ol>
-<h3 id="5、重写和重载的理解"><a href="#5、重写和重载的理解" class="headerlink" title="5、重写和重载的理解"></a>5、重写和重载的理解</h3><p>重写：（Overread）</p>
-<ol>
-<li>子类重写父类方法发生在父类与子类之间 </li>
-<li>方法名，参数列表，返回类型（除过子类中方法的返回类型 是父类中返回类型的子类）都必须相同 </li>
-<li>访问修饰符的限制一定要大于被重写方法的访问修饰符 （public&gt;protected&gt;default&gt;private) </li>
-<li>重写方法一定不能抛出新的检查异常或者比被重写方法申 明更加宽泛的检查型异常</li>
-</ol>
-<p>重载：（Overload）</p>
-<ol>
-<li>重载Overload是一个类中多态性的一种表现 </li>
-<li>重载要求同名方法的参数列表不同(参数类型，参数个数甚至是参数顺序)</li>
-<li>重载的时候，返回值类型可以相同也可以不相同。无法以返回 型别作为重载函数的区分标准</li>
-</ol>
-<h3 id="6、Instanceof-关键字"><a href="#6、Instanceof-关键字" class="headerlink" title="6、Instanceof 关键字"></a>6、Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo和Git说明</title>
+    <url>/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Hexo%E5%92%8CGit%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;new file name&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<h3 id="7、String、StringBuffer、StringBuilder"><a href="#7、String、StringBuffer、StringBuilder" class="headerlink" title="7、String、StringBuffer、StringBuilder"></a>7、String、StringBuffer、StringBuilder</h3><ol>
-<li>String：只读字符串；其实就是对象，但是底层是被final修饰的字符数组，引用的字符串不能改变；因此每次操作都是新的String的对象。</li>
-<li>StringBuffer和StringBuilder：底层都是可变的字符数组，所以在进行频繁的字符串操作时，建议使用StringBuffer和 StringBuilder来进行操作。 另外StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</li>
-</ol>
-<h3 id="8、hashMap和hashTable"><a href="#8、hashMap和hashTable" class="headerlink" title="8、hashMap和hashTable"></a>8、hashMap和hashTable</h3><ol>
+<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境搭建</category>
+        <category>操作命令</category>
+      </categories>
+      <tags>
+        <tag>常用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HashMap、HashTable、ConcurrentHashMap理解</title>
+    <url>/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h3 id="hashMap和hashTable区别"><a href="#hashMap和hashTable区别" class="headerlink" title="hashMap和hashTable区别"></a>hashMap和hashTable区别</h3><ol>
 <li>HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。</li>
 <li>HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。</li>
 <li>HashMap的底层数组的长度必须为2^n，这样做的好处是为以后的hash算法做准备，而Hashtable底层数组的长度可以为任意值，这就造成了当底层数组长度为合数的时候，Hashtable的hash算法散射不均匀，容易产生hash冲突。</li>
@@ -219,7 +149,7 @@
 <li>HashMap在jdk1.8在原先的数组+链表的结构进行了优化，将实现结构变为数组+链表+红黑树；Hashtable到了jdk1.8了内部结构并没有实质优化，继续使用数组+链表的方式实现。</li>
 <li>可以使用<strong>ConcurrentHashMap来替代Hashtable来使用</strong>。</li>
 </ol>
-<h3 id="9、HashMap理解"><a href="#9、HashMap理解" class="headerlink" title="9、HashMap理解"></a>9、<a href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 1.7是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
+<h3 id="HashMap理解"><a href="#HashMap理解" class="headerlink" title="HashMap理解"></a><a href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 1.7是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg" alt="img"></p>
 <p>散列价值是速度，散列让我们查询更快。</p>
 <h4 id="散列技术"><a href="#散列技术" class="headerlink" title="散列技术"></a><strong>散列技术</strong></h4><p>根据结点通过散列函数，得到的关键码值来确定其存储地址。关键码与散列地址是一对一的关系，则在检索时只需根据散列函数对给定值进行某种运算，即可得到待查结点的存储位置。但是，散列函数可能对于<strong>不相等的关键码计算出相同的散列地址</strong>，我们称该现象为<strong>冲突</strong></p>
@@ -270,7 +200,7 @@
 <p>将b用头插法插入newTable[i]中。</p>
 </blockquote>
 <p><strong>6：再次执行e&#x3D;next；</strong></p>
-<p><img src="https://pic4.zhimg.com/80/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
 <blockquote>
 <p>此时再次从元素b开始向后移动指针。发现后续元素已经为null。从而结束整个oldTable[1]的链表遍历。</p>
 </blockquote>
@@ -282,7 +212,7 @@
 <h5 id="多线程下扩容可能死循环"><a href="#多线程下扩容可能死循环" class="headerlink" title="多线程下扩容可能死循环"></a>多线程下扩容可能死循环</h5><p>如果线程1让我们的链表倒序，其实也就是在单线程下，本来oldTable遍历完毕next就是null，但是如果多线程下线程2也执行了倒序操作，让我们e.next还有数据，就产生了死循环。</p>
 <h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
 <p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
-<h3 id="10、ConcurrentHashMap理解"><a href="#10、ConcurrentHashMap理解" class="headerlink" title="10、ConcurrentHashMap理解"></a>10、<a href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
+<h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
 <li><p>并发容器，在concurrent并发包中，是对HashMap的安全实现，也是数组和链表的结构。</p>
 </li>
 <li><p>但是在HashEntry和Segment都是静态内部类，基本和hashMap类似，但是ConcurrentHashMap中HashEntry的value和next指针都呗volatille修饰，保证了数据的可见性；</p>
@@ -323,14 +253,239 @@
 <li>如果是红黑树那就按照树的方式获取值。</li>
 <li>就不满足那就按照链表的方式遍历获取值。</li>
 </ul>
-<h3 id="11、"><a href="#11、" class="headerlink" title="11、"></a>11、</h3>]]></content>
+]]></content>
       <categories>
         <category>JAVA</category>
-        <category>基础知识</category>
+        <category>高级</category>
+        <category>集合</category>
       </categories>
       <tags>
         <tag>面试</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Java基础——重难点</title>
+    <url>/2022/05/25/JAVA/%E5%9F%BA%E7%A1%80/A%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="面向过程和面向对象"><a href="#面向过程和面向对象" class="headerlink" title="面向过程和面向对象"></a>面向过程和面向对象</h3><p>A：面向过程：</p>
+<p>概述: 自顶而下的编程模式 把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。 </p>
+<p>就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后 使用各种诸如 if-else、for-each 等方式进行代码执行。 </p>
+<p>最典型的用法就是实现一个简单的算法，比如实现冒泡排序。 </p>
+<p>B：面向对象：</p>
+<p>概述: 将事务高度抽象化的编程模式 将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之 间的调用，组合解决问题。 具有封装、继承、多态特点——低耦合-高内聚。</p>
+<p>就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这 些对象及对象的能力进行业务逻辑的实现。 </p>
+<p>比如：想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个 Car 类</p>
+<h3 id="hashCode作用"><a href="#hashCode作用" class="headerlink" title="hashCode作用"></a>hashCode作用</h3><p>理解：</p>
+<p>它返回的就是根据对象的内存地址换算出的一个值。这样一来，当 集合要添加新的元素时，先调用这个元素的hashCode方法，就一下子能定位到它应该放置的物理 位置上。</p>
+<p>如果这个位置上没有元素，它就可以直接存储在这个位置上，不用再进行任何比较了；</p>
+<p>如果这个位置上已经有元素了，就调用它的equals方法与新元素进行比较，相同的话就不存了，不相 同就散列其它的地址。</p>
+<p>这样一来实际调用equals方法的次数就大大降低了，几乎只需要一两次。</p>
+<h3 id="JAVA语言特点"><a href="#JAVA语言特点" class="headerlink" title="JAVA语言特点"></a>JAVA语言特点</h3><ol>
+<li>简单易学、有丰富的类库；</li>
+<li>面向对象、低耦合，高内聚；</li>
+<li>跨平台特点（JVM是跨平台的根本）；</li>
+<li>安全可靠、支持多线程。</li>
+</ol>
+<h3 id="基本数据类型和包装类"><a href="#基本数据类型和包装类" class="headerlink" title="基本数据类型和包装类"></a>基本数据类型和包装类</h3><ol>
+<li>int默认值是0，而Integer默认值 是null，所以Integer能区分出0和null的情况；</li>
+<li>包装类可以作为泛型，实现了Serializable接口，支持序列化和反序列化</li>
+<li>Integer 来说，在数值区间为 -128~127 时，会直接复用已有对象，在这区间之外的数字才会在堆上产生。例如128这个会生成新对象。</li>
+<li>包装类包含了丰富的方法。</li>
+</ol>
+<h3 id="重写和重载的理解"><a href="#重写和重载的理解" class="headerlink" title="重写和重载的理解"></a>重写和重载的理解</h3><p>重写：（Overread）</p>
+<ol>
+<li>子类重写父类方法发生在父类与子类之间 </li>
+<li>方法名，参数列表，返回类型（除过子类中方法的返回类型 是父类中返回类型的子类）都必须相同 </li>
+<li>访问修饰符的限制一定要大于被重写方法的访问修饰符 （public&gt;protected&gt;default&gt;private) </li>
+<li>重写方法一定不能抛出新的检查异常或者比被重写方法申 明更加宽泛的检查型异常</li>
+</ol>
+<p>重载：（Overload）</p>
+<ol>
+<li>重载Overload是一个类中多态性的一种表现 </li>
+<li>重载要求同名方法的参数列表不同(参数类型，参数个数甚至是参数顺序)</li>
+<li>重载的时候，返回值类型可以相同也可以不相同。无法以返回 型别作为重载函数的区分标准</li>
+</ol>
+<h3 id="Instanceof-关键字"><a href="#Instanceof-关键字" class="headerlink" title="Instanceof 关键字"></a>Instanceof 关键字</h3><p>Instanceof 严格来说是Java中的一个双目运算符，用来测试一个对象是否为一个类的实例；也就是：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> obj <span class="keyword">instanceof</span> Class</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">其中 obj 为一个对象，Class 表示一个类或者一个接口，当 obj 为 Class 的对象，</span></span><br><span class="line"><span class="comment">或者是直接、间接子类、其接口的实现类，结果result 都返回 true，否则返回false。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">原理：编译器会检查 obj 是否能转换成右边的class类型，如果不能转换则直接报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="String、StringBuffer、StringBuilder"><a href="#String、StringBuffer、StringBuilder" class="headerlink" title="String、StringBuffer、StringBuilder"></a>String、StringBuffer、StringBuilder</h3><ol>
+<li>String：只读字符串；其实就是对象，但是底层是被<strong>final修饰</strong>的字符数组，引用的字符串不能改变；因此每次操作都是新的String的对象。</li>
+<li>StringBuffer和StringBuilder：底层都是可变的字符数组，所以在进行频繁的字符串操作时，建议使用StringBuffer和 StringBuilder来进行操作。 </li>
+<li>StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。</li>
+<li>StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</li>
+</ol>
+<h3 id="String拼接字符串"><a href="#String拼接字符串" class="headerlink" title="String拼接字符串"></a>String拼接字符串</h3><p>String 是 Java 中一个不可变的类，所以他一旦被实例化就无法被修改。</p>
+<p>不可变类的实例一旦创建，其成员变量的值就不能被修改。这样设计有很多好处，比如 可以缓存 hashcode、使用更加便利以及更加安全等。</p>
+<p>所以拼接就是创建一个新字符串，然后拼接。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line">s = s.concat(<span class="string">&quot;ef&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206022319227.png" alt="image-20220602231927181"></p>
+<p><code>s 中保存的是一个重新创建出来的 String 对象的引用。 </code></p>
+<p>“+”：起始就是语法糖让我们的程序更简洁，可读性更好。</p>
+<p>Concat字符串拼接方法。</p>
+<p>原理：</p>
+<blockquote>
+<p>创建了一个字符数组，长度是已有字符串和待拼接字符串的长度之和，再 把两个字符串的值复制到新的字符数组中，并使用这个字符数组创建一个新的 String 对象 并返回。（本质也是new String对象返回）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">concat</span><span class="params">(String str)</span></span><br><span class="line"><span class="type">int</span> <span class="variable">otherLen</span> <span class="operator">=</span> str.length();</span><br><span class="line"><span class="keyword">if</span> (otherLen == <span class="number">0</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> value.length;</span><br><span class="line"><span class="type">char</span> buf[] = Arrays.copyOf(value, len + otherLen);</span><br><span class="line">str.getChars(buf, len);</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>StringBuffer和StringBuilder对字符串进行拼接。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(<span class="string">&quot;Hollis&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line"><span class="type">StringBuffer</span> <span class="variable">hollis</span> <span class="operator">=</span> wechat.append(<span class="string">&quot;,&quot;</span>).append(introduce);</span><br><span class="line"></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;Hollis&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">hollis</span> <span class="operator">=</span> wechat.append(<span class="string">&quot;,&quot;</span>).append(introduce);</span><br></pre></td></tr></table></figure>
+
+<p>JAVA8提供了String类的jion的静态方法和StringsUtils.join；</p>
+<p>StringUtils 中提供的 join 方法，最主要的功能是：将数组或集合以 某拼接符拼接到一起形成新的字符串</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">wechat</span> <span class="operator">=</span> <span class="string">&quot;Hollis&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">introduce</span> <span class="operator">=</span> <span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>;</span><br><span class="line">System.out.println(StringUtils.join(wechat, <span class="string">&quot;,&quot;</span>, introduce));</span><br><span class="line"></span><br><span class="line">String []list =&#123;<span class="string">&quot;Hollis&quot;</span>,<span class="string">&quot;每日更新 Java 相关技术文章&quot;</span>&#125;;</span><br><span class="line">String result= StringUtils.join(list,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">System.out.println(result);</span><br><span class="line"><span class="comment">//结果：Hollis,每日更新 Java 相关技术文章</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="StringUtils-join-是如何实现拼接"><a href="#StringUtils-join-是如何实现拼接" class="headerlink" title="StringUtils.join 是如何实现拼接"></a>StringUtils.join 是如何实现拼接</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">join</span><span class="params">(<span class="keyword">final</span> Object[] array, String separator, <span class="keyword">final</span> <span class="type">int</span> startIndex, <span class="keyword">final</span> <span class="type">int</span> endIndex)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (array == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (separator == <span class="literal">null</span>) &#123;</span><br><span class="line">		separator = EMPTY;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">// endIndex - startIndex &gt; 0: Len = NofStrings *(len(firstString) + len(separator))</span></span><br><span class="line"><span class="comment">// (Assuming that all Strings are roughly equally long)</span></span><br><span class="line">	<span class="keyword">final</span> <span class="type">int</span> <span class="variable">noOfItems</span> <span class="operator">=</span> endIndex - startIndex;</span><br><span class="line">	<span class="keyword">if</span> (noOfItems &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> EMPTY;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">final</span> <span class="type">StringBuilder</span> <span class="variable">buf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(noOfItems * <span class="number">16</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> startIndex; i &lt; endIndex; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i &gt; startIndex) &#123;</span><br><span class="line">			buf.append(separator);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (array[i] != <span class="literal">null</span>) &#123;</span><br><span class="line">			buf.append(array[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> buf.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>看出就是通过StringBuilder的append方法实现的</code></p>
+<h4 id="StringBuffer-的-append-方法。"><a href="#StringBuffer-的-append-方法。" class="headerlink" title="StringBuffer 的 append 方法。"></a>StringBuffer 的 append 方法。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> StringBuffer <span class="title function_">append</span><span class="params">(String str)</span> &#123;</span><br><span class="line">	toStringCache = <span class="literal">null</span>;</span><br><span class="line">	<span class="built_in">super</span>.append(str);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><strong>Java 开发手册建议：循环体内，字符串的连接方式，使用 StringBuilder 的 append 方法进行扩展。而不要使用+。</strong></p>
+<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><p><a href="https://blog.csdn.net/coder_what/article/details/96310967?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-1&spm=1001.2101.3001.4242">Java常见的12个语法糖</a></p>
+<p>语法糖往往给程序员<strong>提供了更实用的编码方式，有益于更好的编码风格，更易读</strong>。不过其并没有给语言添加什么新东西。需要声明的是“语法糖”这个词绝非贬义词，它可以给我带来方便，是一种便捷的写法，编译器会帮我们做转换；而且可以提高开发编码的效率，在性能上也不会带来损失。</p>
+<p><strong>常见的语法糖：</strong></p>
+<p>1、switch、 case、default 。</p>
+<p>2、for-each：其内部仍然是采用普通for循环和迭代器实现遍历。</p>
+<p>3、Lambda表达式：函数式编程。</p>
+<p>4、enum枚举。</p>
+<p>5、泛型</p>
+<p>6、多态</p>
+<p>7、内部类</p>
+<p>8、自动封装</p>
+<p>9、变长参数（…的方法）</p>
+<p>10、if语句</p>
+<p>11、try-with-resource</p>
+<p>12、编译时优化：主要针对常量。</p>
+<h3 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h3><p>在 Java 体系中，共用三种常量池。分别是字符串常量池、Class 常量池 和运行时常量池。</p>
+<h4 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h4><p>在 JVM 中，为了减少相同的字符串的重复创建，为了达到节省内存的目的。会单独开 辟一块内存，用于保存字符串常量，这个内存区域被叫做字符串常量池。</p>
+<p>字符串常量池的位置：永久代中。</p>
+<h4 id="Class常量池"><a href="#Class常量池" class="headerlink" title="Class常量池"></a>Class常量池</h4><p>Class 常量池可以理解为是 Class 文件中的资源仓库。Class 文件中除了包含类的版 本、字段、方法、接口等描述信息外，还有一项信息就是常量池(constant pool table)， 用于<strong>存放编译器生成的各种字面量(Literal)和符号引用(Symbolic References)。</strong> </p>
+<p>由于不同的 Class 文件中包含的常量的个数是不固定的，所以在 Class 文件的常量池 入口处会设置两个字节的常量池容量计数器，记录了常量池中常量的个数。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206030051366.png" alt="image-20220603005157329"></p>
+<p><a href="file:///E:/_1_NewFile/_$_Java后端开发必备手册/JAVA面试/00-Java开发基础.pdf">00-Java开发基础.pdf</a>  90页</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>语法糖</title>
+    <url>/2022/06/02/JAVA/%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/</url>
+    <content><![CDATA[<h3 id="语法糖定义"><a href="#语法糖定义" class="headerlink" title="语法糖定义"></a>语法糖定义</h3><p><a href="https://blog.csdn.net/coder_what/article/details/96310967?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-1&spm=1001.2101.3001.4242">Java常见的12个语法糖</a></p>
+<p>语法糖（Syntactic sugar），也译为糖衣语法，是由英国计算机科学家彼得·兰 丁发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能没有影响，但 是更方便程序员使用。语法糖让程序更加简洁，有更高的可读性</p>
+<p>语法糖往往给程序员<strong>提供了更实用的编码方式，有益于更好的编码风格，更易读</strong>。不过其并没有给语言添加什么新东西。需要声明的是“语法糖”这个词绝非贬义词，它可以给我带来方便，是一种便捷的写法，编译器会帮我们做转换；而且可以提高开发编码的效率，在性能上也不会带来损失。</p>
+<h3 id="常见的语法糖："><a href="#常见的语法糖：" class="headerlink" title="常见的语法糖："></a><strong>常见的语法糖：</strong></h3><h4 id="1、switch、-case、default-。"><a href="#1、switch、-case、default-。" class="headerlink" title="1、switch、 case、default 。"></a>1、switch、 case、default 。</h4><p>就是7版本支持的switch的string类型的数据。</p>
+<p>switch 中只能使用整型,<strong>所以原理就是把String.hashCode来处理。</strong>进行 switch 的实际是哈希值，然后通过使用 equals 方法比较进行安全检查，这个检查是必要的，因为哈希可能会发生碰撞。</p>
+<p>Java编译中增加了一个 equals 方法，如果你比较的是字符串字面量的话会非常快，比如”abc” &#x3D;&#x3D;”abc”。如果你把 hashCode()方法的调用也考虑进来了，那么还会再多一次的调用 开销，因为字符串一旦创建了，它就会把哈希值缓存起来。因此如果这个 switch 语句是用 在一个循环里的，比如逐项处理某个值，或者游戏引擎循环地渲染屏幕，这里 hashCode() 方法的调用开销其实不会很大。</p>
+<h4 id="2、for-each："><a href="#2、for-each：" class="headerlink" title="2、for-each："></a>2、for-each：</h4><p>其内部仍然是采用普通for循环和迭代器实现遍历。</p>
+<p>通过集合类是通过迭代器来实现了增强for循环，String通过普通的for循环来增强for循环。同时，因为其用了迭代器，我们需要注意，在foreach的时候只能遍历，不能修改。否则会爆出<code>java.util.ConcurrentModificationException</code>异常</p>
+<h4 id="3、Lambda表达式："><a href="#3、Lambda表达式：" class="headerlink" title="3、Lambda表达式："></a>3、Lambda表达式：</h4><p>函数式编程。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//编译前</span></span><br><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">          list.add(i);</span><br><span class="line">      &#125;</span><br><span class="line">list.forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">//编译后</span></span><br><span class="line">ArrayList&lt;Integer&gt; arrayList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            arrayList.add(i);</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">printStream</span> <span class="operator">=</span> System.out;</span><br><span class="line">        printStream.getClass();        </span><br><span class="line">        arrayList.forEach( </span><br><span class="line">(Consumer&lt;Integer&gt;)LambdaMetafactory.metafactory(<span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">null</span>,(Ljava/lang/Object;)V, println(java.lang.Object ), </span><br><span class="line">(Ljava/lang/Integer;)V)((PrintStream)printStream)</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="4、enum枚举。"><a href="#4、enum枚举。" class="headerlink" title="4、enum枚举。"></a>4、enum枚举。</h4><p>枚举是继承了Enum类的，同时他也是final，即不可继承的</p>
+<h4 id="5、泛型"><a href="#5、泛型" class="headerlink" title="5、泛型"></a>5、泛型</h4><blockquote>
+<p>在JDK5之前，为了实现参数类型的任意化，都是 先通过Object类型引入，再进行强制类型转换 来处理。这种方式不仅使得代码臃肿，还要求程序员必须对实际所使用的参数类型已知的情况下才能进行，否则容易引起ClassCastException异常。而且，泛型把这些错误提前到编译期，更安全更方便。</p>
+</blockquote>
+<h5 id="泛型类的内存逻辑模型"><a href="#泛型类的内存逻辑模型" class="headerlink" title="泛型类的内存逻辑模型"></a>泛型类的内存逻辑模型</h5><p>jvm中是不存在的。所以Java编译器需要先把泛型语法转换为虚拟机可已识别的语言。其实，就是转换成了我们开篇所提到的通过Object来实现参数任意化，只不过强制类型转化等需要虚拟机来完成。</p>
+<h5 id="泛型的约束和局限性"><a href="#泛型的约束和局限性" class="headerlink" title="泛型的约束和局限性"></a>泛型的约束和局限性</h5><ul>
+<li><p>不能用基本类型实例化参数类型</p>
+<p>例如：pair<double> 当类型擦除后会变成pair，由于Object中没有基本类型，所以不能转换</p>
+</li>
+<li><p>运行时类型查询只适用于原始类型</p>
+<p>例如： (pair<String>) a.getClass()的返回值是pair</p>
+</li>
+<li><p>不能创建参数化类型的数组</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Pair&lt;String&gt;[] table = <span class="keyword">new</span> <span class="title class_">Pair</span>&lt;String&gt;[<span class="number">10</span>];    <span class="comment">//擦除后变为  Pair[] table = new Pair[10]</span></span><br><span class="line">Object[] objarray = table;</span><br><span class="line">objarray[<span class="number">0</span>] = <span class="string">&quot;hello&quot;</span>;  </span><br><span class="line">objarray[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">Pair</span>&lt;Emm&gt;();</span><br></pre></td></tr></table></figure>
+
+<h4 id="6、多态"><a href="#6、多态" class="headerlink" title="6、多态"></a>6、多态</h4><p><a href="https://blog.csdn.net/coder_what/article/details/88852544">Java中的多态</a></p>
+<h4 id="7、内部类"><a href="#7、内部类" class="headerlink" title="7、内部类"></a>7、内部类</h4><p><a href="https://blog.csdn.net/coder_what/article/details/89381302">从内存逻辑模型分析Java中的内部类</a></p>
+<h4 id="8、自动封装："><a href="#8、自动封装：" class="headerlink" title="8、自动封装："></a>8、自动封装：</h4><p>自动调用包装类的valueOf 和基本数据类型的value 方法。</p>
+<p>在JDK5之后，Integer的操作中引入了一个新功能来节省内存和提高性能。即，整型对象通过使用相同的对象引用实现了缓存和重用。<strong>适用于整数值区间-128 至 +127。</strong></p>
+<h4 id="9、变长参数（…的方法）"><a href="#9、变长参数（…的方法）" class="headerlink" title="9、变长参数（…的方法）"></a>9、变长参数（…的方法）</h4><p>创建给定类型的数组，作为参数。</p>
+<h4 id="10、if语句"><a href="#10、if语句" class="headerlink" title="10、if语句"></a>10、if语句</h4><h4 id="11、try-with-resource"><a href="#11、try-with-resource" class="headerlink" title="11、try-with-resource"></a>11、try-with-resource</h4><p>JDK1.7中新增的功能，用于代码更加优雅的关闭资源。</p>
+<h4 id="12、编译时优化："><a href="#12、编译时优化：" class="headerlink" title="12、编译时优化："></a>12、编译时优化：</h4><p>主要针对常量。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>融资宝项目开发手册1</title>
+    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/1.%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C1/</url>
+    <content><![CDATA[<h1 id="融资宝项目开发过程及技术回顾"><a href="#融资宝项目开发过程及技术回顾" class="headerlink" title="融资宝项目开发过程及技术回顾"></a>融资宝项目开发过程及技术回顾</h1><hr>
+<p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
+<hr>
+<h2 id="1、项目介绍"><a href="#1、项目介绍" class="headerlink" title="1、项目介绍"></a>1、项目介绍</h2><blockquote>
+<p>众筹融资是一种新型的互联网金融模式，具有受众广、成本低的特点，这也逐渐成为了互联网金融行业发展的一个重要手段，并且在国际和国内都有很深远的影响，但是其中的风险，需要我们辩证的看待。</p>
+<p>本项目是一个众筹融资的第三方平台——融资宝，按照募资的形势采用了“借贷模式”，出借人借钱给一个项目，预期的到偿还；借款人通过信贷来募资；平台提供投资平台、两方的服务对接任务和资金管理。</p>
+<p>当一些小微企业和急需用钱的个体客户资金不足的情况；一些自由资金充足希望通过投资获得一些回报，可以通过本平台借贷&#x2F;投资。</p>
+</blockquote>
+<hr>
+<h2 id="2、项目技术栈"><a href="#2、项目技术栈" class="headerlink" title="2、项目技术栈"></a>2、项目技术栈</h2><blockquote>
+<p>（1）前端：Node.js： JavaScript 运行环境；ES6：JavaScript的模块化版本；axios：一个发送Ajax请求的工具；Vue.js：web 界面的渐进式框架；Element-UI：前端组件库；vue-element-admin：基于Vue.js的后台管理系统UI集成方案；NuxtJS：基于Vue.js构建的服务器端渲染应用的轻量级框架；NPM：模块资源管理器；<br>（2）数据库和中间键；Mysql 5.7：关系型数据库；Redis 5.0：缓存技术；EabbitMQ：消息中间键<br>（3）后端：SprinigBoot：微服务架构支撑；SpringCloud Hoxton.SR8：快速构建微服务基础设施；Mybatis-Plus：持久层框架和代码生成器；Swagger2：Api接口文档生成器；Logback：日志系统；SpringDateRedis：Spring项目访问redis缓存；HTTPClient: 基于Http协议的客户端，用来实现远程调用；Spring Task：定时任务<br>（4）第三方接口；阿里云短信服务；阿里云OSS服务；资金托管平台API对接：汇付包</p>
+</blockquote>
+<h2 id="3、项目部署和开发环境"><a href="#3、项目部署和开发环境" class="headerlink" title="3、项目部署和开发环境"></a>3、项目部署和开发环境</h2><blockquote>
+<p>阿里云ECS服务器；操作系统；Alibaba Cloud Linux；云解析DNS（域名解析）；JDK1.8；Maven3.8；IdeaIU2020；宝塔面板。</p>
+</blockquote>
+<hr>
+<p><code>提示：以以上技术栈有些会做详细说明</code></p>
+<h2 id="4、核心的项目业务"><a href="#4、核心的项目业务" class="headerlink" title="4、核心的项目业务"></a>4、核心的项目业务</h2><blockquote>
+<p>（1）用户注册：用户注册手机号，发送短信，验证合法，注册成功<br>（2）用户登录：登录填写手机号和密码，验证合法性，登录成功，记录登录日志<br>（3）贷前：登录后查看是否和资金托管平台绑定，是则提交贷款人信息，平台审核人的信息，通过和提交贷款信息，平台审核借款信息。<br>（4）贷中：通过后生成标的，平台展示标的。<br>（5）投标：用户登录看是否和资金托管平台绑定，绑定成功后，充值，选择看中的标的投标，满标后放贷借款成功。<br>（6）贷后：申请提现，提现后按还款类型还款，归还完毕后平台截标，结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>微服务</category>
+        <category>融资宝项目</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring Cloud学习笔记1</title>
+    <url>/2022/05/25/JAVA/SpringCloud/index/</url>
+    <content><![CDATA[<p>网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。</p>
+<p>（网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器）</p>
+<p>熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。</p>
+<p>处理方式：</p>
+<ol>
+<li>超时：如果服务连接超时、即使未成功也会被释放资源；</li>
+<li>仓壁模式：就是线程池，</li>
+<li>限流功能-Sentinel，</li>
+<li>断路器模式，通过下图，让我们的请求处于closed状态，如果我们的服务调用失败率到达一定的值域就会open状态，然后进行重置超时，成功就closed，否则就继续open；</li>
+</ol>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252036007.png" alt="image-20220525203610863"></p>
+<p>Sentinel：限流</p>
+<p>例如：我们启动Sentinel服务，监控8080端口，（三板斧，pom导入jar、yml指定Sentinel-dashboard）把我们的服务发送给我们的Sentinel控制台但是不显示，懒加载，访问后可见服务分级，通过Sentinel控制台设置限流规则（就是我们再Sentinel控制台服务端设置规则，发送给我们的客户端，然后就可以生效我们的限流规则）</p>
+<p>Sentinel的持久化规则：</p>
+<ol>
+<li>pull模式</li>
+<li>push模式，通过我们watch监听器</li>
+</ol>
+<p>Sentinel云原生</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png" alt="image-20220525210640723"></p>
+<p>链路追踪：我们进行一次服务调用，但是无法发现我们的服务调用的路径（网关、服务提供、服务消费、其他微服务）可以排查我们的服务出错的位置。</p>
+<p>zipkin+Selush、skywalking</p>
+<p>9：30</p>
+<p>Nacos服务注册</p>
+<p>本质上就是：Post类型请求类型的http请求</p>
+<p>Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。</p>
+<p>在我们SpringBoot项目启动后执行我们的Nacos的那个注册方法 registerInstance方法。</p>
+<p>我们SpringBoot启动run方法，通过广播起发送时间，对我们感兴趣的事情进行监听机制来执行我们方法，因此我们Nacos服务注册的需要写监听器，但是我们SpringCould团队提供了一个接口（ServiceRegister）让我们的Nacos或者Eureka来实现接口的NacosServiceRegister   完成register（）方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png" alt="image-20220526204011740"></p>
+<p>Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。</p>
+<p>OpenFeign：服务调用，设计思想。</p>
+<p>9：00</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>Spring Cloud</category>
+      </categories>
   </entry>
   <entry>
     <title>Docke使用说明</title>
@@ -1022,52 +1177,6 @@
       </categories>
       <tags>
         <tag>项目笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>融资宝项目开发手册1</title>
-    <url>/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/1.%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C1/</url>
-    <content><![CDATA[<h1 id="融资宝项目开发过程及技术回顾"><a href="#融资宝项目开发过程及技术回顾" class="headerlink" title="融资宝项目开发过程及技术回顾"></a>融资宝项目开发过程及技术回顾</h1><hr>
-<p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
-<hr>
-<h2 id="1、项目介绍"><a href="#1、项目介绍" class="headerlink" title="1、项目介绍"></a>1、项目介绍</h2><blockquote>
-<p>众筹融资是一种新型的互联网金融模式，具有受众广、成本低的特点，这也逐渐成为了互联网金融行业发展的一个重要手段，并且在国际和国内都有很深远的影响，但是其中的风险，需要我们辩证的看待。</p>
-<p>本项目是一个众筹融资的第三方平台——融资宝，按照募资的形势采用了“借贷模式”，出借人借钱给一个项目，预期的到偿还；借款人通过信贷来募资；平台提供投资平台、两方的服务对接任务和资金管理。</p>
-<p>当一些小微企业和急需用钱的个体客户资金不足的情况；一些自由资金充足希望通过投资获得一些回报，可以通过本平台借贷&#x2F;投资。</p>
-</blockquote>
-<hr>
-<h2 id="2、项目技术栈"><a href="#2、项目技术栈" class="headerlink" title="2、项目技术栈"></a>2、项目技术栈</h2><blockquote>
-<p>（1）前端：Node.js： JavaScript 运行环境；ES6：JavaScript的模块化版本；axios：一个发送Ajax请求的工具；Vue.js：web 界面的渐进式框架；Element-UI：前端组件库；vue-element-admin：基于Vue.js的后台管理系统UI集成方案；NuxtJS：基于Vue.js构建的服务器端渲染应用的轻量级框架；NPM：模块资源管理器；<br>（2）数据库和中间键；Mysql 5.7：关系型数据库；Redis 5.0：缓存技术；EabbitMQ：消息中间键<br>（3）后端：SprinigBoot：微服务架构支撑；SpringCloud Hoxton.SR8：快速构建微服务基础设施；Mybatis-Plus：持久层框架和代码生成器；Swagger2：Api接口文档生成器；Logback：日志系统；SpringDateRedis：Spring项目访问redis缓存；HTTPClient: 基于Http协议的客户端，用来实现远程调用；Spring Task：定时任务<br>（4）第三方接口；阿里云短信服务；阿里云OSS服务；资金托管平台API对接：汇付包</p>
-</blockquote>
-<h2 id="3、项目部署和开发环境"><a href="#3、项目部署和开发环境" class="headerlink" title="3、项目部署和开发环境"></a>3、项目部署和开发环境</h2><blockquote>
-<p>阿里云ECS服务器；操作系统；Alibaba Cloud Linux；云解析DNS（域名解析）；JDK1.8；Maven3.8；IdeaIU2020；宝塔面板。</p>
-</blockquote>
-<hr>
-<p><code>提示：以以上技术栈有些会做详细说明</code></p>
-<h2 id="4、核心的项目业务"><a href="#4、核心的项目业务" class="headerlink" title="4、核心的项目业务"></a>4、核心的项目业务</h2><blockquote>
-<p>（1）用户注册：用户注册手机号，发送短信，验证合法，注册成功<br>（2）用户登录：登录填写手机号和密码，验证合法性，登录成功，记录登录日志<br>（3）贷前：登录后查看是否和资金托管平台绑定，是则提交贷款人信息，平台审核人的信息，通过和提交贷款信息，平台审核借款信息。<br>（4）贷中：通过后生成标的，平台展示标的。<br>（5）投标：用户登录看是否和资金托管平台绑定，绑定成功后，充值，选择看中的标的投标，满标后放贷借款成功。<br>（6）贷后：申请提现，提现后按还款类型还款，归还完毕后平台截标，结束。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>项目</category>
-        <category>微服务</category>
-        <category>融资宝项目</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>博客Hexo和Git说明</title>
-    <url>/2022/05/24/Begin/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;new file name&quot;</span></span><br><span class="line">//等于一次性执行了，清空、刷新、部署三个命令</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//1.查看本地仓库的状态</span><br><span class="line">git status</span><br><span class="line">//2.把本地文件夹的修改，同步到到本地仓库上（add）  add. 表示全部修改</span><br><span class="line">git add . </span><br><span class="line">git add djx.txt</span><br><span class="line">//3.保存本地仓库的修改（commit）</span><br><span class="line">git commit -m <span class="string">&quot;messages&quot;</span></span><br><span class="line">//4.把本地仓库的修改，同步到github远程仓库上（push）</span><br><span class="line">git push</span><br><span class="line">git push -u origin save</span><br><span class="line">//5.清除cache未提交的重新提交</span><br><span class="line">git <span class="built_in">rm</span> --cache themes/next</span><br><span class="line">//6.同步github内容到本地</span><br><span class="line">git pull</span><br><span class="line">//7.更新远程跟踪分支</span><br><span class="line">git fetch origin</span><br><span class="line">git fetch</span><br><span class="line">git fetch origin master</span><br><span class="line">//8.查看分支或切换</span><br><span class="line">git checkout</span><br><span class="line">git checkout save</span><br><span class="line">//9.添加、删除、克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Dain-xin/dain.git</span><br><span class="line">git <span class="built_in">rm</span> -r djx.txt</span><br><span class="line">//10.合并两个内容</span><br><span class="line">git pull -–rebase origin save</span><br><span class="line">//11.删除分支</span><br><span class="line">git branch -D save</span><br><span class="line">git push origin -d save</span><br><span class="line">//11.查看分支</span><br><span class="line">git branch -a</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">1) 切换到基础分支，比如如master分支</span><br><span class="line">git checkout master</span><br><span class="line">2） 创建并切换到新分支</span><br><span class="line">git checkout -b newBranch</span><br><span class="line">3）更新分支代码并提交</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;init newBranch&quot;</span></span><br><span class="line">git push origin newBranch</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line">//删除分支，仓库默认不是要删的分支，</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push origin -d save</span><br><span class="line"></span><br><span class="line">///////////////////////////////////////////</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# dain&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/Dain-xin/dain.git</span><br><span class="line">//////////////////////////////////////////</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>操作命令</category>
-        <category>Hexo-Git</category>
-      </categories>
-      <tags>
-        <tag>常用</tag>
       </tags>
   </entry>
 </search>
