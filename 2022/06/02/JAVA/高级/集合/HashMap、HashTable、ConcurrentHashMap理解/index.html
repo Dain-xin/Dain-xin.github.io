@@ -79,18 +79,32 @@
 
 
 
-<meta name="description" content="融资宝项目开发过程及技术回顾 提示：项目为2023年的毕业设计请勿照搬照抄  1、项目介绍 众筹融资是一种新型的互联网金融模式，具有受众广、成本低的特点，这也逐渐成为了互联网金融行业发展的一个重要手段，并且在国际和国内都有很深远的影响，但是其中的风险，需要我们辩证的看待。 本项目是一个众筹融资的第三方平台——融资宝，按照募资的形势采用了“借贷模式”，出借人借钱给一个项目，预期的到偿还；借款人通过信">
+<meta name="description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="融资宝项目开发手册1">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/1.%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C1/index.html">
+<meta property="og:title" content="HashMap、HashTable、ConcurrentHashMap理解">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="融资宝项目开发过程及技术回顾 提示：项目为2023年的毕业设计请勿照搬照抄  1、项目介绍 众筹融资是一种新型的互联网金融模式，具有受众广、成本低的特点，这也逐渐成为了互联网金融行业发展的一个重要手段，并且在国际和国内都有很深远的影响，但是其中的风险，需要我们辩证的看待。 本项目是一个众筹融资的第三方平台——融资宝，按照募资的形势采用了“借贷模式”，出借人借钱给一个项目，预期的到偿还；借款人通过信">
+<meta property="og:description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-05-24T10:47:19.000Z">
-<meta property="article:modified_time" content="2022-05-30T13:23:53.219Z">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032120094.jpg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011312700.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011315169.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011355078.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400041.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400084.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400126.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400155.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400284.jpeg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032119657.jpg">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206020933572.png">
+<meta property="article:published_time" content="2022-06-02T14:20:29.000Z">
+<meta property="article:modified_time" content="2022-06-03T13:22:31.655Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032120094.jpg">
 
 
 
@@ -120,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/24/项目/融资宝项目/1.开发手册1/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/02/JAVA/高级/集合/HashMap、HashTable、ConcurrentHashMap理解/"/>
 
 
 
 
 
-  <title>融资宝项目开发手册1 | Dain的博客</title>
+  <title>HashMap、HashTable、ConcurrentHashMap理解 | Dain的博客</title>
   
 
 
@@ -297,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/1.%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C1/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -314,7 +328,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">融资宝项目开发手册1</h2>
+          <h2 class="post-title" itemprop="name headline">HashMap、HashTable、ConcurrentHashMap理解</h2>
         
 
         <div class="post-meta">
@@ -326,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-24T18:47:19+08:00">
-                2022-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-02T22:20:29+08:00">
+                2022-06-02
               </time>
             
 			
@@ -344,8 +358,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-30T21:23:53+08:00">
-                2022-05-30
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-03T21:22:31+08:00">
+                2022-06-03
               </time>
             
           </span>
@@ -363,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">项目</span>
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
                   </a>
                 </span>
 
@@ -374,8 +388,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">微服务</span>
+                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index">
+                    <span itemprop="name">高级</span>
                   </a>
                 </span>
 
@@ -385,8 +399,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">融资宝项目</span>
+                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/" itemprop="url" rel="index">
+                    <span itemprop="name">集合</span>
                   </a>
                 </span>
 
@@ -416,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  763
+                  2.8k
                 </span>
               
 
@@ -432,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  10
                 </span>
               
             </div>
@@ -453,26 +467,121 @@
       
 
       
-        <h1 id="融资宝项目开发过程及技术回顾"><a href="#融资宝项目开发过程及技术回顾" class="headerlink" title="融资宝项目开发过程及技术回顾"></a>融资宝项目开发过程及技术回顾</h1><hr>
-<p><code>提示：项目为2023年的毕业设计请勿照搬照抄</code></p>
-<hr>
-<h2 id="1、项目介绍"><a href="#1、项目介绍" class="headerlink" title="1、项目介绍"></a>1、项目介绍</h2><blockquote>
-<p>众筹融资是一种新型的互联网金融模式，具有受众广、成本低的特点，这也逐渐成为了互联网金融行业发展的一个重要手段，并且在国际和国内都有很深远的影响，但是其中的风险，需要我们辩证的看待。</p>
-<p>本项目是一个众筹融资的第三方平台——融资宝，按照募资的形势采用了“借贷模式”，出借人借钱给一个项目，预期的到偿还；借款人通过信贷来募资；平台提供投资平台、两方的服务对接任务和资金管理。</p>
-<p>当一些小微企业和急需用钱的个体客户资金不足的情况；一些自由资金充足希望通过投资获得一些回报，可以通过本平台借贷&#x2F;投资。</p>
+        <h3 id="hashMap和hashTable区别"><a href="#hashMap和hashTable区别" class="headerlink" title="hashMap和hashTable区别"></a>hashMap和hashTable区别</h3><ol>
+<li>HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。</li>
+<li>HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。</li>
+<li>HashMap的底层数组的长度必须为2^n，这样做的好处是为以后的hash算法做准备，而Hashtable底层数组的长度可以为任意值，这就造成了当底层数组长度为合数的时候，Hashtable的hash算法散射不均匀，容易产生hash冲突。</li>
+<li>扩容都是基于底层的hash算法（hashMap的hash算法更优）；HashMap数组的扩容的整体思想就是创建一个长度为原先2倍的数组。然后对原数组进行遍历和复制。Hashtable的扩容将先创建一个长度为原长度2倍的数组，再使用头插法将链表进行反序。</li>
+<li>HashMap在jdk1.8在原先的数组+链表的结构进行了优化，将实现结构变为数组+链表+红黑树；Hashtable到了jdk1.8了内部结构并没有实质优化，继续使用数组+链表的方式实现。</li>
+<li>可以使用<strong>ConcurrentHashMap来替代Hashtable来使用</strong>。</li>
+</ol>
+<h3 id="HashMap理解"><a href="#HashMap理解" class="headerlink" title="HashMap理解"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 根据键的 hashCode 值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为 null。HashMap 非线程安全，即任一时刻可以有多个线程同时写 HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections 的 synchronizedMap 方法使 HashMap 具有线程安全的能力，或者使用 ConcurrentHashMap。</p>
+<h4 id="HashMap-1-7"><a href="#HashMap-1-7" class="headerlink" title="HashMap 1.7"></a>HashMap 1.7</h4><p>是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032120094.jpg" alt="Java7_HashMap"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011426025.jpeg" alt="img"></p>
+<p>散列价值是速度，散列让我们查询更快。</p>
+<h4 id="散列技术"><a href="#散列技术" class="headerlink" title="散列技术"></a><strong>散列技术</strong></h4><p>根据结点通过散列函数，得到的关键码值来确定其存储地址。关键码与散列地址是一对一的关系，则在检索时只需根据散列函数对给定值进行某种运算，即可得到待查结点的存储位置。但是，散列函数可能对于<strong>不相等的关键码计算出相同的散列地址</strong>，我们称该现象为<strong>冲突</strong></p>
+<p>数组链表, 便是定义一个数组, 然后数组的每一个成员都是一条链表,数组只需要记载这条链表的引用即可, 这样不需要直接在数组内部存储 键-值 对而需要大量的连续的内存空间。</p>
+<h4 id="HashMap的延迟初始化和长度"><a href="#HashMap的延迟初始化和长度" class="headerlink" title="HashMap的延迟初始化和长度"></a><strong>HashMap的延迟初始化和长度</strong></h4><p>HashMap的构造法方法在执行时会初始化一个数组table，大小为0。</p>
+<p>HashMap的put方法在执行时，首先会判断table的大小是否为0.如果为0，则会进行真正的初始化，也被称为延迟加载。</p>
+<p>当进行真正初始化时，数组的默认大小为16。当然也可以调用HASHMAP的有参构造，自己DIY一个数组的初始化容量（但是每次都是2的幂的数组长度）</p>
+<h4 id="HashMap的数组下标如何产生"><a href="#HashMap的数组下标如何产生" class="headerlink" title="HashMap的数组下标如何产生"></a>HashMap的数组下标如何产生</h4><p>put的数据，把key和value存入，存入数组要有下标，就是来源于hash算法，HashMap通过hash算法把key变成数组下标。但是hash达到的数都是比较大的不可以直接作为下标，所以通过hashcode值变成二进制，和15二进制相与，得到符合下标的范围：</p>
+<p>h&amp;（length-1）则为：</p>
+<p>h:   0101 0101</p>
+<p>15: 0000 1111 </p>
+<p>&amp;–&gt;0000 0101</p>
+<p>对于上面这个运行结果的取值方法，我们来讨论一下：因为15的高四位都是0，低四位都是1。而与操作的逻辑是两个运算位都是1结果才是1。所以对于上面这个运算结果的高四位肯定都是0（15高四位都是0），而低四位和h的低四位是一样的（15低四位都是1）。所以结果的取值范围就是h的低四位的一个取值范围：0000~1111，也就是0至15（把高位全部丢弃，压缩至低位）。</p>
+<p>这也是长度为什莫要是2的幂的原因。</p>
+<h4 id="HashMap1-7采用头插法"><a href="#HashMap1-7采用头插法" class="headerlink" title="HashMap1.7采用头插法"></a>HashMap1.7采用头插法</h4><p>当put发生冲突。用链表解决，但是在1.7使用的是头插法插入，虽然有点反人类，但是如果插入的数据集较多，但是后插入的数据更有可能被查询。这也就是头插法的原因。</p>
+<p>头插法实现过程：</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011312700.png" alt="image-20220601131217549"></p>
+<p>将节点3插入链表头部，当hash结果定位到节点所在的数组中，比较value值；再插入结束后链表向下移动一位。但是如果key相同，覆盖value，返回被覆盖额value。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011315169.png" alt="image-20220601131505093"></p>
+<p>注意：头插法的目的是在获取元素时，新插入的元素被访问的频率更高。获取元素时的key一定是唯一的，因此访问到第一个符合的key值就不需要继续遍历了。</p>
+<h4 id="HashMap不适合并发"><a href="#HashMap不适合并发" class="headerlink" title="HashMap不适合并发"></a>HashMap不适合并发</h4><p>push方法非安全，如果在多线程下，线程1添加B，但是线程2添加的C刚好和B重复，但是由于连个相乘插入push数据是不可见的，就会发生覆盖造成不安全。</p>
+<h4 id="HashMap扩容问题"><a href="#HashMap扩容问题" class="headerlink" title="HashMap扩容问题"></a>HashMap扩容问题</h4><p>HashMap扩容的必要性：当我们插入的数据越来越多的时候，为了提升查询效率，扩容范围在0.75，每次扩容都是在2的幂指数。</p>
+<p>但是扩容也会导致死循环，扩容的transfer方法中，外层for循环控制着数组遍历，内存的while循环控制着链表的遍历。</p>
+<h5 id="单线程扩容过程："><a href="#单线程扩容过程：" class="headerlink" title="单线程扩容过程："></a>单线程扩容过程：</h5><p>先生成一个长度为oldTable数组长度2倍的newTable，然后将原本oldTable上的元素一次依照transfer方法的逻辑，添加至newTable中。</p>
+<p><strong>1：执行e.next &#x3D; newTable[i];</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011355078.jpeg" alt="img"></p>
+<blockquote>
+<p>我们的e经过外层for循环定位到了数组下标为1的链表中。并且指向链表的第一个元素，也就是a。此时的newTable作为一个新生成的容器，并没有任何元素。因此e.next &#x3D; newTable[i] &#x3D; null;</p>
 </blockquote>
-<hr>
-<h2 id="2、项目技术栈"><a href="#2、项目技术栈" class="headerlink" title="2、项目技术栈"></a>2、项目技术栈</h2><blockquote>
-<p>（1）前端：Node.js： JavaScript 运行环境；ES6：JavaScript的模块化版本；axios：一个发送Ajax请求的工具；Vue.js：web 界面的渐进式框架；Element-UI：前端组件库；vue-element-admin：基于Vue.js的后台管理系统UI集成方案；NuxtJS：基于Vue.js构建的服务器端渲染应用的轻量级框架；NPM：模块资源管理器；<br>（2）数据库和中间键；Mysql 5.7：关系型数据库；Redis 5.0：缓存技术；EabbitMQ：消息中间键<br>（3）后端：SprinigBoot：微服务架构支撑；SpringCloud Hoxton.SR8：快速构建微服务基础设施；Mybatis-Plus：持久层框架和代码生成器；Swagger2：Api接口文档生成器；Logback：日志系统；SpringDateRedis：Spring项目访问redis缓存；HTTPClient: 基于Http协议的客户端，用来实现远程调用；Spring Task：定时任务<br>（4）第三方接口；阿里云短信服务；阿里云OSS服务；资金托管平台API对接：汇付包</p>
+<p><strong>2：执行newTable[i]&#x3D;e；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400041.jpeg" alt="img"></p>
+<blockquote>
+<p>我们都知道，e指向的是a，因此newTable[i]&#x3D;e，也就是把元素a挂在了newTable下标为i的链表中。</p>
 </blockquote>
-<h2 id="3、项目部署和开发环境"><a href="#3、项目部署和开发环境" class="headerlink" title="3、项目部署和开发环境"></a>3、项目部署和开发环境</h2><blockquote>
-<p>阿里云ECS服务器；操作系统；Alibaba Cloud Linux；云解析DNS（域名解析）；JDK1.8；Maven3.8；IdeaIU2020；宝塔面板。</p>
+<p><strong>3：执行e&#x3D;next；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400084.jpeg" alt="img"></p>
+<blockquote>
+<p>仔细观察代码，我们发现在while循环进入时，我们执行了Entry&lt;K,V&gt; next &#x3D; e.next；也就是说，我们提前将节点b保存在了next字段中。此时执行e &#x3D; next；相当于a的指针向后移动至b。结束第一轮循环。</p>
 </blockquote>
-<hr>
-<p><code>提示：以以上技术栈有些会做详细说明</code></p>
-<h2 id="4、核心的项目业务"><a href="#4、核心的项目业务" class="headerlink" title="4、核心的项目业务"></a>4、核心的项目业务</h2><blockquote>
-<p>（1）用户注册：用户注册手机号，发送短信，验证合法，注册成功<br>（2）用户登录：登录填写手机号和密码，验证合法性，登录成功，记录登录日志<br>（3）贷前：登录后查看是否和资金托管平台绑定，是则提交贷款人信息，平台审核人的信息，通过和提交贷款信息，平台审核借款信息。<br>（4）贷中：通过后生成标的，平台展示标的。<br>（5）投标：用户登录看是否和资金托管平台绑定，绑定成功后，充值，选择看中的标的投标，满标后放贷借款成功。<br>（6）贷后：申请提现，提现后按还款类型还款，归还完毕后平台截标，结束。</p>
+<p><strong>4：再次执行e.next &#x3D; newTable[i];</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400126.jpeg" alt="img"></p>
+<blockquote>
+<p>此时的newTable[i]已经不再是null了，而是经过第一次循环变为了a。因此此步骤相当于e.next&#x3D;a;</p>
 </blockquote>
+<p><strong>5：再次执行newTable[i]&#x3D;e；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400155.jpeg" alt="img"></p>
+<blockquote>
+<p>将b用头插法插入newTable[i]中。</p>
+</blockquote>
+<p><strong>6：再次执行e&#x3D;next；</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/v2-d1d20dbb2cb3295ad2aa390eec282533_720w.jpg" alt="img"></p>
+<blockquote>
+<p>此时再次从元素b开始向后移动指针。发现后续元素已经为null。从而结束整个oldTable[1]的链表遍历。</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206011400284.jpeg" alt="img"></p>
+<blockquote>
+<p>整个操作仔细看下来，我们发现头插法的一个特性。就是在扩容过程中再次使用头插法，数据就会出现和原先HashMap链表逆序的现象</p>
+</blockquote>
+<h5 id="多线程下扩容可能死循环"><a href="#多线程下扩容可能死循环" class="headerlink" title="多线程下扩容可能死循环"></a>多线程下扩容可能死循环</h5><p>如果线程1让我们的链表倒序，其实也就是在单线程下，本来oldTable遍历完毕next就是null，但是如果多线程下线程2也执行了倒序操作，让我们e.next还有数据，就产生了死循环。</p>
+<h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
+<p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032119657.jpg" alt="Java8_HashMap"></p>
+<h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
+<li><p>并发容器，在concurrent并发包中，是对HashMap的安全实现，也是数组和链表的结构。</p>
+</li>
+<li><p>但是在HashEntry和Segment都是静态内部类，基本和hashMap类似，但是ConcurrentHashMap中HashEntry的value和next指针都呗volatille修饰，保证了数据的可见性；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">static final class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable &#123;</span><br><span class="line">       private static final long serialVersionUID = 2249069246763182397L;</span><br><span class="line">       </span><br><span class="line">       // 和 HashMap 中的 HashEntry 作用一样，真正存放数据的桶</span><br><span class="line">       transient volatile HashEntry&lt;K,V&gt;[] table;</span><br><span class="line">       transient int count;</span><br><span class="line">       transient int modCount;</span><br><span class="line">       transient int threshold;</span><br><span class="line">       final float loadFactor;</span><br><span class="line">       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206020933572.png" alt="image-20220602093324445"></p>
+</li>
+<li><p>ConcurrentHashMap 采用了分段锁技术，其中 Segment 继承于 ReentrantLock。不会像 HashTable 那样不管是 put 还是 get 操作都需要做同步处理，理论上 ConcurrentHashMap 支持 CurrencyLevel (Segment 数组数量)的线程并发。每当一个线程占用锁访问一个 Segment 时，不会影响到其他的 Segment。</p>
+</li>
+</ol>
+<h4 id="put方法"><a href="#put方法" class="headerlink" title="put方法"></a>put方法</h4><blockquote>
+<ol>
+<li>将当前 Segment 中的 table 通过 key 的 hashcode 定位到 HashEntry。</li>
+<li>遍历该 HashEntry，如果不为空则判断传入的 key 和当前遍历的 key 是否相等，相等则覆盖旧的 value。</li>
+<li>不为空则需要新建一个 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容。</li>
+<li>最后会解除在 1 中所获取当前 Segment 的锁。</li>
+</ol>
+</blockquote>
+<h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><blockquote>
+<p>只需要将 Key 通过 Hash 之后定位到具体的 Segment ，再通过一次 Hash 定位到具体的元素上。</p>
+<p>由于 HashEntry 中的 value 属性是用 volatile 关键词修饰的，保证了内存可见性，所以每次获取时都是最新值。</p>
+<p>ConcurrentHashMap 的 get 方法是非常高效的，<strong>因为整个过程都不需要加锁</strong>。</p>
+</blockquote>
+<h4 id="1-8新特性"><a href="#1-8新特性" class="headerlink" title="1.8新特性"></a>1.8新特性</h4><p>抛弃了Segment分段锁，使用CAS+Synchronized保证并发安全。</p>
+<blockquote>
+<p>1.8 在 1.7 的数据结构上做了大的改动，采用红黑树之后可以保证查询效率（<code>O(logn)</code>），甚至取消了 ReentrantLock 改为了 synchronized，这样可以看出在新版的 JDK 中对 synchronized 优化是很到位的。</p>
+</blockquote>
+<h4 id="put方法-1"><a href="#put方法-1" class="headerlink" title="put方法"></a>put方法</h4><ul>
+<li>根据 key 计算出 hashcode 。</li>
+<li>判断是否需要进行初始化。</li>
+<li><code>f</code> 即为当前 key 定位出的 Node，如果为空表示当前位置可以写入数据，利用 CAS 尝试写入，失败则自旋保证成功。</li>
+<li>如果当前位置的 <code>hashcode == MOVED == -1</code>,则需要进行扩容。</li>
+<li>如果都不满足，则利用 synchronized 锁写入数据。</li>
+<li>如果数量大于 <code>TREEIFY_THRESHOLD</code> 则要转换为红黑树。</li>
+</ul>
+<h4 id="get方法-1"><a href="#get方法-1" class="headerlink" title="get方法"></a>get方法</h4><ul>
+<li>根据计算出来的 hashcode 寻址，如果就在桶上那么直接返回值。</li>
+<li>如果是红黑树那就按照树的方式获取值。</li>
+<li>就不满足那就按照链表的方式遍历获取值。</li>
+</ul>
 
       
     </div>
@@ -497,8 +606,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/24/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Hexo%E5%92%8CGit%E8%AF%B4%E6%98%8E/" rel="next" title="Hexo和Git说明">
-                <i class="fa fa-chevron-left"></i> Hexo和Git说明
+              <a href="/2022/06/02/Begin/%E6%B4%BB%E7%9D%80/" rel="next" title="《活着》">
+                <i class="fa fa-chevron-left"></i> 《活着》
               </a>
             
           </div>
@@ -507,8 +616,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/05/24/%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E5%B8%9D%E5%81%A5%E5%BA%B7%E9%A1%B9%E7%9B%AE/Note/" rel="prev" title="健康管理系统项目笔记1">
-                健康管理系统项目笔记1 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/06/02/JAVA/%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/" rel="prev" title="语法糖">
+                语法糖 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%8A%80%E6%9C%AF%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.</span> <span class="nav-text">融资宝项目开发过程及技术回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">1、项目介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="nav-number">1.2.</span> <span class="nav-text">2、项目技术栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%92%8C%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-number">1.3.</span> <span class="nav-text">3、项目部署和开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%A0%B8%E5%BF%83%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%9A%E5%8A%A1"><span class="nav-number">1.4.</span> <span class="nav-text">4、核心的项目业务</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashMap%E5%92%8ChashTable%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">hashMap和hashTable区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap%E7%90%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">HashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-1-7"><span class="nav-number">2.1.</span> <span class="nav-text">HashMap 1.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">散列技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%95%BF%E5%BA%A6"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap的延迟初始化和长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F"><span class="nav-number">2.4.</span> <span class="nav-text">HashMap的数组下标如何产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap1-7%E9%87%87%E7%94%A8%E5%A4%B4%E6%8F%92%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap1.7采用头插法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E4%B8%8D%E9%80%82%E5%90%88%E5%B9%B6%E5%8F%91"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap不适合并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E6%89%A9%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">HashMap扩容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">2.7.1.</span> <span class="nav-text">单线程扩容过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%89%A9%E5%AE%B9%E5%8F%AF%E8%83%BD%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.7.2.</span> <span class="nav-text">多线程下扩容可能死循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E8%A7%A3%E5%86%B3%E4%BA%86%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">2.8.</span> <span class="nav-text">JDK1.8解决了死循环问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">ConcurrentHashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">1.8新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.4.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.5.</span> <span class="nav-text">get方法</span></a></li></ol></li></ol></div>
             
 
           </div>
