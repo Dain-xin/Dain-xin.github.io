@@ -23,6 +23,7 @@ password: Dain2022
 > - [ ] SpringCloud 以及 Netflix、Alibaba 的组件学习
 > - [x] 完善Next主题的博客功能：添加浏览量，个人链接，自定义背景，自定义图标，完善阅读体验：添加高亮，添加文章结尾
 > - [ ] JVM原理和调优方式
+> - [ ] mysql优化和语句
 >
 > 
 
