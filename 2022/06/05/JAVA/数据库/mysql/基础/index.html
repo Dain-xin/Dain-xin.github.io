@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="阿里云ECS云服务部署过程 前言如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目  提示：学生可以有优惠活动 一、购买阿里云ECS1、飞天加速计划 2、完成购买后进入控制台：云服务器 ECS控制台  找到实例与镜像在更多里面密码更改重启服务器。 使用windows连接工具（xshell）我的分享地址 找到服务器的公网输入密码连接  二、安装Li">
+<meta name="description" content="学习不止探索,生活不止于此">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云服务部署使用说明">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="JVM">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/05/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="阿里云ECS云服务部署过程 前言如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目  提示：学生可以有优惠活动 一、购买阿里云ECS1、飞天加速计划 2、完成购买后进入控制台：云服务器 ECS控制台  找到实例与镜像在更多里面密码更改重启服务器。 使用windows连接工具（xshell）我的分享地址 找到服务器的公网输入密码连接  二、安装Li">
+<meta property="og:description" content="学习不止探索,生活不止于此">
 <meta property="og:locale">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/5771d9a252aa4e15ac13eda283e1cad2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="article:published_time" content="2022-05-29T07:47:17.000Z">
-<meta property="article:modified_time" content="2022-05-29T07:53:19.643Z">
+<meta property="article:published_time" content="2022-06-05T15:58:51.000Z">
+<meta property="article:modified_time" content="2022-06-05T16:05:57.200Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/05/29/环境搭建/Alibab云服务搭建/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/05/JAVA/数据库/mysql/基础/"/>
 
 
 
 
 
-  <title>阿里云服务部署使用说明 | Dain的博客</title>
+  <title>JVM | Dain的博客</title>
   
 
 
@@ -301,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/05/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -318,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">阿里云服务部署使用说明</h2>
+          <h2 class="post-title" itemprop="name headline">JVM</h2>
         
 
         <div class="post-meta">
@@ -330,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-29T15:47:17+08:00">
-                2022-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-05T23:58:51+08:00">
+                2022-06-05
               </time>
             
 			
@@ -348,8 +344,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-29T15:53:19+08:00">
-                2022-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-06T00:05:57+08:00">
+                2022-06-06
               </time>
             
           </span>
@@ -367,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">环境搭建</span>
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
                   </a>
                 </span>
 
@@ -378,8 +374,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ECS/" itemprop="url" rel="index">
-                    <span itemprop="name">ECS</span>
+                  <a href="/categories/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
                   </a>
                 </span>
 
@@ -409,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  466
+                  0
                 </span>
               
 
@@ -446,37 +453,7 @@
       
 
       
-        <h1 id="阿里云ECS云服务部署过程"><a href="#阿里云ECS云服务部署过程" class="headerlink" title="阿里云ECS云服务部署过程"></a>阿里云ECS云服务部署过程</h1><hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果想要自己的web项目可以通过公网访问，方法有很多这里采用阿里云的ECS来部署自己的第一个web项目</p>
-<hr>
-<p><code>提示：学生可以有优惠活动</code></p>
-<h1 id="一、购买阿里云ECS"><a href="#一、购买阿里云ECS" class="headerlink" title="一、购买阿里云ECS"></a>一、购买阿里云ECS</h1><p>1、<a target="_blank" rel="noopener" href="https://developer.aliyun.com/plan/student#J_6054107750">飞天加速计划</a></p>
-<p>2、完成购买后进入控制台：<a target="_blank" rel="noopener" href="https://ecs.console.aliyun.com/#/home">云服务器 ECS控制台</a></p>
-<ul>
-<li>找到实例与镜像在更多里面密码更改重启服务器。<img src="https://img-blog.csdnimg.cn/d91216a743684b328eda335e3e9ba56e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="重置密码"></li>
-<li>使用windows连接工具（xshell）我的分享地址</li>
-<li>找到服务器的公网输入密码连接<br><img src="https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
-</ul>
-<h1 id="二、安装Linux相关服务"><a href="#二、安装Linux相关服务" class="headerlink" title="二、安装Linux相关服务"></a>二、安装Linux相关服务</h1><p>安装内容：<br>下载分享：</p>
-<h2 id="1-JDK8"><a href="#1-JDK8" class="headerlink" title="1.JDK8"></a>1.JDK8</h2><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/773930">阿里云JDK配置</a></p>
-<blockquote>
-<p>主要的代码：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1<span class="number">.8</span><span class="number">.0_281</span>   #你的JDK安装路径+名称</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Mysql-57"><a href="#2-Mysql-57" class="headerlink" title="2.Mysql 57"></a>2.Mysql 57</h2><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/834505">Mysql57安装</a></p>
-<p>1、如果出GPG的错：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1940459">GPG Keys are configured</a><br>2、出现“（”，“）”：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangchengming1/article/details/76946412">xshell字符转义</a><br>3、mysql服务：密码过于简单需要设置：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/baby123/p/12221405.html">地址</a><br>4、navicat连接mysql出现错误 is not allowed to connect to this mysql server 的解决办法<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42132143/article/details/118339697">链接</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld.service</span><br><span class="line">systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
-<h2 id="3-redis5"><a href="#3-redis5" class="headerlink" title="3.redis5"></a>3.redis5</h2><p>参考1：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/775160">阿里云Redis安装</a><br>参考2：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lilong329329/article/details/90451657">配置亲测有效</a><br><code>重点：远程连接阿里云服务需要注释掉bind 127.0.0.1和设置密码，重启服务和配置文件</code><br><img src="https://img-blog.csdnimg.cn/5771d9a252aa4e15ac13eda283e1cad2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16" alt="配置"></p>
-<h2 id="3-Tomcat-9"><a href="#3-Tomcat-9" class="headerlink" title="3.Tomcat 9"></a>3.Tomcat 9</h2><p>这个比较简单，把自己gz文件放到自己想要的位置 &#x2F;usr&#x2F;local&#x2F;tomcat 中<br>tar -zxvf 文件名  解压好后，去往bin目录启动starup.sh。配置安全组8080，连接ip+8080即可。</p>
-<h2 id="4-Node-js"><a href="#4-Node-js" class="headerlink" title="4.Node.js"></a>4.Node.js</h2><p>参考连接:<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/775037">Node.js安装</a></p>
-<h2 id="5-Nacos"><a href="#5-Nacos" class="headerlink" title="5.Nacos"></a>5.Nacos</h2><p>参考连接:<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/786617">nacos安装</a></p>
-<h2 id="6-宝塔面板"><a href="#6-宝塔面板" class="headerlink" title="6.宝塔面板"></a>6.宝塔面板</h2><p>参考连接:<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/767507">面板配置</a><br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/766773#:~:text=%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E6%9D%A1%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%9C%AC%E6%95%99%E7%A8%8B%E4%BB%A5CentOS%E4%B8%BA%E4%BE%8B%EF%BC%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E4%B8%BA%EF%BC%9A%20yum%20install%20-y%20wget%20&&,wget%20-O%20install.sh%20http://download.bt.cn/install/install.sh%20&&%20sh%20install.sh">参考2</a></p>
-<h2 id="7-导出镜像"><a href="#7-导出镜像" class="headerlink" title="7.导出镜像"></a>7.导出镜像</h2><p><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/58181.html">导出自定义镜像</a></p>
-<h2 id="8-RabbitMq"><a href="#8-RabbitMq" class="headerlink" title="8.RabbitMq"></a>8.RabbitMq</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41854180/article/details/113832989">参考1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014528861/article/details/114370948">rpm安装过程</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/feinifi/article/details/107997555">参考2</a></p>
-<h2 id="9-Docker"><a href="#9-Docker" class="headerlink" title="9.Docker"></a>9.Docker</h2><p><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/187598.html#section-kjt-i59-n4a">Docker使用</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>提示：未完待续.......</code></p>
-
+        
       
     </div>
     
@@ -500,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/28/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="next" title="贪心算法">
-                <i class="fa fa-chevron-left"></i> 贪心算法
+              <a href="/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E5%8F%8D%E5%B0%84/JAVA%E4%BB%A3%E7%90%86/" rel="next" title="JAVA代理">
+                <i class="fa fa-chevron-left"></i> JAVA代理
               </a>
             
           </div>
@@ -509,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/06/02/Begin/%E6%B4%BB%E7%9D%80/" rel="prev" title="《活着》">
-                《活着》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,17 +540,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -679,22 +643,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91ECS%E4%BA%91%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">阿里云ECS云服务部署过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%B4%AD%E4%B9%B0%E9%98%BF%E9%87%8C%E4%BA%91ECS"><span class="nav-number">3.</span> <span class="nav-text">一、购买阿里云ECS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85Linux%E7%9B%B8%E5%85%B3%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text">二、安装Linux相关服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JDK8"><span class="nav-number">4.1.</span> <span class="nav-text">1.JDK8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Mysql-57"><span class="nav-number">4.2.</span> <span class="nav-text">2.Mysql 57</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-redis5"><span class="nav-number">4.3.</span> <span class="nav-text">3.redis5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Tomcat-9"><span class="nav-number">4.4.</span> <span class="nav-text">3.Tomcat 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Node-js"><span class="nav-number">4.5.</span> <span class="nav-text">4.Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Nacos"><span class="nav-number">4.6.</span> <span class="nav-text">5.Nacos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="nav-number">4.7.</span> <span class="nav-text">6.宝塔面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%AF%BC%E5%87%BA%E9%95%9C%E5%83%8F"><span class="nav-number">4.8.</span> <span class="nav-text">7.导出镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-RabbitMq"><span class="nav-number">4.9.</span> <span class="nav-text">8.RabbitMq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Docker"><span class="nav-number">4.10.</span> <span class="nav-text">9.Docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
