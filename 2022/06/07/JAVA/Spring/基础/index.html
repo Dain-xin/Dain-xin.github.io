@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta name="description" content="如何实现一个IOC容器?​		IOC(Inversion of Control),意思是控制反转，不是什么技术，而是一种设计思想，IOC意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。 ​		在传统的程序设计中，我们直接在对象内部通过new进行对象创建，是程序主动去创建依赖对象，而IOC是有专门的容器来进行对象的创建，即IOC容器来控制对象的创建。 ​		在传统的应用程序中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《活着》">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/06/02/Begin/%E6%B4%BB%E7%9D%80/index.html">
+<meta property="og:title" content="Spring基础">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/07/JAVA/Spring/%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:description" content="如何实现一个IOC容器?​		IOC(Inversion of Control),意思是控制反转，不是什么技术，而是一种设计思想，IOC意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。 ​		在传统的程序设计中，我们直接在对象内部通过new进行对象创建，是程序主动去创建依赖对象，而IOC是有专门的容器来进行对象的创建，即IOC容器来控制对象的创建。 ​		在传统的应用程序中">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-06-02T12:44:06.000Z">
-<meta property="article:modified_time" content="2022-06-05T16:07:17.777Z">
+<meta property="article:published_time" content="2022-06-06T16:50:17.000Z">
+<meta property="article:modified_time" content="2022-06-06T16:38:21.452Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/02/Begin/活着/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/07/JAVA/Spring/基础/"/>
 
 
 
 
 
-  <title>《活着》 | Dain的博客</title>
+  <title>Spring基础 | Dain的博客</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/02/Begin/%E6%B4%BB%E7%9D%80/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/07/JAVA/Spring/%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -314,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">《活着》</h2>
+          <h2 class="post-title" itemprop="name headline">Spring基础</h2>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-02T20:44:06+08:00">
-                2022-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-07T00:50:17+08:00">
+                2022-06-07
               </time>
             
 			
@@ -344,8 +344,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-06T00:07:17+08:00">
-                2022-06-06
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-07T00:38:21+08:00">
+                2022-06-07
               </time>
             
           </span>
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dain/" itemprop="url" rel="index">
-                    <span itemprop="name">Dain</span>
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
                   </a>
                 </span>
 
@@ -374,8 +374,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dain/%E4%B9%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">书</span>
+                  <a href="/categories/JAVA/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  9
+                  463
                 </span>
               
 
@@ -442,18 +442,16 @@
       
 
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3e406799ee52c8341cd4f22e8deb089c955003c104d1e031f3c39a3a8e033262">cbad8857a5ef55510a0f5570c6d1870aa9e0b74135ae45e0afdacec36a933a0fb9aa008da29a7199cfbf4be21a836d1c0af58dc178ecaea68e3acbfcd8b843d2d1ff19f41a0ba684d11f1357a85228003133008304d186cf3ee59d6c858ae6b339b0f83ebce456e86e402033c7a809a2b80ae93d62a5e3a04fdacd1c16ea8479fc21020f1c07326c1ce7bd92de7c1bc5a7099cd2cbec55fcc15ef49e06fe7469994f4c5d8008730764056a90da7da1853036244cb969940cf74f41b2417136ee504388426999a5c5ff9690254ddaa5d2cb34873b400af098d69f0d3d4d586f240a8b1aca19c6aa4650b87e9fcdeab4885736a7be98220bb4dbab790f5fbd9299c3bad22c66257b342994df25669a429176600e6b7c859033685747cb06e53aa80ae87543d40b3324914a9abe1cd405b8465a5f976a8bdadf90dcc9ed8d060c363e8fb0b759f7b26b44bc3e9fbb6528d45fc82bcfb2478ec8fba77308514c0c97f43d2d093e9aadef5d36be1b22a4f9d7eb858b639b8de21708876e851c407f1d2b20df8aab0412b26c0c4d9f2d83c79e63fa3a3dd53d18737af1c2ddb055b9e61a968bd7f262667958de982cd6f52e7c8e9295f2df59ee2eb1cb3c904b60f29c266898e4e60db3f24d89e4d866982f67afd64b7ffdb8bc57bb2dded13012d7becea9095b54390fd8e2c802438c2840faf60541a79afc9d9466860b1dc17fd89c11c5c5920b5a87720937757d6f1b58b2a034ce86a3cd45b01749c9db65f24a9819ed2b7e231037ab86f64859a38dd35c0293b706352c4f9d55dc821dd24eb88d52e492a6f18bcdc7189f0aa8e1e1795793e7c3b70858357af73a3fea2e7d6b0668b7a0a908b02f76a55f9b2b8ba15e20d82b1b452f1e97defee55803050516432bd96680a42e62a81de600728c9021d885021edaf3c4e3eb31a472d4c1f263a532b0d15ee9da1046672522af06a8d8dfb57e9509d83f4527e95a460480e6326081613bf306315819e54dcf846a6eaf4faddc842ed8231f1a446fdeadab85696d0523e0039147777f64fd21d79b7e21e36ef36b353c85d878d2ffc207481b0885ba96d1cbcfbf6a10eae5aed4e90c0f73c961b1638ee9689181789dc28030f4f377cfc8a385e667e555d512223e71eac042b2d257ddf48d1c0f3f0dfa59afdbd0b669544de1ac32cfde206f4bfe10f62cf7ab2489710f75287d6ad4f95ef7aeb460911d073dd6295f410b9c584d06924fdcbe916cd5a978bab71293b997790fcfe57b2737a0d740fc8b2e1cfdfc498a77c2662cb429637290ce06d8a2fd713e6f7e6433a1721c72854af2c635cb16047836a0a71978799ae682c64f3dced721d039350575b166d1131acc61ed3ac0036165932fb9608aed242134add025f4c70976e0872344ae276a69512f7c7942ab448f693c70cfdd3532e5a64e10d1cae0e2cf6a22317d20a3786edb61cd407d332d0a7aff0f184b6c20edbc736cb5426464a9e1926f556ce0acd83e009c8e7e19756f9fe2fcc887c4b42e68ba532296d64b4f94034c540c7520df80a7533ced830fd863ffe256d308f2273ed314a82a9f91f509472b3a356120e79a47964fcec0e5eb3a426c44568c527c79b22a3f52b7f07894cbade0bb5b45c0b323420207c1511962ac1595a236477d7bd74a2b3e028de286843ac4258ca054f3ca66a319049ce22dc285655c397d1a5520338033edbf8ee50ecee76e0289edb1bd16c48d7396df5ecd2e21c90d1ede47826cf907a16a56aea1e35a183a151bf95175fee30fedf9c59f852e950128c65efe130ea13b48f0ee51c416cd991b9f5e23df5912f09b5a3f78ebb1446bf9d1864c4f5a0f3c3b1d94beeb3a67782f49df05a439c9628f824788ad343d236850695621295f96a6b947fb4c01ba21a2c5fa4f82529a3b56d9401530200102bbe48211628d8ce9487e426e963623d9aa1ac6a3e6971b9e8a662d84f8b4446049e10c82a6d74947a75dbbb192c2a1a2d524dd41af36f7d19499b4b1f59005516d0044b0708400f321fa19af61404d3ccc9542f5499a446386bded33fc2835d471d6fa25f45164624fa9d54165481e76aaebc2d135878afa1c9281e74c95e617cc55f292ea07ee623c1ed91e50e59cf56376b795c9d4b74be633695c65ab19d23aada5a6349172ff7fca511c36dc286c350a5a86b915b30238e542a313f9b090b3563ef601fc3d944cfe80a6508453c3f0f82617a392a049d359387f6e868da12a7b5b2691403521b75225b4b5f3e9507c9aee0e5f710d36f32ea0dad412077cd164b947b24c766fab749252beb6099394fb6ad02a1245e0ecffa61368743ab808f52b9d0782ffac546dde9584b8f4cad319b04315ed641b9c3d0392ad44f13efedaf6681d2e16cc6939d8309304bda06fd32d8e95e65e4243237e4e9703ecd88bd8780c0a08e6f635797424f42bac0db36670697a3de5b81320b132f7a1c45d436fa8c5adbd2dcbf4f8051679de529b4359122466566a77ccdfdc937bb14938aee99cf582e3ee59de</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <h1 id="如何实现一个IOC容器"><a href="#如何实现一个IOC容器" class="headerlink" title="如何实现一个IOC容器?"></a>如何实现一个IOC容器?</h1><p>​		IOC(Inversion of Control),意思是控制反转，不是什么技术，而是一种设计思想，IOC意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。</p>
+<p>​		在传统的程序设计中，我们直接在对象内部通过new进行对象创建，是程序主动去创建依赖对象，而IOC是有专门的容器来进行对象的创建，即IOC容器来控制对象的创建。</p>
+<p>​		在传统的应用程序中，我们是在对象中主动控制去直接获取依赖对象，这个是正转，反转是由容器来帮忙创建及注入依赖对象，在这个过程过程中，由容器帮我们查找级注入依赖对象，对象只是被动的接受依赖对象。</p>
+<p>​		1、先准备一个基本的容器对象，包含一些map结构的集合，用来方便后续过程中存储具体的对象</p>
+<p>​		2、进行配置文件的读取工作或者注解的解析工作，将需要创建的bean对象都封装成BeanDefinition对象存储在容器中</p>
+<p>​		3、容器将封装好的BeanDefinition对象通过反射的方式进行实例化，完成对象的实例化工作</p>
+<p>​		4、进行对象的初始化操作，也就是给类中的对应属性值就行设置，也就是进行依赖注入，完成整个对象的创建，变成一个完整的bean对象，存储在容器的某个map结构中</p>
+<p>​		5、通过容器对象来获取对象，进行对象的获取和逻辑处理工作</p>
+<p>​		6、提供销毁操作，当对象不用或者容器关闭的时候，将无用的对象进行销毁</p>
+
       
     </div>
     
@@ -477,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/" rel="next" title="阿里云服务部署使用说明">
-                <i class="fa fa-chevron-left"></i> 阿里云服务部署使用说明
+              <a href="/2022/06/06/Begin/04-%E8%82%96%E7%94%B3%E5%85%8B%E7%9A%84%E6%95%91%E8%B5%8E/" rel="next" title="肖申克的救赎">
+                <i class="fa fa-chevron-left"></i> 肖申克的救赎
               </a>
             
           </div>
@@ -486,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/" rel="prev" title="HashMap、HashTable、ConcurrentHashMap理解">
-                HashMap、HashTable、ConcurrentHashMap理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -564,7 +567,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +578,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -648,6 +651,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAIOC%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">如何实现一个IOC容器?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -682,7 +701,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.5k</span>
+    <span title="Site words total count">41.1k</span>
   
 </div>
 
@@ -698,7 +717,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.5k字</span>
+  <span class="post-count">博客全站共41.1k字</span>
 </div>
 
         

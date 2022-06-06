@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032119657.jpg">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206020933572.png">
 <meta property="article:published_time" content="2022-06-02T14:20:29.000Z">
-<meta property="article:modified_time" content="2022-06-03T13:22:31.655Z">
+<meta property="article:modified_time" content="2022-06-06T16:36:28.584Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-03T21:22:31+08:00">
-                2022-06-03
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-07T00:36:28+08:00">
+                2022-06-07
               </time>
             
           </span>
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.8k
+                  3.2k
                 </span>
               
 
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  11
                 </span>
               
             </div>
@@ -541,6 +541,14 @@
 <h4 id="JDK1-8解决了死循环问题"><a href="#JDK1-8解决了死循环问题" class="headerlink" title="JDK1.8解决了死循环问题"></a>JDK1.8解决了死循环问题</h4><p>1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。</p>
 <p>1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题，也能更加高效的对链表进行遍历。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032119657.jpg" alt="Java8_HashMap"></p>
+<h4 id="hashmap线程安全的方式？"><a href="#hashmap线程安全的方式？" class="headerlink" title="hashmap线程安全的方式？"></a>hashmap线程安全的方式？</h4><p>HashMap不是线程安全的,往往在写程序时需要通过一些方法来回避.其实JDK原生的提供了2种方法让HashMap支持线程安全.</p>
+<p>方法一:通过Collections.synchronizedMap()返回一个新的Map,这个新的map就是线程安全的. 这个要求大家习惯基于接口编程,因为返回的并不是HashMap,而是一个Map的实现.</p>
+<p>方法二:重新改写了HashMap,具体的可以查看java.util.concurrent.ConcurrentHashMap. 这个方法比方法一有了很大的改进.</p>
+<p>方法一特点: </p>
+<p>通过Collections.synchronizedMap()来封装所有不安全的HashMap的方法,就连toString, hashCode都进行了封装. 封装的关键点有2处,1)使用了经典的synchronized来进行互斥, 2)使用了代理模式new了一个新的类,这个类同样实现了Map接口.在Hashmap上面,synchronized锁住的是对象,所以第一个申请的得到锁,其他线程将进入阻塞,等待唤醒. 优点:代码实现十分简单,一看就懂.缺点:从锁的角度来看,方法一直接使用了锁住方法,基本上是锁住了尽可能大的代码块.性能会比较差.</p>
+<p>方法二特点:</p>
+<p>重新写了HashMap,比较大的改变有如下几点.使用了新的锁机制,把HashMap进行了拆分,拆分成了多个独立的块,这样在高并发的情况下减少了锁冲突的可能,使用的是NonfairSync. 这个特性调用CAS指令来确保原子性与互斥性.当如果多个线程恰好操作到同一个segment上面,那么只会有一个线程得到运行.</p>
+<p>优点:需要互斥的代码段比较少,性能会比较好. ConcurrentHashMap把整个Map切分成了多个块,发生锁碰撞的几率大大降低,性能会比较好. 缺点:代码繁琐</p>
 <h3 id="ConcurrentHashMap理解"><a href="#ConcurrentHashMap理解" class="headerlink" title="ConcurrentHashMap理解"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50675786">ConcurrentHashMap</a>理解</h3><ol>
 <li><p>并发容器，在concurrent并发包中，是对HashMap的安全实现，也是数组和链表的结构。</p>
 </li>
@@ -606,7 +614,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/06/02/Begin/%E6%B4%BB%E7%9D%80/" rel="next" title="《活着》">
+              <a href="/2022/06/02/Begin/01-%E6%B4%BB%E7%9D%80/" rel="next" title="《活着》">
                 <i class="fa fa-chevron-left"></i> 《活着》
               </a>
             
@@ -702,7 +710,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -713,7 +721,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -795,7 +803,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashMap%E5%92%8ChashTable%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">hashMap和hashTable区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap%E7%90%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">HashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-1-7"><span class="nav-number">2.1.</span> <span class="nav-text">HashMap 1.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">散列技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%95%BF%E5%BA%A6"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap的延迟初始化和长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F"><span class="nav-number">2.4.</span> <span class="nav-text">HashMap的数组下标如何产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap1-7%E9%87%87%E7%94%A8%E5%A4%B4%E6%8F%92%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap1.7采用头插法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E4%B8%8D%E9%80%82%E5%90%88%E5%B9%B6%E5%8F%91"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap不适合并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E6%89%A9%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">HashMap扩容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">2.7.1.</span> <span class="nav-text">单线程扩容过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%89%A9%E5%AE%B9%E5%8F%AF%E8%83%BD%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.7.2.</span> <span class="nav-text">多线程下扩容可能死循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E8%A7%A3%E5%86%B3%E4%BA%86%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">2.8.</span> <span class="nav-text">JDK1.8解决了死循环问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">ConcurrentHashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">1.8新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.4.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.5.</span> <span class="nav-text">get方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashMap%E5%92%8ChashTable%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">hashMap和hashTable区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap%E7%90%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">HashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-1-7"><span class="nav-number">2.1.</span> <span class="nav-text">HashMap 1.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">散列技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E9%95%BF%E5%BA%A6"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap的延迟初始化和长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8B%E6%A0%87%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F"><span class="nav-number">2.4.</span> <span class="nav-text">HashMap的数组下标如何产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap1-7%E9%87%87%E7%94%A8%E5%A4%B4%E6%8F%92%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap1.7采用头插法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E4%B8%8D%E9%80%82%E5%90%88%E5%B9%B6%E5%8F%91"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap不适合并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap%E6%89%A9%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">HashMap扩容问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">2.7.1.</span> <span class="nav-text">单线程扩容过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%89%A9%E5%AE%B9%E5%8F%AF%E8%83%BD%E6%AD%BB%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.7.2.</span> <span class="nav-text">多线程下扩容可能死循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E8%A7%A3%E5%86%B3%E4%BA%86%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">2.8.</span> <span class="nav-text">JDK1.8解决了死循环问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hashmap%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">2.9.</span> <span class="nav-text">hashmap线程安全的方式？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">ConcurrentHashMap理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">1.8新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#put%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.4.</span> <span class="nav-text">put方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get%E6%96%B9%E6%B3%95-1"><span class="nav-number">3.5.</span> <span class="nav-text">get方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -836,7 +844,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.5k</span>
+    <span title="Site words total count">41.1k</span>
   
 </div>
 
@@ -852,7 +860,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.5k字</span>
+  <span class="post-count">博客全站共41.1k字</span>
 </div>
 
         

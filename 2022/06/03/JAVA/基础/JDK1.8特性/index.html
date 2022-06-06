@@ -79,18 +79,27 @@
 
 
 
-<meta name="description" content="一、接口的默认方法Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下： 代码如下: interface Formula { double calculate(int a); default double sqrt(int a) { return Math.sqrt(a); } } Formula接口在拥有calculate方法">
+<meta name="description" content="一、接口的默认方法Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法， 代码如下: 1234567interface Formula &amp;#123; 	double calculate(int a);	default double sqrt(int a) &amp;#123; 	return Math.sqrt(a); 	&amp;#125; &amp;#125">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK1.8特性">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/06/03/JAVA/%E5%9F%BA%E7%A1%80/JDK1.8%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="一、接口的默认方法Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下： 代码如下: interface Formula { double calculate(int a); default double sqrt(int a) { return Math.sqrt(a); } } Formula接口在拥有calculate方法">
+<meta property="og:description" content="一、接口的默认方法Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法， 代码如下: 1234567interface Formula &amp;#123; 	double calculate(int a);	default double sqrt(int a) &amp;#123; 	return Math.sqrt(a); 	&amp;#125; &amp;#125">
 <meta property="og:locale">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070005623.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070007254.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070008806.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062358453.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062329040.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062339307.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062340308.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070027655.png">
 <meta property="article:published_time" content="2022-06-03T14:26:52.000Z">
-<meta property="article:modified_time" content="2022-06-03T14:28:39.297Z">
+<meta property="article:modified_time" content="2022-06-06T16:32:39.535Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070005623.png">
 
 
 
@@ -344,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-03T22:28:39+08:00">
-                2022-06-03
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-07T00:32:39+08:00">
+                2022-06-07
               </time>
             
           </span>
@@ -405,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.3k
+                  9.9k
                 </span>
               
 
@@ -421,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  22
+                  40
                 </span>
               
             </div>
@@ -442,38 +451,126 @@
       
 
       
-        <h3 id="一、接口的默认方法"><a href="#一、接口的默认方法" class="headerlink" title="一、接口的默认方法"></a>一、接口的默认方法</h3><p>Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下：</p>
+        <h3 id="一、接口的默认方法"><a href="#一、接口的默认方法" class="headerlink" title="一、接口的默认方法"></a>一、接口的默认方法</h3><p>Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，</p>
 <p>代码如下:</p>
-<p>interface Formula { double calculate(int a);</p>
-<p>default double sqrt(int a) { return Math.sqrt(a); } }</p>
-<p>Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Formula</span> &#123; </span><br><span class="line">	<span class="type">double</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span> a)</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">default</span> <span class="type">double</span> <span class="title function_">sqrt</span><span class="params">(<span class="type">int</span> a)</span> &#123; </span><br><span class="line">	<span class="keyword">return</span> Math.sqrt(a); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。</p>
+</blockquote>
 <p>代码如下:</p>
-<p>Formula formula &#x3D; new Formula() { @Override public double calculate(int a) { return sqrt(a * 100); } };</p>
-<p>formula.calculate(100); &#x2F;&#x2F; 100.0 formula.sqrt(16); &#x2F;&#x2F; 4.0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Formula</span> <span class="variable">formula</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Formula</span>() &#123; </span><br><span class="line">	<span class="meta">@Override</span> </span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span> a)</span> &#123; 					<span class="keyword">return</span> sqrt(a * <span class="number">100</span>); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">formula.calculate(<span class="number">100</span>); <span class="comment">// 100.0 </span></span><br><span class="line">formula.sqrt(<span class="number">16</span>); <span class="comment">// 4.0</span></span><br></pre></td></tr></table></figure>
+
 <p>文中的formula被实现为一个匿名类的实例，该代码非常容易理解，6行代码实现了计算 sqrt(a * 100)。在下一节中，我们将会看到实现单方法接口的更简单的做法。</p>
-<p>译者注： 在Java中只有单继承，如果要让一个类赋予新的特性，通常是使用接口来实现，在C++中支持多继承，允许一个子类同时具有多个父类的接口与功能，在其他语言中，让一个类同时具有其他的可复用代码的方法叫做mixin。新的Java 8 的这个特新在编译器实现的角度上来说更加接近Scala的trait。 在C#中也有名为扩展方法的概念，允许给已存在的类型扩展方法，和Java 8的这个在语义上有差别。</p>
-<h3 id="二、Lambda-表达式"><a href="#二、Lambda-表达式" class="headerlink" title="二、Lambda 表达式"></a>二、Lambda 表达式</h3><p>首先看看在老版本的Java中是如何排列字符串的：</p>
-<p>代码如下:</p>
-<p>List<String> names &#x3D; Arrays.asList(“peterF”, “anna”, “mike”, “xenia”);</p>
-<p>Collections.sort(names, new Comparator<String>() { @Override public int compare(String a, String b) { return b.compareTo(a); } });</p>
+<blockquote>
+<p>理解：默认方法可以实现接口不需要些改动的方法，同时子类还可以重写，没有限制。</p>
+<p>JDK9出来的私有方法的使用可以在默认方法中进行，避免代码冗余，降低耦合。</p>
+<p>同时默认方法可以是静态的，调用私有静态方法</p>
+</blockquote>
+<hr>
+<h3 id="二、Lambda-表达式"><a href="#二、Lambda-表达式" class="headerlink" title="二、Lambda 表达式"></a>二、Lambda 表达式</h3><p>首先看看在老版本的Java中是如何排列字符串的：代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;peterF&quot;</span>, <span class="string">&quot;anna&quot;</span>, <span class="string">&quot;mike&quot;</span>, <span class="string">&quot;xenia&quot;</span>);</span><br><span class="line">Collections.sort(names, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; </span><br><span class="line">    <span class="meta">@Override</span> </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String a, String b)</span> </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="keyword">return</span> b.compareTo(a); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>只需要给静态方法 Collections.sort 传入一个List对象以及一个比较器来按指定顺序排列。通常做法都是创建一个匿名的比较器对象然后将其传递给sort方法。</p>
 <p>在Java 8 中你就没必要使用这种传统的匿名对象的方式了，Java 8提供了更简洁的语法，lambda表达式：</p>
 <p>代码如下:</p>
-<p>Collections.sort(names, (String a, String b) -&gt; { return b.compareTo(a); });</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(names, (String a, String b) -&gt; &#123; return b.compareTo(a); &#125;);</span><br></pre></td></tr></table></figure>
+
 <p>看到了吧，代码变得更段且更具有可读性，但是实际上还可以写得更短：</p>
 <p>代码如下:</p>
-<p>Collections.sort(names, (String a, String b) -&gt; b.compareTo(a));</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(names, (String a, String b) -&gt; b.compareTo(a));</span><br></pre></td></tr></table></figure>
+
 <p>对于函数体只有一行代码的，你可以去掉大括号{}以及return关键字，但是你还可以写得更短点：</p>
 <p>代码如下:</p>
-<p>Collections.sort(names, (a, b) -&gt; b.compareTo(a));</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(names, (a, b) -&gt; b.compareTo(a));</span><br></pre></td></tr></table></figure>
+
 <p>Java编译器可以自动推导出参数类型，所以你可以不用再写一次类型。接下来我们看看lambda表达式还能作出什么更方便的东西来：</p>
-<h3 id="三、函数式接口"><a href="#三、函数式接口" class="headerlink" title="三、函数式接口"></a>三、函数式接口</h3><p>Lambda表达式是如何在java的类型系统中表示的呢？每一个lambda表达式都对应一个类型，通常是接口类型。而“函数式接口”是指仅仅只包含一个抽象方法的接口，每一个该类型的lambda表达式都会被匹配到这个抽象方法。因为 默认方法 不算抽象方法，所以你也可以给你的函数式接口添加默认方法。</p>
-<p>我们可以将lambda表达式当作任意只包含一个抽象方法的接口类型，确保你的接口一定达到这个要求，你只需要给你的接口添加 @FunctionalInterface 注解，编译器如果发现你标注了这个注解的接口有多于一个抽象方法的时候会报错的。</p>
-<p>示例如下：</p>
+<ul>
+<li>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。Lambda     允许把函数作为一个方法的参数（函数作为参数传递进方法中）。使用 Lambda 表达式可以使代码变的更加简洁紧凑。</li>
+<li>面向对象的思想:     做一件事情,找一个能解决这个事情的对象,<strong>调用对象的方法,完成事情.</strong>   函数式编程思想:  只要能获取到结果,谁去做的,怎么做的都不重要,<strong>重视的是结果,不重视过程</strong>。</li>
+<li>这是一种比匿名内部类更为简单的一种写法，只允许拥有一种抽象方法，或者只剩一种抽象方法没有实现（Compartor接口里面有两种抽象方法，compareTo 和 equals 方法）但是Object类都有equals方法默认实现了该抽象方法。</li>
+</ul>
+<p>使用Lambda必须具有上下文推断。也就是方法的参数或局部变量类型必须为Lambda对应的接口类型，才能使用Lambda作为该接口的实例。</p>
+<ol>
+<li>写法理解：</li>
+</ol>
+<p><strong>(参数类型 参数名称) ‐&gt; { 代码语句 }</strong> </p>
+<p>Lambda表达式的标准格式为：格式说明：</p>
+<ol>
+<li>小括号内的语法与传统方法参数列表一致：无参数则留空；多个参数则用逗号分隔。</li>
+<li>-&gt;是新引入的语法格式，代表指向动作。</li>
+</ol>
+<p>eg1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不需要参数,返回值为 5 </span></span><br><span class="line"> () -&gt; <span class="number">5</span>   </span><br><span class="line"> <span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值 </span></span><br><span class="line"> x -&gt; <span class="number">2</span> * x   </span><br><span class="line"> <span class="comment">// 3. 接受2个参数(数字),并返回他们的差值 </span></span><br><span class="line"> (x, y) -&gt; x – y   </span><br><span class="line"> <span class="comment">// 4. 接收2个int型整数,返回他们的和 </span></span><br><span class="line"> (<span class="type">int</span> x, <span class="type">int</span> y) -&gt; x + y   </span><br><span class="line"> <span class="comment">// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void) </span></span><br><span class="line"> (String s) -&gt; System.out.print(s) </span><br></pre></td></tr></table></figure>
+
+<p>eg2:<strong>简单实现四大法则：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> lambda表达式()&#123;</span><br><span class="line">sf_ab(<span class="number">130</span>,<span class="number">120</span>,<span class="string">&quot;+&quot;</span>,(Integer a,Integer b,String h)-&gt;a+b);</span><br><span class="line">sf_ab(<span class="number">130</span>,<span class="number">120</span>,<span class="string">&quot;-&quot;</span>,(Integer a,Integer b,String h)-&gt;a-b);</span><br><span class="line">sf_ab(<span class="number">130</span>,<span class="number">120</span>,<span class="string">&quot;*&quot;</span>,(Integer a,Integerb,Stringh)-&gt;a*b);</span><br><span class="line">sf_ab(<span class="number">130</span>,<span class="number">120</span>,<span class="string">&quot;/&quot;</span>,(Integer a,Integer b,String h)-&gt;a/b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">sf_ab</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,String h,算法&lt;Integer&gt;t)</span>&#123;</span><br><span class="line">	Integer sf=t.sf(a,b,h);</span><br><span class="line">	System.out.println(a+h+b+<span class="string">&quot;结果：&quot;</span>+sf);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface 算法&lt;T&gt;&#123;</span><br><span class="line">	Tsf(T a,T b,String h);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、函数式接口"><a href="#三、函数式接口" class="headerlink" title="三、函数式接口"></a>三、函数式接口</h3><p>1、函数式接口(Functional Interface)就是一个有且仅有一个抽象方法，但是可以有多个非抽象方法的接口。函数式接口可以被隐式转换为 lambda 表达式。</p>
 <p>代码如下:</p>
-<p>@FunctionalInterface interface Converter&lt;F, T&gt; { T convert(F from); } Converter&lt;String, Integer&gt; converter &#x3D; (from) -&gt; Integer.valueOf(from); Integer converted &#x3D; converter.convert(“123”); System.out.println(converted); &#x2F;&#x2F; 123</p>
-<p>需要注意如果@FunctionalInterface如果没有指定，上面的代码也是对的。</p>
-<p>译者注 将lambda表达式映射到一个单方法的接口上，这种做法在Java 8之前就有别的语言实现，比如Rhino JavaScript解释器，如果一个函数参数接收一个单方法的接口而你传递的是一个function，Rhino 解释器会自动做一个单接口的实例到function的适配器，典型的应用场景有 org.w3c.dom.events.EventTarget 的addEventListener 第二个参数 EventListener。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span> </span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Converter</span>&lt;F, T&gt; &#123; </span><br><span class="line">    T <span class="title function_">convert</span><span class="params">(F from)</span>; </span><br><span class="line">&#125; </span><br><span class="line">Converter&lt;String, Integer&gt; converter = (from) -&gt; Integer.valueOf(from); </span><br><span class="line"><span class="type">Integer</span> <span class="variable">converted</span> <span class="operator">=</span> converter.convert(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">System.out.println(converted); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+
+<p>2、需要注意如果@FunctionalInterface如果没有指定，上面的代码也是对的。函数式接口可以对现有的函数友好地支持 lambda。</p>
+<p>JDK 1.8 之前已有的函数式接口:</p>
+<ul>
+<li>java.lang.Runnable</li>
+<li>java.util.concurrent.Callable</li>
+<li>java.util.Comparator</li>
+<li>java.io.FileFilter</li>
+</ul>
+<p>JDK 1.8 的java.util.function 包的接口：</p>
+<h4 id="Supplier接口："><a href="#Supplier接口：" class="headerlink" title="Supplier接口："></a><strong>Supplier接口：</strong></h4><p>抽象方法：</p>
+<p>T get（） ：用来获取一个泛型参数指定类型的对象数据。</p>
+<p>由于这是一个函数式接口，这也就意味着对应的Lambda表达式需要“对外提供”一个符合泛型类型的对象数据。</p>
+<h4 id="Consumer接口："><a href="#Consumer接口：" class="headerlink" title="Consumer接口："></a><strong>Consumer接口：</strong></h4><p>抽象方法：</p>
+<p>void accept （T t）：处理一个指定泛型的数据。</p>
+<p>默认方法：</p>
+<p>Consumer andThen (Consumer after)：</p>
+<p>如果一个方法的参数和返回值全都是 Consumer 类型，那么就可以实现效果：消费数据的时候，首先做一个操作， 然后再做一个操作，实现组合。而这个方法就是 Consumer 接口中的default方法 andThen 。</p>
+<p><strong>实例：</strong>one.andThen(two).accept(info);</p>
+<p><strong>源码：</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070005623.png" alt="image-20220607000545520"></p>
+<h4 id="Predicate接口："><a href="#Predicate接口：" class="headerlink" title="Predicate接口："></a><strong>Predicate接口：</strong></h4><p>对某种类型的数据进行判断，从而得到一个boolean值结果；</p>
+<p><strong>抽象方法：</strong></p>
+<p>boolean test(T t)；</p>
+<p><strong>默认方法：</strong></p>
+<p>条件判断，就会存在与、或、非三种常见的逻辑关系</p>
+<p><strong>实例：</strong></p>
+<table>
+<thead>
+<tr>
+<th>one.and(two).test(“Helloworld”);</th>
+<th>与</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>one.or(two).test(“Helloworld”);</td>
+<td>或</td>
+</tr>
+<tr>
+<td>predicate.negate().test(“HelloWorld”);</td>
+<td>非</td>
+</tr>
+</tbody></table>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070007254.png" alt="image-20220607000725009"></p>
+<h4 id="Function接口："><a href="#Function接口：" class="headerlink" title="Function接口："></a>Function接口：</h4><p><strong>抽象方法：</strong></p>
+<p>R apply(T t)：</p>
+<p>类型T的参数获取类型R的结果</p>
+<p> <img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070008806.png" alt="image-20220607000813629"></p>
+<p>3、当接口有两个抽象方法的时候，就不在是函数式接口了，使用@FunctionalInterface标注编译时会报错</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062358453.png" alt="image-20220606235850396"></p>
+<p>这里有3个抽象方法，不报错？</p>
+<p>​    我们知道<strong>toString和equals方法是Object的方法，Java基础告诉我们，Object是所有类的默认父类，也就是说任何对象都会包含Object里面的方法，即使是函数式接口的实现，也会有Object的默认方法，</strong></p>
+<p><strong>所以：</strong>重写Object中的方法，不会计入接口方法中，除了final不能重写的，Object中所能重写的方法，写到接口中，不会影响函数式接口的特性</p>
+<p>4、JAVA8允许有默认方法，所以默认方法不影响函数式接口的规则。</p>
+<p>5、</p>
+<p><strong>理解：</strong></p>
+<ul>
+<li>@FunctionalInterface注解标注一个函数式接口，不能标注类，方法，枚举，属性这些.</li>
+<li>如果接口被标注了@FunctionalInterface，这个类就必须符合函数式接口的规范.</li>
+<li>即使一个接口没有标注@FunctionalInterface，如果这个接口满足函数式接口规则，依旧被当作函数式接口。</li>
+</ul>
 <h3 id="四、方法与构造函数引用"><a href="#四、方法与构造函数引用" class="headerlink" title="四、方法与构造函数引用"></a>四、方法与构造函数引用</h3><p>前一节中的代码还可以通过静态方法引用来表示：</p>
 <p>代码如下:</p>
 <p>Converter&lt;String, Integer&gt; converter &#x3D; Integer::valueOf; Integer converted &#x3D; converter.convert(“123”); System.out.println(converted); &#x2F;&#x2F; 123</p>
@@ -495,26 +592,27 @@
 <h3 id="五、Lambda-作用域"><a href="#五、Lambda-作用域" class="headerlink" title="五、Lambda 作用域"></a>五、Lambda 作用域</h3><p>在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。</p>
 <h3 id="六、访问局部变量"><a href="#六、访问局部变量" class="headerlink" title="六、访问局部变量"></a>六、访问局部变量</h3><p>我们可以直接在lambda表达式中访问外层的局部变量：</p>
 <p>代码如下:</p>
-<p>final int num &#x3D; 1; Converter&lt;Integer, String&gt; stringConverter &#x3D; (from) -&gt; String.valueOf(from + num);</p>
-<p>stringConverter.convert(2); &#x2F;&#x2F; 3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>; </span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);</span><br><span class="line">stringConverter.convert(<span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
 <p>但是和匿名对象不同的是，这里的变量num可以不用声明为final，该代码同样正确：</p>
 <p>代码如下:</p>
-<p>int num &#x3D; 1; Converter&lt;Integer, String&gt; stringConverter &#x3D; (from) -&gt; String.valueOf(from + num);</p>
-<p>stringConverter.convert(2); &#x2F;&#x2F; 3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>; </span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);</span><br><span class="line">stringConverter.convert(<span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
 <p>不过这里的num必须不可被后面的代码修改（即隐性的具有final的语义），例如下面的就无法编译：</p>
 <p>代码如下:</p>
-<p>int num &#x3D; 1; Converter&lt;Integer, String&gt; stringConverter &#x3D; (from) -&gt; String.valueOf(from + num); num &#x3D; 3;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>; </span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num); </span><br><span class="line">num = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
 <p>在lambda表达式中试图修改num同样是不允许的。</p>
-<h3 id="七、访问对象字段与静态变量"><a href="#七、访问对象字段与静态变量" class="headerlink" title="七、访问对象字段与静态变量"></a>七、访问对象字段与静态变量</h3><p>和本地变量不同的是，lambda内部对于实例的字段以及静态变量是即可读又可写。该行为和匿名对象是一致的：</p>
+<h3 id="七、访问对象字段与静态变量"><a href="#七、访问对象字段与静态变量" class="headerlink" title="七、访问对象字段与静态变量"></a>七、访问对象字段与静态变量</h3><p>和本地变量不同的是，<strong>lambda内部对于实例的字段以及静态变量是即可读又可写</strong>。</p>
+<p>该行为和匿名对象是一致的：</p>
 <p>代码如下:</p>
-<p>class Lambda4 { static int outerStaticNum; int outerNum;</p>
-<p>void testScopes() { Converter&lt;Integer, String&gt; stringConverter1 &#x3D; (from) -&gt; { outerNum &#x3D; 23; return String.valueOf(from); };</p>
-<p>Converter&lt;Integer, String&gt; stringConverter2 &#x3D; (from) -&gt; {  outerStaticNum &#x3D; 72;  return String.valueOf(from);  }; } }</p>
-<h3 id="八、访问接口的默认方法"><a href="#八、访问接口的默认方法" class="headerlink" title="八、访问接口的默认方法"></a>八、访问接口的默认方法</h3><p>还记得第一节中的formula例子么，接口Formula定义了一个默认方法sqrt可以直接被formula的实例包括匿名对象访问到，但是在lambda表达式中这个是不行的。 Lambda表达式中是无法访问到默认方法的，以下代码将无法编译：</p>
-<p>代码如下:</p>
-<p>Formula formula &#x3D; (a) -&gt; sqrt( a * 100); Built-in Functional Interfaces</p>
-<p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。 Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的，即便你对这些很熟悉了，还是有必要看看这些是如何扩展到lambda上使用的。</p>
-<p><strong>Predicate****接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Lambda4</span> &#123; </span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> outerStaticNum; </span><br><span class="line">    <span class="type">int</span> outerNum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testScopes</span><span class="params">()</span> </span><br><span class="line">&#123; </span><br><span class="line">    Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; &#123; outerNum = <span class="number">23</span>; <span class="keyword">return</span> String.valueOf(from);&#125;;</span><br><span class="line"></span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; &#123;  outerStaticNum = <span class="number">72</span>;  <span class="keyword">return</span> String.valueOf(from);  &#125;; &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="八、访问接口的默认方法"><a href="#八、访问接口的默认方法" class="headerlink" title="八、访问接口的默认方法"></a>八、访问接口的默认方法</h3><p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。</p>
+<p> Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的</p>
+<p><strong>Predicate</strong>接口</p>
 <p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
 <p>代码如下:</p>
 <p>Predicate<String> predicate &#x3D; (s) -&gt; s.length() &gt; 0;</p>
@@ -628,75 +726,333 @@
 <p>map.merge(9, “val9”, (value, newValue) -&gt; value.concat(newValue)); map.get(9); &#x2F;&#x2F; val9</p>
 <p>map.merge(9, “concat”, (value, newValue) -&gt; value.concat(newValue)); map.get(9); &#x2F;&#x2F; val9concat</p>
 <p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p>
-<h3 id="九、Date-API"><a href="#九、Date-API" class="headerlink" title="九、Date API"></a>九、Date API</h3><p>Java 8 在包java.time下包含了一组全新的时间日期API。新的日期API和开源的Joda-Time库差不多，但又不完全一样，下面的例子展示了这组新API里最重要的一些部分：</p>
-<p><strong>Clock</strong> <strong>时钟</strong></p>
-<p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
+<h3 id="九、Date-API"><a href="#九、Date-API" class="headerlink" title="九、Date API"></a>九、Date API</h3><p>Java 8 在包java.time下包含了一组全新的时间日期API。</p>
+<p>新的时间API  <strong>（LocalDate&#x2F;LocalTime 和 LocalDateTime 类）</strong><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1303871087444002">LocalDateTime</a></p>
+<h4 id="Clock-时钟"><a href="#Clock-时钟" class="headerlink" title="Clock 时钟"></a><strong>Clock</strong> <strong>时钟</strong></h4><p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
 <p>代码如下:</p>
-<p>Clock clock &#x3D; Clock.systemDefaultZone(); long millis &#x3D; clock.millis();</p>
-<p>Instant instant &#x3D; clock.instant(); Date legacyDate &#x3D; Date.from(instant); &#x2F;&#x2F; legacy java.util.Date</p>
-<p><strong>Timezones</strong> <strong>时区</strong></p>
-<p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Clock</span> <span class="variable">clock</span> <span class="operator">=</span> Clock.systemDefaultZone(); </span><br><span class="line"><span class="type">long</span> <span class="variable">millis</span> <span class="operator">=</span> clock.millis();</span><br><span class="line"></span><br><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> clock.instant(); <span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); <span class="comment">// legacy java.util.Date</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Timezones-时区"><a href="#Timezones-时区" class="headerlink" title="Timezones 时区"></a><strong>Timezones</strong> <strong>时区</strong></h4><p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
 <p>代码如下:</p>
-<p>System.out.println(ZoneId.getAvailableZoneIds()); &#x2F;&#x2F; prints all available timezone ids</p>
-<p>ZoneId zone1 &#x3D; ZoneId.of(“Europe&#x2F;Berlin”); ZoneId zone2 &#x3D; ZoneId.of(“Brazil&#x2F;East”); System.out.println(zone1.getRules()); System.out.println(zone2.getRules());</p>
-<p>&#x2F;&#x2F; ZoneRules[currentStandardOffset&#x3D;+01:00] &#x2F;&#x2F; ZoneRules[currentStandardOffset&#x3D;-03:00]</p>
-<p><strong>LocalTime</strong> <strong>本地时间</strong></p>
-<p>LocalTime 定义了一个没有时区信息的时间，例如 晚上10点，或者 17:30:15。下面的例子使用前面代码创建的时区创建了两个本地时间。之后比较时间并以小时和分钟为单位计算两个时间的时间差：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(ZoneId.getAvailableZoneIds()); </span><br><span class="line"><span class="comment">// prints all available timezone ids</span></span><br><span class="line"><span class="type">ZoneId</span> <span class="variable">zone1</span> <span class="operator">=</span> ZoneId.of(<span class="string">&quot;Europe/Berlin&quot;</span>); </span><br><span class="line"><span class="type">ZoneId</span> <span class="variable">zone2</span> <span class="operator">=</span> ZoneId.of(<span class="string">&quot;Brazil/East&quot;</span>); System.out.println(zone1.getRules()); System.out.println(zone2.getRules());</span><br><span class="line"><span class="comment">// ZoneRules[currentStandardOffset=+01:00] </span></span><br><span class="line"><span class="comment">// ZoneRules[currentStandardOffset=-03:00]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="LocalTime-本地时间"><a href="#LocalTime-本地时间" class="headerlink" title="LocalTime 本地时间"></a><strong>LocalTime</strong> <strong>本地时间</strong></h4><p>LocalTime 定义了一个没有时区信息的时间，例如 晚上10点，或者 17:30:15。下面的例子使用前面代码创建的时区创建了两个本地时间。之后比较时间并以小时和分钟为单位<strong>计算两个时间的时间差</strong>：</p>
 <p>代码如下:</p>
-<p>LocalTime now1 &#x3D; LocalTime.now(zone1); LocalTime now2 &#x3D; LocalTime.now(zone2);</p>
-<p>System.out.println(now1.isBefore(now2)); &#x2F;&#x2F; false</p>
-<p>long hoursBetween &#x3D; ChronoUnit.HOURS.between(now1, now2); long minutesBetween &#x3D; ChronoUnit.MINUTES.between(now1, now2);</p>
-<p>System.out.println(hoursBetween); &#x2F;&#x2F; -3 System.out.println(minutesBetween); &#x2F;&#x2F; -239</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接着上面的zone1和zone2</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">now1</span> <span class="operator">=</span> LocalTime.now(zone1); </span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">now2</span> <span class="operator">=</span> LocalTime.now(zone2);</span><br><span class="line">System.out.println(now1.isBefore(now2)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">hoursBetween</span> <span class="operator">=</span> ChronoUnit.HOURS.between(now1, now2); </span><br><span class="line"><span class="type">long</span> <span class="variable">minutesBetween</span> <span class="operator">=</span> ChronoUnit.MINUTES.between(now1, now2);</span><br><span class="line"></span><br><span class="line">System.out.println(hoursBetween); <span class="comment">// -3 </span></span><br><span class="line">System.out.println(minutesBetween); <span class="comment">// -239</span></span><br></pre></td></tr></table></figure>
+
 <p>LocalTime 提供了多种工厂方法来简化对象的创建，包括解析时间字符串。</p>
 <p>代码如下:</p>
-<p>LocalTime late &#x3D; LocalTime.of(23, 59, 59); System.out.println(late); &#x2F;&#x2F; 23:59:59</p>
-<p>DateTimeFormatter germanFormatter &#x3D; DateTimeFormatter .ofLocalizedTime(FormatStyle.SHORT) .withLocale(Locale.GERMAN);</p>
-<p>LocalTime leetTime &#x3D; LocalTime.parse(“13:37”, germanFormatter); System.out.println(leetTime); &#x2F;&#x2F; 13:37</p>
-<p><strong>LocalDate</strong> <strong>本地日期</strong></p>
-<p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天&#x2F;月&#x2F;年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">LocalTime</span> <span class="variable">late</span> <span class="operator">=</span> LocalTime.of(<span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>); System.out.println(late); <span class="comment">// 23:59:59</span></span><br><span class="line"></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">germanFormatter</span> <span class="operator">=</span> DateTimeFormatter .ofLocalizedTime(FormatStyle.SHORT) .withLocale(Locale.GERMAN);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">leetTime</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;13:37&quot;</span>, germanFormatter); </span><br><span class="line">System.out.println(leetTime); <span class="comment">// 13:37</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="LocalDate-本地日期"><a href="#LocalDate-本地日期" class="headerlink" title="LocalDate 本地日期"></a><strong>LocalDate</strong> <strong>本地日期</strong></h4><p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天&#x2F;月&#x2F;年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
 <p>代码如下:</p>
-<p>LocalDate today &#x3D; LocalDate.now(); LocalDate tomorrow &#x3D; today.plus(1, ChronoUnit.DAYS); LocalDate yesterday &#x3D; tomorrow.minusDays(2);</p>
-<p>LocalDate independenceDay &#x3D; LocalDate.of(2014, Month.JULY, 4); DayOfWeek dayOfWeek &#x3D; independenceDay.getDayOfWeek();</p>
-<p>System.out.println(dayOfWeek); &#x2F;&#x2F; FRIDAY 从字符串解析一个LocalDate类型和解析LocalTime一样简单：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">LocalDate</span> <span class="variable">today</span> <span class="operator">=</span> LocalDate.now(); </span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">tomorrow</span> <span class="operator">=</span> today.plus(<span class="number">1</span>, ChronoUnit.DAYS); </span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">yesterday</span> <span class="operator">=</span> tomorrow.minusDays(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">independenceDay</span> <span class="operator">=</span> LocalDate.of(<span class="number">2014</span>, Month.JULY, <span class="number">4</span>); </span><br><span class="line"><span class="type">DayOfWeek</span> <span class="variable">dayOfWeek</span> <span class="operator">=</span> independenceDay.getDayOfWeek();</span><br><span class="line"></span><br><span class="line">System.out.println(dayOfWeek); </span><br><span class="line"><span class="comment">// FRIDAY 从字符串解析一个LocalDate类型和解析LocalTime一样简单：</span></span><br></pre></td></tr></table></figure>
+
 <p>代码如下:</p>
-<p>DateTimeFormatter germanFormatter &#x3D; DateTimeFormatter .ofLocalizedDate(FormatStyle.MEDIUM) .withLocale(Locale.GERMAN);</p>
-<p>LocalDate xmas &#x3D; LocalDate.parse(“24.12.2014”, germanFormatter); System.out.println(xmas); &#x2F;&#x2F; 2014-12-24</p>
-<p><strong>LocalDateTime</strong> <strong>本地日期时间</strong></p>
-<p>LocalDateTime 同时表示了时间和日期，相当于前两节内容合并到一个对象上了。LocalDateTime和LocalTime还有LocalDate一样，都是不可变的。LocalDateTime提供了一些能访问具体字段的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">germanFormatter</span> <span class="operator">=</span> DateTimeFormatter .ofLocalizedDate(FormatStyle.MEDIUM) .withLocale(Locale.GERMAN);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">xmas</span> <span class="operator">=</span> LocalDate.parse(<span class="string">&quot;24.12.2014&quot;</span>, germanFormatter); System.out.println(xmas); <span class="comment">// 2014-12-24</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="LocalDateTime-本地日期时间"><a href="#LocalDateTime-本地日期时间" class="headerlink" title="LocalDateTime 本地日期时间"></a><strong>LocalDateTime</strong> <strong>本地日期时间</strong></h4><p>1、LocalDateTime 同时表示了时间和日期，相当于前两节内容合并到一个对象上了。LocalDateTime和LocalTime还有LocalDate一样，都是不可变的。</p>
+<p>2、本地日期和时间通过now()获取到的总是以当前默认时区返回的，和旧API不同，   LocalDateTime、LocalDate和LocalTime默认严格按照<strong>ISO 8601</strong>规定的日期和时间格式进行打印。</p>
+<blockquote>
+<p>该类完美的处理了时间问题，即使你的APP涉及国外用户，只要你们开发团队在时间格式上都遵守ISO8601格式，那么你就再也不用担心时间出错了。</p>
+<p>ISO 8601规定的日期和时间分隔符是T。<strong>标准格式</strong>如下：</p>
+<ul>
+<li>日期：yyyy-MM-dd</li>
+<li>时间：HH:mm:ss</li>
+<li>带毫秒的时间：HH:mm:ss.SSS</li>
+<li>日期和时间：yyyy-MM-dd’T’HH:mm:ss</li>
+<li>带毫秒的日期和时间：yyyy-MM-dd’T’HH:mm:ss.SSS</li>
+</ul>
+</blockquote>
+<p>3、LocalDateTime提供了一些能访问具体字段的方法。</p>
 <p>代码如下:</p>
-<p>LocalDateTime sylvester &#x3D; LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);</p>
-<p>DayOfWeek dayOfWeek &#x3D; sylvester.getDayOfWeek(); System.out.println(dayOfWeek); &#x2F;&#x2F; WEDNESDAY</p>
-<p>Month month &#x3D; sylvester.getMonth(); System.out.println(month); &#x2F;&#x2F; DECEMBER</p>
-<p>long minuteOfDay &#x3D; sylvester.getLong(ChronoField.MINUTE_OF_DAY); System.out.println(minuteOfDay); &#x2F;&#x2F; 1439</p>
-<p>只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">LocalDateTime</span> <span class="variable">sylvester</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2014</span>, Month.DECEMBER, <span class="number">31</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line"><span class="comment">//指定的日期和时间创建</span></span><br><span class="line"><span class="type">DayOfWeek</span> <span class="variable">dayOfWeek</span> <span class="operator">=</span> sylvester.getDayOfWeek(); System.out.println(dayOfWeek); </span><br><span class="line"><span class="comment">// WEDNESDAY</span></span><br><span class="line"><span class="type">Month</span> <span class="variable">month</span> <span class="operator">=</span> sylvester.getMonth(); System.out.println(month); </span><br><span class="line"><span class="comment">// DECEMBER</span></span><br><span class="line"><span class="type">long</span> <span class="variable">minuteOfDay</span> <span class="operator">=</span> sylvester.getLong(ChronoField.MINUTE_OF_DAY); System.out.println(minuteOfDay); </span><br><span class="line"><span class="comment">// 1439</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// eg2:</span></span><br><span class="line"><span class="comment">// 指定日期和时间:</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d2</span> <span class="operator">=</span> LocalDate.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>); <span class="comment">// 2019-11-30, 注意11=11月</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t2</span> <span class="operator">=</span> LocalTime.of(<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>); <span class="comment">// 15:16:17</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt2</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>);</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt3</span> <span class="operator">=</span> LocalDateTime.of(d2, t2);</span><br><span class="line">     因为严格按照ISO <span class="number">8601</span>的格式，因此，将字符串转换为LocalDateTime就可以传入标准格式：</span><br><span class="line">		<span class="type">LocalDateTime</span> <span class="variable">dt</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;2019-11-19T15:16:17&quot;</span>);</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d</span> <span class="operator">=</span> LocalDate.parse(<span class="string">&quot;2019-11-19&quot;</span>);</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;15:16:17&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4、只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p>
 <p>代码如下:</p>
-<p>Instant instant &#x3D; sylvester .atZone(ZoneId.systemDefault()) .toInstant();</p>
-<p>Date legacyDate &#x3D; Date.from(instant); System.out.println(legacyDate); &#x2F;&#x2F; Wed Dec 31 23:59:59 CET 2014</p>
-<p>格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> sylvester .atZone(ZoneId.systemDefault()) .toInstant();</span><br><span class="line"></span><br><span class="line"><span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); System.out.println(legacyDate); <span class="comment">// Wed Dec 31 23:59:59 CET 2014</span></span><br></pre></td></tr></table></figure>
+
+<p>5、格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
 <p>代码如下:</p>
-<p>DateTimeFormatter formatter &#x3D; DateTimeFormatter .ofPattern(“MMM dd, yyyy - HH:mm”);</p>
-<p>LocalDateTime parsed &#x3D; LocalDateTime.parse(“Nov 03, 2014 - 07:13”, formatter); String string &#x3D; formatter.format(parsed); System.out.println(string); &#x2F;&#x2F; Nov 03, 2014 - 07:13</p>
-<p>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。</p>
-<h3 id="十、Annotation-注解"><a href="#十、Annotation-注解" class="headerlink" title="十、Annotation 注解"></a>十、Annotation 注解</h3><p>在Java 8中支持多重注解了，先看个例子来理解一下是什么意思。 首先定义一个包装类Hints注解用来放置一组具体的Hint注解：</p>
-<p>代码如下:</p>
-<p>@interface Hints { Hint[] value(); }</p>
-<p>@Repeatable(Hints.class) @interface Hint { String value(); }</p>
-<p>Java 8允许我们把同一个类型的注解使用多次，只需要给该注解标注一下@Repeatable即可。</p>
-<p>例 1: 使用包装类当容器来存多个注解（老方法）</p>
-<p>代码如下:</p>
-<p>@Hints({@Hint(“hint1”), @Hint(“hint2”)}) class Person {}</p>
-<p>例 2：使用多重注解（新方法）</p>
-<p>代码如下:</p>
-<p>@Hint(“hint1”) @Hint(“hint2”) class Person {}</p>
-<p>第二个例子里java编译器会隐性的帮你定义好@Hints注解，了解这一点有助于你用反射来获取这些信息：</p>
-<p>代码如下:</p>
-<p>Hint hint &#x3D; Person.class.getAnnotation(Hint.class); System.out.println(hint); &#x2F;&#x2F; null</p>
-<p>Hints hints1 &#x3D; Person.class.getAnnotation(Hints.class); System.out.println(hints1.value().length); &#x2F;&#x2F; 2</p>
-<p>Hint[] hints2 &#x3D; Person.class.getAnnotationsByType(Hint.class); System.out.println(hints2.length); &#x2F;&#x2F; 2</p>
-<p>即便我们没有在Person类上定义@Hints注解，我们还是可以通过 getAnnotation(Hints.class) 来获取 @Hints注解，更加方便的方法是使用 getAnnotationsByType 可以直接获取到所有的@Hint注解。 另外Java 8的注解还增加到两种新的target上了：</p>
-<p>代码如下:</p>
-<p>@Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE}) @interface MyAnnotation {}</p>
-<p>关于Java 8的新特性就写到这了，肯定还有更多的特性等待发掘。JDK 1.8里还有很多很有用的东西，比如Arrays.parallelSort, StampedLock和CompletableFuture等等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">formatter</span> <span class="operator">=</span> DateTimeFormatter .ofPattern(<span class="string">&quot;MMM dd, yyyy - HH:mm&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">parsed</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;Nov 03, 2014 - 07:13&quot;</span>, formatter); </span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> formatter.format(parsed); System.out.println(string); <span class="comment">// Nov 03, 2014 - 07:13</span></span><br></pre></td></tr></table></figure>
+
+<p><code>**和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。**</code></p>
+<p>6、<strong>LocalDateTime</strong>提供了对日期和时间进行加减的非常简单的链式调用：</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062329040.png" alt="image-20220606232954597"></p>
+<p>7、<strong>对日期和时间进行调整则使用</strong>withXxx()<strong>方法</strong>，例如：withHour(15)会把10:11:12变为15:11:12：</p>
+<p>调整年：withYear()</p>
+<p>调整月：withMonth()</p>
+<p>调整日：withDayOfMonth()</p>
+<p>调整时：withHour()</p>
+<p>调整分：withMinute()</p>
+<p>调整秒：withSecond()</p>
+<p>8、要判断两个LocalDateTime的先后，可以使用isBefore()、isAfter()方法，对于LocalDate和LocalTime类似：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(LocalDate.now().isBefore(LocalDate.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">19</span>)));</span><br><span class="line"></span><br><span class="line">System.out.println(LocalTime.now().isAfter(LocalTime.parse(<span class="string">&quot;08:15:00&quot;</span>)));</span><br></pre></td></tr></table></figure>
+
+<h4 id="ZonedDateTime"><a href="#ZonedDateTime" class="headerlink" title="ZonedDateTime"></a><strong>ZonedDateTime</strong></h4><p>1、表示一个带时区的日期和时间。简单地把ZonedDateTime理解成LocalDateTime加ZoneId。ZoneId是java.time引入的新的时区类</p>
+<p>2、要创建一个ZonedDateTime对象，有以下几种方法，一种是通过now()方法返回当前时间</p>
+<p>3、加时区两种方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">zbj</span> <span class="operator">=</span> ZonedDateTime.now(); </span><br><span class="line"><span class="comment">// 默认时区</span></span><br><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">zny</span> <span class="operator">=</span> ZonedDateTime.now(ZoneId.of(<span class="string">&quot;America/New_York&quot;</span>)); <span class="comment">// 用指定时区获取当前时间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//为LocalDateTime添加一个ZoneId就变成ZonedDateTime对象</span></span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">ldt</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">15</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>);</span><br><span class="line"> <span class="type">ZonedDateTime</span> <span class="variable">zbj</span> <span class="operator">=</span> ldt.atZone(**ZoneId**.systemDefault());</span><br><span class="line"><span class="comment">//默认时区</span></span><br><span class="line"> <span class="type">ZonedDateTime</span> <span class="variable">zny</span> <span class="operator">=</span> ldt.atZone(**ZoneId**.of(<span class="string">&quot;America/New_York&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>4、ZonedDateTime仍然提供了plusDays()等加减操作。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062339307.png" alt="image-20220606233904248"></p>
+<p><strong>Instant</strong>：</p>
+<p>1、计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。</p>
+<p>2、这个当前时间戳在java.time中以Instant类型表示，我们用Instant.now()获取当前时间戳</p>
+<p>3、<a target="_blank" rel="noopener" href="https://blog.csdn.net/corleone_4ever/article/details/104403042">Java8新特性之Instant详解</a></p>
+<p>LocalDateTime，ZoneId，Instant，ZonedDateTime和long都可以互相转换：</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062340308.png" alt="image-20220606231904807"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	转换的时候，只需要留意long类型以毫秒还是秒为单位即可。</span></span><br><span class="line"><span class="comment">	Instant表示高精度时间戳，</span></span><br><span class="line"><span class="comment">	它可以和ZonedDateTime以及long互相转换。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Instant ins=Instant.ofEpochSecond(<span class="number">0</span>);</span><br><span class="line">ZonedDateTime zdt=ins.atZone(ZoneId.systemDefault());</span><br><span class="line">DateTimeFormatter dateTimeFormatter=dtf.ofPattern(<span class="string">&quot;yyyy-MM-ddmm:hh:ss&quot;</span>);</span><br><span class="line">String format=dateTimeFormatter.format(zdt);</span><br><span class="line">System.out.println(format);</span><br><span class="line"><span class="comment">//1970-01-0100:08:00</span></span><br><span class="line">System.out.println(zdt);</span><br><span class="line"><span class="comment">//2019-09-16T01:32:40+08:00[Asia/Shanghai]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="简单总结："><a href="#简单总结：" class="headerlink" title="简单总结："></a><strong>简单总结：</strong></h4><p>本地日期和时间：LocalDateTime，LocalDate，LocalTime；<br>带时区的日期和时间：ZonedDateTime；<br>时刻：Instant；<br>时区：ZoneId，ZoneOffset；<br>时间间隔：Duration。</p>
+<p>新的用于取代SimpleDateFormat的格式化类型DateTimeFormatter</p>
+<p>1、新API严格区分了时刻、本地日期、本地时间和带时区的日期时间，并且，对日期和时间进行运算更加方便。</p>
+<p>2、新API修正了旧API不合理的常量设计：</p>
+<ul>
+<li>Month的范围用1<del>12表示1月到12月；Week的范围用1</del>7表示周一到周日。</li>
+</ul>
+<p>例如：</p>
+<p><code>2019-10-31减去1个月得到的结果是2019-09-30 </code></p>
+<h3 id="十、Annotation-注解"><a href="#十、Annotation-注解" class="headerlink" title="十、Annotation 注解"></a>十、Annotation 注解</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/java-annotation.html">Java 注解（Annotation）</a> </p>
+<p>1、Java 标注，是 JDK5.0 引入的一种注释机制。</p>
+<p>Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。 当然它也支持自定义 Java 标注。</p>
+<p>Java 定义了一套注解，共有 7 个，3 个在 <strong>java.lang</strong> 中，剩下 4 个在 <strong>java.lang.annotation</strong> 中。</p>
+<p><strong>作用在代码的注解是</strong></p>
+<ul>
+<li>@Override -     检查该方法是否是重写方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。</li>
+<li>@Deprecated -     标记过时方法。如果使用该方法，会报编译警告。</li>
+<li>@SuppressWarnings -     指示编译器去忽略注解中声明的警告。</li>
+</ul>
+<p><strong>作用在其他注解的注解(或者说 元注解)是:</strong></p>
+<ul>
+<li>@Retention -     标识这个注解怎么保存，是只在代码中，还是编入class文件中，或者是在运行时可以通过反射访问。</li>
+<li>@Documented -     标记这些注解是否包含在用户文档中。</li>
+<li>@Target -     标记这个注解应该是哪种 Java 成员。</li>
+<li>@Inherited -     标记这个注解是继承于哪个注解类(默认 注解并没有继承于任何子类)</li>
+</ul>
+<p><strong>从 Java 7 开始，额外添加了 3 个注解:</strong></p>
+<ul>
+<li>@SafeVarargs - Java     7 开始支持，忽略任何使用参数为泛型变量的方法或构造函数调用产生的警告。</li>
+<li>@FunctionalInterface     - Java 8 开始支持，标识一个匿名函数或函数式接口。</li>
+<li>@Repeatable - Java     8 开始支持，标识某注解可以在同一个声明上使用多次。</li>
+</ul>
+<p>2、Annotion框架</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070027655.png" alt="image-20220607002752583"></p>
+<p><strong>组成部分：</strong></p>
+<p><strong>(01) Annotation 就是个接口。</strong></p>
+<p>“每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联，并且与 “1～n 个 ElementType” 关联。可以通俗的理解为：每 1 个 Annotation 对象，都会有唯一的 RetentionPolicy 属性；至于 ElementType 属性，则有 1~n 个。</p>
+<p><strong>(02) ElementType 是 Enum 枚举类型，它用来指定 Annotation 的类型。</strong></p>
+<p>“每 1 个 Annotation” 都与 “1～n 个 ElementType” 关联。当 Annotation 与某个 ElementType 关联时，就意味着：Annotation有了某种用途。例如，若一个 Annotation 对象是 METHOD 类型，则该 Annotation 只能用来修饰方法。</p>
+<p>eg：</p>
+<p><strong>package</strong> java.lang.annotation;</p>
+<p><strong>public</strong> <strong>enum</strong> ElementType {</p>
+<p>  TYPE,        <em>&#x2F;* 类、接口（包括注释类型）或枚举声明  *&#x2F;</em></p>
+<p>  FIELD,        <em>&#x2F;* 字段声明（包括枚举常量）  *&#x2F;</em></p>
+<p>  METHOD,       <em>&#x2F;* 方法声明  *&#x2F;</em></p>
+<p>  PARAMETER,      <em>&#x2F;* 参数声明  *&#x2F;</em></p>
+<p>  CONSTRUCTOR,     <em>&#x2F;* 构造方法声明  *&#x2F;</em></p>
+<p>  LOCAL_VARIABLE,   <em>&#x2F;* 局部变量声明  *&#x2F;</em></p>
+<p>  ANNOTATION_TYPE,   <em>&#x2F;* 注释类型声明 *&#x2F;</em></p>
+<p>  <strong>PACKAGE</strong>       <em>&#x2F;* 包声明  *&#x2F;</em></p>
+<p>}</p>
+<p><strong>(03) RetentionPolicy 是 Enum 枚举类型，它用来指定 Annotation 的策略。通俗点说，就是不同 RetentionPolicy 类型的 Annotation 的作用域不同。</strong></p>
+<p>“每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联。</p>
+<ul>
+<li>a) 若 Annotation     的类型为 SOURCE，则意味着：Annotation 仅存在于编译器处理期间，编译器处理完之后，该 Annotation 就没用了。     例如，” @Override” 标志就是一个     Annotation。当它修饰一个方法的时候，就意味着该方法覆盖父类的方法；并且在编译期间会进行语法检查！编译器处理完后，”@Override”     就没有任何作用了。</li>
+<li>b) 若 Annotation     的类型为 CLASS，则意味着：编译器将 Annotation 存储于类对应的 .class 文件中，它是 Annotation 的默认行为。</li>
+<li>c) 若 Annotation     的类型为 RUNTIME，则意味着：编译器将 Annotation 存储于 class 文件中，并且可由JVM读入。</li>
+</ul>
+<p>这时，只需要记住”每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联，并且与 “1～n 个 ElementType” 关联。</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SOURCE,       <span class="comment">/* Annotation**信息仅存在于编译器处理期间，编译器处理完之后就没有该**Annotation**信息了*  **/</span></span><br><span class="line">CLASS,       <span class="comment">/** 编译器将**Annotation**存储于类对应的**.class**文件中。默认行为*  **/</span></span><br><span class="line">RUNTIME       <span class="comment">/* *编译器将**Annotation**存储于**class**文件中，并且可由**JVM**读入* **/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"> <span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"> <span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation1 &#123;</span><br><span class="line"> &#125;<span class="comment">// </span></span><br></pre></td></tr></table></figure>
+
+<p>理解：</p>
+<p><strong>(01) @interface</strong></p>
+<p>使用 @interface 定义注解时，意味着它实现了 java.lang.annotation.Annotation 接口，即该注解就是一个Annotation。</p>
+<p>定义 Annotation 时，@interface 是必须的。</p>
+<p>注意：它和我们通常的 implemented 实现接口的方法不同。Annotation 接口的实现细节都由编译器完成。通过 @interface 定义注解后，该注解不能继承其他的注解或接口。</p>
+<p><strong>(02) @Documented</strong></p>
+<p>类和方法的 Annotation 在缺省情况下是不出现在 javadoc 中的。如果使用 @Documented 修饰该 Annotation，则表示它可以出现在 javadoc 中。</p>
+<p>定义 Annotation 时，@Documented 可有可无；若没有定义，则 Annotation 不会出现在 javadoc 中。</p>
+<p><strong>(03) @Target(ElementType.TYPE)</strong></p>
+<p>前面我们说过，ElementType 是 Annotation 的类型属性。而 @Target 的作用，就是来指定 Annotation 的类型属性。</p>
+<p>@Target(ElementType.TYPE) 的意思就是指定该 Annotation 的类型是 ElementType.TYPE。这就意味着，MyAnnotation1 是来修饰”类、接口（包括注释类型）或枚举声明”的注解。</p>
+<p>定义 Annotation 时，@Target 可有可无。若有 @Target，则该 Annotation 只能用于它所指定的地方；若没有 @Target，则该 Annotation 可以用于任何地方。</p>
+<p><strong>(04) @Retention(RetentionPolicy.RUNTIME)</strong></p>
+<p>前面我们说过，RetentionPolicy 是 Annotation 的策略属性，而 @Retention 的作用，就是指定 Annotation 的策略属性。</p>
+<p>@Retention(RetentionPolicy.RUNTIME) 的意思就是指定该 Annotation 的策略是 RetentionPolicy.RUNTIME。这就意味着，编译器会将该 Annotation 信息保留在 .class 文件中，并且能被虚拟机读取。</p>
+<p>定义 Annotation 时，@Retention 可有可无。若没有 @Retention，则默认是 RetentionPolicy.CLASS。</p>
+<p>3、Annotation作用</p>
+<p>Annotation 是一个辅助类，它在 Junit、Struts、Spring 等工具框架中被广泛使用。</p>
+<p><strong>1）编译检查</strong></p>
+<p>Annotation 具有”让编译器进行编译检查的作用”。</p>
+<p>例如，@SuppressWarnings, @Deprecated 和 @Override 都具有编译检查作用。</p>
+<p>(01) 关于 @SuppressWarnings 和 @Deprecated，已经在”第3部分”中详细介绍过了。这里就不再举例说明了。</p>
+<p>(02) 若某个方法被 @Override 的标注，则意味着该方法会覆盖父类中的同名方法。如果有方法被 @Override 标示，但父类中却没有”被 @Override 标注”的同名方法，则编译器会报错。</p>
+<p><strong>2) 在反射中使用 Annotation</strong></p>
+<p>在反射的 Class, Method, Field 等函数中，有许多于 Annotation 相关的接口。</p>
+<p>这也意味着，我们可以在反射中解析并使用 Annotation。</p>
+<p><strong>3) 根据 Annotation 生成帮助文档</strong></p>
+<p>通过给 Annotation 注解加上 @Documented 标签，能使该 Annotation 标签出现在 javadoc 中。</p>
+<p><strong>4) 能够帮忙查看查看代码</strong></p>
+<p>通过 @Override, @Deprecated 等，我们能很方便的了解程序的大致结构。</p>
+<p>另外，我们也可以通过自定义 Annotation 来实现一些功能。</p>
+<p>注：框架 &#x3D; 注解 + 反射 + 设计模式</p>
+<h3 id="十一、Stream流和方法引用"><a href="#十一、Stream流和方法引用" class="headerlink" title="十一、Stream流和方法引用"></a>十一、Stream流和方法引用</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43039062">Java8 parallelStream浅析</a>    <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6805.html">使用Java 8新增的Stream操作Collection集合 </a>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/Al_assad/article/details/82356845">JDK8 Stream </a>  </p>
+<ul>
+<li><p><strong>stream()</strong> − 为集合创建串行流。</p>
+</li>
+<li><p><strong>parallelStream()</strong> − 为集合创建并行流。</p>
+</li>
+<li><ol>
+<li><strong>sream顺序输出，而parallelStream 无序输出；parallelStream      执行耗时是 stream 的五分之一。</strong></li>
+<li><strong>parallelStream 获得的相对较好的执行性能，但是如果cpu紧张，不会带来性能的优化，因为要频发的线程切换。</strong></li>
+<li><strong>stream.parallel.forEach()中执行的操作并非线程安全。</strong></li>
+<li><strong>如果需要线程安全，可以把集合转换为同步集合，即：Collections.synchronizedList(new ArrayList&lt;&gt;())。</strong></li>
+</ol>
+</li>
+</ul>
+<p>1、Stream便容易想到I&#x2F;O Stream，在Java 8中，得益于Lambda所带来的函数式编程，引入了一个全新的Stream概念，用于解决已有集合类库既有的弊端。</p>
+<p>2、传统的集合遍历是顺序遍历，一个<strong>迭代器对象只能便利一次</strong>。所有用Stream流优化。</p>
+<p>步骤：</p>
+<p>当使用一个流的时候，通常包括三个基本步骤：<strong>获取一个数据源（source）→ 数据转换→执行操作获取想要的结果，每次转换原有 Stream 对象不改变，返回一个新的 Stream 对象（可以有多次转换）</strong>，这就允许对其操作可以像链条一样排列，变成一个管道。 </p>
+<p>3、流式思想：类似于生产线，对获取到的流进行，过滤、映射、计数、跳步…..；</p>
+<p>filter 、 map 、 skip 都是在对函数模型进行操作，集合元素并没有真正被处理。只有当终结方法 count 执行的时候，整个模型才会按照指定策略执行操作。而这得益于Lambda的延迟执行特性。 </p>
+<p>备注：“Stream流”其实是一个集合元素的函数模型，它并不是集合，也不是数据结构，其本身并不存储任何 元素（或其地址值）。 </p>
+<p>4、获取数据流：java.util.stream.Stream 是Java 8新加入的</p>
+<h4 id="最常用的流接口"><a href="#最常用的流接口" class="headerlink" title="最常用的流接口"></a>最常用的流接口</h4><p>a、<strong>所有的 Collection 集合都可以通过 stream 默认方法获取流：</strong> </p>
+<p><strong>Collection</strong>接口中有default方法Stream（）获取流（所有子类都有该方法）。</p>
+<p>Stream stream &#x3D; list.stream()</p>
+<p>b、Stream 接口的<strong>静态方法 of</strong> 可以获取数组对应的流。 </p>
+<p>Stream stream &#x3D; Stream.of(array);</p>
+<p>c、**Map接口 **K-V的数据结构，获取流要分开（key、value、entry）。</p>
+<p>Stream keyStream &#x3D; map.keySet().stream(); </p>
+<p>Stream valueStream &#x3D; map.values().stream(); </p>
+<p>Stream&lt;Map.Entry&gt; entryStream &#x3D; map.entrySet().stream();</p>
+<h4 id="流方法："><a href="#流方法：" class="headerlink" title="流方法："></a><strong>流方法</strong>：</h4><p>Stream 提供了大量的方法进行聚集操作。</p>
+<ul>
+<li>中间方法：中间操作允许流保持打开状态，并允许直接调用后续方法。上面程序中的     map() 方法就是中间方法。中间方法的返回值是另外一个流。</li>
+<li>末端方法：末端方法是对流的最终操作。当对某个     Stream 执行末端方法后，该流将会被“消耗”且不再可用。上面程序中的 sum()、count()、average() 等方法都是末端方法。</li>
+</ul>
+<p>流的方法还有如下两个特征。</p>
+<ul>
+<li>有状态的方法：这种方法会给流增加一些新的属性，比如元素的唯一性、元素的最大数量、保证元素以排序的方式被处理等。有状态的方法往往需要更大的性能开销。</li>
+<li>短路方法：短路方法可以尽早结束对流的操作，不必检查所有的元素。</li>
+</ul>
+<h4 id="Stream-常用的中间方法。"><a href="#Stream-常用的中间方法。" class="headerlink" title="Stream 常用的中间方法。"></a><strong>Stream 常用的中间方法。</strong></h4><table>
+<thead>
+<tr>
+<th align="center"><strong>方法</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>filter</strong>(Predicate predicate)</td>
+<td>过滤 Stream 中所有不符合 predicate 的元素</td>
+</tr>
+<tr>
+<td align="center"><strong>mapToXxx</strong>(ToXxxFunction mapper)  map（Function mapper）：映射</td>
+<td><strong>使用 ToXxxFunction  对流中的元素执行一对一的转换，该方法返回的新流中包含了 ToXxxFunction 转换生成的所有元素。</strong>  <strong>当前流<strong><strong>T</strong></strong>类型转化为<strong><strong>R</strong></strong>类型</strong></td>
+</tr>
+<tr>
+<td align="center">peek(Consumer  action)</td>
+<td>依次对每个元素执行一些操作，该方法返回的流与原有流包含相同的元素。该方法主要用于调试。</td>
+</tr>
+<tr>
+<td align="center">distinct()</td>
+<td>该方法用于排序流中所有重复的元素（判断元素重复的标准是使用 equals() 比较返回 true）。这是一个有状态的方法。</td>
+</tr>
+<tr>
+<td align="center">sorted()</td>
+<td>该方法用于保证流中的元素在后续的访问中处于有序状态。这是一个有状态的方法。</td>
+</tr>
+<tr>
+<td align="center"><strong>limit</strong>(long maxSize)</td>
+<td>该方法用于保证对该流的后续访问中最大允许访问的元素个数。这是一个有状态的、短路方法。</td>
+</tr>
+<tr>
+<td align="center"><strong>skip</strong>（<strong>long n</strong>）</td>
+<td>希望跳过前几个元素</td>
+</tr>
+<tr>
+<td align="center"><strong>Static</strong> <strong>concat</strong>（<strong>Stream a</strong> <strong>，</strong>Stream b<strong>）</strong></td>
+<td>两个流，希望合并成为一个流</td>
+</tr>
+</tbody></table>
+<h4 id="Stream-常用的末端方法。"><a href="#Stream-常用的末端方法。" class="headerlink" title="Stream 常用的末端方法。"></a><strong>Stream 常用的末端方法。</strong></h4><table>
+<thead>
+<tr>
+<th align="center"><strong>方法</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>forEach</strong>(<strong>Consumer</strong> <strong>action)</strong></td>
+<td>遍历流中所有元素，对每个元素执行action</td>
+</tr>
+<tr>
+<td align="center"><strong>toArray()</strong></td>
+<td>将流中所有元素转换为一个数组</td>
+</tr>
+<tr>
+<td align="center">reduce()</td>
+<td>该方法有三个重载的版本，都用于通过某种操作来合并流中的元素</td>
+</tr>
+<tr>
+<td align="center">min()</td>
+<td>返回流中所有元素的最小值</td>
+</tr>
+<tr>
+<td align="center">max()</td>
+<td>返回流中所有元素的最大值</td>
+</tr>
+<tr>
+<td align="center"><strong>count()</strong></td>
+<td>返回流中所有元素的数量</td>
+</tr>
+<tr>
+<td align="center">anyMatch(Predicate  predicate)</td>
+<td>判断流中是否至少包含一个元素符合 Predicate 条件。</td>
+</tr>
+<tr>
+<td align="center">allMatch(Predicate predicate)</td>
+<td>判断流中是否每个元素都符合 Predicate 条件</td>
+</tr>
+<tr>
+<td align="center">noneMatch(Predicate predicate)</td>
+<td>判断流中是否所有元素都不符合 Predicate 条件</td>
+</tr>
+<tr>
+<td align="center">findFirst()</td>
+<td>返回流中的第一个元素</td>
+</tr>
+<tr>
+<td align="center">findAny()</td>
+<td>返回流中的任意一个元素</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Random</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>(); </span><br><span class="line"><span class="comment">//只要是个排序，遍历输出</span></span><br><span class="line">random.ints().limit(<span class="number">10</span>).sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; strings = Arrays.asList(<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;bc&quot;</span>, <span class="string">&quot;efg&quot;</span>, <span class="string">&quot;abcd&quot;</span>,<span class="string">&quot;&quot;</span>, <span class="string">&quot;jkl&quot;</span>);</span><br><span class="line"> <span class="comment">// 获取空字符串的数量 </span></span><br><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line"></span><br><span class="line"><span class="type">Stream</span> <span class="variable">streamOne</span> <span class="operator">=</span> one.stream().filter(s ‐&gt; s.length() == <span class="number">3</span>).limit(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Stream</span> <span class="variable">streamTwo</span> <span class="operator">=</span> two.stream().filter(s ‐&gt; s.startsWith(<span class="string">&quot;张&quot;</span>)).skip(<span class="number">2</span>); </span><br><span class="line"></span><br><span class="line">Stream.concat(streamOne, streamTwo).map(Person::<span class="keyword">new</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a><strong>方法引用</strong></h4><p>1、在lambda表达式基础上简化，避免冗余，其中的双冒号 :: 写法，这被称为“方法引用”，而双冒号是一种新的语法（代替lambda写法）。</p>
+<p>2、主要处理，操作没有在lambda进行操作，就输出，例如：：拿到参数之后经Lambda之手，继而传递给 System.out.println 方法去处理</p>
+<p>Lambda要表达的函数方案已经存在于某个方 法的实现中，那么则可以通过双冒号来引用该方法作为Lambda的替代者。</p>
+<p>用法：</p>
+<p>Lambda表达式写法： s -&gt; System.out.println(s); </p>
+<p>方法引用写法： System.out::println</p>
+<p>Lambda表达式： n -&gt; Math.abs(n) </p>
+<p>方法引用： Math::abs</p>
+<p>Lambda表达式： () -&gt; super.sayHello() </p>
+<p>方法引用： super::sayHello</p>
+<p>lambda表达式： () -&gt; this.buyHouse() </p>
+<p>方法引用： this::buyHouse </p>
+<p>Lambda表达式： name -&gt; new Person(name) </p>
+<p>方法引用： Person::new</p>
+<p>Lambda表达式： length -&gt; new int[length] </p>
+<p>方法引用： int[]::new</p>
 
       
     </div>
@@ -817,7 +1173,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -828,7 +1184,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -910,7 +1266,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、Lambda 表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">三、函数式接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%96%B9%E6%B3%95%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">四、方法与构造函数引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81Lambda-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">五、Lambda 作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">6.</span> <span class="nav-text">六、访问局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">7.</span> <span class="nav-text">七、访问对象字段与静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">八、访问接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E3%80%81Date-API"><span class="nav-number">9.</span> <span class="nav-text">九、Date API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E3%80%81Annotation-%E6%B3%A8%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">十、Annotation 注解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、Lambda 表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">三、函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Supplier%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">Supplier接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Consumer%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">Consumer接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Predicate%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">Predicate接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.4.</span> <span class="nav-text">Function接口：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%96%B9%E6%B3%95%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">四、方法与构造函数引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81Lambda-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">五、Lambda 作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">6.</span> <span class="nav-text">六、访问局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">7.</span> <span class="nav-text">七、访问对象字段与静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">八、访问接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E3%80%81Date-API"><span class="nav-number">9.</span> <span class="nav-text">九、Date API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clock-%E6%97%B6%E9%92%9F"><span class="nav-number">9.1.</span> <span class="nav-text">Clock 时钟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timezones-%E6%97%B6%E5%8C%BA"><span class="nav-number">9.2.</span> <span class="nav-text">Timezones 时区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalTime-%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4"><span class="nav-number">9.3.</span> <span class="nav-text">LocalTime 本地时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDate-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F"><span class="nav-number">9.4.</span> <span class="nav-text">LocalDate 本地日期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDateTime-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">9.5.</span> <span class="nav-text">LocalDateTime 本地日期时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZonedDateTime"><span class="nav-number">9.6.</span> <span class="nav-text">ZonedDateTime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">9.7.</span> <span class="nav-text">简单总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E3%80%81Annotation-%E6%B3%A8%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">十、Annotation 注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Stream%E6%B5%81%E5%92%8C%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.</span> <span class="nav-text">十一、Stream流和方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%81%E6%8E%A5%E5%8F%A3"><span class="nav-number">11.1.</span> <span class="nav-text">最常用的流接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">11.2.</span> <span class="nav-text">流方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.3.</span> <span class="nav-text">Stream 常用的中间方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%9C%AB%E7%AB%AF%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.4.</span> <span class="nav-text">Stream 常用的末端方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.5.</span> <span class="nav-text">方法引用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -951,7 +1307,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.5k</span>
+    <span title="Site words total count">41.1k</span>
   
 </div>
 
@@ -967,7 +1323,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.5k字</span>
+  <span class="post-count">博客全站共41.1k字</span>
 </div>
 
         
