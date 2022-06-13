@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062340308.png">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070027655.png">
 <meta property="article:published_time" content="2022-06-03T14:26:52.000Z">
-<meta property="article:modified_time" content="2022-06-12T14:56:29.413Z">
+<meta property="article:modified_time" content="2022-06-13T03:04:58.910Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -353,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-12T22:56:29+08:00">
-                2022-06-12
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-13T11:04:58+08:00">
+                2022-06-13
               </time>
             
           </span>
@@ -571,25 +571,29 @@
 <li>如果接口被标注了@FunctionalInterface，这个类就必须符合函数式接口的规范.</li>
 <li>即使一个接口没有标注@FunctionalInterface，如果这个接口满足函数式接口规则，依旧被当作函数式接口。</li>
 </ul>
-<h3 id="四、方法与构造函数引用"><a href="#四、方法与构造函数引用" class="headerlink" title="四、方法与构造函数引用"></a>四、方法与构造函数引用</h3><p>前一节中的代码还可以通过静态方法引用来表示：</p>
+<h3 id="四、方法引用与构造函数引用"><a href="#四、方法引用与构造函数引用" class="headerlink" title="四、方法引用与构造函数引用"></a>四、方法引用与构造函数引用</h3><p>前一节中的代码还可以通过静态方法引用来表示：</p>
 <p>代码如下:</p>
-<p>Converter&lt;String, Integer&gt; converter &#x3D; Integer::valueOf; Integer converted &#x3D; converter.convert(“123”); System.out.println(converted); &#x2F;&#x2F; 123</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Converter&lt;String, Integer&gt; converter = Integer::valueOf; </span><br><span class="line"><span class="type">Integer</span> <span class="variable">converted</span> <span class="operator">=</span> converter.convert(<span class="string">&quot;123&quot;</span>); </span><br><span class="line">System.out.println(converted); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+
 <p>Java 8 允许你使用 :: 关键字来传递方法或者构造函数引用，上面的代码展示了如何引用一个静态方法，我们也可以引用一个对象的方法：</p>
 <p>代码如下:</p>
-<p>converter &#x3D; something::startsWith; String converted &#x3D; converter.convert(“Java”); System.out.println(converted); &#x2F;&#x2F; “J”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">converter = something::startsWith;</span><br><span class="line"><span class="type">String</span> <span class="variable">converted</span> <span class="operator">=</span> converter.convert(<span class="string">&quot;Java&quot;</span>); </span><br><span class="line">System.out.println(converted); <span class="comment">// &quot;J&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>接下来看看构造函数是如何使用::关键字来引用的，首先我们定义一个包含多个构造函数的简单类：</p>
 <p>代码如下:</p>
-<p>class Person { String firstName; String lastName;</p>
-<p>Person() {}</p>
-<p>Person(String firstName, String lastName) { this.firstName &#x3D; firstName; this.lastName &#x3D; lastName; } }</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123; </span><br><span class="line">    String firstName; </span><br><span class="line">    String lastName;</span><br><span class="line">	Person() &#123;&#125;</span><br><span class="line">	Person(String firstName, String lastName) &#123; </span><br><span class="line">   		<span class="built_in">this</span>.firstName = firstName; <span class="built_in">this</span>.lastName = lastName; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>接下来我们指定一个用来创建Person对象的对象工厂接口：</p>
 <p>代码如下:</p>
-<p>interface PersonFactory<P extends Person> { P create(String firstName, String lastName); }</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">PersonFactory</span>&lt;P <span class="keyword">extends</span> <span class="title class_">Person</span>&gt; &#123; </span><br><span class="line">    P <span class="title function_">create</span><span class="params">(String firstName, String lastName)</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这里我们使用构造函数引用来将他们关联起来，而不是实现一个完整的工厂：</p>
 <p>代码如下:</p>
-<p>PersonFactory<Person> personFactory &#x3D; Person::new; Person person &#x3D; personFactory.create(“Peter”, “Parker”);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PersonFactory&lt;Person&gt; personFactory = Person::<span class="keyword">new</span>; </span><br><span class="line"><span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> personFactory.create(<span class="string">&quot;Peter&quot;</span>, <span class="string">&quot;Parker&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <p>我们只需要使用 Person::new 来获取Person类构造函数的引用，Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。</p>
-<h3 id="五、Lambda-作用域"><a href="#五、Lambda-作用域" class="headerlink" title="五、Lambda 作用域"></a>五、Lambda 作用域</h3><p>在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。</p>
+<h3 id="五、Lambda-作用域"><a href="#五、Lambda-作用域" class="headerlink" title="五、Lambda 作用域"></a>五、Lambda 作用域</h3><p>在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。</p>
+<p>你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。</p>
 <h3 id="六、访问局部变量"><a href="#六、访问局部变量" class="headerlink" title="六、访问局部变量"></a>六、访问局部变量</h3><p>我们可以直接在lambda表达式中访问外层的局部变量：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>; </span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);</span><br><span class="line">stringConverter.convert(<span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
@@ -606,55 +610,48 @@
 <h3 id="七、访问对象字段与静态变量"><a href="#七、访问对象字段与静态变量" class="headerlink" title="七、访问对象字段与静态变量"></a>七、访问对象字段与静态变量</h3><p>和本地变量不同的是，<strong>lambda内部对于实例的字段以及静态变量是即可读又可写</strong>。</p>
 <p>该行为和匿名对象是一致的：</p>
 <p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Lambda4</span> &#123; </span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> outerStaticNum; </span><br><span class="line">    <span class="type">int</span> outerNum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testScopes</span><span class="params">()</span> </span><br><span class="line">&#123; </span><br><span class="line">    Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; &#123; outerNum = <span class="number">23</span>; <span class="keyword">return</span> String.valueOf(from);&#125;;</span><br><span class="line"></span><br><span class="line">Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; &#123;  outerStaticNum = <span class="number">72</span>;  <span class="keyword">return</span> String.valueOf(from);  &#125;; &#125; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Lambda4</span> &#123; </span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> outerStaticNum; </span><br><span class="line">    <span class="type">int</span> outerNum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">testScopes</span><span class="params">()</span> </span><br><span class="line">	&#123; </span><br><span class="line">    Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; &#123; </span><br><span class="line">        outerNum = <span class="number">23</span>; </span><br><span class="line">        <span class="keyword">return</span> String.valueOf(from);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">	Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; &#123;  </span><br><span class="line">    	outerStaticNum = <span class="number">72</span>;  </span><br><span class="line">    	<span class="keyword">return</span> String.valueOf(from);  </span><br><span class="line">	&#125;; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="八、访问接口的默认方法"><a href="#八、访问接口的默认方法" class="headerlink" title="八、访问接口的默认方法"></a>八、访问接口的默认方法</h3><p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。</p>
 <p> Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的</p>
-<p><strong>Predicate</strong>接口</p>
-<p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
+<h4 id="Predicate接口"><a href="#Predicate接口" class="headerlink" title="Predicate接口"></a><strong>Predicate</strong>接口</h4><p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
 <p>代码如下:</p>
-<p>Predicate<String> predicate &#x3D; (s) -&gt; s.length() &gt; 0;</p>
-<p>predicate.test(“foo”); &#x2F;&#x2F; true predicate.negate().test(“foo”); &#x2F;&#x2F; false</p>
-<p>Predicate<Boolean> nonNull &#x3D; Objects::nonNull; Predicate<Boolean> isNull &#x3D; Objects::isNull;</p>
-<p>Predicate<String> isEmpty &#x3D; String::isEmpty; Predicate<String> isNotEmpty &#x3D; isEmpty.negate();</p>
-<p><strong>Function</strong> <strong>接口</strong></p>
-<p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Predicate&lt;String&gt; predicate = (s) -&gt; s.length() &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">predicate.test(<span class="string">&quot;foo&quot;</span>); <span class="comment">// true </span></span><br><span class="line">predicate.negate().test(<span class="string">&quot;foo&quot;</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">Predicate&lt;Boolean&gt; nonNull = Objects::nonNull; </span><br><span class="line">Predicate&lt;Boolean&gt; isNull = Objects::isNull;</span><br><span class="line"></span><br><span class="line">Predicate&lt;String&gt; isEmpty = String::isEmpty; </span><br><span class="line">Predicate&lt;String&gt; isNotEmpty = isEmpty.negate();</span><br></pre></td></tr></table></figure>
+
+<h4 id="Function接口"><a href="#Function接口" class="headerlink" title="Function接口"></a><strong>Function接口</strong></h4><p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
 <p>代码如下:</p>
-<p>Function&lt;String, Integer&gt; toInteger &#x3D; Integer::valueOf; Function&lt;String, String&gt; backToString &#x3D; toInteger.andThen(String::valueOf);</p>
-<p>backToString.apply(“123”); &#x2F;&#x2F; “123”</p>
-<p><strong>Supplier</strong> <strong>接口</strong> Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Function&lt;String, Integer&gt; toInteger = Integer::valueOf; </span><br><span class="line">Function&lt;String, String&gt; backToString = toInteger.andThen(String::valueOf);</span><br><span class="line"></span><br><span class="line">backToString.apply(<span class="string">&quot;123&quot;</span>); <span class="comment">// &quot;123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Supplier接口"><a href="#Supplier接口" class="headerlink" title="Supplier接口"></a><strong>Supplier接口</strong></h4><p>Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
 <p>代码如下:</p>
-<p>Supplier<Person> personSupplier &#x3D; Person::new; personSupplier.get(); &#x2F;&#x2F; new Person</p>
-<p><strong>Consumer</strong> <strong>接口</strong> Consumer 接口表示执行在单个参数上的操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Supplier&lt;Person&gt; personSupplier = Person::<span class="keyword">new</span>; </span><br><span class="line">personSupplier.get(); <span class="comment">// new Person</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Consumer接口"><a href="#Consumer接口" class="headerlink" title="Consumer接口"></a><strong>Consumer接口</strong></h4><p>Consumer 接口表示执行在单个参数上的操作。</p>
 <p>代码如下:</p>
-<p>Consumer<Person> greeter &#x3D; (p) -&gt; System.out.println(“Hello, “ + p.firstName); greeter.accept(new Person(“Luke”, “Skywalker”));</p>
-<p><strong>Comparator</strong> <strong>接口</strong> Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Consumer&lt;Person&gt; greeter = (p) -&gt; System.out.println(<span class="string">&quot;Hello, &quot;</span> + p.firstName); </span><br><span class="line">greeter.accept(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Luke&quot;</span>, <span class="string">&quot;Skywalker&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="Comparator-接口"><a href="#Comparator-接口" class="headerlink" title="Comparator 接口"></a><strong>Comparator</strong> <strong>接口</strong></h4><p>Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
 <p>代码如下:</p>
-<p>Comparator<Person> comparator &#x3D; (p1, p2) -&gt; p1.firstName.compareTo(p2.firstName);</p>
-<p>Person p1 &#x3D; new Person(“John”, “Doe”); Person p2 &#x3D; new Person(“Alice”, “Wonderland”);</p>
-<p>comparator.compare(p1, p2); &#x2F;&#x2F; &gt; 0 comparator.reversed().compare(p1, p2); &#x2F;&#x2F; &lt; 0</p>
-<p><strong>Optional</strong> <strong>接口</strong></p>
-<p>Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.firstName.compareTo(p2.firstName);</span><br><span class="line"></span><br><span class="line"><span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;John&quot;</span>, <span class="string">&quot;Doe&quot;</span>); </span><br><span class="line"><span class="type">Person</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Wonderland&quot;</span>);</span><br><span class="line"></span><br><span class="line">comparator.compare(p1, p2); <span class="comment">// &gt; 0 </span></span><br><span class="line">comparator.reversed().compare(p1, p2); <span class="comment">// &lt; 0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Optional-接口"><a href="#Optional-接口" class="headerlink" title="Optional 接口"></a><strong>Optional</strong> <strong>接口</strong></h4><p>Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
 <p>Optional 被定义为一个简单的容器，其值可能是null或者不是null。在Java 8之前一般某个函数应该返回非空对象但是偶尔却可能返回了null，而在Java 8中，不推荐你返回null而是返回Optional。</p>
 <p>代码如下:</p>
 <p>Optional<String> optional &#x3D; Optional.of(“bam”);</p>
 <p>optional.isPresent(); &#x2F;&#x2F; true optional.get(); &#x2F;&#x2F; “bam” optional.orElse(“fallback”); &#x2F;&#x2F; “bam”</p>
 <p>optional.ifPresent((s) -&gt; System.out.println(s.charAt(0))); &#x2F;&#x2F; “b”</p>
-<p><strong>Stream</strong> <strong>接口</strong></p>
-<p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
+<h4 id="Stream-接口"><a href="#Stream-接口" class="headerlink" title="Stream 接口"></a><strong>Stream</strong> <strong>接口</strong></h4><p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
 <p>首先看看Stream是怎么用，首先创建实例代码的用到的数据List：</p>
 <p>代码如下:</p>
 <p>List<String> stringCollection &#x3D; new ArrayList&lt;&gt;(); stringCollection.add(“ddd2”); stringCollection.add(“aaa2”); stringCollection.add(“bbb1”); stringCollection.add(“aaa1”); stringCollection.add(“bbb3”); stringCollection.add(“ccc”); stringCollection.add(“bbb2”); stringCollection.add(“ddd1”);</p>
 <p>Java 8扩展了集合类，可以通过 Collection.stream() 或者 Collection.parallelStream() 来创建一个Stream。下面几节将详细解释常用的Stream操作：</p>
-<p><strong>Filter</strong> <strong>过滤</strong></p>
-<p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。forEach需要一个函数来对过滤后的元素依次执行。forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
+<h4 id="Filter-过滤"><a href="#Filter-过滤" class="headerlink" title="Filter 过滤"></a><strong>Filter</strong> <strong>过滤</strong></h4><p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。forEach需要一个函数来对过滤后的元素依次执行。forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
 <p>代码如下:</p>
 <p>stringCollection .stream() .filter((s) -&gt; s.startsWith(“a”)) .forEach(System.out::println);</p>
 <p>&#x2F;&#x2F; “aaa2”, “aaa1”</p>
-<p><strong>Sort</strong> <strong>排序</strong></p>
-<p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。</p>
+<h4 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort 排序"></a><strong>Sort</strong> <strong>排序</strong></h4><p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。</p>
 <p>代码如下:</p>
 <p>stringCollection .stream() .sorted() .filter((s) -&gt; s.startsWith(“a”)) .forEach(System.out::println);</p>
 <p>&#x2F;&#x2F; “aaa1”, “aaa2”</p>
@@ -665,8 +662,7 @@
 <p>代码如下:</p>
 <p>stringCollection .stream() .map(String::toUpperCase) .sorted((a, b) -&gt; b.compareTo(a)) .forEach(System.out::println);</p>
 <p>&#x2F;&#x2F; “DDD2”, “DDD1”, “CCC”, “BBB3”, “BBB2”, “AAA2”, “AAA1”</p>
-<p><strong>Match</strong> <strong>匹配</strong></p>
-<p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
+<h4 id="Match-匹配"><a href="#Match-匹配" class="headerlink" title="Match 匹配"></a><strong>Match</strong> <strong>匹配</strong></h4><p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
 <p>代码如下:</p>
 <p>boolean anyStartsWithA &#x3D; stringCollection .stream() .anyMatch((s) -&gt; s.startsWith(“a”));</p>
 <p>System.out.println(anyStartsWithA); &#x2F;&#x2F; true</p>
@@ -674,17 +670,15 @@
 <p>System.out.println(allStartsWithA); &#x2F;&#x2F; false</p>
 <p>boolean noneStartsWithZ &#x3D; stringCollection .stream() .noneMatch((s) -&gt; s.startsWith(“z”));</p>
 <p>System.out.println(noneStartsWithZ); &#x2F;&#x2F; true</p>
-<p><strong>Count</strong> <strong>计数</strong> 计数是一个最终操作，返回Stream中元素的个数，返回值类型是long。</p>
+<h4 id="Count-计数"><a href="#Count-计数" class="headerlink" title="Count 计数"></a><strong>Count</strong> <strong>计数</strong></h4><p>计数是一个最终操作，返回Stream中元素的个数，返回值类型是long。</p>
 <p>代码如下:</p>
 <p>long startsWithB &#x3D; stringCollection .stream() .filter((s) -&gt; s.startsWith(“b”)) .count();</p>
 <p>System.out.println(startsWithB); &#x2F;&#x2F; 3</p>
-<p><strong>Reduce</strong> <strong>规约</strong></p>
-<p>这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的：</p>
+<h4 id="Reduce-规约"><a href="#Reduce-规约" class="headerlink" title="Reduce 规约"></a><strong>Reduce</strong> <strong>规约</strong></h4><p>这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的：</p>
 <p>代码如下:</p>
 <p>Optional<String> reduced &#x3D; stringCollection .stream() .sorted() .reduce((s1, s2) -&gt; s1 + “#” + s2);</p>
 <p>reduced.ifPresent(System.out::println); &#x2F;&#x2F; “aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2”</p>
-<p><strong>并行****Streams</strong></p>
-<p>前面提到过Stream有串行和并行两种，串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。</p>
+<h4 id="并行Streams"><a href="#并行Streams" class="headerlink" title="并行Streams"></a>并行Streams</h4><p>前面提到过Stream有串行和并行两种，串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。</p>
 <p>下面的例子展示了是如何通过并行Stream来提升性能：</p>
 <p>首先我们创建一个没有重复元素的大表：</p>
 <p>代码如下:</p>
@@ -702,8 +696,7 @@
 <p>long t1 &#x3D; System.nanoTime();</p>
 <p>long millis &#x3D; TimeUnit.NANOSECONDS.toMillis(t1 - t0); System.out.println(String.format(“parallel sort took: %d ms”, millis));</p>
 <p>&#x2F;&#x2F; 并行排序耗时: 472 ms 上面两个代码几乎是一样的，但是并行版的快了50%之多，唯一需要做的改动就是将stream()改为parallelStream()。</p>
-<p><strong>Map</strong></p>
-<p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a><strong>Map</strong></h4><p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p>
 <p>代码如下:</p>
 <p>Map&lt;Integer, String&gt; map &#x3D; new HashMap&lt;&gt;();</p>
 <p>for (int i &#x3D; 0; i &lt; 10; i++) { map.putIfAbsent(i, “val” + i); }</p>
@@ -1267,7 +1260,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、Lambda 表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">三、函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Supplier%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">Supplier接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Consumer%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">Consumer接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Predicate%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">Predicate接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.4.</span> <span class="nav-text">Function接口：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%96%B9%E6%B3%95%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">四、方法与构造函数引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81Lambda-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">五、Lambda 作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">6.</span> <span class="nav-text">六、访问局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">7.</span> <span class="nav-text">七、访问对象字段与静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">八、访问接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E3%80%81Date-API"><span class="nav-number">9.</span> <span class="nav-text">九、Date API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clock-%E6%97%B6%E9%92%9F"><span class="nav-number">9.1.</span> <span class="nav-text">Clock 时钟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timezones-%E6%97%B6%E5%8C%BA"><span class="nav-number">9.2.</span> <span class="nav-text">Timezones 时区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalTime-%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4"><span class="nav-number">9.3.</span> <span class="nav-text">LocalTime 本地时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDate-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F"><span class="nav-number">9.4.</span> <span class="nav-text">LocalDate 本地日期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDateTime-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">9.5.</span> <span class="nav-text">LocalDateTime 本地日期时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZonedDateTime"><span class="nav-number">9.6.</span> <span class="nav-text">ZonedDateTime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">9.7.</span> <span class="nav-text">简单总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E3%80%81Annotation-%E6%B3%A8%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">十、Annotation 注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Stream%E6%B5%81%E5%92%8C%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.</span> <span class="nav-text">十一、Stream流和方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%81%E6%8E%A5%E5%8F%A3"><span class="nav-number">11.1.</span> <span class="nav-text">最常用的流接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">11.2.</span> <span class="nav-text">流方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.3.</span> <span class="nav-text">Stream 常用的中间方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%9C%AB%E7%AB%AF%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.4.</span> <span class="nav-text">Stream 常用的末端方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.5.</span> <span class="nav-text">方法引用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、接口的默认方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、Lambda 表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">三、函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Supplier%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">Supplier接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Consumer%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">Consumer接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Predicate%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">Predicate接口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="nav-number">3.4.</span> <span class="nav-text">Function接口：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">四、方法引用与构造函数引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81Lambda-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">五、Lambda 作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">6.</span> <span class="nav-text">六、访问局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">7.</span> <span class="nav-text">七、访问对象字段与静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">八、访问接口的默认方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Predicate%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.1.</span> <span class="nav-text">Predicate接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.2.</span> <span class="nav-text">Function接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Supplier%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.3.</span> <span class="nav-text">Supplier接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Consumer%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.4.</span> <span class="nav-text">Consumer接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comparator-%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.5.</span> <span class="nav-text">Comparator 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optional-%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.6.</span> <span class="nav-text">Optional 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.7.</span> <span class="nav-text">Stream 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filter-%E8%BF%87%E6%BB%A4"><span class="nav-number">8.8.</span> <span class="nav-text">Filter 过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sort-%E6%8E%92%E5%BA%8F"><span class="nav-number">8.9.</span> <span class="nav-text">Sort 排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Match-%E5%8C%B9%E9%85%8D"><span class="nav-number">8.10.</span> <span class="nav-text">Match 匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Count-%E8%AE%A1%E6%95%B0"><span class="nav-number">8.11.</span> <span class="nav-text">Count 计数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduce-%E8%A7%84%E7%BA%A6"><span class="nav-number">8.12.</span> <span class="nav-text">Reduce 规约</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8CStreams"><span class="nav-number">8.13.</span> <span class="nav-text">并行Streams</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map"><span class="nav-number">8.14.</span> <span class="nav-text">Map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E3%80%81Date-API"><span class="nav-number">9.</span> <span class="nav-text">九、Date API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clock-%E6%97%B6%E9%92%9F"><span class="nav-number">9.1.</span> <span class="nav-text">Clock 时钟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timezones-%E6%97%B6%E5%8C%BA"><span class="nav-number">9.2.</span> <span class="nav-text">Timezones 时区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalTime-%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4"><span class="nav-number">9.3.</span> <span class="nav-text">LocalTime 本地时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDate-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F"><span class="nav-number">9.4.</span> <span class="nav-text">LocalDate 本地日期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LocalDateTime-%E6%9C%AC%E5%9C%B0%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">9.5.</span> <span class="nav-text">LocalDateTime 本地日期时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZonedDateTime"><span class="nav-number">9.6.</span> <span class="nav-text">ZonedDateTime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">9.7.</span> <span class="nav-text">简单总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E3%80%81Annotation-%E6%B3%A8%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">十、Annotation 注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Stream%E6%B5%81%E5%92%8C%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.</span> <span class="nav-text">十一、Stream流和方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%81%E6%8E%A5%E5%8F%A3"><span class="nav-number">11.1.</span> <span class="nav-text">最常用的流接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">11.2.</span> <span class="nav-text">流方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.3.</span> <span class="nav-text">Stream 常用的中间方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%9C%AB%E7%AB%AF%E6%96%B9%E6%B3%95%E3%80%82"><span class="nav-number">11.4.</span> <span class="nav-text">Stream 常用的末端方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8"><span class="nav-number">11.5.</span> <span class="nav-text">方法引用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1308,7 +1301,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.1k</span>
+    <span title="Site words total count">41.5k</span>
   
 </div>
 
@@ -1317,14 +1310,12 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-
 
 
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.1k字</span>
+  <span class="post-count">博客全站共41.5k字</span>
 </div>
 
         
