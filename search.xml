@@ -19,30 +19,15 @@
 <p>Authe的消息处理平台（作为我的第二个分布式项目（消息处理项目））</p>
 <p>手头的视频有空可以看看</p>
 <ul>
-<li><p><input checked="" disabled="" type="checkbox"> 
-准备英语四级</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-完成复习基础知识和面试题</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-同步自己的OneNode的学习笔记</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-SpringCloud 以及 Netflix、Alibaba 的组件学习</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-JVM原理和调优方式</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-mysql优化和语句</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-毕设项目回顾（课件为主，了解各个组件作用和解决了什么问题）</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-论文第一部分完善好</p>
-</li>
+<li><input checked="" disabled="" type="checkbox"> 准备英语四级</li>
+<li><input checked="" disabled="" type="checkbox"> 博客可以被百度引擎索引到</li>
+<li><input disabled="" type="checkbox"> 完成复习基础知识和面试题</li>
+<li><input disabled="" type="checkbox"> 同步自己的OneNode的学习笔记</li>
+<li><input disabled="" type="checkbox"> SpringCloud 以及 Netflix、Alibaba 的组件学习</li>
+<li><input disabled="" type="checkbox"> JVM原理和调优方式</li>
+<li><input disabled="" type="checkbox"> mysql优化和语句</li>
+<li><input disabled="" type="checkbox"> 毕设项目回顾（课件为主，了解各个组件作用和解决了什么问题）</li>
+<li><input disabled="" type="checkbox"> 论文第一部分完善好</li>
 </ul>
 </blockquote>
 <h1 id="2022生活记录"><a href="#2022生活记录" class="headerlink" title="2022生活记录"></a>2022生活记录</h1><blockquote>
@@ -283,6 +268,10 @@ mysql优化和语句</p>
 <li>如果接口被标注了@FunctionalInterface，这个类就必须符合函数式接口的规范.</li>
 <li>即使一个接口没有标注@FunctionalInterface，如果这个接口满足函数式接口规则，依旧被当作函数式接口。</li>
 </ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//无输入参数，返回T类型的一个结果。</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Supplier</span>&lt;String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Supplier&lt;String&gt; supplier = () -&gt; <span class="string">&quot;Test supplier&quot;</span>;</span><br><span class="line">supplier.get(); <span class="comment">//return String | Test supplier</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//接受一个T类型的参数，无返回。</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Consumer</span>&lt;String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(String s)</span> &#123;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Consumer&lt;String&gt; consumer = (x) -&gt; &#123;</span><br><span class="line">    System.out.println(x);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//Consumer&lt;String&gt; consumer = System.out::println;</span></span><br><span class="line">consumer.accept(<span class="string">&quot;Test consumer&quot;</span>); <span class="comment">//void | 控制台打印 &quot;Test consumer&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//接受一个T类型的参数，返回布尔值。</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Predicate</span>&lt;String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">test</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Predicate&lt;String&gt; predicate = x -&gt; s.contains(<span class="string">&quot;predicate&quot;</span>);</span><br><span class="line">predicate.test(<span class="string">&quot;Test predicate&quot;</span>); <span class="comment">//return boolean | true</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//接受一个T类型的参数，返回R类型结果。</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Function</span>&lt;String, Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">apply</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Function&lt;Integer,String&gt; function = x -&gt; <span class="string">&quot;This is Integer:&quot;</span> + x;</span><br><span class="line">function.apply(<span class="number">100</span>); <span class="comment">//return String | &quot;This is Integer:100&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="四、方法引用与构造函数引用"><a href="#四、方法引用与构造函数引用" class="headerlink" title="四、方法引用与构造函数引用"></a>四、方法引用与构造函数引用</h3><p>前一节中的代码还可以通过静态方法引用来表示：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Converter&lt;String, Integer&gt; converter = Integer::valueOf; </span><br><span class="line"><span class="type">Integer</span> <span class="variable">converted</span> <span class="operator">=</span> converter.convert(<span class="string">&quot;123&quot;</span>); </span><br><span class="line">System.out.println(converted); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
@@ -328,116 +317,133 @@ mysql优化和语句</p>
 
 <h3 id="八、访问接口的默认方法"><a href="#八、访问接口的默认方法" class="headerlink" title="八、访问接口的默认方法"></a>八、访问接口的默认方法</h3><p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。</p>
 <p> Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的</p>
-<h4 id="Predicate接口"><a href="#Predicate接口" class="headerlink" title="Predicate接口"></a><strong>Predicate</strong>接口</h4><p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
+<h4 id="Predicate接口（有参返回布尔）"><a href="#Predicate接口（有参返回布尔）" class="headerlink" title="Predicate接口（有参返回布尔）"></a><strong>Predicate</strong>接口（有参返回布尔）</h4><p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Predicate&lt;String&gt; predicate = (s) -&gt; s.length() &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">predicate.test(<span class="string">&quot;foo&quot;</span>); <span class="comment">// true </span></span><br><span class="line">predicate.negate().test(<span class="string">&quot;foo&quot;</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">Predicate&lt;Boolean&gt; nonNull = Objects::nonNull; </span><br><span class="line">Predicate&lt;Boolean&gt; isNull = Objects::isNull;</span><br><span class="line"></span><br><span class="line">Predicate&lt;String&gt; isEmpty = String::isEmpty; </span><br><span class="line">Predicate&lt;String&gt; isNotEmpty = isEmpty.negate();</span><br></pre></td></tr></table></figure>
 
-<h4 id="Function接口"><a href="#Function接口" class="headerlink" title="Function接口"></a><strong>Function接口</strong></h4><p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
+<h4 id="Function接口（有参返回T）"><a href="#Function接口（有参返回T）" class="headerlink" title="Function接口（有参返回T）"></a><strong>Function接口</strong>（有参返回T）</h4><p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Function&lt;String, Integer&gt; toInteger = Integer::valueOf; </span><br><span class="line">Function&lt;String, String&gt; backToString = toInteger.andThen(String::valueOf);</span><br><span class="line"></span><br><span class="line">backToString.apply(<span class="string">&quot;123&quot;</span>); <span class="comment">// &quot;123&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Supplier接口"><a href="#Supplier接口" class="headerlink" title="Supplier接口"></a><strong>Supplier接口</strong></h4><p>Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
+<h4 id="Supplier接口-无参返回T"><a href="#Supplier接口-无参返回T" class="headerlink" title="Supplier接口 (无参返回T)"></a><strong>Supplier接口</strong> (无参返回T)</h4><p>Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Supplier&lt;Person&gt; personSupplier = Person::<span class="keyword">new</span>; </span><br><span class="line">personSupplier.get(); <span class="comment">// new Person</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Consumer接口"><a href="#Consumer接口" class="headerlink" title="Consumer接口"></a><strong>Consumer接口</strong></h4><p>Consumer 接口表示执行在单个参数上的操作。</p>
+<h4 id="Consumer接口-有参无返回"><a href="#Consumer接口-有参无返回" class="headerlink" title="Consumer接口 (有参无返回)"></a><strong>Consumer接口</strong> (有参无返回)</h4><p>Consumer 接口表示执行在单个参数上的操作。</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Consumer&lt;Person&gt; greeter = (p) -&gt; System.out.println(<span class="string">&quot;Hello, &quot;</span> + p.firstName); </span><br><span class="line">greeter.accept(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Luke&quot;</span>, <span class="string">&quot;Skywalker&quot;</span>));</span><br></pre></td></tr></table></figure>
 
-<h4 id="Comparator-接口"><a href="#Comparator-接口" class="headerlink" title="Comparator 接口"></a><strong>Comparator</strong> <strong>接口</strong></h4><p>Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
+<h4 id="Comparator接口-比较接口"><a href="#Comparator接口-比较接口" class="headerlink" title="Comparator接口 (比较接口)"></a><strong>Comparator接口</strong> (比较接口)</h4><p>Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.firstName.compareTo(p2.firstName);</span><br><span class="line"></span><br><span class="line"><span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;John&quot;</span>, <span class="string">&quot;Doe&quot;</span>); </span><br><span class="line"><span class="type">Person</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Wonderland&quot;</span>);</span><br><span class="line"></span><br><span class="line">comparator.compare(p1, p2); <span class="comment">// &gt; 0 </span></span><br><span class="line">comparator.reversed().compare(p1, p2); <span class="comment">// &lt; 0</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Optional-接口"><a href="#Optional-接口" class="headerlink" title="Optional 接口"></a><strong>Optional</strong> <strong>接口</strong></h4><p>Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
+<h4 id="Optional-接口-防止null异常的辅助接口"><a href="#Optional-接口-防止null异常的辅助接口" class="headerlink" title="Optional 接口(防止null异常的辅助接口)"></a><strong>Optional</strong> <strong>接口</strong>(防止null异常的辅助接口)</h4><p>Optional 不是函数式接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
 <p>Optional 被定义为一个简单的容器，其值可能是null或者不是null。在Java 8之前一般某个函数应该返回非空对象但是偶尔却可能返回了null，而在Java 8中，不推荐你返回null而是返回Optional。</p>
 <p>代码如下:</p>
-<p>Optional<String> optional &#x3D; Optional.of(“bam”);</p>
-<p>optional.isPresent(); &#x2F;&#x2F; true optional.get(); &#x2F;&#x2F; “bam” optional.orElse(“fallback”); &#x2F;&#x2F; “bam”</p>
-<p>optional.ifPresent((s) -&gt; System.out.println(s.charAt(0))); &#x2F;&#x2F; “b”</p>
-<h4 id="Stream-接口"><a href="#Stream-接口" class="headerlink" title="Stream 接口"></a><strong>Stream</strong> <strong>接口</strong></h4><p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Optional&lt;String&gt; optional = Optional.of(<span class="string">&quot;bam&quot;</span>);</span><br><span class="line"></span><br><span class="line">optional.isPresent(); <span class="comment">// true </span></span><br><span class="line">optional.get(); <span class="comment">// &quot;bam&quot; </span></span><br><span class="line">optional.orElse(<span class="string">&quot;fallback&quot;</span>); <span class="comment">// &quot;bam&quot;</span></span><br><span class="line"></span><br><span class="line">optional.ifPresent((s) -&gt; System.out.println(s.charAt(<span class="number">0</span>))); <span class="comment">// &quot;b&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="x3D-x3D"><a href="#x3D-x3D" class="headerlink" title="&#x3D;&#x3D;"></a>&#x3D;&#x3D;</h4><h4 id="Stream接口（流式编程）"><a href="#Stream接口（流式编程）" class="headerlink" title="Stream接口（流式编程）"></a><strong>Stream接口</strong>（流式编程）</h4><p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
 <p>首先看看Stream是怎么用，首先创建实例代码的用到的数据List：</p>
 <p>代码如下:</p>
-<p>List<String> stringCollection &#x3D; new ArrayList&lt;&gt;(); stringCollection.add(“ddd2”); stringCollection.add(“aaa2”); stringCollection.add(“bbb1”); stringCollection.add(“aaa1”); stringCollection.add(“bbb3”); stringCollection.add(“ccc”); stringCollection.add(“bbb2”); stringCollection.add(“ddd1”);</p>
-<p>Java 8扩展了集合类，可以通过 Collection.stream() 或者 Collection.parallelStream() 来创建一个Stream。下面几节将详细解释常用的Stream操作：</p>
-<h4 id="Filter-过滤"><a href="#Filter-过滤" class="headerlink" title="Filter 过滤"></a><strong>Filter</strong> <strong>过滤</strong></h4><p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。forEach需要一个函数来对过滤后的元素依次执行。forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; stringCollection = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); </span><br><span class="line">stringCollection.add(<span class="string">&quot;ddd2&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;aaa2&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;bbb1&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;aaa1&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;bbb3&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;ccc&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;bbb2&quot;</span>); </span><br><span class="line">stringCollection.add(<span class="string">&quot;ddd1&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Java 8扩展了集合类，可以通过 Collection.stream() 或者 Collection.parallelStream() 来创建一个Stream。</p>
+<h4 id="Filter-过滤"><a href="#Filter-过滤" class="headerlink" title="Filter 过滤"></a><strong>Filter</strong> <strong>过滤</strong></h4><p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。</p>
+<p>forEach需要一个函数来对过滤后的元素依次执行。</p>
+<p>forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
 <p>代码如下:</p>
-<p>stringCollection .stream() .filter((s) -&gt; s.startsWith(“a”)) .forEach(System.out::println);</p>
-<p>&#x2F;&#x2F; “aaa2”, “aaa1”</p>
-<h4 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort 排序"></a><strong>Sort</strong> <strong>排序</strong></h4><p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">stringCollection.stream().filter((s) -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>)) .forEach(System.out::println);</span><br><span class="line"><span class="comment">// &quot;aaa2&quot;, &quot;aaa1&quot;（对s的集合转换为流过滤开头为a的集合遍历输出）</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort 排序"></a><strong>Sort</strong> <strong>排序</strong></h4><p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator（自然排序）则会使用默认排序。</p>
 <p>代码如下:</p>
-<p>stringCollection .stream() .sorted() .filter((s) -&gt; s.startsWith(“a”)) .forEach(System.out::println);</p>
-<p>&#x2F;&#x2F; “aaa1”, “aaa2”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">stringCollection.stream().sorted().filter((s) -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>)) .forEach(System.out::println);</span><br><span class="line"><span class="comment">// &quot;aaa1&quot;, &quot;aaa2&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>需要注意的是，排序只创建了一个排列好后的Stream，而不会影响原有的数据源，排序之后原数据stringCollection是不会被修改的：</p>
 <p>代码如下:</p>
-<p>System.out.println(stringCollection); &#x2F;&#x2F; ddd2, aaa2, bbb1, aaa1, bbb3, ccc, bbb2, ddd1</p>
-<p><strong>Map</strong> <strong>映射</strong> 中间操作map会将元素根据指定的Function接口来依次将元素转成另外的对象，下面的示例展示了将字符串转换为大写字符串。你也可以通过map来讲对象转换成其他类型，map返回的Stream类型是根据你map传递进去的函数的返回值决定的。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(stringCollection); </span><br><span class="line"><span class="comment">// ddd2, aaa2, bbb1, aaa1, bbb3, ccc, bbb2, ddd1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Map-映射"><a href="#Map-映射" class="headerlink" title="Map 映射"></a><strong>Map 映射</strong></h4><p>中间操作map会将元素根据指定的Function接口来依次将元素转成另外的对象，下面的示例展示了将字符串转换为大写字符串。</p>
+<p>你也可以通过map来讲对象转换成其他类型，map返回的Stream类型是根据你map传递进去的函数的返回值决定的。</p>
 <p>代码如下:</p>
-<p>stringCollection .stream() .map(String::toUpperCase) .sorted((a, b) -&gt; b.compareTo(a)) .forEach(System.out::println);</p>
-<p>&#x2F;&#x2F; “DDD2”, “DDD1”, “CCC”, “BBB3”, “BBB2”, “AAA2”, “AAA1”</p>
-<h4 id="Match-匹配"><a href="#Match-匹配" class="headerlink" title="Match 匹配"></a><strong>Match</strong> <strong>匹配</strong></h4><p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">stringCollection.stream().map(String::toUpperCase).sorted((a, b) -&gt; b.compareTo(a)) .forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &quot;DDD2&quot;, &quot;DDD1&quot;, &quot;CCC&quot;, &quot;BBB3&quot;, &quot;BBB2&quot;, &quot;AAA2&quot;, &quot;AAA1&quot;</span></span><br><span class="line"><span class="comment">// 转为流式，map为中间操作，转为大写，排序重写了Comparator接口，然后遍历输出。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Match-匹配"><a href="#Match-匹配" class="headerlink" title="Match 匹配"></a><strong>Match</strong> <strong>匹配</strong></h4><p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。</p>
+<p>所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
 <p>代码如下:</p>
-<p>boolean anyStartsWithA &#x3D; stringCollection .stream() .anyMatch((s) -&gt; s.startsWith(“a”));</p>
-<p>System.out.println(anyStartsWithA); &#x2F;&#x2F; true</p>
-<p>boolean allStartsWithA &#x3D; stringCollection .stream() .allMatch((s) -&gt; s.startsWith(“a”));</p>
-<p>System.out.println(allStartsWithA); &#x2F;&#x2F; false</p>
-<p>boolean noneStartsWithZ &#x3D; stringCollection .stream() .noneMatch((s) -&gt; s.startsWith(“z”));</p>
-<p>System.out.println(noneStartsWithZ); &#x2F;&#x2F; true</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">anyStartsWithA</span> <span class="operator">=</span> stringCollection .stream() .anyMatch((s) -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(anyStartsWithA); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">allStartsWithA</span> <span class="operator">=</span> stringCollection .stream() .allMatch((s) -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(allStartsWithA); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> <span class="variable">noneStartsWithZ</span> <span class="operator">=</span> stringCollection .stream() .noneMatch((s) -&gt; s.startsWith(<span class="string">&quot;z&quot;</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(noneStartsWithZ); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="Count-计数"><a href="#Count-计数" class="headerlink" title="Count 计数"></a><strong>Count</strong> <strong>计数</strong></h4><p>计数是一个最终操作，返回Stream中元素的个数，返回值类型是long。</p>
 <p>代码如下:</p>
-<p>long startsWithB &#x3D; stringCollection .stream() .filter((s) -&gt; s.startsWith(“b”)) .count();</p>
-<p>System.out.println(startsWithB); &#x2F;&#x2F; 3</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">startsWithB</span> <span class="operator">=</span> stringCollection .stream() .filter((s) -&gt; s.startsWith(<span class="string">&quot;b&quot;</span>)) .count();</span><br><span class="line"></span><br><span class="line">System.out.println(startsWithB); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="Reduce-规约"><a href="#Reduce-规约" class="headerlink" title="Reduce 规约"></a><strong>Reduce</strong> <strong>规约</strong></h4><p>这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的：</p>
 <p>代码如下:</p>
-<p>Optional<String> reduced &#x3D; stringCollection .stream() .sorted() .reduce((s1, s2) -&gt; s1 + “#” + s2);</p>
-<p>reduced.ifPresent(System.out::println); &#x2F;&#x2F; “aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Optional&lt;String&gt; reduced = stringCollection .stream() .sorted() .reduce((s1, s2) -&gt; s1 + <span class="string">&quot;#&quot;</span> + s2);</span><br><span class="line"></span><br><span class="line">reduced.ifPresent(System.out::println); <span class="comment">// &quot;aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="并行Streams"><a href="#并行Streams" class="headerlink" title="并行Streams"></a>并行Streams</h4><p>前面提到过Stream有串行和并行两种，串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。</p>
 <p>下面的例子展示了是如何通过并行Stream来提升性能：</p>
 <p>首先我们创建一个没有重复元素的大表：</p>
 <p>代码如下:</p>
-<p>int max &#x3D; 1000000; List<String> values &#x3D; new ArrayList&lt;&gt;(max); for (int i &#x3D; 0; i &lt; max; i++) { UUID uuid &#x3D; UUID.randomUUID(); values.add(uuid.toString()); }</p>
-<p>然后我们计算一下排序这个Stream要耗时多久， 串行排序：</p>
-<p>代码如下:</p>
-<p>long t0 &#x3D; System.nanoTime();</p>
-<p>long count &#x3D; values.stream().sorted().count(); System.out.println(count);</p>
-<p>long t1 &#x3D; System.nanoTime();</p>
-<p>long millis &#x3D; TimeUnit.NANOSECONDS.toMillis(t1 - t0); System.out.println(String.format(“sequential sort took: %d ms”, millis));</p>
-<p>&#x2F;&#x2F; 串行耗时: 899 ms 并行排序：</p>
-<p>代码如下:</p>
-<p>long t0 &#x3D; System.nanoTime();</p>
-<p>long count &#x3D; values.parallelStream().sorted().count(); System.out.println(count);</p>
-<p>long t1 &#x3D; System.nanoTime();</p>
-<p>long millis &#x3D; TimeUnit.NANOSECONDS.toMillis(t1 - t0); System.out.println(String.format(“parallel sort took: %d ms”, millis));</p>
-<p>&#x2F;&#x2F; 并行排序耗时: 472 ms 上面两个代码几乎是一样的，但是并行版的快了50%之多，唯一需要做的改动就是将stream()改为parallelStream()。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">1000000</span>; </span><br><span class="line">List&lt;String&gt; values = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(max); </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; max; i++) &#123; </span><br><span class="line">    <span class="type">UUID</span> <span class="variable">uuid</span> <span class="operator">=</span> UUID.randomUUID(); </span><br><span class="line">    </span><br><span class="line">    values.add(uuid.toString()); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们计算一下排序这个Stream要耗时多久，</p>
+<h5 id="串行排序："><a href="#串行排序：" class="headerlink" title="串行排序："></a>串行排序：</h5><p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">t0</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> values.stream().sorted().count(); </span><br><span class="line"></span><br><span class="line">System.out.println(count);</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">t1</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">millis</span> <span class="operator">=</span> TimeUnit.NANOSECONDS.toMillis(t1 - t0); </span><br><span class="line"></span><br><span class="line">System.out.println(String.format(<span class="string">&quot;sequential sort took: %d ms&quot;</span>, millis));</span><br><span class="line"><span class="comment">// 串行耗时: 899 ms </span></span><br></pre></td></tr></table></figure>
+
+<h5 id="并行排序："><a href="#并行排序：" class="headerlink" title="并行排序："></a>并行排序：</h5><p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">t0</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> values.parallelStream().sorted().count(); </span><br><span class="line"></span><br><span class="line">System.out.println(count);</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">t1</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">millis</span> <span class="operator">=</span> TimeUnit.NANOSECONDS.toMillis(t1 - t0); </span><br><span class="line"></span><br><span class="line">System.out.println(String.format(<span class="string">&quot;parallel sort took: %d ms&quot;</span>, millis));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 并行排序耗时: 472 ms 上面两个代码几乎是一样的，但是并行版的快了50%之多，</span></span><br><span class="line"><span class="comment">// 唯一需要做的改动就是将stream()改为parallelStream()。</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a><strong>Map</strong></h4><p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p>
 <p>代码如下:</p>
-<p>Map&lt;Integer, String&gt; map &#x3D; new HashMap&lt;&gt;();</p>
-<p>for (int i &#x3D; 0; i &lt; 10; i++) { map.putIfAbsent(i, “val” + i); }</p>
-<p>map.forEach((id, val) -&gt; System.out.println(val)); 以上代码很容易理解， putIfAbsent 不需要我们做额外的存在性检查，而forEach则接收一个Consumer接口来对map里的每一个键值对进行操作。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123; map.putIfAbsent(i, <span class="string">&quot;val&quot;</span> + i); &#125;</span><br><span class="line"></span><br><span class="line">map.forEach((id, val) -&gt; System.out.println(val)); </span><br></pre></td></tr></table></figure>
+
+<p>以上代码很容易理解， putIfAbsent 不需要我们做额外的存在性检查，而forEach则接收一个Consumer接口来对map里的每一个键值对进行操作。</p>
 <p>下面的例子展示了map上的其他有用的函数：</p>
 <p>代码如下:</p>
-<p>map.computeIfPresent(3, (num, val) -&gt; val + num); map.get(3); &#x2F;&#x2F; val33</p>
-<p>map.computeIfPresent(9, (num, val) -&gt; null); map.containsKey(9); &#x2F;&#x2F; false</p>
-<p>map.computeIfAbsent(23, num -&gt; “val” + num); map.containsKey(23); &#x2F;&#x2F; true</p>
-<p>map.computeIfAbsent(3, num -&gt; “bam”); map.get(3); &#x2F;&#x2F; val33</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">map.computeIfPresent(<span class="number">3</span>, (num, val) -&gt; val + num); </span><br><span class="line">map.get(<span class="number">3</span>); <span class="comment">// val33</span></span><br><span class="line"></span><br><span class="line">map.computeIfPresent(<span class="number">9</span>, (num, val) -&gt; <span class="literal">null</span>); </span><br><span class="line">map.containsKey(<span class="number">9</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">map.computeIfAbsent(<span class="number">23</span>, num -&gt; <span class="string">&quot;val&quot;</span> + num); </span><br><span class="line">map.containsKey(<span class="number">23</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">map.computeIfAbsent(<span class="number">3</span>, num -&gt; <span class="string">&quot;bam&quot;</span>); </span><br><span class="line">map.get(<span class="number">3</span>); <span class="comment">// val33</span></span><br></pre></td></tr></table></figure>
+
 <p>接下来展示如何在Map里删除一个键值全都匹配的项：</p>
 <p>代码如下:</p>
-<p>map.remove(3, “val3”); map.get(3); &#x2F;&#x2F; val33</p>
-<p>map.remove(3, “val33”); map.get(3); &#x2F;&#x2F; null</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">map.remove(<span class="number">3</span>, <span class="string">&quot;val3&quot;</span>); </span><br><span class="line">map.get(<span class="number">3</span>); <span class="comment">// val33</span></span><br><span class="line"></span><br><span class="line">map.remove(<span class="number">3</span>, <span class="string">&quot;val33&quot;</span>); </span><br><span class="line">map.get(<span class="number">3</span>); <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+
 <p>另外一个有用的方法：</p>
 <p>代码如下:</p>
-<p>map.getOrDefault(42, “not found”); &#x2F;&#x2F; not found</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">map.getOrDefault(<span class="number">42</span>, <span class="string">&quot;not found&quot;</span>); <span class="comment">// not found</span></span><br></pre></td></tr></table></figure>
+
 <p>对Map的元素做合并也变得很容易了：</p>
 <p>代码如下:</p>
-<p>map.merge(9, “val9”, (value, newValue) -&gt; value.concat(newValue)); map.get(9); &#x2F;&#x2F; val9</p>
-<p>map.merge(9, “concat”, (value, newValue) -&gt; value.concat(newValue)); map.get(9); &#x2F;&#x2F; val9concat</p>
-<p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p>
-<h3 id="九、Date-API"><a href="#九、Date-API" class="headerlink" title="九、Date API"></a>九、Date API</h3><p>Java 8 在包java.time下包含了一组全新的时间日期API。</p>
-<p>新的时间API  <strong>（LocalDate&#x2F;LocalTime 和 LocalDateTime 类）</strong><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1303871087444002">LocalDateTime</a></p>
-<h4 id="Clock-时钟"><a href="#Clock-时钟" class="headerlink" title="Clock 时钟"></a><strong>Clock</strong> <strong>时钟</strong></h4><p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
-<p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Clock</span> <span class="variable">clock</span> <span class="operator">=</span> Clock.systemDefaultZone(); </span><br><span class="line"><span class="type">long</span> <span class="variable">millis</span> <span class="operator">=</span> clock.millis();</span><br><span class="line"></span><br><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> clock.instant(); <span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); <span class="comment">// legacy java.util.Date</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">map.merge(<span class="number">9</span>, <span class="string">&quot;val9&quot;</span>, (value, newValue) -&gt; value.concat(newValue)); </span><br><span class="line">map.get(<span class="number">9</span>); <span class="comment">// val9</span></span><br><span class="line"></span><br><span class="line">map.merge(<span class="number">9</span>, <span class="string">&quot;concat&quot;</span>, (value, newValue) -&gt; value.concat(newValue)); </span><br><span class="line">map.get(<span class="number">9</span>); <span class="comment">// val9concat</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Timezones-时区"><a href="#Timezones-时区" class="headerlink" title="Timezones 时区"></a><strong>Timezones</strong> <strong>时区</strong></h4><p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
+<p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p>
+<blockquote>
+<p>Java8提供了很多比较好的接口，还有lambda表达式的使用，遍历对接口实现的写法，不仅可以通过流式编程思想，转换为流stream进行链式编程，实现常见筛选、删除、遍历、拼接方法。</p>
+<p>另一方面我们的</p>
+</blockquote>
+<h3 id="九、Date-API"><a href="#九、Date-API" class="headerlink" title="九、Date API"></a>九、Date API</h3><p>Java 8 在包java.time下包含了一组全新的时间日期API。</p>
+<p>新的时间API  <strong>（LocalDate&#x2F;LocalTime 和 LocalDateTime 类）</strong></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1303871087444002">LocalDateTime参考</a></p>
+<h4 id="Clock-时钟"><a href="#Clock-时钟" class="headerlink" title="Clock 时钟"></a><strong>Clock</strong> <strong>时钟</strong></h4><p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。</p>
+<p>某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
+<p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Clock</span> <span class="variable">clock</span> <span class="operator">=</span> Clock.systemDefaultZone(); </span><br><span class="line"><span class="type">long</span> <span class="variable">millis</span> <span class="operator">=</span> clock.millis();</span><br><span class="line"></span><br><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> clock.instant(); </span><br><span class="line"><span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); <span class="comment">// legacy java.util.Date</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Timezones时区"><a href="#Timezones时区" class="headerlink" title="Timezones时区"></a><strong>Timezones时区</strong></h4><p>在新API中时区使用ZoneId来表示。</p>
+<p>时区可以很方便的使用静态方法of来获取到。 </p>
+<p>时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(ZoneId.getAvailableZoneIds()); </span><br><span class="line"><span class="comment">// prints all available timezone ids</span></span><br><span class="line"><span class="type">ZoneId</span> <span class="variable">zone1</span> <span class="operator">=</span> ZoneId.of(<span class="string">&quot;Europe/Berlin&quot;</span>); </span><br><span class="line"><span class="type">ZoneId</span> <span class="variable">zone2</span> <span class="operator">=</span> ZoneId.of(<span class="string">&quot;Brazil/East&quot;</span>); System.out.println(zone1.getRules()); System.out.println(zone2.getRules());</span><br><span class="line"><span class="comment">// ZoneRules[currentStandardOffset=+01:00] </span></span><br><span class="line"><span class="comment">// ZoneRules[currentStandardOffset=-03:00]</span></span><br></pre></td></tr></table></figure>
 
@@ -447,9 +453,9 @@ mysql优化和语句</p>
 
 <p>LocalTime 提供了多种工厂方法来简化对象的创建，包括解析时间字符串。</p>
 <p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalTime</span> <span class="variable">late</span> <span class="operator">=</span> LocalTime.of(<span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>); System.out.println(late); <span class="comment">// 23:59:59</span></span><br><span class="line"></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">germanFormatter</span> <span class="operator">=</span> DateTimeFormatter .ofLocalizedTime(FormatStyle.SHORT) .withLocale(Locale.GERMAN);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">leetTime</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;13:37&quot;</span>, germanFormatter); </span><br><span class="line">System.out.println(leetTime); <span class="comment">// 13:37</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalTime</span> <span class="variable">late</span> <span class="operator">=</span> LocalTime.of(<span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line">System.out.println(late); <span class="comment">// 23:59:59</span></span><br><span class="line"></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">germanFormatter</span> <span class="operator">=</span> </span><br><span class="line">    DateTimeFormatter .ofLocalizedTime(FormatStyle.SHORT) .withLocale(Locale.GERMAN);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">leetTime</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;13:37&quot;</span>, germanFormatter); </span><br><span class="line">System.out.println(leetTime); <span class="comment">// 13:37</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="LocalDate-本地日期"><a href="#LocalDate-本地日期" class="headerlink" title="LocalDate 本地日期"></a><strong>LocalDate</strong> <strong>本地日期</strong></h4><p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天&#x2F;月&#x2F;年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
+<h4 id="LocalDate本地日期"><a href="#LocalDate本地日期" class="headerlink" title="LocalDate本地日期"></a><strong>LocalDate本地日期</strong></h4><p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天&#x2F;月&#x2F;年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalDate</span> <span class="variable">today</span> <span class="operator">=</span> LocalDate.now(); </span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">tomorrow</span> <span class="operator">=</span> today.plus(<span class="number">1</span>, ChronoUnit.DAYS); </span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">yesterday</span> <span class="operator">=</span> tomorrow.minusDays(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">independenceDay</span> <span class="operator">=</span> LocalDate.of(<span class="number">2014</span>, Month.JULY, <span class="number">4</span>); </span><br><span class="line"><span class="type">DayOfWeek</span> <span class="variable">dayOfWeek</span> <span class="operator">=</span> independenceDay.getDayOfWeek();</span><br><span class="line"></span><br><span class="line">System.out.println(dayOfWeek); </span><br><span class="line"><span class="comment">// FRIDAY 从字符串解析一个LocalDate类型和解析LocalTime一样简单：</span></span><br></pre></td></tr></table></figure>
 
@@ -469,19 +475,28 @@ mysql优化和语句</p>
 <li>带毫秒的日期和时间：yyyy-MM-dd’T’HH:mm:ss.SSS</li>
 </ul>
 </blockquote>
+<h4 id="ISO-8601"><a href="#ISO-8601" class="headerlink" title="ISO-8601"></a>ISO-8601</h4><blockquote>
+<p>日历系统中没有时区的日期时间，例如 2007-12-03T10:15:30。 </p>
+<p>LocalDateTime 是一个不可变的日期时间对象，它表示日期时间，通常被视为年-月-日-时-分-秒。也可以访问其他日期和时间字段，例如一年中的某一天、一周中的某一天和一周中的一周。时间以纳秒精度表示。例如，值“2007 年 10 月 2 日 13:45.30.123456789”可以存储在 LocalDateTime 中。</p>
+<p>此类不存储或表示时区。相反，它是对日期的描述，用于生日，结合挂钟上的当地时间。如果没有诸如偏移或时区之类的附加信息，它就不能代表时间线上的瞬间。</p>
+<p> ISO-8601 日历系统是当今世界大部分地区使用的现代民用日历系统。它相当于预测的公历系统，在该系统中，今天的闰年规则适用于所有时间。</p>
+<p>对于当今编写的大多数应用程序，ISO-8601 规则完全适用。</p>
+<p>但是，任何使用历史日期并要求它们准确的应用程序都会发现 ISO-8601 方法不适合。这是一个基于值的类；在 LocalDateTime 的实例上使用身份敏感操作（包括引用相等 (&#x3D;&#x3D;)、身份哈希码或同步）可能会产生不可预测的结果，应该避免。应该使用equals方法进行比较。实现要求：这个类是不可变的和线程安全的。</p>
+</blockquote>
 <p>3、LocalDateTime提供了一些能访问具体字段的方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206131822042.png" alt="image-20220613182243680"></p>
 <p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalDateTime</span> <span class="variable">sylvester</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2014</span>, Month.DECEMBER, <span class="number">31</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line"><span class="comment">//指定的日期和时间创建</span></span><br><span class="line"><span class="type">DayOfWeek</span> <span class="variable">dayOfWeek</span> <span class="operator">=</span> sylvester.getDayOfWeek(); System.out.println(dayOfWeek); </span><br><span class="line"><span class="comment">// WEDNESDAY</span></span><br><span class="line"><span class="type">Month</span> <span class="variable">month</span> <span class="operator">=</span> sylvester.getMonth(); System.out.println(month); </span><br><span class="line"><span class="comment">// DECEMBER</span></span><br><span class="line"><span class="type">long</span> <span class="variable">minuteOfDay</span> <span class="operator">=</span> sylvester.getLong(ChronoField.MINUTE_OF_DAY); System.out.println(minuteOfDay); </span><br><span class="line"><span class="comment">// 1439</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// eg2:</span></span><br><span class="line"><span class="comment">// 指定日期和时间:</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d2</span> <span class="operator">=</span> LocalDate.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>); <span class="comment">// 2019-11-30, 注意11=11月</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t2</span> <span class="operator">=</span> LocalTime.of(<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>); <span class="comment">// 15:16:17</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt2</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>);</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt3</span> <span class="operator">=</span> LocalDateTime.of(d2, t2);</span><br><span class="line">     因为严格按照ISO <span class="number">8601</span>的格式，因此，将字符串转换为LocalDateTime就可以传入标准格式：</span><br><span class="line">		<span class="type">LocalDateTime</span> <span class="variable">dt</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;2019-11-19T15:16:17&quot;</span>);</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d</span> <span class="operator">=</span> LocalDate.parse(<span class="string">&quot;2019-11-19&quot;</span>);</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;15:16:17&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">LocalDateTime</span> <span class="variable">sylvester</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2014</span>, Month.DECEMBER, <span class="number">31</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line"><span class="comment">//指定的日期和时间创建</span></span><br><span class="line"><span class="type">DayOfWeek</span> <span class="variable">dayOfWeek</span> <span class="operator">=</span> sylvester.getDayOfWeek(); </span><br><span class="line">System.out.println(dayOfWeek); </span><br><span class="line"><span class="comment">// WEDNESDAY</span></span><br><span class="line"><span class="type">Month</span> <span class="variable">month</span> <span class="operator">=</span> sylvester.getMonth(); </span><br><span class="line">System.out.println(month); </span><br><span class="line"><span class="comment">// DECEMBER</span></span><br><span class="line"><span class="type">long</span> <span class="variable">minuteOfDay</span> <span class="operator">=</span> sylvester.getLong(ChronoField.MINUTE_OF_DAY); </span><br><span class="line">System.out.println(minuteOfDay); </span><br><span class="line"><span class="comment">// 1439</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// eg2:</span></span><br><span class="line"><span class="comment">// 指定日期和时间:</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d2</span> <span class="operator">=</span> LocalDate.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>); <span class="comment">// 2019-11-30, 注意11=11月</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t2</span> <span class="operator">=</span> LocalTime.of(<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>); <span class="comment">// 15:16:17</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt2</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">30</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>);</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">dt3</span> <span class="operator">=</span> LocalDateTime.of(d2, t2);</span><br><span class="line">     <span class="comment">//因为严格按照ISO 8601的格式，因此，将字符串转换为LocalDateTime就可以传入标准格式：</span></span><br><span class="line">		<span class="type">LocalDateTime</span> <span class="variable">dt</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;2019-11-19T15:16:17&quot;</span>);</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">d</span> <span class="operator">=</span> LocalDate.parse(<span class="string">&quot;2019-11-19&quot;</span>);</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">t</span> <span class="operator">=</span> LocalTime.parse(<span class="string">&quot;15:16:17&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>4、只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p>
 <p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> sylvester .atZone(ZoneId.systemDefault()) .toInstant();</span><br><span class="line"></span><br><span class="line"><span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); System.out.println(legacyDate); <span class="comment">// Wed Dec 31 23:59:59 CET 2014</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Instant</span> <span class="variable">instant</span> <span class="operator">=</span> sylvester .atZone(ZoneId.systemDefault()) .toInstant();</span><br><span class="line"></span><br><span class="line"><span class="type">Date</span> <span class="variable">legacyDate</span> <span class="operator">=</span> Date.from(instant); </span><br><span class="line">System.out.println(legacyDate); <span class="comment">// Wed Dec 31 23:59:59 CET 2014</span></span><br></pre></td></tr></table></figure>
 
 <p>5、格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">formatter</span> <span class="operator">=</span> DateTimeFormatter .ofPattern(<span class="string">&quot;MMM dd, yyyy - HH:mm&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">parsed</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;Nov 03, 2014 - 07:13&quot;</span>, formatter); </span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> formatter.format(parsed); System.out.println(string); <span class="comment">// Nov 03, 2014 - 07:13</span></span><br></pre></td></tr></table></figure>
 
-<p><code>**和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。**</code></p>
+<p><code>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。</code></p>
 <p>6、<strong>LocalDateTime</strong>提供了对日期和时间进行加减的非常简单的链式调用：</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062329040.png" alt="image-20220606232954597"></p>
 <p>7、<strong>对日期和时间进行调整则使用</strong>withXxx()<strong>方法</strong>，例如：withHour(15)会把10:11:12变为15:11:12：</p>
@@ -491,6 +506,7 @@ mysql优化和语句</p>
 <p>调整时：withHour()</p>
 <p>调整分：withMinute()</p>
 <p>调整秒：withSecond()</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206132224289.png" alt="image-20220613222337685"></p>
 <p>8、要判断两个LocalDateTime的先后，可以使用isBefore()、isAfter()方法，对于LocalDate和LocalTime类似：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(LocalDate.now().isBefore(LocalDate.of(<span class="number">2019</span>, <span class="number">11</span>, <span class="number">19</span>)));</span><br><span class="line"></span><br><span class="line">System.out.println(LocalTime.now().isAfter(LocalTime.parse(<span class="string">&quot;08:15:00&quot;</span>)));</span><br></pre></td></tr></table></figure>
 
@@ -499,10 +515,10 @@ mysql优化和语句</p>
 <p>3、加时区两种方法：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">zbj</span> <span class="operator">=</span> ZonedDateTime.now(); </span><br><span class="line"><span class="comment">// 默认时区</span></span><br><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">zny</span> <span class="operator">=</span> ZonedDateTime.now(ZoneId.of(<span class="string">&quot;America/New_York&quot;</span>)); <span class="comment">// 用指定时区获取当前时间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//为LocalDateTime添加一个ZoneId就变成ZonedDateTime对象</span></span><br><span class="line"> <span class="type">LocalDateTime</span> <span class="variable">ldt</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">15</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>);</span><br><span class="line"> <span class="type">ZonedDateTime</span> <span class="variable">zbj</span> <span class="operator">=</span> ldt.atZone(**ZoneId**.systemDefault());</span><br><span class="line"><span class="comment">//默认时区</span></span><br><span class="line"> <span class="type">ZonedDateTime</span> <span class="variable">zny</span> <span class="operator">=</span> ldt.atZone(**ZoneId**.of(<span class="string">&quot;America/New_York&quot;</span>));</span><br></pre></td></tr></table></figure>
 
+<p>结果：</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206132229065.png" alt="image-20220613222930000"></p>
 <p>4、ZonedDateTime仍然提供了plusDays()等加减操作。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062339307.png" alt="image-20220606233904248"></p>
-<p><strong>Instant</strong>：</p>
-<p>1、计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。</p>
+<h4 id="Instant："><a href="#Instant：" class="headerlink" title="Instant："></a><strong>Instant</strong>：</h4><p>1、计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。</p>
 <p>2、这个当前时间戳在java.time中以Instant类型表示，我们用Instant.now()获取当前时间戳</p>
 <p>3、<a href="https://blog.csdn.net/corleone_4ever/article/details/104403042">Java8新特性之Instant详解</a></p>
 <p>LocalDateTime，ZoneId，Instant，ZonedDateTime和long都可以互相转换：</p>
@@ -511,7 +527,7 @@ mysql优化和语句</p>
 
 
 
-<h4 id="简单总结："><a href="#简单总结：" class="headerlink" title="简单总结："></a><strong>简单总结：</strong></h4><p>本地日期和时间：LocalDateTime，LocalDate，LocalTime；<br>带时区的日期和时间：ZonedDateTime；<br>时刻：Instant；<br>时区：ZoneId，ZoneOffset；<br>时间间隔：Duration。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a><strong>总结：</strong></h4><p>本地日期和时间：LocalDateTime，LocalDate，LocalTime；<br>带时区的日期和时间：ZonedDateTime；<br>时刻：Instant；<br>时区：ZoneId，ZoneOffset；<br>时间间隔：Duration。</p>
 <p>新的用于取代SimpleDateFormat的格式化类型DateTimeFormatter</p>
 <p>1、新API严格区分了时刻、本地日期、本地时间和带时区的日期时间，并且，对日期和时间进行运算更加方便。</p>
 <p>2、新API修正了旧API不合理的常量设计：</p>
@@ -605,7 +621,7 @@ mysql优化和语句</p>
 <p>通过 @Override, @Deprecated 等，我们能很方便的了解程序的大致结构。</p>
 <p>另外，我们也可以通过自定义 Annotation 来实现一些功能。</p>
 <p>注：框架 &#x3D; 注解 + 反射 + 设计模式</p>
-<h3 id="十一、Stream流和方法引用"><a href="#十一、Stream流和方法引用" class="headerlink" title="十一、Stream流和方法引用"></a>十一、Stream流和方法引用</h3><p><a href="https://zhuanlan.zhihu.com/p/43039062">Java8 parallelStream浅析</a>    <a href="http://c.biancheng.net/view/6805.html">使用Java 8新增的Stream操作Collection集合 </a>  <a href="https://blog.csdn.net/Al_assad/article/details/82356845">JDK8 Stream </a>  </p>
+<h3 id="重理解：Stream流和方法引用"><a href="#重理解：Stream流和方法引用" class="headerlink" title="重理解：Stream流和方法引用"></a>重理解：Stream流和方法引用</h3><p><a href="https://zhuanlan.zhihu.com/p/43039062">Java8 parallelStream浅析</a>    <a href="http://c.biancheng.net/view/6805.html">使用Java 8新增的Stream操作Collection集合 </a>  <a href="https://blog.csdn.net/Al_assad/article/details/82356845">JDK8 Stream </a>  </p>
 <ul>
 <li><p><strong>stream()</strong> − 为集合创建串行流。</p>
 </li>
