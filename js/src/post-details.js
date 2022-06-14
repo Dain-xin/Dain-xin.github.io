@@ -72,7 +72,10 @@ $(document).ready(function () {
   // TOC item animation navigate & prevent #item selector in adress bar.
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
+    <!-- targetSelector 解析UTF8的问题 ->
     var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+    <!-- 添加下面这行代码, 重新解析 URL ->
+    targetSelector = decodeURI(this.getAttribute('href'))
     var offset = $(targetSelector).offset().top;
 
     hasVelocity ?
@@ -84,6 +87,7 @@ $(document).ready(function () {
         scrollTop: offset
       }, 500);
   });
+
 
   // Expand sidebar on post detail page by default, when post has a toc.
   var $tocContent = $('.post-toc-content');
