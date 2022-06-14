@@ -48,6 +48,24 @@
       </tags>
   </entry>
   <entry>
+    <title>常量池理解</title>
+    <url>/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见类的使用</title>
+    <url>/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E7%B1%BB%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JDK1.9特性</title>
     <url>/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h1 id="JDK9"><a href="#JDK9" class="headerlink" title="JDK9"></a>JDK9</h1><p>最主要的变化是已经实现的模块化系统</p>
