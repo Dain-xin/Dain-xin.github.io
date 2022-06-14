@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Dain," />
+  <meta name="keywords" content="blog" />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta name="description" content="JDK9最主要的变化是已经实现的模块化系统    1 模块系统    2 REPL (JShell)   3 改进的 Javadoc   4 多版本兼容 JAR 包   5 集合工厂方法   6 私有接口方法   7 进程 API   8 Stream API   9 try-with-resources   10 @Deprecated   11 内部类的钻石操作符(Diamond Operat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《活着》">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/06/02/Begin/01-%E6%B4%BB%E7%9D%80/index.html">
+<meta property="og:title" content="JDK1.9特性">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:description" content="JDK9最主要的变化是已经实现的模块化系统    1 模块系统    2 REPL (JShell)   3 改进的 Javadoc   4 多版本兼容 JAR 包   5 集合工厂方法   6 私有接口方法   7 进程 API   8 Stream API   9 try-with-resources   10 @Deprecated   11 内部类的钻石操作符(Diamond Operat">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-06-02T12:44:06.000Z">
-<meta property="article:modified_time" content="2022-06-07T02:14:21.802Z">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206140939265.jpeg">
+<meta property="article:published_time" content="2022-06-14T00:26:52.000Z">
+<meta property="article:modified_time" content="2022-06-14T01:42:29.638Z">
 <meta property="article:author" content="代家鑫">
-<meta property="article:tag" content="Dain">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206140939265.jpeg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/02/Begin/01-活着/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/14/JAVA/基础/JDK1.9特性/"/>
 
 
 
 
 
-  <title>《活着》 | Dain的博客</title>
+  <title>JDK1.9特性 | Dain的博客</title>
   
 
 
@@ -299,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/02/Begin/01-%E6%B4%BB%E7%9D%80/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -316,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">《活着》</h2>
+          <h2 class="post-title" itemprop="name headline">JDK1.9特性</h2>
         
 
         <div class="post-meta">
@@ -328,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-02T20:44:06+08:00">
-                2022-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-14T08:26:52+08:00">
+                2022-06-14
               </time>
             
 			
@@ -346,12 +348,45 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-07T10:14:21+08:00">
-                2022-06-07
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-14T09:42:29+08:00">
+                2022-06-14
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -374,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  9
+                  1.7k
                 </span>
               
 
@@ -390,7 +425,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  7
                 </span>
               
             </div>
@@ -411,18 +446,136 @@
       
 
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3e406799ee52c8341cd4f22e8deb089c955003c104d1e031f3c39a3a8e033262">cbad8857a5ef55510a0f5570c6d1870aa9e0b74135ae45e0afdacec36a933a0fb9aa008da29a7199cfbf4be21a836d1c0af58dc178ecaea68e3acbfcd8b843d2d1ff19f41a0ba684d11f1357a85228003133008304d186cf3ee59d6c858ae6b339b0f83ebce456e86e402033c7a809a2b80ae93d62a5e3a04fdacd1c16ea8479fc21020f1c07326c1ce7bd92de7c1bc5a7099cd2cbec55fcc15ef49e06fe7469994f4c5d8008730764056a90da7da1853036244cb969940cf74f41b2417136ee504388426999a5c5ff9690254ddaa5d2cb34873b400af098d69f0d3d4d586f240a8b1aca19c6aa4650b87e9fcdeab4885736a7be98220bb4dbab790f5fbd9299c3bad22c66257b342994df25669a429176600e6b7c859033685747cb06e53aa80ae87543d40b3324914a9abe1cd405b8465a5f976a8bdadf90dcc9ed8d060c363e8fb0b759f7b26b44bc3e9fbb6528d45fc82bcfb2478ec8fba77308514c0c97f43d2d093e9aadef5d36be1b22a4f9d7eb858b639b8de21708876e851c407f1d2b20df8aab0412b26c0c4d9f2d83c79e63fa3a3dd53d18737af1c2ddb055b9e61a968bd7f262667958de982cd6f52e7c8e9295f2df59ee2eb1cb3c904b60f29c266898e4e60db3f24d89e4d866982f67afd64b7ffdb8bc57bb2dded13012d7becea9095b54390fd8e2c802438c2840faf60541a79afc9d9466860b1dc17fd89c11c5c5920b5a87720937757d6f1b58b2a034ce86a3cd45b01749c9db65f24a9819ed2b7e231037ab86f64859a38dd35c0293b706352c4f9d55dc821dd24eb88d52e492a6f18bcdc7189f0aa8e1e1795793e7c3b70858357af73a3fea2e7d6b0668b7a0a908b02f76a55f9b2b8ba15e20d82b1b452f1e97defee55803050516432bd96680a42e62a81de600728c9021d885021edaf3c4e3eb31a472d4c1f263a532b0d15ee9da1046672522af06a8d8dfb57e9509d83f4527e95a460480e6326081613bf306315819e54dcf846a6eaf4faddc842ed8231f1a446fdeadab85696d0523e0039147777f64fd21d79b7e21e36ef36b353c85d878d2ffc207481b0885ba96d1cbcfbf6a10eae5aed4e90c0f73c961b1638ee9689181789dc28030f4f377cfc8a385e667e555d512223e71eac042b2d257ddf48d1c0f3f0dfa59afdbd0b669544de1ac32cfde206f4bfe10f62cf7ab2489710f75287d6ad4f95ef7aeb460911d073dd6295f410b9c584d06924fdcbe916cd5a978bab71293b997790fcfe57b2737a0d740fc8b2e1cfdfc498a77c2662cb429637290ce06d8a2fd713e6f7e6433a1721c72854af2c635cb16047836a0a71978799ae682c64f3dced721d039350575b166d1131acc61ed3ac0036165932fb9608aed242134add025f4c70976e0872344ae276a69512f7c7942ab448f693c70cfdd3532e5a64e10d1cae0e2cf6a22317d20a3786edb61cd407d332d0a7aff0f184b6c20edbc736cb5426464a9e1926f556ce0acd83e009c8e7e19756f9fe2fcc887c4b42e68ba532296d64b4f94034c540c7520df80a7533ced830fd863ffe256d308f2273ed314a82a9f91f509472b3a356120e79a47964fcec0e5eb3a426c44568c527c79b22a3f52b7f07894cbade0bb5b45c0b323420207c1511962ac1595a236477d7bd74a2b3e028de286843ac4258ca054f3ca66a319049ce22dc285655c397d1a5520338033edbf8ee50ecee76e0289edb1bd16c48d7396df5ecd2e21c90d1ede47826cf907a16a56aea1e35a183a151bf95175fee30fedf9c59f852e950128c65efe130ea13b48f0ee51c416cd991b9f5e23df5912f09b5a3f78ebb1446bf9d1864c4f5a0f3c3b1d94beeb3a67782f49df05a439c9628f824788ad343d236850695621295f96a6b947fb4c01ba21a2c5fa4f82529a3b56d9401530200102bbe48211628d8ce9487e426e963623d9aa1ac6a3e6971b9e8a662d84f8b4446049e10c82a6d74947a75dbbb192c2a1a2d524dd41af36f7d19499b4b1f59005516d0044b0708400f321fa19af61404d3ccc9542f5499a446386bded33fc2835d471d6fa25f45164624fa9d54165481e76aaebc2d135878afa1c9281e74c95e617cc55f292ea07ee623c1ed91e50e59cf56376b795c9d4b74be633695c65ab19d23aada5a6349172ff7fca511c36dc286c350a5a86b915b30238e542a313f9b090b3563ef601fc3d944cfe80a6508453c3f0f82617a392a049d359387f6e868da12a7b5b2691403521b75225b4b5f3e9507c9aee0e5f710d36f32ea0dad412077cd164b947b24c766fab749252beb6099394fb6ad02a1245e0ecffa61368743ab808f52b9d0782ffac546dde9584b8f4cad319b04315ed641b9c3d0392ad44f13efedaf6681d2e16cc6939d8309304bda06fd32d8e95e65e4243237e4e9703ecd88bd8780c0a08e6f635797424f42bac0db36670697a3de5b81320b132f7a1c45d436fa8c5adbd2dcbf4f8051679de529b4359122466566a77ccdfdc937bb14938aee99cf582e3ee59de</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <h1 id="JDK9"><a href="#JDK9" class="headerlink" title="JDK9"></a>JDK9</h1><p>最主要的变化是已经实现的模块化系统</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-module-system.html">模块系统</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-repl.html">REPL (JShell)</a></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-improved-javadocs.html">改进的 Javadoc</a></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-multirelease-jar.html">多版本兼容 JAR 包</a></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-collection-factory-methods.html">集合工厂方法</a></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-private-interface-methods.html">私有接口方法</a></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-process-api-improvements.html">进程 API</a></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-stream-api-improvements.html">Stream API</a></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-try-with-resources-improvement.html">try-with-resources</a></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-enhanced-deprecated-annotation.html">@Deprecated</a></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-inner-class-diamond-operator.html">内部类的钻石操作符(Diamond Operator)</a></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-optional-class-improvements.html">Optional 类</a></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-multiresolution-image_api.html">多分辨率图像 API</a></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java9-completablefuture-api-improvements.html">CompletableFuture API</a></td>
+</tr>
+</tbody></table>
+<h1 id="模块化系统"><a href="#模块化系统" class="headerlink" title="模块化系统"></a>模块化系统</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347112501#:~:text=%EF%BC%89%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E8%AF%B4%E6%B3%95%E6%98%AF%EF%BC%9A%E6%A8%A1%E5%9D%97%3D%E4%BB%A3%E7%A0%81%2B%E6%95%B0%E6%8D%AE%E3%80%82,Java9%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9B%AE%E6%A0%87%E6%98%AF%E6%94%AF%E6%8C%81Java%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B%E3%80%82">JDK9模块化知识和规则入门 - 知乎 (zhihu.com)</a></p>
+<p>模块是代码、数据和资源的集合。它是一组相关的包和类型（类、抽象类、接口等），包含代码、数据文件和一些静态资源。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206140939265.jpeg" alt="img"></p>
+<p>Java9模块系统的主要目标是支持Java中的模块化编程。</p>
+<p>在Java8和更早的应用程序中，顶级组件是包 <strong>package</strong> 。它将一组相关类型放入一个组中。它还包含一组资源。</p>
+<p>java9应用程序与java8没有太大区别；它引入了一个新组件 <strong>module</strong> ，用于将一组相关的包放入一个组中。</p>
+<p>同时还介绍了另一个新组件：模块描述符module-info.java</p>
+<p>注：Java8应用程序将包作为顶级组件，Java9应用程序将模块作为顶级组件。</p>
+<h1 id="集合工厂方法"><a href="#集合工厂方法" class="headerlink" title="集合工厂方法"></a>集合工厂方法</h1><p>List，Set 和 Map 接口中，新的静态工厂方法可以创建这些集合的不可变实例。</p>
+<p>理解：</p>
+<p>1、源码理解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;E&gt; List&lt;E&gt; <span class="title function_">of</span><span class="params">(E e1, E e2, E e3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;E&gt; Set&lt;E&gt; <span class="title function_">of</span><span class="params">(E e1, E e2, E e3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;K,V&gt; Map&lt;K,V&gt; <span class="title function_">of</span><span class="params">(K k1, V v1, K k2, V v2, K k3, V v3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;K,V&gt; Map&lt;K,V&gt; <span class="title function_">ofEntries</span><span class="params">(Map.Entry&lt;? extends K,? extends V&gt;... entries)</span></span><br><span class="line"><span class="comment">//实例</span></span><br><span class="line">Set&lt;String&gt; set = Set.of(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);      </span><br><span class="line">System.out.println(set);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = List.of(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);</span><br><span class="line">System.out.println(list);</span><br><span class="line"></span><br><span class="line">Map&lt;String, String&gt; map = Map.of(<span class="string">&quot;A&quot;</span>,<span class="string">&quot;Apple&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;Boy&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;Cat&quot;</span>);</span><br><span class="line">System.out.println(map);</span><br><span class="line"></span><br><span class="line">Map&lt;String, String&gt; map1 = Map.ofEntries (</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;A&quot;</span>,<span class="string">&quot;Apple&quot;</span>),</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;B&quot;</span>,<span class="string">&quot;Boy&quot;</span>),</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;C&quot;</span>,<span class="string">&quot;Cat&quot;</span>));</span><br><span class="line">System.out.println(map1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2、方法理解:</p>
+<ol>
+<li>不可变就是不能改变List的add、remove方法都不能使用；</li>
+<li>否则会报错，java.lang.UnsupportedOperationException(不支持请求操作)——抛出的RuntimeException的子类</li>
+</ol>
+<h1 id="私有接口方法"><a href="#私有接口方法" class="headerlink" title="私有接口方法"></a>私有接口方法</h1><p>在接口中使用private私有方法。我们可以使用 private 访问修饰符在接口中编写私有方法。</p>
+<p>理解：</p>
+<p>1、在 Java 9 中，一个接口中能定义如下几种变量&#x2F;方法：</p>
+<ul>
+<li>常量（8）</li>
+<li>抽象方法（8）</li>
+<li>默认方法（8）</li>
+<li>静态方法（8）</li>
+<li>私有方法</li>
+<li>私有静态方法</li>
+</ul>
+<p>2、接口中的私有方法作用：<strong>可以被默认方法调用（这就体现了私有方法的存在意义）</strong></p>
+<blockquote>
+<p>用来解决两个默认方法之间重复代码的问题。</p>
+<p>但是这个共有方法不应该让实现类使用，应该私有化。</p>
+</blockquote>
+<h1 id="补充Optional类"><a href="#补充Optional类" class="headerlink" title="补充Optional类"></a>补充Optional类</h1><p>Optional 类在 Java 8 中引入，Optional 类的引入很好的解决空指针异常。。在 java 9 中, 添加了三个方法来改进它的功能：</p>
+<ul>
+<li>stream()</li>
+<li>ifPresentOrElse()</li>
+<li>or()</li>
+</ul>
+<h2 id="stream-方法"><a href="#stream-方法" class="headerlink" title="stream() 方法"></a>stream() 方法</h2><p>stream 方法的作用就是将 Optional 转为一个 Stream，如果该 Optional 中包含值，那么就返回包含这个值的 Stream，否则返回一个空的 Stream（Stream.empty()）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.java_2_advanced.JDK9Test;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OptionTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;Optional&lt;String&gt;&gt; list = Arrays.asList (</span><br><span class="line">                Optional.empty(),</span><br><span class="line">                Optional.of(<span class="string">&quot;A&quot;</span>),</span><br><span class="line">                Optional.empty(),</span><br><span class="line">                Optional.of(<span class="string">&quot;B&quot;</span>));</span><br><span class="line">        list.forEach(s-&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果 optional 为非空，则过滤列表以打印非空值，获取流中的值，否则返回空</span></span><br><span class="line">        List&lt;String&gt; filteredList = list.stream()</span><br><span class="line">                .flatMap(o -&gt; o.isPresent() ? Stream.of(o.get()) : Stream.empty())</span><br><span class="line">                .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果数据存在或不存在，可选::stream 方法将返回一个元素或零元素的流</span></span><br><span class="line">        List&lt;String&gt; filteredListJava9 = list.stream()</span><br><span class="line">                .flatMap(Optional::stream)</span><br><span class="line">                .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        System.out.println(filteredList);</span><br><span class="line">        System.out.println(filteredListJava9);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ifPresentOrElse-方法"><a href="#ifPresentOrElse-方法" class="headerlink" title="ifPresentOrElse() 方法"></a>ifPresentOrElse() 方法</h2><p><strong>语法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">ifPresentOrElse</span><span class="params">(Consumer&lt;? <span class="built_in">super</span> T&gt; action, Runnable emptyAction)</span></span><br></pre></td></tr></table></figure>
+
+<p>ifPresentOrElse 方法的改进就是有了 else，接受两个参数 Consumer 和 Runnable。</p>
+<blockquote>
+<p>ifPresentOrElse 方法的用途是，如果一个 Optional 包含值，则对其包含的值调用函数 action，即 action.accept(value)，这与 ifPresent 一致；</p>
+<p>与 ifPresent 方法的区别在于，ifPresentOrElse 还有第二个参数 emptyAction —— 如果 Optional 不包含值，那么 ifPresentOrElse 便会调用 emptyAction，即 emptyAction.run()。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tester</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      Optional&lt;Integer&gt; optional = Optional.of(<span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">      optional.ifPresentOrElse( x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x),() -&gt; </span><br><span class="line">         System.out.println(<span class="string">&quot;Not Present.&quot;</span>));</span><br><span class="line"> </span><br><span class="line">      optional = Optional.empty();</span><br><span class="line"> </span><br><span class="line">      optional.ifPresentOrElse( x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x),() -&gt; </span><br><span class="line">         System.out.println(<span class="string">&quot;Not Present.&quot;</span>));</span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Or方法</p>
+<p><strong>语法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Optional&lt;T&gt; <span class="title function_">or</span><span class="params">(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt; supplier)</span></span><br></pre></td></tr></table></figure>
+
+<p>如果值存在，返回 Optional 指定的值，否则返回一个预设的值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> Optional&lt;String&gt; optional1 = Optional.of(<span class="string">&quot;djx&quot;</span>);</span><br><span class="line">        Supplier&lt;Optional&lt;String&gt;&gt; supplierString = () -&gt; Optional.of(<span class="string">&quot;不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">        optional1 = optional1.or(supplierString);</span><br><span class="line">        optional1.ifPresent(x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x));</span><br><span class="line">        </span><br><span class="line">        optional1 = Optional.empty();</span><br><span class="line">        optional1 = optional1.or(supplierString);</span><br><span class="line">        optional1.ifPresent(x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x));</span><br><span class="line"><span class="comment">//Value: djx</span></span><br><span class="line"><span class="comment">//Value: 不存在</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="新的进程API"><a href="#新的进程API" class="headerlink" title="新的进程API"></a>新的进程API</h1><p>在 Java 9 之前，Process API 仍然缺乏对使用本地进程的基本支持，例如获取进程的 PID 和所有者，进程的开始时间，进程使用了多少 CPU 时间，多少本地进程正在运行等。</p>
+<p>Java 9 向 Process API 添加了一个名为 ProcessHandle 的接口来增强 java.lang.Process 类。</p>
+<p>ProcessHandle 接口的实例标识一个本地进程，它允许查询进程状态并管理进程。</p>
+<p>ProcessHandle 嵌套接口 Info 来让开发者逃离时常因为要获取一个本地进程的 PID 而不得不使用本地代码的窘境。</p>
+<p>我们不能在接口中提供方法实现。如果我们要提供抽象方法和非抽象方法（方法与实现）的组合，那么我们就得使用抽象类。</p>
+<p>ProcessHandle 接口中声明的 onExit() 方法可用于在某个进程终止时触发某些操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">      <span class="type">ProcessBuilder</span> <span class="variable">pb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ProcessBuilder</span>(<span class="string">&quot;notepad.exe&quot;</span>);</span><br><span class="line">      <span class="type">String</span> <span class="variable">np</span> <span class="operator">=</span> <span class="string">&quot;Not Present&quot;</span>;</span><br><span class="line">      <span class="type">Process</span> <span class="variable">p</span> <span class="operator">=</span> pb.start();</span><br><span class="line">      ProcessHandle.<span class="type">Info</span> <span class="variable">info</span> <span class="operator">=</span> p.info();</span><br><span class="line">      System.out.printf(<span class="string">&quot;Process ID : %s%n&quot;</span>, p.pid());</span><br><span class="line">      System.out.printf(<span class="string">&quot;Command name : %s%n&quot;</span>, info.command().orElse(np));</span><br><span class="line">      System.out.printf(<span class="string">&quot;Command line : %s%n&quot;</span>, info.commandLine().orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;Start time: %s%n&quot;</span>,</span><br><span class="line">         info.startInstant().map(i -&gt; i.atZone(ZoneId.systemDefault())</span><br><span class="line">         .toLocalDateTime().toString()).orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;Arguments : %s%n&quot;</span>,</span><br><span class="line">         info.arguments().map(a -&gt; Stream.of(a).collect(</span><br><span class="line">         Collectors.joining(<span class="string">&quot; &quot;</span>))).orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;User : %s%n&quot;</span>, info.user().orElse(np));</span><br><span class="line">   &#125; </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Process ID : 5800</span></span><br><span class="line"><span class="comment">Command name : C:\Windows\System32\notepad.exe</span></span><br><span class="line"><span class="comment">Command line : Not Present</span></span><br><span class="line"><span class="comment">Start time: 2022-06-04T21:35:03.626</span></span><br><span class="line"><span class="comment">Arguments : Not Present</span></span><br><span class="line"><span class="comment">User: administrator</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -437,12 +590,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Dain/" rel="tag"># Dain</a>
-          
-        </div>
-      
 
       
       
@@ -452,8 +599,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/05/29/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Alibab%E4%BA%91%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/" rel="next" title="阿里云服务部署使用说明">
-                <i class="fa fa-chevron-left"></i> 阿里云服务部署使用说明
+              <a href="/2022/06/07/JAVA/Spring/%E5%9F%BA%E7%A1%80/" rel="next" title="Spring基础">
+                <i class="fa fa-chevron-left"></i> Spring基础
               </a>
             
           </div>
@@ -461,10 +608,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/" rel="prev" title="HashMap、HashTable、ConcurrentHashMap理解">
-                HashMap、HashTable、ConcurrentHashMap理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,8 +662,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -623,6 +775,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9"><span class="nav-number">1.</span> <span class="nav-text">JDK9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">模块化系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">集合工厂方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">私有接口方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85Optional%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">补充Optional类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stream-%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">stream() 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ifPresentOrElse-%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">ifPresentOrElse() 方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E7%9A%84%E8%BF%9B%E7%A8%8BAPI"><span class="nav-number">6.</span> <span class="nav-text">新的进程API</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

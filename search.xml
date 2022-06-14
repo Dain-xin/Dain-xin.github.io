@@ -21,14 +21,16 @@
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 准备英语四级</li>
 <li><input checked="" disabled="" type="checkbox"> 博客可以被百度引擎索引到</li>
+<li><input disabled="" type="checkbox"> 优化搜索框被遮挡</li>
 <li><input disabled="" type="checkbox"> 完成复习基础知识和面试题</li>
-<li><input disabled="" type="checkbox"> 同步自己的OneNode的学习笔记</li>
+<li><input disabled="" type="checkbox"> 同步自己的OneNode的基础和高级的学习笔记</li>
 <li><input disabled="" type="checkbox"> SpringCloud 以及 Netflix、Alibaba 的组件学习</li>
 <li><input disabled="" type="checkbox"> JVM原理和调优方式</li>
 <li><input disabled="" type="checkbox"> mysql优化和语句</li>
 <li><input disabled="" type="checkbox"> 毕设项目回顾（课件为主，了解各个组件作用和解决了什么问题）</li>
 <li><input disabled="" type="checkbox"> 论文第一部分完善好</li>
 </ul>
+<p>6.14</p>
 </blockquote>
 <h1 id="2022生活记录"><a href="#2022生活记录" class="headerlink" title="2022生活记录"></a>2022生活记录</h1><blockquote>
 <p>&#x3D;&#x3D;<strong>不要画大饼，能搞多少就搞多少</strong>&#x3D;&#x3D;</p>
@@ -44,6 +46,144 @@
       <tags>
         <tag>Dain</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JDK1.9特性</title>
+    <url>/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="JDK9"><a href="#JDK9" class="headerlink" title="JDK9"></a>JDK9</h1><p>最主要的变化是已经实现的模块化系统</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center"><a href="https://www.runoob.com/java/java9-module-system.html">模块系统</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-repl.html">REPL (JShell)</a></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-improved-javadocs.html">改进的 Javadoc</a></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-multirelease-jar.html">多版本兼容 JAR 包</a></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-collection-factory-methods.html">集合工厂方法</a></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-private-interface-methods.html">私有接口方法</a></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-process-api-improvements.html">进程 API</a></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-stream-api-improvements.html">Stream API</a></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-try-with-resources-improvement.html">try-with-resources</a></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-enhanced-deprecated-annotation.html">@Deprecated</a></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-inner-class-diamond-operator.html">内部类的钻石操作符(Diamond Operator)</a></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-optional-class-improvements.html">Optional 类</a></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-multiresolution-image_api.html">多分辨率图像 API</a></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center"><a href="https://www.runoob.com/java/java9-completablefuture-api-improvements.html">CompletableFuture API</a></td>
+</tr>
+</tbody></table>
+<h1 id="模块化系统"><a href="#模块化系统" class="headerlink" title="模块化系统"></a>模块化系统</h1><p><a href="https://zhuanlan.zhihu.com/p/347112501#:~:text=%EF%BC%89%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E8%AF%B4%E6%B3%95%E6%98%AF%EF%BC%9A%E6%A8%A1%E5%9D%97%3D%E4%BB%A3%E7%A0%81%2B%E6%95%B0%E6%8D%AE%E3%80%82,Java9%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9B%AE%E6%A0%87%E6%98%AF%E6%94%AF%E6%8C%81Java%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B%E3%80%82">JDK9模块化知识和规则入门 - 知乎 (zhihu.com)</a></p>
+<p>模块是代码、数据和资源的集合。它是一组相关的包和类型（类、抽象类、接口等），包含代码、数据文件和一些静态资源。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206140939265.jpeg" alt="img"></p>
+<p>Java9模块系统的主要目标是支持Java中的模块化编程。</p>
+<p>在Java8和更早的应用程序中，顶级组件是包 <strong>package</strong> 。它将一组相关类型放入一个组中。它还包含一组资源。</p>
+<p>java9应用程序与java8没有太大区别；它引入了一个新组件 <strong>module</strong> ，用于将一组相关的包放入一个组中。</p>
+<p>同时还介绍了另一个新组件：模块描述符module-info.java</p>
+<p>注：Java8应用程序将包作为顶级组件，Java9应用程序将模块作为顶级组件。</p>
+<h1 id="集合工厂方法"><a href="#集合工厂方法" class="headerlink" title="集合工厂方法"></a>集合工厂方法</h1><p>List，Set 和 Map 接口中，新的静态工厂方法可以创建这些集合的不可变实例。</p>
+<p>理解：</p>
+<p>1、源码理解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;E&gt; List&lt;E&gt; <span class="title function_">of</span><span class="params">(E e1, E e2, E e3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;E&gt; Set&lt;E&gt; <span class="title function_">of</span><span class="params">(E e1, E e2, E e3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;K,V&gt; Map&lt;K,V&gt; <span class="title function_">of</span><span class="params">(K k1, V v1, K k2, V v2, K k3, V v3)</span>;</span><br><span class="line"><span class="keyword">static</span> &lt;K,V&gt; Map&lt;K,V&gt; <span class="title function_">ofEntries</span><span class="params">(Map.Entry&lt;? extends K,? extends V&gt;... entries)</span></span><br><span class="line"><span class="comment">//实例</span></span><br><span class="line">Set&lt;String&gt; set = Set.of(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);      </span><br><span class="line">System.out.println(set);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = List.of(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);</span><br><span class="line">System.out.println(list);</span><br><span class="line"></span><br><span class="line">Map&lt;String, String&gt; map = Map.of(<span class="string">&quot;A&quot;</span>,<span class="string">&quot;Apple&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;Boy&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;Cat&quot;</span>);</span><br><span class="line">System.out.println(map);</span><br><span class="line"></span><br><span class="line">Map&lt;String, String&gt; map1 = Map.ofEntries (</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;A&quot;</span>,<span class="string">&quot;Apple&quot;</span>),</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;B&quot;</span>,<span class="string">&quot;Boy&quot;</span>),</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbstractMap</span>.SimpleEntry&lt;&gt;(<span class="string">&quot;C&quot;</span>,<span class="string">&quot;Cat&quot;</span>));</span><br><span class="line">System.out.println(map1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2、方法理解:</p>
+<ol>
+<li>不可变就是不能改变List的add、remove方法都不能使用；</li>
+<li>否则会报错，java.lang.UnsupportedOperationException(不支持请求操作)——抛出的RuntimeException的子类</li>
+</ol>
+<h1 id="私有接口方法"><a href="#私有接口方法" class="headerlink" title="私有接口方法"></a>私有接口方法</h1><p>在接口中使用private私有方法。我们可以使用 private 访问修饰符在接口中编写私有方法。</p>
+<p>理解：</p>
+<p>1、在 Java 9 中，一个接口中能定义如下几种变量&#x2F;方法：</p>
+<ul>
+<li>常量（8）</li>
+<li>抽象方法（8）</li>
+<li>默认方法（8）</li>
+<li>静态方法（8）</li>
+<li>私有方法</li>
+<li>私有静态方法</li>
+</ul>
+<p>2、接口中的私有方法作用：<strong>可以被默认方法调用（这就体现了私有方法的存在意义）</strong></p>
+<blockquote>
+<p>用来解决两个默认方法之间重复代码的问题。</p>
+<p>但是这个共有方法不应该让实现类使用，应该私有化。</p>
+</blockquote>
+<h1 id="补充Optional类"><a href="#补充Optional类" class="headerlink" title="补充Optional类"></a>补充Optional类</h1><p>Optional 类在 Java 8 中引入，Optional 类的引入很好的解决空指针异常。。在 java 9 中, 添加了三个方法来改进它的功能：</p>
+<ul>
+<li>stream()</li>
+<li>ifPresentOrElse()</li>
+<li>or()</li>
+</ul>
+<h2 id="stream-方法"><a href="#stream-方法" class="headerlink" title="stream() 方法"></a>stream() 方法</h2><p>stream 方法的作用就是将 Optional 转为一个 Stream，如果该 Optional 中包含值，那么就返回包含这个值的 Stream，否则返回一个空的 Stream（Stream.empty()）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.java_2_advanced.JDK9Test;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OptionTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;Optional&lt;String&gt;&gt; list = Arrays.asList (</span><br><span class="line">                Optional.empty(),</span><br><span class="line">                Optional.of(<span class="string">&quot;A&quot;</span>),</span><br><span class="line">                Optional.empty(),</span><br><span class="line">                Optional.of(<span class="string">&quot;B&quot;</span>));</span><br><span class="line">        list.forEach(s-&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果 optional 为非空，则过滤列表以打印非空值，获取流中的值，否则返回空</span></span><br><span class="line">        List&lt;String&gt; filteredList = list.stream()</span><br><span class="line">                .flatMap(o -&gt; o.isPresent() ? Stream.of(o.get()) : Stream.empty())</span><br><span class="line">                .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果数据存在或不存在，可选::stream 方法将返回一个元素或零元素的流</span></span><br><span class="line">        List&lt;String&gt; filteredListJava9 = list.stream()</span><br><span class="line">                .flatMap(Optional::stream)</span><br><span class="line">                .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        System.out.println(filteredList);</span><br><span class="line">        System.out.println(filteredListJava9);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ifPresentOrElse-方法"><a href="#ifPresentOrElse-方法" class="headerlink" title="ifPresentOrElse() 方法"></a>ifPresentOrElse() 方法</h2><p><strong>语法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">ifPresentOrElse</span><span class="params">(Consumer&lt;? <span class="built_in">super</span> T&gt; action, Runnable emptyAction)</span></span><br></pre></td></tr></table></figure>
+
+<p>ifPresentOrElse 方法的改进就是有了 else，接受两个参数 Consumer 和 Runnable。</p>
+<blockquote>
+<p>ifPresentOrElse 方法的用途是，如果一个 Optional 包含值，则对其包含的值调用函数 action，即 action.accept(value)，这与 ifPresent 一致；</p>
+<p>与 ifPresent 方法的区别在于，ifPresentOrElse 还有第二个参数 emptyAction —— 如果 Optional 不包含值，那么 ifPresentOrElse 便会调用 emptyAction，即 emptyAction.run()。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tester</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      Optional&lt;Integer&gt; optional = Optional.of(<span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">      optional.ifPresentOrElse( x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x),() -&gt; </span><br><span class="line">         System.out.println(<span class="string">&quot;Not Present.&quot;</span>));</span><br><span class="line"> </span><br><span class="line">      optional = Optional.empty();</span><br><span class="line"> </span><br><span class="line">      optional.ifPresentOrElse( x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x),() -&gt; </span><br><span class="line">         System.out.println(<span class="string">&quot;Not Present.&quot;</span>));</span><br><span class="line">   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Or方法</p>
+<p><strong>语法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Optional&lt;T&gt; <span class="title function_">or</span><span class="params">(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt; supplier)</span></span><br></pre></td></tr></table></figure>
+
+<p>如果值存在，返回 Optional 指定的值，否则返回一个预设的值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> Optional&lt;String&gt; optional1 = Optional.of(<span class="string">&quot;djx&quot;</span>);</span><br><span class="line">        Supplier&lt;Optional&lt;String&gt;&gt; supplierString = () -&gt; Optional.of(<span class="string">&quot;不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">        optional1 = optional1.or(supplierString);</span><br><span class="line">        optional1.ifPresent(x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x));</span><br><span class="line">        </span><br><span class="line">        optional1 = Optional.empty();</span><br><span class="line">        optional1 = optional1.or(supplierString);</span><br><span class="line">        optional1.ifPresent(x -&gt; System.out.println(<span class="string">&quot;Value: &quot;</span> + x));</span><br><span class="line"><span class="comment">//Value: djx</span></span><br><span class="line"><span class="comment">//Value: 不存在</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="新的进程API"><a href="#新的进程API" class="headerlink" title="新的进程API"></a>新的进程API</h1><p>在 Java 9 之前，Process API 仍然缺乏对使用本地进程的基本支持，例如获取进程的 PID 和所有者，进程的开始时间，进程使用了多少 CPU 时间，多少本地进程正在运行等。</p>
+<p>Java 9 向 Process API 添加了一个名为 ProcessHandle 的接口来增强 java.lang.Process 类。</p>
+<p>ProcessHandle 接口的实例标识一个本地进程，它允许查询进程状态并管理进程。</p>
+<p>ProcessHandle 嵌套接口 Info 来让开发者逃离时常因为要获取一个本地进程的 PID 而不得不使用本地代码的窘境。</p>
+<p>我们不能在接口中提供方法实现。如果我们要提供抽象方法和非抽象方法（方法与实现）的组合，那么我们就得使用抽象类。</p>
+<p>ProcessHandle 接口中声明的 onExit() 方法可用于在某个进程终止时触发某些操作。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">      <span class="type">ProcessBuilder</span> <span class="variable">pb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ProcessBuilder</span>(<span class="string">&quot;notepad.exe&quot;</span>);</span><br><span class="line">      <span class="type">String</span> <span class="variable">np</span> <span class="operator">=</span> <span class="string">&quot;Not Present&quot;</span>;</span><br><span class="line">      <span class="type">Process</span> <span class="variable">p</span> <span class="operator">=</span> pb.start();</span><br><span class="line">      ProcessHandle.<span class="type">Info</span> <span class="variable">info</span> <span class="operator">=</span> p.info();</span><br><span class="line">      System.out.printf(<span class="string">&quot;Process ID : %s%n&quot;</span>, p.pid());</span><br><span class="line">      System.out.printf(<span class="string">&quot;Command name : %s%n&quot;</span>, info.command().orElse(np));</span><br><span class="line">      System.out.printf(<span class="string">&quot;Command line : %s%n&quot;</span>, info.commandLine().orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;Start time: %s%n&quot;</span>,</span><br><span class="line">         info.startInstant().map(i -&gt; i.atZone(ZoneId.systemDefault())</span><br><span class="line">         .toLocalDateTime().toString()).orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;Arguments : %s%n&quot;</span>,</span><br><span class="line">         info.arguments().map(a -&gt; Stream.of(a).collect(</span><br><span class="line">         Collectors.joining(<span class="string">&quot; &quot;</span>))).orElse(np));</span><br><span class="line"> </span><br><span class="line">      System.out.printf(<span class="string">&quot;User : %s%n&quot;</span>, info.user().orElse(np));</span><br><span class="line">   &#125; </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Process ID : 5800</span></span><br><span class="line"><span class="comment">Command name : C:\Windows\System32\notepad.exe</span></span><br><span class="line"><span class="comment">Command line : Not Present</span></span><br><span class="line"><span class="comment">Start time: 2022-06-04T21:35:03.626</span></span><br><span class="line"><span class="comment">Arguments : Not Present</span></span><br><span class="line"><span class="comment">User: administrator</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
+      </categories>
   </entry>
   <entry>
     <title>Spring基础</title>
@@ -342,6 +482,8 @@
 <p>代码如下:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Optional&lt;String&gt; optional = Optional.of(<span class="string">&quot;bam&quot;</span>);</span><br><span class="line"></span><br><span class="line">optional.isPresent(); <span class="comment">// true </span></span><br><span class="line">optional.get(); <span class="comment">// &quot;bam&quot; </span></span><br><span class="line">optional.orElse(<span class="string">&quot;fallback&quot;</span>); <span class="comment">// &quot;bam&quot;</span></span><br><span class="line"></span><br><span class="line">optional.ifPresent((s) -&gt; System.out.println(s.charAt(<span class="number">0</span>))); <span class="comment">// &quot;b&quot;</span></span><br></pre></td></tr></table></figure>
 
+
+
 <h4 id="x3D-x3D"><a href="#x3D-x3D" class="headerlink" title="&#x3D;&#x3D;"></a>&#x3D;&#x3D;</h4><h4 id="Stream接口（流式编程）"><a href="#Stream接口（流式编程）" class="headerlink" title="Stream接口（流式编程）"></a><strong>Stream接口</strong>（流式编程）</h4><p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
 <p>首先看看Stream是怎么用，首先创建实例代码的用到的数据List：</p>
 <p>代码如下:</p>
@@ -521,9 +663,11 @@
 <h4 id="Instant："><a href="#Instant：" class="headerlink" title="Instant："></a><strong>Instant</strong>：</h4><p>1、计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。</p>
 <p>2、这个当前时间戳在java.time中以Instant类型表示，我们用Instant.now()获取当前时间戳</p>
 <p>3、<a href="https://blog.csdn.net/corleone_4ever/article/details/104403042">Java8新特性之Instant详解</a></p>
+<p>4、一个是以秒为单位的时间戳，一个是更精确的纳秒精度。它和<code>System.currentTimeMillis()</code>返回的<code>long</code>相比，只是多了更高精度的纳秒。</p>
+<p>5、<code>Instant</code>就是时间戳，那么，给它附加上一个时区，就可以创建出<code>ZonedDateTime</code>：</p>
 <p>LocalDateTime，ZoneId，Instant，ZonedDateTime和long都可以互相转换：</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206062340308.png" alt="image-20220606231904807"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	转换的时候，只需要留意long类型以毫秒还是秒为单位即可。</span></span><br><span class="line"><span class="comment">	Instant表示高精度时间戳，</span></span><br><span class="line"><span class="comment">	它可以和ZonedDateTime以及long互相转换。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Instant ins=Instant.ofEpochSecond(<span class="number">0</span>);</span><br><span class="line">ZonedDateTime zdt=ins.atZone(ZoneId.systemDefault());</span><br><span class="line">DateTimeFormatter dateTimeFormatter=dtf.ofPattern(<span class="string">&quot;yyyy-MM-ddmm:hh:ss&quot;</span>);</span><br><span class="line">String format=dateTimeFormatter.format(zdt);</span><br><span class="line">System.out.println(format);</span><br><span class="line"><span class="comment">//1970-01-0100:08:00</span></span><br><span class="line">System.out.println(zdt);</span><br><span class="line"><span class="comment">//2019-09-16T01:32:40+08:00[Asia/Shanghai]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	转换的时候，只需要留意long类型以毫秒还是秒为单位即可。</span></span><br><span class="line"><span class="comment">	Instant表示高精度时间戳，它可以和ZonedDateTime以及long互相转换。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Instant ins=Instant.ofEpochSecond(<span class="number">0</span>);</span><br><span class="line">ZonedDateTime zdt=ins.atZone(ZoneId.systemDefault());</span><br><span class="line">DateTimeFormatter dateTimeFormatter=dtf.ofPattern(<span class="string">&quot;yyyy-MM-ddmm:hh:ss&quot;</span>);</span><br><span class="line">String format=dateTimeFormatter.format(zdt);</span><br><span class="line">System.out.println(format);</span><br><span class="line"><span class="comment">//1970-01-0100:08:00</span></span><br><span class="line">System.out.println(zdt);</span><br><span class="line"><span class="comment">//2019-09-16T01:32:40+08:00[Asia/Shanghai]</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -532,13 +676,13 @@
 <p>1、新API严格区分了时刻、本地日期、本地时间和带时区的日期时间，并且，对日期和时间进行运算更加方便。</p>
 <p>2、新API修正了旧API不合理的常量设计：</p>
 <ul>
-<li>Month的范围用1<del>12表示1月到12月；Week的范围用1</del>7表示周一到周日。</li>
+<li>Month的范围用1~12表示1月到12月；</li>
+<li>Week的范围用1~7表示周一到周日。</li>
 </ul>
 <p>例如：</p>
 <p><code>2019-10-31减去1个月得到的结果是2019-09-30 </code></p>
 <h3 id="十、Annotation-注解"><a href="#十、Annotation-注解" class="headerlink" title="十、Annotation 注解"></a>十、Annotation 注解</h3><p><a href="https://www.runoob.com/w3cnote/java-annotation.html">Java 注解（Annotation）</a> </p>
-<p>1、Java 标注，是 JDK5.0 引入的一种注释机制。</p>
-<p>Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。 当然它也支持自定义 Java 标注。</p>
+<h4 id="1、Java-标注，是-JDK5-0-引入的一种注释机制。"><a href="#1、Java-标注，是-JDK5-0-引入的一种注释机制。" class="headerlink" title="1、Java 标注，是 JDK5.0 引入的一种注释机制。"></a>1、Java 标注，是 JDK5.0 引入的一种注释机制。</h4><p>Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。 当然它也支持自定义 Java 标注。</p>
 <p>Java 定义了一套注解，共有 7 个，3 个在 <strong>java.lang</strong> 中，剩下 4 个在 <strong>java.lang.annotation</strong> 中。</p>
 <p><strong>作用在代码的注解是</strong></p>
 <ul>
@@ -559,8 +703,7 @@
 <li>@FunctionalInterface     - Java 8 开始支持，标识一个匿名函数或函数式接口。</li>
 <li>@Repeatable - Java     8 开始支持，标识某注解可以在同一个声明上使用多次。</li>
 </ul>
-<p>2、Annotion框架</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070027655.png" alt="image-20220607002752583"></p>
+<h4 id="2、Annotion框架"><a href="#2、Annotion框架" class="headerlink" title="2、Annotion框架"></a>2、Annotion框架</h4><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206070027655.png" alt="image-20220607002752583"></p>
 <p><strong>组成部分：</strong></p>
 <p><strong>(01) Annotation 就是个接口。</strong></p>
 <p>“每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联，并且与 “1～n 个 ElementType” 关联。可以通俗的理解为：每 1 个 Annotation 对象，都会有唯一的 RetentionPolicy 属性；至于 ElementType 属性，则有 1~n 个。</p>
@@ -581,32 +724,27 @@
 <p><strong>(03) RetentionPolicy 是 Enum 枚举类型，它用来指定 Annotation 的策略。通俗点说，就是不同 RetentionPolicy 类型的 Annotation 的作用域不同。</strong></p>
 <p>“每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联。</p>
 <ul>
-<li>a) 若 Annotation     的类型为 SOURCE，则意味着：Annotation 仅存在于编译器处理期间，编译器处理完之后，该 Annotation 就没用了。     例如，” @Override” 标志就是一个     Annotation。当它修饰一个方法的时候，就意味着该方法覆盖父类的方法；并且在编译期间会进行语法检查！编译器处理完后，”@Override”     就没有任何作用了。</li>
-<li>b) 若 Annotation     的类型为 CLASS，则意味着：编译器将 Annotation 存储于类对应的 .class 文件中，它是 Annotation 的默认行为。</li>
-<li>c) 若 Annotation     的类型为 RUNTIME，则意味着：编译器将 Annotation 存储于 class 文件中，并且可由JVM读入。</li>
+<li>若 Annotation     的类型为 SOURCE，则意味着：Annotation 仅存在于编译器处理期间，编译器处理完之后，该 Annotation 就没用了。     例如，” @Override” 标志就是一个     Annotation。当它修饰一个方法的时候，就意味着该方法覆盖父类的方法；并且在编译期间会进行语法检查！编译器处理完后，”@Override”     就没有任何作用了。</li>
+<li>若 Annotation     的类型为 CLASS，则意味着：编译器将 Annotation 存储于类对应的 .class 文件中，它是 Annotation 的默认行为。</li>
+<li>若 Annotation     的类型为 RUNTIME，则意味着：编译器将 Annotation 存储于 class 文件中，并且可由JVM读入。</li>
 </ul>
 <p>这时，只需要记住”每 1 个 Annotation” 都与 “1 个 RetentionPolicy” 关联，并且与 “1～n 个 ElementType” 关联。</p>
 <p>eg：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SOURCE,       <span class="comment">/* Annotation**信息仅存在于编译器处理期间，编译器处理完之后就没有该**Annotation**信息了*  **/</span></span><br><span class="line">CLASS,       <span class="comment">/** 编译器将**Annotation**存储于类对应的**.class**文件中。默认行为*  **/</span></span><br><span class="line">RUNTIME       <span class="comment">/* *编译器将**Annotation**存储于**class**文件中，并且可由**JVM**读入* **/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"> <span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"> <span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation1 &#123;</span><br><span class="line"> &#125;<span class="comment">// </span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"> <span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"> <span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation1 &#123;</span><br><span class="line"> &#125;<span class="comment">// </span></span><br></pre></td></tr></table></figure>
 
 <p>理解：</p>
-<p><strong>(01) @interface</strong></p>
-<p>使用 @interface 定义注解时，意味着它实现了 java.lang.annotation.Annotation 接口，即该注解就是一个Annotation。</p>
+<h5 id="interface"><a href="#interface" class="headerlink" title="@interface"></a><strong>@interface</strong></h5><p>使用 @interface 定义注解时，意味着它实现了 java.lang.annotation.Annotation 接口，即该注解就是一个Annotation。</p>
 <p>定义 Annotation 时，@interface 是必须的。</p>
 <p>注意：它和我们通常的 implemented 实现接口的方法不同。Annotation 接口的实现细节都由编译器完成。通过 @interface 定义注解后，该注解不能继承其他的注解或接口。</p>
-<p><strong>(02) @Documented</strong></p>
-<p>类和方法的 Annotation 在缺省情况下是不出现在 javadoc 中的。如果使用 @Documented 修饰该 Annotation，则表示它可以出现在 javadoc 中。</p>
+<h5 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h5><p>类和方法的 Annotation 在缺省情况下是不出现在 javadoc 中的。如果使用 @Documented 修饰该 Annotation，则表示它可以出现在 javadoc 中。</p>
 <p>定义 Annotation 时，@Documented 可有可无；若没有定义，则 Annotation 不会出现在 javadoc 中。</p>
-<p><strong>(03) @Target(ElementType.TYPE)</strong></p>
-<p>前面我们说过，ElementType 是 Annotation 的类型属性。而 @Target 的作用，就是来指定 Annotation 的类型属性。</p>
+<h5 id="Target-ElementType-TYPE"><a href="#Target-ElementType-TYPE" class="headerlink" title="@Target(ElementType.TYPE)"></a><strong>@Target(ElementType.TYPE)</strong></h5><p>前面我们说过，ElementType 是 Annotation 的类型属性。而 @Target 的作用，就是来指定 Annotation 的类型属性。</p>
 <p>@Target(ElementType.TYPE) 的意思就是指定该 Annotation 的类型是 ElementType.TYPE。这就意味着，MyAnnotation1 是来修饰”类、接口（包括注释类型）或枚举声明”的注解。</p>
 <p>定义 Annotation 时，@Target 可有可无。若有 @Target，则该 Annotation 只能用于它所指定的地方；若没有 @Target，则该 Annotation 可以用于任何地方。</p>
-<p><strong>(04) @Retention(RetentionPolicy.RUNTIME)</strong></p>
-<p>前面我们说过，RetentionPolicy 是 Annotation 的策略属性，而 @Retention 的作用，就是指定 Annotation 的策略属性。</p>
+<h5 id="Retention-RetentionPolicy-RUNTIME"><a href="#Retention-RetentionPolicy-RUNTIME" class="headerlink" title="@Retention(RetentionPolicy.RUNTIME)"></a><strong>@Retention(RetentionPolicy.RUNTIME)</strong></h5><p>前面我们说过，RetentionPolicy 是 Annotation 的策略属性，而 @Retention 的作用，就是指定 Annotation 的策略属性。</p>
 <p>@Retention(RetentionPolicy.RUNTIME) 的意思就是指定该 Annotation 的策略是 RetentionPolicy.RUNTIME。这就意味着，编译器会将该 Annotation 信息保留在 .class 文件中，并且能被虚拟机读取。</p>
 <p>定义 Annotation 时，@Retention 可有可无。若没有 @Retention，则默认是 RetentionPolicy.CLASS。</p>
-<p>3、Annotation作用</p>
-<p>Annotation 是一个辅助类，它在 Junit、Struts、Spring 等工具框架中被广泛使用。</p>
+<h4 id="3、Annotation作用"><a href="#3、Annotation作用" class="headerlink" title="3、Annotation作用"></a>3、Annotation作用</h4><p>Annotation 是一个辅助类，它在 Junit、Struts、Spring 等工具框架中被广泛使用。</p>
 <p><strong>1）编译检查</strong></p>
 <p>Annotation 具有”让编译器进行编译检查的作用”。</p>
 <p>例如，@SuppressWarnings, @Deprecated 和 @Override 都具有编译检查作用。</p>
@@ -621,20 +759,20 @@
 <p>通过 @Override, @Deprecated 等，我们能很方便的了解程序的大致结构。</p>
 <p>另外，我们也可以通过自定义 Annotation 来实现一些功能。</p>
 <p>注：框架 &#x3D; 注解 + 反射 + 设计模式</p>
-<h3 id="重理解：Stream流和方法引用"><a href="#重理解：Stream流和方法引用" class="headerlink" title="重理解：Stream流和方法引用"></a>重理解：Stream流和方法引用</h3><p><a href="https://zhuanlan.zhihu.com/p/43039062">Java8 parallelStream浅析</a>    <a href="http://c.biancheng.net/view/6805.html">使用Java 8新增的Stream操作Collection集合 </a>  <a href="https://blog.csdn.net/Al_assad/article/details/82356845">JDK8 Stream </a>  </p>
+<h3 id="重理解：Stream流和方法引用"><a href="#重理解：Stream流和方法引用" class="headerlink" title="重理解：Stream流和方法引用"></a>重理解：Stream流和方法引用</h3><p><a href="https://zhuanlan.zhihu.com/p/43039062">Java8 parallelStream浅析</a>    </p>
+<p><a href="http://c.biancheng.net/view/6805.html">使用Java 8新增的Stream操作Collection集合 </a> </p>
+<p><a href="https://blog.csdn.net/Al_assad/article/details/82356845">JDK8 Stream </a>  </p>
 <ul>
-<li><p><strong>stream()</strong> − 为集合创建串行流。</p>
-</li>
-<li><p><strong>parallelStream()</strong> − 为集合创建并行流。</p>
-</li>
-<li><ol>
+<li><strong>stream()</strong> − 为集合创建串行流。</li>
+<li><strong>parallelStream()</strong> − 为集合创建并行流。</li>
+</ul>
+<p><strong>理解：</strong></p>
+<ol>
 <li><strong>sream顺序输出，而parallelStream 无序输出；parallelStream      执行耗时是 stream 的五分之一。</strong></li>
 <li><strong>parallelStream 获得的相对较好的执行性能，但是如果cpu紧张，不会带来性能的优化，因为要频发的线程切换。</strong></li>
 <li><strong>stream.parallel.forEach()中执行的操作并非线程安全。</strong></li>
 <li><strong>如果需要线程安全，可以把集合转换为同步集合，即：Collections.synchronizedList(new ArrayList&lt;&gt;())。</strong></li>
 </ol>
-</li>
-</ul>
 <p>1、Stream便容易想到I&#x2F;O Stream，在Java 8中，得益于Lambda所带来的函数式编程，引入了一个全新的Stream概念，用于解决已有集合类库既有的弊端。</p>
 <p>2、传统的集合遍历是顺序遍历，一个<strong>迭代器对象只能便利一次</strong>。所有用Stream流优化。</p>
 <p>步骤：</p>
@@ -645,17 +783,18 @@
 <p>4、获取数据流：java.util.stream.Stream 是Java 8新加入的</p>
 <h4 id="最常用的流接口"><a href="#最常用的流接口" class="headerlink" title="最常用的流接口"></a>最常用的流接口</h4><p>a、<strong>所有的 Collection 集合都可以通过 stream 默认方法获取流：</strong> </p>
 <p><strong>Collection</strong>接口中有default方法Stream（）获取流（所有子类都有该方法）。</p>
-<p>Stream stream &#x3D; list.stream()</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Stream stream = list.stream()</span><br></pre></td></tr></table></figure>
+
 <p>b、Stream 接口的<strong>静态方法 of</strong> 可以获取数组对应的流。 </p>
-<p>Stream stream &#x3D; Stream.of(array);</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Stream stream = Stream.of(array);</span><br></pre></td></tr></table></figure>
+
 <p>c、**Map接口 **K-V的数据结构，获取流要分开（key、value、entry）。</p>
-<p>Stream keyStream &#x3D; map.keySet().stream(); </p>
-<p>Stream valueStream &#x3D; map.values().stream(); </p>
-<p>Stream&lt;Map.Entry&gt; entryStream &#x3D; map.entrySet().stream();</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Stream</span> <span class="variable">keyStream</span> <span class="operator">=</span> map.keySet().stream(); </span><br><span class="line"></span><br><span class="line"><span class="type">Stream</span> <span class="variable">valueStream</span> <span class="operator">=</span> map.values().stream(); </span><br><span class="line"></span><br><span class="line">Stream&lt;Map.Entry&gt; entryStream = map.entrySet().stream();</span><br></pre></td></tr></table></figure>
+
 <h4 id="流方法："><a href="#流方法：" class="headerlink" title="流方法："></a><strong>流方法</strong>：</h4><p>Stream 提供了大量的方法进行聚集操作。</p>
 <ul>
-<li>中间方法：中间操作允许流保持打开状态，并允许直接调用后续方法。上面程序中的     map() 方法就是中间方法。中间方法的返回值是另外一个流。</li>
-<li>末端方法：末端方法是对流的最终操作。当对某个     Stream 执行末端方法后，该流将会被“消耗”且不再可用。上面程序中的 sum()、count()、average() 等方法都是末端方法。</li>
+<li>中间方法：中间操作允许流保持打开状态，并允许直接调用后续方法。上面程序中的map() 方法就是中间方法。中间方法的返回值是另外一个流。</li>
+<li>末端方法：末端方法是对流的最终操作。当对某个 Stream 执行末端方法后，该流将会被“消耗”且不再可用。上面程序中的 sum()、count()、average() 等方法都是末端方法。</li>
 </ul>
 <p>流的方法还有如下两个特征。</p>
 <ul>
@@ -675,7 +814,7 @@
 </tr>
 <tr>
 <td align="center"><strong>mapToXxx</strong>(ToXxxFunction mapper)  map（Function mapper）：映射</td>
-<td><strong>使用 ToXxxFunction  对流中的元素执行一对一的转换，该方法返回的新流中包含了 ToXxxFunction 转换生成的所有元素。</strong>  <strong>当前流<strong><strong>T</strong></strong>类型转化为<strong><strong>R</strong></strong>类型</strong></td>
+<td><strong>使用 ToXxxFunction  对流中的元素执行一对一的转换，该方法返回的新流中包含了 ToXxxFunction 转换生成的所有元素。</strong>  当前流T类型转化为R类型</td>
 </tr>
 <tr>
 <td align="center">peek(Consumer  action)</td>
@@ -754,11 +893,11 @@
 <td>返回流中的任意一个元素</td>
 </tr>
 </tbody></table>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Random</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>(); </span><br><span class="line"><span class="comment">//只要是个排序，遍历输出</span></span><br><span class="line">random.ints().limit(<span class="number">10</span>).sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; strings = Arrays.asList(<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;bc&quot;</span>, <span class="string">&quot;efg&quot;</span>, <span class="string">&quot;abcd&quot;</span>,<span class="string">&quot;&quot;</span>, <span class="string">&quot;jkl&quot;</span>);</span><br><span class="line"> <span class="comment">// 获取空字符串的数量 </span></span><br><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line"></span><br><span class="line"><span class="type">Stream</span> <span class="variable">streamOne</span> <span class="operator">=</span> one.stream().filter(s ‐&gt; s.length() == <span class="number">3</span>).limit(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Stream</span> <span class="variable">streamTwo</span> <span class="operator">=</span> two.stream().filter(s ‐&gt; s.startsWith(<span class="string">&quot;张&quot;</span>)).skip(<span class="number">2</span>); </span><br><span class="line"></span><br><span class="line">Stream.concat(streamOne, streamTwo).map(Person::<span class="keyword">new</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodUserTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Random</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line"><span class="comment">//只要是个排序，遍历输出</span></span><br><span class="line">        random.ints().limit(<span class="number">10</span>).sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; strings = Arrays.asList(<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;bc&quot;</span>, <span class="string">&quot;efg&quot;</span>, <span class="string">&quot;abcd&quot;</span>,<span class="string">&quot;&quot;</span>, <span class="string">&quot;jkl&quot;</span>);</span><br><span class="line">        <span class="comment">// 并行流，获取空字符串的数量</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 串行流，过滤长度3的前三个</span></span><br><span class="line">        <span class="type">Stream</span> <span class="variable">streamOne</span> <span class="operator">=</span> strings.stream().filter( s -&gt; (s.length() == <span class="number">3</span>) ).limit(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 过滤开头为张的，并且跳过前俩的</span></span><br><span class="line">        <span class="type">Stream</span> <span class="variable">streamTwo</span> <span class="operator">=</span> strings.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;张&quot;</span>)).skip(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 合并one、two 然后</span></span><br><span class="line">        Stream.concat(streamOne, streamTwo).map(s-&gt;<span class="keyword">new</span> <span class="title class_">Person2</span>((String) s)).forEach(System.out::println);</span><br><span class="line">        System.out.println(<span class="string">&quot;--------------&quot;</span>);</span><br><span class="line">        strings.stream().map(s-&gt;<span class="keyword">new</span> <span class="title class_">Person</span>(s)).forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> <span class="keyword">implements</span> <span class="title class_">Function</span>&lt;String,Person&gt; &#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Person <span class="title function_">apply</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person2</span> <span class="keyword">implements</span> <span class="title class_">Function</span>&lt;Stream, Person2&gt; &#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Person2 <span class="title function_">apply</span><span class="params">(Stream stream)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a><strong>方法引用</strong></h4><p>1、在lambda表达式基础上简化，避免冗余，其中的双冒号 :: 写法，这被称为“方法引用”，而双冒号是一种新的语法（代替lambda写法）。</p>
+<h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a><strong>方法引用</strong></h4><p>1、<strong>在lambda表达式基础上简化</strong>，避免冗余，其中的双冒号 :: 写法，这被称为“方法引用”，而双冒号是一种新的语法（代替lambda写法）。</p>
 <p>2、主要处理，操作没有在lambda进行操作，就输出，例如：：拿到参数之后经Lambda之手，继而传递给 System.out.println 方法去处理</p>
 <p>Lambda要表达的函数方案已经存在于某个方 法的实现中，那么则可以通过双冒号来引用该方法作为Lambda的替代者。</p>
 <p>用法：</p>
