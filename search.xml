@@ -21,7 +21,7 @@
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 准备英语四级</li>
 <li><input checked="" disabled="" type="checkbox"> 博客可以被百度引擎索引到</li>
-<li><input disabled="" type="checkbox"> 优化搜索框被遮挡</li>
+<li><input checked="" disabled="" type="checkbox"> 优化搜索框被遮挡和文章标题无法跳转问题</li>
 <li><input disabled="" type="checkbox"> 完成复习基础知识和面试题</li>
 <li><input disabled="" type="checkbox"> 同步自己的OneNode的基础和高级的学习笔记</li>
 <li><input disabled="" type="checkbox"> SpringCloud 以及 Netflix、Alibaba 的组件学习</li>
