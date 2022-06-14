@@ -10,9 +10,12 @@ tag:
 ## Hexo 常用命令
 
 ```bash
+//新建文件
 hexo new "new file name"
 //等于一次性执行了，清空、刷新、部署三个命令
 hexo clean && hexo g && hexo d
+//启动hexo
+hexo s
 ```
 
 ## Git 常用命令
