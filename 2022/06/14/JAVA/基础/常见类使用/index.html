@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="学习不止探索,生活不止于此">
+<meta name="description" content="Scanner类   a util包里面，解析基本类型和字符串类型的文本扫描器    b System.in  系统输入指的是通过键盘录入数据；控制台输入的数据   c Scanner  sc &#x3D; new Scanner(System.in)；调用sc的方法赋值给变量   Scanner类中：nextInt()、next()、nextLine()区别：  nextInt()：只读取整形的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见类的使用">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E7%B1%BB%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="学习不止探索,生活不止于此">
+<meta property="og:description" content="Scanner类   a util包里面，解析基本类型和字符串类型的文本扫描器    b System.in  系统输入指的是通过键盘录入数据；控制台输入的数据   c Scanner  sc &#x3D; new Scanner(System.in)；调用sc的方法赋值给变量   Scanner类中：nextInt()、next()、nextLine()区别：  nextInt()：只读取整形的">
 <meta property="og:locale">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206150956054.png">
 <meta property="article:published_time" content="2022-06-14T11:58:51.000Z">
-<meta property="article:modified_time" content="2022-06-14T13:55:25.088Z">
+<meta property="article:modified_time" content="2022-06-15T03:02:42.595Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206150956054.png">
 
 
 
@@ -346,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-14T21:55:25+08:00">
-                2022-06-14
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-15T11:02:42+08:00">
+                2022-06-15
               </time>
             
           </span>
@@ -407,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  659
                 </span>
               
 
@@ -423,7 +425,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -444,7 +446,93 @@
       
 
       
-        
+        <h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="left">util包里面，解析基本类型和字符串类型的文本扫描器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">b</td>
+<td align="left">System.in  系统输入指的是通过键盘录入数据；控制台输入的数据</td>
+</tr>
+<tr>
+<td align="center">c</td>
+<td align="left">Scanner  sc &#x3D; new Scanner(System.in)；调用sc的方法赋值给变量</td>
+</tr>
+</tbody></table>
+<p><strong>Scanner类中：nextInt()、next()、nextLine()区别：</strong></p>
+<ul>
+<li>nextInt()：只读取整形的数据，输入读取完之后，将光标放在同一行。换句话说，当我们使用该方法时，<strong>会将光标放在读取数字后面，并且是同一行</strong>。</li>
+<li>nextLine()：读取空格，直到以’\n’为标志的行尾。一旦输入读取完毕，该方法会将<strong>光标移到下一行开始的位置</strong>。吸取字符前后的空格&#x2F;Tab键，回车键截止    </li>
+<li>next()：读取输入内容直到遇到空格。它不能读取两个字符之间的空格。同时将<strong>光标放在读取输入后面，并且在同一行</strong>。不会吸取字符前&#x2F;后的空格&#x2F;Tab键，只吸取字符，开始吸取字符（字符前后不算）直到遇到空格&#x2F;Tab键&#x2F;回车截止吸取</li>
+</ul>
+<p><strong>注：因为在这样的过程中nextInt输入结束后会产生一个回车，被nextline读取，可以用next（）会过滤掉那个回车符。</strong></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th>util包里面，用于生成随机数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>b</strong></td>
+<td>public  int nextInt(int n)   返回一个伪随机数，范围在  0 （包括）和 指定值 n （不包括）之间的 int 值。</td>
+</tr>
+</tbody></table>
+<p>下面Random()的两种构造方法：<strong>生成[0,seed)区间的整数</strong></p>
+<p>　　Random()：创建一个新的随机数生成器。</p>
+<p>　　Random(long seed)：使用单个 long 种子创建一个新的随机数生成器。</p>
+<h1 id="Math类-amp-Number"><a href="#Math类-amp-Number" class="headerlink" title="Math类&amp;Number"></a>Math类&amp;Number</h1><table>
+<thead>
+<tr>
+<th align="left">包装类</th>
+<th align="left">基本数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Boolean</td>
+<td align="left">boolean</td>
+</tr>
+<tr>
+<td align="left">Byte</td>
+<td align="left">byte</td>
+</tr>
+<tr>
+<td align="left">Short</td>
+<td align="left">short</td>
+</tr>
+<tr>
+<td align="left">Integer</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">Long</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">Character</td>
+<td align="left">char</td>
+</tr>
+<tr>
+<td align="left">Float</td>
+<td align="left">float</td>
+</tr>
+<tr>
+<td align="left">Double</td>
+<td align="left">double</td>
+</tr>
+</tbody></table>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206150956054.png" alt="Java Number类"></p>
+<p>  <strong>lang</strong>包 <strong>，含有数学函数的操作方法</strong>  </p>
+<p>1.包装类型都是用final声明了，不可以被继承重写；</p>
+<p>2.Number类是java.lang包下的一个抽象类，提供了将包装类型拆箱成基本类型的方法，所有基本类型（数据类型）的包装类型都继承了该抽象类，并且是final声明不可继承改变；</p>
+<p>3、Number对象的转换其他数据类型 xxxValue方法 ；parseXxx方法把字符串转换为对应数据类型；</p>
+<h1 id="Collections类"><a href="#Collections类" class="headerlink" title="Collections类"></a><strong>Collections类</strong></h1><p><strong>注：</strong></p>
+<p>Collections 类是 Java 提供的一个操作 Set、List 和 Map 等集合的工具类。</p>
+<p><strong>Collections 类提供了许多操作集合的静态方法，借助这些静态方法可以实现</strong>集合元素的排序sort、查找、打乱<strong>s</strong>、替换和复制等操作。</p>
+
       
     </div>
     
@@ -535,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -556,7 +653,7 @@
                 <!-- <a href="/archives/%7C%7Carchive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -640,6 +737,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scanner%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">Scanner类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">Random类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math%E7%B1%BB-amp-Number"><span class="nav-number">3.</span> <span class="nav-text">Math类&amp;Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collections%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">Collections类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -666,7 +779,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">代家鑫</span>
-<span class="post-count"> | Dain博客共（44.1k字）</span>
+<span class="post-count"> | Dain博客共（46.3k字）</span>
   
   
 </div>

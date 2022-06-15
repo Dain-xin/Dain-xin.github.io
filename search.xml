@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Dain的生活</title>
+    <url>/2022/06/14/Begin/00-Dain%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="2022生活记录"><a href="#2022生活记录" class="headerlink" title="2022生活记录"></a>2022生活记录</h1><h2 id="June"><a href="#June" class="headerlink" title="June"></a>June</h2><p>6.14</p>
+<ul>
+<li>JDK1.8新特性和9的</li>
+<li>基础笔记整理</li>
+<li>融资宝数据库ER图和表数据整理、前言整理</li>
+<li>优化了hexo的搜索框被遮挡和目录无法跳转问题</li>
+<li>添加了百度索引到我的博客</li>
+</ul>
+<p>6.15</p>
+<ul>
+<li>优化hexo的bat一键部署</li>
+<li>常见类、常量池、JVM</li>
+<li></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Dain</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dain的计划</title>
     <url>/2022/05/24/Begin/00-Dain%E8%AE%A1%E5%88%92/</url>
-    <content><![CDATA[<h1 id="2022学习记录"><a href="#2022学习记录" class="headerlink" title="2022学习记录"></a>2022学习记录</h1><blockquote>
+    <content><![CDATA[<h1 id="2022规划"><a href="#2022规划" class="headerlink" title="2022规划"></a>2022规划</h1><h2 id="June"><a href="#June" class="headerlink" title="June"></a>June</h2><blockquote>
 <p>&#x3D;&#x3D;<strong>5.24</strong>&#x3D;&#x3D;</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 搭建好基本的博客框架。</li>
@@ -13,6 +35,36 @@
 <li><input checked="" disabled="" type="checkbox"> 准备好算法考试内容</li>
 <li><input checked="" disabled="" type="checkbox"> 完善Next主题的博客功能：添加浏览量，个人链接，自定义背景，自定义图标，完善阅读体验：添加高亮，添加文章结尾</li>
 </ul>
+<p>&#x3D;&#x3D;<strong>三个月的计划：不要画大饼，能搞多少就搞多少</strong>&#x3D;&#x3D;</p>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+第一阶段跑步：重启二公里习惯；练臂力   –&gt;    过渡到五公里和二十个引体向上。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+11：40开始整理今日学习内容（第二天学习方向或漏洞），日记；早睡12：00前，早起6：30，读书（回顾晚上总结的知识点），注意记录保持良好的个人习惯</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+吾日三省吾身：学而习乎，做而恒乎，手而空乎</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+私人博客、同步CSDN</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+毕业论文搞完、补充融资宝支付功能</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+添加一个新的分布式微服务项目</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+优化简历内容更加充实</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+JAVA八股文熟练</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+物色20个公司投简历，关注大厂招聘信息</p>
+</li>
+</ul>
 <p>&#x3D;&#x3D;<strong>6.1—6.20</strong>&#x3D;&#x3D;</p>
 <p>12号到家，好好规划一下停止摆烂。</p>
 <p>融资宝的项目（添加微信支付宝支付的沙箱功能（选其一），添加新的登录功能（如果不好搞就了解一下大致操作过程））</p>
@@ -20,32 +72,77 @@
 <p>手头的视频有空可以看看</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 准备英语四级</li>
-<li><input checked="" disabled="" type="checkbox"> 博客可以被百度引擎索引到</li>
-<li><input checked="" disabled="" type="checkbox"> 优化搜索框被遮挡和文章标题无法跳转问题</li>
+<li><input checked="" disabled="" type="checkbox"> 博客百度索引、优化搜索框被遮挡、文章标题无法跳转问题、优化hexo的bat一键部署</li>
 <li><input disabled="" type="checkbox"> 完成复习基础知识和面试题</li>
 <li><input disabled="" type="checkbox"> 同步自己的OneNode的基础和高级的学习笔记</li>
 <li><input disabled="" type="checkbox"> SpringCloud 以及 Netflix、Alibaba 的组件学习</li>
 <li><input disabled="" type="checkbox"> JVM原理和调优方式</li>
 <li><input disabled="" type="checkbox"> mysql优化和语句</li>
 <li><input disabled="" type="checkbox"> 毕设项目回顾（课件为主，了解各个组件作用和解决了什么问题）</li>
-<li><input disabled="" type="checkbox"> 论文第一部分完善好</li>
-</ul>
-<p>6.14</p>
-</blockquote>
-<h1 id="2022生活记录"><a href="#2022生活记录" class="headerlink" title="2022生活记录"></a>2022生活记录</h1><blockquote>
-<p>&#x3D;&#x3D;<strong>不要画大饼，能搞多少就搞多少</strong>&#x3D;&#x3D;</p>
-<p>&#x3D;&#x3D;<strong>三个月计划</strong>&#x3D;&#x3D;</p>
-<p>六月份放假前要培养的习惯：（开启时间6.13，记录方式华为运动）</p>
-<ul>
-<li><input disabled="" type="checkbox"> 第一阶段跑步：重启二公里习惯；练臂力。</li>
-<li><input disabled="" type="checkbox"> 11：40开始整理今日学习内容（第二天学习方向或漏洞），日记；早睡12：00前，早起6：30，读书（回顾晚上总结的知识点），注意记录保持良好的个人习惯</li>
-<li><input disabled="" type="checkbox"> 吾日三省吾身：学而习乎，做而恒乎，手而空乎</li>
+<li><input disabled="" type="checkbox"> 论文总体设计前面的完善好</li>
 </ul>
 </blockquote>
 ]]></content>
       <tags>
         <tag>Dain</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Spring底层理解</title>
+    <url>/2022/06/15/JAVA/Spring/Spring%E5%BA%95%E5%B1%82%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206152205158.png" alt="spring"></p>
+<p>理解：Spring运行思想</p>
+<p>首先基本思路就是：配置、初始化、运行。</p>
+<p>配置阶段：就是Spring使用，配饰web.xml，设定配置文件路径，配置服务层，控制层，参数，请求路径的注解。</p>
+<p>初始化阶段：继承HttpServlet重写dopost、doget、和init方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">LOCATION</span> <span class="operator">=</span> <span class="string">&quot;contextConfigLocation&quot;</span>;</span><br><span class="line"><span class="comment">//保存Spring主配置文件</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">Properties</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line"><span class="comment">//缓存保存的类名</span></span><br><span class="line"><span class="keyword">private</span> List&lt;String&gt; classNames = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"><span class="comment">//存储Bean的IoC容器声明</span></span><br><span class="line"><span class="keyword">private</span> Map&lt;String, Object&gt; ioc = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, Object&gt;();</span><br><span class="line"><span class="comment">//保存所有的Url和方法的映射关系 --- 缓存url的对应关系</span></span><br><span class="line"><span class="keyword">private</span> List&lt;Handler&gt; handlerMapping = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Handler&gt;();</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>加载配置文件。通过输入流读取配置文件，加载到主配置文件中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1、加载配置文件</span></span><br><span class="line">doLoadConfig(config.getInitParameter(LOCATION));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">doLoadConfig</span><span class="params">(String location)</span> &#123;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fis = <span class="built_in">this</span>.getClass().getClassLoader().getResourceAsStream(location);</span><br><span class="line">            <span class="comment">//1、读取配置文件</span></span><br><span class="line">            p.load(fis);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="literal">null</span> != fis) &#123;</span><br><span class="line">                    fis.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>扫描包中的所有的类。将保存在主配置文件中的数据递归遍历，将得到的classnames文件名保存起来。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//2、扫描所有相关的类</span></span><br><span class="line">doScanner(p.getProperty(<span class="string">&quot;scanPackage&quot;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 递归扫描出所有Class文件</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> packageName</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">doScanner</span><span class="params">(String packageName)</span> &#123;</span><br><span class="line">        <span class="comment">//将所有的包路径转换为文件路径</span></span><br><span class="line">        <span class="type">URL</span> <span class="variable">url</span> <span class="operator">=</span> <span class="built_in">this</span>.getClass().getClassLoader().getResource(<span class="string">&quot;/&quot;</span> + packageName.replaceAll(<span class="string">&quot;\\.&quot;</span>, <span class="string">&quot;/&quot;</span>));</span><br><span class="line">        <span class="type">File</span> <span class="variable">dir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(url.getFile());</span><br><span class="line">        <span class="keyword">for</span> (File file : dir.listFiles()) &#123;</span><br><span class="line">            <span class="comment">//如果是文件夹，继续递归</span></span><br><span class="line">            <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">                doScanner(packageName + <span class="string">&quot;.&quot;</span> + file.getName());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                classNames.add(packageName + <span class="string">&quot;.&quot;</span> + file.getName().replace(<span class="string">&quot;.class&quot;</span>, <span class="string">&quot;&quot;</span>).trim());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>初始化所有相关类的实例，并保存到IOC容器中。将得到的classnames文件名反射，将带有注解的的类，处理变成符合开发条件的命名规则，然后进行实例化，保存在ioc的map类型的集合中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//3、初始化所有相关类的实例，并保存到IOC容器中</span></span><br><span class="line">doInstance();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">doInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (classNames.size() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (String className : classNames) &#123;</span><br><span class="line">                Class&lt;?&gt; clazz = Class.forName(className);</span><br><span class="line">                <span class="keyword">if</span> (clazz.isAnnotationPresent(GPController.class)) &#123;</span><br><span class="line">                    <span class="comment">//默认将首字母小写作为beanName</span></span><br><span class="line">                    <span class="type">String</span> <span class="variable">beanName</span> <span class="operator">=</span> lowerFirst(clazz.getSimpleName());</span><br><span class="line">                    ioc.put(beanName, clazz.newInstance());</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (clazz.isAnnotationPresent(GPService.class)) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="type">GPService</span> <span class="variable">service</span> <span class="operator">=</span> clazz.getAnnotation(GPService.class);</span><br><span class="line">                    <span class="type">String</span> <span class="variable">beanName</span> <span class="operator">=</span> service.value();</span><br><span class="line">                    <span class="comment">//如果用户设置了名字，就用用户自己设置</span></span><br><span class="line">                    <span class="keyword">if</span> (!<span class="string">&quot;&quot;</span>.equals(beanName.trim())) &#123;</span><br><span class="line">                        ioc.put(beanName, clazz.newInstance());</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//如果自己没设，就按接口类型创建一个实例</span></span><br><span class="line">                    Class&lt;?&gt;[] interfaces = clazz.getInterfaces();</span><br><span class="line">                    <span class="keyword">for</span> (Class&lt;?&gt; i : interfaces) &#123;</span><br><span class="line">                        ioc.put(i.getName(), clazz.newInstance());</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>依赖注入DI。将上一步ioc集合实例对象拿到全部的属性，遍历对象进行注入。反射可以访问类私有属性。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//4、依赖注入</span></span><br><span class="line">doAutowired();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">doAutowired</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (ioc.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Entry&lt;String, Object&gt; entry : ioc.entrySet()) &#123;</span><br><span class="line">            <span class="comment">//拿到实例对象中的所有属性</span></span><br><span class="line">            Field[] fields = entry.getValue().getClass().getDeclaredFields();</span><br><span class="line">            <span class="keyword">for</span> (Field field : fields) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (!field.isAnnotationPresent(GPAutowired.class)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="type">GPAutowired</span> <span class="variable">autowired</span> <span class="operator">=</span> field.getAnnotation(GPAutowired.class);</span><br><span class="line">                <span class="type">String</span> <span class="variable">beanName</span> <span class="operator">=</span> autowired.value().trim();</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;&quot;</span>.equals(beanName)) &#123;</span><br><span class="line">                    beanName = field.getType().getName();</span><br><span class="line">                &#125;</span><br><span class="line">                field.setAccessible(<span class="literal">true</span>); <span class="comment">//设置私有属性的访问权限</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    field.set(entry.getValue(), ioc.get(beanName));</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造HandlerMapping。通过类加载器找到控制层的url路径和方法的url路径，将得到的路径初始化给handlermapping</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//5、构造HandlerMapping</span></span><br><span class="line">initHandlerMapping();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initHandlerMapping</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (ioc.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Entry&lt;String, Object&gt; entry : ioc.entrySet()) &#123;</span><br><span class="line">            Class&lt;?&gt; clazz = entry.getValue().getClass();</span><br><span class="line">            <span class="keyword">if</span> (!clazz.isAnnotationPresent(GPController.class)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="comment">//获取Controller的url配置</span></span><br><span class="line">            <span class="keyword">if</span> (clazz.isAnnotationPresent(GPRequestMapping.class)) &#123;</span><br><span class="line">                <span class="type">GPRequestMapping</span> <span class="variable">requestMapping</span> <span class="operator">=</span> clazz.getAnnotation(GPRequestMapping.class);</span><br><span class="line">                url = requestMapping.value();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取Method的url配置</span></span><br><span class="line">            Method[] methods = clazz.getMethods();</span><br><span class="line">            <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//没有加RequestMapping注解的直接忽略</span></span><br><span class="line">                <span class="keyword">if</span> (!method.isAnnotationPresent(GPRequestMapping.class)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//映射URL</span></span><br><span class="line">                <span class="type">GPRequestMapping</span> <span class="variable">requestMapping</span> <span class="operator">=</span> method.getAnnotation(GPRequestMapping.class);</span><br><span class="line">                <span class="type">String</span> <span class="variable">regex</span> <span class="operator">=</span> (<span class="string">&quot;/&quot;</span> + url + requestMapping.value()).replaceAll(<span class="string">&quot;/+&quot;</span>, <span class="string">&quot;/&quot;</span>);</span><br><span class="line">                <span class="type">Pattern</span> <span class="variable">pattern</span> <span class="operator">=</span> Pattern.compile(regex);</span><br><span class="line">                handlerMapping.add(<span class="keyword">new</span> <span class="title class_">Handler</span>(pattern, entry.getValue(), method));</span><br><span class="line">                System.out.println(<span class="string">&quot;mapping &quot;</span> + regex + <span class="string">&quot;,&quot;</span> + method);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>运行阶段：调用dopost、doget方法，根据输入的路径获取到url的数据，找到调用的方法，然后利用反射方法返回数据，将数据打印到浏览器</p>
+<p>doPost、doGet方法执行业务调用doDispatch调度方法。得到请求路径的匹配对象的参数列表，然后设置方法中的request和response对象，然后通过动态代理invke调用方法。将结果打印即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span></span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="built_in">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 执行业务处理</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            doDispatch(req, resp); <span class="comment">//开始始匹配到对应的方法</span></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">//如果匹配过程出现异常，将异常信息打印出去</span></span><br><span class="line">            resp.getWriter().write(<span class="string">&quot;500 Exception,Details:\r\n&quot;</span> + Arrays.toString(e.getStackTrace()).replaceAll(<span class="string">&quot;\\[|\\]&quot;</span>, <span class="string">&quot;&quot;</span>).replaceAll(<span class="string">&quot;,\\s&quot;</span>, <span class="string">&quot;\r\n&quot;</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 匹配URL</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> req</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> resp</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">doDispatch</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">Handler</span> <span class="variable">handler</span> <span class="operator">=</span> getHandler(req);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (handler == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">//如果没有匹配上，返回404错误</span></span><br><span class="line">                resp.getWriter().write(<span class="string">&quot;404 Not Found&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取方法的参数列表</span></span><br><span class="line">            Class&lt;?&gt;[] paramTypes = handler.method.getParameterTypes();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//保存所有需要自动赋值的参数值</span></span><br><span class="line">            Object[] paramValues = <span class="keyword">new</span> <span class="title class_">Object</span>[paramTypes.length];</span><br><span class="line"></span><br><span class="line">            Map&lt;String, String[]&gt; params = req.getParameterMap();</span><br><span class="line">            <span class="keyword">for</span> (Entry&lt;String, String[]&gt; param : params.entrySet()) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> Arrays.toString(param.getValue()).</span><br><span class="line">						replaceAll(<span class="string">&quot;\\[|\\]&quot;</span>, <span class="string">&quot;&quot;</span>).</span><br><span class="line">						replaceAll(<span class="string">&quot;,\\s&quot;</span>, <span class="string">&quot;,&quot;</span>);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//如果找到匹配的对象，则开始填充参数值</span></span><br><span class="line">                <span class="keyword">if</span> (!handler.paramIndexMapping.containsKey(param.getKey())) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//得到顺序</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> handler.paramIndexMapping.get(param.getKey());</span><br><span class="line">                paramValues[index] = convert(paramTypes[index], value);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//设置方法中的request和response对象</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">reqIndex</span> <span class="operator">=</span> handler.paramIndexMapping.get(HttpServletRequest.class.getName());</span><br><span class="line">            paramValues[reqIndex] = req;</span><br><span class="line">            <span class="type">int</span> <span class="variable">respIndex</span> <span class="operator">=</span> handler.paramIndexMapping.get(HttpServletResponse.class.getName());</span><br><span class="line">            paramValues[respIndex] = resp;</span><br><span class="line"></span><br><span class="line">            handler.method.invoke(handler.controller, paramValues);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> e;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>通过request请求参数，记录Controller中的RequestMapping和Method的对应关系——handler</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Handler <span class="title function_">getHandler</span><span class="params">(HttpServletRequest req)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="keyword">if</span> (handlerMapping.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> req.getRequestURI();</span><br><span class="line">    <span class="type">String</span> <span class="variable">contextPath</span> <span class="operator">=</span> req.getContextPath();</span><br><span class="line">    url = url.replace(contextPath, <span class="string">&quot;&quot;</span>).replaceAll(<span class="string">&quot;/+&quot;</span>, <span class="string">&quot;/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Handler handler : handlerMapping) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">Matcher</span> <span class="variable">matcher</span> <span class="operator">=</span> handler.pattern.matcher(url);</span><br><span class="line">            <span class="comment">//如果没有匹配上继续下一个匹配</span></span><br><span class="line">            <span class="keyword">if</span> (!matcher.matches()) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> handler;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> e;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> Object <span class="title function_">convert</span><span class="params">(Class&lt;?&gt; type, String value)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Integer.class == type) &#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.valueOf(value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Handler记录Controller中的RequestMapping和Method的对应关系</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Tom</span></span><br><span class="line"><span class="comment"> * 内部类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">class</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> Object controller;    <span class="comment">//保存方法对应的实例</span></span><br><span class="line">    <span class="keyword">protected</span> Method method;        <span class="comment">//保存映射的方法</span></span><br><span class="line">    <span class="keyword">protected</span> Pattern pattern;        <span class="comment">//用正则保存URL的规则</span></span><br><span class="line">    <span class="keyword">protected</span> Map&lt;String, Integer&gt; paramIndexMapping;    <span class="comment">//形式参数列表的顺序</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造一个Handler基本的参数</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> controller</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="title function_">Handler</span><span class="params">(Pattern pattern, Object controller, Method method)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.controller = controller;</span><br><span class="line">        <span class="built_in">this</span>.method = method;</span><br><span class="line">        <span class="built_in">this</span>.pattern = pattern;</span><br><span class="line"></span><br><span class="line">        paramIndexMapping = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, Integer&gt;();</span><br><span class="line">        putParamIndexMapping(method);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">putParamIndexMapping</span><span class="params">(Method method)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//提取方法中加了注解的参数</span></span><br><span class="line">        Annotation[][] pa = method.getParameterAnnotations();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; pa.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Annotation a : pa[i]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a <span class="keyword">instanceof</span> GPRequestParam) &#123;</span><br><span class="line">                    <span class="type">String</span> <span class="variable">paramName</span> <span class="operator">=</span> ((GPRequestParam) a).value();</span><br><span class="line">                    <span class="keyword">if</span> (!<span class="string">&quot;&quot;</span>.equals(paramName.trim())) &#123;</span><br><span class="line">                        paramIndexMapping.put(paramName, i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//提取方法中的request和response参数</span></span><br><span class="line">        Class&lt;?&gt;[] paramsTypes = method.getParameterTypes();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; paramsTypes.length; i++) &#123;</span><br><span class="line">            Class&lt;?&gt; type = paramsTypes[i];</span><br><span class="line">            <span class="keyword">if</span> (type == HttpServletRequest.class ||</span><br><span class="line">                    type == HttpServletResponse.class) &#123;</span><br><span class="line">                paramIndexMapping.put(type.getName(), i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>Spring</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring基础</title>
+    <url>/2022/06/15/JAVA/Spring/%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Spring实现思路：</p>
+<p>配置阶段</p>
+<p>初始化阶段</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>Spring</category>
+      </categories>
   </entry>
   <entry>
     <title>常量池理解</title>
@@ -59,7 +156,93 @@
   <entry>
     <title>常见类的使用</title>
     <url>/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E7%B1%BB%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="left">util包里面，解析基本类型和字符串类型的文本扫描器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">b</td>
+<td align="left">System.in  系统输入指的是通过键盘录入数据；控制台输入的数据</td>
+</tr>
+<tr>
+<td align="center">c</td>
+<td align="left">Scanner  sc &#x3D; new Scanner(System.in)；调用sc的方法赋值给变量</td>
+</tr>
+</tbody></table>
+<p><strong>Scanner类中：nextInt()、next()、nextLine()区别：</strong></p>
+<ul>
+<li>nextInt()：只读取整形的数据，输入读取完之后，将光标放在同一行。换句话说，当我们使用该方法时，<strong>会将光标放在读取数字后面，并且是同一行</strong>。</li>
+<li>nextLine()：读取空格，直到以’\n’为标志的行尾。一旦输入读取完毕，该方法会将<strong>光标移到下一行开始的位置</strong>。吸取字符前后的空格&#x2F;Tab键，回车键截止    </li>
+<li>next()：读取输入内容直到遇到空格。它不能读取两个字符之间的空格。同时将<strong>光标放在读取输入后面，并且在同一行</strong>。不会吸取字符前&#x2F;后的空格&#x2F;Tab键，只吸取字符，开始吸取字符（字符前后不算）直到遇到空格&#x2F;Tab键&#x2F;回车截止吸取</li>
+</ul>
+<p><strong>注：因为在这样的过程中nextInt输入结束后会产生一个回车，被nextline读取，可以用next（）会过滤掉那个回车符。</strong></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th>util包里面，用于生成随机数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>b</strong></td>
+<td>public  int nextInt(int n)   返回一个伪随机数，范围在  0 （包括）和 指定值 n （不包括）之间的 int 值。</td>
+</tr>
+</tbody></table>
+<p>下面Random()的两种构造方法：<strong>生成[0,seed)区间的整数</strong></p>
+<p>　　Random()：创建一个新的随机数生成器。</p>
+<p>　　Random(long seed)：使用单个 long 种子创建一个新的随机数生成器。</p>
+<h1 id="Math类-amp-Number"><a href="#Math类-amp-Number" class="headerlink" title="Math类&amp;Number"></a>Math类&amp;Number</h1><table>
+<thead>
+<tr>
+<th align="left">包装类</th>
+<th align="left">基本数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Boolean</td>
+<td align="left">boolean</td>
+</tr>
+<tr>
+<td align="left">Byte</td>
+<td align="left">byte</td>
+</tr>
+<tr>
+<td align="left">Short</td>
+<td align="left">short</td>
+</tr>
+<tr>
+<td align="left">Integer</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">Long</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">Character</td>
+<td align="left">char</td>
+</tr>
+<tr>
+<td align="left">Float</td>
+<td align="left">float</td>
+</tr>
+<tr>
+<td align="left">Double</td>
+<td align="left">double</td>
+</tr>
+</tbody></table>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206150956054.png" alt="Java Number类"></p>
+<p>  <strong>lang</strong>包 <strong>，含有数学函数的操作方法</strong>  </p>
+<p>1.包装类型都是用final声明了，不可以被继承重写；</p>
+<p>2.Number类是java.lang包下的一个抽象类，提供了将包装类型拆箱成基本类型的方法，所有基本类型（数据类型）的包装类型都继承了该抽象类，并且是final声明不可继承改变；</p>
+<p>3、Number对象的转换其他数据类型 xxxValue方法 ；parseXxx方法把字符串转换为对应数据类型；</p>
+<h1 id="Collections类"><a href="#Collections类" class="headerlink" title="Collections类"></a><strong>Collections类</strong></h1><p><strong>注：</strong></p>
+<p>Collections 类是 Java 提供的一个操作 Set、List 和 Map 等集合的工具类。</p>
+<p><strong>Collections 类提供了许多操作集合的静态方法，借助这些静态方法可以实现</strong>集合元素的排序sort、查找、打乱<strong>s</strong>、替换和复制等操作。</p>
+]]></content>
       <categories>
         <category>JAVA</category>
         <category>基础</category>
@@ -201,24 +384,6 @@
       <categories>
         <category>JAVA</category>
         <category>基础</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Spring基础</title>
-    <url>/2022/06/07/JAVA/Spring/%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="如何实现一个IOC容器"><a href="#如何实现一个IOC容器" class="headerlink" title="如何实现一个IOC容器?"></a>如何实现一个IOC容器?</h1><p>​		IOC(Inversion of Control),意思是控制反转，不是什么技术，而是一种设计思想，IOC意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。</p>
-<p>​		在传统的程序设计中，我们直接在对象内部通过new进行对象创建，是程序主动去创建依赖对象，而IOC是有专门的容器来进行对象的创建，即IOC容器来控制对象的创建。</p>
-<p>​		在传统的应用程序中，我们是在对象中主动控制去直接获取依赖对象，这个是正转，反转是由容器来帮忙创建及注入依赖对象，在这个过程过程中，由容器帮我们查找级注入依赖对象，对象只是被动的接受依赖对象。</p>
-<p>​		1、先准备一个基本的容器对象，包含一些map结构的集合，用来方便后续过程中存储具体的对象</p>
-<p>​		2、进行配置文件的读取工作或者注解的解析工作，将需要创建的bean对象都封装成BeanDefinition对象存储在容器中</p>
-<p>​		3、容器将封装好的BeanDefinition对象通过反射的方式进行实例化，完成对象的实例化工作</p>
-<p>​		4、进行对象的初始化操作，也就是给类中的对应属性值就行设置，也就是进行依赖注入，完成整个对象的创建，变成一个完整的bean对象，存储在容器的某个map结构中</p>
-<p>​		5、通过容器对象来获取对象，进行对象的获取和逻辑处理工作</p>
-<p>​		6、提供销毁操作，当对象不用或者容器关闭的时候，将无用的对象进行销毁</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>Spring</category>
       </categories>
   </entry>
   <entry>
@@ -1203,7 +1368,7 @@
     <title>《活着》</title>
     <url>/2022/06/02/Begin/01-%E6%B4%BB%E7%9D%80/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3e406799ee52c8341cd4f22e8deb089c955003c104d1e031f3c39a3a8e033262">cbad8857a5ef55510a0f5570c6d1870aa9e0b74135ae45e0afdacec36a933a0fb9aa008da29a7199cfbf4be21a836d1c0af58dc178ecaea68e3acbfcd8b843d2d1ff19f41a0ba684d11f1357a85228003133008304d186cf3ee59d6c858ae6b339b0f83ebce456e86e402033c7a809a2b80ae93d62a5e3a04fdacd1c16ea8479fc21020f1c07326c1ce7bd92de7c1bc5a7099cd2cbec55fcc15ef49e06fe7469994f4c5d8008730764056a90da7da1853036244cb969940cf74f41b2417136ee504388426999a5c5ff9690254ddaa5d2cb34873b400af098d69f0d3d4d586f240a8b1aca19c6aa4650b87e9fcdeab4885736a7be98220bb4dbab790f5fbd9299c3bad22c66257b342994df25669a429176600e6b7c859033685747cb06e53aa80ae87543d40b3324914a9abe1cd405b8465a5f976a8bdadf90dcc9ed8d060c363e8fb0b759f7b26b44bc3e9fbb6528d45fc82bcfb2478ec8fba77308514c0c97f43d2d093e9aadef5d36be1b22a4f9d7eb858b639b8de21708876e851c407f1d2b20df8aab0412b26c0c4d9f2d83c79e63fa3a3dd53d18737af1c2ddb055b9e61a968bd7f262667958de982cd6f52e7c8e9295f2df59ee2eb1cb3c904b60f29c266898e4e60db3f24d89e4d866982f67afd64b7ffdb8bc57bb2dded13012d7becea9095b54390fd8e2c802438c2840faf60541a79afc9d9466860b1dc17fd89c11c5c5920b5a87720937757d6f1b58b2a034ce86a3cd45b01749c9db65f24a9819ed2b7e231037ab86f64859a38dd35c0293b706352c4f9d55dc821dd24eb88d52e492a6f18bcdc7189f0aa8e1e1795793e7c3b70858357af73a3fea2e7d6b0668b7a0a908b02f76a55f9b2b8ba15e20d82b1b452f1e97defee55803050516432bd96680a42e62a81de600728c9021d885021edaf3c4e3eb31a472d4c1f263a532b0d15ee9da1046672522af06a8d8dfb57e9509d83f4527e95a460480e6326081613bf306315819e54dcf846a6eaf4faddc842ed8231f1a446fdeadab85696d0523e0039147777f64fd21d79b7e21e36ef36b353c85d878d2ffc207481b0885ba96d1cbcfbf6a10eae5aed4e90c0f73c961b1638ee9689181789dc28030f4f377cfc8a385e667e555d512223e71eac042b2d257ddf48d1c0f3f0dfa59afdbd0b669544de1ac32cfde206f4bfe10f62cf7ab2489710f75287d6ad4f95ef7aeb460911d073dd6295f410b9c584d06924fdcbe916cd5a978bab71293b997790fcfe57b2737a0d740fc8b2e1cfdfc498a77c2662cb429637290ce06d8a2fd713e6f7e6433a1721c72854af2c635cb16047836a0a71978799ae682c64f3dced721d039350575b166d1131acc61ed3ac0036165932fb9608aed242134add025f4c70976e0872344ae276a69512f7c7942ab448f693c70cfdd3532e5a64e10d1cae0e2cf6a22317d20a3786edb61cd407d332d0a7aff0f184b6c20edbc736cb5426464a9e1926f556ce0acd83e009c8e7e19756f9fe2fcc887c4b42e68ba532296d64b4f94034c540c7520df80a7533ced830fd863ffe256d308f2273ed314a82a9f91f509472b3a356120e79a47964fcec0e5eb3a426c44568c527c79b22a3f52b7f07894cbade0bb5b45c0b323420207c1511962ac1595a236477d7bd74a2b3e028de286843ac4258ca054f3ca66a319049ce22dc285655c397d1a5520338033edbf8ee50ecee76e0289edb1bd16c48d7396df5ecd2e21c90d1ede47826cf907a16a56aea1e35a183a151bf95175fee30fedf9c59f852e950128c65efe130ea13b48f0ee51c416cd991b9f5e23df5912f09b5a3f78ebb1446bf9d1864c4f5a0f3c3b1d94beeb3a67782f49df05a439c9628f824788ad343d236850695621295f96a6b947fb4c01ba21a2c5fa4f82529a3b56d9401530200102bbe48211628d8ce9487e426e963623d9aa1ac6a3e6971b9e8a662d84f8b4446049e10c82a6d74947a75dbbb192c2a1a2d524dd41af36f7d19499b4b1f59005516d0044b0708400f321fa19af61404d3ccc9542f5499a446386bded33fc2835d471d6fa25f45164624fa9d54165481e76aaebc2d135878afa1c9281e74c95e617cc55f292ea07ee623c1ed91e50e59cf56376b795c9d4b74be633695c65ab19d23aada5a6349172ff7fca511c36dc286c350a5a86b915b30238e542a313f9b090b3563ef601fc3d944cfe80a6508453c3f0f82617a392a049d359387f6e868da12a7b5b2691403521b75225b4b5f3e9507c9aee0e5f710d36f32ea0dad412077cd164b947b24c766fab749252beb6099394fb6ad02a1245e0ecffa61368743ab808f52b9d0782ffac546dde9584b8f4cad319b04315ed641b9c3d0392ad44f13efedaf6681d2e16cc6939d8309304bda06fd32d8e95e65e4243237e4e9703ecd88bd8780c0a08e6f635797424f42bac0db36670697a3de5b81320b132f7a1c45d436fa8c5adbd2dcbf4f8051679de529b4359122466566a77ccdfdc937bb14938aee99cf582e3ee59de</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="1f79495f77eef8cd07febf04ab2979ba30684a4cbb61d7a62244a2477808e6fe">cbad8857a5ef55510a0f5570c6d1870ae533b270f313a443eb8ad3b2532f92b8a169a9e0eac50fbb18e42d257d3679efbd6ba237a0ff2f57280ee57501d92c8c090205a31bde5b6b1778986ea02252a21e9511ed1847dd3f134f471366ada0eb7f188a97c2c7e67128fc0acb80718bdc4dd9a38096e7111e695a1418f2e1752b5cdeea5408dccb8b290a56ae6d2a47eef622516d870879b44f4995eb3a086a6f4e189c422ec57651ea28272af13dad466f610687c23774e9ca20014c745486494908308d734c479d7b983b3acaf5e5c8d541d92f9098d970fa9bfbd632e5a2f25033f067b2ebe467830e1351c53f0f11dc832fb65f788f1a815b5ed1395c45fe8f8b32ddb88be734c1eb9e9debde7a55dddb270511b3e591d03b217c68d9da685e03eba40e61742d11c6d7046f104f0fe8c4e530cad80d63b5777bb6999a6bdd3a0a131985643d3eabf9644b93f2f7dd1b0896c1bf9d31033050e74ac7273c0101d3852d3b1b917110262ea7385120b065556c7f542dc18a90f0691314f60837170aa734436be2ea13a28c8009c152a79e87acbd3a658ab2f5be7128dca796752937559cac6a4784d5894adc64a0afd46057324bda567c0a3d7f2e3458e5e4c658cf3ac046755e373f88939a624c93318a8bffb5461402f06d3555006743b0375a7da4a581af055d1595b928774a46935fd5069bc44480d99674a92344945cbeba10f569ac8b0a18e05c211e93c85e6daffd588fcdb4fcded4fa59271fd4aafc5a288fa4e031ac098075fbb2f672dbb0f754749c8a4fd960815008499fc2ba165b0ebbe31fead0a3c1fe1ea936c3a072e572a2649883e974f62b6af5b623738966b467caa281b284fe5d6263acae66bf35cfa02bca60405137bd72feb53934acd664761d8a9a7c757c10d294252356785cee349cc7bcde82a044725c3823abb417fcd23ca88362f76f0598292a7ee3dd37063442bdb6150f9ef3522eaf35a733011d1d654d513095509c946dce8e09c6ab325ebeafd8664f23309a826e584624554bde753078791b5ad00debe19699bade6059734e6a988d601f9015fa6918fd095c2b14970779bc6786d4c3855b755a6bf9b8c330d31ab5b85127b58fefe3bc2563ed85bce220db4b949a49edb42c35500bc425f55f2b1a7d2cc1bf41cb5256046e986b56b26c58494ee6ee4d6da111d653181746fbb568e6819d8ae83cf7577dca55b2f71322a3a061137e764b725c8bd2e0873f55e069d017a929710623ee5693834074f8c5a691affcf6f926699e205d36431b8d357d792e6074a3a7bacc2a6377ef2e9453768334e04efe6d29a696000a59f4d98e9f930f8a5a51afa384c83545d395faa79c15527b74e5f52bd8ba1cbae3cbc4f0c82d87e0be92c2a23313967d5a09a17100dd7eb3a5720a6123ce241d1725b126c07de5225d839c8c0cb084112866d1a5e860833714869117a52c26a40f309693508dfc43e0c23f0624957c305e6d48b5952f5874f892e33c2a6e9d4c7afb1eb9d0b214f2372894e4c1fc646b25bd9441eadfabe755b6083caa75a57821d13d6f8fb021f7ade6faf6601783d3893fabee5e100728c17b32fbac2ce42cd99c43f20c2a0579b5055edf185af6967e2f9f8c93cd81f47a1f31f0ec843c4c2dc4b8f34954f92324720a187899f50a609721f77dc765f8cc4ccff78aa6a1f8cceabe1cb28d62c1d4965ef76eba2995ce749c9e8e33eeced4087a9c05f9920fceb87b73a4be3c9517b13133bf5f2096dc36318f20ffab4c3fcf7f0dbd8e50ab7e6674e5d82721e1e7799d206534821f739416cf4cc47e9deb246420564a4f157fb7a80afedfe145633e59e10d9938ea7a2b34cc7d7e7fc21bcc07e898fc16fb4d31d2b26c24834ca7d913ff8fa43badfbd5d94af276f6df1c6fd8094e53f0103840705c53dce56b951b7721e63ef7a41ec1907b48c8d80718e5e212b21e2077e1a42f8a815360619ab76eaa72a96040f5c5ddc5a3b083cfc93f34446850ee183dc0aacf325206c1c5a01c39306397e0afc7003f89e96bbb0200137abe6e9df0c47c680ad835351154273f8341ceb1c03de64dede8e9a090f211390f1e1707c769d94edd45bb3ca6a8e7b4e35dffd0720151dd65eff9854ce37f3a8d24f776d46efe48ba663d880dc98da2ebd4695c5dee5699b3c59ae076e82268105ac7d90e2458da167ca66a2bd8a0db07b93c17dd1ab4c3831753f45c6e9b46b43e232bf80abccd3e91ed211856918df546d0df1b8e150e40b21dc972f042b7018acd1673c341503c09a115ef7434064ca5fce8568583d7b28194c06072348d21c6016d22c2d61290f34fd27d5463a86a670acbcefd82f5d30bc21759363584c68d5b31be3c721b0d375f02cb6146f2c8e93fd26c99b44250beee539ab7672a5cd5457ca2dfd88f8b44f6609ae099b6bebda2a081598306aabef83a9f91fa441e8ea8fedce160d428acd9b1cbf183e600f84f9f6f19ba890b9a4528e10b845679dad08c0368112a29035d5789b984eabd3c5ed46c559fac66fd6c52d92978e8793953172143d00a57416182927896266110bf64d90936f4a784aa2c6556c8f0272116e78f2c392c502de53d513c0bb663a7</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
