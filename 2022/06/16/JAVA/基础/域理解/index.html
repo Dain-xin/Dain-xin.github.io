@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="学习不止探索,生活不止于此">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dain的博客">
-<meta property="og:url" content="http://dainx-xin.github.io/archives/index.html">
+<meta name="description" content="域也称成员变量，体现了类的状态，而状态的改变由类体的方法实现。 域的定义：定义类的 静态属性。 域必须在类体中直接定义，不能包含在方法定义中。 域定义的格式如下：    [修饰符]  类型名  域名； 注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合； ​    public、p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA域">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="学习不止探索,生活不止于此">
+<meta property="og:description" content="域也称成员变量，体现了类的状态，而状态的改变由类体的方法实现。 域的定义：定义类的 静态属性。 域必须在类体中直接定义，不能包含在方法定义中。 域定义的格式如下：    [修饰符]  类型名  域名； 注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合； ​    public、p">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-06-16T02:52:37.000Z">
+<meta property="article:modified_time" content="2022-06-16T02:47:30.774Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/archives/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/16/JAVA/基础/域理解/"/>
 
 
 
 
 
-  <title>归档 | Dain的博客</title>
+  <title>JAVA域 | Dain的博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a target="_blank" rel="noopener" href="https://github.com/Dain-xin" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -283,411 +285,261 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="代家鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dain的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">JAVA域</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-16T10:52:37+08:00">
+                2022-06-16
+              </time>
+            
+			
+			
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-16T10:47:30+08:00">
+                2022-06-16
+              </time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 30 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2022">2022</h2>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/date%E3%80%81calender%E7%B1%BB/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">date、calender类</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k
+                </span>
               
-            </a>
-        
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:59:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">JAVA域</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:52:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/" itemprop="url">
-              
-                <span itemprop="name">Object类</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:52:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
+<p>域的定义：定义类的 <strong>静态属性</strong>。</p>
+<p>域必须在类体中直接定义，不能包含在方法定义中。</p>
+<p>域定义的格式如下：</p>
+<p>   <strong>[修饰符]  类型名  域名；</strong></p>
+<p><strong>注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合；</strong></p>
+<p>​    <strong>public、protected、private表示域的访问权限；</strong></p>
+<p>​     <strong>final表示域为常量，无法改变；</strong></p>
+<p>​     <strong>static说明定义的变量是静态变量；</strong></p>
+<p>​     <strong>transient说明变量为一个临时的变量；</strong></p>
+<p>​     <strong>volatile修饰的变量用在多线程程序中，用来说明备份变量。</strong></p>
+<h2 id="静态域："><a href="#静态域：" class="headerlink" title="静态域："></a><strong>静态域：</strong></h2><p>被static修饰的域成为 <strong>静态域（类域、类变量）</strong> 。</p>
+<p>例如： static int n &#x3D; 18;</p>
+<p><strong>静态域</strong> 是属于整个类的成员变量，存储在类的内存区的 <strong>公共存储单元</strong> 中。（ 也就是说 <strong>任何该类的对象都可以访问它</strong> ，而且访问它得到的都是 <strong>相同的值</strong> ， <strong>如果某一个对象修改它的值，所有对象的值都会一起改变！</strong> )</p>
+<p><strong>注意：这里说的是静态域，静态域，用static修饰的静态域不要和其他域混淆!</strong></p>
+<p>而 <strong>没有被static修饰的域，在不同的对象中，都拥有独立的内存地址，也就是说每一个对象的域值都是不一样的！一定要和静态域相区别！</strong></p>
+<p>静态域可以用过 <strong>类名直接访问</strong> ，也可以用对象来引用。</p>
+<h3 id="静态类的初始化器"><a href="#静态类的初始化器" class="headerlink" title="静态类的初始化器"></a>静态类的初始化器</h3><p>静态类 <strong>不属于某个具体的对象，而是整个类的域</strong> ，所以它的初始化通过 <strong>静态初始化器</strong> 来实现。</p>
+<p>静态初始化器是由关键字static和一对大括号组成的复合语句，目的是对 <strong>类域</strong> 进行初始化。</p>
+<p>静态初始化在所属类被加载到内存时进行。</p>
+<h3 id="静态类的初始化器和构造方法的区别："><a href="#静态类的初始化器和构造方法的区别：" class="headerlink" title="静态类的初始化器和构造方法的区别："></a>静态类的初始化器和构造方法的区别：</h3><ol>
+<li>静态初始化器只能对静态域进行初始化，它不能访问非静态域。</li>
+<li>静态初始化器由关键字static和复合语句组成，静态类的初始值由程序确定好；</li>
+<li>构造方法是一个特殊的方法，它有参数，程序运行时，可以从外部接收数据，将域初始化为不同的值。</li>
+<li>静态初始化器是对类自身进行初始化；而构造方法是对对象进行初始化。</li>
+<li>静态初始化器是在类加载入内存的时候，由系统自动调用进行的；而构造方法实在使用关键字new创建对象时，由系统自动执行，关键字new后面跟的是构造方法。</li>
+</ol>
+<h2 id="最终域："><a href="#最终域：" class="headerlink" title="最终域："></a>最终域：</h2><p>用关键字final修饰的域称为 <strong>最终域</strong> 。</p>
+<p>final修饰的域的取值在程序执行的过程中 <strong>将不会改变</strong> 。（final修饰的变量也如此一旦被赋值就无法被改变）</p>
+<p>例子:”java.lang”包中定义的圆周率PI就是一个最终域。可以表示为“Math.PI”</p>
+<p>注：由于最终域的值固定不变，为了节省空间， <strong>最终域一般用static修饰，为静态最终域</strong>。</p>
+<p>另：</p>
+<p>  由final修饰的方法为最终方法：方法的功能确定，不能被子类中的相同方法覆盖，这样能保证方法实现的一致性。</p>
+<p>  final修饰的类：该类为最终类，不能派生子类，它的内容、属性和方法实现固定不变，与类名形成稳定的映射关系，保证功能实现的准确性。</p>
+<p>​    常见的最终类：例如：System类和InetAddress类、Socket类等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>域就是定义类的静态属性；分为静态域和最终域。</p>
+<p>最终域不会被改变但是静态域就是一份公共存储空间；</p>
+<p>静态域可以类名调用也可以对象调用，static修饰的static分为静态方法；静态变量；静态域。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/15/JAVA/Spring/Spring%E5%BA%95%E5%B1%82%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">Spring底层理解</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-15T21:50:17+08:00"
-              content="2022-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/15/JAVA/Spring/%E5%9F%BA%E7%A1%80/" itemprop="url">
-              
-                <span itemprop="name">Spring基础</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-15T20:50:17+08:00"
-              content="2022-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">常量池理解</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T22:58:51+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E7%B1%BB%E4%BD%BF%E7%94%A8/" itemprop="url">
-              
-                <span itemprop="name">常见类的使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T19:58:51+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/" itemprop="url">
-              
-                <span itemprop="name">JDK1.9特性</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T08:26:52+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/Begin/00-Dain%E7%94%9F%E6%B4%BB/" itemprop="url">
-              
-                <span itemprop="name">Dain的生活</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T08:00:00+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/06/Begin/04-%E8%82%96%E7%94%B3%E5%85%8B%E7%9A%84%E6%95%91%E8%B5%8E/" itemprop="url">
-              
-                <span itemprop="name">肖申克的救赎</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-06T20:32:46+08:00"
-              content="2022-06-06" >
-          06-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/" rel="next" title="Object类">
+                <i class="fa fa-chevron-left"></i> Object类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/date%E3%80%81calender%E7%B1%BB/" rel="prev" title="date、calender类">
+                date、calender类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">&gt;</a>
-  </nav>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -695,6 +547,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -717,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -821,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%9F"><span class="nav-number">1.</span> <span class="nav-text">域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%9F%9F%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">静态域：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">静态类的初始化器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8%E5%92%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">静态类的初始化器和构造方法的区别：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E5%9F%9F%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">最终域：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -951,6 +832,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

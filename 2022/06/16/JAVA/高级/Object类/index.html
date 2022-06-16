@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="学习不止探索,生活不止于此">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dain的博客">
-<meta property="og:url" content="http://dainx-xin.github.io/archives/index.html">
+<meta name="description" content="Object类：（lang包）1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。 里面：静态方法；因此也不能继承。是所有类的父类（超类）。 Object 类的常用方法方法说明：   Object clone()    创建与该对象的类相同的新对象（复制作用）  boolean equals(Object)  比较两对象是否相等（对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object类">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="学习不止探索,生活不止于此">
+<meta property="og:description" content="Object类：（lang包）1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。 里面：静态方法；因此也不能继承。是所有类的父类（超类）。 Object 类的常用方法方法说明：   Object clone()    创建与该对象的类相同的新对象（复制作用）  boolean equals(Object)  比较两对象是否相等（对">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-06-16T02:52:37.000Z">
+<meta property="article:modified_time" content="2022-06-16T02:58:44.284Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/archives/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/16/JAVA/高级/Object类/"/>
 
 
 
 
 
-  <title>归档 | Dain的博客</title>
+  <title>Object类 | Dain的博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a target="_blank" rel="noopener" href="https://github.com/Dain-xin" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -283,411 +285,261 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="代家鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dain的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">Object类</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-16T10:52:37+08:00">
+                2022-06-16
+              </time>
+            
+			
+			
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-16T10:58:44+08:00">
+                2022-06-16
+              </time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 30 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2022">2022</h2>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/date%E3%80%81calender%E7%B1%BB/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">date、calender类</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  554
+                </span>
               
-            </a>
-        
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:59:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">JAVA域</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:52:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h1 id="Object类：（lang包）"><a href="#Object类：（lang包）" class="headerlink" title="Object类：（lang包）"></a>Object类：（<strong>lang</strong>包）</h1><p>1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。</p>
+<p>里面：静态方法；因此也不能继承。是所有类的父类（超类）。</p>
+<h2 id="Object-类的常用方法"><a href="#Object-类的常用方法" class="headerlink" title="Object 类的常用方法"></a><strong>Object 类的常用方法</strong></h2><p><strong>方法说明：</strong> </p>
+<ul>
+<li><p>Object clone()    创建与该对象的类相同的新对象（复制作用）</p>
+</li>
+<li><p>boolean equals(Object)  比较两对象是否相等（对象非空|数据类型一致）默认比较地址</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">this</span>==o)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(o==<span class="literal">null</span>||getClass()!=o.getClass())<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">Object1 object1=(Object1)o;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Objects.equals(name , object1.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        
+<ul>
+<li>String toString()  返回该对象的字符串表示</li>
+</ul>
+<p>​		由于toString方法返回的结果是内存地址，所以往往重写来输出想要的属性数据</p>
+<ul>
+<li><p>Class getClass()  返回一个对象运行时的实例类</p>
+</li>
+<li><p>int hashCode()  返回该对象的散列码值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;ABCDEa123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;ABCDFB123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//有的字符串hashcode值一样。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>void finalize()   当垃圾回收器确定不存在对该对象的更多引用时，对象垃圾回收器调用该方法</p>
+</li>
+<li><p>void notify()  激活等待在该对象的监视器上的一个线程</p>
+</li>
+<li><p>void notifyAll() 激活等待在该对象的监视器上的全部线程</p>
+</li>
+<li><p>void wait()  在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前，导致当前线程等待</p>
+</li>
+</ul>
+<h2 id="Objects类（util包）"><a href="#Objects类（util包）" class="headerlink" title="Objects类（util包）"></a>Objects类（util包）</h2><p>a、在JDK7添加了一个Objects工具类，它提供了一些方法来操作对象，它由一些静态的实用方法组成。</p>
+<p>b、这些方法解决了Object类的空指针问题。在比较两个对象的时候，Object的equals方法容易抛出空指针异常，而Objects类中的equals方法就优化了这个问题。</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object a, Object b)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (a == b) || (a != <span class="literal">null</span> &amp;&amp; a.equals(b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/" itemprop="url">
-              
-                <span itemprop="name">Object类</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-16T10:52:37+08:00"
-              content="2022-06-16" >
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p>注：其实可以重写的时候在即添加对象为空的判断即可。</p>
+<p>4、String类中的equals方法是用来判断两个对象的内容是否相同，</p>
+<p>而Object 类中的equals方法是用来判断两个对象是否是同一个对象，<strong>所谓同一个对象指的是内存中的同一块存储空间。</strong></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/15/JAVA/Spring/Spring%E5%BA%95%E5%B1%82%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">Spring底层理解</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-15T21:50:17+08:00"
-              content="2022-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/15/JAVA/Spring/%E5%9F%BA%E7%A1%80/" itemprop="url">
-              
-                <span itemprop="name">Spring基础</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-15T20:50:17+08:00"
-              content="2022-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%90%86%E8%A7%A3/" itemprop="url">
-              
-                <span itemprop="name">常量池理解</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T22:58:51+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E7%B1%BB%E4%BD%BF%E7%94%A8/" itemprop="url">
-              
-                <span itemprop="name">常见类的使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T19:58:51+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/JAVA/%E5%9F%BA%E7%A1%80/JDK1.9%E7%89%B9%E6%80%A7/" itemprop="url">
-              
-                <span itemprop="name">JDK1.9特性</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T08:26:52+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/14/Begin/00-Dain%E7%94%9F%E6%B4%BB/" itemprop="url">
-              
-                <span itemprop="name">Dain的生活</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-14T08:00:00+08:00"
-              content="2022-06-14" >
-          06-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2022/06/06/Begin/04-%E8%82%96%E7%94%B3%E5%85%8B%E7%9A%84%E6%95%91%E8%B5%8E/" itemprop="url">
-              
-                <span itemprop="name">肖申克的救赎</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-06-06T20:32:46+08:00"
-              content="2022-06-06" >
-          06-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/06/15/JAVA/Spring/Spring%E5%BA%95%E5%B1%82%E7%90%86%E8%A7%A3/" rel="next" title="Spring底层理解">
+                <i class="fa fa-chevron-left"></i> Spring底层理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/" rel="prev" title="JAVA域">
+                JAVA域 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">&gt;</a>
-  </nav>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -695,6 +547,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -717,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -821,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object%E7%B1%BB%EF%BC%9A%EF%BC%88lang%E5%8C%85%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Object类：（lang包）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-%E7%B1%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">Object 类的常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objects%E7%B1%BB%EF%BC%88util%E5%8C%85%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">Objects类（util包）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -951,6 +832,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
