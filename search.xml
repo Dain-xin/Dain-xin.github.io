@@ -3,22 +3,18 @@
   <entry>
     <title>Dain的生活</title>
     <url>/2022/06/14/Begin/00-Dain%E7%94%9F%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="2022生活记录"><a href="#2022生活记录" class="headerlink" title="2022生活记录"></a>2022生活记录</h1><h2 id="June"><a href="#June" class="headerlink" title="June"></a>June</h2><p>6.14</p>
-<ul>
-<li>JDK1.8新特性和9的</li>
-<li>基础笔记整理</li>
-<li>融资宝数据库ER图和表数据整理、前言整理</li>
-<li>优化了hexo的搜索框被遮挡和目录无法跳转问题</li>
-<li>添加了百度索引到我的博客</li>
-</ul>
-<p>6.15</p>
-<ul>
-<li>优化hexo的bat一键部署</li>
-<li>常见类、常量池</li>
-<li>Spring源码理解</li>
-<li>论文总结</li>
-</ul>
-]]></content>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="e6528f963e17e828723e2ae0d09280c4a403f8e20039cedfa1f25653033b6d8f">adb5f562498545a6d68b97b650fc9db4995b3fd82bbe1d25eb4be677ba145dd1a8bfb3a21acfdd2167eb31a75ad2fd3c7ddeb512bc81c1195b32c235004f8d76ca997cf88f936d610b9d362c4de1e478de6a01d55309a4f3db4462e6c918b979e7941182bcd885aa01936a3f15d5a40a1924bfa75ecd8dbea384f97884d0aa034a3d904ab25b2591c917595d1bb2cee2fd2b50786e80d6b716a76f2ca78201534cb824605932b1bc879d57e9fa0c3d553c10113d9e68cdbd1817d63f28041f89a5d501d4f4cf062ad98dbed315f3eaa28aa246f1c35be260938821dd5e09e2bffcfd6bf73d03375fba69dad93d82866b5c749b44109cfce25e983ecabe937d114cef29581313760b85bafcb0ba4c716de1bb48008b17672bb7ebe494737802b72c9c8acde853b493749e255a99fd8a4ca3e0d4678dcb26c1aa1ba469bad571a8b36d2d7889a10a7e13dfe0e0fa414afae4ffa3d47d4139670e5e7f165c9682f97fc62c84a22cd0c0aff726e8d9813fd9e06b7b0b83ab1f5d15ca13578f119bdf0c8f605a3c814c9a5da476f54ba4fc09fc31c4172c26d0276ae753c009454efec6fc9dd3bfd971012a57280cf7e815b71071949675d6baac88683c7805f4c9f7ba99635aa0c072074794b4fa3751a42ec8645dfd09c52ca27f42a86ee4b3678582d9c761aebe3b46bb16062d9a05ecd58e9131cab3194d4c3f6a42a504c7b64d508604b0968248dcfc6bdd2e0d0360d0542089974663c32d909a724e143a1822e60db071f97b23838a80331d5a267261515f07ddba773e8da5a446a408b809b9bc32be0ac1335d9e22c8c8cbc33f7051a50882fcf2c2a46b226c5927821acd6f4fd6e710e3060ed68c39d7f0473f871dbe56a0b711e3f97421d9ed6781e1d59cdfe34b96d01f9a5dcaeacb5e03c6d7d1994af9661e310c2852c143104aaad80363a9cbaaf6bb3877737561ba5b896cc607d7372c89dec2ec40bbb1dc37cdeeacf86a1bc8ca4f5f226241890abaec54c3cc3995a9de841c52861ce5b7827d61e5a86ff3af0fe65bb3c8439efdf82808272bbc4a30c687205c66600ff8813449e87558f00c4fb3f61c8267c43ce6166cbc</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>Dain</tag>
       </tags>
@@ -26,71 +22,857 @@
   <entry>
     <title>Dain的计划</title>
     <url>/2022/05/24/Begin/00-Dain%E8%AE%A1%E5%88%92/</url>
-    <content><![CDATA[<h1 id="2022规划"><a href="#2022规划" class="headerlink" title="2022规划"></a>2022规划</h1><h2 id="June"><a href="#June" class="headerlink" title="June"></a>June</h2><blockquote>
-<p>&#x3D;&#x3D;<strong>5.24</strong>&#x3D;&#x3D;</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 搭建好基本的博客框架。</li>
-</ul>
-<p>&#x3D;&#x3D;<strong>5.25—6.1</strong>&#x3D;&#x3D;</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 准备好算法考试内容</li>
-<li><input checked="" disabled="" type="checkbox"> 完善Next主题的博客功能：添加浏览量，个人链接，自定义背景，自定义图标，完善阅读体验：添加高亮，添加文章结尾</li>
-</ul>
-<p>&#x3D;&#x3D;<strong>三个月的计划：不要画大饼，能搞多少就搞多少</strong>&#x3D;&#x3D;</p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-第一阶段跑步：重启二公里习惯；练臂力   –&gt;    过渡到五公里和二十个引体向上。</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-11：40开始整理今日学习内容（第二天学习方向或漏洞），日记；早睡12：00前，早起6：30，读书（回顾晚上总结的知识点），注意记录保持良好的个人习惯</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-吾日三省吾身：学而习乎，做而恒乎，手而空乎</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-私人博客、同步CSDN</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-毕业论文搞完、补充融资宝支付功能</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-添加一个新的分布式微服务项目</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-优化简历内容更加充实</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-JAVA八股文熟练</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-物色20个公司投简历，关注大厂招聘信息</p>
-</li>
-</ul>
-<p>&#x3D;&#x3D;<strong>6.1—6.20</strong>&#x3D;&#x3D;</p>
-<p>12号到家，好好规划一下停止摆烂。</p>
-<p>融资宝的项目（添加微信支付宝支付的沙箱功能（选其一），添加新的登录功能（如果不好搞就了解一下大致操作过程））</p>
-<p>Authe的消息处理平台（作为我的第二个分布式项目（消息处理项目））</p>
-<p>手头的视频有空可以看看</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 准备英语四级</li>
-<li><input checked="" disabled="" type="checkbox"> 博客百度索引、优化搜索框被遮挡、文章标题无法跳转问题、优化hexo的bat一键部署</li>
-<li><input disabled="" type="checkbox"> 完成复习基础知识和面试题</li>
-<li><input disabled="" type="checkbox"> 同步自己的OneNode的基础和高级的学习笔记</li>
-<li><input disabled="" type="checkbox"> SpringCloud 以及 Netflix、Alibaba 的组件学习</li>
-<li><input disabled="" type="checkbox"> JVM原理和调优方式</li>
-<li><input disabled="" type="checkbox"> mysql优化和语句</li>
-<li><input disabled="" type="checkbox"> 毕设项目回顾（课件为主，了解各个组件作用和解决了什么问题）</li>
-<li><input disabled="" type="checkbox"> 论文总体设计前面的完善好</li>
-</ul>
-</blockquote>
-]]></content>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="82de83e1f35ea0ddcd3a1563a7dbaaba57e85d035daaa9de75ad3257939b4e33">adb5f562498545a6d68b97b650fc9db4995b3fd82bbe1d25eb4be677ba145dd193d2e69fc416f93ddadd4c3b76af008007233367c2166058aee22bec248ea59611303bbd5cf08707c0d721218b64ad145258808e5122f47f5363caa0fe9aeb7028165c592db48b130a03c109d602f61122e49d6e94ab33bb4c68a8a2e9cdd694d3b557c1011396000b8ceef341e37c7d14a473190adc32a86892734d56be60241ad90ed86b5fb7ae16fba2e60adcddbb7e7d737f3c8fb74946ff622d8795dbe3b9d8afa40dd68750f8de41109c47a039c01559ca480680e192ffee42f5b434fb11e76f6c0f77d6b656840a0f188fdaeac0b8b2ee9658d0d168859852de2f5134aea1bcdf575cd5a42fba8d960e280558dea54300de0b72fd0e4255c047830f68f946327f6e62676066adfc150b2fcc2df7b97bbcebffe1ce29727c5fffb2f81802d15e27401c81a81d8a108423f14faf7b2a2c911527ca25a189a17aae39999c55694ef0c58dbe8daab7388067848ef094f0e942e3850e155dbfde27678c8a3f3fdc803afc8fd9444e8b64d8747aad438ab74120e569fb38bf932427a1068896e0bc8d11632496004c872e10b332f7d3b2bbd57ab21dcfbab600cc301796eaaf4d4c7d9723c94c61466f743330f0769c61b38be9753ce9e69d0ff07f5189a99c9fc3f50725c45488d1cfa8af3eaf5ef093642af023f43c389aabbb37969fa02766168df039b3e03d2b336776c1b90fe16de745e8c79fc21c6d11f9784af2c2915f2d17d7e35e5b873e6ad88bef653a1c6cd4d5774d87da65b72840dbeeda2ceedcb09969fc57804fb29ac1d7e83242eff288c111243b41b9893520d05ef8f1d502767f6c24b1c66f5f2980ff6108a3f444c3030b9f8e7ebebb4d1c1373040d58a39922242cc014744be9ae372b9e7715f50475140f8324edeabc270d146b49319777da0bc48b3ae331649748202d2c4b9995dbd56731ce70c701070e1327117c9b663cccb4f0b53a68d2bee2a345501686e4d451c96c23512308b5eba969b6f860d9ea21d14eebae5596ff0220c0b9c3664b73b2b1c98e23ff55deedde384164d09caa397cc8975ec4bfe16b95e554a21874b4fb60ab7f32c7bf14ee33cdbbc27d6f7c89eb9fe7969af85342d086fa568ceee09b8f3e478dc2d0ab5908ad750ceaf48b022dc18531125cb67c884635019ee7a360cc0376d66b4495c45b61a367531f528d6035c545e04d1d0c78159e69812b7edb7b17206968cb9e6c4cef167f45695a418d920c4d1f6228c873be27ab7517adc61b04eb01023bea1bb8b133fa85a65539613640b07e5d0ec4b7be610ddd38208711c5227426483dcb285c4c11c957244601b563231e97fe5f819f5921a1313ebecaa2a3595b3417d2769981481f9a31afb0b63f7cb2b9e5c61d63f4201e3a9bd33b0737f61b7d72555137e5a9e3d03d7cf920b8b3299d8a6920aa3432a087124b15814b4836945505b26475e83ad9fd97ca08673c38b9a5d33908a41187aa859905c23b3fef901ca248beafc9e11859fba614ca9d37ace9e8ddd56c1afe3b713ca91591ee2c5e64e893003a85ac8f02058ed157c93e8218301edbdad8562a9b35b9c564728b6c2c348c9cded4fe49121f24b6c9c15983f1475007dd68e25d09c42480843f8488b97960ccd6e0822e7a6773d1bc6f70256e65e851ee5e8d1c1f7c15ec11e9645d8947b52c21bc4a26786cb7a521139b2fa6818b8b77e628ad0bff7e334aa8ef6c418709c4f55e26d729d8207e2081d08ca0d42880ab0c3ccd6ce72dcd9c756e20e8a34555cc12ecb3dc16ae14454f5f92409c3dfda911fab8bf7c1c9fa8973ffbc0be0eb560c1512baf70addeeb59e58335d5670ad8ecaa6a46191722f3ac415d63a4d3a2f57d494dc14aa5d6586c65243e3027b4f7aeaa9a6cd95d5894ea32f773c9a702afb1aee1941c21b6843322f227abfee5f38837d147c510b2fc4a8455ba5d39b27280de466cc427b960af54605b9bdd2030b78b562371052764212f1d12042d64c1beed786504b89dbbd59c2abed76c3a10b78700cbda340d499f4bf47f202d13c4b0610d37a7d2dd43cec50ec88b5dc295290e39d047ddaab2585fbc1cb82a15c1c2525ccbcd3eb3635a30790a5275186a7aa42f023aa03e7a98fd60497a6e187b12db344856918e12bb915d0d1cb82452611c34a770ed65d5365dc7b1ba97c339c19c1fe4a3b4273aad403544ed4d5ed76016a8dc9efa23c5006bf459a9d330b5b7be504e19804b69532a029ffb8705c369720df45ecdffb483538ec5372e9c269b457d77fd5cf7931930c791c5757b46c809e450b48a194a0b72c5008ce55025243542c9a74499cdbf0f5f9fc5fc67bd8f6bc798088264f279e51be4c3a0468b0688a202fe3b4da7014b7e69855cce6e46eb16e30e8d9681468249224a7efbb20c35e831005fda6a526361a32527679fb1cd09a86899e31e99bb5226f16d1dd521b84efa27be2e3d3ea986b35ee6055805203583c6d4e9fc67ee16722b28fd04a0c7f374b64c031018bbdfa5f67aa819b382548d3ef568a8cc3129185a17c44a433e89fd4d3433812f873dcbc56ee07e58252e46fe82b3b0e0dbaf67e456a5280460957735d34ff1ece5aa842f99905b9b12cee7d1a32ee76bd44d0cbb3a843083b68a1e9bd10baee73ef634c00b7b42bf880e965014afcf998862a78e3873c39a969b4a56a96f39e93410600dc232d38a0bef7cdb87a0cc2c73aaaf082312932497abfc85c8db1e2cef8df48897e2e72e293d75fd69d98055374f7b951a8f5b70f46091650010d0bc43931b913309dd055397d6f8dc258e4fc4b71fa2d39be97cf003253ce21e9aedf9e782bbdb0ca3318b3549c8169e668f33c4df256d98789d0e09661e425b0c136fd4b1ff501f1409f7822a58eedb0afd9cba719d9ccd24a1ba4986eb802ee9825d56b2b349eff200c244883f4b21d089d36a46955bb0766f983e0f6ee70fdd12f71bd1acba8706a9049cb16a7982bcebafd88a5c0413dbef1c7e1557ad452b054d26ad06fac1b1e5e5c8b4d5f650c2ef6c6cea2d665b51360408e80bc8751a8078f5da6fb95d42c3ce95e110e90e826cf305a67d16c1a63ecfd7dc094c9e821d6cf708f214691d9a195311fe4f791e4e5c6b862073706088635e71aba30d04e650fd8c3b2d54b1b597707d3989ffe949a053b95e36f42f0909abfad159bc956bbed4bb32265ec9815363ab930e79adc9d1b949502c2d4bb010190ccd9ec5ba7542fe3818b9a347ef6cb843383e2efaa92cb8e9a1f9072a4a1571ed60bc999a545a40e1fa3bb6f8a202a4211840456cbd7814b345e7afa6dd398f248c11b993c7ff9f3422f6f30db3750f274d86abe2c19e94707f8988312264303a6deb132cd3d222229b505bc7993ab6be88d39cf2993d4d37c01d030e711121338b4e799a7554186fba3dacac091d6438fb4e461db6f1a952eb0311cf4a865204867218b3c34f2ada888733a24d14ea659d84f2554baabde87764ce312de57f8fa9fdfd70ef014cf8e4ceb5fbd22ac4bc99849cf50000e784d0e94cd259581e544b94ce1321e8599833eca49ce8b31b0989f291fb1206c1b97e450b1f24d6b05d4ae62e7d75ce2eb3a87dcf1ae2369fb3fd2749c7db064c393dbaae3ab6e2b53c91532b9698659fa765e947380eae606fbe44325a166a638952d3068f764829e9f4badffce5f063c95c10c239b94dd6eaafbaf9a298fa834fad69c77e923d3c2fa137aea586c69b218aaa44ceeb7372d21174b06377646a3e22d5efd44c625ca10f8cef1cc0a3b751d5f46d59a4b4f89ab218157b895b30da03ee1d06295f1846f4b588ab086f2fc79c6fc987541237ac3179e7324100715aac52602273bd14975615aa20a45f873c2883d58176bc6c6527a38b6dd7ee4a75c81e5a94f7a8e2887c4f0c2e1f9ec07ae48d8416e274943a9e3c9399f80cdd196ee1c0d1c60eb4f651997cb66a1ca1565d86269e6cb97a922f99c88143068da32efbfeff4ae78c8c30776866ec7cc7bbef797500ff6cf916b6c2757e5c4d8178ed401dca74ec96fa514344eb8382598a55de10370bae26797d8493e071264338c78eac0437959c45118fc8577f65cf9b249f2099d156c40f07507ef73559f1ad4f87c56516a440172d1dc55e1da999a790c92112802860c6826927a0bcbc69d03646cc9d153de7a12c0efd1fbf30f1699d1a6b2db4697520d9fe7c66e705ec670b450786cecfa348c0e9fae1a5d526a866011f6538e7e739579caffc13c6b10512d41a1a813894248b4fb704aca1a795676f97f4e05d8f714389c7249831df1efba8c5153c13b3d968bbedca86e092074a396aa5562aed864525ef326f1dca0e44c65a7239c21cf1ef13db5f954a8af86f8c6e7b69e091147a9423970680eac8a4cfc86f71ac1ad1bc4ee74ae18c863444805bc8b12ff54d7178b555715cafd9837cd47156c95856c81a0c8b081e01240c3a36bfe42eda2bacb67a004557505f5557a27a49a320d8368aba2d6f2a4a8b135b86c64acc233653778491d12677bbd0c3de9c760170c32d2f8a1119c6b215a516e731482a0a611d955c07b1e4b741be302aba595631333d2d30dac674f849bd7f6ad0c1</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>Dain</tag>
       </tags>
   </entry>
   <entry>
+    <title>Exception异常</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/Exception%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="异常根类"><a href="#异常根类" class="headerlink" title="异常根类"></a><strong>异常根类</strong></h1><p>Throwable<strong>（lang包）：两个子类：Error（lang包）和Exception（lang包）：</strong></p>
+<p>1、根类的子类（<strong>Throwable</strong>类）：</p>
+<ul>
+<li><strong>error—错误</strong> ： 是指程序无法处理的错误，表示应用程序运行时出现的重大错误。（<strong>只能避免</strong>）</li>
+</ul>
+<p>例如jvm运行时出现的OutOfMemoryError以及Socket编程时出现的端口占用等程序无法处理的错误。</p>
+<ul>
+<li><strong>Exception     — 异常</strong>     ：异常可分为运行时异常跟编译异常，指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止。（<strong>可以避免，直接处理</strong>）</li>
+</ul>
+<p>2、根类方法：</p>
+<table>
+<thead>
+<tr>
+<th>void printStackTrace()</th>
+<th>打印异常的详细信息。  包含了异常的类型,异常的原因,还包括异常出现的位置,在开发和调试阶段,都得使用printStackTrace。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String getMessage()</td>
+<td>获取发生异常的原因。 提示给用户的时候,就提示错误原因。</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>获取异常的类型和异常描述信息(不用)。</td>
+</tr>
+</tbody></table>
+<p>3、异常Exception和错误Error子类：</p>
+<p>分类：</p>
+<h2 id="运行时异常（RuntimeException）"><a href="#运行时异常（RuntimeException）" class="headerlink" title="运行时异常（RuntimeException）"></a>运行时异常（RuntimeException）</h2><p>常见：</p>
+<p>如 <strong>NullPointerException、IndexOutOfBoundsException</strong> 等，这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般由程序逻辑错误引起，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
+<h2 id="编译时异常（RuntimeException以外的异常（Check异常））"><a href="#编译时异常（RuntimeException以外的异常（Check异常））" class="headerlink" title="编译时异常（RuntimeException以外的异常（Check异常））"></a>编译时异常（RuntimeException以外的异常（Check异常））</h2><p>常见：</p>
+<p>从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如 <strong>IOException、ClassNotFoundException</strong>(加载类出现异常)、ParseException（解析时出现意外错误）等以及用户自定义的 Exception 异常。</p>
+<p>图示列举：</p>
+<p> java.lang 中定义的运行时异常和非运行时异常的类型及作用。</p>
+<h2 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h2><p><strong>表 1 Java中常见运行时异常：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>异常类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArithmeticException</td>
+<td>算术错误异常，如以零做除数</td>
+</tr>
+<tr>
+<td>ArraylndexOutOfBoundException</td>
+<td>数组索引越界</td>
+</tr>
+<tr>
+<td>ArrayStoreException</td>
+<td>向类型不兼容的数组元素赋值</td>
+</tr>
+<tr>
+<td>ClassCastException</td>
+<td>类型转换异常</td>
+</tr>
+<tr>
+<td>IllegalArgumentException</td>
+<td>使用非法实参调用方法</td>
+</tr>
+<tr>
+<td>lIIegalStateException</td>
+<td>环境或应用程序处于不正确的状态</td>
+</tr>
+<tr>
+<td>lIIegalThreadStateException</td>
+<td>被请求的操作与当前线程状态不兼容</td>
+</tr>
+<tr>
+<td>IndexOutOfBoundsException</td>
+<td>某种类型的索引越界</td>
+</tr>
+<tr>
+<td><strong>NullPointerException</strong></td>
+<td>尝试访问 null 对象成员，空指针异常（<strong>指的是对象为空的异常，静态方法不需要实例</strong>）</td>
+</tr>
+<tr>
+<td>NegativeArraySizeException</td>
+<td>再负数范围内创建的数组</td>
+</tr>
+<tr>
+<td>NumberFormatException</td>
+<td>数字转化格式异常，比如字符串到 float 型数字的转换无效</td>
+</tr>
+<tr>
+<td>TypeNotPresentException</td>
+<td>类型未找到</td>
+</tr>
+</tbody></table>
+<p><strong>表 2 Java常见非运行时异常：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>异常类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ClassNotFoundException</td>
+<td>没有找到类</td>
+</tr>
+<tr>
+<td>IllegalAccessException</td>
+<td>访问类被拒绝</td>
+</tr>
+<tr>
+<td>InstantiationException</td>
+<td>试图创建抽象类或接口的对象</td>
+</tr>
+<tr>
+<td>InterruptedException</td>
+<td>线程被另一个线程中断</td>
+</tr>
+<tr>
+<td>NoSuchFieldException</td>
+<td>请求的域不存在</td>
+</tr>
+<tr>
+<td>NoSuchMethodException</td>
+<td>请求的方法不存在</td>
+</tr>
+<tr>
+<td>ReflectiveOperationException</td>
+<td>与反射有关的异常的超类</td>
+</tr>
+<tr>
+<td>IOException</td>
+<td>IO 操作异常</td>
+</tr>
+</tbody></table>
+<p><strong>表</strong> <strong>3</strong> <strong>错误（Error）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>NoClassDefFoundError：</th>
+<th>找不到 class 定义异常</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StackOverflowError：</td>
+<td>深递归导致栈被耗尽而抛出的异常</td>
+</tr>
+<tr>
+<td>OutOfMemoryError：</td>
+<td>内存溢出异常</td>
+</tr>
+</tbody></table>
+<h3 id="异常处理："><a href="#异常处理：" class="headerlink" title="异常处理："></a>异常处理：</h3><p>理解：</p>
+<p>java处理异常的机制：抛出异常以及捕获异常 ，一个方法所能捕捉的异常，一定是Java代码在某处所抛出的异常。</p>
+<p><strong>简单地说，异常总是先被抛出，后被捕捉的。如果自己不处理，交给<strong><strong>JVM</strong></strong>处理，就会系统中断。</strong></p>
+<p>如何捕获异常：</p>
+<p>1）首先java对于异常捕获使用的是try—catch或try — catch — finally 代码块，程序会捕获try代码块里面的代码，</p>
+<p>若捕获到异常则进行catch代码块处理。若有<strong>finally则在catch处理后执行finally里面的代码</strong>。</p>
+<p>然而存在这样两个问题：</p>
+<p>（a.看如下代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">//待捕获代码</span></span><br><span class="line"> &#125;<span class="keyword">catch</span>（Exception e）&#123;</span><br><span class="line">   System.out.println(<span class="string">&quot;catch is begin&quot;</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span> ；</span><br><span class="line"> &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">   System.out.println(<span class="string">&quot;finally is begin&quot;</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在catch里面有一个return，那么finally还是会被执行</p>
+<p>catch is begin<br> finally is begin </p>
+<p>解释：也就是说会先执行catch里面的代码后执行finally里面的代码最后才return 1 ；</p>
+<p>（b.看如下代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="comment">//待捕获代码  </span></span><br><span class="line"> &#125;<span class="keyword">catch</span>（Exception e）&#123;</span><br><span class="line">   System.out.println(<span class="string">&quot;catch is begin&quot;</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span> ；</span><br><span class="line"> &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">   System.out.println(<span class="string">&quot;finally is begin&quot;</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">2</span> ;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<p><strong>在b代码中输出结果跟a是一样的，然而返回的是return 2 ； 原因很明显，就是执行了finally后已经return了，所以catch里面的return不会被执行到。也就是说finally永远都会在catch的return前被执行。（这个是面试经常问到的问题哦！）</strong></p>
+<h1 id="throw跟throws的区别"><a href="#throw跟throws的区别" class="headerlink" title="throw跟throws的区别:"></a><strong>throw跟throws的区别:</strong></h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上面这一段代码可以明显的看出两者的区别。</p>
+<p><strong>throws表示一个方法声明可能抛出一个异常，throw表示此处抛出一个已定义的异常（可以是自定义需继承Exception，也可以是java自己给出的异常类）。</strong></p>
+<p>注：</p>
+<ol>
+<li><strong>catch     不能独立于 try 存在。</strong></li>
+<li><strong>在 try&#x2F;catch 后面添加 finally 块并非强制性要求的。</strong></li>
+<li><strong>try 代码后不能既没 catch 块也没 finally 块。</strong></li>
+<li><strong>try, catch, finally 块之间不能添加任何代码。</strong></li>
+</ol>
+<h1 id="异常的注意点"><a href="#异常的注意点" class="headerlink" title="异常的注意点"></a>异常的注意点</h1><ul>
+<li><p>捕获多个异常时Exception的捕获只能放最后，会影响前面指定的特殊的异常处理，（可以理解为处理顺序进行）；父类Exception e在前面，南无后面的子类异常就不会处理（报错）。</p>
+</li>
+<li><p>try{  } 包裹的内容，如果遇到异常，就会跳到catch（）{      } 的处理，原来try的异常后面的代码就不会在运行了。</p>
+</li>
+</ul>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>[] arr=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line">System.*out*.println(arr[<span class="number">6</span>]);</span><br><span class="line"></span><br><span class="line">String s=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">System.*out*.println(s.length());</span><br><span class="line"></span><br><span class="line">System.*out*.println(<span class="string">&quot;这里不会执行&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span>(ArrayIndexOutOfBoundsException e)&#123;</span><br><span class="line"></span><br><span class="line">System.*err*.println(<span class="string">&quot;下标超界异常&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span>(NullPointerException e)&#123;</span><br><span class="line"></span><br><span class="line">System.*err*.println(<span class="string">&quot;空指指针异常&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line"></span><br><span class="line">System.*out*.println(<span class="string">&quot;finally&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.*out*.println(<span class="string">&quot;execute over&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果：<img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171916511.png" alt="image-20220617191651449"></p>
+<ul>
+<li><p>而且在catch里处理异常的时候不要简单的e.printStackTrace()，而是<strong>应该进行详细的处理。比如进行console打印详情或者进行日志记录。</strong></p>
+</li>
+<li><p><strong>throws</strong> <strong>抛异常，父类可以抛出多个异常，但是不能既有父类异常还包含子类异常，</strong></p>
+</li>
+</ul>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171917705.png" alt="image-20220617191746639"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171917330.png" alt="image-20220617191759250"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Comparable和Comparator两个接口</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/Comparable%E5%92%8CComparator/</url>
+    <content><![CDATA[<h1 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h1><p>a、Comparable是java.lang包下面的接口，lang包下面可以看做是java的基础语言接口。</p>
+<p>b、强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的compareTo方法 被称为它的自然比较方法。只能在类中实现compareTo()一次，不能经常修改类的代码实现自己想要的排序。</p>
+<p>c、实现 此接口的对象列表（和数组）可以通过Collections.sort（和Arrays.sort）进行自动排序，对象可以用作有序映射中 的键或有序集合中的元素，无需指定比较器。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.sort();<span class="comment">//源码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;? <span class="built_in">super</span> T&gt; &gt; <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(List &lt;T&gt; list)</span>&#123;</span><br><span class="line"></span><br><span class="line">list.sort(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">List--&gt;sort()</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(Comparator&lt;?superE&gt;c)</span>&#123;</span><br><span class="line"></span><br><span class="line">Object[]a=<span class="built_in">this</span>.toArray();</span><br><span class="line"></span><br><span class="line">Arrays.sort(a,(Comparator)c);</span><br><span class="line"></span><br><span class="line">ListIterator&lt;E&gt; i=<span class="built_in">this</span>.listIterator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Objecte:a)&#123;</span><br><span class="line"></span><br><span class="line">	i.next();</span><br><span class="line"></span><br><span class="line">	i.set((E)e);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注：根据元素的<em>自然顺序</em> 对指定列表按升序进行排序。列表中的所有元素都必须实现 Comparable 接口。此外，列表中的所有元素都必须是<em>可相互比较的</em>（也就是说，对于列表中的任何 e1 和 e2 元素，e1.compareTo(e2) 不得抛出 ClassCastException）。</p>
+<p>d、当使用这些可排序的集合添加相应的对象时，就会调用  compareTo方法来进行natural ordering（自然排序）的排序。</p>
+<p>e、几乎所有的数字类型对象：Integer, Long，Double等包装类都实现了这个Comparable接口。  也就有了compareTo的方法。 </p>
+<p>f、<strong>ClassCastException：当试图将对象强制转换为不是实例的子类时，抛出该异常。</strong></p>
+<p><strong>理解：没有可比性的两个对象就会报错。</strong></p>
+<h1 id="Comparator（util包）"><a href="#Comparator（util包）" class="headerlink" title="Comparator（util包）"></a>Comparator（util包）</h1><p>a、public interface <strong>Comparator<T>：</strong> <strong>T -</strong> <strong>此</strong> <strong>Comparator</strong> <strong>可以比较的对象类型</strong></p>
+<p>代表其是一个工具类，用来辅助排序的</p>
+<p>b、强行对某个对象 collection 进行<em>整体排序</em> 的比较函数。可以将 Comparator 传递给 sort 方法（如 Collections.sort) 或 Arrays.sort），从而允许在排序顺序上实现精确控制</p>
+<p>c、Comparator是一个Functional Interface功能接口，需要实现compare方法：</p>
+<p>重写方法：</p>
+<table>
+<thead>
+<tr>
+<th>int  compare(T o1, T o2) ：</th>
+<th>比较用来排序的两个参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>d、Collections的sort() ：</p>
+<p>public static <T> void <strong>sort</strong>(<a href="mk:@MSITStore:E:_1_NewFile$_好用软件&工具_API工具\API1_6.CHM::/java/util/List.html">List</a><T> list, <a href="mk:@MSITStore:E:_1_NewFile$_好用软件&工具_API工具\API1_6.CHM::/java/util/Comparator.html">Comparator</a>&lt;? super T&gt; c)</p>
+<p>注：</p>
+<p>1、根据指定比较器产生的顺序对指定列表进行排序。<strong>此列表内的所有元素都必须可使用指定比较器****相互比较</strong>（也就是说，对于列表中的任意 e1 和 e2 元素，c.compare(e1, e2) 不得抛出 ClassCastException）。此排序被保证是<em>稳定的</em>：不会因调用 sort 而对相等的元素进行重新排序。</p>
+<p>2、Collections.sort(List,Comparator),Arrays.sort(Object[],Comparator) 都是这个。</p>
+<h3 id="对Comparable和Compatator接口的理解："><a href="#对Comparable和Compatator接口的理解：" class="headerlink" title="对Comparable和Compatator接口的理解："></a><strong>对Comparable</strong>和<strong>Compatator</strong>接口的理解：</h3><p>1、我们提到<strong>Comparable</strong>指定了对象的<strong>natural ordering</strong>，如果我们在添加到可排序集合类的时候想按照我们<strong>自定义的方式进行排序</strong>，这个时候就需要使用到<strong>Comparator</strong>了。</p>
+<p>2、在排序过程中，首先会去检查Comparator是否存在，如果不存在则会使用默认的natural ordering。</p>
+<p>3、Comparator允许对null参数的比较，而Comparable是不允许的，否则会爬出NullPointerException。</p>
+<p><strong>4</strong>、<strong>Comparatable</strong>和<strong>Comparator</strong>的例子：</p>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt;list1=Arrays.asList(<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">Collections.sort(list1,newComparator&lt;Integer&gt;()&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Integero1,Integero2)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(o1&gt;o2)</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(o1==o2)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);<span class="comment">//降序</span></span><br><span class="line"></span><br><span class="line">Collections.sort(list1);</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下Integer是按照升序来排的，但是我们可以通过传入一个Comparator来改变这个过程变成降序。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Collections工具类</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/Collections%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
+    <content><![CDATA[<p>[Java Collections类操作集合详解 ](<a href="http://c.biancheng.net/view/6884.html#:~:text=Collections">http://c.biancheng.net/view/6884.html#:~:text=Collections</a> 类是 Java 提供的一个操作 Set、List 和 Map 等集合的工具类,类提供了许多操作集合的静态方法，借助这些静态方法可以实现集合元素的排序、查找替换和复制等操作。 下面介绍 Collections 类中操作集合的常用方法。 Collections 提供了如下方法用于对 List 集合元素进行排序。) </p>
+<p>1、（Util包）Collections 类是 Java 提供的一个操作 Set、List 和 Map 等集合的工具类。Collections 类提供了许多操作集合的<strong>静态</strong>方法<strong>，借助这些静态方法可以实现集合元素的</strong>排序、查找替换和复制等操作。</p>
+<p>2、常见排序方法正需：</p>
+<table>
+<thead>
+<tr>
+<th align="left">void reverse(List list)：</th>
+<th>对指定 List 集合元素进行逆向排序。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">void shuffle(List list)：</td>
+<td>对 List 集合元素进行随机排序（shuffle 方法模拟了“洗牌”动作）。</td>
+</tr>
+<tr>
+<td align="left">void sort(List list)：</td>
+<td>根据元素的自然顺序对指定 List 集合的元素按升序进行排序。</td>
+</tr>
+<tr>
+<td align="left">void sort(List list, Comparator  c)</td>
+<td>根据指定 Comparator 产生的顺序对 List 集合元素进行排序。</td>
+</tr>
+<tr>
+<td align="left">void swap(List list, int i, int  j)：</td>
+<td>将指定 List 集合中的 i 处元素和 j 处元素进行交换。</td>
+</tr>
+<tr>
+<td align="left">void rotate(List list, int  distance)：</td>
+<td>当 distance 为正数时，将 list 集合的后  distance 个元素“整体”移到前面；当 distance 为负数时，将 list 集合的前 distance  个元素“整体”移到后面。该方法不会改变集合的长度。</td>
+</tr>
+</tbody></table>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用reverse()方法对集合元素进行反转排序</span></span><br><span class="line"></span><br><span class="line">Collections.reverse(students); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用sort()方法对集合进行排序</span></span><br><span class="line"></span><br><span class="line">Collections.sort(prices);</span><br></pre></td></tr></table></figure>
+
+<p>3、查找替换集合方法。</p>
+<table>
+<thead>
+<tr>
+<th>int binarySearch(List list, Object key)：</th>
+<th>使用二分搜索法搜索指定的  List 集合，以获得指定对象在 List 集合中的索引。如果要使该方法可以正常工作，则必须保证 List 中的元素已经处于有序状态。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object max(Collection  coll)：</td>
+<td>根据元素的自然顺序，返回给定集合中的最大元素。</td>
+</tr>
+<tr>
+<td>Object max(Collection coll,  Comparator comp)：</td>
+<td>根据 Comparator  指定的顺序，返回给定集合中的最大元素。</td>
+</tr>
+<tr>
+<td>Object <strong>min</strong>(Collection coll)：</td>
+<td>根据元素的自然顺序，返回给定集合中的最小元素。</td>
+</tr>
+<tr>
+<td>Object min(Collection coll,  Comparator comp)：</td>
+<td>根据 Comparator  指定的顺序，返回给定集合中的最小元素。</td>
+</tr>
+<tr>
+<td>void fill(List list, Object  obj)：</td>
+<td>使用指定元素 obj 替换指定 List 集合中的所有元素。</td>
+</tr>
+<tr>
+<td>int frequency(Collection c,  Object o)：</td>
+<td>返回指定集合中指定元素的出现次数。</td>
+</tr>
+<tr>
+<td>int indexOfSubList(List source,  List target)：</td>
+<td>返回子 List 对象在父 List  对象中第一次出现的位置索引；如果父 List 中没有出现这样的子 List，则返回 -1。</td>
+</tr>
+<tr>
+<td>boolean replaceAll(List list, Object oldVal, Object newVal)：</td>
+<td>使用一个新值 newVal 替换 List 对象的所有旧值  oldVal。</td>
+</tr>
+</tbody></table>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//max：返回集合中最大的数据</span></span><br><span class="line"></span><br><span class="line">ArrayList&lt;String&gt;arrayList=newArrayList();</span><br><span class="line"></span><br><span class="line">String max=Collections.max(arrayList);</span><br><span class="line"></span><br><span class="line"><span class="comment">//fill 替换所有元素；但是replaceAll替换旧数据成新的数据（较为实用）</span></span><br><span class="line"></span><br><span class="line">ArrayList&lt;String&gt;arrayList=newArrayList();</span><br><span class="line"></span><br><span class="line">arrayList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList.add(<span class="string">&quot;4&quot;</span>);</span><br><span class="line"></span><br><span class="line">ArrayList&lt;String&gt;arrayList2=newArrayList();</span><br><span class="line"></span><br><span class="line">arrayList2.add(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList2.add(<span class="string">&quot;b&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList2.add(<span class="string">&quot;c&quot;</span>);</span><br><span class="line"></span><br><span class="line">arrayList2.add(<span class="string">&quot;d&quot;</span>);</span><br><span class="line"></span><br><span class="line">Stringmax=Collections.max(arrayList);</span><br><span class="line"></span><br><span class="line">Collections.fill(arrayList2,<span class="string">&quot;e&quot;</span>);</span><br><span class="line"></span><br><span class="line">Collections.replaceAll(arrayList,<span class="string">&quot;4&quot;</span>,<span class="string">&quot;5&quot;</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;arrayList=&quot;</span>+arrayList);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;arrayList2=&quot;</span>+arrayList2);</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p>arrayList &#x3D; [1, 2, 3, 5]</p>
+<p>arrayList2 &#x3D; [e, e, e, e]</p>
+<p>4、复制方法：</p>
+<p>a、Collections 类的 copy() 静态方法用于将指定集合中的所有元素复制到另一个集合中。执行 copy() 方法后，目标集合中每个已复制元素的索引将等同于源集合中该元素的索引。</p>
+<p>b、void copy(List &lt;? super T&gt; dest,List&lt;? extends T&gt; src)</p>
+<p>其中，dest 表示目标集合对象，src 表示源集合对象。</p>
+<p>注意：目标集合的长度至少和源集合的长度相同，如果目标集合的长度更长，则不影响目标集合中的其余元素。如果目标集合长度不够而无法包含整个源集合元素，程序将抛出 IndexOutOfBoundsException 异常。</p>
+<p>d、eg： 调用copy()方法将当前商品信息复制到原有商品信息集合中</p>
+<p>Collections.copy(destList, srcList);</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>集合</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>可变参数</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</url>
+    <content><![CDATA[<p><a href="https://www.runoob.com/w3cnote/java-varargs-parameter.html">Java 可变参数 | 菜鸟教程 (runoob.com)</a></p>
+<p>如果我们定义一个方法需要接受多个参数，并且多个参数类型一致，我们可以对其简化成如下格式：</p>
+<p><strong>修饰符 返回值类型 方法名(参数类型… 形参名){ }</strong> </p>
+<p>其实这个书写完全等价</p>
+<p><strong>修饰符 返回值类型 方法名(参数类型[] 形参名){ }</strong></p>
+<p>在调用时必须传递数组，而前者可以直接传递数据即可。</p>
+<p>​     </p>
+<p>1、JDK1.5以后。出现了简化操作。**…** 用在参数上，称之为可变参数，同样是代表数组，但是在调用这个带有可变参数的方法时，<strong>不用创建数组</strong>(这就是简单之处)，直接将数组中的元素 作为实际参数进行传递，其实编译成的class文件，<strong>将这些元素先封装到一个数组中，在进行传递。这些动作都在编 译.class文件</strong>时，自动完成了。</p>
+<p>2、调用可变参数方法，可以给出零到任意多个参数，编译器会将可变参数转化为一个数组。也可以直接传递一个数组。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(String... args)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">test(<span class="keyword">new</span> <span class="title class_">String</span>[] &#123;<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>&#125;);<span class="comment">//直接传递数组</span></span><br></pre></td></tr></table></figure>
+
+<p>3、<strong>方法重载的时候，优先匹配固定参数</strong></p>
+<p>调用一个被重载的方法时，如果此调用既能够和固定参数的重载方法匹配，也能够与可变长参数的重载方法匹配，则选择固定参数的方法。（<strong>一个固定参数，一个可变参数</strong>）</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(String... args)</span> &#123;</span><br><span class="line">     System.out.println(<span class="string">&quot;version 1&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(String arg1, String arg2)</span>&#123;</span><br><span class="line">     System.out.println(<span class="string">&quot;version 2&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">     test(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>);<span class="comment">//version 2 优先匹配固定参数的重载方法</span></span><br><span class="line">     test();<span class="comment">//version 1</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、调用一个被重载的方法时，如果此调用既能够和两个可变长参数的重载方法匹配，则编译出错:（<strong>多个可变参数，都匹配时</strong>）</p>
+<p>5、<strong>别让 null 值和空值威胁到变长方法</strong></p>
+<p><strong>eg：</strong> </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Client</span> &#123;  </span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">methodA</span><span class="params">(String str,Integer... is)</span>&#123;       </span><br><span class="line">     &#125;  </span><br><span class="line"></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">methodA</span><span class="params">(String str,String... strs)</span>&#123;          </span><br><span class="line">     &#125;  </span><br><span class="line"></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">           <span class="type">Client</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Client</span>();  </span><br><span class="line">           client.methodA(<span class="string">&quot;China&quot;</span>, <span class="number">0</span>);  </span><br><span class="line">           client.methodA(<span class="string">&quot;China&quot;</span>, <span class="string">&quot;People&quot;</span>);  </span><br><span class="line">           client.methodA(<span class="string">&quot;China&quot;</span>);  <span class="comment">//compile error</span></span><br><span class="line">           client.methodA(<span class="string">&quot;China&quot;</span>,<span class="literal">null</span>);  <span class="comment">//compile error</span></span><br><span class="line">     &#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">///修改如下：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">     <span class="type">Client</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Client</span>();  </span><br><span class="line">     String[] strs = <span class="literal">null</span>;  </span><br><span class="line">     client.methodA(<span class="string">&quot;China&quot;</span>,strs);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>理解：</strong></p>
+<p><strong>1</strong>、让编译器知道这个null值是String类型的，编译即可顺利通过，也就减少了错误的发生。</p>
+<p><strong>2</strong>、方法重载第二个参数时 <strong>null</strong> <strong>不知道时调用哪个方法；除非你给予</strong>null<strong>类型，就可以解决。</strong></p>
+<p><strong>注意：</strong>如果在方法书写时，这个方法拥有多参数，参数中包含可变参数，可变参数一定要写在参数列表的末 尾位置。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>迭代器Iterator类</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
+<li>Iterator迭代器：</li>
+<li>用于遍历集合所有元素，util包，只用于遍历。</li>
+<li>集合中都都有相应的迭代器方法。Iterator iterator() ；</li>
+<li>迭代：即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素，如果有就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取      出。这种取出方式专业术语称为迭代。 </li>
+<li>常用的方法：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>E  next()</th>
+<th>返回迭代的下一个元素。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean  hasNext()</td>
+<td>如果仍有元素可以迭代，则返回  true。</td>
+</tr>
+</tbody></table>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//**使用迭代器遍历每个集合对象都有自己的迭代器*</span></span><br><span class="line"></span><br><span class="line">Iterator&lt;String&gt;it=coll.iterator();</span><br><span class="line"></span><br><span class="line"><span class="comment">//**泛型指的是迭代出元素的数据类型*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    <span class="comment">//**判断是否有迭代元素*</span></span><br><span class="line"></span><br><span class="line">Strings=it.next();</span><br><span class="line">    <span class="comment">//**获取迭代出的元素*</span></span><br><span class="line"></span><br><span class="line">System.out.println(s);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="对迭代器理解："><a href="#对迭代器理解：" class="headerlink" title="对迭代器理解："></a>对迭代器理解：</h1><p><strong>1~~当遍历集合时，首先通过调用集合的</strong>iterator()方法获得迭代器对象</p>
+<p>然后使用**hashNext()**方法判断集合中是否存在下一个元素</p>
+<p>如果存在，则调用**next()**方法将元素取出，否则说明已到达了集合末尾，停止遍历元素。</p>
+<p>2~~<strong>terator</strong>迭代器对象在遍历集合时，<strong>内部采用指针的方式</strong>来跟踪集合中的元素，</p>
+<p>在调用<strong>Iterator</strong>的**next()**方法之前，迭代器的索引位于第一个元素之前，不指向任何元素，</p>
+<p>当第一次调用迭代器的<em><strong>next</strong></em><em>方法后，迭代器的索引会向后移动一位</em><strong>，指向第一个元素并将该元素返回，当再次调用</strong>next**方法时，迭代器的索引会指向第二个元素并将该元素返回，</p>
+<p>依此类推，直到<strong>hasNext</strong>方法返回<strong>false</strong>，表示到达了集合的末尾，终止对元素的遍历。</p>
+<p>但是这种迭代器的使用在<strong>JDK5</strong> <strong>，常用增强</strong>for循环方法<strong>（内部实现了迭代器的使用）。</strong></p>
+<p><strong>所有循环体内部：会有</strong>无法取到下标出现<strong>的删除的数据错误，因为</strong>内部是类似与指针的操作但是删除数据长度变小但是指针无法控制就会导致出现错误。</p>
+<h2 id="增强for循环："><a href="#增强for循环：" class="headerlink" title="增强for循环："></a><strong>增强for循环：</strong></h2><p><strong>1</strong>、for( <strong>元素的数据类型 变量 : Collection集合or数组</strong> <strong>)</strong>  <strong>{</strong>   <strong>&#x2F;&#x2F;写操作代码</strong>   <strong>}</strong>  <strong>快捷键：</strong>iter</p>
+<p><strong>2</strong>、增强 <strong>for循环必须有被遍历的目标。</strong></p>
+<p><strong>目标只能是Collection或者是数组。新式for仅仅作为遍历操 作出现。</strong></p>
+<p><strong>eg</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> a:arr)&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a**代表数组中的每个元素*</span></span><br><span class="line"></span><br><span class="line">System.out.println(a);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Strings:coll)&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//**接收变量**s**代表代表被遍历到的集合元素*</span></span><br><span class="line"></span><br><span class="line">System.out.println(s);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>集合</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泛型理解</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E6%B3%9B%E5%9E%8B%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>前言：泛型为了解决集合、类、方法、接口、中数据类型转化问题（<strong>java.lang.ClassCastException</strong>）和 集合中对数据类型没有限制。在JDK5 出现了泛型来规定集合的存储类型。两种使用方法：1、直接规定存储类型；存储时不符合就报错。2、规定未知类型，在在创建对象的时候指定数据类型。</p>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><p>1、使用好处：避免强转的麻烦；避免运行的时候包ClassCastException。</p>
+<p>2、<strong>集合中使用泛型：</strong> </p>
+<p>eg：</p>
+<p>Collection<String>list&#x3D;newArrayList&lt;&gt;();</p>
+<p>这就是泛型使用：当集合明确类型后，存放类型不一致就会编译报错 &#x2F;&#x2F; 集合已经明确具体存放的元素类型，那么在使用迭代器的时候，迭代器也同样会知道具体遍历元 素类型，就不是使用Object类型。</p>
+<p>3、<strong>类中使用泛型</strong> ：    <strong>修饰符 class 类名</strong><strong>&lt;****代表泛型的变量****&gt;</strong> <strong>{ }</strong></p>
+<p>eg：</p>
+<p>class ArrayList<E>{</p>
+<p>public boolean add(E e){}</p>
+<p>public  Eget(int index){}</p>
+<p>….</p>
+<p>}</p>
+<p>在该类被new的时候指定类型。</p>
+<p>4、<strong>方法中使用泛型</strong>：  <strong>修饰符</strong>  <strong>&lt;代表泛型的变量&gt;</strong> <strong>返回值类型 方法名(参数){ }</strong></p>
+<p><strong>eg:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>&lt;MVP&gt; <span class="title function_">MVPshow2</span><span class="params">(MVP mvp)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  mvp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5、接口中使用泛型： 修饰符 interface接口名&lt;代表泛型的变量&gt; { }</p>
+<p>eg：interface MyGenericInterface<E>{  }</p>
+<p><strong>注：所有未知类型的泛型变量都是在实现类对象<strong><strong>new</strong></strong>对象的时候指定的数据类型。</strong></p>
+<h1 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h1><p><a href="https://www.cnblogs.com/minikobe/p/11547220.html">java泛型通配符详解 </a></p>
+<p>我们在定义泛型类，泛型方法，泛型接口的时候经常会碰见很多不同的通配符，</p>
+<h2 id="常用的-T，E，K，V，？"><a href="#常用的-T，E，K，V，？" class="headerlink" title="常用的 T，E，K，V，？"></a><strong>常用的 T，E，K，V，？</strong></h2><p>本质上这些个都是通配符，没啥区别，只不过是编码时的一种约定俗成的东西。比如上述代码中的 T ，我们可以换成 A-Z 之间的任何一个 字母都可以，并不会影响程序的正常运行，但是如果换成其他的字母代替 T ，在可读性上可能会弱一些。<strong>通常情况下，T，E，K，V，？是这样约定的：</strong></p>
+<ul>
+<li>？表示不确定的 java 类型？ 是无界通配符</li>
+<li>T (type) 表示具体的一个java类型</li>
+<li>K V (key value) 分别代表java键值中的Key Value</li>
+<li>E (element) 代表Element</li>
+</ul>
+<h2 id="上界通配符-lt-extends-E-gt"><a href="#上界通配符-lt-extends-E-gt" class="headerlink" title="上界通配符 &lt; ? extends E&gt;"></a><strong>上界通配符 &lt; ? extends E&gt;</strong></h2><p>上界：用 extends 关键字声明，表示参数化的类型可能是所指定的类型，或者是此类型的子类。</p>
+<p>在类型参数中使用 extends 表示这个泛型中的参数<strong>必须是 E 或者 E 的子类</strong>，这样有两个好处：</p>
+<ul>
+<li>如果传入的类型不是 E 或者 E 的子类，编译不成功</li>
+<li>泛型中可以使用 E 的方法，要不然还得强转成 E 才能使用</li>
+</ul>
+<p>private &lt;K extends A, E extends B&gt; E test(K arg1, E arg2){</p>
+<p>  E result &#x3D; arg2;</p>
+<p>  arg2.compareTo(arg1);</p>
+<p>  &#x2F;&#x2F;…..</p>
+<p>  return result;</p>
+<p>}</p>
+<p>类型参数列表中如果有多个类型参数上限，用逗号分开</p>
+<h2 id="下界通配符-lt-super-E-gt"><a href="#下界通配符-lt-super-E-gt" class="headerlink" title="下界通配符 &lt; ? super E&gt;"></a><strong>下界通配符 &lt; ? super E&gt;</strong></h2><p>下界: 用 super 进行声明，表示参数化的类型可能是所指定的类型，或者是此<strong>类型的父类型，直至 Object</strong></p>
+<p>在类型参数中使用 super 表示这个泛型中的参数必须是 E 或者 E 的父类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(List&lt;? <span class="built_in">super</span> T&gt; dst, List&lt;T&gt; src)</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (T t : src) &#123;</span><br><span class="line"></span><br><span class="line">    dst.add(t);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">  List&lt;Dog&gt; dogs = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  List&lt;Animal&gt; animals = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">Test3</span>().test(animals,dogs);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dog 是 Animal 的子类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>dst 类型 “大于等于” src 的类型，这里的“大于等于”是指 dst 表示的范围比 src 要大，因此装得下 dst 的容器也就能装 src 。</p>
+<p><strong>注：上界通配符主要用于读数据，下界通配符主要用于写数据。</strong></p>
+<h2 id="？和-T-的区别"><a href="#？和-T-的区别" class="headerlink" title="？和 T 的区别"></a><strong>？和 T 的区别</strong></h2><p>总结：T 是一个 确定的 类型，通常用于泛型类和泛型方法的定义，？是一个 不确定 的类型，通常用于泛型方法的调用代码和形参，不能用于定义类和泛型方法。</p>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 通过 T 来 确保 泛型参数的一致性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> &lt;T <span class="keyword">extends</span> <span class="title class_">Number</span>&gt; <span class="keyword">void</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span><span class="params">(List&lt;T&gt; dest, List&lt;T&gt; src)</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment">//通配符是 不确定的，所以这个方法不能保证两个 List 具有相同的元素类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span><span class="params">(List&lt;? extends Number&gt; dest, List&lt;? extends Number&gt; src)</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">//Class&lt;T&gt;和Class&lt;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T&gt;TreString(T request,Class&lt;T&gt;clazz)&#123;</span><br><span class="line"></span><br><span class="line">Tt=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">t=(T)request;</span><br><span class="line"></span><br><span class="line">returnt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line"></span><br><span class="line">Objecto=*reString*(<span class="number">1.0</span>,Double.class);</span><br><span class="line"></span><br><span class="line">System.*out*.println(<span class="string">&quot;o=&quot;</span>+o);</span><br><span class="line"></span><br><span class="line">System.*out*.println(o.getClass());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TreeSet和TreeMap理解</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/TreeSet%E5%92%8CTreeMap/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/speedme/article/details/22661671">Java集合类TreeMap和TreeSet</a></p>
+<p>TreeMap 和 TreeSet 是 Java Collection Framework 的两个重要成员，其中 TreeMap 是 Map 接口的常用实现类，而 TreeSet 是 Set 接口的常用实现类。虽然 TreeMap 和TreeSet 实现的接口规范不同，但 <strong>TreeSet</strong> <strong>底层是通过</strong> <strong>TreeMap</strong> <strong>来实现的（如同</strong>HashSet底层是是通过HashMap来实现的一样），因此二者的实现方式完全一样。而 TreeMap 的实现就是红黑树算法</p>
+<p><strong>TreeSet和TreeMap的关系</strong></p>
+<p>与HashSet完全类似，TreeSet里面绝大部分方法都市直接调用TreeMap方法来实现的。</p>
+<p><strong>相同点：</strong></p>
+<ul>
+<li>TreeMap和TreeSet都是非同步集合，因此他们不能在多线程之间共享，不过可以使用方法**Collections.synchroinzedMap()**来实现同步</li>
+<li>运行速度都要比Hash集合慢，他们内部对元素的操作时间复杂度为O(logN)，而HashMap&#x2F;HashSet则为O(1)。</li>
+<li>TreeMap和TreeSet都是有序的集合，也就是说他们存储的值都是拍好序的。</li>
+</ul>
+<p><strong>不同点：</strong></p>
+<ul>
+<li>最主要的区别就是TreeSet和TreeMap分别实现Set和Map接口</li>
+<li>TreeSet只存储一个对象，而TreeMap存储两个对象Key和Value（仅仅key对象有序）</li>
+<li>TreeSet中不能有重复对象，而TreeMap中可以存在</li>
+<li><strong>TreeMap</strong>的底层采用红黑树的实现，完成数据有序的插入，排序。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>集合</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HashSet和LinkHashMap理解</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashSet%E5%92%8CLinkHashMap/</url>
+    <content><![CDATA[<h1 id="set接口"><a href="#set接口" class="headerlink" title="set接口"></a>set接口</h1><p>1、java.util.HashSet 是 Set 接口的一个实现类，它所存储的**元素是不可重复的，并且元素都是无序的(即存取顺序 不一致)**。 </p>
+<p>2<strong>、java.util.HashSet 底层的实现其实是一个 java.util.HashMap 支持</strong>，HashSet 是根据对象的哈希值来确定元素在集合中的存储位置，因此具有良好的存取和查找性能。保证元素唯一性 的方式依赖于： hashCode 与 equals 方法。 </p>
+<p>3、HashSet保证元素唯一，可是元素存放进去是没有顺序的，那么我们要<strong>保证有序</strong>，</p>
+<p>HashSet下面有一个子类 java.<strong>util</strong>.LinkedHashSet ，它是<strong>链表和哈希表组合的一个数据存储结构</strong>。</p>
+<p>注：LinkedHashSet的底层就是LinkedHashMap来实现。</p>
+<p>4、HashSet存储对象HashCode值相同的处理。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171332344.bmp" alt="06_Set集合存储元素不重复的原理"></p>
+<h1 id="HashMap和HashSet的区别："><a href="#HashMap和HashSet的区别：" class="headerlink" title="HashMap和HashSet的区别："></a><a href="https://blog.csdn.net/chen213wb/article/details/84647179?utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~default-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~default-1.control"><strong>HashMap和HashSet的区别</strong></a><strong>：</strong></h1><table>
+<thead>
+<tr>
+<th align="center"><em>HashMap</em></th>
+<th align="center"><em>HashSet</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HashMap实现了Map接口</td>
+<td align="center">HashSet实现了Set接口</td>
+</tr>
+<tr>
+<td align="center">HashMap储存键值对</td>
+<td align="center">HashSet仅仅存储对象</td>
+</tr>
+<tr>
+<td align="center">使用put(方法将元素放入map中</td>
+<td align="center">使用add0方法将元素放入set中</td>
+</tr>
+<tr>
+<td align="center">HashMap中使用键对象来计算hashcode值</td>
+<td align="center">HashSet使用成员对象来计算hashcode值，对于两个对象来说hashcode可能相同，所以equals(方法用来判断对象的相等性，如果两个对象不同的话，那么返回false</td>
+</tr>
+<tr>
+<td align="center">HashMap比较快，因为是使用唯一的键来获取对象</td>
+<td align="center">HashSet较HashMap来说比较慢</td>
+</tr>
+</tbody></table>
+<p><strong>注：HashSet</strong>底层时用HashMap来实现；LinkedHashSet底层时LinkedHashSMap实现。</p>
+<h2 id="HashMap：源码级别理解："><a href="#HashMap：源码级别理解：" class="headerlink" title="HashMap：源码级别理解："></a><strong>HashMap</strong>：源码级别理解：</h2><p><strong>1</strong>、结构上是一个扩充的数组，需要一下属性；</p>
+<ul>
+<li><strong>capacity</strong>：目前数组的长度。为了实现高效的扩容，其值总为2^n的形式。每次扩容后，n会加1，即整个数组的容量变为之前的    2倍。该值初始默认值为16。</li>
+<li><strong>loadFactor</strong>：负载因子，默认值为     0.75。该值与threshold配合使用。</li>
+<li><strong>threshold</strong>：扩容的阈值，等于 <strong>capacity     * loadFactor</strong>。即当数组内达到这么多元素时，会<strong>触发数组的扩容</strong>。</li>
+</ul>
+<p><strong>2</strong>、数组中的每个元素是一个Node，它的属性有：</p>
+<ul>
+<li>hash: 当前位置值的hash值</li>
+<li>key：当前位置的键</li>
+<li>value: 当前位置存储的值</li>
+<li>next;下一个Node</li>
+</ul>
+<p>3、JDK7，Node的存储还是单链表；JDK8改用红黑树提高效率<strong>（final void</strong> <strong>treeifyBin</strong>(Node&lt;K,V&gt;[] tab, int hash)</p>
+<p>4、数据写入（重点）</p>
+<p>向HashMap中写入数据的过程，简单总结起来分为这么几步：</p>
+<ul>
+<li><p>计算要插入数据的Hash值，并根据该值确定元素的插入位置（即在动态数组中的位置）。</p>
+</li>
+<li><p>将元素放入到数组的指定位置</p>
+</li>
+<li><p>如果该数组位置之前没有元素，则直接放入</p>
+</li>
+<li><p>放入该位置后，数组元素超过扩容阈值，则对数组进行扩容</p>
+</li>
+<li><p>放入该位置后，数组元素没超过扩容阈值，写入结束</p>
+</li>
+<li><p>如果该数组位置之前有元素，则挂载到已有元素的后端</p>
+</li>
+<li><p>如果之前元素组成了树，则挂入树的指定位置</p>
+</li>
+<li><p>如果之前元素组成了链表</p>
+</li>
+<li><p>如果加入该元素链表长度超过8，则将链表转化为红黑树后插入</p>
+</li>
+<li><p>如果加入该元素链表长度不超过8，则直接插入</p>
+</li>
+</ul>
+<h1 id="HashMap和HashSet存储对象过程："><a href="#HashMap和HashSet存储对象过程：" class="headerlink" title="HashMap和HashSet存储对象过程："></a><strong>HashMap和HashSet存储对象过程：</strong></h1><p><strong>一、HahMap存储对象的过程如下</strong></p>
+<p>1、对HahMap的Key调用hashCode()方法，返回int值，即对应的hashCode；</p>
+<p>2、把此hashCode作为哈希表的索引，查找哈希表的相应位置，若当前位置内容为NULL，则把hashMap的Key、Value包装成Entry数组，放入当前位置；</p>
+<p>3、若当前位置内容不为空，则继续查找当前索引处存放的链表，利用equals方法，找到Key相同的Entry数组，则用当前Value去替换旧的Value；</p>
+<p>4、若未找到与当前Key值相同的对象，则把当前位置的链表后移（Entry数组持有一个指向下一个元素的引用），把新的Entry数组放到链表表头；</p>
+<p><strong>二、HashSet存储对象的过程</strong></p>
+<p><strong>1</strong>、java.util.HashSet 底层的实现其实是一个 java.util.HashMap 支持；</p>
+<p><strong>2</strong>、add、方法就是、Map、的put方法（key，(静态Object) <strong>）；构造方法</strong>new HashMap().</p>
+<p><strong>源码：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span>  <span class="variable">PRESENT</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//**1**、构造方法。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">HashSet</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">map=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//**2**、add方法。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> map.put(e,PRESENT)==<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//**3**、remove方法。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">remove</span><span class="params">(Object o)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> map.remove(o)==PRESENT;  <span class="comment">//remove根据key删除后返回对应的值</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、往HashSet添加元素的时候，HashSet会先调用元素的<strong>hashCode方法</strong>得到元素的哈希值 ，然后通过元素 的哈希值经过移位等运算，就可以算出该元素在哈希表中 的存储位置。</p>
+<h3 id="存储图解："><a href="#存储图解：" class="headerlink" title="存储图解："></a><strong>存储图解</strong>：</h3><p><strong>HashSet集合存储数据的结构(哈希表)</strong></p>
+<p><strong>jdk1.8版本之前:哈希表&#x3D;数组+链表</strong></p>
+<p><strong>jdk1.8版本之后:</strong></p>
+<p><strong>哈希表&#x3D;数组+链表;</strong></p>
+<p><strong>哈希表&#x3D;数组+红黑树(提高查询的速度)哈希表的特点:速度快</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171346810.png" alt="image-20220617134601754"></p>
+<p><strong>情况1： 如果算出元素存储的位置目前没有任何元素存储，那么该元素可以直接存储到该位置上。</strong></p>
+<p><strong>情况2： 如果算出该元素的存储位置目前已经存在有其他的元素了，那么会调用该元素的equals方法与该位置的元素再比较一次，如果equals返回的是true，那么该元素与这个位置上的元素就视为重复元素，不允许添加，如果equals方法返回的是false，那么该元素运行添加。</strong></p>
+<h1 id="存储对象的理解"><a href="#存储对象的理解" class="headerlink" title="存储对象的理解"></a>存储对象的理解</h1><p><strong>JDK1.8引入红黑树大程度优化了HashMap的性能，那么对于我们来讲保证HashSet集合元素的唯一， 其实就是根据对象的hashCode和equals方法来决定的。</strong>如果我们往集合中存放自定义的对象，那么保证其唯一， 就必须复写hashCode和equals方法建立属于当前对象的比较方式。</p>
+<h1 id="树参考图"><a href="#树参考图" class="headerlink" title="树参考图"></a>树参考图</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171349399.png" alt="微信图片_20220617134846"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>集合</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>包装类</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E5%8C%85%E8%A3%85%E7%B1%BB/</url>
+    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171035644.png" alt="image-20220617103514608"></p>
+<h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><p>Integer用&#x3D;&#x3D;比较127相等128不相等的原因？</p>
+<p>自动装箱时，如果数字在**-128至127<strong>之间时，会直接使用缓存中的对象</strong>，而不是重新创建一个对象，否则会重新创建对象，所以之所以Integer对象可以比较值大小，也是比的对象；但是在比较两个对象相等时，在上面的范围内可以“&#x3D;&#x3D;”，超过就得老老实实“equals”.</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>1、装箱和拆箱</p>
+<ul>
+<li><strong>装箱：从基本类型转换为对应的包装类对象。</strong> </li>
+<li><strong>拆箱：从包装类对象转换为对应的基本类型。</strong></li>
+</ul>
+<p>2、装箱方法:     包装类.valueOf（基本数据类型）</p>
+<p>   拆箱方法：   基本数据类型value()</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171039539.png" alt="image-20220617103907505"></p>
+<p>3、JDK1.5开始不需要手动装箱拆箱。体现在ArrayList类添加基本数据类型会先自动装箱在存入集合。</p>
+<p>4、基本数据类型和String类型的转化：</p>
+<p>a、基本数据类型 +“ ”（加上一个空串）。</p>
+<p>b、包装类型都有自己对应的（除了Character类）parseXxx的静态方法转化内为对应的基本数据类型。</p>
+<p>例如：</p>
+<h1 id="Interger类型"><a href="#Interger类型" class="headerlink" title="Interger类型"></a>Interger类型</h1><p>1、基本类型 int 的包装类；提供了int–String的转换方法；int 的进制转化方法。</p>
+<p>2、构造方法：可以传入int型和String型 的参数，作为Interger类型。</p>
+<p>3、常用类型的转化方法：</p>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>返回值</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byteValue()</td>
+<td>byte</td>
+<td>以 byte 类型返回该 Integer 的值</td>
+</tr>
+<tr>
+<td>shortValue()</td>
+<td>short</td>
+<td>以 short 类型返回该 Integer 的值</td>
+</tr>
+<tr>
+<td>intValue()</td>
+<td>int</td>
+<td>以 int 类型返回该 Integer 的值</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>String</td>
+<td>返回一个表示该 Integer 值的 String 对象</td>
+</tr>
+<tr>
+<td>equals(Object obj)</td>
+<td>boolean</td>
+<td>比较此对象与指定对象是否相等</td>
+</tr>
+<tr>
+<td><strong>compareTo</strong>(Integer  anotherlnteger)</td>
+<td>int</td>
+<td>在数字上比较两个 Integer 对象，如相等，则返回 0；  如调用对象的数值小于 anotherlnteger 的数值，则返回负值；  如调用对象的数值大于 anotherlnteger 的数值，则返回正值</td>
+</tr>
+<tr>
+<td>valueOf(String s)</td>
+<td>Integer</td>
+<td>返回保存指定的 String 值的 Integer 对象</td>
+</tr>
+<tr>
+<td>parseInt(String s)</td>
+<td>int</td>
+<td>将数字字符串转换为 int 数值</td>
+</tr>
+<tr>
+<td>max(int a,int b)</td>
+<td>int</td>
+<td>返回大的数据</td>
+</tr>
+</tbody></table>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171052406.png" alt="image-20220617105224005"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171053361.png" alt="image-20220617105350303"></p>
+<h1 id="Character类"><a href="#Character类" class="headerlink" title="Character类"></a>Character类</h1><table>
+<thead>
+<tr>
+<th align="center"><strong>方法</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void Character(char value)</td>
+<td align="center">构造一个新分配的 Character 对象，用以表示指定的 char 值</td>
+</tr>
+<tr>
+<td align="center">char charValue()</td>
+<td align="center">返回此 Character 对象的值，此对象表示基本 char 值</td>
+</tr>
+<tr>
+<td align="center">int <strong>compareTo</strong>(Character anotherCharacter)</td>
+<td align="center">根据数字比较两个 Character 对象</td>
+</tr>
+<tr>
+<td align="center">boolean equals(Character anotherCharacter)</td>
+<td align="center">将此对象与指定对象比较，当且仅当参数不是 null，而 是一个与此对象  包含相同 char 值的 Character 对象时， 结果才是 true</td>
+</tr>
+<tr>
+<td align="center">boolean isDigit(char ch)</td>
+<td align="center">确定指定字符是否为数字，如果通过 Character. getType(ch) 提供的字  符的常规类别类型为 DECIMAL_DIGIT_NUMBER，则字符为数字</td>
+</tr>
+<tr>
+<td align="center">boolean isLetter(int codePoint)</td>
+<td align="center">确定指定字符（Unicode 代码点）是否为字母</td>
+</tr>
+<tr>
+<td align="center">boolean isLetterOrDigit(int codePoint)</td>
+<td align="center">确定指定字符（Unicode 代码点）是否为字母或数字</td>
+</tr>
+<tr>
+<td align="center">boolean isLowerCase(char ch)</td>
+<td align="center">确定指定字符是否为小写字母</td>
+</tr>
+<tr>
+<td align="center">boolean isUpperCase(char ch)</td>
+<td align="center">确定指定字符是否为大写字母</td>
+</tr>
+<tr>
+<td align="center">char toLowerCase(char ch)</td>
+<td align="center">使用来自  UnicodeData 文件的大小写映射信息将字符参数转换为小写</td>
+</tr>
+<tr>
+<td align="center">char toUpperCase(char ch)</td>
+<td align="center">使用来自  UnicodeData 文件的大小写映射信息将字符参数转换为大写</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>System类</title>
+    <url>/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/System%E7%B1%BB/</url>
+    <content><![CDATA[<p>System类：（lang包）</p>
+<p><a href="http://c.biancheng.net/view/904.html">Java System类详解</a></p>
+<p>1、类常用的方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">static  long currentTimeMillis()</th>
+<th align="center">返回以毫秒为单位的当前时间。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">static  void arraycopy(Object  src, int srcPos,   Object  dest, int destPos, int length)</td>
+<td align="center">将数组中指定的数据拷贝到另一个数组中。</td>
+</tr>
+<tr>
+<td align="center">static  void gc()</td>
+<td align="center">调用 gc  方法暗示着 Java 虚拟机做了一些<strong>努力来回收未用对象</strong>，以便能够快速地重用这些对象当前占用的内存。（但是不一定能回收到对象，没有强制性，从所有丢弃的对象中回收了空间）</td>
+</tr>
+<tr>
+<td align="center">static exit (int status)</td>
+<td align="center">终止当前正在运行的 Java 虚拟机;  status 的值为 0 时表示正常退出，非零时表示异常退出。使用该方法可以在图形界面编程中实现程序的退出功能等</td>
+</tr>
+</tbody></table>
+<p>arraycopy参数理解</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>src  Object</th>
+<th>源数组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>srcPos  int</td>
+<td>源数组索引起始位置</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dest Object</td>
+<td>目标数组</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destPos  int</td>
+<td>目标数组索引起始位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>length int</td>
+<td>复制元素个数</td>
+</tr>
+</tbody></table>
+<p><strong>arraycopy(dataType[] srcArray,int srcIndex,int destArray,int destIndex,int length) 方法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.arraycopy(src,<span class="number">0</span>,temp,<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line">System.arraycopy(src,<span class="number">4</span>,temp,<span class="number">4</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//理解</span></span><br><span class="line"><span class="comment">//结果：null null （X X）（X X） null null </span></span><br><span class="line"><span class="comment">//复制src第一个字符开始两个字符，给temp数组，存在temp的第三个字符的位置；</span></span><br><span class="line"><span class="comment">//复制src第五个字符开始两个，给temp数组，在temp的第五个字符的位置）</span></span><br><span class="line"></span><br><span class="line">*<span class="comment">/**</span></span><br><span class="line"><span class="comment">*src-**源数组。*</span></span><br><span class="line"><span class="comment">*srcPos-**源数组中的起始位置。*</span></span><br><span class="line"><span class="comment">*dest-**目标数组。*</span></span><br><span class="line"><span class="comment">*destPos-**目标数据中的起始位置。*</span></span><br><span class="line"><span class="comment">*length-**要复制的数组元素的数量。*</span></span><br><span class="line"><span class="comment">**/</span>*</span><br><span class="line">*<span class="comment">//**这两具数组都有自己独立的堆内存空间</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206171030566.png" alt="image-20220617103056020"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
     <title>date、calender类</title>
-    <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/date%E3%80%81calender%E7%B1%BB/</url>
+    <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Date-Calender%E7%B1%BB/</url>
     <content><![CDATA[<p><a href="http://c.biancheng.net/view/876.html">Java时间日期的处理：Java Date类、Calendar类详解 </a></p>
 <p><a href="http://c.biancheng.net/view/878.html">Java日期格式化（DateFormat类和SimpleDateFormat类）</a></p>
 <p><a href="https://blog.csdn.net/qq_32475739/article/details/64934903">java-将字符串和毫秒值转化为日期格式的几种方法</a></p>
@@ -271,28 +1053,20 @@ JAVA八股文熟练</p>
 <li>Calendar.DAY_OF_WEEK：星期几（外国周日为第一天，-1就可以使用）。</li>
 </ul>
 <p>5、get&#x2F;set&#x2F;add实例 getTime方法</p>
-<p>*&#x2F;&#x2F;<strong>创建</strong>Calendar对象*</p>
-<p>Calendarcal&#x3D;Calendar.<em>getInstance</em>();</p>
-<p>intyear&#x3D;cal.get(Calendar.<em>YEAR</em>);</p>
-<p>intmonth&#x3D;cal.get(Calendar.<em>MONTH</em>)+1;</p>
-<p>intdayOfMonth&#x3D;cal.get(Calendar.<em>DAY_OF_MONTH</em>);</p>
-<p>cal.set(Calendar.<em>YEAR</em>,2020);</p>
-<p>cal.add(Calendar.<em>DAY_OF_MONTH</em>,2);*&#x2F;&#x2F;<strong>加</strong>2天*</p>
-<p>cal.add(Calendar.<em>YEAR</em>,-3);*&#x2F;&#x2F;<strong>减</strong>3年*</p>
-<p>Calendarcal2&#x3D;Calendar.<em>getInstance</em>();</p>
-<p>Datedate2&#x3D;cal2.getTime();</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//**创建**Calendar对象*</span></span><br><span class="line"></span><br><span class="line">Calendarcal=Calendar.*getInstance*();</span><br><span class="line"></span><br><span class="line">intyear=cal.get(Calendar.*YEAR*);</span><br><span class="line"></span><br><span class="line">intmonth=cal.get(Calendar.*MONTH*)+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">intdayOfMonth=cal.get(Calendar.*DAY_OF_MONTH*);</span><br><span class="line"></span><br><span class="line">cal.set(Calendar.*YEAR*,<span class="number">2020</span>);</span><br><span class="line"></span><br><span class="line">cal.add(Calendar.*DAY_OF_MONTH*,<span class="number">2</span>);*<span class="comment">//**加**2天*</span></span><br><span class="line"></span><br><span class="line">cal.add(Calendar.*YEAR*,-<span class="number">3</span>);*<span class="comment">//**减**3年*</span></span><br><span class="line"></span><br><span class="line">Calendarcal2=Calendar.*getInstance*();</span><br><span class="line"></span><br><span class="line">Datedate2=cal2.getTime();</span><br></pre></td></tr></table></figure>
+
 <p>注：Calendar类的getTime方法返回值时Date类</p>
-<p>总结：</p>
-<p><strong>Date—》String（SimpleDateFormat类的format方法）</strong></p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p><strong>Date—》String（SimpleDateFormat类的format方法）</strong></p>
 <p><strong>String—》Date（SimpleDateFormat类的parse方法）</strong></p>
 <p><strong>Date—》毫秒时间（getTime方法）</strong></p>
 <p><strong>毫秒时间—》Date（Date类的long型参数的构造方法）</strong></p>
 <p><strong>Calendar—》Date（getTime方法）</strong></p>
 <p><strong>Date—》Calendar（setTime方法）</strong></p>
+<h1 id="LocalDateTime-、ZoneDateTime-、Instant理解"><a href="#LocalDateTime-、ZoneDateTime-、Instant理解" class="headerlink" title="LocalDateTime 、ZoneDateTime 、Instant理解"></a>LocalDateTime 、ZoneDateTime 、Instant理解</h1><p>见JDK1.8新特性中总结。</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
-        <category>基础</category>
+        <category>高级</category>
       </categories>
   </entry>
   <entry>
@@ -386,7 +1160,7 @@ JAVA八股文熟练</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
-        <category>基础</category>
+        <category>高级</category>
       </categories>
   </entry>
   <entry>
@@ -428,8 +1202,26 @@ JAVA八股文熟练</p>
 
 
 
-<h1 id="分离出IOC、DI、MVC"><a href="#分离出IOC、DI、MVC" class="headerlink" title="分离出IOC、DI、MVC"></a>分离出IOC、DI、MVC</h1><p>为了符合单一职责原则的设计模式原则。</p>
+<h1 id="IOC-DI顶层设计"><a href="#IOC-DI顶层设计" class="headerlink" title="IOC-DI顶层设计"></a>IOC-DI顶层设计</h1><p>为了符合单一职责原则的设计模式原则，要把原来（加载配置文件、扫描包、初始化所有相关类的实例）IOC和DI（依赖注入）部分提取出来。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206162109009.png" alt="微信图片_20220616210843"></p>
+<p>调用IOC容器，先从ApplicationContext的getBean方法开始。</p>
+<p>先初始化ApplicationContext对象，构造方法中</p>
+<p>1、加载配置文件</p>
+<p>2、将所有的配置文件解析为BeanDefinition对象，保存在List集合中。</p>
+<p>3、将BeanDefinition对象缓存到BeanDefinitionMap中。通过doRegistryBeanDefiniition方法，把List遍历put到BeanDefinitionMap中。</p>
+<p>4、最后创建对象。通过doCreateBean方法，得到Map中entry，通过getBean方法得到实例。</p>
+<p>在getBean方法中，通过Map得到beanName和BeanDefinition实例化，然后把创建的instance实例封装进BeanWrapper（装饰器模式）中，最后将beanWapper（Map集合）缓存到IOC容器</p>
+<p>5、完成依赖注入。通过populateBean方法，通过beanWrapper得到实例，然后拿到全部的属性，遍历对象进行依赖注入。</p>
+<p>名词理解：</p>
+<p>getBean：从IOC中获取Bean</p>
+<p>BeanDefinition：定义bean，将配置文件读取到内存后避免反复读取和解析，为什莫需要封装一个Definition：多种配置文件，Annotation，yml等。</p>
+<p>BeanWrapper：包装bean，存储对象，利用装饰器模式，把原生对象和代理对象全部包装起来。</p>
+<p>BeanDefinitionReader：工具类，读取配置文件，把配置文件解析为beanDefinition对象。</p>
+<h1 id="MVC顶层设计"><a href="#MVC顶层设计" class="headerlink" title="MVC顶层设计"></a>MVC顶层设计</h1><p>MVC九大组件:</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206172018459.png" alt="image-20220617201855374"></p>
+<p>请求转发:forword,请求参数不丢失</p>
+<p>重定向:redirect,请求参数不保留</p>
+<p>处理映射器(HandlerMapping)、处理适配器(HandlerAdapter)、视图解析器(ModelAndView)</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
@@ -439,10 +1231,7 @@ JAVA八股文熟练</p>
   <entry>
     <title>Spring基础</title>
     <url>/2022/06/15/JAVA/Spring/%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>Spring实现思路：</p>
-<p>配置阶段</p>
-<p>初始化阶段</p>
-]]></content>
+    <content><![CDATA[]]></content>
       <categories>
         <category>JAVA</category>
         <category>Spring</category>
@@ -1137,7 +1926,7 @@ JAVA八股文熟练</p>
 
 <p>5、格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
 <p>代码如下:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">formatter</span> <span class="operator">=</span> DateTimeFormatter .ofPattern(<span class="string">&quot;MMM dd, yyyy - HH:mm&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">parsed</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;Nov 03, 2014 - 07:13&quot;</span>, formatter); </span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> formatter.format(parsed); System.out.println(string); <span class="comment">// Nov 03, 2014 - 07:13</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">formatter</span> <span class="operator">=</span> DateTimeFormatter .ofPattern(<span class="string">&quot;MMM dd, yyyy - HH:mm&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">parsed</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;Nov 03, 2014 - 07:13&quot;</span>, formatter); </span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> formatter.format(parsed); </span><br><span class="line"></span><br><span class="line">System.out.println(string); <span class="comment">// Nov 03, 2014 - 07:13</span></span><br></pre></td></tr></table></figure>
 
 <p><code>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。</code></p>
 <p>6、<strong>LocalDateTime</strong>提供了对日期和时间进行加减的非常简单的链式调用：</p>
@@ -1448,18 +2237,118 @@ JAVA八股文熟练</p>
   <entry>
     <title>ArrayList和LinkedList</title>
     <url>/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/ArrayList%E5%92%8CLinkedList/</url>
-    <content><![CDATA[<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>1、ArrayList和LinkedList都实现了List接口，他们有以下的不同点：<br>ArrayList是基于索引的数据接口，它的底层是数组。它可以以O(1)时间复杂度对元素进行随机访问。与此对应，LinkedList是以元素列表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间复杂度是O(n)。<br>2、LinkedList的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引。<br>3、LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素。</p>
-<h3 id="ArrayList-vs-LinkedList。"><a href="#ArrayList-vs-LinkedList。" class="headerlink" title="ArrayList  vs. LinkedList。"></a>ArrayList  vs. LinkedList。</h3><ol>
-<li><p>因为 Array 是基于索引 (index) 的数据结构，它使用索引在数组中搜索和读取数据是很快的。 Array 获取数据的时间复杂度是 O(1), 但是要删除数据却是开销很大的，因为这需要重排数组中的所有数据。</p>
-</li>
-<li><p>相对于 ArrayList ， LinkedList 插入是更快的。因为 LinkedList 不像 ArrayList 一样，不需要改变数组的大小，也不需要在数组装满的时候要将所有的数据重新装入一个新的数组，这是 ArrayList 最坏的一种情况，时间复杂度是 O(n) ，而 LinkedList 中插入或删除的时间复杂度仅为 O(1) 。 ArrayList 在插入数据时还需要更新索引（除了插入数组的尾部）。</p>
-</li>
-<li><p>类似于插入数据，删除数据时， LinkedList 也优于 ArrayList 。</p>
-</li>
-<li><p>LinkedList 需要更多的内存，因为 ArrayList 的每个索引的位置是实际的数据，而 LinkedList 中的每个节点中存储的是实际的数据和前后节点的位置 ( 一个 LinkedList 实例存储了两个值： Node<E> first 和 Node<E> last 分别表示链表的其实节点和尾节点，每个 Node 实例存储了三个值： E item,Node next,Node pre) 。</p>
-</li>
-</ol>
-<h3 id="什么场景下更适宜使用-LinkedList，而不用ArrayList"><a href="#什么场景下更适宜使用-LinkedList，而不用ArrayList" class="headerlink" title="什么场景下更适宜使用 LinkedList，而不用ArrayList"></a>什么场景下更适宜使用 LinkedList，而不用ArrayList</h3><ol>
+    <content><![CDATA[<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><p>1、java.util.List 接口继承自 Collection 接口，是单列集合的一个重要分支，习惯性地会将实现了 List 接口的对象称为List集合。</p>
+<p>2、在List集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过 索引来访问集合中的指定元素</p>
+<p>3、List集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致。</p>
+<p>4、常用方法：</p>
+<p>List接口常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>add(Object  element)：</th>
+<th>向列表的尾部添加指定的元素。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>size()：</td>
+<td>返回列表中的元素个数。</td>
+</tr>
+<tr>
+<td>**get(int index)**：</td>
+<td>返回列表中指定位置的元素，index从0开始。</td>
+</tr>
+<tr>
+<td>**add(int index, Object element)**：</td>
+<td>在列表的指定位置插入指定元素。</td>
+</tr>
+<tr>
+<td>**set(int i, Object element)**：</td>
+<td>将索引i位置元素替换为元素element并返回被替换的元素。</td>
+</tr>
+<tr>
+<td>clear()：</td>
+<td>从列表中移除所有元素。</td>
+</tr>
+<tr>
+<td>isEmpty()：</td>
+<td>判断列表是否包含元素，不包含元素则返回  true，否则返回false。</td>
+</tr>
+<tr>
+<td>contains(Object  o)：</td>
+<td>如果列表包含指定的元素，则返回  true。</td>
+</tr>
+<tr>
+<td>**remove(int index)**：</td>
+<td>移除列表中指定位置的元素，并返回被删元素。</td>
+</tr>
+<tr>
+<td>**remove(Object o)**：</td>
+<td>移除集合中第一次出现的指定元素，移除成功返回true，否则返回false。</td>
+</tr>
+<tr>
+<td>**iterator()**：</td>
+<td>返回按适当顺序在列表的元素上进行迭代的迭代器。</td>
+</tr>
+</tbody></table>
+<p>注：<strong>ArrayList有List的所有方法，LinkedLIst也具有这些方法。</strong></p>
+<h1 id="LinkedList-特殊方法"><a href="#LinkedList-特殊方法" class="headerlink" title="LinkedList 特殊方法"></a>LinkedList 特殊方法</h1><table>
+<thead>
+<tr>
+<th>public  void addFirst(E e) :</th>
+<th>将指定元素插入此列表的开头。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  void addLast(E e) :</td>
+<td>将指定元素添加到此列表的结尾。</td>
+</tr>
+<tr>
+<td>public E  getFirst() :</td>
+<td>返回此列表的第一个元素。</td>
+</tr>
+<tr>
+<td>public E  getLast() :</td>
+<td>返回此列表的最后一个元素。</td>
+</tr>
+<tr>
+<td>public E  removeFirst() :</td>
+<td>移除并返回此列表的第一个元素。</td>
+</tr>
+<tr>
+<td>public E  removeLast() :</td>
+<td>移除并返回此列表的最后一个元素。</td>
+</tr>
+<tr>
+<td>public E pop() :</td>
+<td>从此列表所表示的堆栈处弹出一个元素。</td>
+</tr>
+<tr>
+<td>public void push(E e) :</td>
+<td>将元素推入此列表所表示的堆栈。</td>
+</tr>
+<tr>
+<td>public  boolean isEmpty() ：</td>
+<td>如果列表不包含元素，则返回true。</td>
+</tr>
+</tbody></table>
+<p>注：<strong>这些方法结合使用可以实现栈、和队列的效果。</strong></p>
+<h1 id="ArrayList-vs-LinkedList。"><a href="#ArrayList-vs-LinkedList。" class="headerlink" title="ArrayList  vs. LinkedList。"></a>ArrayList  vs. LinkedList。</h1><h2 id="相同"><a href="#相同" class="headerlink" title="相同"></a>相同</h2><p>LinkedeList和ArrayList是常用的两种存储结构，都可以实现了List接口，两者结构都线程不安全，</p>
+<h2 id="不同"><a href="#不同" class="headerlink" title="不同"></a>不同</h2><p>1、数据结构不同</p>
+<p>ArrayList是Array(动态数组)的数据结构，LinkedList是Link(链表)的数据结构。</p>
+<p>2、效率不同</p>
+<p>当随机访问List（get和set操作）时，ArrayList比LinkedList的效率更高，因为LinkedList是线性的数据存储方式，所以需要移动指针从前往后依次查找。</p>
+<p>当对数据进行增加和删除的操作(add和remove操作)时，LinkedList比ArrayList的效率更高，因为ArrayList是数组，所以在其中进行增删操作时，会对操作点之后所有数据的下标索引造成影响，需要进行数据的移动。</p>
+<p>3、自由性不同</p>
+<p>ArrayList自由性较低，因为它需要手动的设置固定大小的容量，但是它的使用比较方便，只需要创建，然后添加数据，通过调用下标进行使用；而LinkedList自由性较高，能够动态的随数据量的变化而变化，但是它不便于使用。</p>
+<p>4、主要控件开销不同</p>
+<p>ArrayList主要控件开销在于需要在lList列表预留一定空间；而LinkList主要控件开销在于需要存储结点信息以及结点指针信息。</p>
+<p>例如：</p>
+<p> ArrayList 的每个索引的位置是实际的数据，</p>
+<p>LinkedList 需要更多的内存， LinkedList 中的每个节点中存储的是实际的数据和前后节点的位置 ( 一个 LinkedList 实例存储了两个值： Node<E> first 和 Node<E> last 分别表示<strong>链表的其实节点和尾节点</strong>，每个 Node 实例存储了三个值： E item，Node next，Node pre) 。</p>
+<p><strong>理解：</strong></p>
+<p><strong>主要还是数据结构的问题，array数组的，刚开始长度一定，需要预先分配好，下好资源，但是查询快的特点；</strong></p>
+<p><strong>另一个是link链表的数据结构，由结点组成；但是查询比较麻烦，但是插入数据简单只需指明结点位置。</strong></p>
+<h1 id="linkedList和ArrayList适宜的场景"><a href="#linkedList和ArrayList适宜的场景" class="headerlink" title="linkedList和ArrayList适宜的场景"></a>linkedList和ArrayList适宜的场景</h1><ol>
 <li><p>你的应用不会随机访问数据 。因为如果你需要LinkedList中的第n个元素的时候，你需要从第一个元素顺序数到第n个数据，然后读取数据。</p>
 </li>
 <li><p>你的应用更多的插入和删除元素，更少的读取数据 。因为插入和删除元素不涉及重排数据，所以它要比ArrayList要快。</p>
@@ -1551,8 +2440,8 @@ JAVA八股文熟练</p>
   </entry>
   <entry>
     <title>HashMap、HashTable、ConcurrentHashMap理解</title>
-    <url>/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E3%80%81ConcurrentHashMap%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h3 id="hashMap和hashTable区别"><a href="#hashMap和hashTable区别" class="headerlink" title="hashMap和hashTable区别"></a>hashMap和hashTable区别</h3><ol>
+    <url>/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E5%92%8CConcurrentHashMap%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="hashMap和hashTable区别"><a href="#hashMap和hashTable区别" class="headerlink" title="hashMap和hashTable区别"></a>hashMap和hashTable区别</h2><ol>
 <li>HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。</li>
 <li>HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。</li>
 <li>HashMap的底层数组的长度必须为2^n，这样做的好处是为以后的hash算法做准备，而Hashtable底层数组的长度可以为任意值，这就造成了当底层数组长度为合数的时候，Hashtable的hash算法散射不均匀，容易产生hash冲突。</li>
@@ -1560,6 +2449,16 @@ JAVA八股文熟练</p>
 <li>HashMap在jdk1.8在原先的数组+链表的结构进行了优化，将实现结构变为数组+链表+红黑树；Hashtable到了jdk1.8了内部结构并没有实质优化，继续使用数组+链表的方式实现。</li>
 <li>可以使用<strong>ConcurrentHashMap来替代Hashtable来使用</strong>。</li>
 </ol>
+<h2 id="HashTable和ConcurrentHashMap的比较："><a href="#HashTable和ConcurrentHashMap的比较：" class="headerlink" title="HashTable和ConcurrentHashMap的比较："></a><strong>HashTable和ConcurrentHashMap的比较：</strong></h2><p>​     </p>
+<p>1、Java中的另一个线程安全的与HashMap及其类似的类是<strong>ConcurrentHashMap</strong>  </p>
+<p>同样是线程安全，内部采用<strong>分段加锁</strong>的策略，其效率比HashTable要高。</p>
+<p>2、ConcurrentHashMap是线程安全的<strong>HashMap的实现</strong>。是线程安全的类。</p>
+<p><strong>synchronized关键字加锁的原理</strong>，其实是对 对象加锁，不论你是在方法前加synchronized还是语句块前加，<strong>锁住的都是对象整体</strong>，</p>
+<p>注意：ConcurrentHashMap的同步机制和这个不同，它<strong>不是加synchronized关键字，而是基于lock操作的</strong>，这样的目的是保证同步的时候，锁住的不是整个对象。</p>
+<p><strong>1、构造方法</strong></p>
+<p>为了容易理解，我们先从构造函数说起。ConcurrentHashMap是基于一个叫Segment数组的，其实和Entry类似</p>
+<p><strong>2、put操作</strong></p>
+<p>与HashMap不同的是，如果key为null，直接抛出NullPointer异常，之后，同样先计算hashCode的值，再计算hash值，不过此处hash函数和HashMap中的不一样：</p>
 <h3 id="HashMap理解"><a href="#HashMap理解" class="headerlink" title="HashMap理解"></a><a href="https://zhuanlan.zhihu.com/p/513522232">HashMap理解</a></h3><p>HashMap 根据键的 hashCode 值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为 null。HashMap 非线程安全，即任一时刻可以有多个线程同时写 HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections 的 synchronizedMap 方法使 HashMap 具有线程安全的能力，或者使用 ConcurrentHashMap。</p>
 <h4 id="HashMap-1-7"><a href="#HashMap-1-7" class="headerlink" title="HashMap 1.7"></a>HashMap 1.7</h4><p>是由数组和链表实现的，初始长度是2^3，需要一个key-value的数据结构的集合，可以通过key访问value。因此产生了数组链表和散列机制。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206032120094.jpg" alt="Java7_HashMap"></p>

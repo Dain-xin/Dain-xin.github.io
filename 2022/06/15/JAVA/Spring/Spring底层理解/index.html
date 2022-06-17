@@ -88,8 +88,9 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206152205158.png">
 <meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206162109009.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206172018459.png">
 <meta property="article:published_time" content="2022-06-15T13:50:17.000Z">
-<meta property="article:modified_time" content="2022-06-16T13:33:19.737Z">
+<meta property="article:modified_time" content="2022-06-17T14:00:40.771Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -349,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-16T21:33:19+08:00">
-                2022-06-16
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-17T22:00:40+08:00">
+                2022-06-17
               </time>
             
           </span>
@@ -410,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  2.2k
                 </span>
               
 
@@ -426,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  10
                 </span>
               
             </div>
@@ -483,8 +484,26 @@
 
 
 
-<h1 id="分离出IOC、DI、MVC"><a href="#分离出IOC、DI、MVC" class="headerlink" title="分离出IOC、DI、MVC"></a>分离出IOC、DI、MVC</h1><p>为了符合单一职责原则的设计模式原则。</p>
+<h1 id="IOC-DI顶层设计"><a href="#IOC-DI顶层设计" class="headerlink" title="IOC-DI顶层设计"></a>IOC-DI顶层设计</h1><p>为了符合单一职责原则的设计模式原则，要把原来（加载配置文件、扫描包、初始化所有相关类的实例）IOC和DI（依赖注入）部分提取出来。</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206162109009.png" alt="微信图片_20220616210843"></p>
+<p>调用IOC容器，先从ApplicationContext的getBean方法开始。</p>
+<p>先初始化ApplicationContext对象，构造方法中</p>
+<p>1、加载配置文件</p>
+<p>2、将所有的配置文件解析为BeanDefinition对象，保存在List集合中。</p>
+<p>3、将BeanDefinition对象缓存到BeanDefinitionMap中。通过doRegistryBeanDefiniition方法，把List遍历put到BeanDefinitionMap中。</p>
+<p>4、最后创建对象。通过doCreateBean方法，得到Map中entry，通过getBean方法得到实例。</p>
+<p>在getBean方法中，通过Map得到beanName和BeanDefinition实例化，然后把创建的instance实例封装进BeanWrapper（装饰器模式）中，最后将beanWapper（Map集合）缓存到IOC容器</p>
+<p>5、完成依赖注入。通过populateBean方法，通过beanWrapper得到实例，然后拿到全部的属性，遍历对象进行依赖注入。</p>
+<p>名词理解：</p>
+<p>getBean：从IOC中获取Bean</p>
+<p>BeanDefinition：定义bean，将配置文件读取到内存后避免反复读取和解析，为什莫需要封装一个Definition：多种配置文件，Annotation，yml等。</p>
+<p>BeanWrapper：包装bean，存储对象，利用装饰器模式，把原生对象和代理对象全部包装起来。</p>
+<p>BeanDefinitionReader：工具类，读取配置文件，把配置文件解析为beanDefinition对象。</p>
+<h1 id="MVC顶层设计"><a href="#MVC顶层设计" class="headerlink" title="MVC顶层设计"></a>MVC顶层设计</h1><p>MVC九大组件:</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206172018459.png" alt="image-20220617201855374"></p>
+<p>请求转发:forword,请求参数不丢失</p>
+<p>重定向:redirect,请求参数不保留</p>
+<p>处理映射器(HandlerMapping)、处理适配器(HandlerAdapter)、视图解析器(ModelAndView)</p>
 
       
     </div>
@@ -606,7 +625,7 @@
                 <!-- <a href="/archives/%7C%7Carchive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -699,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E8%BF%90%E8%A1%8C%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">Spring运行思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.</span> <span class="nav-text">配置阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">初始化阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">加载配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%AB%E6%8F%8F%E5%8C%85%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E7%B1%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">扫描包中的所有的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%80%E6%9C%89%E7%9B%B8%E5%85%B3%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0IOC%E5%AE%B9%E5%99%A8%E4%B8%AD"><span class="nav-number">1.2.3.</span> <span class="nav-text">初始化所有相关类的实例，并保存到IOC容器中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI"><span class="nav-number">1.2.4.</span> <span class="nav-text">依赖注入DI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0HandlerMapping%E3%80%82"><span class="nav-number">1.2.5.</span> <span class="nav-text">构造HandlerMapping。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">运行阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#doDispatch%E8%B0%83%E5%BA%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">doDispatch调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getHandler%E8%AE%B0%E5%BD%95%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">getHandler记录对应关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%A6%BB%E5%87%BAIOC%E3%80%81DI%E3%80%81MVC"><span class="nav-number">2.</span> <span class="nav-text">分离出IOC、DI、MVC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E8%BF%90%E8%A1%8C%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">Spring运行思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.</span> <span class="nav-text">配置阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">初始化阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">加载配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%AB%E6%8F%8F%E5%8C%85%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E7%B1%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">扫描包中的所有的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%80%E6%9C%89%E7%9B%B8%E5%85%B3%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0IOC%E5%AE%B9%E5%99%A8%E4%B8%AD"><span class="nav-number">1.2.3.</span> <span class="nav-text">初始化所有相关类的实例，并保存到IOC容器中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI"><span class="nav-number">1.2.4.</span> <span class="nav-text">依赖注入DI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0HandlerMapping%E3%80%82"><span class="nav-number">1.2.5.</span> <span class="nav-text">构造HandlerMapping。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">运行阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#doDispatch%E8%B0%83%E5%BA%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">doDispatch调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getHandler%E8%AE%B0%E5%BD%95%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">getHandler记录对应关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC-DI%E9%A1%B6%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">IOC-DI顶层设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC%E9%A1%B6%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.</span> <span class="nav-text">MVC顶层设计</span></a></li></ol></div>
             
 
           </div>
@@ -732,7 +751,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">代家鑫</span>
-<span class="post-count"> | Dain博客共（50.6k字）</span>
+<span class="post-count"> | Dain博客共（60.3k字）</span>
   
   
 </div>
