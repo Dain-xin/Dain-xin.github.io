@@ -8,13 +8,17 @@ categories:
 
 ![spring](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206152205158.png)
 
-理解：Spring运行思想
+# Spring运行思想
 
 首先基本思路就是：配置、初始化、运行。
 
-配置阶段：就是Spring使用，配饰web.xml，设定配置文件路径，配置服务层，控制层，参数，请求路径的注解。
+## 配置阶段
 
-初始化阶段：继承HttpServlet重写dopost、doget、和init方法。
+就是Spring使用，配饰web.xml，设定配置文件路径，配置服务层，控制层，参数，请求路径的注解。
+
+## 初始化阶段
+
+继承HttpServlet重写dopost、doget、和init方法。
 
 ```java
 private static final String LOCATION = "contextConfigLocation";
@@ -28,193 +32,207 @@ private Map<String, Object> ioc = new HashMap<String, Object>();
 private List<Handler> handlerMapping = new ArrayList<Handler>();
 ```
 
-1. 加载配置文件。通过输入流读取配置文件，加载到主配置文件中。
+### 加载配置文件
 
-   ```java
-   //1、加载配置文件
-   doLoadConfig(config.getInitParameter(LOCATION));
-   
-   
-   private void doLoadConfig(String location) {
-           InputStream fis = null;
-           try {
-               fis = this.getClass().getClassLoader().getResourceAsStream(location);
-               //1、读取配置文件
-               p.load(fis);
-           } catch (Exception e) {
-               e.printStackTrace();
-           } finally {
-               try {
-                   if (null != fis) {
-                       fis.close();
-                   }
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-       }
-   ```
+通过输入流读取配置文件，加载到主配置文件中。
 
-2. 扫描包中的所有的类。将保存在主配置文件中的数据递归遍历，将得到的classnames文件名保存起来。
+```java
+//1、加载配置文件
+doLoadConfig(config.getInitParameter(LOCATION));
 
-   ```java
-   //2、扫描所有相关的类
-   doScanner(p.getProperty("scanPackage"));
-   
-       /**
-        * 递归扫描出所有Class文件
-        *
-        * @param packageName
-        */
-       private void doScanner(String packageName) {
-           //将所有的包路径转换为文件路径
-           URL url = this.getClass().getClassLoader().getResource("/" + packageName.replaceAll("\\.", "/"));
-           File dir = new File(url.getFile());
-           for (File file : dir.listFiles()) {
-               //如果是文件夹，继续递归
-               if (file.isDirectory()) {
-                   doScanner(packageName + "." + file.getName());
-               } else {
-                   classNames.add(packageName + "." + file.getName().replace(".class", "").trim());
-               }
-           }
-       }
-   ```
 
-   
+private void doLoadConfig(String location) {
+        InputStream fis = null;
+        try {
+            fis = this.getClass().getClassLoader().getResourceAsStream(location);
+            //1、读取配置文件
+            p.load(fis);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != fis) {
+                    fis.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+```
 
-3. 初始化所有相关类的实例，并保存到IOC容器中。将得到的classnames文件名反射，将带有注解的的类，处理变成符合开发条件的命名规则，然后进行实例化，保存在ioc的map类型的集合中。
+### 扫描包中的所有的类
 
-   ```java
-   //3、初始化所有相关类的实例，并保存到IOC容器中
-   doInstance();
-   
-   private void doInstance() {
-           if (classNames.size() == 0) {
-               return;
-           }
-   
-           try {
-               for (String className : classNames) {
-                   Class<?> clazz = Class.forName(className);
-                   if (clazz.isAnnotationPresent(GPController.class)) {
-                       //默认将首字母小写作为beanName
-                       String beanName = lowerFirst(clazz.getSimpleName());
-                       ioc.put(beanName, clazz.newInstance());
-                   } else if (clazz.isAnnotationPresent(GPService.class)) {
-   
-                       GPService service = clazz.getAnnotation(GPService.class);
-                       String beanName = service.value();
-                       //如果用户设置了名字，就用用户自己设置
-                       if (!"".equals(beanName.trim())) {
-                           ioc.put(beanName, clazz.newInstance());
-                           continue;
-                       }
-   
-                       //如果自己没设，就按接口类型创建一个实例
-                       Class<?>[] interfaces = clazz.getInterfaces();
-                       for (Class<?> i : interfaces) {
-                           ioc.put(i.getName(), clazz.newInstance());
-                       }
-   
-                   } else {
-                       continue;
-                   }
-               }
-           } catch (Exception e) {
-               e.printStackTrace();
-           }
-       }
-   ```
+将保存在主配置文件中的数据递归遍历，将得到的classnames文件名保存起来。
 
-   
+```java
+//2、扫描所有相关的类
+doScanner(p.getProperty("scanPackage"));
 
-4. 依赖注入DI。将上一步ioc集合实例对象拿到全部的属性，遍历对象进行注入。反射可以访问类私有属性。
+    /**
+     * 递归扫描出所有Class文件
+     *
+     * @param packageName
+     */
+    private void doScanner(String packageName) {
+        //将所有的包路径转换为文件路径
+        URL url = this.getClass().getClassLoader().getResource("/" + packageName.replaceAll("\\.", "/"));
+        File dir = new File(url.getFile());
+        for (File file : dir.listFiles()) {
+            //如果是文件夹，继续递归
+            if (file.isDirectory()) {
+                doScanner(packageName + "." + file.getName());
+            } else {
+                classNames.add(packageName + "." + file.getName().replace(".class", "").trim());
+            }
+        }
+    }
+```
 
-   ```java
-   //4、依赖注入
-   doAutowired();
-   
-   
-       private void doAutowired() {
-           if (ioc.isEmpty()) {
-               return;
-           }
-   
-           for (Entry<String, Object> entry : ioc.entrySet()) {
-               //拿到实例对象中的所有属性
-               Field[] fields = entry.getValue().getClass().getDeclaredFields();
-               for (Field field : fields) {
-   
-                   if (!field.isAnnotationPresent(GPAutowired.class)) {
-                       continue;
-                   }
-   
-                   GPAutowired autowired = field.getAnnotation(GPAutowired.class);
-                   String beanName = autowired.value().trim();
-                   if ("".equals(beanName)) {
-                       beanName = field.getType().getName();
-                   }
-                   field.setAccessible(true); //设置私有属性的访问权限
-                   try {
-                       field.set(entry.getValue(), ioc.get(beanName));
-                   } catch (Exception e) {
-                       e.printStackTrace();
-                       continue;
-                   }
-               }
-           }
-       }
-   ```
 
-5. 构造HandlerMapping。通过类加载器找到控制层的url路径和方法的url路径，将得到的路径初始化给handlermapping
 
-   ```java
-   //5、构造HandlerMapping
-   initHandlerMapping();
-   
-   
-       private void initHandlerMapping() {
-           if (ioc.isEmpty()) {
-               return;
-           }
-   
-           for (Entry<String, Object> entry : ioc.entrySet()) {
-               Class<?> clazz = entry.getValue().getClass();
-               if (!clazz.isAnnotationPresent(GPController.class)) {
-                   continue;
-               }
-   
-               String url = "";
-               //获取Controller的url配置
-               if (clazz.isAnnotationPresent(GPRequestMapping.class)) {
-                   GPRequestMapping requestMapping = clazz.getAnnotation(GPRequestMapping.class);
-                   url = requestMapping.value();
-               }
-   
-               //获取Method的url配置
-               Method[] methods = clazz.getMethods();
-               for (Method method : methods) {
-   
-                   //没有加RequestMapping注解的直接忽略
-                   if (!method.isAnnotationPresent(GPRequestMapping.class)) {
-                       continue;
-                   }
-   
-                   //映射URL
-                   GPRequestMapping requestMapping = method.getAnnotation(GPRequestMapping.class);
-                   String regex = ("/" + url + requestMapping.value()).replaceAll("/+", "/");
-                   Pattern pattern = Pattern.compile(regex);
-                   handlerMapping.add(new Handler(pattern, entry.getValue(), method));
-                   System.out.println("mapping " + regex + "," + method);
-               }
-           }
-       }
-   ```
+### 初始化所有相关类的实例，并保存到IOC容器中
 
-运行阶段：调用dopost、doget方法，根据输入的路径获取到url的数据，找到调用的方法，然后利用反射方法返回数据，将数据打印到浏览器
+将得到的classnames文件名反射，将带有注解的的类，处理变成符合开发条件的命名规则，然后进行实例化，保存在ioc的map类型的集合中。
+
+```java
+//3、初始化所有相关类的实例，并保存到IOC容器中
+doInstance();
+
+private void doInstance() {
+        if (classNames.size() == 0) {
+            return;
+        }
+
+        try {
+            for (String className : classNames) {
+                Class<?> clazz = Class.forName(className);
+                if (clazz.isAnnotationPresent(GPController.class)) {
+                    //默认将首字母小写作为beanName
+                    String beanName = lowerFirst(clazz.getSimpleName());
+                    ioc.put(beanName, clazz.newInstance());
+                } else if (clazz.isAnnotationPresent(GPService.class)) {
+
+                    GPService service = clazz.getAnnotation(GPService.class);
+                    String beanName = service.value();
+                    //如果用户设置了名字，就用用户自己设置
+                    if (!"".equals(beanName.trim())) {
+                        ioc.put(beanName, clazz.newInstance());
+                        continue;
+                    }
+
+                    //如果自己没设，就按接口类型创建一个实例
+                    Class<?>[] interfaces = clazz.getInterfaces();
+                    for (Class<?> i : interfaces) {
+                        ioc.put(i.getName(), clazz.newInstance());
+                    }
+
+                } else {
+                    continue;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+
+
+### 依赖注入DI
+
+将上一步ioc集合实例对象拿到全部的属性，遍历对象进行注入。反射可以访问类私有属性。
+
+```java
+//4、依赖注入
+doAutowired();
+
+
+    private void doAutowired() {
+        if (ioc.isEmpty()) {
+            return;
+        }
+
+        for (Entry<String, Object> entry : ioc.entrySet()) {
+            //拿到实例对象中的所有属性
+            Field[] fields = entry.getValue().getClass().getDeclaredFields();
+            for (Field field : fields) {
+
+                if (!field.isAnnotationPresent(GPAutowired.class)) {
+                    continue;
+                }
+
+                GPAutowired autowired = field.getAnnotation(GPAutowired.class);
+                String beanName = autowired.value().trim();
+                if ("".equals(beanName)) {
+                    beanName = field.getType().getName();
+                }
+                field.setAccessible(true); //设置私有属性的访问权限
+                try {
+                    field.set(entry.getValue(), ioc.get(beanName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    continue;
+                }
+            }
+        }
+    }
+```
+
+### 构造HandlerMapping。
+
+通过类加载器找到控制层的url路径和方法的url路径，将得到的路径初始化给handlermapping 他是List集合。
+
+```java
+//5、构造HandlerMapping
+initHandlerMapping();
+
+
+    private void initHandlerMapping() {
+        if (ioc.isEmpty()) {
+            return;
+        }
+
+        for (Entry<String, Object> entry : ioc.entrySet()) {
+            Class<?> clazz = entry.getValue().getClass();
+            if (!clazz.isAnnotationPresent(GPController.class)) {
+                continue;
+            }
+
+            String url = "";
+            //获取Controller的url配置
+            if (clazz.isAnnotationPresent(GPRequestMapping.class)) {
+                GPRequestMapping requestMapping = clazz.getAnnotation(GPRequestMapping.class);
+                url = requestMapping.value();
+            }
+
+            //获取Method的url配置
+            Method[] methods = clazz.getMethods();
+            for (Method method : methods) {
+
+                //没有加RequestMapping注解的直接忽略
+                if (!method.isAnnotationPresent(GPRequestMapping.class)) {
+                    continue;
+                }
+
+                //映射URL
+                GPRequestMapping requestMapping = method.getAnnotation(GPRequestMapping.class);
+                String regex = ("/" + url + requestMapping.value()).replaceAll("/+", "/");
+                Pattern pattern = Pattern.compile(regex);
+                handlerMapping.add(new Handler(pattern, entry.getValue(), method));
+                System.out.println("mapping " + regex + "," + method);
+            }
+        }
+    }
+```
+
+## 运行阶段
+
+调用dopost、doget方法，根据输入的路径获取到url的数据，找到调用的方法，然后利用反射方法返回数据，将数据打印到浏览器
 
 doPost、doGet方法执行业务调用doDispatch调度方法。得到请求路径的匹配对象的参数列表，然后设置方法中的request和response对象，然后通过动态代理invke调用方法。将结果打印即可。
+
+### doDispatch调度
 
 ```java
 protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -293,9 +311,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 
 ```
 
-
-
-
+### getHandler记录对应关系
 
 通过request请求参数，记录Controller中的RequestMapping和Method的对应关系——handler
 
@@ -388,3 +404,58 @@ private class Handler {
     }
 }
 ```
+
+
+
+
+
+# IOC-DI顶层设计
+
+为了符合单一职责原则的设计模式原则，要把原来（加载配置文件、扫描包、初始化所有相关类的实例）IOC和DI（依赖注入）部分提取出来。
+
+![微信图片_20220616210843](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206162109009.png)
+
+调用IOC容器，先从ApplicationContext的getBean方法开始。
+
+先初始化ApplicationContext对象，构造方法中
+
+1、加载配置文件
+
+2、将所有的配置文件解析为BeanDefinition对象，保存在List集合中。
+
+3、将BeanDefinition对象缓存到BeanDefinitionMap中。通过doRegistryBeanDefiniition方法，把List遍历put到BeanDefinitionMap中。
+
+4、最后创建对象。通过doCreateBean方法，得到Map中entry，通过getBean方法得到实例。
+
+在getBean方法中，通过Map得到beanName和BeanDefinition实例化，然后把创建的instance实例封装进BeanWrapper（装饰器模式）中，最后将beanWapper（Map集合）缓存到IOC容器
+
+5、完成依赖注入。通过populateBean方法，通过beanWrapper得到实例，然后拿到全部的属性，遍历对象进行依赖注入。
+
+
+
+名词理解：
+
+getBean：从IOC中获取Bean
+
+BeanDefinition：定义bean，将配置文件读取到内存后避免反复读取和解析，为什莫需要封装一个Definition：多种配置文件，Annotation，yml等。
+
+BeanWrapper：包装bean，存储对象，利用装饰器模式，把原生对象和代理对象全部包装起来。
+
+BeanDefinitionReader：工具类，读取配置文件，把配置文件解析为beanDefinition对象。
+
+
+
+# MVC顶层设计
+
+MVC九大组件:
+
+![image-20220617201855374](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206172018459.png)
+
+请求转发:forword,请求参数不丢失
+
+重定向:redirect,请求参数不保留
+
+处理映射器(HandlerMapping)、处理适配器(HandlerAdapter)、视图解析器(ModelAndView)
+
+
+

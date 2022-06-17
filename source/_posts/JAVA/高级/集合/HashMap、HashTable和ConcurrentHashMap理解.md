@@ -7,7 +7,7 @@ categories:
 - 集合
 ---
 
-### hashMap和hashTable区别
+## hashMap和hashTable区别
 
 1. HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。
 2. HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。
@@ -15,6 +15,38 @@ categories:
 4. 扩容都是基于底层的hash算法（hashMap的hash算法更优）；HashMap数组的扩容的整体思想就是创建一个长度为原先2倍的数组。然后对原数组进行遍历和复制。Hashtable的扩容将先创建一个长度为原长度2倍的数组，再使用头插法将链表进行反序。
 5. HashMap在jdk1.8在原先的数组+链表的结构进行了优化，将实现结构变为数组+链表+红黑树；Hashtable到了jdk1.8了内部结构并没有实质优化，继续使用数组+链表的方式实现。
 6. 可以使用**ConcurrentHashMap来替代Hashtable来使用**。
+
+
+
+## **HashTable和ConcurrentHashMap的比较：**
+
+​     
+
+1、Java中的另一个线程安全的与HashMap及其类似的类是**ConcurrentHashMap**  
+
+同样是线程安全，内部采用**分段加锁**的策略，其效率比HashTable要高。
+
+2、ConcurrentHashMap是线程安全的**HashMap的实现**。是线程安全的类。
+
+**synchronized关键字加锁的原理**，其实是对 对象加锁，不论你是在方法前加synchronized还是语句块前加，**锁住的都是对象整体**，
+
+注意：ConcurrentHashMap的同步机制和这个不同，它**不是加synchronized关键字，而是基于lock操作的**，这样的目的是保证同步的时候，锁住的不是整个对象。
+
+ 
+
+**1、构造方法**
+
+为了容易理解，我们先从构造函数说起。ConcurrentHashMap是基于一个叫Segment数组的，其实和Entry类似
+
+**2、put操作**
+
+与HashMap不同的是，如果key为null，直接抛出NullPointer异常，之后，同样先计算hashCode的值，再计算hash值，不过此处hash函数和HashMap中的不一样：
+
+ 
+
+
+
+
 
 ### [HashMap理解](https://zhuanlan.zhihu.com/p/513522232)
 
