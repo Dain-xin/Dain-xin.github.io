@@ -497,10 +497,110 @@
       </categories>
   </entry>
   <entry>
+    <title>RandomAccessFile类</title>
+    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/RandomAccessFile%E7%B1%BB/</url>
+    <content><![CDATA[<p>RandomAccessFile类</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182259278.png" alt="image-20220618225900333"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>IO流</category>
+      </categories>
+  </entry>
+  <entry>
     <title>分布式-高并发-多线程理解</title>
     <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/Properties%E7%B1%BB/</url>
     <content><![CDATA[<p><strong>Properties</strong>类：</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182247914.png" alt="image-20220618224700604"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>IO流</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>序列化流和打印流</title>
+    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%E5%92%8C%E6%89%93%E5%8D%B0%E6%B5%81/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/tree_ifconfig/article/details/82766587">序列化和反序列化的详解_</a></p>
+<p> <a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1298366845681698">序列化</a></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182257608.png" alt="image-20220618225714539"></p>
+<h2 id="序列化和反序列化的定义："><a href="#序列化和反序列化的定义：" class="headerlink" title="序列化和反序列化的定义："></a>序列化和反序列化的定义：</h2><p>  (1)Java序列化就是指把J<strong>ava对象转换为字节序列</strong>的过程</p>
+<p>​    Java反序列化就是指把<strong>字节序列恢复为Java对象</strong>的过程。</p>
+<p>  (2)序列化最重要的作用：在传递和保存对象时.保证对象   完整性和可传递性。</p>
+<p>对象转换为有序字节流,以便在网络上传输或者保存在本地文件中。</p>
+<p>​    反序列化的最重要的作用：根据字节流中保存的对象状态及描述信息，通过反序列化重建对象。</p>
+<p>  <strong>总结：核心作用就是对象状态的保存和重建。（整个过程核心点就是字节流中所保存的对象状态及描述信息）</strong></p>
+<h2 id="ObjectOutStream类（IO包）"><a href="#ObjectOutStream类（IO包）" class="headerlink" title="ObjectOutStream类（IO包）"></a>ObjectOutStream类（IO包）</h2><p>1、将Java对象的原始数据类型写出到文件,实现对象的持久储存。</p>
+<p>2、构造方法：传参数是一个（OutPutStream）类型数据。</p>
+<p>3、一个对象想实现序列化需要实现 java.io.Serializable 接口(接口中没有方法)，只是一个标记。</p>
+<p>不实现序列化接口，就会报空指针异常。</p>
+<p>4、对象中的类中的所有属性都必须是序列化的，常见的基本数据结构和包装类型的父类或本身都实现了该接口，</p>
+<p>可以通过<strong>transient</strong>，标记为瞬态，就可以不用呗序列化</p>
+<table>
+<thead>
+<tr>
+<th>public  final void <strong>writeObject</strong>  (Object obj) :</th>
+<th>将指定的对象写出。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Employee</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Employee</span>(); </span><br><span class="line">e.name = <span class="string">&quot;zhangsan&quot;</span>;</span><br><span class="line"> e.address = <span class="string">&quot;beiqinglu&quot;</span>;</span><br><span class="line"> e.age = <span class="number">20</span>; </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line">    <span class="comment">// 创建序列化流对象 </span></span><br><span class="line">    <span class="type">ObjectOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;employee.txt&quot;</span>)); </span><br><span class="line"><span class="comment">// 写出对象 </span></span><br><span class="line">out.writeObject(e); </span><br><span class="line"><span class="comment">// 释放资源 </span></span><br><span class="line">out.close();</span><br></pre></td></tr></table></figure>
+
+<h2 id="ObjectInputStream类（IO包）"><a href="#ObjectInputStream类（IO包）" class="headerlink" title="ObjectInputStream类（IO包）"></a>ObjectInputStream类（IO包）</h2><p>1、ObjectInputStream反序列化流，将之前使用ObjectOutputStream序列化的原始数据恢复为对象。 </p>
+<p>2、构造方法：传参（InputStream）类型数据</p>
+<p>3、如果能找到一个对象的class文件，我们可以进行反序列化操作，调用 ObjectInputStream 读取对象</p>
+<table>
+<thead>
+<tr>
+<th>public  final Object readObject () :</th>
+<th>读取一个对象。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>4、对于JVM可以反序列化对象，它必须是能够找到class文件的类。如果找不到该类的class文件，则抛出一个 ClassNotFoundException 异常。 </p>
+<p>5、当JVM反序列化对象时，能找到class文件，但是class文件在序列化对象之后发生了修改，那么反序列化操 作也会失败，</p>
+<p>抛出一个 InvalidClassException 异常。发生这个异常的原因如下：</p>
+<ul>
+<li>该类的序列版本号与从流中读取的类描述符的版本号不匹配     </li>
+<li>该类包含未知数据类型 </li>
+<li>该类没有可访问的无参数构造方法</li>
+</ul>
+<p>Serializable 接口给需要序列化的类，提供了一个<strong>序列版本号。</strong> </p>
+<p>serialVersionUID 该版本号的目的在于验证序 列化的对象和对应类是否版本匹配。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 加入序列版本号 </span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br></pre></td></tr></table></figure>
+
+<p>版本号：一旦修改，就不认识，报异常。</p>
+<p><strong>注：一般都是直接把一个对象序列化，如果我们有多个同一个类的对象，那么可以将这多个对象存进一个数组中，</strong></p>
+<p><strong>这个数组可以时静态数组也可以是动态数组，因为数组本身也是一个对象，将这个数组对象进行序列化，</strong></p>
+<p><strong>最后反序列化的时候也将得到一个数组对象。</strong></p>
+<h1 id="打印流："><a href="#打印流：" class="headerlink" title="打印流："></a><strong>打印流：</strong></h1><p>1、平时我们在控制台打印输出，是<strong>调用 print 方法和 println 方法</strong>完成的，这两个方法都来自于 java.io.PrintStream 类</p>
+<p>2、构造方法：</p>
+<table>
+<thead>
+<tr>
+<th><strong>public PrintStream(String fileName) ：</strong></th>
+<th><strong>使用指定的文件名创建一个新的打印流。</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>3、<strong>System.out</strong> 就是 PrintStream 类型的，只不过它的流向是系统规定的，打印在控制台上。</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用系统的打印流,控制台直接输出97 </span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="number">97</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建打印流,指定文件的名称 </span></span><br><span class="line"></span><br><span class="line"><span class="type">PrintStream</span> <span class="variable">ps</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintStream</span>(<span class="string">&quot;ps.txt&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置系统的打印流流向,输出到</span></span><br><span class="line"></span><br><span class="line">ps.txt System.setOut(ps); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用系统的打印流,ps.txt中输出97 </span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="number">97</span>);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>JAVA</category>
@@ -550,6 +650,161 @@
       <categories>
         <category>JAVA</category>
         <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>File类</title>
+    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="File类："><a href="#File类：" class="headerlink" title="File类："></a>File类：</h1><p><strong>Java.io.File 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。</strong></p>
+<h2 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a><strong>构造方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public  File(String pathname) ：</th>
+<th>通过将给定的路径名字符串转换为抽象路径名来创建新的  File实例。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  File(String parent, String child) ：</td>
+<td>从父路径名字符串和子路径名字符串创建新的  File实例。</td>
+</tr>
+<tr>
+<td>public  File(File parent, String child) ：</td>
+<td>从父抽象路径名和子路径名字符串创建新的  File实例。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String pathname=<span class="string">&quot;a:\\b\\c&quot;</span>;</span><br><span class="line">String pathname2=<span class="string">&quot;\\d\\e.text&quot;</span>;</span><br><span class="line">String pathname3=<span class="string">&quot;\\kk\\qq&quot;</span>;</span><br><span class="line">File file=newFile(pathname);</span><br><span class="line">File file1=newFile(pathname,pathname2);</span><br><span class="line">File file2=newFile(file,pathname3);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取方法："><a href="#获取方法：" class="headerlink" title="获取方法："></a><strong>获取方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public String getAbsolutePath()  ：  public File getAbsoluteFile（）：</th>
+<th>返回此File的绝对路径名字符串。   返回此抽象路径名的绝对路径名形式（File类型）。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  String getPath() ：</td>
+<td>将此File转换为路径名字符串。</td>
+</tr>
+<tr>
+<td>public  String getName() ：</td>
+<td>返回由此File表示的文件或目录的名称。</td>
+</tr>
+<tr>
+<td>public  long length() ：</td>
+<td>返回由此File表示的文件的长度。</td>
+</tr>
+</tbody></table>
+<p>理解：</p>
+<p>绝对路径：从盘符开始的路径，这是一个完整的路径。</p>
+<p>相对路径：相对于项目目录的路径。</p>
+<p>length：目录的返回值不唯一（不确定）；但是对于文件返回文件字节数。</p>
+<h2 id="判断方法："><a href="#判断方法：" class="headerlink" title="判断方法："></a><strong>判断方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public  boolean exists() ：</th>
+<th>此File表示的文件或目录是否实际存在。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  boolean isDirectory() ：</td>
+<td>此File表示的是否为目录。</td>
+</tr>
+<tr>
+<td>public  boolean isFile() ：</td>
+<td>此File表示的是否为文件。</td>
+</tr>
+</tbody></table>
+<h2 id="创建与删除功能："><a href="#创建与删除功能：" class="headerlink" title="创建与删除功能："></a><strong>创建与删除功能：</strong></h2><table>
+<thead>
+<tr>
+<th>public  boolean createNewFile() ：</th>
+<th>当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  boolean delete() ：</td>
+<td>删除由此File表示的文件或目录。<strong>表示目录，则目录必须为空才能删除。</strong></td>
+</tr>
+<tr>
+<td>public  boolean mkdir() ：</td>
+<td>创建由此File表示的目录。</td>
+</tr>
+<tr>
+<td>public  boolean mkdirs() ：</td>
+<td>创建由此File表示的目录，包括任何必需但不存在的父目录。</td>
+</tr>
+</tbody></table>
+<h2 id="遍历File方法："><a href="#遍历File方法：" class="headerlink" title="遍历File方法："></a><strong>遍历File方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public String[] list() ：</th>
+<th>返回一个String数组，表示该File目录中的所有子文件或目录。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public File[] listFiles() ：</td>
+<td>返回<strong>一个****File数组</strong>，表示该File目录中的所有的子文件或目录。</td>
+</tr>
+</tbody></table>
+<h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><p>调用listFiles方法的File对象，表示的必须是实际存在的目录，否则返回null，无法进行遍历。空文件夹长度是1.</p>
+<p>空文件报错（<strong>java.lang.NullPointerException</strong>）</p>
+<h2 id="拓展方法："><a href="#拓展方法：" class="headerlink" title="拓展方法："></a><strong>拓展方法：</strong></h2><table>
+<thead>
+<tr>
+<th><strong>String</strong> getParent()</th>
+<th>返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回  null。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>File</strong> getParentFile()</td>
+<td>返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回  null。</td>
+</tr>
+<tr>
+<td>boolean isAbsolute()</td>
+<td>测试此抽象路径名是否为绝对路径名。</td>
+</tr>
+<tr>
+<td>boolean isHidden()</td>
+<td>测试此抽象路径名指定的文件是否是一个隐藏文件。</td>
+</tr>
+<tr>
+<td>long lastModified()</td>
+<td>返回此抽象路径名表示的文件最后一次被修改的时间。</td>
+</tr>
+<tr>
+<td>String[] list(FilenameFilter filter)</td>
+<td>返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
+</tr>
+<tr>
+<td>File[] listFiles(FileFilter filter)</td>
+<td>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	System.out.println(file.getAbsoluteFile().getName());</span><br><span class="line">	System.out.println(file.getAbsolutePath());</span><br><span class="line">	<span class="type">long</span> l=file.lastModified();</span><br><span class="line">	Date date=newDate(l);</span><br><span class="line">System.out.println(date.toLocaleString());</span><br></pre></td></tr></table></figure>
+
+<h1 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h1><p>指在当前方法内调用自己的本身方法。</p>
+<p>递归的分类: </p>
+<p>递归分为两种，直接递归和间接递归。 直接递归称为方法自身调用自己。 间接递归可以A方法调用B方法，B方法调用C方法，C方法调用A方法。 </p>
+<p>注意事项： </p>
+<p>递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。</p>
+<p>在递归中虽然有限定条件，但是递归次数不能太多。</p>
+<p>否则也会发生栈内存溢出。 </p>
+<p>构造方法,禁止递归。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*2.4</span></span><br><span class="line"><span class="comment">递归打印多级目录</span></span><br><span class="line"><span class="comment">分析：多级目录的打印，就是当目录的嵌套。遍历之前，</span></span><br><span class="line"><span class="comment">无从知道到底有多少级目录，所以我们还是要使用递归实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number2=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span>&#123;</span><br><span class="line">	Filefile=newFile(<span class="string">&quot;d:桌面&quot;</span>);</span><br><span class="line">	printFile(file);</span><br><span class="line">	System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">	System.out.println(file.getPath()+<span class="string">&quot;:详情&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件个数：&quot;</span>+number);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件夹个数：&quot;</span>+number2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printFile</span><span class="params">(Filefile)</span>&#123;</span><br><span class="line">	File[]files=file.listFiles();</span><br><span class="line">	<span class="keyword">if</span>(files!=<span class="literal">null</span>)&#123;</span><br><span class="line">	<span class="keyword">for</span>(Filef:files)&#123;</span><br><span class="line">	<span class="keyword">if</span>(f.isFile())&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件：&quot;</span>+f.getName());</span><br><span class="line">		number++;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件夹：&quot;</span>+f.getName());</span><br><span class="line">		number2++;</span><br><span class="line">		printFile(f);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <strong>理解：个人感觉递归既然有就一定有他的简便存在的意义。</strong></p>
+<p><strong>这里就发现了，不需要写复杂的循环检查去实现，只需要一次检查，递归调用，就可以实现一层一层调用的关系。这里就是，调用</strong>printFile方法，在文件夹检查位置再次调用，这样在检查到文件夹，就会以这个目录传参，继续遍历，直到没有文件夹，就返回上一级遍历下一个文件夹，这样一级一级目录最后到母目录遍历完结束。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">String：  boolean endwith(String tiaojian)  判断文件结尾是否符合条件</span><br></pre></td></tr></table></figure>
+
+<p><strong>对过滤器的理解：因为</strong>FileFilter 接口只有一个<strong>accept</strong>（）所以可以直接使用<strong>lambda</strong>方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181758883.png" alt="image-20220618175804732"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//lambda表达式：</span></span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    (pathname)-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory();</span><br><span class="line">                &#125;);</span><br><span class="line">				</span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    pathname-&gt;pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>IO流</category>
       </categories>
   </entry>
   <entry>
@@ -724,161 +979,6 @@
 <p><strong>1</strong>、<strong>close</strong>（）这样才会把缓冲区中的数据写入目的文件。但是不关闭也不 <strong>flush</strong>（）缓冲区的数据就不会写入。</p>
 <p><strong>2、</strong>close<strong>（）关闭流，就不能恢复原来的流。如果想继续写入，就需要</strong>flush<strong>后</strong>write（）。</p>
 <h1 id="IO异常处理"><a href="#IO异常处理" class="headerlink" title="IO异常处理"></a>IO异常处理</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182227717.png" alt="image-20220618222736413"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>高级</category>
-        <category>IO流</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>File类</title>
-    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="File类："><a href="#File类：" class="headerlink" title="File类："></a>File类：</h1><p><strong>Java.io.File 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。</strong></p>
-<h2 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a><strong>构造方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public  File(String pathname) ：</th>
-<th>通过将给定的路径名字符串转换为抽象路径名来创建新的  File实例。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  File(String parent, String child) ：</td>
-<td>从父路径名字符串和子路径名字符串创建新的  File实例。</td>
-</tr>
-<tr>
-<td>public  File(File parent, String child) ：</td>
-<td>从父抽象路径名和子路径名字符串创建新的  File实例。</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String pathname=<span class="string">&quot;a:\\b\\c&quot;</span>;</span><br><span class="line">String pathname2=<span class="string">&quot;\\d\\e.text&quot;</span>;</span><br><span class="line">String pathname3=<span class="string">&quot;\\kk\\qq&quot;</span>;</span><br><span class="line">File file=newFile(pathname);</span><br><span class="line">File file1=newFile(pathname,pathname2);</span><br><span class="line">File file2=newFile(file,pathname3);</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取方法："><a href="#获取方法：" class="headerlink" title="获取方法："></a><strong>获取方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public String getAbsolutePath()  ：  public File getAbsoluteFile（）：</th>
-<th>返回此File的绝对路径名字符串。   返回此抽象路径名的绝对路径名形式（File类型）。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  String getPath() ：</td>
-<td>将此File转换为路径名字符串。</td>
-</tr>
-<tr>
-<td>public  String getName() ：</td>
-<td>返回由此File表示的文件或目录的名称。</td>
-</tr>
-<tr>
-<td>public  long length() ：</td>
-<td>返回由此File表示的文件的长度。</td>
-</tr>
-</tbody></table>
-<p>理解：</p>
-<p>绝对路径：从盘符开始的路径，这是一个完整的路径。</p>
-<p>相对路径：相对于项目目录的路径。</p>
-<p>length：目录的返回值不唯一（不确定）；但是对于文件返回文件字节数。</p>
-<h2 id="判断方法："><a href="#判断方法：" class="headerlink" title="判断方法："></a><strong>判断方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public  boolean exists() ：</th>
-<th>此File表示的文件或目录是否实际存在。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  boolean isDirectory() ：</td>
-<td>此File表示的是否为目录。</td>
-</tr>
-<tr>
-<td>public  boolean isFile() ：</td>
-<td>此File表示的是否为文件。</td>
-</tr>
-</tbody></table>
-<h2 id="创建与删除功能："><a href="#创建与删除功能：" class="headerlink" title="创建与删除功能："></a><strong>创建与删除功能：</strong></h2><table>
-<thead>
-<tr>
-<th>public  boolean createNewFile() ：</th>
-<th>当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  boolean delete() ：</td>
-<td>删除由此File表示的文件或目录。<strong>表示目录，则目录必须为空才能删除。</strong></td>
-</tr>
-<tr>
-<td>public  boolean mkdir() ：</td>
-<td>创建由此File表示的目录。</td>
-</tr>
-<tr>
-<td>public  boolean mkdirs() ：</td>
-<td>创建由此File表示的目录，包括任何必需但不存在的父目录。</td>
-</tr>
-</tbody></table>
-<h2 id="遍历File方法："><a href="#遍历File方法：" class="headerlink" title="遍历File方法："></a><strong>遍历File方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public String[] list() ：</th>
-<th>返回一个String数组，表示该File目录中的所有子文件或目录。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public File[] listFiles() ：</td>
-<td>返回<strong>一个****File数组</strong>，表示该File目录中的所有的子文件或目录。</td>
-</tr>
-</tbody></table>
-<h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><p>调用listFiles方法的File对象，表示的必须是实际存在的目录，否则返回null，无法进行遍历。空文件夹长度是1.</p>
-<p>空文件报错（<strong>java.lang.NullPointerException</strong>）</p>
-<h2 id="拓展方法："><a href="#拓展方法：" class="headerlink" title="拓展方法："></a><strong>拓展方法：</strong></h2><table>
-<thead>
-<tr>
-<th><strong>String</strong> getParent()</th>
-<th>返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回  null。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>File</strong> getParentFile()</td>
-<td>返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回  null。</td>
-</tr>
-<tr>
-<td>boolean isAbsolute()</td>
-<td>测试此抽象路径名是否为绝对路径名。</td>
-</tr>
-<tr>
-<td>boolean isHidden()</td>
-<td>测试此抽象路径名指定的文件是否是一个隐藏文件。</td>
-</tr>
-<tr>
-<td>long lastModified()</td>
-<td>返回此抽象路径名表示的文件最后一次被修改的时间。</td>
-</tr>
-<tr>
-<td>String[] list(FilenameFilter filter)</td>
-<td>返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
-</tr>
-<tr>
-<td>File[] listFiles(FileFilter filter)</td>
-<td>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	System.out.println(file.getAbsoluteFile().getName());</span><br><span class="line">	System.out.println(file.getAbsolutePath());</span><br><span class="line">	<span class="type">long</span> l=file.lastModified();</span><br><span class="line">	Date date=newDate(l);</span><br><span class="line">System.out.println(date.toLocaleString());</span><br></pre></td></tr></table></figure>
-
-<h1 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h1><p>指在当前方法内调用自己的本身方法。</p>
-<p>递归的分类: </p>
-<p>递归分为两种，直接递归和间接递归。 直接递归称为方法自身调用自己。 间接递归可以A方法调用B方法，B方法调用C方法，C方法调用A方法。 </p>
-<p>注意事项： </p>
-<p>递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。</p>
-<p>在递归中虽然有限定条件，但是递归次数不能太多。</p>
-<p>否则也会发生栈内存溢出。 </p>
-<p>构造方法,禁止递归。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*2.4</span></span><br><span class="line"><span class="comment">递归打印多级目录</span></span><br><span class="line"><span class="comment">分析：多级目录的打印，就是当目录的嵌套。遍历之前，</span></span><br><span class="line"><span class="comment">无从知道到底有多少级目录，所以我们还是要使用递归实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number2=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span>&#123;</span><br><span class="line">	Filefile=newFile(<span class="string">&quot;d:桌面&quot;</span>);</span><br><span class="line">	printFile(file);</span><br><span class="line">	System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">	System.out.println(file.getPath()+<span class="string">&quot;:详情&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件个数：&quot;</span>+number);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件夹个数：&quot;</span>+number2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printFile</span><span class="params">(Filefile)</span>&#123;</span><br><span class="line">	File[]files=file.listFiles();</span><br><span class="line">	<span class="keyword">if</span>(files!=<span class="literal">null</span>)&#123;</span><br><span class="line">	<span class="keyword">for</span>(Filef:files)&#123;</span><br><span class="line">	<span class="keyword">if</span>(f.isFile())&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件：&quot;</span>+f.getName());</span><br><span class="line">		number++;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件夹：&quot;</span>+f.getName());</span><br><span class="line">		number2++;</span><br><span class="line">		printFile(f);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p> <strong>理解：个人感觉递归既然有就一定有他的简便存在的意义。</strong></p>
-<p><strong>这里就发现了，不需要写复杂的循环检查去实现，只需要一次检查，递归调用，就可以实现一层一层调用的关系。这里就是，调用</strong>printFile方法，在文件夹检查位置再次调用，这样在检查到文件夹，就会以这个目录传参，继续遍历，直到没有文件夹，就返回上一级遍历下一个文件夹，这样一级一级目录最后到母目录遍历完结束。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">String：  boolean endwith(String tiaojian)  判断文件结尾是否符合条件</span><br></pre></td></tr></table></figure>
-
-<p><strong>对过滤器的理解：因为</strong>FileFilter 接口只有一个<strong>accept</strong>（）所以可以直接使用<strong>lambda</strong>方法。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181758883.png" alt="image-20220618175804732"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//lambda表达式：</span></span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    (pathname)-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory();</span><br><span class="line">                &#125;);</span><br><span class="line">				</span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    pathname-&gt;pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>JAVA</category>

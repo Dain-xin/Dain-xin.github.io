@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="图片大纲：C&#x2F;S结构、B&#x2F;S结构、网络通讯协议、TCP、UDP">
+<meta name="description" content="序列化和反序列化的详解_  序列化  序列化和反序列化的定义：  (1)Java序列化就是指把Java对象转换为字节序列的过程 ​    Java反序列化就是指把字节序列恢复为Java对象的过程。   (2)序列化最重要的作用：在传递和保存对象时.保证对象   完整性和可传递性。 对象转换为有序字节流,以便在网络上传输或者保存在本地文件中。 ​    反序列化的最重要的作用：根据字节流中保存的对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络编程基础">
-<meta property="og:url" content="http://dainx-xin.github.io/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="序列化流和打印流">
+<meta property="og:url" content="http://dainx-xin.github.io/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%E5%92%8C%E6%89%93%E5%8D%B0%E6%B5%81/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="图片大纲：C&#x2F;S结构、B&#x2F;S结构、网络通讯协议、TCP、UDP">
+<meta property="og:description" content="序列化和反序列化的详解_  序列化  序列化和反序列化的定义：  (1)Java序列化就是指把Java对象转换为字节序列的过程 ​    Java反序列化就是指把字节序列恢复为Java对象的过程。   (2)序列化最重要的作用：在传递和保存对象时.保证对象   完整性和可传递性。 对象转换为有序字节流,以便在网络上传输或者保存在本地文件中。 ​    反序列化的最重要的作用：根据字节流中保存的对象">
 <meta property="og:locale">
-<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182300749.png">
-<meta property="article:published_time" content="2022-06-18T15:03:37.000Z">
-<meta property="article:modified_time" content="2022-06-18T15:03:06.443Z">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182257608.png">
+<meta property="article:published_time" content="2022-06-18T13:30:37.000Z">
+<meta property="article:modified_time" content="2022-06-18T15:51:48.300Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182300749.png">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182257608.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/18/JAVA/高级/网络编程/基础/"/>
+  <link rel="canonical" href="http://dainx-xin.github.io/2022/06/18/JAVA/高级/IO流/序列化流和打印流/"/>
 
 
 
 
 
-  <title>网络编程基础 | Dain的博客</title>
+  <title>序列化流和打印流 | Dain的博客</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://dainx-xin.github.io/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%E5%92%8C%E6%89%93%E5%8D%B0%E6%B5%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代家鑫">
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">网络编程基础</h2>
+          <h2 class="post-title" itemprop="name headline">序列化流和打印流</h2>
         
 
         <div class="post-meta">
@@ -330,7 +330,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-18T23:03:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-18T21:30:37+08:00">
                 2022-06-18
               </time>
             
@@ -348,7 +348,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-18T23:03:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-18T23:51:48+08:00">
                 2022-06-18
               </time>
             
@@ -389,8 +389,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">网络编程</span>
+                  <a href="/categories/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/" itemprop="url" rel="index">
+                    <span itemprop="name">IO流</span>
                   </a>
                 </span>
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  22
+                  1k
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -457,8 +457,84 @@
       
 
       
-        <p>图片大纲：C&#x2F;S结构、B&#x2F;S结构、网络通讯协议、TCP、UDP</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182300749.png" alt="image-20220618230045129"></p>
+        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tree_ifconfig/article/details/82766587">序列化和反序列化的详解_</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1298366845681698">序列化</a></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182257608.png" alt="image-20220618225714539"></p>
+<h2 id="序列化和反序列化的定义："><a href="#序列化和反序列化的定义：" class="headerlink" title="序列化和反序列化的定义："></a>序列化和反序列化的定义：</h2><p>  (1)Java序列化就是指把J<strong>ava对象转换为字节序列</strong>的过程</p>
+<p>​    Java反序列化就是指把<strong>字节序列恢复为Java对象</strong>的过程。</p>
+<p>  (2)序列化最重要的作用：在传递和保存对象时.保证对象   完整性和可传递性。</p>
+<p>对象转换为有序字节流,以便在网络上传输或者保存在本地文件中。</p>
+<p>​    反序列化的最重要的作用：根据字节流中保存的对象状态及描述信息，通过反序列化重建对象。</p>
+<p>  <strong>总结：核心作用就是对象状态的保存和重建。（整个过程核心点就是字节流中所保存的对象状态及描述信息）</strong></p>
+<h2 id="ObjectOutStream类（IO包）"><a href="#ObjectOutStream类（IO包）" class="headerlink" title="ObjectOutStream类（IO包）"></a>ObjectOutStream类（IO包）</h2><p>1、将Java对象的原始数据类型写出到文件,实现对象的持久储存。</p>
+<p>2、构造方法：传参数是一个（OutPutStream）类型数据。</p>
+<p>3、一个对象想实现序列化需要实现 java.io.Serializable 接口(接口中没有方法)，只是一个标记。</p>
+<p>不实现序列化接口，就会报空指针异常。</p>
+<p>4、对象中的类中的所有属性都必须是序列化的，常见的基本数据结构和包装类型的父类或本身都实现了该接口，</p>
+<p>可以通过<strong>transient</strong>，标记为瞬态，就可以不用呗序列化</p>
+<table>
+<thead>
+<tr>
+<th>public  final void <strong>writeObject</strong>  (Object obj) :</th>
+<th>将指定的对象写出。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Employee</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Employee</span>(); </span><br><span class="line">e.name = <span class="string">&quot;zhangsan&quot;</span>;</span><br><span class="line"> e.address = <span class="string">&quot;beiqinglu&quot;</span>;</span><br><span class="line"> e.age = <span class="number">20</span>; </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line">    <span class="comment">// 创建序列化流对象 </span></span><br><span class="line">    <span class="type">ObjectOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;employee.txt&quot;</span>)); </span><br><span class="line"><span class="comment">// 写出对象 </span></span><br><span class="line">out.writeObject(e); </span><br><span class="line"><span class="comment">// 释放资源 </span></span><br><span class="line">out.close();</span><br></pre></td></tr></table></figure>
+
+<h2 id="ObjectInputStream类（IO包）"><a href="#ObjectInputStream类（IO包）" class="headerlink" title="ObjectInputStream类（IO包）"></a>ObjectInputStream类（IO包）</h2><p>1、ObjectInputStream反序列化流，将之前使用ObjectOutputStream序列化的原始数据恢复为对象。 </p>
+<p>2、构造方法：传参（InputStream）类型数据</p>
+<p>3、如果能找到一个对象的class文件，我们可以进行反序列化操作，调用 ObjectInputStream 读取对象</p>
+<table>
+<thead>
+<tr>
+<th>public  final Object readObject () :</th>
+<th>读取一个对象。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>4、对于JVM可以反序列化对象，它必须是能够找到class文件的类。如果找不到该类的class文件，则抛出一个 ClassNotFoundException 异常。 </p>
+<p>5、当JVM反序列化对象时，能找到class文件，但是class文件在序列化对象之后发生了修改，那么反序列化操 作也会失败，</p>
+<p>抛出一个 InvalidClassException 异常。发生这个异常的原因如下：</p>
+<ul>
+<li>该类的序列版本号与从流中读取的类描述符的版本号不匹配     </li>
+<li>该类包含未知数据类型 </li>
+<li>该类没有可访问的无参数构造方法</li>
+</ul>
+<p>Serializable 接口给需要序列化的类，提供了一个<strong>序列版本号。</strong> </p>
+<p>serialVersionUID 该版本号的目的在于验证序 列化的对象和对应类是否版本匹配。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加入序列版本号 </span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br></pre></td></tr></table></figure>
+
+<p>版本号：一旦修改，就不认识，报异常。</p>
+<p><strong>注：一般都是直接把一个对象序列化，如果我们有多个同一个类的对象，那么可以将这多个对象存进一个数组中，</strong></p>
+<p><strong>这个数组可以时静态数组也可以是动态数组，因为数组本身也是一个对象，将这个数组对象进行序列化，</strong></p>
+<p><strong>最后反序列化的时候也将得到一个数组对象。</strong></p>
+<h1 id="打印流："><a href="#打印流：" class="headerlink" title="打印流："></a><strong>打印流：</strong></h1><p>1、平时我们在控制台打印输出，是<strong>调用 print 方法和 println 方法</strong>完成的，这两个方法都来自于 java.io.PrintStream 类</p>
+<p>2、构造方法：</p>
+<table>
+<thead>
+<tr>
+<th><strong>public PrintStream(String fileName) ：</strong></th>
+<th><strong>使用指定的文件名创建一个新的打印流。</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>3、<strong>System.out</strong> 就是 PrintStream 类型的，只不过它的流向是系统规定的，打印在控制台上。</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用系统的打印流,控制台直接输出97 </span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="number">97</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建打印流,指定文件的名称 </span></span><br><span class="line"></span><br><span class="line"><span class="type">PrintStream</span> <span class="variable">ps</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintStream</span>(<span class="string">&quot;ps.txt&quot;</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置系统的打印流流向,输出到</span></span><br><span class="line"></span><br><span class="line">ps.txt System.setOut(ps); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用系统的打印流,ps.txt中输出97 </span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="number">97</span>);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -483,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/RandomAccessFile%E7%B1%BB/" rel="next" title="RandomAccessFile类">
-                <i class="fa fa-chevron-left"></i> RandomAccessFile类
+              <a href="/2022/06/18/JAVA/%E9%9D%A2%E8%AF%95/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/" rel="next" title="JAVA是值传递还是引用传递">
+                <i class="fa fa-chevron-left"></i> JAVA是值传递还是引用传递
               </a>
             
           </div>
@@ -493,8 +569,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E5%8F%8D%E5%B0%84%E5%92%8C%E4%BB%A3%E7%90%86/JAVA%E5%8F%8D%E5%B0%84Reflection/" rel="prev" title="JAVA反射-Reflection">
-                JAVA反射-Reflection <i class="fa fa-chevron-right"></i>
+              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/Properties%E7%B1%BB/" rel="prev" title="分布式-高并发-多线程理解">
+                分布式-高并发-多线程理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,8 +626,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -654,6 +739,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">序列化和反序列化的定义：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ObjectOutStream%E7%B1%BB%EF%BC%88IO%E5%8C%85%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">ObjectOutStream类（IO包）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ObjectInputStream%E7%B1%BB%EF%BC%88IO%E5%8C%85%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">ObjectInputStream类（IO包）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%B5%81%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">打印流：</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
