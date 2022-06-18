@@ -4,7 +4,7 @@ date: 2022-06-03 22:52:37
 categories:
 - JAVA
 - 高级
-- 反射
+- 反射和代理
 ---
 
 #  Java代理的几种实现方式 
@@ -166,3 +166,61 @@ public class Main2 {
     }
 }
 ```
+
+# 动态代理
+
+运行期动态创建一个interface实例的方法如下：
+	1. 定义一个InvocationHandler实例，它负责实现接口的方法调用；
+	2. 通过Proxy.newProxyInstance()创建interface实例，它需要3个参数：
+	3. 使用的ClassLoader，通常就是接口类的ClassLoader；
+	4. 需要实现的接口数组，至少需要传入一个接口进去；
+	5. 用来处理接口方法调用的InvocationHandler实例。
+	6. 将返回的Object强制转型为接口。
+	
+
+注：
+动态代理是通过Proxy创建代理对象，然后将接口方法“代理”给InvocationHandler完成的。
+invoke（Object obj, Object …    args）原方法声明为private,则需要在调用此invoke()方法前，
+
+显式调用 方法对象的setAccessible(true)方法，将可访问private的方法。
+Method和Field、Constructor对象都有setAccessible()方法。
+
+
+
+**动态代理步骤：**
+
+1. **创建一个实现接口**InvocationHandler**的类，它必须实现invoke方 法，以完成代理的具体操作。**
+2. **创建被代理的类以及接口**
+3. **通过Proxy的静态方法**  **newProxyInstance(ClassLoader loader, Class[] interfaces,     InvocationHandler h)** **创建 一个Subject接口代理**
+
+
+
+## 实例代码
+
+
+
+![image-20220618173719039](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181737187.png)
+
+# **静态代理：**
+
+特征：代理类和目标 对象的类都是在编译期间确定下来，不利于程序的扩展。每一个代 理类只能为一个接口服务，这样一来程序开发中必然产生过多的代理。
+
+## **代理模式理解：**
+
+使用一个代理将对象包装起来, 然后用该代理对象取代原始对象。任何对原 始对象的调用都要通过代理。代理对象决定是否以及何时将方法调用转到原始对象上。
+
+![image-20220618173520065](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181735135.png)
+
+
+
+
+
+# 补充：
+
+动态代理：JDK方法
+
+![image-20220618174022806](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181740947.png)
+
+CJLIB方法：动态代理。
+
+![image-20220618174056577](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181740704.png)

@@ -405,7 +405,19 @@ private class Handler {
 }
 ```
 
+# 顶层设计
 
+```java
+//初始化阶段
+@Override
+public void init(ServletConfig config) throws ServletException {
+    //===========  IOC和DI     ============
+    context = new GPApplicationContext(config.getInitParameter("contextConfigLocation"));
+    //===========  MVC九大组件  ============
+    initStrategies(context);
+    System.out.println("GP Spring framework is init.");
+}
+```
 
 
 
@@ -416,6 +428,120 @@ private class Handler {
 ![微信图片_20220616210843](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206162109009.png)
 
 调用IOC容器，先从ApplicationContext的getBean方法开始。
+
+```java
+//容器对象完成IOC和DI
+public GPApplicationContext(String... configLocations) {
+        this.configLocations = configLocations;
+
+        try {
+            //1、读取配置文件
+            reader = new GPBeanDefinitionReader(configLocations);
+
+            //2、解析配置文件，将配置信息变成BeanDefinition对象
+            List<GPBeanDefinition> beanDefinitions = reader.loadBeanDefinitions();
+
+            //3、把BeanDefinition对应的实例注册到beanDefinitionMap key=beanName,value=beanDefinition对象
+            doRegisterBeanDefinition(beanDefinitions);
+
+            //配置信息初始化阶段就完成
+
+            //4、完成依赖注入，什么时候注入？在调用getBean()的才注入
+            doAutowrited();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+//得到Bean对象IOC
+public Object getBean(String beanName){
+        //1、获取BeanDefinition配置信息
+        GPBeanDefinition beanDefinition = this.beanDefinitionMap.get(beanName);
+
+        //2、用反射实例化
+        Object instance = instantiateBean(beanName,beanDefinition);
+
+        //3、将创建出来的实例包装为BeanWrapper对象
+        GPBeanWrapper beanWrapper = new GPBeanWrapper(instance);
+
+        //4、把BeanWrapper对象存入到真正的IoC容器中
+        this.factoryBeanInstanceCache.put(beanName,beanWrapper);
+
+        //5、执行依赖注入
+        populateBean(beanName,beanDefinition,beanWrapper);
+
+        return this.factoryBeanInstanceCache.get(beanName).getWrapperInstance();
+    }
+
+//2、创建实例化对象
+    private Object instantiateBean(String beanName, GPBeanDefinition beanDefinition) {
+        String className = beanDefinition.getBeanClassName();
+        Object instance = null;
+        try {
+            Class<?> clazz = Class.forName(className);
+            instance = clazz.newInstance();
+
+            //Spring内部的容器不止一个
+            factoryBeanObjectCache.put(beanName,instance);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return instance;
+    }
+
+
+//5、完成依赖注入DI
+    private void populateBean(String beanName, GPBeanDefinition beanDefinition, GPBeanWrapper beanWrapper) {
+
+        Object instance = beanWrapper.getWrapperInstance();
+        Class<?> clazz = beanWrapper.getWrapperClass();
+
+        //只有加了注解的才进行依赖注入
+        //@Component
+        if(!(clazz.isAnnotationPresent(GPController.class) || clazz.isAnnotationPresent(GPService.class))){
+            return;
+        }
+
+        //拿到IoC容器所有实例的字段（属性）
+        //private protected default public
+        //OOP 只能拿到public属性
+        Field[] fields = clazz.getDeclaredFields();
+
+        for (Field field : fields) {
+            if(!field.isAnnotationPresent(GPAutowired.class)){
+                continue;
+            }
+
+            GPAutowired autowired = field.getAnnotation(GPAutowired.class);
+            String autowiredBeanName = autowired.value().trim();
+            if("".equals(autowiredBeanName)){
+                autowiredBeanName = field.getType().getName();
+            }
+
+            //暴力访问
+            field.setAccessible(true);
+
+            try {
+                //field相当于 @GPAutowired private IDemoService demoService;
+                //entry.getValue()相当于DemoAction的实例
+                //ioc.get(beanName)相当于从IoC容器中去拿到key为com.gupaoedu.demo.service.IDemoService 对应的实例
+                // 即DemoService的实例
+                if(this.factoryBeanInstanceCache.get(autowiredBeanName) == null){
+                    continue;
+                }
+                field.set(instance,this.factoryBeanInstanceCache.get(autowiredBeanName).getWrapperInstance());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+                continue;
+            }
+
+        }
+
+    }
+
+
+```
 
 先初始化ApplicationContext对象，构造方法中
 
@@ -457,5 +583,111 @@ MVC九大组件:
 
 处理映射器(HandlerMapping)、处理适配器(HandlerAdapter)、视图解析器(ModelAndView)
 
+```java
+private void initStrategies(GPApplicationContext context) {
+    //handlerMapping
+    initHandlerMappings(context);
+    //初始化参数适配器，url和method的匹配。对应了前面的 构造HandlerMapping
+    initHandlerAdapters(context);
+    //初始化视图转换器
+    initViewResolvers(context);
+}
 
+
+//方法映射
+
+ private void initHandlerMappings(GPApplicationContext context) {
+        if(context.getBeanDefinitionCount() == 0){ return; }
+
+        String [] beanNames = context.getBeanDefinitionNames();
+        for (String beanName : beanNames) {
+            Object instance = context.getBean(beanName);
+            Class<?> clazz = instance.getClass();
+            if(!clazz.isAnnotationPresent(GPController.class)){ continue; }
+
+            String baseUrl = "";
+            if(clazz.isAnnotationPresent(GPRequestMapping.class)){
+                GPRequestMapping requestMapping = clazz.getAnnotation(GPRequestMapping.class);
+                baseUrl = requestMapping.value();
+            }
+
+            //默认只获取public方法
+            for (Method method : clazz.getMethods()) {
+                if(!method.isAnnotationPresent(GPRequestMapping.class)){continue;}
+                GPRequestMapping requestMapping = method.getAnnotation(GPRequestMapping.class);
+                //   //demo//query
+                String regex = ("/" + baseUrl + "/" + requestMapping.value().replaceAll("\\*",".*")).replaceAll("/+","/");
+                Pattern pattern = Pattern.compile(regex);
+                handlerMappings.add(new GPHandlerMapping(pattern,instance,method));
+                System.out.println("Mapped " + regex + "," + method);
+
+            }
+        }
+    }
+
+
+
+    private void initHandlerAdapters(GPApplicationContext context) {
+        for (GPHandlerMapping handlerMapping : handlerMappings) {
+            this.handlerAdapters.put(handlerMapping,new GPHandlerAdapter());
+        }
+    }
+
+
+    private void initViewResolvers(GPApplicationContext context) {
+        //模板引擎的根路径
+        String tempateRoot = context.getConfig().getProperty("templateRoot");
+        String templateRootPath = this.getClass().getClassLoader().getResource(tempateRoot).getFile();
+
+        File templateRootDir = new File(templateRootPath);
+        for (File file : templateRootDir.listFiles()) {
+            this.viewResolvers.add(new GPViewResolver(tempateRoot));
+        }
+    }
+
+```
+
+
+
+
+
+## 运行阶段
+
+```java
+//运行阶段
+    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+
+        //1、根据URL拿到对应的HandlerMapping对象
+        GPHandlerMapping handler = getHandler(req);
+
+        if(null == handler){
+            processDispatchResult(req,resp,new GPModelAndView("404"));
+            return;
+        }
+
+        //2、根据HandlerMapping获得一个HandlerAdapter
+        GPHandlerAdapter ha = getHandlerAdapter(handler);
+
+        //3、根据HandlerAdapter拿到一个ModelAndView
+        GPModelAndView mv = ha.handle(req,resp,handler);
+
+        //4、根据ViewResolver根据ModelAndView去拿到View
+        processDispatchResult(req,resp,mv);
+
+    }
+
+
+ //404 、500 、自定义模板
+    private void processDispatchResult(HttpServletRequest req, HttpServletResponse resp, GPModelAndView mv) throws Exception {
+        if(null == mv){ return; }
+
+        if(this.viewResolvers.isEmpty()){return;}
+
+        for (GPViewResolver viewResolver : this.viewResolvers) {
+            GPView view = viewResolver.resolveViewName(mv.getViewName());
+            view.render(mv.getModel(),req,resp);
+            return;
+        }
+    }
+```
 
