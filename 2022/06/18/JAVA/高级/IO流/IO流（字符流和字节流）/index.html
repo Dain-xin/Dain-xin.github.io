@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="IO理解：（IO包） 1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。 输入也叫做读取数据（input）往内存中写，输出也叫做作写出数据（output）从内存写出。  2、">
+<meta name="description" content="IO理解：（IO包）定义1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。 输入也叫做读取数据（input）往内存中写，输出也叫做作写出数据（output）从内存写出。  2、内存到硬盘（输出）；硬盘到内存（输入） 根据数据的流向分为：输入流和输出流。 输入流 ：把数据从 其他设备 上读取到 内存 中的流。 输出流 ：把数据从 内存 中写出到 其他设备">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO流（字符流和字节流）">
 <meta property="og:url" content="http://dainx-xin.github.io/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/IO%E6%B5%81%EF%BC%88%E5%AD%97%E7%AC%A6%E6%B5%81%E5%92%8C%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%89/index.html">
 <meta property="og:site_name" content="Dain的博客">
-<meta property="og:description" content="IO理解：（IO包） 1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。 输入也叫做读取数据（input）往内存中写，输出也叫做作写出数据（output）从内存写出。  2、">
+<meta property="og:description" content="IO理解：（IO包）定义1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。 输入也叫做读取数据（input）往内存中写，输出也叫做作写出数据（output）从内存写出。  2、内存到硬盘（输出）；硬盘到内存（输入） 根据数据的流向分为：输入流和输出流。 输入流 ：把数据从 其他设备 上读取到 内存 中的流。 输出流 ：把数据从 内存 中写出到 其他设备">
 <meta property="og:locale">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182228581.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182220964.png">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182227717.png">
 <meta property="article:published_time" content="2022-06-18T09:52:37.000Z">
-<meta property="article:modified_time" content="2022-06-18T12:37:05.106Z">
+<meta property="article:modified_time" content="2022-06-18T14:30:10.139Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182228581.png">
 
 
 
@@ -346,7 +350,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-06-18T20:37:05+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-06-18T22:30:10+08:00">
                 2022-06-18
               </time>
             
@@ -418,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  65
+                  1.4k
                 </span>
               
 
@@ -434,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -455,10 +459,175 @@
       
 
       
-        <p>IO理解：<strong>（</strong>IO<strong>包）</strong></p>
-<p>1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。</p>
+        <h1 id="IO理解：（IO包）"><a href="#IO理解：（IO包）" class="headerlink" title="IO理解：（IO包）"></a>IO理解：<strong>（</strong>IO<strong>包）</strong></h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。</p>
 <p><strong>输入也叫做读取数据（</strong>input<strong>）</strong>往内存中写<strong>，输出也叫做作写出数据（</strong>output<strong>）</strong>从内存写出<strong>。</strong> </p>
-<p>2、</p>
+<p>2、内存到硬盘（输出）；硬盘到内存（输入）</p>
+<p><strong>根据数据的流向分为：输入流和输出流。</strong></p>
+<p>输入流 ：把数据从 其他设备 上读取到 内存 中的流。</p>
+<p>输出流 ：把数据从 内存 中写出到 其他设备 上的流。</p>
+<p><strong>格局数据的类型分为：字节流和字符流。</strong></p>
+<p>字节流 ：以字节为单位，读写数据的流。</p>
+<p>字符流 ：以字符为单位，读写数据的流。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182228581.png" alt="iostream2xx"></p>
+<h2 id="父类"><a href="#父类" class="headerlink" title="父类"></a>父类</h2><p>3、 IO流的父类：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>输入流</strong></th>
+<th><strong>输出流</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>字节流</strong></td>
+<td><strong>字节输入流</strong>    <strong>InputStream</strong></td>
+<td><strong>字节输出流</strong>   <strong>OutputStream</strong></td>
+</tr>
+<tr>
+<td><strong>字符流</strong></td>
+<td><strong>字符输入流</strong>       <strong>Reader</strong></td>
+<td><strong>字符输出流</strong>   <strong>Writer</strong></td>
+</tr>
+</tbody></table>
+<h1 id="字节流："><a href="#字节流：" class="headerlink" title="字节流："></a>字节流：</h1><p>字节输出流：OutPutStream 输出流的超类。</p>
+<p>子类FileOutPutStream：</p>
+<p>构造方法:</p>
+<table>
+<thead>
+<tr>
+<th>FileOutputStream(File  file) ：</th>
+<th>创建文件输出流以写入由指定的  <strong>File对象</strong>表示的文件。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FileOutputStream(String  name) ：</td>
+<td>创建文件输出流以<strong>指定的名称</strong>写入文件。</td>
+</tr>
+</tbody></table>
+<p><strong>注：</strong>当你创建一个流对象时，必须传入一个文件路径。</p>
+<p>该路径下，如果没有这个文件，会创建该文件。如果有这个文件，会清空这个文件的数据。</p>
+<table>
+<thead>
+<tr>
+<th>FileOutputStream(File  file, boolean append) ：</th>
+<th>创建文件输出流以写入由指定的  File对象表示的 文件。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FileOutputStream(String  name, boolean append) ：</td>
+<td>创建文件输出流以指定的名称写入文件。</td>
+</tr>
+</tbody></table>
+<p><strong>注</strong>：这两个构造方法，参数中都需要传入一个boolean类型的值， true 表示追加数据；</p>
+<p> false 表示清空原有数据。</p>
+<table>
+<thead>
+<tr>
+<th>void  close() ：</th>
+<th><strong>关闭</strong>此输出流并释放与此流相关联的任何<strong>系统资源</strong>。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void  flush() ：</td>
+<td><strong>刷新</strong>此输出流并强制任何缓冲的输出字节被写出。</td>
+</tr>
+<tr>
+<td>void  write(byte[] b) ：</td>
+<td>将  b.length字节从指定的字节数组写入此输出流。</td>
+</tr>
+<tr>
+<td>void  write(byte[] b, int off, int len) ：</td>
+<td>从指定的字节数组写入  len字节，<strong>从偏移量 off开始输  出到此输出流。</strong></td>
+</tr>
+<tr>
+<td>abstract void write(int b) ：</td>
+<td>将指定的<strong>字节</strong>输出流。</td>
+</tr>
+</tbody></table>
+<p><strong>理解</strong>：</p>
+<p>1、write（int b）：虽然是4个字节；但是实际上就会保留一个字节写出。</p>
+<p>2、\r\n 是windows 的换行方法；但是这里任何一个都可以，实现换行。但是因为版本问题最好都写上。</p>
+<p>回车符 \r 和换行符 \n ：</p>
+<p>回车符：回到一行的开头（return）。</p>
+<p>换行符：下一行（newline）。</p>
+<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a><strong>字符流</strong></h1><p><strong>（读写都是在缓冲区中进行）</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182220964.png" alt="image-20220618222045771"></p>
+<p><strong>理解：因为字节流在读取中文字符的时候，可能显示不完整。字符流，是以字符为单位读取、写入。</strong></p>
+<p><strong>Java提供一些字符流类，以字符为单位读写数据，</strong>专门用于处理文本文件。</p>
+<p><strong>图片、音频、视频、都是用二进制存储读取，用字符流读取存储就不行。读取的字符转为</strong>ASCII码可能对不上丢失信息。</p>
+<ul>
+<li><strong>字符输入流：</strong>Reader<strong>：超类</strong>。（读取到内存中）</li>
+</ul>
+<p><strong>子类：</strong>FileReader<strong>类。</strong></p>
+<p><strong>构造方法：</strong>构造时使用<strong>系统默认</strong>的字符编码和默认字节缓冲区。</p>
+<table>
+<thead>
+<tr>
+<th><strong>FileReader(File file)</strong></th>
+<th><strong>在给定从中读取数据的 File 的情况下创建一个新 FileReader。</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>FileReader(FileDescriptor fd)</strong></td>
+<td><strong>在给定从中读取数据的 FileDescriptor 的情况下创建一个新 FileReader。</strong></td>
+</tr>
+<tr>
+<td><strong>FileReader(String fileName)</strong></td>
+<td><strong>在给定从中读取数据的文件名的情况下创建一个新 FileReader。</strong></td>
+</tr>
+</tbody></table>
+<p><strong>1. 读取字符： read 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1 ，循环读</strong></p>
+<p><strong>取。然读取了一个字符，但是会自动提升为int类型。</strong></p>
+<p><strong>2. 使用字符数组读取： read(char[] cbuf) ，每次读取b的长度个字符到数组中，返回读取到的有效字符个数，</strong></p>
+<p><strong>读取到末尾时，返回 -1 。</strong></p>
+<ul>
+<li><strong>字符输出流：Writer：超类</strong>。（从内存中读出）</li>
+</ul>
+<p><strong>子类：FilleWriter类。</strong></p>
+<p><strong>构造方法：同上类似。</strong></p>
+<p><strong>常用方法：</strong></p>
+<table>
+<thead>
+<tr>
+<th>void  write(int c)</th>
+<th>写入单个字符。 <strong>虽然读取了一个字符，但是会自动提升为int类型。</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void  write(char[] cbuf)</td>
+<td>写入字符数组。</td>
+</tr>
+<tr>
+<td>abstract  void write(char[] cbuf, int off, int len)</td>
+<td>写入字符数组的某一部分,off数组的开始索引,len  写的字符个数。</td>
+</tr>
+<tr>
+<td>void  write(String str)</td>
+<td>写入字符串。</td>
+</tr>
+<tr>
+<td><strong>void write(String str, int off, int len)</strong></td>
+<td>写入字符串的某一部分,off字符串的开始索引,len写的字符个  数。</td>
+</tr>
+<tr>
+<td>void <strong>flush</strong>()</td>
+<td>刷新该流的缓冲。</td>
+</tr>
+<tr>
+<td>void <strong>close</strong>()</td>
+<td>关闭此流，但要先刷新它。</td>
+</tr>
+</tbody></table>
+<p><strong>关闭和刷新</strong> </p>
+<p>因为内置缓冲区的原因，如果不关闭输出流，无法写出字符到文件中。</p>
+<p>但是关闭的流对象，是无法继续写出数据 的。</p>
+<p>如果我们既想写出数据，又想继续使用流，就需要 flush 方法了。 </p>
+<p>flush ：刷新缓冲区，流对象可以继续使用。 </p>
+<p>close :先刷新缓冲区，然后通知系统释放资源。流对象不可以再被使用了。</p>
+<p><strong>注意：</strong></p>
+<p><strong>1</strong>、<strong>close</strong>（）这样才会把缓冲区中的数据写入目的文件。但是不关闭也不 <strong>flush</strong>（）缓冲区的数据就不会写入。</p>
+<p><strong>2、</strong>close<strong>（）关闭流，就不能恢复原来的流。如果想继续写入，就需要</strong>flush<strong>后</strong>write（）。</p>
+<h1 id="IO异常处理"><a href="#IO异常处理" class="headerlink" title="IO异常处理"></a>IO异常处理</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182227717.png" alt="image-20220618222736413"></p>
 
       
     </div>
@@ -483,8 +652,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/Untitled/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/" rel="next" title="File类">
+                <i class="fa fa-chevron-left"></i> File类
               </a>
             
           </div>
@@ -493,8 +662,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/" rel="prev" title="File类">
-                File类 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/Enum%E6%9E%9A%E4%B8%BE/" rel="prev" title="枚举Enum">
+                枚举Enum <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,8 +719,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -571,7 +749,7 @@
                 <!-- <a href="/archives/%7C%7Carchive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -582,7 +760,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -655,6 +833,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E7%90%86%E8%A7%A3%EF%BC%9A%EF%BC%88IO%E5%8C%85%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">IO理解：（IO包）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B6%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">父类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">字节流：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">字符流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">IO异常处理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -681,7 +875,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">代家鑫</span>
-<span class="post-count"> | Dain博客共（73.8k字）</span>
+<span class="post-count"> | Dain博客共（82.2k字）</span>
   
   
 </div>
