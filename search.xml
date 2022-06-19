@@ -20,11 +20,77 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<p>Dain的博客：dain-x.top</p>
-<p>已同步到GitHub和Gitee上</p>
+    <title>JDBC基础</title>
+    <url>/2022/06/19/JAVA/JDBC/%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206192043167.png" alt="image-20220619204341959"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206192044133.png" alt="image-20220619204431827"></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>JDBC</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>用户权限DCL</title>
+    <url>/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90-DCL/</url>
+    <content><![CDATA[<p>关键字：用户授权、查看权限、修改密码</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191843642.png" alt="image-20220619184351578"></p>
 ]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>mysql</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>事务查询</title>
+    <url>/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/King_weng/article/details/106507133">数据库事务处理</a></p>
+<h1 id="事务理解："><a href="#事务理解：" class="headerlink" title="事务理解："></a>事务理解：</h1><p>访问操作数据库的数据、进行一系列连锁的处理，这些操作处理全部执行或者都不执行。不可分割的整体。</p>
+<p>对数据库的数据项修改的数据，可以暂时不写入数据库，缓存起来，用户自己可以看到修改的预览，</p>
+<p>但是真实没有修改数据库里面的内容，提交后，不可以在撤销操作，然后其他用户就可以访问修改后的数据。</p>
+<h1 id="事务由四大特性："><a href="#事务由四大特性：" class="headerlink" title="事务由四大特性："></a>事务由四大特性：</h1><p>原子性：事务本质，不可分割，全执行&#x2F;都不执行。</p>
+<p>隔离性：事务之间不受彼此影响。</p>
+<p>持久性：提交的事务永久保存，不可撤销。</p>
+<p>一致性：事务之间执行顺序不可更改，执行结果一致。</p>
+<h1 id="事务的sql命令和事务处理。"><a href="#事务的sql命令和事务处理。" class="headerlink" title="事务的sql命令和事务处理。"></a>事务的sql命令和事务处理。</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191737629.png" alt="image-20220619173726577"></p>
+<p>注：</p>
+<p><strong>set names gbk;</strong> <strong>更改字符集。</strong></p>
+<p><strong>删除数据库、表的删除操作、修改表的操作：都不能事务处理命令，直接提交。</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191740482.png" alt="image-20220619174001427"></p>
+<h1 id="事务原理图："><a href="#事务原理图：" class="headerlink" title="事务原理图："></a>事务原理图：</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191740282.png" alt="image-20220619174054178"></p>
+<h1 id="拓展存储引擎："><a href="#拓展存储引擎：" class="headerlink" title="拓展存储引擎："></a>拓展存储引擎：</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191835532.png" alt="image-20220619183542485"></p>
+<h1 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h1><table>
+<thead>
+<tr>
+<th><strong>脏读</strong></th>
+<th><strong>一个事务读取到了另一个事务中尚未提交的数据</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>不可重复读</strong></td>
+<td><strong>一个事务中两次读取的数据</strong>内容**不一致，要求的是一个事务中多次读取时数据是一致的，这 **是事务 <strong>update</strong> <strong>时引发的问题</strong></td>
+</tr>
+<tr>
+<td><strong>幻读</strong></td>
+<td><strong>一个事务中两次读取的数据的****数量</strong>不一致，要求在一个事务多次读取的数据的数量是一致  *<em>的，这是</em> <strong>insert</strong> <strong>或</strong> <strong>delete</strong> <strong>时引发的问题</strong></td>
+</tr>
+</tbody></table>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191836675.png" alt="image-20220619183655616"></p>
+<ol>
+<li>隔离级别越高，性能越差，安全性越高。</li>
+<li><strong>查询隔离级别    select     @@tx_isolation;</strong></li>
+<li>设置隔离级别    <strong>set     global transaction isolation level</strong> <strong>级别字符串</strong>;</li>
+</ol>
+<h1 id="理解："><a href="#理解：" class="headerlink" title="理解："></a><strong>理解：</strong></h1><p><strong>1、Mysql隔离级别高。</strong></p>
+<p><strong>2、第一级别：未提交可读，另一个事务也可以读取到，那么脏读&#x2F;幻读&#x2F;不可重复读</strong> <strong>都满足；没有开启事务的读取，不需要提交，就能读到修改的数据。</strong></p>
+<p><strong>3、第二级别：提交可读，只有提交后另一个事务才可以读到，这就不满足脏读了；没有开启事务的，读取到的都是另一个修改事务开启前的数据，只有修改后在能读到。</strong></p>
+<p><strong>4、第三级别：重复度，针对增删操作的限制，基本和上一级限制类似。</strong></p>
+<p><strong>5、第四级别：都被限制。</strong></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>mysql</category>
+      </categories>
   </entry>
   <entry>
     <title>查询操作-DQL-聚合函数</title>
@@ -614,18 +680,6 @@
       </categories>
   </entry>
   <entry>
-    <title>网络编程基础</title>
-    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>图片大纲：C&#x2F;S结构、B&#x2F;S结构、网络通讯协议、TCP、UDP</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182300749.png" alt="image-20220618230045129"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>高级</category>
-        <category>网络编程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JAVA反射-Reflection</title>
     <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E5%8F%8D%E5%B0%84%E5%92%8C%E4%BB%A3%E7%90%86/JAVA%E5%8F%8D%E5%B0%84Reflection/</url>
     <content><![CDATA[<h1 id="反射-廖雪峰"><a href="#反射-廖雪峰" class="headerlink" title="反射 - 廖雪峰"></a><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255945147512512">反射 - 廖雪峰</a></h1><ul>
@@ -802,6 +856,18 @@
         <category>JAVA</category>
         <category>高级</category>
         <category>反射和代理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>网络编程基础</title>
+    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>图片大纲：C&#x2F;S结构、B&#x2F;S结构、网络通讯协议、TCP、UDP</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182300749.png" alt="image-20220618230045129"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>网络编程</category>
       </categories>
   </entry>
   <entry>
