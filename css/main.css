@@ -1924,7 +1924,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffd2;
+  background: #9cff2d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3287,7 +3287,7 @@ body {
   box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0,0,0,0.31) 6px 6px 10px 0px;
 }
 .brand {
-  color: #f9ad63;
+  color: #100a0a;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -3337,21 +3337,21 @@ article .post-copyright {
 .sidebar span.exturl,
 .site-state-item-name,
 .site-description {
-  color: #f5f6f7;
+  color: #6d545a;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #fff;
+  color: #b70806;
   border-bottom-color: #fbda41;
 }
 .sidebar-nav li {
-  color: #fff;
+  color: #b70806;
   border-bottom-color: #fbda41;
 }
 .links-of-blogroll-list {
-  text-shadow: #f00 0 1px 0;
+  text-shadow: #ff0 0 1px 0;
 }
 .post-toc ol a {
-  color: #fff;
+  color: #b70806;
 }
 .content .posts-expand .post-block {
   position: relative;
