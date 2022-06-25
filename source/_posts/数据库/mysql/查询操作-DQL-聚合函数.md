@@ -4,6 +4,12 @@ date: 2022-06-19 09:24:51
 categories:
 - 数据库
 - mysql
+tag:
+top:
+keywords:
+description:
+cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206190927711.png'
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206190927711.png'
 ---
 
 # **DQL**语法：
@@ -39,7 +45,7 @@ categories:
 
 # **聚合函数：**
 
-| **1**、通过 **ORDER BY** **子句，可以将查询出的结果进行排序**  **(**排序只是显示方式，不会影响数据库中数据的顺序**)**  
+ **1**、通过 **ORDER BY** **子句，可以将查询出的结果进行排序**  **(**排序只是显示方式，不会影响数据库中数据的顺序**)**  
 
 **SELECT** **字段名** **FROM** **表名** **WHERE** **字段**=**值** **ORDER BY** **字段名** **1  [ASC\|DESC],** **字段名** **2 [ASC\|DESC];**    
 

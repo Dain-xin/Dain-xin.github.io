@@ -4,6 +4,12 @@ date: 2022-05-29 15:47:17
 categories:
 - 环境搭建
 - ECS
+tag:
+top:
+keywords:
+description:
+cover: 'https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16'
+top_img: 'https://img-blog.csdnimg.cn/6e9f78285bb64b488a2a9eb1c0205dae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGFpbi1Y,size_20,color_FFFFFF,t_70,g_se,x_16'
 ---
 
 # 阿里云ECS云服务部署过程 

@@ -6,6 +6,11 @@ categories:
 - 操作命令
 tag: 
 - 常用
+top:
+keywords:
+description:
+cover:
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191738181.jpg'
 ---
 ## Hexo 常用命令
 

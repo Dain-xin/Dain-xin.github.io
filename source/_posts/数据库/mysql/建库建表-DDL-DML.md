@@ -4,6 +4,12 @@ date: 2022-06-19 08:58:51
 categories:
 - 数据库
 - mysql
+tag:
+top:
+keywords:
+description:
+cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206190919956.png'
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206190919956.png'
 ---
 
 # DDL操作数据库

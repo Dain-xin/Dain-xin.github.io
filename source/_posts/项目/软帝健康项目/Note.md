@@ -7,6 +7,11 @@ categories:
 - 健康管理系统
 tags:
 - 项目笔记
+top:
+keywords:
+description:
+cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191738181.jpg'
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191738181.jpg'
 ---
 
 ## 【SSM+Dubbo+Zookeeper+Vue】

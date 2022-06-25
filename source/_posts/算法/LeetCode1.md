@@ -3,9 +3,15 @@ title: LeetCode练习1
 date: 2022-06-18 10:00:00
 categories:
 - 算法
+tag:
+top:
+keywords:
+description:
+cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206201025809.png'
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206201025809.png'
 ---
 
-### [剑指 Offer 09. 用两个栈实现队列 - 力扣（LeetCode）](https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/)
+### [剑指 Offer 09. 用两个栈实现队列](https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/)
 
 > 队列头进尾出，两个栈一个栈只进，一个只出；出栈时，从statckIn：pop（）到statckOut中。
 >
@@ -46,7 +52,7 @@ class CQueue {
 
 
 
-### [剑指 Offer 30. 包含min函数的栈 - 力扣（LeetCode）](https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/)
+### [剑指 Offer 30. 包含min函数的栈 ](https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/)
 
 > 输出min函数的栈，就要搞一个min栈，每次入栈的时候比较栈内元素，保存最小的栈数据。
 >
@@ -92,5 +98,278 @@ class MinStack {
  * int param_3 = obj.top();
  * int param_4 = obj.min();
  */
+```
+
+### [剑指 Offer 06. 从尾到头打印链表](https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/solution/)
+
+> 链表反序输出刚好满足Stack的性值，就把链表数据存入栈中就满足。
+>
+> head = head.next 满足指向下一个节点。
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int[] reversePrint(ListNode head) {
+        Stack<ListNode> stack = new Stack<ListNode>();
+        ListNode temp = head;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+        int size = stack.size();
+        int[] print = new int[size];
+        for (int i = 0; i < size; i++) {
+            print[i] = stack.pop().val;
+        }
+        return print;        
+    }
+}
+```
+
+### [剑指 Offer 24. 反转链表](https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/solution/)
+
+
+
+> 完成反转链表，放入新的链表，然后输出新的链表即可。
+>
+> ```java
+> while (one != null) {
+>             ListNode next = one.next;
+>             one.next = two;
+>             two = one;
+>             one = next;
+>         }
+> ```
+>
+> 不停的
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode two = null;
+        ListNode one = head;
+        while (one != null) {
+            ListNode next = one.next;
+            one.next = two;
+            two = one;
+            one = next;
+        }
+        return prev;
+    }
+}
+```
+
+
+
+### [剑指 Offer 35. 复杂链表的复制 ](https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/solution/)
+
+> 迭代法：
+>
+> 就是遍历链表，new 新的节点，也就是被遍历到的节点一样，然后把new的放到下一个节点，
+>
+> 新的节点的next 指向被遍历的next，完成对new的节点的next复制。
+>
+> 然后被遍历的next位置放如new的节点
+>
+> p的随机节点没有东西就跳过，否则就p下一个节点的随即节点进行赋值为p的随机节点的next。
+>
+> 
+
+```java
+//迭代法
+class Solution {
+    public Node copyRandomList(Node head) {
+        for(Node p = head; p != null; p = p.next.next)  //复制每个节点，并将原链表和复制链表连在一起。
+        {
+            Node q = new Node(p.val);
+            q.next = p.next;
+            p.next = q;
+        }
+
+        for(Node p = head; p != null; p = p.next.next)   //复制random指针
+        {
+            if(p.random != null)
+              p.next.random = p.random.next;
+        }
+
+        //拆分两个链表，并复原原链表
+        Node dummy = new Node(-1), cur = dummy;
+        for(Node p = head; p != null; p = p.next)
+        {
+            Node q = p.next;
+            cur = cur.next = q;
+            p.next = q.next;
+        }
+
+        return dummy.next;
+    }
+}
+
+//哈希+回溯法
+class Solution {
+    Map<Node,Node> hash = new HashMap<>();
+    public Node copyRandomList(Node head) {
+        if(head == null) return null;
+        return dfs(head);
+    }
+    Node dfs(Node node)
+    {
+        if(node == null) return null;
+        //node节点已经被访问过了,直接从哈希表hash中取出对应的复制节点返回。
+        if(hash.containsKey(node)) return hash.get(node); 
+        Node clone = new Node(node.val);  //复制节点
+        hash.put(node,clone);   		  //建立源节点到复制节点的映射
+        clone.next = dfs(node.next);      //复制边  
+        clone.random = dfs(node.random);
+        return clone;
+    }
+}
+```
+
+
+
+### [剑指 Offer 05. 替换空格](https://leetcode.cn/problems/ti-huan-kong-ge-lcof/submissions/)
+
+> 机灵鬼选择用replace("" ,"%20")；
+
+```java
+class Solution {
+    public String replaceSpace(String s) {
+        StringBuilder res = new StringBuilder();
+        for(Character c : s.toCharArray())
+        {
+            if(c == ' ') res.append("%20");
+            else res.append(c);
+        }
+        return res.toString();
+    }
+}
+```
+
+### [剑指 Offer 58 - II. 左旋转字符串](https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/)
+
+> 取余数方法yyds，直接从n+1开始。
+
+```java
+class Solution {
+    public String reverseLeftWords(String s, int n) {
+        String res = "";
+        for(int i = n; i < n + s.length(); i++)
+            res += s.charAt(i % s.length());
+        return res;
+    }
+}
+```
+
+
+
+### [剑指 Offer 03. 数组中重复的数字](https://leetcode.cn/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/)
+
+> 一种方法事利用hash的set属性，重复的值无法add，就可以解决。
+>
+> 另一种方法，n长的数组，对应的数字下标++，大于1输出。
+
+```java
+class Solution {
+    public int findRepeatNumber(int[] nums) {
+        Set<Integer> dic = new HashSet<>();
+        for(int num : nums) {
+            if(dic.contains(num)) return num;
+            dic.add(num);
+        }
+        return -1;
+    }
+}
+```
+
+### [剑指 Offer 53 - I. 在排序数组中查找数字](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)
+
+> 因为是有序数组，目标数字第一次出现的位置，和最后依次出现的位置，两次相减就得到出现次数。
+>
+> 所以用两次二分查找，遍历左边和右边得到第一次出现位置和最后依次出现的位置。
+
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        // 搜索右边界 right
+        int i = 0, j = nums.length - 1;
+        while(i <= j) {
+            int m = (i + j) / 2;
+            if(nums[m] <= target) i = m + 1;
+            else j = m - 1;
+        }
+        int right = i;
+        // 若数组中无 target ，则提前返回
+        if(j >= 0 && nums[j] != target) return 0;
+        // 搜索左边界 right
+        i = 0; j = nums.length - 1;
+        while(i <= j) {
+            int m = (i + j) / 2;
+            if(nums[m] < target) i = m + 1;
+            else j = m - 1;
+        }
+        int left = j;
+        return right - left - 1;
+    }
+}
+
+```
+
+### [剑指 Offer 53 - II. 0～n-1中缺失的数字](https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/submissions/)
+
+> 第一种方法hash方法：
+>
+> new一个set把数组全部add进去，然后遍历0-n看set集合是否包含i没有就输出。
+>
+> 第二种方法排序：
+>
+> 然后遍历数据和索引不符合，就输出。
+
+```java
+class Solution {
+    public int missingNumber(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        int n = nums.length + 1;
+        for (int i = 0; i < n - 1; i++) {
+            set.add(nums[i]);
+        }
+        int missing = -1;
+        for (int i = 0; i <= n - 1; i++) {
+            if (!set.contains(i)) {
+                missing = i;
+                break;
+            }
+        }
+        return missing;
+    }
+}
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length + 1;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] != i) {
+                return i;
+            }
+        }
+        return n - 1;
+    }
+}
 ```
 
