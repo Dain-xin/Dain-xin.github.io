@@ -8,7 +8,7 @@ subtitle: 学习和生活
 description: 学习不止探索,生活不止于此
 keywords: blog
 author: 代家鑫
-language: zh-CH
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-## hirstory 1、landscape；2、hexo-modify-theme-butterfly；3、next
+## hirstory 1、landscape；2、hexo-modify-theme-butterfly   butterfly；3、next
 theme: hexo-modify-theme-butterfly
 
 # Deployment
