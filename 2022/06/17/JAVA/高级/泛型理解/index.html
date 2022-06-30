@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>泛型理解 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言：泛型为了解决集合、类、方法、接口、中数据类型转化问题（java.lang.ClassCastException）和 集合中对数据类型没有限制。在JDK5 出现了泛型来规定集合的存储类型。两种使用方法：1、直接规定存储类型；存储时不符合就报错。2、规定未知类型，在在创建对象的时候指定数据类型。 泛型1、使用好处：避免强转的麻烦；避免运行的时候包ClassCastException。 2、集合中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="泛型理解">
-<meta property="og:url" content="http://example.com/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E6%B3%9B%E5%9E%8B%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E6%B3%9B%E5%9E%8B%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="前言：泛型为了解决集合、类、方法、接口、中数据类型转化问题（java.lang.ClassCastException）和 集合中对数据类型没有限制。在JDK5 出现了泛型来规定集合的存储类型。两种使用方法：1、直接规定存储类型；存储时不符合就报错。2、规定未知类型，在在创建对象的时候指定数据类型。 泛型1、使用好处：避免强转的麻烦；避免运行的时候包ClassCastException。 2、集合中">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/default-cover.jpg">
+<meta property="og:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg">
 <meta property="article:published_time" content="2022-06-17T06:16:37.000Z">
 <meta property="article:modified_time" content="2022-06-17T06:19:11.581Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E6%B3%9B%E5%9E%8B%E7%90%86%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E6%B3%9B%E5%9E%8B%E7%90%86%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

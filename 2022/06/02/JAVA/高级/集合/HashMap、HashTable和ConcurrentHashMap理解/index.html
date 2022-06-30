@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HashMap、HashTable、ConcurrentHashMap理解 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashMap、HashTable、ConcurrentHashMap理解">
-<meta property="og:url" content="http://example.com/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E5%92%8CConcurrentHashMap%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E5%92%8CConcurrentHashMap%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="hashMap和hashTable区别 HashMap是线程不安全的，在多线程环境下会容易产生死循环，但是单线程环境下运行效率高；Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。 HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。 HashMap的底层数组">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/default-cover.jpg">
+<meta property="og:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg">
 <meta property="article:published_time" content="2022-06-02T14:20:29.000Z">
 <meta property="article:modified_time" content="2022-06-17T06:13:59.453Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E5%92%8CConcurrentHashMap%E7%90%86%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/02/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/HashMap%E3%80%81HashTable%E5%92%8CConcurrentHashMap%E7%90%86%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

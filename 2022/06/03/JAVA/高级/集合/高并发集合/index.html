@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>高并发集合 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="**第一代线程安全集合类 **Vector、Hashtable  是怎么保证线程安排的： 使用synchronized修饰方法* 缺点：效率低下  第二代线程非安全集合类ArrayList、HashMap 线程不安全，但是性能好，用来替代Vector、Hashtable              使用ArrayList、HashMap，需要线程安全怎么办呢？  使用 Collections.syn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高并发集合">
-<meta property="og:url" content="http://example.com/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E9%AB%98%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E9%AB%98%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="**第一代线程安全集合类 **Vector、Hashtable  是怎么保证线程安排的： 使用synchronized修饰方法* 缺点：效率低下  第二代线程非安全集合类ArrayList、HashMap 线程不安全，但是性能好，用来替代Vector、Hashtable              使用ArrayList、HashMap，需要线程安全怎么办呢？  使用 Collections.syn">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/default-cover.jpg">
+<meta property="og:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg">
 <meta property="article:published_time" content="2022-06-03T13:44:14.000Z">
 <meta property="article:modified_time" content="2022-06-16T02:46:02.163Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E9%AB%98%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/03/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E9%AB%98%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

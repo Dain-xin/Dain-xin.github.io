@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>迭代器Iterator类 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="定义 Iterator迭代器： 用于遍历集合所有元素，util包，只用于遍历。 集合中都都有相应的迭代器方法。Iterator iterator() ； 迭代：即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素，如果有就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取      出。这种取出方式专业术语称为迭代。  常用的方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迭代器Iterator类">
-<meta property="og:url" content="http://example.com/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator%E7%B1%BB/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="定义 Iterator迭代器： 用于遍历集合所有元素，util包，只用于遍历。 集合中都都有相应的迭代器方法。Iterator iterator() ； 迭代：即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素，如果有就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取      出。这种取出方式专业术语称为迭代。  常用的方法：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/default-cover.jpg">
+<meta property="og:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg">
 <meta property="article:published_time" content="2022-06-17T06:20:37.000Z">
 <meta property="article:modified_time" content="2022-06-17T06:25:41.632Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator%E7%B1%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/17/JAVA/%E9%AB%98%E7%BA%A7/%E9%9B%86%E5%90%88/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator%E7%B1%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

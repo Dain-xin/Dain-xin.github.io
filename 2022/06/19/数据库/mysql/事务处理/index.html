@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>事务查询 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据库事务处理 事务理解：访问操作数据库的数据、进行一系列连锁的处理，这些操作处理全部执行或者都不执行。不可分割的整体。 对数据库的数据项修改的数据，可以暂时不写入数据库，缓存起来，用户自己可以看到修改的预览， 但是真实没有修改数据库里面的内容，提交后，不可以在撤销操作，然后其他用户就可以访问修改后的数据。 事务由四大特性：原子性：事务本质，不可分割，全执行&#x2F;都不执行。 隔离性：事务之间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事务查询">
-<meta property="og:url" content="http://example.com/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="数据库事务处理 事务理解：访问操作数据库的数据、进行一系列连锁的处理，这些操作处理全部执行或者都不执行。不可分割的整体。 对数据库的数据项修改的数据，可以暂时不写入数据库，缓存起来，用户自己可以看到修改的预览， 但是真实没有修改数据库里面的内容，提交后，不可以在撤销操作，然后其他用户就可以访问修改后的数据。 事务由四大特性：原子性：事务本质，不可分割，全执行&#x2F;都不执行。 隔离性：事务之间">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191737629.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206191737629.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

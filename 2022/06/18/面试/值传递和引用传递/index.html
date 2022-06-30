@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JAVA是值传递还是引用传递 | Dain的博客</title><meta name="keywords" content="面试"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java 是值传递还是引用传递_ 理解Java 中只有值传递，没有引用传递；但是java中的数据类型分为基本数据类型和引用数据类型。 基本数据类：Java 中有八种基本数据类型“byte、short、int、long、float、double、char、boolean”。 引用类型：new 创建的实体类、对象、及数组，接口。 值传递：指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA是值传递还是引用传递">
-<meta property="og:url" content="http://example.com/2022/06/18/%E9%9D%A2%E8%AF%95/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/18/%E9%9D%A2%E8%AF%95/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="Java 是值传递还是引用传递_ 理解Java 中只有值传递，没有引用传递；但是java中的数据类型分为基本数据类型和引用数据类型。 基本数据类：Java 中有八种基本数据类型“byte、short、int、long、float、double、char、boolean”。 引用类型：new 创建的实体类、对象、及数组，接口。 值传递：指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182234473.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/18/%E9%9D%A2%E8%AF%95/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182234473.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/18/%E9%9D%A2%E8%AF%95/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>表关系和范式 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="表间关系   表与表之间的三种关系    一对多：  最常用的关系 部门和员工   多对多：  学生选课表 和 学生表，  一门课程可以有多个学生选择，一个学生选择多门课程   一对一：  相对使用比较少。员工表 简历表， 公民表 护照表   一对多建表原则:   在从表(多方)创建一个字段,字段作为外键指向主表的主键   多对多关系原则:   需要创建第三张表，中间表中至少两个字段，这两个字段分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="表关系和范式">
-<meta property="og:url" content="http://example.com/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E8%A1%A8%E5%85%B3%E7%B3%BB%E5%92%8C%E8%8C%83%E5%BC%8F/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E8%A1%A8%E5%85%B3%E7%B3%BB%E5%92%8C%E8%8C%83%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="表间关系   表与表之间的三种关系    一对多：  最常用的关系 部门和员工   多对多：  学生选课表 和 学生表，  一门课程可以有多个学生选择，一个学生选择多门课程   一对一：  相对使用比较少。员工表 简历表， 公民表 护照表   一对多建表原则:   在从表(多方)创建一个字段,字段作为外键指向主表的主键   多对多关系原则:   需要创建第三张表，中间表中至少两个字段，这两个字段分">
 <meta property="og:locale" content="zh_CN">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181727339.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E8%A1%A8%E5%85%B3%E7%B3%BB%E5%92%8C%E8%8C%83%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181727339.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E8%A1%A8%E5%85%B3%E7%B3%BB%E5%92%8C%E8%8C%83%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},

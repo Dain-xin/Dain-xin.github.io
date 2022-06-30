@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spring Cloud基础 | Dain的博客</title><meta name="keywords" content="blog"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。 （网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器） 熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。 处理方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud基础">
-<meta property="og:url" content="http://example.com/2022/05/25/JAVA/SpringCloud/%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/05/25/JAVA/SpringCloud/%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dain的博客">
 <meta property="og:description" content="网关组测到nacos，访问getway网关，根据路由规则访问注册再nacos中的服务，根据ribbon的负载均衡访问一个服务名的多个服务。 （网关访问，可以进行限流、降级、熔断等操作——容错机制——断路器） 熔断器的作用：在微服务中，如果上层服务没有作好熔断机制，当一个请求访问服务，未得到处理，就会一直占用资源，不会释放，这样就会导致服务被很多服务请求拖垮，就会导致服务雪崩（级联效应）。 处理方式">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/default-cover.jpg">
+<meta property="og:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg">
 <meta property="article:published_time" content="2022-05-25T14:50:17.000Z">
 <meta property="article:modified_time" content="2022-06-06T16:38:54.449Z">
 <meta property="article:author" content="代家鑫">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/25/JAVA/SpringCloud/%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://dainx.gitee.io/dainx/img/default-cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/05/25/JAVA/SpringCloud/%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
