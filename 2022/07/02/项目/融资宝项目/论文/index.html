@@ -1,0 +1,2370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>融资宝项目开发——毕业论文 | Dain的博客</title><meta name="keywords" content="论文"><meta name="author" content="代家鑫"><meta name="copyright" content="代家鑫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于微服务框架的众筹平台融资宝的设计与实现摘要  21世纪，作为一种新兴的网络金融模式——“众筹融资”进入了众人的视线，并且获取了各个阶层人群的喜爱，并且逐步成为了中小型企业活力和个人发展创业积极性的催化剂。众筹过程中，一个投资项目拥有多个的投资人，还有多个借贷项目的发起人，如何妥善的管理交易过程，并且保证资金流动的安全性和透明性，就变得尤为重要。这样众筹平台就担当起了管理的职责，一方面保证了资金">
+<meta property="og:type" content="article">
+<meta property="og:title" content="融资宝项目开发——毕业论文">
+<meta property="og:url" content="https://dainx.gitee.io/dainx/2022/07/02/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87/index.html">
+<meta property="og:site_name" content="Dain的博客">
+<meta property="og:description" content="基于微服务框架的众筹平台融资宝的设计与实现摘要  21世纪，作为一种新兴的网络金融模式——“众筹融资”进入了众人的视线，并且获取了各个阶层人群的喜爱，并且逐步成为了中小型企业活力和个人发展创业积极性的催化剂。众筹过程中，一个投资项目拥有多个的投资人，还有多个借贷项目的发起人，如何妥善的管理交易过程，并且保证资金流动的安全性和透明性，就变得尤为重要。这样众筹平台就担当起了管理的职责，一方面保证了资金">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png">
+<meta property="article:published_time" content="2022-07-02T09:47:19.000Z">
+<meta property="article:modified_time" content="2022-07-02T09:49:14.850Z">
+<meta property="article:author" content="代家鑫">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dainx.gitee.io/dainx/2022/07/02/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script src="/js/yuntools.js"></script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-02 17:49:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">72</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> Dain</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Dain的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> Dain</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">融资宝项目开发——毕业论文</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-02T09:47:19.000Z" title="发表于 2022-07-02 17:47:19">2022-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-02T09:49:14.850Z" title="更新于 2022-07-02 17:49:14">2022-07-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%A1%B9%E7%9B%AE/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%A1%B9%E7%9B%AE/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/">融资宝项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">16.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>57分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基于微服务框架的众筹平台融资宝的设计与实现"><a href="#基于微服务框架的众筹平台融资宝的设计与实现" class="headerlink" title="基于微服务框架的众筹平台融资宝的设计与实现"></a><strong>基于微服务框架的众筹平台融资宝的设计与实现</strong></h1><h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>  21世纪，作为一种新兴的网络金融模式——“众筹融资”进入了众人的视线，并且获取了各个阶层人群的喜爱，并且逐步成为了中小型企业活力和个人发展创业积极性的催化剂。众筹过程中，一个投资项目拥有多个的投资人，还有多个借贷项目的发起人，如何妥善的管理交易过程，并且保证资金流动的安全性和透明性，就变得尤为重要。这样众筹平台就担当起了管理的职责，一方面保证了资金流动和存储过程的安全性和透明性；另一方面保证了借款人的“还款计划”和投资人的“回款计划”计算的准确性。</p>
+<p>  论文设计的众筹平台——融资宝，按照众筹的类型，属于借贷模式。个人借钱给一个项目或企业，按照银行规定的借贷规则，如期得到本金并且获取一定的利息报酬；这个过程中，借款人是单体，出借人是群体或单体。这种模式也被称为P2P借贷。</p>
+<p>  论文首先对众筹平台融资宝进行了系统需求分析，为了更好的适配众筹过程中，借款人和出借人资金交易过程的需要，满足平台的性能需求，了解项目启动的硬件约束；对系统架构进行设计，包含前后端技术选型、第三方API使用、消息中间键以及数据库的确定。然后分析系统中各个技术栈特点、使用中比较适合的场景；通过这一系列初步的分析和设计，体现微服务框架的适配性。然后通过总体设计和核心功能的详细设计和实现，来体现微服务框架为系统带来的高可用。</p>
+<p>  在最后对本平台进行了全面的测试，一方面保证了平台各个服务功能达到需要的指标，另一方面了解平台的并发能力。通过测试结果的验证，确保了众筹平台的安全交付和稳定上线，确保了平台的高可用性。</p>
+<p><strong>关键字：</strong>众筹平台 微服务框架 高可用</p>
+<p><strong>DESIGN AND IMPLEMENTATION OF FINACING TREASURE OF CROWDFUNDING PLATFORM BASED ON MICROSERVICE FRAMEWORK</strong></p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>In the 21st century, as a new online financial model, “crowdfunding” has entered the public’s attention and won the love of people from all walks of life. It has gradually become a catalyst for the vitality of small and medium-sized enterprises and the initiative of individual development and entrepreneurship. In the process of crowdfunding, an investment project has multiple investors and sponsors of multiple lending projects. How to properly manage the transaction process and ensure the safety and transparency of capital flows has become particularly important. In this way, the crowdfunding platform has assumed the management responsibility, on the one hand, ensuring the safety and transparency of the capital flow and storage process; On the other hand, the calculation accuracy of the borrower’s “repayment plan” and the investor’s “repayment plan” is guaranteed. </p>
+<p>The crowdfunding platform designed in this paper, Financing Treasure, is a lending model according to the types of crowdfunding. Individuals who lend money to a project or an enterprise, in accordance with the lending rules prescribed by the bank, receive the principal on schedule and receive a certain interest payment; In this process, the borrower is a single entity and the lender is a group or a single entity. This model is also known as P2P lending. </p>
+<p>Firstly, the paper makes a systematic demand analysis of the crowdfunding platform, in order to better adapt to the needs of the borrower and the lender in the capital transaction process in the crowdfunding process, to meet the platform’s performance requirements, and to understand the hardware constraints of project startup; The system architecture is designed, including front-end and back-end technology selection, third-party API use, message intermediate key and database determination. Then analyze the characteristics of each technology stack in the system and the more suitable scenes in use; Through this series of preliminary analysis and design, the adaptability of the microservice framework is reflected. Then through the overall design and the detailed design and implementation of the core functions, the high availability brought by the micro-service framework for the system is reflected. </p>
+<p>At the end of the paper, the platform is tested comprehensively, which not only ensures that each service function of the platform reaches the required index, but also understands the concurrency of the platform. Through the verification of the test results, the safe delivery and stable online launch of the crowdfunding platform were ensured, and the high availability of the platform was ensured.</p>
+<p><strong>KEY WORDS:</strong>  micro-service framework of crowdfunding platform is highly available</p>
+<h1 id="第一章-引言"><a href="#第一章-引言" class="headerlink" title="第一章 引言"></a>第一章 引言</h1><h2 id="1-1-课题研究背景"><a href="#1-1-课题研究背景" class="headerlink" title="1.1 课题研究背景"></a>1.1 课题研究背景</h2><p>21世纪以来，一种新兴的网络金融模式——“众筹融资”进入了众人的视线，具备了互联网金融操作简便、高效、透明的优点，摆脱了传统金融市场的局限性，缩短了交易的距离，提升了金融交易的效率，改善了金融市场的发展局限性，促进了网络金融模式的发展。但是作为一种快速发展的网络金融模式，不仅给投资者带来的收益的机会，同时还带来了诸多问题和风险。</p>
+<p>凭借在线化和技术化的优点，网络金融具备独具一格的竞争力和创造性。但是本质还是一种金融模式，不仅需要对借贷人信用评定、还要对金融产品可能存在的风险性进行评估。对比于传统金融模式，网络金融在互联网下进行操作。这是一把双刃剑，在提高了交易效率和金融产品数字计算准确性的同时，还夹带了这类互联网通信的通病，资金安全性、并发问题、系统宕机恢复等，都难以控制和避免。因此针对此类问题的防患和避免，需要一个完整的体系框架去专门的解决。</p>
+<p>论文就此设计了一个基于微服务框架的众筹平台融资宝，处理这类网络金融模式可能出现的问题和风险。</p>
+<h2 id="1-2-研究现状"><a href="#1-2-研究现状" class="headerlink" title="1.2 研究现状"></a>1.2 研究现状</h2><p>​    从世界范围来看，众筹融资在美国得到推广开始，快速得到了世界各地的效仿，在美国的相关机构承认了这一个网络金融模式的在金融行业的地位，并且也成为了世界最大的、体系最完备的众筹市场。而中国的众筹模式相对起步较晚，但在今日具有代表性的众筹行业——众筹网。据不完全统计，我国截至2022年共有354家众筹平台，而北京作为众筹行业的开拓地，平台聚集比较明显。</p>
+<p>今日众筹行业发展前景仍然良好，2021年国内行业总值超过了1000亿，且稳定持续上升发展。据公开显示，众筹网从上线至今共发起了356个众筹项目，累计参与人数60423人次，共计筹集资金超过1.8亿。国内对于众筹模式的探究整体也越来越清楚，我们的项目往往需要借款人的注入一定的情感或者实际价值，这样才能更容易得到投资人的认可和选择。</p>
+<p>然而众筹平台为融资者和投资人建立起来的网络社交门户，在提供便利同时也带来了突出的问题，给金融发展和监管带来巨大挑战。高发的平台欺诈现象，2011年的“贝尔投创”平台无法访问，涉嫌人卷钱消失，造成投资人损失。平台运营难度难以估计，2013年的“众贷网”上线仅一个月宣布倒闭，管理团队缺乏众筹经验，未能把控好风险，给投资人造成无法挽回的损失。易卷入非法经营活动，众筹平台以P2P形式投资的名义在实际经营众将债券包装成理财产品，通过平台进行集资，演变为非法集资，突破了传统意义的P2P借贷模式。</p>
+<p>因此众筹平台的设计也要妥善且合法的经营，将众筹的经验融合到平台管理中，简化人员的操作。同时使用了微服务框架技术，将我们的众筹的流程微粒化拆分为多个独立的微服务，这样类似于传统金融模式，每个业务流程可以各司其职，互不干扰，只用接收或传递相应的信息，通过微服务的组件专门的解决业务流程出现的棘手问题，以及平台运行中出现的并发等问题。</p>
+<h2 id="1-3-论文的内容与结构"><a href="#1-3-论文的内容与结构" class="headerlink" title="1.3 论文的内容与结构"></a>1.3 论文的内容与结构</h2><p>​    本平台是一个基于微服务框架的众筹平台融资宝的实现。主要分析众筹模式的利弊，可能出现的比较棘手的互联网金融的问题，如何使用微服务框架及相关中间键等技术栈去集中处理在众筹的业务流程中、平台上线后可能出现的问题。所以，本文会对每一个主要的技术栈介绍它的使用目的和为平台带来的收益，并且结合高可用的背景，让我们的平台使用的技术栈更加符合现实意义，然后介绍核心的业务流程的实现方法和配合到的技术栈，最后就是系统调试和测试阶段。为了平台更安全、可靠的运行上线。</p>
+<p>​    具体章节安排如下：</p>
+<p>​    第一章，引言。主要介绍论文课题研究的背景，研究现状，还有论文的内容和结构。</p>
+<p>​    第二章，系统需求分析。</p>
+<p>​    第三章，系统的技术栈介绍。</p>
+<p>​    第四章，系统的总体设计。</p>
+<p>​    第五章，系统搭建和核心业务功能实现。</p>
+<p>​    第六章，系统功能验证和性能测试。</p>
+<p>​    第七章，总结与展望。</p>
+<h1 id="第二章-系统的技术栈介绍"><a href="#第二章-系统的技术栈介绍" class="headerlink" title="第二章 系统的技术栈介绍"></a>第二章 系统的技术栈介绍</h1><p>​    本章是对众筹平台的系统使用的技术栈进行介绍，通过微服务架构的设计，保证系统实现过程的技术支持。包括Spring Boot微框架、Spring Cloud微服务框架、Redis缓存、Swagger接口设计。</p>
+<h2 id="2-1-Spring-Boot微框架介绍"><a href="#2-1-Spring-Boot微框架介绍" class="headerlink" title="2.1 Spring Boot微框架介绍"></a>2.1 Spring Boot微框架介绍</h2><p>​    说到SpringBoot就要先了解Spring，Spring作为一个“万能胶水”，把常用的技术进行合理的封装和设计，可以快速集成和开发，Spring的核心是控制饭庄和依赖注入，在快速集成的同时也带来了依赖过多、配置太多、运行部署繁琐的问题，尽管可以通过注解缓解，但是本质问题没有解决。如何让开发者无需关注这些，专注于业务开发，Spring Boot就诞生了。</p>
+<p>​    Spring Boot核心思想就是“约定优于配置”，最主要也就是Starter组件完成的自动装配，扫描约定目录下的文件进行扫描解析，把得到的配置类导入，完成Bean的自动装配。这种软件设计范式目的就是减少配置数量或者降低理解难度，从而提高开发效率。</p>
+<p>​    而Spring Cloud生态中的组件，都是基于Spring Boot来实现的，也就是说Spring Cloud开发离不开Spring Boot的支持。</p>
+<h2 id="2-2-Spring-Cloud微服务框架介绍"><a href="#2-2-Spring-Cloud微服务框架介绍" class="headerlink" title="2.2 Spring Cloud微服务框架介绍"></a>2.2 Spring Cloud微服务框架介绍</h2><p>​    了解Spring Cloud先了解SOA（Service Oriented Architecture）面向服务的架构，是面向服务开发的雏形，可以理解为微服务的超集。SOA注重的是可重用性（服务的复用）和信息孤岛问题，而微服务关注的是解耦，降低业务之间的耦合度。</p>
+<p>​    微服务框架技术鲜明的特点就是技术选型灵活、可扩展性高、独立部署、容错性。一个优秀的微服务框架要致力于解决服务注册与发现、服务路由、服务调用、负载均衡、熔断器、分布式消息。Spring Cloud只是一套规范，而Spring Cloud Netflix、Spring Cloud Alibaba才是实现。</p>
+<p>​    而本次众筹平台的实现涉及的到的技术有Nacos（分布式配置中心和服务注册与发现）、Sentinel（限流、熔断与降级）、Ribbon（负载均衡）、OSS（阿里云对象存储）、Getway（微服务网关）、RabbitMQ（分布式消息通信）、Skywalking（分布式链路追踪）。下面对一些比较重要的组件进行简单的介绍。</p>
+<h3 id="2-2-1-Nacos介绍"><a href="#2-2-1-Nacos介绍" class="headerlink" title="2.2.1 Nacos介绍"></a>2.2.1 Nacos介绍</h3><p>Nacos致力于解决微服务中统一配置、服务注册与发现等问题。微服务系统的每一个微服务都是一个单独的模块，随着微服务数量的增多，依赖关系选择和确定让系统更加复杂，把所有的服务注册到Nacos中，通过服务列表展示更加方便地配置和管理服务，同时Nacos还提供了实时健康检查可以阻止不健康服务发送请求，帮助系统发现、配置和管理服务。服务注册完成后，系统就可以更敏捷的找到对应的服务接口，而Nacos也可以对一些统一的配置文件进行维护推送到对应的服务节点实现动态更新。</p>
+<h3 id="2-2-2-Sentinel介绍"><a href="#2-2-2-Sentinel介绍" class="headerlink" title="2.2.2 Sentinel介绍"></a>2.2.2 Sentinel介绍</h3><p>​    互联网应用中，会有突发性的高并发访问场景，就像双十一或者大型秒杀活动，这些场景的特点就是超出系统处理的并发数。所有如果没有合理的保护机制，大量的流量都访问到我们的服务器就会造成宕机，造成不可避免地损失，而为了避免这些问题发生，服务限流、降级、熔断就可以很好的处理这些问题。</p>
+<p>​    服务限流通过限制并发访问数或者限制一个时间窗口允许处理的请求数量来保护系统，一旦达到限制条件，就会对请求采取对应的拒绝策略，例如降级或跳转到错误界面。从本质上说就是损失一部分用户可用性，来保证大部分用户服务的可靠性。服务熔断为了解决服务堆积造成的雪崩效应，往往一个请求操作在微服务系统中需要多个微服务之间配合才能完成，但是在高并发中往往会出现一个服务链其中一个服务无响应，造成请求堆积，引起服务雪崩。服务熔断通常采用的策略有平均响应时间、异常比例、异常数。</p>
+<p>通过Sentinel解决了高并发情况下服务访问的问题。</p>
+<h3 id="2-2-3-Ribbon介绍"><a href="#2-2-3-Ribbon介绍" class="headerlink" title="2.2.3 Ribbon介绍"></a>2.2.3 Ribbon介绍</h3><p>​    Ribbon是一个客户端负载均衡器，把客户端服务请求合理的分配到一种服务的不同节点上，保证微服务架构的高可用性，合理的选择负载均衡算法可以减少请求访问系统的响应时间。Ribbon提供常用的负载均衡实现有RandomRule（随机法）、RoundRobinRule（轮询法）、WeightedResponseTimeRule（权重策略）、ZoneAvoidanceRule（默认策略）。通过Ribbon更好的处理微服务架构并发条件下多个请求访问服务分配策略，保证系统的高可用，降低系统响应时间。</p>
+<h3 id="2-2-4-RabbitMQ介绍"><a href="#2-2-4-RabbitMQ介绍" class="headerlink" title="2.2.4 RabbitMQ介绍"></a>2.2.4 RabbitMQ介绍</h3><p>​    微服务架构下，各个服务之间通过通信完成整体的功能。例如一个众筹交易过程，核心是交易，而交易成功的消息通知不是核心步骤，则可以剥离出来做异步处理。就可以使用RabbitMQ，它的特点是低延迟、高可用、易使用的分布式消息队列，其中强大的顺序消息、消息重试、定时消息、追踪等功能，契合了众筹模式中对消息通知的需求。而RabbitMQ就是通过自己独特的内部机制保证了消息在传递过程中的可达性、准确性、可靠性。</p>
+<h3 id="2-2-5-Getway介绍"><a href="#2-2-5-Getway介绍" class="headerlink" title="2.2.5 Getway介绍"></a>2.2.5 Getway介绍</h3><p>​    网关类似于“门面”所有的外部请求都会经过网关这一层，不仅仅只是请求的转发和服务的整合，还提供了统一的鉴权、限流、熔断、日志，协议转换（后端对不同的协议，统一处理后以HTTP对外通过服务）等功能，同时网关的使用也屏蔽了非授权请求的入侵，是维护系统稳定性的第一层保护。Getway作为一种网关技术，对请求进行路由转发，以及对请求进行前置或后置的过滤（鉴权和限流），保证系统的安全性和稳定性。</p>
+<h2 id="2-3-Redis介绍"><a href="#2-3-Redis介绍" class="headerlink" title="2.3 Redis介绍"></a>2.3 Redis介绍</h2><p>​    作为一种NOSQL数据库，最核心的特点就是数据间没有关系，使得系统的拓展性和读写能力大大提高。而他另一个特点是数据放在内存中，采用非阻塞I&#x2F;O，并且是单线程的，这样的设计，让数据的读写速度是高效的。通过redis把常用的数据存入缓存中，减少数据库和服务器内存的压力，提升服务的访问速度。另外redis提供了数据过期策略，对于系统中token或一些登录信息，尤其是短信验证码有时间限制，通过redis可以定时自动清理，如果过期，数据就不存在，刚好满足系统的功能需求，既不会影响系统数据库性能，还让系统功能更加方便、高效。</p>
+<h2 id="2-4-Swagger接口设计介绍"><a href="#2-4-Swagger接口设计介绍" class="headerlink" title="2.4 Swagger接口设计介绍"></a>2.4 Swagger接口设计介绍</h2><p>​    无论是前端还是后端开发，对于程序员来说不是自己编写的功能或者自己的领域，想要正确的调用远程服务或者接口，往往需要一个规范的接口文档参考，才能去实现。Swagger就是这样的一个工具对于REST API 定义一个标准的接口，让人可以理解远程服务，并且更为方便的直接与远程服务进行交互，如果系统更新迭代，只需要更新Swagger重新生成文档。同时Swagger提供了API自动生成和在线测试，输入对应的参数即可测试接口，让系统开发过程更高效、简单。</p>
+<h1 id="第三章-系统需求分析"><a href="#第三章-系统需求分析" class="headerlink" title="第三章 系统需求分析"></a>第三章 系统需求分析</h1><p>​    需求分析是系统开发过程的关键，主要工作就是将抽象化需求变成面向真实情况的分析过程。本章节从众筹模式的三个主体来进行分析，分别是借款人、投资人、平台管理员。通过三个主体要在众筹平台要满足的基本功能为起点，对系统需求进行详细的分析得到真实情况中各主体的真实需求。借款人的需求就是得到投资，定期还款；平台管理员的需求就是认真的审核系统信息，提高交易的可信度，降低存在的风险性；投资人的需求就是选择可信度高的项目投资获得收益，定期得到回款。所以系统只要满足三个主体的需求，协调三者功能就能基本满足一个众筹平台的需要。然后通过对平台上线指标分析了平台所需的非功能需求。</p>
+<h2 id="3-1-系统用户角色分析"><a href="#3-1-系统用户角色分析" class="headerlink" title="3.1 系统用户角色分析"></a>3.1 系统用户角色分析</h2><h3 id="3-1-1借款人和投资人"><a href="#3-1-1借款人和投资人" class="headerlink" title="3.1.1借款人和投资人"></a>3.1.1借款人和投资人</h3><p>借款人作为众筹平台核心的“生产者”，借款人的需要是进入平台发布自己的融资项目。第一步要先通过电话注册账户，正确填写基础信息，选择自己的身份借款人，得到短信验证码，输入正确完成注册；登录平台时选择借款人进入平台；绑定自己的卡号，完善自己信用的信息，通过审核后得到一定的信用额度，但是如果审核失败，则需要重新填写，然后借款人发布自己的项目，通过审核后，在平台主页即可浏览到自己的融资项目，否则需要重新填写发布融资项目。得到充足的投资后，管理放贷，钱款流入借款人账户；借款人选择提现，之后按照自己选择的还款方式定期还款，如果账户余额不足，可以选择充值，融资项目的全部还款计划归还完毕后整个流程结束。</p>
+<p>​    投资人作为众筹平台核心的“消费者”，投资人的需要是进入平台选择自己想要投资的项目。第一步先通过电话注册账户，正确填写投资人的基础信息，通过电话得到有效的验证码后完成注册；选择投资人登录平台，绑定自己有效的银行卡，充值账户后就可以选择融资项目进行投资；如果项目成功放款，即可查询自己的回款信息，定期得到回款，投资项目的全部回款计划结束后整个流程结束。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745725.png" alt="img"></p>
+<p>借款人和投资人的UML图</p>
+<h3 id="3-1-2平台管理员"><a href="#3-1-2平台管理员" class="headerlink" title="3.1.2平台管理员"></a>3.1.2平台管理员</h3><p>​    平台管理员作为众筹平台的“警察”，管理员的需要是维护信用积分的贷款力度；维护平台中的数据字典；及时处理投资人、借款人信息真伪；根据平台规则审核融资项目的可信度，保证投资人全款安全；融资项目信息查询，满标放款；查询用户登录信息；用户账户权限管理。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745647.png" alt="img"></p>
+<p>管理员的UML图</p>
+<h2 id="3-2-系统功能需求分析"><a href="#3-2-系统功能需求分析" class="headerlink" title="3.2 系统功能需求分析"></a>3.2 系统功能需求分析</h2><p>​    对系统功能需求进行分析，还是要结合融资模式的三个主体，大部分的功能需求都是为了满足主体的需求。系统核心的功能分为登录注册服务、充值提现服务、会员管理服务、短信服务、数据字典和积分等级管理服务、标的管理服务、借款管理服务。系统功能和主体关系的UML图如下。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745684.png" alt="img"></p>
+<p>系统功能和主体关系的UML图</p>
+<h3 id="3-2-1-登录注册服务"><a href="#3-2-1-登录注册服务" class="headerlink" title="3.2.1 登录注册服务"></a>3.2.1 登录注册服务</h3><p>​    登录注册服务包括管理员的后台登录、投资人和借款人的前台登录和注册。主要是前台服务，用户区分投资人和借款人，便于身份确定，注册统一采用电话短信验证，便于平台通过短信通知重要的消息，而注册要填写主要的信息，包括用户名、常用电话、密码。密码要加密，电话要接收注册的验证码，正确填写后跳转登陆界面，通过电话号码、用户身份、密码登录，通过后台的身份验证后成功访问平台主页。未完成身份验证没有权限访问其他核心业务界面。</p>
+<h3 id="3-2-2-充值提现服务"><a href="#3-2-2-充值提现服务" class="headerlink" title="3.2.2 充值提现服务"></a>3.2.2 充值提现服务</h3><p>​    充值提现服务包括用户绑定银行卡、用户完善信息、用户充值和用户提现。本众筹平台采用了第三方资金托管方——汇付包，平台的只提供投资人、借款人交易的业务，但是资金交由第三方托管，避免平台管理问题，造成不必要的损失。用户需要提供银行卡号、预留电话、真实姓名、支付密码完成绑定。绑定成功才可以进行与资金有关的业务。未绑定成功则无法充值和提现。投资人无需完善详细信息，借款人只有完善信息填写性别、学历、身份证号、身份证正反面照片、车辆信息、房产信息等，来用于额度审核。充值和提现以银行卡交易为工具，需要跳转到第三方资金交易页面进行处理。</p>
+<h3 id="3-2-3-会员管理服务"><a href="#3-2-3-会员管理服务" class="headerlink" title="3.2.3 会员管理服务"></a>3.2.3 会员管理服务</h3><p>会员管理服务包括会员列表展示、会员账户的登录日志、账户锁定与解锁、用户信息多条件查询。会员列表从数据库查询出平台所有会员的基本信息，用户注册成功后就可以查询到，包括用户类型、昵称、电话等；登录日志是用户每次登录的IP地址和时间显示；账户锁定后无法登录，联系管理员解锁方可登录；会员列表信息展示可以通过手机号、用户类型、账户状态多条件查询。</p>
+<h3 id="3-2-4-短信服务"><a href="#3-2-4-短信服务" class="headerlink" title="3.2.4 短信服务"></a>3.2.4 短信服务</h3><p>​    短信服务包括注册验证短信、提现通知、充值通知等与资金和验证有关的短信信息。短信功能使用阿里云短信服务，通过提供的API快速实现发短信功能。不同的功能要有不同的提示模板，比如验证码由后台生成用于验证，资金有关的要有真实的金额显示。同时因为资金交易通知比较重要，要保证短信的发送可达。</p>
+<h3 id="3-2-5-数据字典和积分等级管理服务"><a href="#3-2-5-数据字典和积分等级管理服务" class="headerlink" title="3.2.5 数据字典和积分等级管理服务"></a>3.2.5 数据字典和积分等级管理服务</h3><p>​    数据字典和积分等级管理服务包括数据字典的展示、导入、导出，积分等级区间的展示、添加、删除的功能。数据字典用于保存平台中存在的常用分类或者一些固定数据，更好的帮助我们获取和适用这些数据。但是考虑到数据量比较大，关系比较复杂的情况，平台需要有Excel批量导入和导出的功能。积分等级管理是用于评估借款人的可信度，获取相应的贷款额度，也就是积分和额度的对应关系的管理，如果不满足现状可以新增、删除、修改。</p>
+<h3 id="3-2-6-借款管理服务"><a href="#3-2-6-借款管理服务" class="headerlink" title="3.2.6 借款管理服务"></a>3.2.6 借款管理服务</h3><p>​    借款管理服务包括融资项目信息列表、借款人信息查询、借款人发布融资信息、管理员审核融资信息的功能。融资项目信息列表展示借款人名、手机、金额、借款时间、还款方式（包含等额本息、等额本金、每月还息一次还本、一次还本还息）、还款年利率、借款状态、借款时间；借款人列表展示姓名、电话、身份证号、性别、认证状态、申请时间、身份证正反面照片、房产信息、车辆信息、积分详情，还可以通过电话、手机、身份证号多条件查询借款人信息；借款人则发布融资信息包含借款用途、还款方式、年利率、借款金额（不能超过用户的借款额度，否则需要完善积分信息重新评估借款额度），满足条件后提交有后台审核，审核通过回显在借款进度条上，如果不通过进度条显示不通过，重新提交融资信息；管理原审核融资信息就需要管理员查询信息是否合理，借款用途是否合乎情理，选择是否通过。</p>
+<h3 id="3-2-7-标的管理服务"><a href="#3-2-7-标的管理服务" class="headerlink" title="3.2.7 标的管理服务"></a>3.2.7 标的管理服务</h3><p>标的管理服务包括投资人投资项目（标的生成）、标的列表、标的详情、满标放款的功能。投资人选择项目后填写投资金额（不能超过自己账户余额），可以直接根据项目的年利率和还款方式显示出投资人的预计收益和当前项目得到的投资，最后确定投资；投资成功后显示出借款项目的标的，包含标的金额、投资期数、年利化率、已投资金和人数、发布开始和结束时间、当前标的状态；标的详情就是标的基础信息和借款人的信息的拼接展示出来；满标放款就是融资项目得到预期的钱款审核无误后放款，投资的钱款会到借款人的账户中，然后平台就要计算收益和利息，定期发送还款和回款计划。</p>
+<h2 id="3-3-系统非功能需求分析"><a href="#3-3-系统非功能需求分析" class="headerlink" title="3.3 系统非功能需求分析"></a>3.3 系统非功能需求分析</h2><p>​    对于众筹平台来说，保证正常众筹模式业务进行的同时，在交易过程要和第三方资金托管平台频繁的资金流动要保证通知信息的及时和可达，另外还有系统安全性，系统响应时间，最大并发量，服务熔断处理，系统高可用度等非功能的需求。</p>
+<p>​    交易资金的安全交由第三方资金托管平台，但是通知的信息通过异步通知、消息队列、失败重试机制的方法，一方面降低资金交易过程的系统响应时间，另一方面保证信息的可靠发送。</p>
+<p>​    系统的安全性，众筹平台一些特定的接口比如个人中心（包含余额、还款计划、回款计划等），这些需要一定的权限验证，才能安全访问，用户登录通过了短信验证和单点登录设计，通过验证后得到一个token信息，使用JWT（JWT头、有效载荷、签名哈希，有效载荷就是JWT的主体内容部分）对Token信息进行防伪，这样通过算法加密保存入浏览器中，用户访问服务只需要带着token信息就可以通过单点登录的鉴权，访问其他服务无需再次鉴权。大大降低服务压力和节省响应时间，提高用户体验。</p>
+<p>​    而最大并发和熔断处理，保证高可用性，则是通过微服务框架技术提供的Getway、Nacos、RestTemplate+Ribbon更好的处理这些问题。</p>
+<h1 id="第四章-系统的总体设计"><a href="#第四章-系统的总体设计" class="headerlink" title="第四章 系统的总体设计"></a>第四章 系统的总体设计</h1><p>​    本章将根据系统需求分析，从微服务架构设计、业务流程设计、数据库设计三个方面进行系统的总体设计。</p>
+<h2 id="4-1-微服务架构设计"><a href="#4-1-微服务架构设计" class="headerlink" title="4.1 微服务架构设计"></a>4.1 微服务架构设计</h2><p>​    技术作为业务的支撑，技术的更新换代往往是跟随业务需求的改变而进步。传统的单体架构已无法满足高用户量和高访问量的需求，服务器的负载越来越大，业务也越来越复杂。所以本系统采用微服务架构设计，把原来复杂的业务拆分，使系统解耦。但是系统的业务比较于真实的众筹平台较为简单，分为了service-sms（短信服务）、service-gatway（网关服务）、service-oss（对象存储服务）、service-core（融资宝核心服务）。Service-core中就包含了登录注册服务、充值提现服务、会员管理服务、数据字典和积分等级管理服务、借款管理服务、标的管理服务。这些服务都注册再Nacos中，通过列表的形式展示。</p>
+<p>​    主体在设备上通过前端服务器发起请求后，通过Getway网关将请求发送到对应的服务节点，完成相应的功能。服务的本身以及服务的核心配置都再Nacos中，被微服务的其他组件共同治理。服务间通过OpenFeign远程服务调用，OpenFeign是再Feign基础上加了Spring MVC注解支持，例如@RequestMapping、@GetMapping 和 @PostMapping。系统使用Sentinel进行熔断保护，避免高并发情况下某些微服务宕机，造成大量的请求堆积引起服务雪崩，最终让系统崩溃。并且系统的服务都注册在Nacos中系统之间的调用关系层次递进，如果链路其中一个环节中断，导致请求失败，可以通过SkyWalking链路追踪到对应服务失败节点，跟利于系统排查维护的工作。</p>
+<p>​    区分于不同的实体，大量的关系数据保存在Mysql关系型数据库中；一些系统常用的数据或时效性的数据则保存在Redis中，作为缓存数据。系统中的资金通知、登录验证码、注册验证码、提现通知、资金到账通知都是通过核心服务的远程调用顺序的进入消息队列，然后调用短信服务。而对象存储服务只是用来服务核心业务，用于系统的图片存储功能。整个微服务项目选择通过Gitee进行项目管理。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745742.png" alt="img"></p>
+<p>微服务架构图</p>
+<h2 id="4-2-业务流程设计"><a href="#4-2-业务流程设计" class="headerlink" title="4.2 业务流程设计"></a>4.2 业务流程设计</h2><p>​    根据前面的系统功能需求分析，结合总体设计思路对系统的业务设计可以分为用户注册、用户登录、贷前、贷中、投标、贷后六个部分。</p>
+<p>​    用户注册先填写用户信息，验证信息是否合法，不合法重新填写，合法验证手机号，然后注册成功。用户登录先填写用户名和密码，验证信息是否合法和正确，错误重新填写，正确就登录成功，并且记录登录日志。贷前先登录确定资金托管平台是否绑定，成功绑定则直接提交借款人信息，否则需要提供相应的银行卡信息绑定账户，绑定成功后提交借款人信息，交由平台审核借款人信息，获取积分兑换借款额度，审核通过后提交借款信息（只有借款人信息审核通过才能发起借款），再交由平台审核借款信息，不通过则借款失败，通过则进入贷中。贷中在借款信息通过下，编辑标的信息生成标的，在平台中展示标的。投标先登录确定资金托管平台是否绑定，未绑定则要绑定资金托管平台账户，绑定成功然后才能充值，进去平台选择标的，投标，如果满标就放款，放款成功系统生成还款计划、回款计划、平台收益，然后借款成功，反之撤标，借款失败。借款成功进入贷后，申请提现，平台提供四种还款方式等额本息、等额本金、每月还息一次还本、一次还本还息，还款结束后平台结标，最后整个业务流程结束。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745706.jpg" alt="img"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745765.jpg" alt="img"></p>
+<p>融资宝业务流程图</p>
+<h2 id="4-3-数据库设计"><a href="#4-3-数据库设计" class="headerlink" title="4.3 数据库设计"></a>4.3 数据库设计</h2><p>​    众筹平台融资宝系统采用关系型数据库mysql进行设计，一共设计了十五张表：dict（数据字典表）、user-info（用户信息表）、integral-grade（积分等级表）、user-login-record（用户登录日志表）、user-integral（用户积分表）、user-bind（用户绑定记录表）、user_account（用户账户表）、trans_flow（流水记录表）、borrower（借款人信息表）、borrower_attach（借款人附加信息表）、borrow_info（借款信息表）、lend（标的表）、lend_item（标的投资项表）、lend_return（还款计划表）、lend_item_return（回款计划表）。表间存在复杂的关系，每张表存储了系统中比较重要的的数据，通过E-R图和表设计进行说明。</p>
+<h3 id="4-4-1-E-R图设计"><a href="#4-4-1-E-R图设计" class="headerlink" title="4.4.1 E-R图设计"></a>4.4.1 E-R图设计</h3><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745966.png" alt="img"></p>
+<p>融资宝E-R图</p>
+<h3 id="4-4-2-数据库表设计"><a href="#4-4-2-数据库表设计" class="headerlink" title="4.4.2 数据库表设计"></a>4.4.2 数据库表设计</h3><table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>借款用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>借款金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>period</td>
+<td>借款期限</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>borrow_year_rate</td>
+<td>年化利率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_method</td>
+<td>还款方式 1-等额本息 2-等额本金 3-每月还息一次还本 4-一次还本</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>money_use</td>
+<td>资金用途</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态（0：未提交，1：审核中， 2：审核通过， -1：审核不通过）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>borrow_info（借款信息表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>借款人名</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>id_card</td>
+<td>身份证号</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>电话</td>
+<td>varchar</td>
+<td>11</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td>性别（1：男 0：女）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Age</td>
+<td>年龄</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Education</td>
+<td>学历</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>is_marry</td>
+<td>是否结婚（1：是 0：否）</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>行业</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Income</td>
+<td>月收入</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_source</td>
+<td>还款来源</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>contacts_name</td>
+<td>预留人名</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>contacts_mobile</td>
+<td>预留电话</td>
+<td>varchar</td>
+<td>11</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>contacts_relation</td>
+<td>联系人关系</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态（0：未认证，1：认证中， 2：认证通过， -1：认证失败）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>Borrower（借款人信息表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>borrower_id</td>
+<td>借款人id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>image_type</td>
+<td>图片类型</td>
+<td>varchar</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>图片网址</td>
+<td>varchar</td>
+<td>200</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>image_name</td>
+<td>图片名</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>borrower_attach（借款人附加信息表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>上级id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>字段名</td>
+<td>varchar</td>
+<td>100</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>值</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>dict_code</td>
+<td>字段code</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>删除标记（0:不可用 1:可用）</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>Dict（数据字典表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>integral_start</td>
+<td>积分区间开始</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>integral_end</td>
+<td>积分区间结束</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>borrow_amount</td>
+<td>借款额度</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>integral_grade（积分等级表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>借款用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>borrow_info_id</td>
+<td>借款信息id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_no</td>
+<td>Lend号</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>标题</td>
+<td>varchar</td>
+<td>200</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>标的金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Period</td>
+<td>投资期数</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_year_rate</td>
+<td>年化利率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>service_rate</td>
+<td>平台服务费率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_method</td>
+<td>还款方式</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lowest_amount</td>
+<td>最低投资金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_amount</td>
+<td>已投金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_num</td>
+<td>投资人数</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>publish_date</td>
+<td>发布日期</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_start_date</td>
+<td>开始日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_end_date</td>
+<td>结束日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_info</td>
+<td>标备注</td>
+<td>text</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>expect_amount</td>
+<td>平台预期收益</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>real_amount</td>
+<td>实际收益</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>check_time</td>
+<td>审核时间</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>check_admin_id</td>
+<td>审核用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>payment_time</td>
+<td>放款时间</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>payment_admin_id</td>
+<td>放款用户id</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>Lend（标的表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>lend_item_no</td>
+<td>标的项号</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_id</td>
+<td>标的id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>invest_user_id</td>
+<td>投资用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_name</td>
+<td>投资人名</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_amount</td>
+<td>投资金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_year_rate</td>
+<td>年化利率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_time</td>
+<td>投资时间</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_start_date</td>
+<td>开始日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_end_date</td>
+<td>结束日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>expect_amount</td>
+<td>预期收益</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>real_amount</td>
+<td>实际收益</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态（0：默认 1：已支付 2：已还款）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>lend_item（标的投资项表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>lend_return_id</td>
+<td>标的还款id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_item_id</td>
+<td>标的项id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_id</td>
+<td>标的id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>invest_user_id</td>
+<td>出借用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>invest_amount</td>
+<td>出借金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>current_period</td>
+<td>当前的期数</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_year_rate</td>
+<td>年化利率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_method</td>
+<td>还款方式 1-等额本息 2-等额本金 3-每月还息一次还本 4-一次还本</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Principal</td>
+<td>本金</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Interest</td>
+<td>利息</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>本息</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Fee</td>
+<td>手续费</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>还款时指定的还款日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>real_return_time</td>
+<td>真实归还时间</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>is_overdue</td>
+<td>是否逾期</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>overdue_total</td>
+<td>逾期金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态（0-未归还 1-已归还）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>lend_item_return（回款记录表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>lend_id</td>
+<td>标的id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>borrow_info_id</td>
+<td>借款信息id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>return_no</td>
+<td>return_no</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>借款人用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>借款金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>base_amount</td>
+<td>计息本金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>current_period</td>
+<td>当前的期数</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>lend_year_rate</td>
+<td>年化利率</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_method</td>
+<td>还款方式 1-等额本息 2-等额本金 3-每月还息一次还本 4-一次还本</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Principal</td>
+<td>本金</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Interest</td>
+<td>利息</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>本息</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Fee</td>
+<td>手续费</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>return_date</td>
+<td>还款时指定的还款日期</td>
+<td>date</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>real_return_time</td>
+<td>真实归还时间</td>
+<td>datetime</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>is_overdue</td>
+<td>是否逾期</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>overdue_total</td>
+<td>逾期金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>is_last</td>
+<td>是否最后一次还款</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态（0-未归还 1-已归还）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>lend_return（还款计划表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>用户名</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>trans_no</td>
+<td>流水号</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>trans_type</td>
+<td>交易类型（1：充值 2：提现 3：投标 4：投资回款 …）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>trans_type_name</td>
+<td>流水类型</td>
+<td>varchar</td>
+<td>100</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>trans_amount</td>
+<td>交易金额</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Memo</td>
+<td>流水描述</td>
+<td>varchar</td>
+<td>300</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>trans_flow（流水记录表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>帐户可用余额</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>freeze_amount</td>
+<td>冻结金额</td>
+<td>varchar</td>
+<td>30</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>varchar</td>
+<td>100</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>decimal</td>
+<td>10</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>version</td>
+<td>版本号</td>
+<td>varchar</td>
+<td>300</td>
+<td></td>
+<td>False</td>
+</tr>
+</tbody></table>
+<p>user_account（用户账户表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>用户名</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>id_card</td>
+<td>身份证号</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>bank_no</td>
+<td>银行卡号</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>bank_type</td>
+<td>银行类型</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>电话</td>
+<td>varchar</td>
+<td>11</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>bind_code</td>
+<td>绑定码</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>user_bind（用户绑定记录表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_type</td>
+<td>1：出借人 2：借款人</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>电话</td>
+<td>varchar</td>
+<td>11</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>密码</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>nick_name</td>
+<td>别名</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>用户名</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>id_card</td>
+<td>身份证号</td>
+<td>varchar</td>
+<td>20</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>邮箱</td>
+<td>varchar</td>
+<td>100</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Openid</td>
+<td>Openid</td>
+<td>varchar</td>
+<td>40</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>head_img</td>
+<td>头像</td>
+<td>varchar</td>
+<td>200</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>bind_status</td>
+<td>绑定状态（0：未绑定，1：绑定成功 -1：绑定失败）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>borrow_auth_status</td>
+<td>借款人认证状态（0：未认证 1：认证中 2：认证通过 -1：认证失败）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>bind_code</td>
+<td>绑定码</td>
+<td>varchar</td>
+<td>50</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Integral</td>
+<td>用户积分</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>状态（0：锁定 1：正常）</td>
+<td>tinyint</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>user_info（用户信息表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Integral</td>
+<td>积分</td>
+<td>int</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>评论</td>
+<td>varchar</td>
+<td>100</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>user_integral（用户积分表）</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>解释说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>是否为主键</th>
+<th>是否为null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Id</td>
+<td>编号</td>
+<td>bigint</td>
+<td>0</td>
+<td>主键</td>
+<td>True</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>用户id</td>
+<td>bigint</td>
+<td>0</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>Ip</td>
+<td>IP地址</td>
+<td>varchar</td>
+<td>32</td>
+<td></td>
+<td>False</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>创建时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>更新时间</td>
+<td>timestamp</td>
+<td>0</td>
+<td></td>
+<td>True</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>逻辑删除(1:已删除，0:未删除)</td>
+<td>tinyint</td>
+<td>1</td>
+<td></td>
+<td>True</td>
+</tr>
+</tbody></table>
+<p>user_login_record（用户登录日志表）</p>
+<h1 id="第五章-系统搭建和核心业务功能实现"><a href="#第五章-系统搭建和核心业务功能实现" class="headerlink" title="第五章 系统搭建和核心业务功能实现"></a>第五章 系统搭建和核心业务功能实现</h1><p>​    本章根据总体设计内容，分析系统搭建和核心业务功能实现过程。系统搭建包括平台搭建、模块搭建、和SpringCloud基础设施搭建，核心业务功能介绍用户注册、贷前、贷后，以及Redis缓存和短信服务使用方法。</p>
+<h2 id="5-1-系统搭建"><a href="#5-1-系统搭建" class="headerlink" title="5.1 系统搭建"></a>5.1 系统搭建</h2><h3 id="5-1-1后台管理平台搭建"><a href="#5-1-1后台管理平台搭建" class="headerlink" title="5.1.1后台管理平台搭建"></a>5.1.1后台管理平台搭建</h3><p>​    （1）后端项目选用vue-element-admin是基于element-ui 的一套后台管理系统集成方案。在视图views文件夹添加需要的页面效果，然后在router文件夹配置路由规则，也就是通过锚点定义不同的 URL，达到访问不同的页面的目的。系统采用较为简单的基础模板（最少精简版）来开发。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745453.png" alt="img"></p>
+<p>基于vue-element-admin的融资宝后台管理图</p>
+<p>​    （2）配置路由规则，添加前端API，添加后台分级的页面，borrow-info（借款列表）、borrower（借款人列表）、dict（数据字典）、integral-grade（积分等级）、lend（标的管理）、user-info（会员管理）。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745778.png" alt="img"></p>
+<p>融资宝后台管理的前端目录功能图</p>
+<p>​        （3）会员列表的业务功能展示前端请求调用后端服务的流程，点击会员列表的锚点，通过路由规则找到会员列表页面，页面加载中调用前端API中getPageList方法通过axios发送请求，通过Getway网关，调用后端会员列表接口。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745217.png" alt="img"></p>
+<p>前端调用后端API图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745305.png" alt="img"></p>
+<p>会员列表的路由配置图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745194.jpg" alt="img"></p>
+<p>会员页面调用前端API图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745154.png" alt="img"></p>
+<p>会员前端API图</p>
+<h3 id="5-1-2-后端模块搭建"><a href="#5-1-2-后端模块搭建" class="headerlink" title="5.1.2 后端模块搭建"></a>5.1.2 后端模块搭建</h3><p>​    创建项目：rzb（父工程）、rzb-common、service-base、service-core、rabbit-mq、service-oss、service-sms模块。系统核心业务API放在service-core中；工具类、异常类、结果集类放rzb-common中；系统配置类、数据传输对象放service-base中；发布消息到MQ的服务放rabbit-mq中；监听MQ中的消息，并发送短息的服务放service-sms中；系统中图片对象上传阿里云OSS中的服务放service-oss中。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745271.png" alt="img"></p>
+<p>融资宝后端工程目录图</p>
+<h3 id="5-1-3-SpringCloud基础设施"><a href="#5-1-3-SpringCloud基础设施" class="headerlink" title="5.1.3 SpringCloud基础设施"></a>5.1.3 SpringCloud基础设施</h3><p>（1）注册中心和服务发现。下载启动nacos，在service-base中引入“spring-cloud-starter-alibaba-nacos-discovery”的依赖。在每一个微服务application.yml配置文件中添加配置。</p>
+<p>spring:</p>
+<p> application:</p>
+<p>name: # service-core&#x2F;service-sms&#x2F;service-oss&#x2F;..</p>
+<p>cloud:</p>
+<p>  nacos:</p>
+<p>   discovery:</p>
+<p>​    server-addr: localhost:8848 # nacos服务地址</p>
+<p>​    服务全部启动后查看已注册服务，在Nacos中查看服务列表。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745273.png" alt="img"></p>
+<p>Nacos服务列表图</p>
+<p>​    （2）OpenFeign服务调用。在service-base中添加引入“spring-cloud-starter-openfeign”的依赖，在微服务启动类中添加“@EnableFeignClients”注解启用Feign客户端。然后再微服务controller层中添加服务调用注解“@RequestMapping、@GetMapping 和 @PostMapping”。</p>
+<p>&#x2F;&#x2F;短信服务接口</p>
+<p>@Api(tags &#x3D; “会员接口”)</p>
+<p>@RestController</p>
+<p>@RequestMapping(“&#x2F;api&#x2F;core&#x2F;userInfo”)</p>
+<p>public class UserInfoController {</p>
+<p>@ApiOperation(“校验手机号是否注册”)</p>
+<p>@GetMapping(“&#x2F;checkMobile&#x2F;{mobile}”)</p>
+<p>public boolean checkMobile(@PathVariable String mobile){</p>
+<p>  return userInfoService.checkMobile(mobile);</p>
+<p>}</p>
+<p>​    在service-sms中添加远程调用接口，用到注解“@FeignClient”，发现调用的服务，然后通过“@GetMapping”配置完整接口地址。</p>
+<p>&#x2F;&#x2F;短信接口远程调用接口</p>
+<p>@FeignClient(value &#x3D; “service-core”)</p>
+<p>public interface CoreUserInfoClient {</p>
+<p>  @GetMapping(“&#x2F;api&#x2F;core&#x2F;userInfo&#x2F;checkMobile&#x2F;{mobile}”)</p>
+<p>  boolean checkMobile(@PathVariable String mobile);</p>
+<p>}</p>
+<p>​    （3）OpenFeign添加超时控制，一旦超时就出现远程调用错误，防止远程调用无响应一直等待。因此需要在服务消费者的application.yml中添加配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">feign:</span><br></pre></td></tr></table></figure>
+
+<p> client:</p>
+<p>  config:</p>
+<p>   default:</p>
+<p>​    connectTimeout: 10000 #连接超时配置</p>
+<p>​    readTimeout: 600000 #执行超时配置</p>
+<p>（4）Sentinel服务限流配置。在service-base中引入“spring-cloud-starter-alibaba-sentinel”的依赖，然后在application.yml中配置开启Feign支持Sentinel的支持。</p>
+<p>#开启Feign对Sentinel的支持</p>
+<p>#feign:</p>
+<p> sentinel:</p>
+<p>enabled: true</p>
+<p>创建容错类，若服务调用失败，就降级调用容错类，也就是熔断。</p>
+<p>&#x2F;&#x2F;短信发送失败的容错类</p>
+<p>@Service</p>
+<p>@Slf4j</p>
+<p>public class CoreUserInfoClientFallback implements CoreUserInfoClient {</p>
+<p>  @Override</p>
+<p>  public boolean checkMobile(String mobile) {</p>
+<p>​    log.error(“远程调用失败，服务熔断”);</p>
+<p>​    return false;</p>
+<p>  }</p>
+<p>}</p>
+<p>在远程调用接口添加指定容错类。在“@FeignClient”中的fallback属性指定类。</p>
+<p>@FeignClient(value &#x3D; “service-core”, fallback &#x3D; CoreUserInfoClientFallback.class)</p>
+<p>public interface CoreUserInfoClient {</p>
+<p>（5）添加网关微服务，同时也注册在Nacos注册中心里。创建service-getway模块，添加Getway网关依赖和Nacos服务发现依赖。</p>
+<dependencies>  
+
+<p>  <dependency>        <!-- 网关 --></p>
+<p>​    <groupId>org.springframework.cloud</groupId></p>
+<p>​    <artifactId>spring-cloud-starter-gateway</artifactId></p>
+  </dependency>  
+
+<p>  <dependency>        <!--服务注册--></p>
+<p>​    <groupId>com.alibaba.cloud</groupId></p>
+<p>​    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId></p>
+  </dependency>
+
+</dependencies>
+
+ 
+
+<p>配置微服务端口、服务名、Nacos服务地址、让gateway可以发现nacos中的微服务，并自动生成转发路由。</p>
+<p>server:</p>
+<p> port: 80 # 服务端口</p>
+<p>spring:</p>
+<p> profiles:</p>
+<p>  active: dev # 环境设置</p>
+<p> application:</p>
+<p>  name: service-gateway # 服务名</p>
+<p> cloud:</p>
+<p>  nacos:</p>
+<p>   discovery:</p>
+<p>​    server-addr: localhost:8848 # nacos服务地址</p>
+<p>  gateway:</p>
+<p>   discovery:</p>
+<p>​    locator:</p>
+<p>​     enabled: true </p>
+<p># gateway可以发现nacos中的微服务，并自动生成转发路由</p>
+<p>在网关主启动类添加注解“@EnableDiscoveryClient”，让注册中心能够发现，扫描到该服务。然后配置网关路由规则，允许正确的路由地址访问微服务。</p>
+<p>#spring:</p>
+<p># cloud:</p>
+<p>#  gateway:</p>
+<p>   routes:</p>
+<p>   - id: service-core</p>
+<p>​    uri: lb:&#x2F;&#x2F;service-core</p>
+<p>​    predicates:</p>
+<p>​    - Path&#x3D;&#x2F;<em>&#x2F;core&#x2F;</em>*</p>
+<p>   - id: service-sms</p>
+<p>​    uri: lb:&#x2F;&#x2F;service-sms</p>
+<p>​    predicates:</p>
+<p>​    - Path&#x3D;&#x2F;<em>&#x2F;sms&#x2F;</em>*</p>
+<p>   - id: service-oss</p>
+<p>​    uri: lb:&#x2F;&#x2F;service-oss</p>
+<p>​    predicates:</p>
+<p>​    - Path&#x3D;&#x2F;<em>&#x2F;oss&#x2F;</em>*</p>
+<p>#放行core、sms、oss</p>
+<p>（6）添加跨域配置，解决同源策略限制。在getway微服务中添加配置类，运行携带Cookie、接受任意域名、允许携带头、允许所有访问方式。</p>
+<p>@Configuration</p>
+<p>public class CorsConfig {</p>
+<p>  @Bean</p>
+<p>  public CorsWebFilter corsFilter() {</p>
+<p>​    CorsConfiguration config &#x3D; new CorsConfiguration();</p>
+<p>​    config.setAllowCredentials(true); &#x2F;&#x2F;是否允许携带cookie</p>
+<p>​    config.addAllowedOrigin(“<em>“); &#x2F;&#x2F;可接受的域，是一个具体域名或者</em>（代表任意域名）</p>
+<p>​    config.addAllowedHeader(“*”); &#x2F;&#x2F;允许携带的头</p>
+<p>​    config.addAllowedMethod(“*”); &#x2F;&#x2F;允许访问的方式</p>
+<p>​    UrlBasedCorsConfigurationSource source &#x3D; new UrlBasedCorsConfigurationSource();</p>
+<p>​    source.registerCorsConfiguration(“&#x2F;**”, config);</p>
+<p>​    return new CorsWebFilter(source);</p>
+<p>  }</p>
+<p>}</p>
+<h2 id="5-2-核心业务功能实现"><a href="#5-2-核心业务功能实现" class="headerlink" title="5.2 核心业务功能实现"></a>5.2 核心业务功能实现</h2><h3 id="5-2-1-Redis缓存数据字典"><a href="#5-2-1-Redis缓存数据字典" class="headerlink" title="5.2.1 Redis缓存数据字典"></a>5.2.1 Redis缓存数据字典</h3><p>​    在Spring Boot项目中中，默认集成Spring Data Redis，Spring Data Redis针对Redis提供了非常方便的操作模版RedisTemplate，并且可以进行连接池自动管理。在service-base中添加redis依赖。然后再service-core中添加redis配置，包括主机、端口、密码、超时时间、连接池配置。</p>
+<!-- spring boot redis缓存引入 -->
+
+<dependency>
+
+<p>  <groupId>org.springframework.boot</groupId></p>
+<p>  <artifactId>spring-boot-starter-data-redis</artifactId></p>
+</dependency>
+
+<!-- 缓存连接池-->
+
+<dependency>
+
+<p>  <groupId>org.apache.commons</groupId></p>
+<p>  <artifactId>commons-pool2</artifactId></p>
+</dependency>
+
+<!-- redis 存储 json序列化 -->
+
+<dependency>
+
+<p>  <groupId>com.fasterxml.jackson.core</groupId></p>
+<p>  <artifactId>jackson-databind</artifactId></p>
+</dependency>
+
+<dependency>
+
+<p>  <groupId>com.fasterxml.jackson.datatype</groupId></p>
+<p>  <artifactId>jackson-datatype-jsr310</artifactId></p>
+</dependency>
+
+ 
+
+<p>#redis配置文件</p>
+<p>#spring: </p>
+<p> redis:</p>
+<p>  host: 127.0.0.1</p>
+<p>  port: 6379</p>
+<p>  database: 0</p>
+<p>  password: 123456 #默认为空</p>
+<p>  timeout: 3000ms #最大等待时间，超时则抛出异常，否则请求一直等待</p>
+<p>  lettuce:</p>
+<p>   pool:</p>
+<p>​    max-active: 20 #最大连接数，负值表示没有限制，默认8</p>
+<p>​    max-wait: -1  #最大阻塞等待时间，负值表示没限制，默认-1</p>
+<p>​    max-idle: 8   #最大空闲连接，默认8</p>
+<p>​    min-idle: 0   #最小空闲连接，默认0</p>
+<p>​    启动Redis服务，当查询数据字典的时候，优先查询Redis中是否有dict列表，如果有就取出并返回dictlist，如果没有就从数据库中取新的dictlist，然后存入Redis中，最后返回dictlist。</p>
+<p>@Resource</p>
+<p>private RedisTemplate redisTemplate;</p>
+<p>@Override</p>
+<p>public List<Dict> listByParentId(Long parentId) {</p>
+<p>  &#x2F;&#x2F;先查询redis中是否存在数据列表</p>
+<p>  List<Dict> dictList &#x3D; null;</p>
+<p>  try {</p>
+<p>​    dictList &#x3D; (List<Dict>)redisTemplate.opsForValue().get(“rzb:core:dictList:” + parentId);</p>
+<p>​    if(dictList !&#x3D; null){</p>
+<p>​      return dictList;</p>
+<p>​    }</p>
+<p>  } catch (Exception e) {</p>
+<p>​    log.error(“redis服务器异常：” + ExceptionUtils.getStackTrace(e)); </p>
+<p>  }</p>
+<p>  dictList &#x3D; baseMapper.selectList(new QueryWrapper<Dict>().eq(“parent_id”, parentId));</p>
+<p>  dictList.forEach(dict -&gt; {  &#x2F;&#x2F;如果有子节点，则是非叶子节点</p>
+<p>​    boolean hasChildren &#x3D; this.hasChildren(dict.getId());</p>
+<p>​    dict.setHasChildren(hasChildren);</p>
+<p>  });  &#x2F;&#x2F;将数据存入redis</p>
+<p>  try {</p>
+<p>​    redisTemplate.opsForValue().set(“rzb:core:dictList:” + parentId, dictList, 5, TimeUnit.MINUTES);</p>
+<p>  } catch (Exception e) {</p>
+<p>​    log.error(“redis服务器异常：” + ExceptionUtils.getStackTrace(e)); </p>
+<p>  }</p>
+<p>  return dictList;</p>
+<p>}</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745317.png" alt="img"></p>
+<p>Redis中数据字典数据图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745171.png" alt="img"></p>
+<p>系统数据字典查询结果图</p>
+<h3 id="5-2-2-短信微服务和用户注册"><a href="#5-2-2-短信微服务和用户注册" class="headerlink" title="5.2.2 短信微服务和用户注册"></a>5.2.2 短信微服务和用户注册</h3><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745149.png" alt="img"></p>
+<p>用户注册和发送验证码流程图</p>
+<p>​    （1）在service-sms模块添加短信服务需要的依赖、配置application.yml。</p>
+<p>*&lt;!—**购买的短信服务提供的依赖 –&gt;<br>* <dependency><br>   <groupId>com.alibaba</groupId><br>   <artifactId>fastjson</artifactId><br>   <version>1.2.15</version><br> </dependency></p>
+<p>#配置文件</p>
+<p>server:</p>
+<p> port: 8120 # 服务端口</p>
+<p>spring:</p>
+<p> profiles:</p>
+<p>  active: dev # 环境设置</p>
+<p> application:</p>
+<p>  name: service-sms # 服务名</p>
+<p>#短信配置</p>
+<p>rzb:<br>  sms:<br>   host: <a target="_blank" rel="noopener" href="https://gyytz.market.alicloudapi.com/">https://gyytz.market.alicloudapi.com</a><br>   path: &#x2F;sms&#x2F;smsSend<br>   method: POST<br>   appcode: dee6d7be41154459a7b7f0da48cf39df *#**写自己的code<br>*   sms-sign-id: 2e65b1bb3d054466b82f0c9d125465e2<br>   template-code: a09602b817fd47e59e7c6e603d3f088d *#*<em>模板ID</em></p>
+<p>​    （2）前端远程调用发送短信的接口。在短信服务的controller层，校验电话号码正确性，远程调用core服务检查电话是否被注册，系统生成验证码，调用service层发送短信功能，将验证码保存redis并设置五分钟有效时间、service层，按要求短信服务厂商要求组装host, path, method, headers, querys, bodys参数利用doPost方式发送。</p>
+<p>&#x2F;&#x2F;远程调用发送短信的接口</p>
+<p>this.$axios</p>
+<p>   .$get(‘&#x2F;api&#x2F;sms&#x2F;send&#x2F;‘ + this.userInfo.mobile)</p>
+<p>   .then((response) &#x3D;&gt; {</p>
+<p>​    this.$message.success(response.message)</p>
+<p>})</p>
+<p>@RestController<br> @RequestMapping(“&#x2F;api&#x2F;sms”)<br> @Api(tags &#x3D; “短信管理”)<br> public class ApiSmsController {<br>  @Resource private SmsService smsService;<br>  @Resource private RedisTemplate redisTemplate;<br>  @ApiOperation(“获取验证码”)<br>  @GetMapping(“&#x2F;send&#x2F;{mobile}”)<br>  public R send(@ApiParam(value &#x3D; “手机号”, required &#x3D; true) @PathVariable String mobile) {</p>
+<p>&#x2F;&#x2F;检查mobile是否符合电话规则</p>
+<p>………………………………………………………………………..</p>
+<p>String code &#x3D; RandomUtils.<em>getFourBitRandom</em>();  <em>&#x2F;&#x2F;</em> <em>组装短信模板参数</em>*<br>* Map&lt;String, Object&gt; param &#x3D; new HashMap&lt;&gt;();<br> param.put(“code”, code);           <em>&#x2F;&#x2F;</em> <em>发送短信</em>*<br>* smsService.send(mobile, SmsProperties.<em>TEMPLATE_CODE</em>, param);<br> System.<em>out</em>.println(“电话：” + mobile + “—-验证码：” + code);<em>&#x2F;&#x2F;</em> *将验证码存入**redis<br>* redisTemplate.opsForValue().set(“rzb:sms:code:” + mobile, code, 5, TimeUnit.<em>MINUTES</em>);</p>
+<p>&#x2F;&#x2F;短信验证码五分钟有效</p>
+<p>​    （3）然后点击发送验证码，填写正确后点击注册。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021745121.png" alt="img"></p>
+<p>系统会员注册图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746101.jpg" alt="img"></p>
+<p>短信通知图</p>
+<p>​    （4）点击注册远程调用会员注册接口。先验证电话是否符合规则，然后从redis中取出验证码，和系统中生成的验证码进行比对，然后调用service层注册业务功能，返回成功。</p>
+<p>@Api(tags &#x3D; “会员接口”)<br> @RestController<br> @RequestMapping(“&#x2F;api&#x2F;core&#x2F;userInfo”) *<br>* public class UserInfoController {<br>  @Resource private UserInfoService userInfoService;<br>  @Resource private RedisTemplate redisTemplate;<br>  @ApiOperation(“会员注册”)<br>  @PostMapping(“&#x2F;register”)<br>  public R register(@RequestBody RegisterVO registerVO) {<br>   String mobile &#x3D; registerVO.getMobile();<br>   String password &#x3D; registerVO.getPassword();<br>   String code &#x3D; registerVO.getCode();<br> &#x2F;&#x2F;校验验证码、密码、电话不能为空，是否符合规则</p>
+<p>……………………………..  *<br>*   String codeGen &#x3D; (String) redisTemplate.opsForValue().get(“rzb:sms:code:” + mobile);  *&#x2F;&#x2F; CODE_ERROR(-206, “**验证码不正确”),<br>*   Assert.<em>equals</em>(code, codeGen, ResponseEnum.<em>CODE_ERROR</em>);<br>   <em>&#x2F;&#x2F;</em> *注册<br>*   userInfoService.register(registerVO);<br>   return R.<em>ok</em>().message(“注册成功”);<br>  }</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746047.png" alt="img"></p>
+<p>会员注册成功图</p>
+<h3 id="5-2-3-贷后"><a href="#5-2-3-贷后" class="headerlink" title="5.2.3 贷后"></a>5.2.3 贷后</h3><p>​    （1）使用注册的投资人登录成功。新注册的用户未绑定第三方支付账号，只有绑定后才能充值和投资。在绑定页面填写姓名、身份证号、银行、卡号、预留电话后发起绑定。后端绑定服务以POST方式提交数据并弹出&#x2F;跳转汇付宝绑定账户页，用户完成绑定后同步返回到商户页，同时异步通知商户。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746131.jpg" alt="img"></p>
+<p>账户绑定图</p>
+<p>​    （2）会员绑定接口。首先从请求中得到token，通过token获取到Userid（token通过JwtUtils封装了会员的基本信息），然后调用绑定业务。绑定业务就是先根据身份证和用户ID判断是否绑定，然后查询是否有该会员的绑定记录，没有就插入绑定记录，设置用户绑定状态，反之更新绑定记录的信息。然后封装第三方绑定接口需要的参数Map类型。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746219.png" alt="img"></p>
+<p>会员绑定图</p>
+<p>@Api(tags &#x3D; “会员账号绑定”)</p>
+<p>@RestController<br> @RequestMapping(“&#x2F;api&#x2F;core&#x2F;userBind”)<br> public class UserBindController {<br>  @Resource private UserBindService userBindService;<br>  @ApiOperation(“账户绑定提交数据”)<br>  @PostMapping(“&#x2F;auth&#x2F;bind”)<br>  public R bind(@RequestBody UserBindVO userBindVO, HttpServletRequest request) {<br>   String token &#x3D; request.getHeader(“token”);<br>   Long userId &#x3D; JwtUtils.<em>getUserId</em>(token);<br>   String formStr &#x3D; userBindService.commitBindUser(userBindVO, userId);<br>   return R.<em>ok</em>().data(“formStr”, formStr);<br>  }</p>
+<p>&#x2F;&#x2F;formStr封装的页面部分代码</p>
+<p>String formStr &#x3D; “<!DOCTYPE html>\n” +<br>     “&lt;html lang&#x3D;&quot;en&quot; xmlns:th&#x3D;&quot;<a target="_blank" rel="noopener" href="http://www.thymeleaf.org/&quot;&gt;/n&quot;">http://www.thymeleaf.org\&quot;&gt;\n&quot;</a> +<br>     “<head>\n” +<br>     “</head>\n” +<br>     “<body>\n” +<br>     “&lt;form name&#x3D;&quot;form&quot; action&#x3D;&quot;“+url+”&quot; method&#x3D;&quot;post&quot;&gt;\n”+<br>     inputStr +<br>     “</form>\n” +<br>     “<script>\n" +<br>     "\tdocument.form.submit();\n" +<br>     "</script>\n” +<br>     “</body>\n” +<br>     “</html>“;<br> return formStr;</p>
+<p>​    填写的的参数就封装在formStr中，这是一个汇付包绑定的from表单，以String类型形式返回前端渲染成页面。点击确定通过表单将参数（包含异步回调的地址）提交给汇付包绑定接口。绑定成功后，汇付包异步发送成功通知到回调地址。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746211.png" alt="img"></p>
+<p>​    （3）异步通知的参数有绑定code码、绑定结果、会员ID、时间，以Map形式发送。系统接收参数，更新会员绑定Code码、绑定记录信息。然后会员就可以充值投资，选择合适的投资项目，选择要投资的金额，平台会自动根据该项目的利率计算收益。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746149.png" alt="img"></p>
+<p>项目投资收益图</p>
+<p>​    点击立即投资，系统后台以POST方式提交数据并弹出&#x2F;跳转到汇付宝投资页，投资人成功提交投资信息后，同步返回到商户页，同时汇付宝将投资处理结果异步通知到商户的notify_url，更新对应信息。而后端标的投资接口，先验证token得到UserId和用户名，封装到投资对象中，仍然把投资信息封装到一个fromStr中返回。在前端渲染出汇付包投资页面，投资成功后异步通知融资宝。通知的参数封装到Map中，包括投资描述、订单号、项目号、表类型、投资人绑定号、投资金额、手续费、通知时间，签名。通知的接口，需要更新会员账户资金，将投资金额改为冻结，修改投资记录的状态，更新标的信息，新增流水信息。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746065.jpg" alt="img"></p>
+<p>融资宝投资顺序图</p>
+<h3 id="5-2-4-贷前"><a href="#5-2-4-贷前" class="headerlink" title="5.2.4 贷前"></a>5.2.4 贷前</h3><p>​    （1）注册借款人登录。仍然是需要像借款人那样先绑定第三方支付账号，绑定成功后可以去借款。先绑定借款人信息，包括基础信息和图片信息，图片通过Service-oss服务异步上传，得到图片url即可，然后后端服务保存借款人信息。</p>
+<p>@RestController</p>
+<p>@Api(tags &#x3D; “借款人”)<br> @RequestMapping(“&#x2F;api&#x2F;core&#x2F;borrower”)<br> public class BorrowerController {<br>   @Resource<br>   private BorrowerService borrowerService;<br>   @ApiOperation(“保存借款人信息”)<br>   @PostMapping(“&#x2F;auth&#x2F;save”)<br>   public R save(@RequestBody BorrowerVO borrowerVO, HttpServletRequest request) {<br>     String token &#x3D; request.getHeader(“token”);<br>     Long userId &#x3D; JwtUtils.<em>getUserId</em>(token);<br>     borrowerService.saveBorrowerVOByUserId(borrowerVO, userId);<br>     return R.<em>ok</em>().message(“信息提交成功”);<br>   }</p>
+<p>而借款人页面的状态显示根据状态来显示进度。对应填写借款人信息-提交审核-审核结果三个阶段。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746178.png" alt="img"></p>
+<p>借款人信息认证状态图</p>
+<p>​    （2）管理员审核借款人信息。管理平台查询出借款人信息并展示列表，点击审核，管理员根据信息内容判断是否准确得到相应的积分（用于获得借款额度）。审核通过，更新借款人认证状态变成认证通过，借款人页面会查询借款人认证状态重新更新进度。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746038.png" alt="img"></p>
+<p>管理审核积分图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746178.png" alt="img"></p>
+<p>借款人信息认证成功图</p>
+<p>​    （3）然后发起借款项目的申请，包括借款金额、目的、还款方式、年利率、还款期数。提交借款信息到后端，然后判断借款金额和借款额度是否匹配，满足就插入借款信息，同时更新状态为审核中。</p>
+<p>@Api(tags &#x3D; “借款信息”)</p>
+<p>@RestController<br> @RequestMapping(“&#x2F;api&#x2F;core&#x2F;borrowInfo”)<br> public class BorrowInfoController {</p>
+<p>  @Resource<br>   private BorrowInfoService borrowInfoService;<br>   @ApiOperation(“提交借款申请”)<br>   @PostMapping(“&#x2F;auth&#x2F;save”)<br>   public R save(@RequestBody BorrowInfo borrowInfo, HttpServletRequest request) {<br>     String token &#x3D; request.getHeader(“token”);<br>     Long userId &#x3D; JwtUtils.<em>getUserId</em>(token);<br>     borrowInfoService.saveBorrowInfo(borrowInfo, userId);<br>     return R.<em>ok</em>().message(“提交成功”);<br>   }</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746111.jpg" alt="img"></p>
+<p>借款信息内容图</p>
+<p>​    （4）管理员审核通过后，生成标的，修改借款信息状态。然后就可以在平台上看到我们标的信息。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746933.png" alt="img"></p>
+<p>管理员审核图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746298.png" alt="img"></p>
+<p>平台展示借款列表图</p>
+<h1 id="第六章-系统功能验证与性能测试"><a href="#第六章-系统功能验证与性能测试" class="headerlink" title="第六章 系统功能验证与性能测试"></a>第六章 系统功能验证与性能测试</h1><h2 id="6-1-Swagger系统功能验证"><a href="#6-1-Swagger系统功能验证" class="headerlink" title="6.1 Swagger系统功能验证"></a>6.1 Swagger系统功能验证</h2><p>​    Service-base中添加swagger依赖，这里采用私人分析的使用；添加swagger配置类，接口分为adminApi（后台操作）、webApi（前台操作），然后添加Api基础信息，包括分组名，页面信息，路径。然后只需要在controller层添加注解“@Api(tags &#x3D; “父接口”)</p>
+<p>@ApiOperation(“子接口”)”。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746089.png" alt="img"></p>
+<p>Swagger配置类的后台操作API图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png" alt="img"></p>
+<p>Swagger生成API文档图</p>
+<p>​    后端项目中所以的接口就通过swagger生成了可阅读的API文档，并且提供在线测试。选择会员接口调试会员登录功能。先添加全局参数token（如果没有token无法通过会员验证）和登录需要参数loginVo。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746963.png" alt="img"></p>
+<p>swagger会员登陆测试图</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746337.png" alt="img"></p>
+<p>登录成功的响应内容图</p>
+<h2 id="6-2-JMeter系统性能测试"><a href="#6-2-JMeter系统性能测试" class="headerlink" title="6.2 JMeter系统性能测试"></a>6.2 JMeter系统性能测试</h2><p>​    对系统会员登录和资金记录进行性能测试，使用JMeter测试系统的性能。使用500歌线程，循环5次，启动时间设置为5s。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746847.png" alt="img"></p>
+<p>性能测试计划图</p>
+<p>​    生成测试报告，仪表盘可以看到请求成功率是百分之百，在两个请求共计5千次请求量，系统在网络正常情况下仍然没有出现请求失败，请求成功率100%，其中平均响应时间2.6s，百分之九十五响应时间在5.7s，最大和最小响应时间为14.3s和3ms。</p>
+<p>所以本次测试结果说明系统在500的线程数的并发环境下可以正常操作运行，基本满足预期需要，同时错误率0。但是Apdex较低，也说明了服务器响应速度较慢，需要进一步优化。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746279.png" alt="img"></p>
+<p>压力测试结果图</p>
+<p>​    通过测试结果提供的可视化数据分析，大致清楚了系统性能的瓶颈，为后续的优化工作提供方向，并且得出，在高并发环境下，系统可以保证高可用性。</p>
+<h1 id="第七章-总结与展望"><a href="#第七章-总结与展望" class="headerlink" title="第七章 总结与展望"></a>第七章 总结与展望</h1><h2 id="7-1-论文总结"><a href="#7-1-论文总结" class="headerlink" title="7.1 论文总结"></a>7.1 论文总结</h2><p>​    论文到这里核心点就介绍完了，主要介绍了众筹的背景、融资宝平台需要的技术栈、以及三大主体借款人，投资人，管理员的业务需求分析以及实现。使用微服务架构创建平台，也是为了摆脱单体架构的缺点，增强系统的可扩展性和可维护性，并且从系统的实现过程中感受到微服务带给系统的便利和提升。虽然这个微服务项目在基础设施搭建上不是很完整，但是总体的实现和设计思路是遵循微服务架构原则。通过参考微服务项目设计过程的相关资料，选择了Nacos作为服务注册和发现，getway作为网关，sentinel作为服务限流，MQ作为消息中间键，Redis作为数据缓存，Swagger作为后端API文档生成。最终确定了合适的系统实现架构和技术栈。通过UML图分析系统用户需求和功能需求，进行系统的总体设计，通过微服务架构设计、业务流程设计、数据库设计，完善了系统实现的蓝图，确保了整个系统大体的架构是正确可行的。然后就是系统实现过程，从前端平台搭建到后端项目搭建，并搭建SpringCloud基础设施，确认组件的正常使用。然后实现核心功能，并通过swagger进行在线测试，确认每一个功能可以正常使用，保证系统功能的完整性。最后通过Jmeter测试系统部分功能，确保系统的高性能。</p>
+<p>​    通过本次项目实现和论文的编写，明确了对一个微服务项目整个设计思路和技术选择，合理的使用SpringCloud的组件可以更好的提升项目的可用性、可维护性、高性能。</p>
+<p>​    </p>
+<h2 id="7-2-项目展望"><a href="#7-2-项目展望" class="headerlink" title="7.2 项目展望"></a>7.2 项目展望</h2><p>​    如今项目的架构比较流行微服务架构，但是本人对微服务的理解不是很深刻，缺乏开发经验。开发过程也遇到很多问题，在同学帮助和自己钻研下，最终完整的实现一个微服务架构的项目。但是本项目还要很多要加强和改进的地方。</p>
+<p>（1）   项目没有真正部署在一个云服务器上，只是自己简单的实验和测试，真实上线肯定会有一些新的关于微服务项目上线的问题。</p>
+<p>（2）   系统的登录方式比较单一，只能通过电话和密码登录，可以完善会员信息绑定微信或QQ登录服务，让用户可以灵活的登录平台。</p>
+<p>（3）   系统的账户绑定途径比较单一，只能绑定银行卡，可以拓展支付宝沙箱功能，提供新的绑定、支付、充值手段。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 胡吉祥,吴颖萌.众筹融资的发展及监管[J].证券市场导报,2013(12):60-65.</p>
+<p>[2] 李贞昊.微服务架构的发展与影响分析[J].信息系统工程,2017(01):154-155.</p>
+<p>[3] 周永圣,侯峰裕,孙雯,杨磊,张小贝.基于SpringCloud微服务架构的进销存管理系统的设计与实现[J].工业控制计算机,2018,31(11):129-130+133.</p>
+<p>[4] 马雄. 基于微服务架构的系统设计与开发[D].南京邮电大学,2017.</p>
+<p>[5] 刘斌.基于SpringCloud的电信综合服务保障系统微服务改造之路[J].中小企业管理与科技(下旬刊),2019(11):90-91.</p>
+<p>[6] 冯志勇,徐砚伟,薛霄,陈世展.微服务技术发展的现状与展望[J].计算机研究与发展,2020,57(05):1103-1122.</p>
+<p>[7] 杨文豪. 基于微服务的网上商城系统的设计与实现[D].北京邮电大学,2021.DOI:10.26969&#x2F;d.cnki.gbydu.2021.000275.</p>
+<p>[8] 付博. 基于SpringCloud的绿植养护软件的设计与实现[D].北京邮电大学,2021.DOI:10.26969&#x2F;d.cnki.gbydu.2021.001741.</p>
+<p>[9] 张斌,任富彬,沈炜.基于SpringCloud的食品安全溯源系统的设计与实现[J].软件工程,2019,22(08):27-30.DOI:10.19644&#x2F;j.cnki.issn2096-1472.2019.08.009.</p>
+<p>[10] 张林.基于微服务架构的商对客模式电商网站的设计与实现[J].软件工程,2021,24(09):55-57.DOI:10.19644&#x2F;j.cnki.issn2096-1472.2021.09.013.</p>
+<p>[11] 俞林,康灿华,王龙.互联网金融监管博弈研究:以P2P网贷模式为例[J].南开经济研究,2015(05):126-139.DOI:10.14116&#x2F;j.nkes.2015.05.008.</p>
+<p>[12] 秦颐. 小额贷款公司融资方式研究[D].中国农业大学,2014.</p>
+<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%BA%E6%96%87/">论文</a></div><div class="post_share"><div class="social-share" data-image="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><!-- - var pagination_cover = next.cover == false ? next.randomcover : next.cover--><div class="next-post pull-full"><a href="/2022/07/02/%E9%A1%B9%E7%9B%AE/JMeter/"><img class="next-cover" src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301138862.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Jmeter性能测试</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">代家鑫</div><div class="author-info__description">学习不止探索,生活不止于此</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">72</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Dain-xin"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Dain-xin" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/Dainx" target="_blank" title="Gitee"><i class="fab fa-gofore"></i></a><a class="social-icon" href="mailto:1636814673@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/m0_46667398" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1636814673&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Dain的博客分享</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BC%97%E7%AD%B9%E5%B9%B3%E5%8F%B0%E8%9E%8D%E8%B5%84%E5%AE%9D%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">基于微服务框架的众筹平台融资宝的设计与实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">3.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BC%95%E8%A8%80"><span class="toc-number">4.</span> <span class="toc-text">第一章 引言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">4.1.</span> <span class="toc-text">1.1 课题研究背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6"><span class="toc-number">4.2.</span> <span class="toc-text">1.2 研究现状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E8%AE%BA%E6%96%87%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="toc-number">4.3.</span> <span class="toc-text">1.3 论文的内容与结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.</span> <span class="toc-text">第二章 系统的技术栈介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Spring-Boot%E5%BE%AE%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.1.</span> <span class="toc-text">2.1 Spring Boot微框架介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Spring-Cloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.</span> <span class="toc-text">2.2 Spring Cloud微服务框架介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-Nacos%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.1.</span> <span class="toc-text">2.2.1 Nacos介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-Sentinel%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.2.</span> <span class="toc-text">2.2.2 Sentinel介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-Ribbon%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.3.</span> <span class="toc-text">2.2.3 Ribbon介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-RabbitMQ%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.4.</span> <span class="toc-text">2.2.4 RabbitMQ介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-Getway%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.5.</span> <span class="toc-text">2.2.5 Getway介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Redis%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.3.</span> <span class="toc-text">2.3 Redis介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Swagger%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.4.</span> <span class="toc-text">2.4 Swagger接口设计介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">第三章 系统需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E5%88%86%E6%9E%90"><span class="toc-number">6.1.</span> <span class="toc-text">3.1 系统用户角色分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1%E5%80%9F%E6%AC%BE%E4%BA%BA%E5%92%8C%E6%8A%95%E8%B5%84%E4%BA%BA"><span class="toc-number">6.1.1.</span> <span class="toc-text">3.1.1借款人和投资人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2%E5%B9%B3%E5%8F%B0%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-number">6.1.2.</span> <span class="toc-text">3.1.2平台管理员</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">6.2.</span> <span class="toc-text">3.2 系统功能需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.1.</span> <span class="toc-text">3.2.1 登录注册服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%E5%85%85%E5%80%BC%E6%8F%90%E7%8E%B0%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.2.</span> <span class="toc-text">3.2.2 充值提现服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E4%BC%9A%E5%91%98%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.3.</span> <span class="toc-text">3.2.3 会员管理服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-%E7%9F%AD%E4%BF%A1%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.4.</span> <span class="toc-text">3.2.4 短信服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E5%92%8C%E7%A7%AF%E5%88%86%E7%AD%89%E7%BA%A7%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.5.</span> <span class="toc-text">3.2.5 数据字典和积分等级管理服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E5%80%9F%E6%AC%BE%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.6.</span> <span class="toc-text">3.2.6 借款管理服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%E6%A0%87%E7%9A%84%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.2.7.</span> <span class="toc-text">3.2.7 标的管理服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E7%B3%BB%E7%BB%9F%E9%9D%9E%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">6.3.</span> <span class="toc-text">3.3 系统非功能需求分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.</span> <span class="toc-text">第四章 系统的总体设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.1.</span> <span class="toc-text">4.1 微服务架构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.2.</span> <span class="toc-text">4.2 业务流程设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.3.</span> <span class="toc-text">4.3 数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1-E-R%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.3.1.</span> <span class="toc-text">4.4.1 E-R图设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.3.2.</span> <span class="toc-text">4.4.2 数据库表设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E5%92%8C%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-number">8.</span> <span class="toc-text">第五章 系统搭建和核心业务功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA"><span class="toc-number">8.1.</span> <span class="toc-text">5.1 系统搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA"><span class="toc-number">8.1.1.</span> <span class="toc-text">5.1.1后台管理平台搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-%E5%90%8E%E7%AB%AF%E6%A8%A1%E5%9D%97%E6%90%AD%E5%BB%BA"><span class="toc-number">8.1.2.</span> <span class="toc-text">5.1.2 后端模块搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-SpringCloud%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="toc-number">8.1.3.</span> <span class="toc-text">5.1.3 SpringCloud基础设施</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-number">8.2.</span> <span class="toc-text">5.2 核心业务功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-Redis%E7%BC%93%E5%AD%98%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8"><span class="toc-number">8.2.1.</span> <span class="toc-text">5.2.1 Redis缓存数据字典</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-%E7%9F%AD%E4%BF%A1%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C"><span class="toc-number">8.2.2.</span> <span class="toc-text">5.2.2 短信微服务和用户注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-3-%E8%B4%B7%E5%90%8E"><span class="toc-number">8.2.3.</span> <span class="toc-text">5.2.3 贷后</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-4-%E8%B4%B7%E5%89%8D"><span class="toc-number">8.2.4.</span> <span class="toc-text">5.2.4 贷前</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">9.</span> <span class="toc-text">第六章 系统功能验证与性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-Swagger%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81"><span class="toc-number">9.1.</span> <span class="toc-text">6.1 Swagger系统功能验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-JMeter%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">9.2.</span> <span class="toc-text">6.2 JMeter系统性能测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B"><span class="toc-number">10.</span> <span class="toc-text">第七章 总结与展望</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93"><span class="toc-number">10.1.</span> <span class="toc-text">7.1 论文总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%E9%A1%B9%E7%9B%AE%E5%B1%95%E6%9C%9B"><span class="toc-number">10.2.</span> <span class="toc-text">7.2 项目展望</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">11.</span> <span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2"><span class="toc-number">12.</span> <span class="toc-text">致谢</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><!-- - let post_cover = article.cover--><div class="aside-list-item"><a class="thumbnail" href="/2022/07/02/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87/" title="融资宝项目开发——毕业论文"><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207021746514.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="融资宝项目开发——毕业论文"/></a><div class="content"><a class="title" href="/2022/07/02/%E9%A1%B9%E7%9B%AE/%E8%9E%8D%E8%B5%84%E5%AE%9D%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87/" title="融资宝项目开发——毕业论文">融资宝项目开发——毕业论文</a><time datetime="2022-07-02T09:47:19.000Z" title="发表于 2022-07-02 17:47:19">2022-07-02</time></div></div><!-- - let post_cover = article.cover--><div class="aside-list-item"><a class="thumbnail" href="/2022/07/02/%E9%A1%B9%E7%9B%AE/JMeter/" title="Jmeter性能测试"><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301138862.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jmeter性能测试"/></a><div class="content"><a class="title" href="/2022/07/02/%E9%A1%B9%E7%9B%AE/JMeter/" title="Jmeter性能测试">Jmeter性能测试</a><time datetime="2022-07-02T07:47:17.000Z" title="发表于 2022-07-02 15:47:17">2022-07-02</time></div></div><!-- - let post_cover = article.cover--><div class="aside-list-item"><a class="thumbnail" href="/2022/06/30/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Centos%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Centos项目环境搭建"><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301138862.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Centos项目环境搭建"/></a><div class="content"><a class="title" href="/2022/06/30/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Centos%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Centos项目环境搭建">Centos项目环境搭建</a><time datetime="2022-06-30T07:47:17.000Z" title="发表于 2022-06-30 15:47:17">2022-06-30</time></div></div><!-- - let post_cover = article.cover--><div class="aside-list-item"><a class="thumbnail" href="/2022/06/25/Begin/05-%E9%89%B4%E8%B5%8F/" title="鉴赏"><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206251641209.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="鉴赏"/></a><div class="content"><a class="title" href="/2022/06/25/Begin/05-%E9%89%B4%E8%B5%8F/" title="鉴赏">鉴赏</a><time datetime="2022-06-25T08:25:00.000Z" title="发表于 2022-06-25 16:25:00">2022-06-25</time></div></div><!-- - let post_cover = article.cover--><div class="aside-list-item"><a class="thumbnail" href="/2022/06/19/JAVA/JDBC/%E5%9F%BA%E7%A1%80/" title="JDBC基础"><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206192044133.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JDBC基础"/></a><div class="content"><a class="title" href="/2022/06/19/JAVA/JDBC/%E5%9F%BA%E7%A1%80/" title="JDBC基础">JDBC基础</a><time datetime="2022-06-19T10:54:51.000Z" title="发表于 2022-06-19 18:54:51">2022-06-19</time></div></div></div></div></div></div></main><footer id="footer" style="background: ture"><div id="footer-wrap"><div class="copyright">&copy;2022 By 代家鑫</div><div class="footer_custom_text">Hi, welcome to my blogs!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="16638732414" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script></div></body></html>
