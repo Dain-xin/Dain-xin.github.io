@@ -580,6 +580,20 @@ docker pull rabbitmq:management
 docker run -di --name=peijie_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
 ```
 
+### Docker安装Nacos
+
+```
+docker pull nacos/nacos-server
+docker images
+docker run --env MODE=standalone --name mynacos -d -p 8848:8848 docker.io/nacos/nacos-server
+
+内存不足使用
+docker run -e JVM_XMS=256m -e JVM_XMX=256m --env MODE=standalone --name mynacos -d -p 8848:8848 docker.io/nacos/nacos-server
+
+```
+
+
+
 ### 更多实例
 
 [Docker 安装实例| 菜鸟教程](https://www.runoob.com/docker/docker-install-nginx.html)

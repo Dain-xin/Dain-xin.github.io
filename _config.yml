@@ -13,7 +13,9 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://dainx-xin.github.io
+#url: http://dainx-xin.github.io
+url: https://dainx.gitee.io/dainx
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -104,7 +106,9 @@ theme: hexo-modify-theme-butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:Dain-xin/Dain-xin.github.io.git
+  repo:
+    github: git@github.com:Dain-xin/Dain-xin.github.io.git
+    gitee: https://gitee.com/Dainx/Dainx
   branch: master
 
 search:
