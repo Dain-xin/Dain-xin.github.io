@@ -2,7 +2,7 @@
 title: 独白
 date: 2022-06-27 18:24:35
 type: "mysql"
-password: 0418
+password: 
 ---
 
 我这个人既过分自卑，又过分自傲。
@@ -17,3 +17,6 @@ password: 0418
 
 ---
 
+如今这个时代我们还在抱怨，而戴铁郎（黑猫警长制作人）：这是一个好的时代，好到让我常常遗憾，要是再年轻一点就好了。
+
+![image-20220703111452701](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207031114864.png)

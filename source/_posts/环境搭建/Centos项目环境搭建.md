@@ -9,7 +9,7 @@ top:
 keywords:
 description:
 cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301138862.png'
-top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301138862.png'
+top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207030925209.png'
 ---
 
 # 安装宝塔面板
@@ -17,6 +17,9 @@ top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/2022063011388
 ```sh
 yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec   
 //宝塔centos安装命令
+
+//万能
+if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
 ```
 
 ```text
