@@ -20,6 +20,75 @@
       </tags>
   </entry>
   <entry>
+    <title>盗梦空间</title>
+    <url>/2022/07/05/Begin/06-%E7%9B%97%E6%A2%A6%E7%A9%BA%E9%97%B4/</url>
+    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207051601218.png" alt="image-20220705160105931"></p>
+<p>影片留下了一个悬念，并未让人可以确定最后是真实还是梦境，虽然弹幕都在争论在第几层，但是看到那一句话：当有你出现的情景，这就是现实，梦在于你愿不愿意相信这是梦，你相信这是真实，这就是现实。如果从一开始你就知道自己就在梦里，你还会珍惜自己拥有的吗！或者说自己过去拥有的。当确信身边都是真实，就会畏惧死亡。</p>
+]]></content>
+      <tags>
+        <tag>Dain</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DBUtils理解-QuerRunner类-ResultSetHandler接口</title>
+    <url>/2022/07/05/JAVA/JDBC/DBUtils%E7%90%86%E8%A7%A3-QuerRunner%E7%B1%BB-ResultSetHandler%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/f847a383eec0">什么是Java内存泄漏 - 简书 (jianshu.com)</a></p>
+<p>在Java中，这些不可达的对象都由GC负责回收，因此程序员不需要考虑这部分的内存泄露。</p>
+<h1 id="内存泄漏案例："><a href="#内存泄漏案例：" class="headerlink" title="内存泄漏案例："></a><strong>内存泄漏案例：</strong></h1><p>1、static大量使用；</p>
+<p>2、资源未关闭（Connection，ResultSet等）；</p>
+<p>3、不正确使用equals和hashcode方法；</p>
+<p>4、使用外部类的内部类；</p>
+<p>5、finalize（）：使对象不会立马被GC回收；</p>
+<p>6、ThreadLocal（使用ThreadLocal时，每个线程只要处于存活状态就可保留对其ThreadLocal变量副本的隐式调用，</p>
+<p>且将保留其自己的副本。如果线程不存在，该线程ThreadLocal会被GC回收但是保存的变量副本不会，就会导致内存泄漏）。</p>
+<h1 id="为什莫用连接池："><a href="#为什莫用连接池：" class="headerlink" title="为什莫用连接池："></a><strong>为什莫用连接池：</strong></h1><p>常用的数据库连接使用步骤，会造成大量的资源浪费，频繁的连接断开可能会导致数据库内存泄漏，引起重启数据库；同时连接大量数，可能会导致内存泄漏，引起数据库崩溃。</p>
+<h1 id="连接池技术优点："><a href="#连接池技术优点：" class="headerlink" title="连接池技术优点："></a><strong>连接池技术优点：</strong></h1><p>\1. 资源重用。由于数据库连接得以重用，避免了频繁创建，释放连接引起的大量性能开销。</p>
+<p>\2. 更快的系统反应速度。避免了数据库连接初始化和 释放过程的时间开销，从而减少了系统的响应时间 </p>
+<p>\3. 新的资源分配手段。避免某一应用独占所有的数据库资源 </p>
+<p>\4. 统一的连接管理，避免数据库连接泄漏 在较为完善的数据库连接池实现中，可根据预先的占用超时设定，强制回收被占用连接，从而避免 了常规数据库连接操作中可能出现的资源泄露</p>
+<h1 id="JDBC-的数据库连接池"><a href="#JDBC-的数据库连接池" class="headerlink" title="JDBC 的数据库连接池"></a><strong>JDBC</strong> <strong>的数据库连接池</strong></h1><p><strong>使用</strong> <strong>javax.sql.DataSource</strong> <strong>来表示：</strong></p>
+<p>DataSource 只是一个接口，该接口通 常由服务器(Weblogic, WebSphere, Tomcat)提供实现；</p>
+<p>DataSource 通常被称为数据源，它包含连接池和连接池管理两个部分，习惯上也经常把 DataSource 称为连接池 </p>
+<p>DataSource用来取代DriverManager来获取Connection，获取速度快，同时可以大幅度提高数 据库访问速度。</p>
+<h2 id="开源组织："><a href="#开源组织：" class="headerlink" title="开源组织："></a><strong>开源组织：</strong></h2><p>1、DBCP 是Apache提供的数据库连接池。tomcat 服务器自带dbcp数据库连接池。速度相对 c3p0较快，但因自身存在BUG，Hibernate3已不再提供支持。 </p>
+<p>2、C3P0 是一个开源组织提供的一个数据库连接池，速度相对较慢，稳定性还可以。hibernate 官方推荐使用 </p>
+<p>3、Proxool 是sourceforge下的一个开源项目数据库连接池，有监控连接池状态的功能，稳定性 较c3p0差一点 BoneCP 是一个开源组织提供的数据库连接池，速度快 </p>
+<p>4、Druid 是阿里提供的数据库连接池，据说是集DBCP 、C3P0 、Proxool 优点于一身的数据库 连接池，但是速度不确定是否有BoneCP快 </p>
+<h2 id="DBUtils简介："><a href="#DBUtils简介：" class="headerlink" title="DBUtils简介："></a><strong>DBUtils简介：</strong></h2><p><strong>API：</strong></p>
+<p>org.apache.commons.dbutils.QueryRunner </p>
+<p>org.apache.commons.dbutils.ResultSetHandler </p>
+<p>工具类：org.apache.commons.dbutils.DbUtils </p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207051516650.png" alt="image-20220705151622590"></p>
+<h2 id="QueryQunner类："><a href="#QueryQunner类：" class="headerlink" title="QueryQunner类："></a><strong>QueryQunner类：</strong></h2><p><strong>两个构造方法：一个默认的，另一个需要DataSource可以自己关闭该资源。</strong></p>
+<p><strong>主要方法：增删改查、批处理****batch</strong></p>
+<h2 id="ResultSetHandler接口："><a href="#ResultSetHandler接口：" class="headerlink" title="ResultSetHandler接口："></a><strong>ResultSetHandler接口：</strong></h2><p>只有一个单独的方法：</p>
+<p>Object handle (java.sql.ResultSet .rs)。 </p>
+<h3 id="实现类："><a href="#实现类：" class="headerlink" title="实现类："></a><strong>实现类：</strong></h3><p><strong>ArrayHandler</strong>：把结果集中的第一行数据转成对象数组。 </p>
+<p><strong>ArrayListHandler</strong>：把结果集中的每一行数据都转成一个数组，再存放到List中。 </p>
+<p><strong>BeanHandler</strong>：将结果集中的第一行数据封装到一个对应的JavaBean实例中。 </p>
+<p><strong>BeanListHandler</strong>：将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到 List里。 ColumnListHandler：将结果集中某一列的数据存放到List中。 </p>
+<p><strong>KeyedHandler</strong>(name)：将结果集中的每一行数据都封装到一个Map里，再把这些map再存 到一个map里，其key为指定的key。 </p>
+<p><strong>MapHandler</strong>：将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的 值。 MapListHandler：将结果集中的每一行数据都封装到一个Map里，然后再存放到List </p>
+<p><strong>ScalarHandler</strong>：查询单个值对象</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>JDBC</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>批处理和事务处理</title>
+    <url>/2022/07/05/JAVA/JDBC/%E6%89%B9%E5%A4%84%E7%90%86%E5%92%8C%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="batch（批处理三种方法）"><a href="#batch（批处理三种方法）" class="headerlink" title="batch（批处理三种方法）"></a>batch（批处理三种方法）</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207051351159.png" alt="image-20220705135104064"></p>
+<h1 id="添加事务方法"><a href="#添加事务方法" class="headerlink" title="添加事务方法"></a>添加事务方法</h1><p>Connection对象setAutoCommit（false）：设置为手动提交。使用commit（）和rollback（）方法。提交和回滚</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207051354254.png" alt="image-20220705135422133"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>JDBC</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Blob类型传输</title>
     <url>/2022/07/05/JAVA/JDBC/Blob%E7%B1%BB%E5%9E%8B%E4%BC%A0%E8%BE%93/</url>
     <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207051023703.png" alt="image-20220705102350652"></p>
@@ -3313,53 +3382,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Object类</title>
-    <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Object类：（lang包）"><a href="#Object类：（lang包）" class="headerlink" title="Object类：（lang包）"></a>Object类：（<strong>lang</strong>包）</h1><p>1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。</p>
-<p>里面：静态方法；因此也不能继承。是所有类的父类（超类）。</p>
-<h2 id="Object-类的常用方法"><a href="#Object-类的常用方法" class="headerlink" title="Object 类的常用方法"></a><strong>Object 类的常用方法</strong></h2><p><strong>方法说明：</strong> </p>
-<ul>
-<li><p>Object clone()    创建与该对象的类相同的新对象（复制作用）</p>
-</li>
-<li><p>boolean equals(Object)  比较两对象是否相等（对象非空|数据类型一致）默认比较地址</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">this</span>==o)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(o==<span class="literal">null</span>||getClass()!=o.getClass())<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">Object1 object1=(Object1)o;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Objects.equals(name , object1.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>String toString()  返回该对象的字符串表示</li>
-</ul>
-<p>​		由于toString方法返回的结果是内存地址，所以往往重写来输出想要的属性数据</p>
-<ul>
-<li><p>Class getClass()  返回一个对象运行时的实例类</p>
-</li>
-<li><p>int hashCode()  返回该对象的散列码值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;ABCDEa123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;ABCDFB123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//有的字符串hashcode值一样。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>void finalize()   当垃圾回收器确定不存在对该对象的更多引用时，对象垃圾回收器调用该方法</p>
-</li>
-<li><p>void notify()  激活等待在该对象的监视器上的一个线程</p>
-</li>
-<li><p>void notifyAll() 激活等待在该对象的监视器上的全部线程</p>
-</li>
-<li><p>void wait()  在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前，导致当前线程等待</p>
-</li>
-</ul>
-<h2 id="Objects类（util包）"><a href="#Objects类（util包）" class="headerlink" title="Objects类（util包）"></a>Objects类（util包）</h2><p>a、在JDK7添加了一个Objects工具类，它提供了一些方法来操作对象，它由一些静态的实用方法组成。</p>
-<p>b、这些方法解决了Object类的空指针问题。在比较两个对象的时候，Object的equals方法容易抛出空指针异常，而Objects类中的equals方法就优化了这个问题。</p>
-<p>eg：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object a, Object b)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (a == b) || (a != <span class="literal">null</span> &amp;&amp; a.equals(b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注：其实可以重写的时候在即添加对象为空的判断即可。</p>
-<p>4、String类中的equals方法是用来判断两个对象的内容是否相同，</p>
-<p>而Object 类中的equals方法是用来判断两个对象是否是同一个对象，<strong>所谓同一个对象指的是内存中的同一块存储空间。</strong></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>高级</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JAVA域</title>
     <url>/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
@@ -3404,6 +3426,53 @@
       <categories>
         <category>JAVA</category>
         <category>基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Object类</title>
+    <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Object类：（lang包）"><a href="#Object类：（lang包）" class="headerlink" title="Object类：（lang包）"></a>Object类：（<strong>lang</strong>包）</h1><p>1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。</p>
+<p>里面：静态方法；因此也不能继承。是所有类的父类（超类）。</p>
+<h2 id="Object-类的常用方法"><a href="#Object-类的常用方法" class="headerlink" title="Object 类的常用方法"></a><strong>Object 类的常用方法</strong></h2><p><strong>方法说明：</strong> </p>
+<ul>
+<li><p>Object clone()    创建与该对象的类相同的新对象（复制作用）</p>
+</li>
+<li><p>boolean equals(Object)  比较两对象是否相等（对象非空|数据类型一致）默认比较地址</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">this</span>==o)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(o==<span class="literal">null</span>||getClass()!=o.getClass())<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">Object1 object1=(Object1)o;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Objects.equals(name , object1.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String toString()  返回该对象的字符串表示</li>
+</ul>
+<p>​		由于toString方法返回的结果是内存地址，所以往往重写来输出想要的属性数据</p>
+<ul>
+<li><p>Class getClass()  返回一个对象运行时的实例类</p>
+</li>
+<li><p>int hashCode()  返回该对象的散列码值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;ABCDEa123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;ABCDFB123abc&quot;</span>.hashCode()); <span class="comment">// 165374702</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//有的字符串hashcode值一样。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>void finalize()   当垃圾回收器确定不存在对该对象的更多引用时，对象垃圾回收器调用该方法</p>
+</li>
+<li><p>void notify()  激活等待在该对象的监视器上的一个线程</p>
+</li>
+<li><p>void notifyAll() 激活等待在该对象的监视器上的全部线程</p>
+</li>
+<li><p>void wait()  在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前，导致当前线程等待</p>
+</li>
+</ul>
+<h2 id="Objects类（util包）"><a href="#Objects类（util包）" class="headerlink" title="Objects类（util包）"></a>Objects类（util包）</h2><p>a、在JDK7添加了一个Objects工具类，它提供了一些方法来操作对象，它由一些静态的实用方法组成。</p>
+<p>b、这些方法解决了Object类的空指针问题。在比较两个对象的时候，Object的equals方法容易抛出空指针异常，而Objects类中的equals方法就优化了这个问题。</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object a, Object b)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (a == b) || (a != <span class="literal">null</span> &amp;&amp; a.equals(b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注：其实可以重写的时候在即添加对象为空的判断即可。</p>
+<p>4、String类中的equals方法是用来判断两个对象的内容是否相同，</p>
+<p>而Object 类中的equals方法是用来判断两个对象是否是同一个对象，<strong>所谓同一个对象指的是内存中的同一块存储空间。</strong></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
       </categories>
   </entry>
   <entry>
