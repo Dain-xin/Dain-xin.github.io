@@ -108,7 +108,7 @@ deploy:
   type: git
   repo:
     github: git@github.com:Dain-xin/Dain-xin.github.io.git
-    gitee: https://gitee.com/Dainx/Dainx
+    # gitee: https://gitee.com/Dainx/Dainx
   branch: master
 
 search:
