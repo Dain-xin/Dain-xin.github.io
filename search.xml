@@ -20,6 +20,84 @@
       </tags>
   </entry>
   <entry>
+    <title>RabbitMQ架构和消息分发机制</title>
+    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133.png" alt="image-20220710104032042"></p>
+]]></content>
+      <categories>
+        <category>中间键</category>
+        <category>消息中间键</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>分布式和消息中间键</title>
+    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/%E5%88%86%E5%B8%83%E5%BC%8F%E5%92%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="分布式总览"><a href="#分布式总览" class="headerlink" title="分布式总览"></a>分布式总览</h1><p>分布式微服务架构的发展，主要经历了四个阶段：单一应用架构、垂直应用架构、分布式架构和弹性 SOA 架 构。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207090758762.png" alt="image-20220709075815654"></p>
+<p>远程通信调用（统称）：RPC（基于TCP和IP协议）</p>
+<p>垂直应用架构：⼤系统拆分成了多个⼦系统，但是不能负载均衡。</p>
+<p>SOA架构：重复的功能浪费资源，需要把这些重复的功能单独抽离 出来单独部署”baseService“…</p>
+<p><strong>高可用</strong>：高吞吐（QBS：每秒请求的数量）、高可用（容错性，请求成功率）、高并发（系统最大请求数量）、可伸缩（更侧重于系统的水平伸缩，通过廉价的服务器实现分布式计算）、可拓展（松耦合）、低延时（请求响应时间）。</p>
+<p>服务协调：Zookeeper、Nacos</p>
+<p>消息中间键：RabbitMQ、Kafka、RockMQ</p>
+<p>NoSQL：Redis、MongoDB</p>
+<p>任务调度：ElaStic-job</p>
+<p>数据存储：MyCat（分库分表）为了实现分布式环境下的数据分片存储和一致性</p>
+<p>负载均衡：Nginx（平衡资源分配）</p>
+<p>日志（管理所有分布式的所有日志）：elk（主要日志监控）</p>
+<p>通信：Netty、Socket</p>
+<p>文件存储：OSS（阿里云存储）</p>
+<p>内容分发：CDN（内容分发网络，降低网络延时，提升速度）</p>
+<p>容器技术：Docker（为了提升硬件资源的利用效率，解决环境差异和组件依赖带来的部署问题，需要容器化技术）</p>
+<h1 id="消息中间件"><a href="#消息中间件" class="headerlink" title="消息中间件"></a>消息中间件</h1><h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>具有接受请求，保存数据，发送数据等功能的网络应用。</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>分布式不同微服务的异步通信。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>提高开发难度和运维成本、降低系统可用性和复杂性。</p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>异步处理、应用解耦（生产者和消费者直接无需关心业务是否正常，只需要关系MQ服务器，做好发送和监听即可）、流量削峰、广播通信（一对多通信）</p>
+<h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a><strong>异步通信</strong></h2><p>当一个异步过程调用发出后，调用者不会马上得到结果。而是在调用发出后，被调用者通过状态、通知来通知调用者， 或通过回调函数处理这个调用。</p>
+<p>异步通信不需要客户端等待，可以减少客服端性能消耗，大大地提升用户体验。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091432993.png" alt="image-20220709143206922"></p>
+<h2 id="MQ组成"><a href="#MQ组成" class="headerlink" title="MQ组成"></a>MQ组成</h2><p><strong>三个部分组成：生产者、消息服务端和消费者。</strong> </p>
+<blockquote>
+<p>生产者（Producer），是生产消息的一端，相当于消息的发起方，主要负责载业务信息的消息的创建。 </p>
+<p>消息服务端（Server），是处理消息的单元，本质就是用来创建和保存消息队列，它主要负责消息 的存储、投递以及跟消息队列相关的附加功能。消息服务端是整个消息队列最核心的组成部分。 </p>
+<p>消费者（Consumer），是消费消息的一端，主要是根据消息所承载的信息去处理各种业务逻辑。</p>
+</blockquote>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>数据量大、吞吐量要求比较高的场景一般采用 Kafka； 对消息可靠性要求很高，甚至要求支持事务的场景，比如金融互联网，可以选择 RocketMQ； 对于中小型公司来说， 可以选择 RabbitMQ，它利用 erlang 语言本身的并发优势，性能好 在微秒级。 而 Pulsar 近两年开始流行起来了，它是下一代云原生分布式消息流平台，可以集消息、存储、轻量化函 数式计算为一体。</p>
+<h2 id="五大核心"><a href="#五大核心" class="headerlink" title="五大核心"></a>五大核心</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>计算机之间通信需要遵从的约定，是一种规范。</p>
+<p>问题：</p>
+<p>消息中间键为什莫不用TCP、HTTP、RPC、WebService？</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091427504.png" alt="image-20220709142709376"></p>
+<p>常用AMQP、</p>
+<h4 id="AMQP协议"><a href="#AMQP协议" class="headerlink" title="AMQP协议"></a>AMQP协议</h4><p>AMQP（Advanced Message Queuing Protocol）是高级消息队列协议。</p>
+<p>特性：事务支持、持久化支持，出生金融行业，在可靠性消息处理上具备天然的优势。 </p>
+<p>应用：RabbitMQ、ActiveMQ、</p>
+<h4 id="MQTT-协议"><a href="#MQTT-协议" class="headerlink" title="MQTT 协议"></a>MQTT 协议</h4><p>MQTT（Message Queuing Telemetry Transport）消息队列遥测传输是 IBM 开发的一个即时通讯协议， 物联网系统架构中的重要组成部分。 </p>
+<p>特性：轻量、结构简单、传输快、没有事务支持、没有持久化相关设计。 </p>
+<p>应用：RabbitMQ、ActiveMQ </p>
+<h4 id="Open-Message-协议"><a href="#Open-Message-协议" class="headerlink" title="Open Message 协议"></a>Open Message 协议</h4><p>Open Messaging分布 式消息中间件、流处理领域的应用开发标准。 </p>
+<p>特性：结构简单、解析快、有事务设计、有持久化设计 </p>
+<p>应用：RocketMQ	</p>
+<h4 id="Kafka-协议"><a href="#Kafka-协议" class="headerlink" title="Kafka 协议"></a>Kafka 协议</h4><p>Kafka 协议是基于 TCP 的二进制协议。消息内部是通过长度来分隔，由一些基本数据类型组成。</p>
+<p> 特性：结构简单、解析快、无事务设计、有持久化设计 </p>
+<p>应用：Kafka </p>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><p>保证数据可以保存进磁盘，是数据永久化。</p>
+<p><strong>刷盘的过程就是消息持久化</strong></p>
+<h3 id="消息分发"><a href="#消息分发" class="headerlink" title="消息分发"></a>消息分发</h3><p>分发机制和分发方法。</p>
+<p>目的：发布订阅、轮询分发、公平分发、重发、消息拉取。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091757793.png" alt="image-20220709175724716"></p>
+<h3 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h3><p>一台服务器无法满足业务需求：需要集群加负载完成高可用。</p>
+<p>主从集群：如果解决突发问题使用分片（在多个副本里保存数据副本）；多主集群；</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091804173.png" alt="image-20220709180444104"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207100935651.png" alt="image-20220710093506568"></p>
+<h3 id="高可靠"><a href="#高可靠" class="headerlink" title="高可靠"></a>高可靠</h3><p>系统无故障的持续运行。一个系统不崩溃、不报错就是高可靠。</p>
+<p>消息中间键：消息传输可靠（通过协议保证系统解析准确性）；消息储存可靠（持久化）。</p>
+]]></content>
+      <categories>
+        <category>中间键</category>
+        <category>消息中间键</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据结构核心</title>
     <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%B8%E5%BF%83/</url>
     <content><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a><strong>数组</strong></h1><blockquote>
@@ -80,13 +158,73 @@
 <li>性质2:根节点永远是黑色的。</li>
 <li>性质3:所有的叶子节点都是空节点(即null)，并且是黑色的。</li>
 <li>性质4:每个红色节点的两个子节点都是黑色。(<strong>从每个叶子到根的路径上不会有两个连续的红色节点</strong>。)</li>
-<li>性质5:从任一节点到其子树中每个叶子节点的路径都包含相同数量的黑色节点。</li>
+<li>性质5:从任一节点到其子树中每个叶子节点的路径都包含<strong>相同数量的黑色节点</strong>。</li>
 </ul>
-<p> 3、由于红黑树只是一个特殊的排序二叉树，因此对红黑树上的只读操作与普通排序二叉树上的只读操作完全相同，只是红黑树保持了大致平衡，因此检索性能更好。</p>
-<p>4、但在红黑树上进行插入操作和删除操作会导致树不再符合红黑树的特征，因此插入操作和删除操作都需要进行一定的维护，以保证插入节点、删除节点后的树依然是红黑树。</p>
+<p> 3、由于红黑树只是一个特殊的排序二叉树，因此对红黑树上的只读操作与普通排序二叉树上的只读操作完全相同，只是红黑树保持了大致平衡，因此检索性能更好。但在红黑树上进行插入操作和删除操作会导致树不再符合红黑树的特征，因此插入操作和删除操作都需要进行一定的维护，以保证插入节点、删除节点后的树依然是红黑树。</p>
+<p><strong>红黑树能自平衡，它靠的是什么？</strong></p>
+<p>三种操作：左旋、右旋和变色。</p>
+<ul>
+<li><strong>左旋</strong>：以某个结点作为支点(旋转结点)，其右子结点变为旋转结点的父结点，右子结点的左子结点变为旋转结点的右子结点，左子结点保持不变。如图3。</li>
+<li><strong>右旋</strong>：以某个结点作为支点(旋转结点)，其左子结点变为旋转结点的父结点，左子结点的右子结点变为旋转结点的左子结点，右子结点保持不变。如图4。</li>
+<li><strong>变色</strong>：结点的颜色由红变黑或由黑变红。</li>
+</ul>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080849234.png" alt="image-20220707185716475"></p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><ol>
+<li>从根结点开始查找，把根结点设置为当前结点；</li>
+<li>若当前结点为空，返回null；</li>
+<li>若当前结点不为空，用当前结点的key跟查找key作比较；</li>
+<li>若当前结点key等于查找key，那么该key就是查找目标，返回当前结点；</li>
+<li>若当前结点key大于查找key，把当前结点的左子结点设置为当前结点，重复步骤2；</li>
+<li>若当前结点key小于查找key，把当前结点的右子结点设置为当前结点，重复步骤2；</li>
+</ol>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080849904.png" alt="image-20220708084749928"></p>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><ol>
+<li>从根结点开始查找；</li>
+<li>若根结点为空，那么插入结点作为根结点，结束。</li>
+<li>若根结点不为空，那么把根结点作为当前结点；</li>
+<li>若当前结点为null，返回当前结点的父结点，结束。</li>
+<li>若当前结点key等于查找key，那么该key所在结点就是插入结点，更新结点的值，结束。</li>
+<li>若当前结点key大于查找key，把当前结点的左子结点设置为当前结点，重复步骤；</li>
+<li>若当前结点key小于查找key，把当前结点的右子结点设置为当前结点，重复步骤；</li>
+</ol>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080854303.webp" alt="2392382-7521866b50683a24"></p>
+<p>插入位置已经找到，把插入结点放到正确的位置就可以啦，但插入结点是应该是<strong>红色</strong>。</p>
+<p><strong>理由：</strong></p>
+<p>红色在父结点（如果存在）为黑色结点时，红黑树的黑色平衡没被破坏，不需要做自平衡操作。</p>
+<p>但如果插入结点是黑色，那么插入位置所在的子树黑色结点总是多1，必须做自平衡。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080921023.png" alt="image-20220708092123922"></p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207061437752.jpg" alt="1"></p>
+<p><strong>插入情景4.1：叔叔结点存在并且为红结点</strong><br> 从红黑树性质4可以，祖父结点肯定为黑结点，因为不可以同时存在两个相连的红结点。那么此时该插入子树的红黑层数的情况是：黑红红。显然最简单的处理方式是把其改为：红黑红。如图9和图10所示。</p>
+<p><strong>处理：</strong></p>
+<ul>
+<li><strong>将P和S设置为黑色</strong></li>
+<li><strong>将PP设置为红色</strong></li>
+<li><strong>把PP设置为当前插入结点</strong></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/2392382-9f2c746bf0769f49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/656/format/webp" alt="img"></p>
+<hr>
+<p><strong>插入情景4.2.1：插入结点是其父结点的左子结点</strong><br><strong>处理：</strong></p>
+<ul>
+<li><strong>将P设为黑色</strong></li>
+<li><strong>将PP设为红色</strong></li>
+<li><strong>对PP进行右旋</strong></li>
+</ul>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080949274.webp" alt="img"></p>
+<p><strong>插入情景4.2.2：插入结点是其父结点的右子结点</strong></p>
+<p><strong>处理：</strong></p>
+<ul>
+<li><strong>对P进行左旋</strong></li>
+<li><strong>把P设置为插入结点，得到情景4.2.1</strong></li>
+<li><strong>进行情景4.2.1的处理</strong></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/2392382-fbfc4f299941cb8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1024/format/webp" alt="img"></p>
+<p>4.2与4.3类似。</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>红黑树的删除操作也包括两部分工作：</p>
+<p>一查找目标结点；而删除后自平衡。查找目标结点显然可以复用查找操作，当不存在目标结点时，忽略本次操作；当存在目标结点时，删除后就得做自平衡处理了。</p>
+<p>删除了结点后我们还需要找结点来替代删除结点的位置，不然子树跟父辈结点断开了，除非删除结点刚好没子结点，那么就不需要替代。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207080956407.png" alt="image-20220708095658305"></p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207061437837.jpg" alt="2"></p>
-]]></content>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
@@ -6038,53 +6176,6 @@
       </categories>
   </entry>
   <entry>
-    <title>JAVA域</title>
-    <url>/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
-<p>域的定义：定义类的 <strong>静态属性</strong>。</p>
-<p>域必须在类体中直接定义，不能包含在方法定义中。</p>
-<p>域定义的格式如下：</p>
-<p>   <strong>[修饰符]  类型名  域名；</strong></p>
-<p><strong>注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合；</strong></p>
-<p>​    <strong>public、protected、private表示域的访问权限；</strong></p>
-<p>​     <strong>final表示域为常量，无法改变；</strong></p>
-<p>​     <strong>static说明定义的变量是静态变量；</strong></p>
-<p>​     <strong>transient说明变量为一个临时的变量；</strong></p>
-<p>​     <strong>volatile修饰的变量用在多线程程序中，用来说明备份变量。</strong></p>
-<h2 id="静态域："><a href="#静态域：" class="headerlink" title="静态域："></a><strong>静态域：</strong></h2><p>被static修饰的域成为 <strong>静态域（类域、类变量）</strong> 。</p>
-<p>例如： static int n &#x3D; 18;</p>
-<p><strong>静态域</strong> 是属于整个类的成员变量，存储在类的内存区的 <strong>公共存储单元</strong> 中。（ 也就是说 <strong>任何该类的对象都可以访问它</strong> ，而且访问它得到的都是 <strong>相同的值</strong> ， <strong>如果某一个对象修改它的值，所有对象的值都会一起改变！</strong> )</p>
-<p><strong>注意：这里说的是静态域，静态域，用static修饰的静态域不要和其他域混淆!</strong></p>
-<p>而 <strong>没有被static修饰的域，在不同的对象中，都拥有独立的内存地址，也就是说每一个对象的域值都是不一样的！一定要和静态域相区别！</strong></p>
-<p>静态域可以用过 <strong>类名直接访问</strong> ，也可以用对象来引用。</p>
-<h3 id="静态类的初始化器"><a href="#静态类的初始化器" class="headerlink" title="静态类的初始化器"></a>静态类的初始化器</h3><p>静态类 <strong>不属于某个具体的对象，而是整个类的域</strong> ，所以它的初始化通过 <strong>静态初始化器</strong> 来实现。</p>
-<p>静态初始化器是由关键字static和一对大括号组成的复合语句，目的是对 <strong>类域</strong> 进行初始化。</p>
-<p>静态初始化在所属类被加载到内存时进行。</p>
-<h3 id="静态类的初始化器和构造方法的区别："><a href="#静态类的初始化器和构造方法的区别：" class="headerlink" title="静态类的初始化器和构造方法的区别："></a>静态类的初始化器和构造方法的区别：</h3><ol>
-<li>静态初始化器只能对静态域进行初始化，它不能访问非静态域。</li>
-<li>静态初始化器由关键字static和复合语句组成，静态类的初始值由程序确定好；</li>
-<li>构造方法是一个特殊的方法，它有参数，程序运行时，可以从外部接收数据，将域初始化为不同的值。</li>
-<li>静态初始化器是对类自身进行初始化；而构造方法是对对象进行初始化。</li>
-<li>静态初始化器是在类加载入内存的时候，由系统自动调用进行的；而构造方法实在使用关键字new创建对象时，由系统自动执行，关键字new后面跟的是构造方法。</li>
-</ol>
-<h2 id="最终域："><a href="#最终域：" class="headerlink" title="最终域："></a>最终域：</h2><p>用关键字final修饰的域称为 <strong>最终域</strong> 。</p>
-<p>final修饰的域的取值在程序执行的过程中 <strong>将不会改变</strong> 。（final修饰的变量也如此一旦被赋值就无法被改变）</p>
-<p>例子:”java.lang”包中定义的圆周率PI就是一个最终域。可以表示为“Math.PI”</p>
-<p>注：由于最终域的值固定不变，为了节省空间， <strong>最终域一般用static修饰，为静态最终域</strong>。</p>
-<p>另：</p>
-<p>  由final修饰的方法为最终方法：方法的功能确定，不能被子类中的相同方法覆盖，这样能保证方法实现的一致性。</p>
-<p>  final修饰的类：该类为最终类，不能派生子类，它的内容、属性和方法实现固定不变，与类名形成稳定的映射关系，保证功能实现的准确性。</p>
-<p>​    常见的最终类：例如：System类和InetAddress类、Socket类等。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>域就是定义类的静态属性；分为静态域和最终域。</p>
-<p>最终域不会被改变但是静态域就是一份公共存储空间；</p>
-<p>静态域可以类名调用也可以对象调用，static修饰的static分为静态方法；静态变量；静态域。</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>基础</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Object类</title>
     <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="Object类：（lang包）"><a href="#Object类：（lang包）" class="headerlink" title="Object类：（lang包）"></a>Object类：（<strong>lang</strong>包）</h1><p>1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。</p>
@@ -6129,6 +6220,53 @@
       <categories>
         <category>JAVA</category>
         <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JAVA域</title>
+    <url>/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
+<p>域的定义：定义类的 <strong>静态属性</strong>。</p>
+<p>域必须在类体中直接定义，不能包含在方法定义中。</p>
+<p>域定义的格式如下：</p>
+<p>   <strong>[修饰符]  类型名  域名；</strong></p>
+<p><strong>注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合；</strong></p>
+<p>​    <strong>public、protected、private表示域的访问权限；</strong></p>
+<p>​     <strong>final表示域为常量，无法改变；</strong></p>
+<p>​     <strong>static说明定义的变量是静态变量；</strong></p>
+<p>​     <strong>transient说明变量为一个临时的变量；</strong></p>
+<p>​     <strong>volatile修饰的变量用在多线程程序中，用来说明备份变量。</strong></p>
+<h2 id="静态域："><a href="#静态域：" class="headerlink" title="静态域："></a><strong>静态域：</strong></h2><p>被static修饰的域成为 <strong>静态域（类域、类变量）</strong> 。</p>
+<p>例如： static int n &#x3D; 18;</p>
+<p><strong>静态域</strong> 是属于整个类的成员变量，存储在类的内存区的 <strong>公共存储单元</strong> 中。（ 也就是说 <strong>任何该类的对象都可以访问它</strong> ，而且访问它得到的都是 <strong>相同的值</strong> ， <strong>如果某一个对象修改它的值，所有对象的值都会一起改变！</strong> )</p>
+<p><strong>注意：这里说的是静态域，静态域，用static修饰的静态域不要和其他域混淆!</strong></p>
+<p>而 <strong>没有被static修饰的域，在不同的对象中，都拥有独立的内存地址，也就是说每一个对象的域值都是不一样的！一定要和静态域相区别！</strong></p>
+<p>静态域可以用过 <strong>类名直接访问</strong> ，也可以用对象来引用。</p>
+<h3 id="静态类的初始化器"><a href="#静态类的初始化器" class="headerlink" title="静态类的初始化器"></a>静态类的初始化器</h3><p>静态类 <strong>不属于某个具体的对象，而是整个类的域</strong> ，所以它的初始化通过 <strong>静态初始化器</strong> 来实现。</p>
+<p>静态初始化器是由关键字static和一对大括号组成的复合语句，目的是对 <strong>类域</strong> 进行初始化。</p>
+<p>静态初始化在所属类被加载到内存时进行。</p>
+<h3 id="静态类的初始化器和构造方法的区别："><a href="#静态类的初始化器和构造方法的区别：" class="headerlink" title="静态类的初始化器和构造方法的区别："></a>静态类的初始化器和构造方法的区别：</h3><ol>
+<li>静态初始化器只能对静态域进行初始化，它不能访问非静态域。</li>
+<li>静态初始化器由关键字static和复合语句组成，静态类的初始值由程序确定好；</li>
+<li>构造方法是一个特殊的方法，它有参数，程序运行时，可以从外部接收数据，将域初始化为不同的值。</li>
+<li>静态初始化器是对类自身进行初始化；而构造方法是对对象进行初始化。</li>
+<li>静态初始化器是在类加载入内存的时候，由系统自动调用进行的；而构造方法实在使用关键字new创建对象时，由系统自动执行，关键字new后面跟的是构造方法。</li>
+</ol>
+<h2 id="最终域："><a href="#最终域：" class="headerlink" title="最终域："></a>最终域：</h2><p>用关键字final修饰的域称为 <strong>最终域</strong> 。</p>
+<p>final修饰的域的取值在程序执行的过程中 <strong>将不会改变</strong> 。（final修饰的变量也如此一旦被赋值就无法被改变）</p>
+<p>例子:”java.lang”包中定义的圆周率PI就是一个最终域。可以表示为“Math.PI”</p>
+<p>注：由于最终域的值固定不变，为了节省空间， <strong>最终域一般用static修饰，为静态最终域</strong>。</p>
+<p>另：</p>
+<p>  由final修饰的方法为最终方法：方法的功能确定，不能被子类中的相同方法覆盖，这样能保证方法实现的一致性。</p>
+<p>  final修饰的类：该类为最终类，不能派生子类，它的内容、属性和方法实现固定不变，与类名形成稳定的映射关系，保证功能实现的准确性。</p>
+<p>​    常见的最终类：例如：System类和InetAddress类、Socket类等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>域就是定义类的静态属性；分为静态域和最终域。</p>
+<p>最终域不会被改变但是静态域就是一份公共存储空间；</p>
+<p>静态域可以类名调用也可以对象调用，static修饰的static分为静态方法；静态变量；静态域。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
       </categories>
   </entry>
   <entry>
@@ -7988,7 +8126,6 @@
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205252106881.png" alt="image-20220525210640723"></p>
 <p>链路追踪：我们进行一次服务调用，但是无法发现我们的服务调用的路径（网关、服务提供、服务消费、其他微服务）可以排查我们的服务出错的位置。</p>
 <p>zipkin+Selush、skywalking</p>
-<p>9：30</p>
 <p>Nacos服务注册</p>
 <p>本质上就是：Post类型请求类型的http请求</p>
 <p>Nacos中有一个接受request的register方法，把我们的请求中的信息封装起来。</p>
@@ -7997,7 +8134,6 @@
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202205262040939.png" alt="image-20220526204011740"></p>
 <p>Nacos为了确保我们的服务是否还在线，就用了一个心跳机制。</p>
 <p>OpenFeign：服务调用，设计思想。</p>
-<p>9：00</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
