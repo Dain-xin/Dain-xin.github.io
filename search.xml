@@ -22,8 +22,11 @@
   <entry>
     <title>RabbitMQ架构和消息分发机制</title>
     <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133.png" alt="image-20220710104032042"></p>
-]]></content>
+    <content><![CDATA[<p>Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。</p>
+<p>国内的绝大部分大厂都在用 RabbitMQ，包括头条，美团，滴滴（TMD），去哪儿， 艺龙，淘宝也有用。 </p>
+<p>RabbitMQ 和 Spring 家族属于同一家公司：Pivotal。 </p>
+<p>除了 AMQP 之外，RabbitMQ 支持多种协议，STOMP、MQTT、HTTP、 WebSockets</p>
+<h1 id="RabbitMQ架构原理"><a href="#RabbitMQ架构原理" class="headerlink" title="RabbitMQ架构原理"></a>RabbitMQ架构原理</h1>]]></content>
       <categories>
         <category>中间键</category>
         <category>消息中间键</category>
