@@ -12,4 +12,12 @@ cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133
 top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133.png'
 ---
 
-![image-20220710104032042](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133.png)
+Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。
+
+国内的绝大部分大厂都在用 RabbitMQ，包括头条，美团，滴滴（TMD），去哪儿， 艺龙，淘宝也有用。 
+
+RabbitMQ 和 Spring 家族属于同一家公司：Pivotal。 
+
+除了 AMQP 之外，RabbitMQ 支持多种协议，STOMP、MQTT、HTTP、 WebSockets
+
+# RabbitMQ架构原理
