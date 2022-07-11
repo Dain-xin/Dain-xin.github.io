@@ -1,5 +1,5 @@
 ---
-title: links
+title: 友情链接分享
 date: 2022-07-11 11:48:35
 type: "links"
 ---
@@ -82,15 +82,6 @@ type: "links"
                   <div class="info">努力学习的小菜鸟——Dain</div>
                </div>
             </div>
-            <div class="card">
-               <img class="ava" src="https://dainx.gitee.io/img/avatar.png" />
-               <div class="card-header">
-                  <div>
-                     <a href="https://github.com/Dain-xin/Dain-xin.github.io#readme/">博客地址</a>
-                  </div>
-                  <div class="info">努力学习的小菜鸟——Dain鸟</div>
-               </div>
-           </div>
             <div class="card">
                <img class="ava" src="https://img-blog.csdnimg.cn/20210614201246512.png" />
                <div class="card-header">

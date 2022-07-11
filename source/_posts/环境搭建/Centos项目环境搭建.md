@@ -88,12 +88,19 @@ docker run -itd --name dain-redis -p 6379:6379 redis
 
 ## Docker安装RabbitMQ
 
-[http://192.168.100.140:15672](http://192.168.100.140:15672/)
+[使用Docker部署RabbitMQ集群 - 腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1174667)
+
+地址：http://192.168.100.140:15672
 
 ```
 docker pull rabbitmq:management
 
 docker run -di --name=dain_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
+
+//集群部署
+docker run -d --hostname localhost --name myrabbit01 -p 15671:15672 -p 5671:5672 rabbitmq:management
+docker run -d --hostname localhost --name myrabbit02 -p 15672:15672 -p 5672:5672 rabbitmq:management
+docker run -d --hostname localhost --name myrabbit03 -p 15673:15672 -p 5673:5672 rabbitmq:management
 ```
 
 无需新建用户直接可以使用guest：guest登录
