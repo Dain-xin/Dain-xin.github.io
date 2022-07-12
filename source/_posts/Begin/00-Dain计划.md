@@ -39,7 +39,7 @@ top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/2022061917381
 <span><font color=red size=5>人生总计划</font></span>
 
 >- 工作：学好JAVA（主业两到三年15K）；辅助Python、前端、网站开发；
->- 她：符合我的审美价值、聊的来、可以做到相互理解、一起规划未来
+>- 她：符合我的价值、聊的来、可以做到相互理解
 >- 父母：健康、生活稳定
 >- 生活：简单，但是自由-自律，有目标，有追求
 >- 爱好：会影视剪辑；会钢琴；会口琴；会2D、3D设计
