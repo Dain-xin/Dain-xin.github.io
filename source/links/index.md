@@ -71,13 +71,13 @@ type: "links"
       <div class="links-content">
          <div class="link-navigation">
              <div align="center">
-          		<h2><font color=red>《学习和分享》</font></h2>
+          		<h2><font color=red>“学习-分享-工具”</font></h2>
       		 </div>
             <div class="card">
                <img class="ava" src="https://dainx.gitee.io/img/avatar.png" />
                <div class="card-header">
                   <div>
-                     <a href="https://dainx.gitee.io/">本博客Gitee快速浏览地址</a>
+                     <a href="https://dainx.gitee.io/">本博客Gitee地址</a>
                   </div>
                   <div class="info">努力学习的小菜鸟——Dain</div>
                </div>
@@ -88,7 +88,7 @@ type: "links"
                   <div>
                      <a href="https://programmercarl.com/">算法使用录</a>
                   </div>
-                  <div class="info">努力学习的小菜鸟——Dain</div>
+                  <div class="info">常用的算法使用教程</div>
                </div>
             </div>     
             <div class="card">
@@ -97,16 +97,88 @@ type: "links"
                   <div>
                      <a href="https://hollischuang.github.io/toBeTopJavaer/#/menu">JAVA成神之路</a>
                   </div>
-                  <div class="info">努力学习的小菜鸟——Dain</div>
+                  <div class="info">看看别人怎末学JAVA</div>
                </div>
            </div>    
            <div class="card">
-               <img class="ava" src="https://landscape.cncf.io/images/left-logo.svg" />
+               <img class="ava" src="https://landscape.cncf.io/favicon.png" />
                <div class="card-header">
                   <div>
                      <a href="https://landscape.cncf.io/">JAVA生态图：landscape</a>
                   </div>
-                  <div class="info">努力学习的小菜鸟——Dain鸟</div>
+                  <div class="info">菜鸟必备体系图</div>
+               </div>
+           </div>             
+           <div class="card">
+               <img class="ava" src="https://processon.com/favicon.ico" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://processon.com/">作图工具1：processon</a>
+                  </div>
+                  <div class="info">优质作图工具（推荐）</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://www.freedgo.com/favicon.ico" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://www.freedgo.com/">作图工具2：freedgo</a>
+                  </div>
+                  <div class="info">备用作图，不做推荐</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://www.docker.com/favicon.ico" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://www.docker.com/">Docker</a>
+                  </div>
+                  <div class="info">Docker容器官网</div>
+               </div>
+           </div>
+            <div class="card">
+               <img class="ava" src="https://www.enzounified.com/images/adapters/rabbitmq-icon.png" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://www.rabbitmq.com/">RabbitMQ</a>
+                  </div>
+                  <div class="info">RabbitMQ消息中间键官网</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://ps.gaoding.com/favicon.ico" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://ps.gaoding.com/">在线PS工具</a>
+                  </div>
+                  <div class="info">PS在线工具</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://jwglnew.hbpu.edu.cn/logo/favicon.ico?t=1657588032123/" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://jwglnew.hbpu.edu.cn/xtgl/login_slogin.html/">理工学院服务平台</a>
+                  </div>
+                  <div class="info">查成绩、论文、学生信息后台</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://static.lancdn.com/nav/images/logo.png" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://nav.wsoso.com/">蓝点IT网址导航</a>
+                  </div>
+                  <div class="info">网址导航用了都说好</div>
+               </div>
+           </div>
+           <div class="card">
+               <img class="ava" src="https://upload.shejihz.com/wp-content/uploads/2020/11/addebe41915beed7d42222251876235e.jpg_auto25xauto" />
+               <div class="card-header">
+                  <div>
+                     <a href="https://limestart.cn/">青柠起始页</a>
+                  </div>
+                  <div class="info">起始页用了都说好</div>
                </div>
            </div>
          <br>

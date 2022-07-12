@@ -12,6 +12,8 @@ cover: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133
 top_img: 'https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207101040133.png'
 ---
 
+# 简介
+
 Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。
 
 国内的绝大部分大厂都在用 RabbitMQ，包括头条，美团，滴滴（TMD），去哪儿， 艺龙，淘宝也有用。 
