@@ -98,9 +98,9 @@ docker pull rabbitmq:management
 docker run -di --name=dain_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
 
 //集群部署
-docker run -d --hostname localhost --name myrabbit01 -p 15671:15672 -p 5671:5672 rabbitmq:management
-docker run -d --hostname localhost --name myrabbit02 -p 15672:15672 -p 5672:5672 rabbitmq:management
-docker run -d --hostname localhost --name myrabbit03 -p 15673:15672 -p 5673:5672 rabbitmq:management
+docker run -d --hostname localhost --name myrabbit01 -p 15601:15672 -p 5601:5672 rabbitmq:management
+docker run -d --hostname localhost --name myrabbit02 -p 15602:15672 -p 5602:5672 rabbitmq:management
+docker run -d --hostname localhost --name myrabbit03 -p 15603:15672 -p 5603:5672 rabbitmq:management
 ```
 
 无需新建用户直接可以使用guest：guest登录
@@ -116,3 +116,36 @@ docker run -d --hostname localhost --name myrabbit03 -p 15673:15672 -p 5673:5672
 ![image-20220630142352787](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301423834.png)
 
 ![image-20220630142406784](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301424830.png)
+
+```
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec
+
+外网面板地址: http://117.155.26.175:40653/489457aa
+内网面板地址: http://192.168.100.140:40653/489457aa
+*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录
+username: r9h0jeos
+password: 0809d4fc
+If you cannot access the panel,
+release the following panel port [40653] in the security group
+若无法访问面板，请检查防火墙/安全组是否有放行面板[40653]端口
+
+systemctl stop firewalld
+
+
+//指定分辨率设置
+xrandr -s 1280x800
+
+192.168.100.141
+
+ifconfig -a
+
+IPADDR="192.168.100.141"
+NERMASK="255.255.255.0"
+#DNS1="192.168.0.1"
+GATEWAT="192.168.100.2"
+
+service network restart
+dhcp
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
+```
+
