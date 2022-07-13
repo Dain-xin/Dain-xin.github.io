@@ -26,7 +26,7 @@
 
 <h2 id="Markdown-内嵌-HTML-使用"><a href="#Markdown-内嵌-HTML-使用" class="headerlink" title="Markdown 内嵌 HTML 使用"></a>Markdown 内嵌 HTML 使用</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//使用语法</span><br><span class="line"><span class="tag">&lt;<span class="name">small</span>&gt;</span>比默认字体小一号<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">big</span>&gt;</span>比默认字体大一号<span class="tag">&lt;/<span class="name">big</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #D3D3D3&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">#DC143C</span>&gt;</span>默认字体，4号，使用十六进制表示颜色值<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">//实现上标、实现下标</span><br><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br><span class="line">//关于图片处理的技巧</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">256</span> <span class="attr">height</span>=<span class="string">256</span> <span class="attr">src</span>=<span class="string">&quot;地址&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;地址&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">256</span> <span class="attr">height</span>=<span class="string">256</span> <span class="attr">src</span>=<span class="string">&quot;地址&quot;</span> /&gt;</span></span><br><span class="line">图 1 图片下标注</span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line">//高亮文本</span><br><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>高亮文本<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br><span class="line"></span><br><span class="line">外网面板地址: http://117.155.26.175:40653/489457aa</span><br><span class="line">内网面板地址: http://192.168.100.140:40653/489457aa</span><br><span class="line">*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录</span><br><span class="line">username: r9h0jeos</span><br><span class="line">password: 0809d4fc</span><br><span class="line">If you cannot access the panel,</span><br><span class="line">release the following panel port [40653] in the security group</span><br><span class="line">若无法访问面板，请检查防火墙/安全组是否有放行面板[40653]端口</span><br><span class="line"></span><br><span class="line">//关闭防火墙</span><br><span class="line">systemctl stop firewalld</span><br><span class="line"></span><br><span class="line">//指定分辨率设置</span><br><span class="line">xrandr -s 1280x800</span><br><span class="line"></span><br><span class="line">//查看IP地址 192.168.100.141</span><br><span class="line">ifconfig -a</span><br><span class="line"></span><br><span class="line">//静态IP</span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line"></span><br><span class="line">IPADDR=&quot;192.168.100.141&quot;</span><br><span class="line">NERMASK=&quot;255.255.255.0&quot;</span><br><span class="line">DNS1=&quot;192.168.0.1&quot;</span><br><span class="line">GATEWAT=&quot;192.168.100.2&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br><span class="line"></span><br><span class="line">外网面板地址: http://117.155.26.175:40653/489457aa</span><br><span class="line">内网面板地址: http://192.168.100.140:40653/489457aa</span><br><span class="line">*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录</span><br><span class="line">username: r9h0jeos</span><br><span class="line">password: 0809d4fc</span><br><span class="line">If you cannot access the panel,</span><br><span class="line">release the following panel port [40653] in the security group</span><br><span class="line">若无法访问面板，请检查防火墙/安全组是否有放行面板[40653]端口</span><br><span class="line"></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//指定分辨率设置</span><br><span class="line">xrandr -s 1280x800</span><br><span class="line"></span><br><span class="line">192.168.100.141</span><br><span class="line"></span><br><span class="line">ifconfig -a</span><br><span class="line"></span><br><span class="line">IPADDR=&quot;192.168.100.141&quot;</span><br><span class="line">NERMASK=&quot;255.255.255.0&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">DNS1=<span class="string">&quot;192.168.0.1&quot;</span></span></span><br><span class="line">GATEWAT=&quot;192.168.100.2&quot;</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">dhcp/static</span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -109,24 +109,6 @@
       </tags>
   </entry>
   <entry>
-    <title>RabbitMQ架构和消息分发机制</title>
-    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。</p>
-<p>国内的绝大部分大厂都在用 RabbitMQ，包括头条，美团，滴滴（TMD），去哪儿， 艺龙，淘宝也有用。 </p>
-<p>RabbitMQ 和 Spring 家族属于同一家公司：Pivotal。 </p>
-<p>除了 AMQP 之外，RabbitMQ 支持多种协议，STOMP、MQTT、HTTP、 WebSockets</p>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>使用Docker部署，参考博客Centos项目搭建（本地搜索即可）</p>
-<h1 id="RabbitMQ架构原理"><a href="#RabbitMQ架构原理" class="headerlink" title="RabbitMQ架构原理"></a>RabbitMQ架构原理</h1><p>预览；连接；channels-通道；Exchanges-交换机；队列；用户。</p>
-<p>RabbitMQ 实现了 AMQP 协议，所以 RabbitMQ 的工作模型也是基于 AMQP 的。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207110933720.png" alt="image-20220711093357648"></p>
-<p>Broker主机：代理&#x2F;中介主机（RabbitMQ服务也就是Broker，作用就是存储、转发消息）</p>
-]]></content>
-      <categories>
-        <category>中间键</category>
-        <category>消息中间键</category>
-      </categories>
-  </entry>
-  <entry>
     <title>分布式和消息中间键</title>
     <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/%E5%88%86%E5%B8%83%E5%BC%8F%E5%92%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E9%94%AE/</url>
     <content><![CDATA[<h1 id="分布式总览"><a href="#分布式总览" class="headerlink" title="分布式总览"></a>分布式总览</h1><p>分布式微服务架构的发展，主要经历了四个阶段：单一应用架构、垂直应用架构、分布式架构和弹性 SOA 架 构。</p>
@@ -189,6 +171,48 @@
 <h3 id="高可靠"><a href="#高可靠" class="headerlink" title="高可靠"></a>高可靠</h3><p>系统无故障的持续运行。一个系统不崩溃、不报错就是高可靠。</p>
 <p>消息中间键：消息传输可靠（通过协议保证系统解析准确性）；消息储存可靠（持久化）。</p>
 ]]></content>
+      <categories>
+        <category>中间键</category>
+        <category>消息中间键</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>RabbitMQ架构和消息分发机制</title>
+    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。</p>
+<p>国内的绝大部分大厂都在用 RabbitMQ，包括头条，美团，滴滴（TMD），去哪儿， 艺龙，淘宝也有用。 </p>
+<p>RabbitMQ 和 Spring 家族属于同一家公司：Pivotal。 </p>
+<p>除了 AMQP 之外，RabbitMQ 支持多种协议，STOMP、MQTT、HTTP、 WebSockets</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>使用Docker部署，参考博客Centos项目搭建（本地搜索即可）</p>
+<h1 id="RabbitMQ架构原理"><a href="#RabbitMQ架构原理" class="headerlink" title="RabbitMQ架构原理"></a>RabbitMQ架构原理</h1><p>预览；连接；channels-通道；Exchanges-交换机；队列；用户。</p>
+<p>RabbitMQ 实现了 AMQP 协议，所以 RabbitMQ 的工作模型也是基于 AMQP 的。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207110933720.png" alt="image-20220711093357648"></p>
+<h2 id="Broker-主机"><a href="#Broker-主机" class="headerlink" title="Broker 主机"></a><strong>Broker 主机</strong></h2><p>代理&#x2F;中介主机（RabbitMQ服务也就是Broker，作用就是存储、转发消息）</p>
+<h2 id="Connection-连接"><a href="#Connection-连接" class="headerlink" title="Connection 连接"></a><strong>Connection 连接</strong></h2><p>无论是生产者发送消息，还是消费者接收消息，都必须要跟 Broker 之间建立一个 连接，这个连接是一个 TCP 的长连接。</p>
+<h2 id="Channel-通道"><a href="#Channel-通道" class="headerlink" title="Channel 通道"></a><strong>Channel 通道</strong></h2><p>AMQP 里面引入了 Channel 的概念，它是一个虚拟的连接。我们把它翻 译成通道，或者消息信道。这样我们就可以在保持的 TCP 长连接里面去创建和释放 Channel，大大了减少了资源消耗。</p>
+<p>Channel 是 RabbitMQ 原生 API 里面的最重要的编程接 口，也就是说我们定义交换机、队列、绑定关系，发送消息，消费消息，调用的都是 Channel 接口上的方法。</p>
+<h2 id="Queue-队列"><a href="#Queue-队列" class="headerlink" title="Queue 队列"></a><strong>Queue 队列</strong></h2><p>连接到 Broker 以后，就可以收发消息了。 在 Broker 上有一个对象用来存储消息，在 RabbitMQ 里面这个对象叫做 Queue。 </p>
+<p>实际上 RabbitMQ 是用数据库来存储消息的。</p>
+<p>CentOS 保存在&#x2F;var&#x2F;lib 目录下： &#x2F;var&#x2F;lib&#x2F;rabbitmq&#x2F;mnesia</p>
+<p><strong>队列也是生产者和消费者的纽带，生产者发送的消息到达队列，在队列中存储。 消费者从队列消费消息。</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207131410895.png" alt="image-20220713141058687"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207131411568.png" alt="image-20220713141120505"></p>
+<h2 id="Consumer-消费者"><a href="#Consumer-消费者" class="headerlink" title="Consumer 消费者"></a>Consumer 消费者</h2><p>消息到底是 Broker 推送给消费者的？还是消费者主动获取的？</p>
+<p>消费者消费消息 有两种模式。 </p>
+<p>一种是 Pull 模式，对应的方法是 basicGet。消息存放在服务端，只有消费者<strong>主动 获取才能拿到消息</strong>。如果每隔一段时间获取一次消息，消息的<strong>实时性会降低</strong>。但是好 处是可以根据自己的消费能力决定获取消息的频率。 </p>
+<p>另一种是 Push 模式，对应的方法是 basicConsume，只要生产者发消息到服务 器，就马上推送给消费者，消息保存在客户端，实时性很高，如果消费不过来有可能 会造成<strong>消息积压</strong>。Spring AMQP 是 push 方式，通过事件机制<strong>对队列进行监听</strong>，只要 有消息到达队列，就会触发消费消息的方法。</p>
+<p><strong>而 kafka 和 RocketMQ 只有 pull</strong>。</p>
+<p>由于队列有 FIFO（先进先出） 的特性，只有确定前一条消息被消费者接收之后，Broker 才会 把这条消息从数据库删除，继续投递下一条消息。</p>
+<p>一个消费者是可以监听多个队列的，一个队列也可以被多个消费者监听。</p>
+<h2 id="Exchange-交换机"><a href="#Exchange-交换机" class="headerlink" title="Exchange 交换机"></a>Exchange 交换机</h2><p>为什莫要有交换机？</p>
+<p>如果要把一条消息发送给多个队列，被多个消费者消 费，应该怎么做？生产者是不是必须要调用多次 basicPublish 的方法，依次发送给多 个队列？就像消息推送的这种场景，有成千上万个队列的时候，对生产者来说压力太 大了。</p>
+<p>所以交换机就是消息路由的组件。交换机的作用就是把接收到的消息分发给队列。</p>
+<p>所以队列和交换机需要绑定。关系可以是多对多的关系。</p>
+<p><strong>绑定关系建立好之后，生产者发送消息到 Exchange，也会携带一个特殊的标识。 当这个标识跟绑定的标识匹配的时候，消息就会发给一个或者多个符合规则的队列</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207131901025.png" alt="image-20220713190103949"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207131901092.png" alt="image-20220713190138034"></p>
+<h1 id="消息分发机制"><a href="#消息分发机制" class="headerlink" title="消息分发机制"></a>消息分发机制</h1><p>就是Exchange的主要功能，RabbitMQ 中一共有四种类型的交换机，Direct、Topic、Fanout、Headers。</p>
+<h2 id="Direct-直连"><a href="#Direct-直连" class="headerlink" title="Direct 直连"></a>Direct 直连</h2>]]></content>
       <categories>
         <category>中间键</category>
         <category>消息中间键</category>
@@ -861,13 +885,15 @@
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301422329.png" alt="image-20220630142256269"></p>
 <h2 id="Docker安装RabbitMQ"><a href="#Docker安装RabbitMQ" class="headerlink" title="Docker安装RabbitMQ"></a>Docker安装RabbitMQ</h2><p><a href="https://cloud.tencent.com/developer/article/1174667">使用Docker部署RabbitMQ集群 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
 <p>地址：<a href="http://192.168.100.140:15672/">http://192.168.100.140:15672</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull rabbitmq:management</span><br><span class="line"></span><br><span class="line">docker run -di --name=dain_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management</span><br><span class="line"></span><br><span class="line">//集群部署</span><br><span class="line">docker run -d --hostname localhost --name myrabbit01 -p 15671:15672 -p 5671:5672 rabbitmq:management</span><br><span class="line">docker run -d --hostname localhost --name myrabbit02 -p 15672:15672 -p 5672:5672 rabbitmq:management</span><br><span class="line">docker run -d --hostname localhost --name myrabbit03 -p 15673:15672 -p 5673:5672 rabbitmq:management</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull rabbitmq:management</span><br><span class="line"></span><br><span class="line">docker run -di --name=dain_rabbitmq -p 5672:5672 -p 5671:5671 -p 4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management</span><br><span class="line"></span><br><span class="line">//集群部署</span><br><span class="line">docker run -d --hostname localhost --name myrabbit01 -p 15601:15672 -p 5601:5672 rabbitmq:management</span><br><span class="line">docker run -d --hostname localhost --name myrabbit02 -p 15602:15672 -p 5602:5672 rabbitmq:management</span><br><span class="line">docker run -d --hostname localhost --name myrabbit03 -p 15603:15672 -p 5603:5672 rabbitmq:management</span><br></pre></td></tr></table></figure>
 
 <p>无需新建用户直接可以使用guest：guest登录</p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301400540.png" alt="image-20220630140048466"></p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301401136.png" alt="image-20220630140126087"></p>
 <h1 id="Docker安装结果"><a href="#Docker安装结果" class="headerlink" title="Docker安装结果"></a>Docker安装结果</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301423834.png" alt="image-20220630142352787"></p>
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301424830.png" alt="image-20220630142406784"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br><span class="line"></span><br><span class="line">外网面板地址: http://117.155.26.175:40653/489457aa</span><br><span class="line">内网面板地址: http://192.168.100.140:40653/489457aa</span><br><span class="line">*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录</span><br><span class="line">username: r9h0jeos</span><br><span class="line">password: 0809d4fc</span><br><span class="line">If you cannot access the panel,</span><br><span class="line">release the following panel port [40653] in the security group</span><br><span class="line">若无法访问面板，请检查防火墙/安全组是否有放行面板[40653]端口</span><br><span class="line"></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//指定分辨率设置</span><br><span class="line">xrandr -s 1280x800</span><br><span class="line"></span><br><span class="line">192.168.100.141</span><br><span class="line"></span><br><span class="line">ifconfig -a</span><br><span class="line"></span><br><span class="line">IPADDR=&quot;192.168.100.141&quot;</span><br><span class="line">NERMASK=&quot;255.255.255.0&quot;</span><br><span class="line">#DNS1=&quot;192.168.0.1&quot;</span><br><span class="line">GATEWAT=&quot;192.168.100.2&quot;</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">dhcp</span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>环境搭建</category>
