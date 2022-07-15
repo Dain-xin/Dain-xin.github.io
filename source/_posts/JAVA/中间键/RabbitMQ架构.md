@@ -98,7 +98,11 @@ CentOS 保存在/var/lib 目录下： /var/lib/rabbitmq/mnesia
 
 
 
+## Vhost 虚拟主机
 
+就是Admin的角色，可以提供给不同的用户，用户可以访问自己的交换机和队列，超级管理可以访问所有的vhost权限。
+
+目的就是和其他角色隔离，可以拥有自己的broke。
 
 # 消息分发机制
 
@@ -106,5 +110,116 @@ CentOS 保存在/var/lib 目录下： /var/lib/rabbitmq/mnesia
 
 ## Direct 直连
 
+一个队列与直连类型的交换机绑定，需指定一个明确的绑定键（binding key）。
+
+生产者发送消息时会携带一个路由键（routing key）。
+
+当消息的路由键与某个队列的绑定键完全匹配时，这条消息才会从交换机路由到 这个队列上。多个队列也可以使用相同的绑定键。
+
+![image-20220714174412655](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207141744823.png)
+
+```java
+channel.basicPublish(“MY_DIRECT_EXCHANGE”,”spring”,”msg 1”);
+
+//只有spring队列可以接收消息（明确指定给一个队列）
+```
 
 
+
+## Topic 主题
+
+**适用业务主题或者消息等级需要过滤消息的场景**
+
+一个队列与主题类型的交换机绑定时，可以在绑定键中使用通配符。支持两个通 配符：
+
+```text
+# 代表匹配 0 个或者多个单词 
+* 代表匹配不多不少一个单词
+单词（word）指的是用英文的点“.”隔开的字符。例如 a.bc.def 是 3 个单词
+
+第一个队列支持路由键以 junior 开头的消息路由，后面可以有单词，也可以没有。
+第二个队列支持路由键以 netty 结尾，前面可以有也可以没有单词的消息路由。
+第三个队列支持路由键以 senior 开头，并且后面是一个单词的消息路由。
+第四个队列支持路由键以 jvm结尾，并且前面是一个单词的消息路由。
+```
+
+![image-20220714174800079](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207141748152.png)
+
+```java
+channel.basicPublish("MY_TOPIC_EXCHANGE","junior.abc.jvm","msg 2"); 
+//只有第一个队列能收到消息。 
+channel.basicPublish("MY_TOPIC_EXCHANGE","senior.netty", "msg 3"); 
+//第二个队列和第三个队列能收到消息。
+```
+
+
+
+## Fanout 广播
+
+**适用于一些通用的业务消息**
+
+广播类型的交换机与队列绑定时，不需要指定绑定键。
+
+```java
+channel.basicPublish("MY_FANOUT_EXCHANGE", "", "msg 4")
+```
+
+# RabbitMQ 持久化与内存管理
+
+## 持久化机制
+
+RabbitMQ 的持久化分为消息持久化、队列持久化、交换器持久化。无论是持久 化消息还是非持久化消息都可以被写入磁盘。
+
+当 RabbitMQ 收到消息时，如果是持久化消息，则会储存在内存中，同时也会写 入磁盘；如果是非持久化消息，则只会存在内存中。当内存使用达到 RabbitMQ 的临 界值时，内存中的数据会被交换到磁盘，持久化消息由于本就存在于磁盘中，不会被 重复写入。**（也就是上面无论是否持久化都可以被写入磁盘，条件是是否达到内存使用临界值）**
+
+但是非持久化的消息、队列、交换机，重启会被清除。
+
+## 内存控制 
+
+RabbitMQ 中通过内存阈值参数控制内存的使用量，当内存使用超过配置的阈值 时，RabbitMQ 会阻塞客户端的连接并停止接收从客户端发来的消息，以免服务崩溃， 同时，会发出内存告警，此时客户端于与服务端的心跳检测也会失效。
+
+可以通过，rabbitmq.conf。
+
+```
+# rabbitmq.conf
+vm_memory_high_watermark.relative=0.4
+#vm_memory_high_watermark.absolute=1GB
+
+/*
+RabbitMQ 提供 relative 与 absolute 两种配置方式 relative：相对值，也就是前面的 fraction 参数，建议 0.4～0.66，不能太大 absolute：绝对值，固定大小，单位为 KB、MB、GB
+*/
+
+rabbitmqctl set_vm_memory_high_watermark absolute
+```
+
+## 内存换页 
+
+在 RabbitMQ 达到内存阈值并阻塞生产者之前，会尝试**<u>将内存中的消息换页到磁 盘，以释放内存空间</u>**。内存换页由换页参数控制，默认为 0.5，表示当内存使用量达到 内存阈值的 50%时会进行换页，也就是 0.4*0.5=0.2。 
+
+```
+vm_memory_high_watermark_paging_ratio=0.5 
+
+#当换页阈值大于 1 时，相当于禁用了换页功能
+```
+
+## 磁盘控制
+
+RabbitMQ 通过磁盘阈值参数控制磁盘的使用量，当磁盘剩余空间小于磁盘阈值 时，RabbitMQ 同样会阻塞生产者，避免磁盘空间耗尽。 
+
+磁盘阈值默认 50M，由于是定时检测磁盘空间，不能完全消除因磁盘耗尽而导致 崩溃的可能性，比如在两次检测之间，磁盘空间从大于 50M 变为 0M。
+
+ 一种相对谨慎的做法是将磁盘阈值大小设置与内存相等
+
+```
+rabbitmqctl set_disk_free_limit <limit>
+rabbitmqctl set_disk_free_limit mem_relative <fraction>
+# limit 为绝对值，KB、MB、GB
+# fraction 为相对值，建议 1.0～2.0 之间
+# rabbitmq.conf
+disk_free_limit.relative=1.5
+# disk_free_limit.absolute=50MB
+```
+
+# RabbiMQ 插件管理
+
+RabbitMQ 插件机制的设计，主要是用于面对特殊场景的需求，可以实现任意扩 展。
