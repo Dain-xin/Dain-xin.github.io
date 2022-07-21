@@ -61,6 +61,74 @@
       </tags>
   </entry>
   <entry>
+    <title>分布式和消息中间键</title>
+    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/%E5%88%86%E5%B8%83%E5%BC%8F%E5%92%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="分布式总览"><a href="#分布式总览" class="headerlink" title="分布式总览"></a>分布式总览</h1><p>分布式微服务架构的发展，主要经历了四个阶段：单一应用架构、垂直应用架构、分布式架构和弹性 SOA 架 构。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207090758762.png" alt="image-20220709075815654"></p>
+<p>远程通信调用（统称）：RPC（基于TCP和IP协议）</p>
+<p>垂直应用架构：⼤系统拆分成了多个⼦系统，但是不能负载均衡。</p>
+<p>SOA架构：重复的功能浪费资源，需要把这些重复的功能单独抽离 出来单独部署”baseService“…</p>
+<p><strong>高可用</strong>：高吞吐（QBS：每秒请求的数量）、高可用（容错性，请求成功率）、高并发（系统最大请求数量）、可伸缩（更侧重于系统的水平伸缩，通过廉价的服务器实现分布式计算）、可拓展（松耦合）、低延时（请求响应时间）。</p>
+<p>服务协调：Zookeeper、Nacos</p>
+<p>消息中间键：RabbitMQ、Kafka、RockMQ</p>
+<p>NoSQL：Redis、MongoDB</p>
+<p>任务调度：ElaStic-job</p>
+<p>数据存储：MyCat（分库分表）为了实现分布式环境下的数据分片存储和一致性</p>
+<p>负载均衡：Nginx（平衡资源分配）</p>
+<p>日志（管理所有分布式的所有日志）：elk（主要日志监控）</p>
+<p>通信：Netty、Socket</p>
+<p>文件存储：OSS（阿里云存储）</p>
+<p>内容分发：CDN（内容分发网络，降低网络延时，提升速度）</p>
+<p>容器技术：Docker（为了提升硬件资源的利用效率，解决环境差异和组件依赖带来的部署问题，需要容器化技术）</p>
+<h1 id="消息中间件"><a href="#消息中间件" class="headerlink" title="消息中间件"></a>消息中间件</h1><h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>具有接受请求，保存数据，发送数据等功能的网络应用。</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>分布式不同微服务的异步通信。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>提高开发难度和运维成本、降低系统可用性和复杂性。</p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>异步处理、应用解耦（生产者和消费者直接无需关心业务是否正常，只需要关系MQ服务器，做好发送和监听即可）、流量削峰、广播通信（一对多通信）</p>
+<h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a><strong>异步通信</strong></h2><p>当一个异步过程调用发出后，调用者不会马上得到结果。而是在调用发出后，被调用者通过状态、通知来通知调用者， 或通过回调函数处理这个调用。</p>
+<p>异步通信不需要客户端等待，可以减少客服端性能消耗，大大地提升用户体验。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091432993.png" alt="image-20220709143206922"></p>
+<h2 id="MQ组成"><a href="#MQ组成" class="headerlink" title="MQ组成"></a>MQ组成</h2><p><strong>三个部分组成：生产者、消息服务端和消费者。</strong> </p>
+<blockquote>
+<p>生产者（Producer），是生产消息的一端，相当于消息的发起方，主要负责载业务信息的消息的创建。 </p>
+<p>消息服务端（Server），是处理消息的单元，本质就是用来创建和保存消息队列，它主要负责消息 的存储、投递以及跟消息队列相关的附加功能。消息服务端是整个消息队列最核心的组成部分。 </p>
+<p>消费者（Consumer），是消费消息的一端，主要是根据消息所承载的信息去处理各种业务逻辑。</p>
+</blockquote>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>数据量大、吞吐量要求比较高的场景一般采用 Kafka； 对消息可靠性要求很高，甚至要求支持事务的场景，比如金融互联网，可以选择 RocketMQ； 对于中小型公司来说， 可以选择 RabbitMQ，它利用 erlang 语言本身的并发优势，性能好 在微秒级。 而 Pulsar 近两年开始流行起来了，它是下一代云原生分布式消息流平台，可以集消息、存储、轻量化函 数式计算为一体。</p>
+<h2 id="五大核心"><a href="#五大核心" class="headerlink" title="五大核心"></a>五大核心</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>计算机之间通信需要遵从的约定，是一种规范。</p>
+<p>问题：</p>
+<p>消息中间键为什莫不用TCP、HTTP、RPC、WebService？</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091427504.png" alt="image-20220709142709376"></p>
+<p>常用AMQP、</p>
+<h4 id="AMQP协议"><a href="#AMQP协议" class="headerlink" title="AMQP协议"></a>AMQP协议</h4><p>AMQP（Advanced Message Queuing Protocol）是高级消息队列协议。</p>
+<p>特性：事务支持、持久化支持，出生金融行业，在可靠性消息处理上具备天然的优势。 </p>
+<p>应用：RabbitMQ、ActiveMQ、</p>
+<h4 id="MQTT-协议"><a href="#MQTT-协议" class="headerlink" title="MQTT 协议"></a>MQTT 协议</h4><p>MQTT（Message Queuing Telemetry Transport）消息队列遥测传输是 IBM 开发的一个即时通讯协议， 物联网系统架构中的重要组成部分。 </p>
+<p>特性：轻量、结构简单、传输快、没有事务支持、没有持久化相关设计。 </p>
+<p>应用：RabbitMQ、ActiveMQ </p>
+<h4 id="Open-Message-协议"><a href="#Open-Message-协议" class="headerlink" title="Open Message 协议"></a>Open Message 协议</h4><p>Open Messaging分布 式消息中间件、流处理领域的应用开发标准。 </p>
+<p>特性：结构简单、解析快、有事务设计、有持久化设计 </p>
+<p>应用：RocketMQ	</p>
+<h4 id="Kafka-协议"><a href="#Kafka-协议" class="headerlink" title="Kafka 协议"></a>Kafka 协议</h4><p>Kafka 协议是基于 TCP 的二进制协议。消息内部是通过长度来分隔，由一些基本数据类型组成。</p>
+<p> 特性：结构简单、解析快、无事务设计、有持久化设计 </p>
+<p>应用：Kafka </p>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><p>保证数据可以保存进磁盘，是数据永久化。</p>
+<p><strong>刷盘的过程就是消息持久化</strong></p>
+<h3 id="消息分发"><a href="#消息分发" class="headerlink" title="消息分发"></a>消息分发</h3><p>分发机制和分发方法。</p>
+<p>目的：发布订阅、轮询分发、公平分发、重发、消息拉取。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091757793.png" alt="image-20220709175724716"></p>
+<h3 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h3><p>一台服务器无法满足业务需求：需要集群加负载完成高可用。</p>
+<p>主从集群：如果解决突发问题使用分片（在多个副本里保存数据副本）；多主集群；</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091804173.png" alt="image-20220709180444104"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207100935651.png" alt="image-20220710093506568"></p>
+<h3 id="高可靠"><a href="#高可靠" class="headerlink" title="高可靠"></a>高可靠</h3><p>系统无故障的持续运行。一个系统不崩溃、不报错就是高可靠。</p>
+<p>消息中间键：消息传输可靠（通过协议保证系统解析准确性）；消息储存可靠（持久化）。</p>
+]]></content>
+      <categories>
+        <category>中间键</category>
+        <category>消息中间键</category>
+      </categories>
+  </entry>
+  <entry>
     <title>RabbitMQ架构和消息分发机制</title>
     <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%84/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Erlang 是为电话 交换机编写的语言，天生适合分布式和高并发。</p>
@@ -124,7 +192,7 @@
 <p>但是非持久化的消息、队列、交换机，重启会被清除。</p>
 <h2 id="内存控制"><a href="#内存控制" class="headerlink" title="内存控制"></a>内存控制</h2><p>RabbitMQ 中通过内存阈值参数控制内存的使用量，当内存使用超过配置的阈值 时，RabbitMQ 会阻塞客户端的连接并停止接收从客户端发来的消息，以免服务崩溃， 同时，会发出内存告警，此时客户端于与服务端的心跳检测也会失效。</p>
 <p>可以通过，rabbitmq.conf。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># rabbitmq.conf</span><br><span class="line">vm_memory_high_watermark.relative=0.4</span><br><span class="line">#vm_memory_high_watermark.absolute=1GB</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">RabbitMQ 提供 relative 与 absolute 两种配置方式 relative：相对值，也就是前面的 fraction 参数，建议 0.4～0.66，不能太大 absolute：绝对值，固定大小，单位为 KB、MB、GB</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">rabbitmqctl set_vm_memory_high_watermark absolute</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># rabbitmq.conf</span><br><span class="line">vm_memory_high_watermark.relative=0.4</span><br><span class="line">#vm_memory_high_watermark.absolute=1GB</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">RabbitMQ 提供 relative 与 absolute 两种配置方式 relative：相对值，也就是前面的 fraction 参数，建议 0.4～0.66，不能太大 absolute：绝对值，固定大小，单位为 KB、MB、GB</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">rabbitmqctl set_vm_memory_high_watermark absolute/0.4</span><br></pre></td></tr></table></figure>
 
 <h2 id="内存换页"><a href="#内存换页" class="headerlink" title="内存换页"></a>内存换页</h2><p>在 RabbitMQ 达到内存阈值并阻塞生产者之前，会尝试**<u>将内存中的消息换页到磁 盘，以释放内存空间</u>*<em>。内存换页由换页参数控制，默认为 0.5，表示当内存使用量达到 内存阈值的 50%时会进行换页，也就是 0.4</em>0.5&#x3D;0.2。 </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vm_memory_high_watermark_paging_ratio=0.5 </span><br><span class="line"></span><br><span class="line">#当换页阈值大于 1 时，相当于禁用了换页功能</span><br></pre></td></tr></table></figure>
@@ -132,77 +200,34 @@
 <h2 id="磁盘控制"><a href="#磁盘控制" class="headerlink" title="磁盘控制"></a>磁盘控制</h2><p>RabbitMQ 通过磁盘阈值参数控制磁盘的使用量，当磁盘剩余空间小于磁盘阈值 时，RabbitMQ 同样会阻塞生产者，避免磁盘空间耗尽。 </p>
 <p>磁盘阈值默认 50M，由于是定时检测磁盘空间，不能完全消除因磁盘耗尽而导致 崩溃的可能性，比如在两次检测之间，磁盘空间从大于 50M 变为 0M。</p>
 <p> 一种相对谨慎的做法是将磁盘阈值大小设置与内存相等</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rabbitmqctl set_disk_free_limit &lt;limit&gt;</span><br><span class="line">rabbitmqctl set_disk_free_limit mem_relative &lt;fraction&gt;</span><br><span class="line"># limit 为绝对值，KB、MB、GB</span><br><span class="line"># fraction 为相对值，建议 1.0～2.0 之间</span><br><span class="line"># rabbitmq.conf</span><br><span class="line">disk_free_limit.relative=1.5</span><br><span class="line"># disk_free_limit.absolute=50MB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rabbitmqctl set_disk_free_limit &lt;limit&gt;</span><br><span class="line">rabbitmqctl set_disk_free_limit mem_relative &lt;fraction&gt;</span><br><span class="line"># limit 为绝对值，KB、MB、GB</span><br><span class="line"># fraction 为相对值，建议 1.0～2.0 之间</span><br><span class="line"></span><br><span class="line"># rabbitmq.conf</span><br><span class="line">disk_free_limit.relative=1.5</span><br><span class="line"># disk_free_limit.absolute=50MB</span><br></pre></td></tr></table></figure>
 
-<h1 id="RabbiMQ-插件管理"><a href="#RabbiMQ-插件管理" class="headerlink" title="RabbiMQ 插件管理"></a>RabbiMQ 插件管理</h1><p>RabbitMQ 插件机制的设计，主要是用于面对特殊场景的需求，可以实现任意扩 展。</p>
-]]></content>
-      <categories>
-        <category>中间键</category>
-        <category>消息中间键</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>分布式和消息中间键</title>
-    <url>/2022/07/09/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/%E5%88%86%E5%B8%83%E5%BC%8F%E5%92%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E9%94%AE/</url>
-    <content><![CDATA[<h1 id="分布式总览"><a href="#分布式总览" class="headerlink" title="分布式总览"></a>分布式总览</h1><p>分布式微服务架构的发展，主要经历了四个阶段：单一应用架构、垂直应用架构、分布式架构和弹性 SOA 架 构。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207090758762.png" alt="image-20220709075815654"></p>
-<p>远程通信调用（统称）：RPC（基于TCP和IP协议）</p>
-<p>垂直应用架构：⼤系统拆分成了多个⼦系统，但是不能负载均衡。</p>
-<p>SOA架构：重复的功能浪费资源，需要把这些重复的功能单独抽离 出来单独部署”baseService“…</p>
-<p><strong>高可用</strong>：高吞吐（QBS：每秒请求的数量）、高可用（容错性，请求成功率）、高并发（系统最大请求数量）、可伸缩（更侧重于系统的水平伸缩，通过廉价的服务器实现分布式计算）、可拓展（松耦合）、低延时（请求响应时间）。</p>
-<p>服务协调：Zookeeper、Nacos</p>
-<p>消息中间键：RabbitMQ、Kafka、RockMQ</p>
-<p>NoSQL：Redis、MongoDB</p>
-<p>任务调度：ElaStic-job</p>
-<p>数据存储：MyCat（分库分表）为了实现分布式环境下的数据分片存储和一致性</p>
-<p>负载均衡：Nginx（平衡资源分配）</p>
-<p>日志（管理所有分布式的所有日志）：elk（主要日志监控）</p>
-<p>通信：Netty、Socket</p>
-<p>文件存储：OSS（阿里云存储）</p>
-<p>内容分发：CDN（内容分发网络，降低网络延时，提升速度）</p>
-<p>容器技术：Docker（为了提升硬件资源的利用效率，解决环境差异和组件依赖带来的部署问题，需要容器化技术）</p>
-<h1 id="消息中间件"><a href="#消息中间件" class="headerlink" title="消息中间件"></a>消息中间件</h1><h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>具有接受请求，保存数据，发送数据等功能的网络应用。</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>分布式不同微服务的异步通信。</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>提高开发难度和运维成本、降低系统可用性和复杂性。</p>
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>异步处理、应用解耦（生产者和消费者直接无需关心业务是否正常，只需要关系MQ服务器，做好发送和监听即可）、流量削峰、广播通信（一对多通信）</p>
-<h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a><strong>异步通信</strong></h2><p>当一个异步过程调用发出后，调用者不会马上得到结果。而是在调用发出后，被调用者通过状态、通知来通知调用者， 或通过回调函数处理这个调用。</p>
-<p>异步通信不需要客户端等待，可以减少客服端性能消耗，大大地提升用户体验。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091432993.png" alt="image-20220709143206922"></p>
-<h2 id="MQ组成"><a href="#MQ组成" class="headerlink" title="MQ组成"></a>MQ组成</h2><p><strong>三个部分组成：生产者、消息服务端和消费者。</strong> </p>
-<blockquote>
-<p>生产者（Producer），是生产消息的一端，相当于消息的发起方，主要负责载业务信息的消息的创建。 </p>
-<p>消息服务端（Server），是处理消息的单元，本质就是用来创建和保存消息队列，它主要负责消息 的存储、投递以及跟消息队列相关的附加功能。消息服务端是整个消息队列最核心的组成部分。 </p>
-<p>消费者（Consumer），是消费消息的一端，主要是根据消息所承载的信息去处理各种业务逻辑。</p>
+
+
+<p><strong>配置永久生效只有去更改配置文件rabbitmq.conf</strong></p>
+<h1 id="RabbiMQ-插件管理"><a href="#RabbiMQ-插件管理" class="headerlink" title="RabbiMQ 插件管理"></a>RabbiMQ 插件管理</h1><p><a href="https://www.rabbitmq.com/configure.html">https://www.rabbitmq.com/configure.html</a></p>
+<p>RabbitMQ 插件机制的设计，主要是用于面对特殊场景的需求，可以实现任意扩展。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//插件前面[ ] 为空说明，没有安装。有 e*说明插件是安装了的</span><br><span class="line">rabbitmq-plugins list</span><br><span class="line">//是安装启用管理</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">//插件卸载</span><br><span class="line">rabbitmq-plugins disable rabbitmq_management</span><br><span class="line">//查看 rabbitmq 的有效配置</span><br><span class="line">rabbitmqctl environment</span><br></pre></td></tr></table></figure>
+
+<h1 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h1><h2 id="JAVA基础API"><a href="#JAVA基础API" class="headerlink" title="JAVA基础API"></a>JAVA基础API</h2><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207211735027.png" alt="image-20220721173548923"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;amqp-client&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;5.6.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> rabbitmq.javaapi.simple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Channel;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Connection;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.ConnectionFactory;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消息生产者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyProducer</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">EXCHANGE_NAME</span> <span class="operator">=</span> <span class="string">&quot;GP_SIMPLE_EXCHANGE_FORM_JAVAAPI&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">ConnectionFactory</span> <span class="variable">factory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ConnectionFactory</span>();</span><br><span class="line">        <span class="comment">// 连接IP</span></span><br><span class="line">        factory.setHost(<span class="string">&quot;192.168.8.147&quot;</span>);</span><br><span class="line">        <span class="comment">// 连接端口</span></span><br><span class="line">        factory.setPort(<span class="number">5672</span>);</span><br><span class="line">        <span class="comment">// 虚拟机</span></span><br><span class="line">        factory.setVirtualHost(<span class="string">&quot;/&quot;</span>);</span><br><span class="line">        <span class="comment">// 用户</span></span><br><span class="line">        factory.setUsername(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        factory.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 建立连接</span></span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> factory.newConnection();</span><br><span class="line">        <span class="comment">// 创建消息通道</span></span><br><span class="line">        <span class="type">Channel</span> <span class="variable">channel</span> <span class="operator">=</span> conn.createChannel();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 发送消息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="string">&quot;Hello world, Rabbit MQ&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// String exchange, String routingKey, BasicProperties props, byte[] body</span></span><br><span class="line">        channel.basicPublish(EXCHANGE_NAME, <span class="string">&quot;gupao.best&quot;</span>, <span class="literal">null</span>, msg.getBytes());</span><br><span class="line"></span><br><span class="line">        channel.close();</span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> rabbitmq.javaapi.simple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消息消费者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyConsumer</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">EXCHANGE_NAME</span> <span class="operator">=</span> <span class="string">&quot;GP_SIMPLE_EXCHANGE_FORM_JAVAAPI&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">QUEUE_NAME</span> <span class="operator">=</span> <span class="string">&quot;GP_SIMPLE_QUEUE_FORM_JAVAAPI&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">ConnectionFactory</span> <span class="variable">factory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ConnectionFactory</span>();</span><br><span class="line">        <span class="comment">// 连接IP</span></span><br><span class="line">        factory.setHost(<span class="string">&quot;192.168.8.147&quot;</span>);</span><br><span class="line">        <span class="comment">// 默认监听端口</span></span><br><span class="line">        factory.setPort(<span class="number">5672</span>);</span><br><span class="line">        <span class="comment">// 虚拟机</span></span><br><span class="line">        factory.setVirtualHost(<span class="string">&quot;/&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置访问的用户</span></span><br><span class="line">        factory.setUsername(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        factory.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        <span class="comment">// 建立连接</span></span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> factory.newConnection();</span><br><span class="line">        <span class="comment">// 创建消息通道</span></span><br><span class="line">        <span class="type">Channel</span> <span class="variable">channel</span> <span class="operator">=</span> conn.createChannel();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 声明交换机</span></span><br><span class="line">        <span class="comment">// String exchange, String type, boolean durable, boolean autoDelete, Map&lt;String, Object&gt; arguments</span></span><br><span class="line">        channel.exchangeDeclare(EXCHANGE_NAME,<span class="string">&quot;direct&quot;</span>,<span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 声明队列</span></span><br><span class="line">        <span class="comment">// String queue, boolean durable, boolean exclusive, boolean autoDelete, Map&lt;String, Object&gt; arguments</span></span><br><span class="line">        channel.queueDeclare(QUEUE_NAME, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">null</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot; Waiting for message....&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绑定队列和交换机</span></span><br><span class="line">        channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,<span class="string">&quot;gupao.best&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建消费者</span></span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">consumer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DefaultConsumer</span>(channel) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleDelivery</span><span class="params">(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,</span></span><br><span class="line"><span class="params">                                       <span class="type">byte</span>[] body)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(body, <span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;Received message : &#x27;&quot;</span> + msg + <span class="string">&quot;&#x27;&quot;</span>);</span><br><span class="line">                <span class="comment">//消费者标记，第一次请求获得，后续保持不变</span></span><br><span class="line">                System.out.println(<span class="string">&quot;consumerTag : &quot;</span> + consumerTag );</span><br><span class="line">                <span class="comment">//投递消息的序号</span></span><br><span class="line">                System.out.println(<span class="string">&quot;deliveryTag : &quot;</span> + envelope.getDeliveryTag() );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 开始获取消息</span></span><br><span class="line">        <span class="comment">// String queue, boolean autoAck, Consumer callback</span></span><br><span class="line">        channel.basicConsume(QUEUE_NAME, <span class="literal">true</span>, consumer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><blockquote>
+<p>消费者：先通过ConnectFactory，set基本设置IP、端口、用户、密码，然后建立连接，创建通道，通道声明交换机、队列，绑定队列和交换机，创建消费者，获取消息。</p>
+<p>生产者：先通过ConnectFactory，set基本设置IP、端口、用户、密码，然后建立连接，创建通道，发送消息（指定队列名，交换机名消息体）</p>
 </blockquote>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>数据量大、吞吐量要求比较高的场景一般采用 Kafka； 对消息可靠性要求很高，甚至要求支持事务的场景，比如金融互联网，可以选择 RocketMQ； 对于中小型公司来说， 可以选择 RabbitMQ，它利用 erlang 语言本身的并发优势，性能好 在微秒级。 而 Pulsar 近两年开始流行起来了，它是下一代云原生分布式消息流平台，可以集消息、存储、轻量化函 数式计算为一体。</p>
-<h2 id="五大核心"><a href="#五大核心" class="headerlink" title="五大核心"></a>五大核心</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>计算机之间通信需要遵从的约定，是一种规范。</p>
-<p>问题：</p>
-<p>消息中间键为什莫不用TCP、HTTP、RPC、WebService？</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091427504.png" alt="image-20220709142709376"></p>
-<p>常用AMQP、</p>
-<h4 id="AMQP协议"><a href="#AMQP协议" class="headerlink" title="AMQP协议"></a>AMQP协议</h4><p>AMQP（Advanced Message Queuing Protocol）是高级消息队列协议。</p>
-<p>特性：事务支持、持久化支持，出生金融行业，在可靠性消息处理上具备天然的优势。 </p>
-<p>应用：RabbitMQ、ActiveMQ、</p>
-<h4 id="MQTT-协议"><a href="#MQTT-协议" class="headerlink" title="MQTT 协议"></a>MQTT 协议</h4><p>MQTT（Message Queuing Telemetry Transport）消息队列遥测传输是 IBM 开发的一个即时通讯协议， 物联网系统架构中的重要组成部分。 </p>
-<p>特性：轻量、结构简单、传输快、没有事务支持、没有持久化相关设计。 </p>
-<p>应用：RabbitMQ、ActiveMQ </p>
-<h4 id="Open-Message-协议"><a href="#Open-Message-协议" class="headerlink" title="Open Message 协议"></a>Open Message 协议</h4><p>Open Messaging分布 式消息中间件、流处理领域的应用开发标准。 </p>
-<p>特性：结构简单、解析快、有事务设计、有持久化设计 </p>
-<p>应用：RocketMQ	</p>
-<h4 id="Kafka-协议"><a href="#Kafka-协议" class="headerlink" title="Kafka 协议"></a>Kafka 协议</h4><p>Kafka 协议是基于 TCP 的二进制协议。消息内部是通过长度来分隔，由一些基本数据类型组成。</p>
-<p> 特性：结构简单、解析快、无事务设计、有持久化设计 </p>
-<p>应用：Kafka </p>
-<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><p>保证数据可以保存进磁盘，是数据永久化。</p>
-<p><strong>刷盘的过程就是消息持久化</strong></p>
-<h3 id="消息分发"><a href="#消息分发" class="headerlink" title="消息分发"></a>消息分发</h3><p>分发机制和分发方法。</p>
-<p>目的：发布订阅、轮询分发、公平分发、重发、消息拉取。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091757793.png" alt="image-20220709175724716"></p>
-<h3 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h3><p>一台服务器无法满足业务需求：需要集群加负载完成高可用。</p>
-<p>主从集群：如果解决突发问题使用分片（在多个副本里保存数据副本）；多主集群；</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207091804173.png" alt="image-20220709180444104"></p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207100935651.png" alt="image-20220710093506568"></p>
-<h3 id="高可靠"><a href="#高可靠" class="headerlink" title="高可靠"></a>高可靠</h3><p>系统无故障的持续运行。一个系统不崩溃、不报错就是高可靠。</p>
-<p>消息中间键：消息传输可靠（通过协议保证系统解析准确性）；消息储存可靠（持久化）。</p>
+<h2 id="Spring-AMQP-API"><a href="#Spring-AMQP-API" class="headerlink" title="Spring AMQP API"></a>Spring AMQP API</h2><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212125255.png" alt="image-20220721212538174"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--rabbitmq依赖 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.amqp&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-rabbit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.3.5.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xmlns:rabbit</span>=<span class="string">&quot;http://www.springframework.org/schema/rabbit&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">     http://www.springframework.org/schema/rabbit</span></span></span><br><span class="line"><span class="string"><span class="tag">     http://www.springframework.org/schema/rabbit/spring-rabbit-1.2.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置connection-factory，指定连接rabbit server参数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:connection-factory</span> <span class="attr">id</span>=<span class="string">&quot;connectionFactory&quot;</span> <span class="attr">virtual-host</span>=<span class="string">&quot;/&quot;</span> <span class="attr">username</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">password</span>=<span class="string">&quot;123456&quot;</span> <span class="attr">host</span>=<span class="string">&quot;192.168.8.147&quot;</span> <span class="attr">port</span>=<span class="string">&quot;5672&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:admin</span> <span class="attr">id</span>=<span class="string">&quot;connectAdmin&quot;</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--######分隔线######--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--定义queue --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:queue</span> <span class="attr">name</span>=<span class="string">&quot;GP_FIRST_QUEUE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">exclusive</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--定义direct exchange，绑定GP_FIRST_QUEUE --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:direct-exchange</span> <span class="attr">name</span>=<span class="string">&quot;GP_DIRECT_EXCHANGE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rabbit:binding</span> <span class="attr">queue</span>=<span class="string">&quot;GP_FIRST_QUEUE_FORM_SPRING&quot;</span> <span class="attr">key</span>=<span class="string">&quot;FirstKey&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">rabbit:binding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:direct-exchange</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--定义rabbit template用于数据的接收和发送 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:template</span> <span class="attr">id</span>=<span class="string">&quot;amqpTemplate&quot;</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span> <span class="attr">exchange</span>=<span class="string">&quot;GP_DIRECT_EXCHANGE_FORM_SPRING&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--消息接收者 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;messageReceiver&quot;</span> <span class="attr">class</span>=<span class="string">&quot;rabbitmq.springapi.consumer.FirstConsumer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--queue listener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:listener-container</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:listener</span> <span class="attr">queues</span>=<span class="string">&quot;GP_FIRST_QUEUE_FORM_SPRING&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;messageReceiver&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:listener-container</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--定义queue --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:queue</span> <span class="attr">name</span>=<span class="string">&quot;GP_SECOND_QUEUE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">exclusive</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 将已经定义的Exchange绑定到GP_SECOND_QUEUE，注意关键词是key --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:direct-exchange</span> <span class="attr">name</span>=<span class="string">&quot;GP_DIRECT_EXCHANGE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rabbit:binding</span> <span class="attr">queue</span>=<span class="string">&quot;GP_SECOND_QUEUE_FORM_SPRING&quot;</span> <span class="attr">key</span>=<span class="string">&quot;SecondKey&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rabbit:binding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:direct-exchange</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 消息接收者 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;receiverSecond&quot;</span> <span class="attr">class</span>=<span class="string">&quot;rabbitmq.springapi.consumer.SecondConsumer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:listener-container</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:listener</span> <span class="attr">queues</span>=<span class="string">&quot;GP_SECOND_QUEUE_FORM_SPRING&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;receiverSecond&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:listener-container</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--######分隔线######--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--定义queue --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:queue</span> <span class="attr">name</span>=<span class="string">&quot;GP_THIRD_QUEUE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">exclusive</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 定义topic exchange，绑定GP_THIRD_QUEUE，注意关键词是pattern --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:topic-exchange</span> <span class="attr">name</span>=<span class="string">&quot;GP_TOPIC_EXCHANGE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rabbit:binding</span> <span class="attr">queue</span>=<span class="string">&quot;GP_THIRD_QUEUE_FORM_SPRING&quot;</span> <span class="attr">pattern</span>=<span class="string">&quot;#.Third.#&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rabbit:binding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:topic-exchange</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--定义rabbit template用于数据的接收和发送 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:template</span> <span class="attr">id</span>=<span class="string">&quot;amqpTemplate2&quot;</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span> <span class="attr">exchange</span>=<span class="string">&quot;GP_TOPIC_EXCHANGE_FORM_SPRING&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 消息接收者 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;receiverThird&quot;</span> <span class="attr">class</span>=<span class="string">&quot;rabbitmq.springapi.consumer.ThirdConsumer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:listener-container</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:listener</span> <span class="attr">queues</span>=<span class="string">&quot;GP_THIRD_QUEUE_FORM_SPRING&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;receiverThird&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:listener-container</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--######分隔线######--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--定义queue --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:queue</span> <span class="attr">name</span>=<span class="string">&quot;GP_FOURTH_QUEUE_FORM_SPRING&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">exclusive</span>=<span class="string">&quot;false&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 定义fanout exchange，绑定GP_FIRST_QUEUE 和 GP_FOURTH_QUEUE --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:fanout-exchange</span> <span class="attr">name</span>=<span class="string">&quot;GP_FANOUT_EXCHANGE_FORM_SPRING&quot;</span> <span class="attr">auto-delete</span>=<span class="string">&quot;false&quot;</span> <span class="attr">durable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">declared-by</span>=<span class="string">&quot;connectAdmin&quot;</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rabbit:binding</span> <span class="attr">queue</span>=<span class="string">&quot;GP_FIRST_QUEUE_FORM_SPRING&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rabbit:binding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rabbit:binding</span> <span class="attr">queue</span>=<span class="string">&quot;GP_FOURTH_QUEUE_FORM_SPRING&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rabbit:binding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rabbit:bindings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:fanout-exchange</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 消息接收者 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;receiverFourth&quot;</span> <span class="attr">class</span>=<span class="string">&quot;rabbitmq.springapi.consumer.FourthConsumer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rabbit:listener-container</span> <span class="attr">connection-factory</span>=<span class="string">&quot;connectionFactory&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rabbit:listener</span> <span class="attr">queues</span>=<span class="string">&quot;GP_FOURTH_QUEUE_FORM_SPRING&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;receiverFourth&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rabbit:listener-container</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212128342.png" alt="image-20220721212827272"></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212128641.png" alt="image-20220721212840586"></p>
+<h2 id="Spring-Boot-集成-RabbitMQ"><a href="#Spring-Boot-集成-RabbitMQ" class="headerlink" title="Spring Boot 集成 RabbitMQ"></a>Spring Boot 集成 RabbitMQ</h2><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212129904.png" alt="image-20220721212912820"></p>
 ]]></content>
       <categories>
         <category>中间键</category>
@@ -885,7 +910,11 @@
 <p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206301424830.png" alt="image-20220630142406784"></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br><span class="line"></span><br><span class="line">外网面板地址: http://117.155.26.175:40653/489457aa</span><br><span class="line">内网面板地址: http://192.168.100.140:40653/489457aa</span><br><span class="line">*以下仅为初始默认账户密码，若无法登录请执行bt命令重置账户/密码登录</span><br><span class="line">username: r9h0jeos</span><br><span class="line">password: 0809d4fc</span><br><span class="line">If you cannot access the panel,</span><br><span class="line">release the following panel port [40653] in the security group</span><br><span class="line">若无法访问面板，请检查防火墙/安全组是否有放行面板[40653]端口</span><br><span class="line"></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//指定分辨率设置</span><br><span class="line">xrandr -s 1280x800</span><br><span class="line"></span><br><span class="line">192.168.100.141</span><br><span class="line"></span><br><span class="line">ifconfig -a</span><br><span class="line"></span><br><span class="line">IPADDR=&quot;192.168.100.141&quot;</span><br><span class="line">NERMASK=&quot;255.255.255.0&quot;</span><br><span class="line">#DNS1=&quot;192.168.0.1&quot;</span><br><span class="line">GATEWAT=&quot;192.168.100.2&quot;</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">dhcp</span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
 
-]]></content>
+
+
+
+
+<h1 id="Docker指令安装"><a href="#Docker指令安装" class="headerlink" title="Docker指令安装"></a>Docker指令安装</h1>]]></content>
       <categories>
         <category>环境搭建</category>
         <category>centos</category>
@@ -1980,161 +2009,6 @@
       </categories>
   </entry>
   <entry>
-    <title>File类</title>
-    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="File类："><a href="#File类：" class="headerlink" title="File类："></a>File类：</h1><p><strong>Java.io.File 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。</strong></p>
-<h2 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a><strong>构造方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public  File(String pathname) ：</th>
-<th>通过将给定的路径名字符串转换为抽象路径名来创建新的  File实例。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  File(String parent, String child) ：</td>
-<td>从父路径名字符串和子路径名字符串创建新的  File实例。</td>
-</tr>
-<tr>
-<td>public  File(File parent, String child) ：</td>
-<td>从父抽象路径名和子路径名字符串创建新的  File实例。</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String pathname=<span class="string">&quot;a:\\b\\c&quot;</span>;</span><br><span class="line">String pathname2=<span class="string">&quot;\\d\\e.text&quot;</span>;</span><br><span class="line">String pathname3=<span class="string">&quot;\\kk\\qq&quot;</span>;</span><br><span class="line">File file=newFile(pathname);</span><br><span class="line">File file1=newFile(pathname,pathname2);</span><br><span class="line">File file2=newFile(file,pathname3);</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取方法："><a href="#获取方法：" class="headerlink" title="获取方法："></a><strong>获取方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public String getAbsolutePath()  ：  public File getAbsoluteFile（）：</th>
-<th>返回此File的绝对路径名字符串。   返回此抽象路径名的绝对路径名形式（File类型）。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  String getPath() ：</td>
-<td>将此File转换为路径名字符串。</td>
-</tr>
-<tr>
-<td>public  String getName() ：</td>
-<td>返回由此File表示的文件或目录的名称。</td>
-</tr>
-<tr>
-<td>public  long length() ：</td>
-<td>返回由此File表示的文件的长度。</td>
-</tr>
-</tbody></table>
-<p>理解：</p>
-<p>绝对路径：从盘符开始的路径，这是一个完整的路径。</p>
-<p>相对路径：相对于项目目录的路径。</p>
-<p>length：目录的返回值不唯一（不确定）；但是对于文件返回文件字节数。</p>
-<h2 id="判断方法："><a href="#判断方法：" class="headerlink" title="判断方法："></a><strong>判断方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public  boolean exists() ：</th>
-<th>此File表示的文件或目录是否实际存在。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  boolean isDirectory() ：</td>
-<td>此File表示的是否为目录。</td>
-</tr>
-<tr>
-<td>public  boolean isFile() ：</td>
-<td>此File表示的是否为文件。</td>
-</tr>
-</tbody></table>
-<h2 id="创建与删除功能："><a href="#创建与删除功能：" class="headerlink" title="创建与删除功能："></a><strong>创建与删除功能：</strong></h2><table>
-<thead>
-<tr>
-<th>public  boolean createNewFile() ：</th>
-<th>当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public  boolean delete() ：</td>
-<td>删除由此File表示的文件或目录。<strong>表示目录，则目录必须为空才能删除。</strong></td>
-</tr>
-<tr>
-<td>public  boolean mkdir() ：</td>
-<td>创建由此File表示的目录。</td>
-</tr>
-<tr>
-<td>public  boolean mkdirs() ：</td>
-<td>创建由此File表示的目录，包括任何必需但不存在的父目录。</td>
-</tr>
-</tbody></table>
-<h2 id="遍历File方法："><a href="#遍历File方法：" class="headerlink" title="遍历File方法："></a><strong>遍历File方法：</strong></h2><table>
-<thead>
-<tr>
-<th>public String[] list() ：</th>
-<th>返回一个String数组，表示该File目录中的所有子文件或目录。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public File[] listFiles() ：</td>
-<td>返回<strong>一个****File数组</strong>，表示该File目录中的所有的子文件或目录。</td>
-</tr>
-</tbody></table>
-<h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><p>调用listFiles方法的File对象，表示的必须是实际存在的目录，否则返回null，无法进行遍历。空文件夹长度是1.</p>
-<p>空文件报错（<strong>java.lang.NullPointerException</strong>）</p>
-<h2 id="拓展方法："><a href="#拓展方法：" class="headerlink" title="拓展方法："></a><strong>拓展方法：</strong></h2><table>
-<thead>
-<tr>
-<th><strong>String</strong> getParent()</th>
-<th>返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回  null。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>File</strong> getParentFile()</td>
-<td>返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回  null。</td>
-</tr>
-<tr>
-<td>boolean isAbsolute()</td>
-<td>测试此抽象路径名是否为绝对路径名。</td>
-</tr>
-<tr>
-<td>boolean isHidden()</td>
-<td>测试此抽象路径名指定的文件是否是一个隐藏文件。</td>
-</tr>
-<tr>
-<td>long lastModified()</td>
-<td>返回此抽象路径名表示的文件最后一次被修改的时间。</td>
-</tr>
-<tr>
-<td>String[] list(FilenameFilter filter)</td>
-<td>返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
-</tr>
-<tr>
-<td>File[] listFiles(FileFilter filter)</td>
-<td>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	System.out.println(file.getAbsoluteFile().getName());</span><br><span class="line">	System.out.println(file.getAbsolutePath());</span><br><span class="line">	<span class="type">long</span> l=file.lastModified();</span><br><span class="line">	Date date=newDate(l);</span><br><span class="line">System.out.println(date.toLocaleString());</span><br></pre></td></tr></table></figure>
-
-<h1 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h1><p>指在当前方法内调用自己的本身方法。</p>
-<p>递归的分类: </p>
-<p>递归分为两种，直接递归和间接递归。 直接递归称为方法自身调用自己。 间接递归可以A方法调用B方法，B方法调用C方法，C方法调用A方法。 </p>
-<p>注意事项： </p>
-<p>递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。</p>
-<p>在递归中虽然有限定条件，但是递归次数不能太多。</p>
-<p>否则也会发生栈内存溢出。 </p>
-<p>构造方法,禁止递归。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*2.4</span></span><br><span class="line"><span class="comment">递归打印多级目录</span></span><br><span class="line"><span class="comment">分析：多级目录的打印，就是当目录的嵌套。遍历之前，</span></span><br><span class="line"><span class="comment">无从知道到底有多少级目录，所以我们还是要使用递归实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number2=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span>&#123;</span><br><span class="line">	Filefile=newFile(<span class="string">&quot;d:桌面&quot;</span>);</span><br><span class="line">	printFile(file);</span><br><span class="line">	System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">	System.out.println(file.getPath()+<span class="string">&quot;:详情&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件个数：&quot;</span>+number);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件夹个数：&quot;</span>+number2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printFile</span><span class="params">(Filefile)</span>&#123;</span><br><span class="line">	File[]files=file.listFiles();</span><br><span class="line">	<span class="keyword">if</span>(files!=<span class="literal">null</span>)&#123;</span><br><span class="line">	<span class="keyword">for</span>(Filef:files)&#123;</span><br><span class="line">	<span class="keyword">if</span>(f.isFile())&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件：&quot;</span>+f.getName());</span><br><span class="line">		number++;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件夹：&quot;</span>+f.getName());</span><br><span class="line">		number2++;</span><br><span class="line">		printFile(f);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p> <strong>理解：个人感觉递归既然有就一定有他的简便存在的意义。</strong></p>
-<p><strong>这里就发现了，不需要写复杂的循环检查去实现，只需要一次检查，递归调用，就可以实现一层一层调用的关系。这里就是，调用</strong>printFile方法，在文件夹检查位置再次调用，这样在检查到文件夹，就会以这个目录传参，继续遍历，直到没有文件夹，就返回上一级遍历下一个文件夹，这样一级一级目录最后到母目录遍历完结束。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">String：  boolean endwith(String tiaojian)  判断文件结尾是否符合条件</span><br></pre></td></tr></table></figure>
-
-<p><strong>对过滤器的理解：因为</strong>FileFilter 接口只有一个<strong>accept</strong>（）所以可以直接使用<strong>lambda</strong>方法。</p>
-<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181758883.png" alt="image-20220618175804732"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//lambda表达式：</span></span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    (pathname)-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory();</span><br><span class="line">                &#125;);</span><br><span class="line">				</span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    pathname-&gt;pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>高级</category>
-        <category>IO流</category>
-      </categories>
-  </entry>
-  <entry>
     <title>IO流（字符流和字节流）</title>
     <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/IO%E6%B5%81%EF%BC%88%E5%AD%97%E7%AC%A6%E6%B5%81%E5%92%8C%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%89/</url>
     <content><![CDATA[<h1 id="IO理解：（IO包）"><a href="#IO理解：（IO包）" class="headerlink" title="IO理解：（IO包）"></a>IO理解：<strong>（</strong>IO<strong>包）</strong></h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>1、Java中I&#x2F;O操作主要是指使用 java.io 包下的内容，进行输入、输出操作。</p>
@@ -2306,6 +2180,161 @@
 <p><strong>1</strong>、<strong>close</strong>（）这样才会把缓冲区中的数据写入目的文件。但是不关闭也不 <strong>flush</strong>（）缓冲区的数据就不会写入。</p>
 <p><strong>2、</strong>close<strong>（）关闭流，就不能恢复原来的流。如果想继续写入，就需要</strong>flush<strong>后</strong>write（）。</p>
 <h1 id="IO异常处理"><a href="#IO异常处理" class="headerlink" title="IO异常处理"></a>IO异常处理</h1><p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206182227717.png" alt="image-20220618222736413"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>高级</category>
+        <category>IO流</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>File类</title>
+    <url>/2022/06/18/JAVA/%E9%AB%98%E7%BA%A7/IO%E6%B5%81/File%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="File类："><a href="#File类：" class="headerlink" title="File类："></a>File类：</h1><p><strong>Java.io.File 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。</strong></p>
+<h2 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a><strong>构造方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public  File(String pathname) ：</th>
+<th>通过将给定的路径名字符串转换为抽象路径名来创建新的  File实例。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  File(String parent, String child) ：</td>
+<td>从父路径名字符串和子路径名字符串创建新的  File实例。</td>
+</tr>
+<tr>
+<td>public  File(File parent, String child) ：</td>
+<td>从父抽象路径名和子路径名字符串创建新的  File实例。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String pathname=<span class="string">&quot;a:\\b\\c&quot;</span>;</span><br><span class="line">String pathname2=<span class="string">&quot;\\d\\e.text&quot;</span>;</span><br><span class="line">String pathname3=<span class="string">&quot;\\kk\\qq&quot;</span>;</span><br><span class="line">File file=newFile(pathname);</span><br><span class="line">File file1=newFile(pathname,pathname2);</span><br><span class="line">File file2=newFile(file,pathname3);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取方法："><a href="#获取方法：" class="headerlink" title="获取方法："></a><strong>获取方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public String getAbsolutePath()  ：  public File getAbsoluteFile（）：</th>
+<th>返回此File的绝对路径名字符串。   返回此抽象路径名的绝对路径名形式（File类型）。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  String getPath() ：</td>
+<td>将此File转换为路径名字符串。</td>
+</tr>
+<tr>
+<td>public  String getName() ：</td>
+<td>返回由此File表示的文件或目录的名称。</td>
+</tr>
+<tr>
+<td>public  long length() ：</td>
+<td>返回由此File表示的文件的长度。</td>
+</tr>
+</tbody></table>
+<p>理解：</p>
+<p>绝对路径：从盘符开始的路径，这是一个完整的路径。</p>
+<p>相对路径：相对于项目目录的路径。</p>
+<p>length：目录的返回值不唯一（不确定）；但是对于文件返回文件字节数。</p>
+<h2 id="判断方法："><a href="#判断方法：" class="headerlink" title="判断方法："></a><strong>判断方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public  boolean exists() ：</th>
+<th>此File表示的文件或目录是否实际存在。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  boolean isDirectory() ：</td>
+<td>此File表示的是否为目录。</td>
+</tr>
+<tr>
+<td>public  boolean isFile() ：</td>
+<td>此File表示的是否为文件。</td>
+</tr>
+</tbody></table>
+<h2 id="创建与删除功能："><a href="#创建与删除功能：" class="headerlink" title="创建与删除功能："></a><strong>创建与删除功能：</strong></h2><table>
+<thead>
+<tr>
+<th>public  boolean createNewFile() ：</th>
+<th>当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public  boolean delete() ：</td>
+<td>删除由此File表示的文件或目录。<strong>表示目录，则目录必须为空才能删除。</strong></td>
+</tr>
+<tr>
+<td>public  boolean mkdir() ：</td>
+<td>创建由此File表示的目录。</td>
+</tr>
+<tr>
+<td>public  boolean mkdirs() ：</td>
+<td>创建由此File表示的目录，包括任何必需但不存在的父目录。</td>
+</tr>
+</tbody></table>
+<h2 id="遍历File方法："><a href="#遍历File方法：" class="headerlink" title="遍历File方法："></a><strong>遍历File方法：</strong></h2><table>
+<thead>
+<tr>
+<th>public String[] list() ：</th>
+<th>返回一个String数组，表示该File目录中的所有子文件或目录。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public File[] listFiles() ：</td>
+<td>返回<strong>一个****File数组</strong>，表示该File目录中的所有的子文件或目录。</td>
+</tr>
+</tbody></table>
+<h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><p>调用listFiles方法的File对象，表示的必须是实际存在的目录，否则返回null，无法进行遍历。空文件夹长度是1.</p>
+<p>空文件报错（<strong>java.lang.NullPointerException</strong>）</p>
+<h2 id="拓展方法："><a href="#拓展方法：" class="headerlink" title="拓展方法："></a><strong>拓展方法：</strong></h2><table>
+<thead>
+<tr>
+<th><strong>String</strong> getParent()</th>
+<th>返回此抽象路径名父目录的路径名字符串；如果此路径名没有指定父目录，则返回  null。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>File</strong> getParentFile()</td>
+<td>返回此抽象路径名父目录的抽象路径名；如果此路径名没有指定父目录，则返回  null。</td>
+</tr>
+<tr>
+<td>boolean isAbsolute()</td>
+<td>测试此抽象路径名是否为绝对路径名。</td>
+</tr>
+<tr>
+<td>boolean isHidden()</td>
+<td>测试此抽象路径名指定的文件是否是一个隐藏文件。</td>
+</tr>
+<tr>
+<td>long lastModified()</td>
+<td>返回此抽象路径名表示的文件最后一次被修改的时间。</td>
+</tr>
+<tr>
+<td>String[] list(FilenameFilter filter)</td>
+<td>返回一个字符串数组，这些字符串指定此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
+</tr>
+<tr>
+<td>File[] listFiles(FileFilter filter)</td>
+<td>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	System.out.println(file.getAbsoluteFile().getName());</span><br><span class="line">	System.out.println(file.getAbsolutePath());</span><br><span class="line">	<span class="type">long</span> l=file.lastModified();</span><br><span class="line">	Date date=newDate(l);</span><br><span class="line">System.out.println(date.toLocaleString());</span><br></pre></td></tr></table></figure>
+
+<h1 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h1><p>指在当前方法内调用自己的本身方法。</p>
+<p>递归的分类: </p>
+<p>递归分为两种，直接递归和间接递归。 直接递归称为方法自身调用自己。 间接递归可以A方法调用B方法，B方法调用C方法，C方法调用A方法。 </p>
+<p>注意事项： </p>
+<p>递归一定要有条件限定，保证递归能够停止下来，否则会发生栈内存溢出。</p>
+<p>在递归中虽然有限定条件，但是递归次数不能太多。</p>
+<p>否则也会发生栈内存溢出。 </p>
+<p>构造方法,禁止递归。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*2.4</span></span><br><span class="line"><span class="comment">递归打印多级目录</span></span><br><span class="line"><span class="comment">分析：多级目录的打印，就是当目录的嵌套。遍历之前，</span></span><br><span class="line"><span class="comment">无从知道到底有多少级目录，所以我们还是要使用递归实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> number2=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span>&#123;</span><br><span class="line">	Filefile=newFile(<span class="string">&quot;d:桌面&quot;</span>);</span><br><span class="line">	printFile(file);</span><br><span class="line">	System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">	System.out.println(file.getPath()+<span class="string">&quot;:详情&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件个数：&quot;</span>+number);</span><br><span class="line">	System.out.println(<span class="string">&quot;文件夹个数：&quot;</span>+number2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printFile</span><span class="params">(Filefile)</span>&#123;</span><br><span class="line">	File[]files=file.listFiles();</span><br><span class="line">	<span class="keyword">if</span>(files!=<span class="literal">null</span>)&#123;</span><br><span class="line">	<span class="keyword">for</span>(Filef:files)&#123;</span><br><span class="line">	<span class="keyword">if</span>(f.isFile())&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件：&quot;</span>+f.getName());</span><br><span class="line">		number++;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;文件夹：&quot;</span>+f.getName());</span><br><span class="line">		number2++;</span><br><span class="line">		printFile(f);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <strong>理解：个人感觉递归既然有就一定有他的简便存在的意义。</strong></p>
+<p><strong>这里就发现了，不需要写复杂的循环检查去实现，只需要一次检查，递归调用，就可以实现一层一层调用的关系。这里就是，调用</strong>printFile方法，在文件夹检查位置再次调用，这样在检查到文件夹，就会以这个目录传参，继续遍历，直到没有文件夹，就返回上一级遍历下一个文件夹，这样一级一级目录最后到母目录遍历完结束。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">String：  boolean endwith(String tiaojian)  判断文件结尾是否符合条件</span><br></pre></td></tr></table></figure>
+
+<p><strong>对过滤器的理解：因为</strong>FileFilter 接口只有一个<strong>accept</strong>（）所以可以直接使用<strong>lambda</strong>方法。</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202206181758883.png" alt="image-20220618175804732"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//lambda表达式：</span></span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    (pathname)-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory();</span><br><span class="line">                &#125;);</span><br><span class="line">				</span><br><span class="line">File[] files = file.listFiles(</span><br><span class="line">    pathname-&gt;pathname.getName().endsWith(<span class="string">&quot;.java&quot;</span>)||pathname.isDirectory()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>JAVA</category>
