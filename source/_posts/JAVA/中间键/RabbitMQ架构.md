@@ -189,7 +189,7 @@ vm_memory_high_watermark.relative=0.4
 RabbitMQ 提供 relative 与 absolute 两种配置方式 relative：相对值，也就是前面的 fraction 参数，建议 0.4～0.66，不能太大 absolute：绝对值，固定大小，单位为 KB、MB、GB
 */
 
-rabbitmqctl set_vm_memory_high_watermark absolute
+rabbitmqctl set_vm_memory_high_watermark absolute/0.4
 ```
 
 ## 内存换页 
@@ -215,11 +215,282 @@ rabbitmqctl set_disk_free_limit <limit>
 rabbitmqctl set_disk_free_limit mem_relative <fraction>
 # limit 为绝对值，KB、MB、GB
 # fraction 为相对值，建议 1.0～2.0 之间
+
 # rabbitmq.conf
 disk_free_limit.relative=1.5
 # disk_free_limit.absolute=50MB
 ```
 
+
+
+**配置永久生效只有去更改配置文件rabbitmq.conf**
+
 # RabbiMQ 插件管理
 
-RabbitMQ 插件机制的设计，主要是用于面对特殊场景的需求，可以实现任意扩 展。
+https://www.rabbitmq.com/configure.html
+
+RabbitMQ 插件机制的设计，主要是用于面对特殊场景的需求，可以实现任意扩展。
+
+```
+//插件前面[ ] 为空说明，没有安装。有 e*说明插件是安装了的
+rabbitmq-plugins list
+//是安装启用管理
+rabbitmq-plugins enable rabbitmq_management
+//插件卸载
+rabbitmq-plugins disable rabbitmq_management
+//查看 rabbitmq 的有效配置
+rabbitmqctl environment
+```
+
+# API介绍
+
+## JAVA基础API
+
+![image-20220721173548923](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207211735027.png)
+
+```api
+<dependency>
+    <groupId>com.rabbitmq</groupId>
+    <artifactId>amqp-client</artifactId>
+    <version>5.6.0</version>
+</dependency>
+```
+
+```java
+package rabbitmq.javaapi.simple;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+/**
+ * 消息生产者
+ */
+public class MyProducer {
+    private final static String EXCHANGE_NAME = "GP_SIMPLE_EXCHANGE_FORM_JAVAAPI";
+
+    public static void main(String[] args) throws Exception {
+        ConnectionFactory factory = new ConnectionFactory();
+        // 连接IP
+        factory.setHost("192.168.8.147");
+        // 连接端口
+        factory.setPort(5672);
+        // 虚拟机
+        factory.setVirtualHost("/");
+        // 用户
+        factory.setUsername("admin");
+        factory.setPassword("123456");
+
+        // 建立连接
+        Connection conn = factory.newConnection();
+        // 创建消息通道
+        Channel channel = conn.createChannel();
+
+        // 发送消息
+        String msg = "Hello world, Rabbit MQ";
+
+        // String exchange, String routingKey, BasicProperties props, byte[] body
+        channel.basicPublish(EXCHANGE_NAME, "gupao.best", null, msg.getBytes());
+
+        channel.close();
+        conn.close();
+    }
+}
+
+
+```
+
+```java
+package rabbitmq.javaapi.simple;
+
+import com.rabbitmq.client.*;
+
+import java.io.IOException;
+
+/**
+ * 消息消费者
+ */
+public class MyConsumer {
+    private final static String EXCHANGE_NAME = "GP_SIMPLE_EXCHANGE_FORM_JAVAAPI";
+    private final static String QUEUE_NAME = "GP_SIMPLE_QUEUE_FORM_JAVAAPI";
+
+    public static void main(String[] args) throws Exception {
+        ConnectionFactory factory = new ConnectionFactory();
+        // 连接IP
+        factory.setHost("192.168.8.147");
+        // 默认监听端口
+        factory.setPort(5672);
+        // 虚拟机
+        factory.setVirtualHost("/");
+
+        // 设置访问的用户
+        factory.setUsername("admin");
+        factory.setPassword("123456");
+        // 建立连接
+        Connection conn = factory.newConnection();
+        // 创建消息通道
+        Channel channel = conn.createChannel();
+
+        // 声明交换机
+        // String exchange, String type, boolean durable, boolean autoDelete, Map<String, Object> arguments
+        channel.exchangeDeclare(EXCHANGE_NAME,"direct",false, false, null);
+
+        // 声明队列
+        // String queue, boolean durable, boolean exclusive, boolean autoDelete, Map<String, Object> arguments
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        System.out.println(" Waiting for message....");
+
+        // 绑定队列和交换机
+        channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"gupao.best");
+
+        // 创建消费者
+        Consumer consumer = new DefaultConsumer(channel) {
+            @Override
+            public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+                                       byte[] body) throws IOException {
+                String msg = new String(body, "UTF-8");
+                System.out.println("Received message : '" + msg + "'");
+                //消费者标记，第一次请求获得，后续保持不变
+                System.out.println("consumerTag : " + consumerTag );
+                //投递消息的序号
+                System.out.println("deliveryTag : " + envelope.getDeliveryTag() );
+            }
+        };
+
+        // 开始获取消息
+        // String queue, boolean autoAck, Consumer callback
+        channel.basicConsume(QUEUE_NAME, true, consumer);
+    }
+}
+
+
+```
+
+### 理解
+
+>消费者：先通过ConnectFactory，set基本设置IP、端口、用户、密码，然后建立连接，创建通道，通道声明交换机、队列，绑定队列和交换机，创建消费者，获取消息。
+>
+>生产者：先通过ConnectFactory，set基本设置IP、端口、用户、密码，然后建立连接，创建通道，发送消息（指定队列名，交换机名消息体）
+
+## Spring AMQP API
+
+![image-20220721212538174](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212125255.png)
+
+```
+<!--rabbitmq依赖 -->
+<dependency>
+    <groupId>org.springframework.amqp</groupId>
+    <artifactId>spring-rabbit</artifactId>
+    <version>1.3.5.RELEASE</version>
+</dependency>
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/rabbit
+     http://www.springframework.org/schema/rabbit/spring-rabbit-1.2.xsd">
+
+    <!--配置connection-factory，指定连接rabbit server参数 -->
+    <rabbit:connection-factory id="connectionFactory" virtual-host="/" username="admin" password="123456" host="192.168.8.147" port="5672" />
+
+    <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->
+    <rabbit:admin id="connectAdmin" connection-factory="connectionFactory" />
+
+    <!--######分隔线######-->
+    <!--定义queue -->
+    <rabbit:queue name="GP_FIRST_QUEUE_FORM_SPRING" durable="true" auto-delete="false" exclusive="false" declared-by="connectAdmin" />
+
+    <!--定义direct exchange，绑定GP_FIRST_QUEUE -->
+    <rabbit:direct-exchange name="GP_DIRECT_EXCHANGE_FORM_SPRING" durable="true" auto-delete="false" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="GP_FIRST_QUEUE_FORM_SPRING" key="FirstKey">
+            </rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <!--定义rabbit template用于数据的接收和发送 -->
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="GP_DIRECT_EXCHANGE_FORM_SPRING" />
+
+    <!--消息接收者 -->
+    <bean id="messageReceiver" class="rabbitmq.springapi.consumer.FirstConsumer"></bean>
+
+    <!--queue listener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="GP_FIRST_QUEUE_FORM_SPRING" ref="messageReceiver" />
+    </rabbit:listener-container>
+
+    <!--定义queue -->
+    <rabbit:queue name="GP_SECOND_QUEUE_FORM_SPRING" durable="true" auto-delete="false" exclusive="false" declared-by="connectAdmin" />
+
+    <!-- 将已经定义的Exchange绑定到GP_SECOND_QUEUE，注意关键词是key -->
+    <rabbit:direct-exchange name="GP_DIRECT_EXCHANGE_FORM_SPRING" durable="true" auto-delete="false" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="GP_SECOND_QUEUE_FORM_SPRING" key="SecondKey"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <!-- 消息接收者 -->
+    <bean id="receiverSecond" class="rabbitmq.springapi.consumer.SecondConsumer"></bean>
+
+    <!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="GP_SECOND_QUEUE_FORM_SPRING" ref="receiverSecond" />
+    </rabbit:listener-container>
+
+    <!--######分隔线######-->
+    <!--定义queue -->
+    <rabbit:queue name="GP_THIRD_QUEUE_FORM_SPRING" durable="true" auto-delete="false" exclusive="false" declared-by="connectAdmin" />
+
+    <!-- 定义topic exchange，绑定GP_THIRD_QUEUE，注意关键词是pattern -->
+    <rabbit:topic-exchange name="GP_TOPIC_EXCHANGE_FORM_SPRING" durable="true" auto-delete="false" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="GP_THIRD_QUEUE_FORM_SPRING" pattern="#.Third.#"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+
+    <!--定义rabbit template用于数据的接收和发送 -->
+    <rabbit:template id="amqpTemplate2" connection-factory="connectionFactory" exchange="GP_TOPIC_EXCHANGE_FORM_SPRING" />
+
+    <!-- 消息接收者 -->
+    <bean id="receiverThird" class="rabbitmq.springapi.consumer.ThirdConsumer"></bean>
+
+    <!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="GP_THIRD_QUEUE_FORM_SPRING" ref="receiverThird" />
+    </rabbit:listener-container>
+
+    <!--######分隔线######-->
+    <!--定义queue -->
+    <rabbit:queue name="GP_FOURTH_QUEUE_FORM_SPRING" durable="true" auto-delete="false" exclusive="false" declared-by="connectAdmin" />
+
+    <!-- 定义fanout exchange，绑定GP_FIRST_QUEUE 和 GP_FOURTH_QUEUE -->
+    <rabbit:fanout-exchange name="GP_FANOUT_EXCHANGE_FORM_SPRING" auto-delete="false" durable="true" declared-by="connectAdmin" >
+        <rabbit:bindings>
+            <rabbit:binding queue="GP_FIRST_QUEUE_FORM_SPRING"></rabbit:binding>
+            <rabbit:binding queue="GP_FOURTH_QUEUE_FORM_SPRING"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+
+    <!-- 消息接收者 -->
+    <bean id="receiverFourth" class="rabbitmq.springapi.consumer.FourthConsumer"></bean>
+
+    <!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="GP_FOURTH_QUEUE_FORM_SPRING" ref="receiverFourth" />
+    </rabbit:listener-container>
+</beans>
+```
+
+### 核心
+
+![image-20220721212827272](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212128342.png)
+
+![image-20220721212840586](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212128641.png)
+
+## Spring Boot 集成 RabbitMQ
+
+![image-20220721212912820](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207212129904.png)

@@ -149,3 +149,9 @@ dhcp
 vi /etc/sysconfig/network-scripts/ifcfg-ens33
 ```
 
+
+
+
+
+# Docker指令安装
+
