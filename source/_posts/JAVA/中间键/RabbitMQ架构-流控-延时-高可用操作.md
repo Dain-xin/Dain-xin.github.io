@@ -365,6 +365,56 @@ public class DelayPluginProducer {
 }
 ```
 
+
+
+# 思考
+
+除了消息过期，还有什么情况消息会变成死信？ 
+
+1）消息被消费者拒绝并且未设置重回队列：(NACK || Reject ) && requeue == false 
+
+解释：ACK：acknowledge 消息确认,NACK：Un acknowledge 没有消息确认
+
+
+
+2） 队列达到最大长度，超过了 Max length（消息数）或者 Max length bytes （字节数），最先入队的消息会被发送到 DLX
+
+RabbitMQ 的消息是存在磁盘上的，如果是内存节点，会同时存在磁 盘和内存中。当 RabbitMQ 生产 MQ 消息的速度远大于消费消息的速度时，会产生大 量的消息堆积，占用系统资源，导致机器的性能下降。
+
+
+
+```
+// 创建消费者，并接收消息
+Consumer consumer = new DefaultConsumer(channel) {
+    @Override
+    public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+                               byte[] body) throws IOException {
+        String msg = new String(body, "UTF-8");
+        System.out.println("Received message : '" + msg + "'");
+
+        if (msg.contains("拒收")){
+            // 拒绝消息
+            // requeue：是否重新入队列，true：是；false：直接丢弃，相当于告诉队列可以直接删除掉
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicReject(envelope.getDeliveryTag(), false);
+        } else if (msg.contains("异常")){
+            // 批量拒绝
+            // requeue：是否重新入队列
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicNack(envelope.getDeliveryTag(), true, false);
+        } else {
+            // 手工应答
+            // 如果不应答，队列中的消息会一直存在，重新连接的时候会重复消费
+            channel.basicAck(envelope.getDeliveryTag(), true);
+        }
+    }
+};
+
+// 开始获取消息，注意这里开启了手工应答
+// String queue, boolean autoAck, Consumer callback
+channel.basicConsume(QUEUE_NAME, false, consumer);
+```
+
 ### SpringBoot-API
 
 ```java
@@ -548,4 +598,95 @@ channel.basicConsume(QUEUE_NAME, false, consumer);
 
 ## RabbitMQ 节点类型
 
-集群有两种节点类型，一种是磁盘节点（Disc Node），一种是内存节点（RAM Node）。 磁盘节点：将元数据（包括队列名字属性、交换机的类型名字属性、绑定、vhost）放 在磁盘中。未指定类型的情况下，默认为磁盘节点。
+集群有两种节点类型。
+
+> 一种是磁盘节点（Disc Node）。
+
+ 磁盘节点：将元数据（包括队列名字属性、交换机的类型名字属性、绑定、vhost）放 在磁盘中。未指定类型的情况下，默认为磁盘节点。服务重启之后，存在磁盘节点中的数据还是会存在，所以像我们的持久化消息、持久 化队列等，都会放置硬盘节点保存。
+
+> 一种是内存节点（RAM Node）。
+
+内存节点（ram）：就是将元数据都放在内存里，内存节点的话，只要服务重启，该节 点的所有数据将会丢失。 所以在 RabbitMQ 集群里，至少有一个磁盘节点，它用来持久保存我们的元数据，如 果 RabbitMQ 是单节点运行，则默认就是磁盘节点。但是为了提高性能，其实不需要 所有节点都是 disc 的节点，根据需求分配即可
+
+
+
+
+
+**RabbitMQ 集群只有一个磁盘节点，然后磁盘节点挂了，会发生什么？** 
+
+可以正常的投递消息和消费消息，但是不能做以下事： 
+
+1、不能创建队列 
+
+2、不能创建交换机 
+
+3、不能创建用户绑定关系 
+
+4、不能修改用户权限 
+
+**所以，考虑到高可用性，推荐在集群里保持 2 个磁盘节点，这样一个挂了，另一个还 可正常工作。但上述最后一点，往集群里增加或删除节点，要求 2 个磁盘节点同时在 线**
+
+```
+#加入集群时设置节点为内存节点
+rabbitmqctl join_cluster --ram rabbit@rabbit-node1#通过命令修改节点的类型
+rabbitmqctl change_cluster_node_type disc | ram
+```
+
+# 搭建集群
+
+
+
+![image-20220725095519745](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207250955808.png)
+
+## 普通集群
+
+普通集群模式下，不同的节点之间只会相互同步元数据（交换机、队列、绑定关 系、Vhost 的定义），而不会同步消息。
+
+![image-20220725111438992](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251114087.png)
+
+比如，队列 A 的消息只存储在节点 A 上。节点 B 和节点 C 只同步了队列 A 的定 义，但是没有同步消息。 
+
+假如生产者连接的是节点 C，要将消息通过交换机 A 路由到队列 A，最终消息还 是会转发到节点 A 上存储，因为队列 A 的内容只在节点 A 上。 
+
+同理，如果消费者连接是节点 B，要从队列 A 上拉取消息，消息会从节点 A 转发 到节点 B。其它节点起到一个路由的作用，类似于指针。
+
+**如果节点 A 挂了，队列 A 的所有数据就全部丢失了。 为什么不直接把消息在所有节点上复制一份？** 
+
+主要是出于存储和同步数据的网络开销的考虑，如果所有节点都存储相同的数据， 就无法达到线性地增加性能和存储容量的目的（堆机器）。
+
+## 镜像集群
+
+![image-20220725111954439](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251119523.png)
+
+> 镜像队列模式下，消息内容会在镜像节点间同步，可用性更高。不过也有一定的 副作用，系统性能会降低，节点过多的情况下同步的代价比较大。 集群模式可以通过 UI 或者 CLI 或者 HTTP 操作。
+
+![image-20220725140325682](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251403761.png)
+
+![image-20220725140359081](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251403150.png)
+
+## 高可用实现原理
+
+客户端连接主机。所以需要一个负载均衡的组件（例如 HAProxy，LVS，Nignx），由负载的组件来 做路由。这个时候，只需要连接到负载组件的 IP 地址就可以了。
+
+![image-20220725140611877](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251406953.png)
+
+负载分为四层负载和七层负载。
+
+![image-20220725140638647](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207251406748.png)
+
+四层负载：工作在 OSI 模型的第四层，即传输层（TCP 位于第四层），它是根据 IP 端口进行转发（LVS 支持四层负载）。RabbitMQ 是 TCP 的 5672 端口。 
+
+七层负载：工作在第七层，应用层（HTTP 位于第七层）。可以根据请求资源类型 分配到后端服务器（Nginx 支持七层负载；HAProxy 支持四层和七层负载）
+
+
+
+>想如果负载均衡挂了，是不是也要集群，但是集群后是不是还要负载均衡？？？
+>
+>所以需要解决问题是：
+>
+>- 本身拥有负载功能，可以监控集群中节点的如果某个节点出现异常或者发生故障，就把它剔除掉。
+>- 了提高可用性，它也可以部署多个服务，但是只有一个自动选举出来的 MASTER 服务器（叫做主路由器），通过广播心跳消息实现
+>- MASTER 服务器对外提供一个虚拟 IP，提供各种网络功能。也就是谁抢占到 VIP， 就由谁对外提供网络服务。应用端只需要连接到这一个 IP 就行了。
+
+这个协议叫做 VRRP 协议（虚拟路由冗余协议 Virtual Router Redundancy Protocol），这个组件就是 Keepalived，它具有 Load Balance 和 High Availability 的功能。
+
