@@ -690,3 +690,23 @@ rabbitmqctl change_cluster_node_type disc | ram
 
 这个协议叫做 VRRP 协议（虚拟路由冗余协议 Virtual Router Redundancy Protocol），这个组件就是 Keepalived，它具有 Load Balance 和 High Availability 的功能。
 
+![image-20220726094240038](https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207260942168.png)
+
+1、我们规划了两个内存节点，一个磁盘节点。所有的节点之间通过镜像队列的方 式同步数据。内存节点用来给应用访问，磁盘节点用来持久化数据。 
+
+2、为了实现对两个内存节点的负载，我们安装了两个 HAProxy，监听两个 5672 和 15672 的端口。 
+
+3、安装两个 Keepalived，一主一备。两个 Keepalived 抢占一个 VIP192.168.8.149。 谁抢占到这个 VIP，应用就连接到谁，来执行对 MQ 的负载。
+
+**这种情况下，我们的 Keepalived 挂了一个节点，没有影响，因为 BACKUP 会 变成 MASTER，抢占 VIP。HAProxy 挂了一个节点，没有影响，我们的 VIP 会自 动路由的可用的 HAProxy 服务。RabbitMQ 挂了一个节点，没有影响， 因为 HAProxy 会自动负载到可用的节点。**
+
+# RabbitMQ 可视化监控安装
+
+## 安装Prometheus 服务端
+
+
+
+## 安装 Grafana 监控页面
+
+Prometheus 自带的监控页面显示的内容没有那么直观，我们安装 grafana 来使监控数据看起来更加直观.
+
