@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ架构-流控-延时-高可用操作
+title: Kafka学习
 date: 2022-07-22 21:30:37
 categories:
 - 中间键
