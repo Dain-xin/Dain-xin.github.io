@@ -239,3 +239,253 @@ rabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback(){
 
 rabbitTemplate.convertAndSend("GP_BASIC_FANOUT_EXCHANGE", "", "this is a msg");
 ```
+
+## 消息从交换机路由到队列
+
+在什么情况下，消 息会无法路由到正确的队列？
+
+**有两种方式处理无法路由的消息，一种就是让服务端重发给生产者，一种是 让交换机路由到另一个备份的交换机。**
+
+### 消息回发
+
+```java
+channel.addReturnListener(new ReturnListener() {
+	public void handleReturn(int replyCode,	String replyText,String exchange,String routingKey,	AMQP.BasicProperties properties,byte[] body)  throws IOException {
+	System.out.println("监听器收到了无法路由，被返回的消息======");
+	System.out.println("replyText:"+replyText);
+	System.out.println("exchange:"+exchange);
+	System.out.println("routingKey:"+routingKey);
+	System.out.println("message:"+new String(body));
+}
+});
+```
+
+Spring Boot 消息回发的方式：使用 mandatory 参数和 ReturnListener（在 Spring AMQP 中是 ReturnCallback）。
+
+```java
+rabbitTemplate.setMandatory(true);
+rabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback(){
+	public void returnedMessage(Message message,
+	int replyCode,
+	String replyText,
+	String exchange,
+	String routingKey){
+	System.out.println("回发的消息：");
+	System.out.println("replyCode: "+replyCode);
+	System.out.println("replyText: "+replyText);
+	System.out.println("exchange: "+exchange);
+	System.out.println("routingKey: "+routingKey);
+}
+});
+```
+
+### 消息路由到备份交换机的方式
+
+在创建交换机的时候，从属性中指定备份交换机。
+
+```java
+Map<String,Object> arguments = new HashMap<String,Object>();
+arguments.put("alternate-exchange","ALTERNATE_EXCHANGE"); // 指定交换机的备份交换机
+channel.exchangeDeclare("TEST_EXCHANGE","topic", false, false, , arguments);
+```
+
+**（注意区别，队列可以指定死信交换机；交换机可以指定备份交换机）**
+
+## 消息在队列存储
+
+### 队列持久化
+
+**没有消费者的话，队列一直存在在数据库中。**
+
+如果 RabbitMQ 的服务或者硬件发生故障，比如系统宕机、重启、关闭等等，可 能会导致内存中的消息丢失，所以我们要把消息本身和元数据（队列、交换机、绑定） 都保存到磁盘。
+
+```java
+// 声明队列
+// String queue, boolean durable, boolean exclusive, boolean autoDelete, Map<String, Object> arguments
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+/*
+durable：没有持久化的队列，保存在内存中，服务重启后队列和消息都会消失（钱
+和人一起没了）。
+autoDelete：没有消费者连接的时候，自动删除。
+exclusive：排他性队列的特点是：
+1）只对首次声明它的连接（Connection）可见
+2）会在其连接断开的时候自动删除。
+*/
+```
+
+### 交换机持久化
+
+```java
+// JAVAAPI声明交换机
+// String exchange, String type, boolean durable, boolean autoDelete, Map<String, Object> arguments
+channel.exchangeDeclare(EXCHANGE_NAME,"direct",false, false, null);
+
+
+//JAVASpringBoot API
+@Bean("GpExchange")
+public DirectExchange exchange() {
+// exchangeName, durable, exclusive, autoDelete, Properties
+return new DirectExchange("GP_TEST_EXCHANGE", true, false, new HashMap<>());
+}
+```
+
+### 消息持久化
+
+```java
+// 对每条消息设置过期时间
+AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder()
+	.deliveryMode(2) // 2 代表持久化
+	.contentEncoding("UTF-8") // 编码
+	.expiration("10000") // TTL，过期时间
+	.headers(headers) // 自定义属性
+	.priority(5) // 优先级，默认为 5，配合队列的 x-max-priority 属性使用
+	.messageId(String.valueOf(UUID.randomUUID()))
+	.build();
+// 此处两种方式设置消息过期时间的方式都使用了，将以较小的数值为准
+// 发送消息
+channel.basicPublish("", "TEST_TTL_QUEUE_FROM_JAVAAPI", properties, msg.getBytes());
+```
+
+### 集群部署
+
+> 如果只有一个 RabbitMQ 的节点，即使交换机、队列、消息做了持久化，如果服 务崩溃或者硬件发生故障，RabbitMQ 的服务一样是不可用的。
+>
+> 所以为了提高 MQ 服务的可用性，保障消息的传输，我们需要有多个 RabbitMQ 的节点。
+
+## 消息投递到消费者
+
+**如果消费者收到消息后没来得及处理即发生异常，或者处理过程中发生异常，会 导致④失败。**
+
+服务端应该以某种方式得知消费者对消息的接收情况，并决定是否重新 投递这条消息给其他消费者。
+
+RabbitMQ 提供了消费者的消息确认机制（message acknowledgement），消 费者可以自动或者手动地发送 ACK 给服务端。
+
+**如果没有 ACK 会怎么办？**
+
+没有收到 ACK 的消息，消费者断开连接后，RabbitMQ 会把这条消息发送给其他 消费者。如果没有其他消费者，消费者重启后会重新消费这条消息，重复执行业务逻 辑（如果代码修复好了还好）。
+
+**消费者怎么给 Broker 应答呢？**
+
+有两种方式，一种是自动 ACK，一种是手动 ACK。
+
+1、自动 ACK，这个也是默认的情况。也就是我们没有在消费者处编写 ACK 的 代码，消费者会在收到消息的时候就自动发送 ACK，而不是在方法执行完毕的时候发 送 ACK（并不关心你有没有正常消息）。
+2、等消息消费完毕或者方法执行完毕才发送 ACK，需要先把自动 ACK 设置 成手动 ACK。把 autoAck 设置成 false。
+
+```java
+// 开始获取消息
+// String queue, boolean autoAck, Consumer callback
+channel.basicConsume(QUEUE_NAME, false, consumer);
+```
+
+这个时候 RabbitMQ 会等待消费者显式地回复 ACK 后才从队列中移去消息。
+
+```java
+channel.basicAck(envelope.getDeliveryTag(), true)
+```
+
+```java
+// 创建消费者，并接收消息
+Consumer consumer = new DefaultConsumer(channel) {
+    @Override
+    public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+                               byte[] body) throws IOException {
+        String msg = new String(body, "UTF-8");
+        System.out.println("Received message : '" + msg + "'");
+
+        if (msg.contains("拒收")){
+            // 拒绝消息
+            // requeue：是否重新入队列，true：是；false：直接丢弃，相当于告诉队列可以直接删除掉
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicReject(envelope.getDeliveryTag(), false);
+        } else if (msg.contains("异常")){
+            // 批量拒绝
+            // requeue：是否重新入队列
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicNack(envelope.getDeliveryTag(), true, false);
+        } else {
+            // 手工应答
+            // 如果不应答，队列中的消息会一直存在，重新连接的时候会重复消费
+            channel.basicAck(envelope.getDeliveryTag(), true);
+        }
+    }
+};
+```
+
+在 Spring Boot 中： application.properties
+
+```
+spring.rabbitmq.listener.direct.acknowledge-mode=manual
+spring.rabbitmq.listener.simple.acknowledge-mode=manual
+```
+
+SimpleRabbitListenerContainer或者SimpleRabbitListenerContainerFactory
+
+```java
+factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+/*
+注意这三个值的区别： 
+NONE：自动 ACK 
+MANUAL： 手动 ACK 
+AUTO：如果方法未抛出异常，则发送 ack。
+*/
+```
+
+如果方法抛出异常，并且不是 AmqpRejectAndDontRequeueException 则发送 nack，并且重新入队列。
+
+如果抛出 异常时 AmqpRejectAndDontRequeueException 则发送 nack 不会重新入队列。
+
+**消费者又怎么调用 ACK，或者说怎么获得 Channel 参数呢？**
+
+```java
+@RabbitHandler
+public void process(String msg, Channel channel, Message message) throws IOException {
+	System.out.println(" second queue received msg : " + msg);
+	channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+}
+```
+
+**如果消费出了问题，确实是不能发送 ACK 告诉服务端成功消费了怎么办？**
+
+有拒绝消息的指令，而且还可以让消息重新入队给其他消费者消费。 
+
+如果消息无法处理或者消费失败，也有两种拒绝的方式，Basic.Reject()拒绝单条， Basic.Nack()批量拒绝。
+
+```java
+// 创建消费者，并接收消息
+Consumer consumer = new DefaultConsumer(channel) {
+    @Override
+    public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+                               byte[] body) throws IOException {
+        String msg = new String(body, "UTF-8");
+        System.out.println("Received message : '" + msg + "'");
+
+        if (msg.contains("拒收")){
+            // 拒绝消息
+            // requeue：是否重新入队列，true：是；false：直接丢弃，相当于告诉队列可以直接删除掉
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicReject(envelope.getDeliveryTag(), false);
+        } else if (msg.contains("异常")){
+            // 批量拒绝
+            // requeue：是否重新入队列
+            // TODO 如果只有这一个消费者，requeue 为true 的时候会造成消息重复消费
+            channel.basicNack(envelope.getDeliveryTag(), true, false);
+        } else {
+            // 手工应答
+            // 如果不应答，队列中的消息会一直存在，重新连接的时候会重复消费
+            channel.basicAck(envelope.getDeliveryTag(), true);
+        }
+    }
+};
+```
+
+如果 requeue 参数设置为 true，可以把这条消息重新存入队列，以便发给下一个 消费者
+
+**（当然，只有一个消费者的时候，这种方式可能会出现无限循环重复消费的情 况。可以投递到新的队列中，或者只打印异常日志）。**
+
+## 总结
+
+从生产者到 Broker、交换机到队列，队列本身，队列到消费者，我们都有相应的 方法知道消费有没有正常流转，或者说当消息没有正常流转的时候采取相关措施。
+
+**服务端收到了 ACK 或者 NACK，生产者会知道吗？**
+
+即使消费者没有接收到 消息，或者消费时出现异常，生产者也是完全不知情的。这个是符合解耦思想的，不然你用 MQ 干嘛？
