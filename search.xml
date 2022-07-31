@@ -64,7 +64,7 @@
   <entry>
     <title>RabbitMQ架构-面试必备</title>
     <url>/2022/07/26/JAVA/%E4%B8%AD%E9%97%B4%E9%94%AE/RabbitMQ%E6%9E%B6%E6%9E%845-%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87/</url>
-    <content><![CDATA[<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><blockquote>
+    <content><![CDATA[<h1 id="思考：消息可靠性"><a href="#思考：消息可靠性" class="headerlink" title="思考：消息可靠性"></a>思考：消息可靠性</h1><blockquote>
 <p>1、在使用 MQ 实现异步通信的过程中，有消息丢了怎么办？ </p>
 <p>2、MQ 消息重复了怎么办？ </p>
 <p>3、死信队列满了怎么办？ </p>
@@ -169,9 +169,65 @@
 
 <p>如果 requeue 参数设置为 true，可以把这条消息重新存入队列，以便发给下一个 消费者</p>
 <p><strong>（当然，只有一个消费者的时候，这种方式可能会出现无限循环重复消费的情 况。可以投递到新的队列中，或者只打印异常日志）。</strong></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从生产者到 Broker、交换机到队列，队列本身，队列到消费者，我们都有相应的 方法知道消费有没有正常流转，或者说当消息没有正常流转的时候采取相关措施。</p>
+<h2 id="总结可靠性"><a href="#总结可靠性" class="headerlink" title="总结可靠性"></a>总结可靠性</h2><p>从生产者到 Broker、交换机到队列，队列本身，队列到消费者，我们都有相应的 方法知道消费有没有正常流转，或者说当消息没有正常流转的时候采取相关措施。</p>
 <p><strong>服务端收到了 ACK 或者 NACK，生产者会知道吗？</strong></p>
 <p>即使消费者没有接收到 消息，或者消费时出现异常，生产者也是完全不知情的。这个是符合解耦思想的，不然你用 MQ 干嘛？</p>
+<h1 id="思考：一致性"><a href="#思考：一致性" class="headerlink" title="思考：一致性"></a>思考：一致性</h1><p><strong>如果现在为了保证一致性，生产者必须知道消费者有没有成功消费，怎么办？</strong></p>
+<p>生产者最终确定消费者有没有消费成功的两种方式： </p>
+<p>1） 消费者收到消息，处理完毕后，调用生产者的 API（思考：是否破坏解耦？） </p>
+<p>2） 消费者收到消息，处理完毕后，发送一条响应消息给生产者。</p>
+<blockquote>
+<p>支付系统，除了通知类的消息，所有的消息都需要有回执。</p>
+</blockquote>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207310800456.png" alt="image-20220731080057369"></p>
+<h2 id="消费者回调"><a href="#消费者回调" class="headerlink" title="消费者回调"></a>消费者回调</h2><p>对于金融场景下的消息可靠性保证， 是很有用的。</p>
+<p><strong>调用生产者 API</strong> </p>
+<p>例如：提单系统给其他系统发送了保险消息后（通知通知！发生了一笔保险）， 其他系统必须在处理完消息后调用提单系统提供的 API，来修改提单系统中这笔数 据的状态。只要 API 没有被调用，数据状态没有被修改，提单系统就认为下游系 统没有收到这条消息。</p>
+<p><strong>发送响应消息给生产者</strong> </p>
+<p>例如：商业银行与人民银行二代支付通信（使用 IBM MQ），无论是人行收 到了商业银行的消息，还是商业银行收到了人行的消息，都必须发送一条响应消 息（叫做回执报文）。</p>
+<h2 id="补偿机制"><a href="#补偿机制" class="headerlink" title="补偿机制"></a>补偿机制</h2><p><strong>如果生产者的 API 就是没有被调用，也没有收到消费者的响应消息，怎么办？</strong></p>
+<p>可能是消费者处理时间太长或者网络超时。</p>
+<p>生产者与消费者之间应该约定一个超时时间，对于超出这个时间没有得到响应的 消息，才确定为消费失败。</p>
+<p>比如 5 分钟。</p>
+<p>如果确定失败就要重发消息。</p>
+<h3 id="谁来重发？"><a href="#谁来重发？" class="headerlink" title="谁来重发？"></a>谁来重发？</h3><p>首先消息大部分都是异步的，业务员发送完就不再参与了。</p>
+<p>可以先创建一个定时任务，比如每 30 秒跑一次，找到业务表里面的这条业务状态是中 间状态的记录，查询出来，构建为 MQ 消息，重新发送。 </p>
+<p>也可以单独设计设计一张消息表，把本系统所以发送出去的消息全部异步地登记 起来，找出状态是未回复的消息发送</p>
+<p>但是会消耗性能和系统存储资源。</p>
+<h3 id="隔多久重发一次？"><a href="#隔多久重发一次？" class="headerlink" title="隔多久重发一次？"></a>隔多久重发一次？</h3><p>时间由定时任务的执行时间决定。也可以设置衰减机制</p>
+<h3 id="一共重发几次？"><a href="#一共重发几次？" class="headerlink" title="一共重发几次？"></a>一共重发几次？</h3><p>重发消息务必要控制次数，比如设置成 3 次。 这个要在消息表里面记录次数来实现，发一次就加 1。</p>
+<h3 id="重发什么内容？"><a href="#重发什么内容？" class="headerlink" title="重发什么内容？"></a>重发什么内容？</h3><p><strong>重发，是否发送一模一样的消息？</strong> </p>
+<p>参考： </p>
+<p>ATM 机上运行的系统叫 C 端（ATMC），银行的前置系统或者渠道系统叫 P 端 （ATMP），它接收 ATMC 的消息，再转发给卡系统或者核心系统。 </p>
+<p>1）如果客户存款，没有收到核心系统的应答。怎么处理？ 因为不知道有没有记账成功，不能给客户吐钞，否则会造成银行短款。因为已经 吞钞了，所以要保证成功。最多发送 3 次存款确认报文； </p>
+<p>2）如果客户取款，ATMC 未得到核心系统的应答时，怎么处理？ 因为没有吐钞，所以要保证失败。最多发送 3 次存款冲正报文</p>
+<h2 id="消息幂等性"><a href="#消息幂等性" class="headerlink" title="消息幂等性"></a>消息幂等性</h2><p>什么叫消息幂等性？</p>
+<p>用户对于同一操作发起的一次或者多次请求，最后的结果都 是相同的，这就是幂等性</p>
+<p>假设消费者状态是正常的，每一条消息都可以正常处理。只是在响应或者调用 API 的时候出了问题，会不会出现消息的重复处理？</p>
+<p>例如：存款 1000 元，ATMC 重发了 3 次存款消息，核心系统一共处理了 4 次，账户余额增加了 4000 元。</p>
+<p><strong>但是MQ没有机制知道什么是重复的消息</strong></p>
+<blockquote>
+<p>消息出现重复可能会有三个原因： </p>
+</blockquote>
+<p>1、生产者的问题，环节①重复发送消息，比如在开启了 Confirm 模式但未收 到确认，消费者重复投递。</p>
+<p> 2、消费环节④出了问题，由于消费者未发送 ACK 或者其他原因，消息重复消 费。 </p>
+<p>3、生产者代码或者网络问题。</p>
+<p><strong>对于重复发送的消息，可以对每一条消息生成一个唯一的业务 ID，通过日志或者 消息落库来做重复控制。</strong></p>
+<p><strong>在金融系统中有一个叫流水号的东西。不管你在柜面汇款，还是 ATM 取款， 或者信用卡消费，都会有一个唯一的序号。通过这个序号就可以找到唯一的一笔消息。</strong>银行的重账控制环节，对于进来的每一笔交易，第一件要做的事情就是查 询是否重复。</p>
+<p>业务要素一致（付款人 ID、商户 ID、交易类型、金额、交易地 点、交易时间）</p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207310820874.png" alt="image-20220731082016819"></p>
+<h2 id="最终一致"><a href="#最终一致" class="headerlink" title="最终一致"></a>最终一致</h2><p>例如：</p>
+<p>在金融系统中，会有双方对账或者多方对账的操作。</p>
+<p>金融系统会约定一个标准，比如 ATM 跟核心系统对账，肯定是以核心系统的账务 为准。ATMC 获取到核心系统的对账文件，然后解析，登记成数据，然后跟自己记录 的流水比较，找出核心系统有 ATM 没有，或者 ATM 有核心系统没有，或者两边都有 但是金额不一致的数据。</p>
+<p>对账之后，我们再手工平账。比如取款记了账但是没吐钞的，做一笔冲正。存款 吞了钞没记账的，要么把钱退给客户，要么补一笔账。</p>
+<h2 id="消息的顺序性"><a href="#消息的顺序性" class="headerlink" title="消息的顺序性"></a>消息的顺序性</h2><p>消息的顺序性指的是消费者消费消息的顺序跟生产者生产消息的顺序是一致的。</p>
+<p><strong>在 RabbitMQ 中，一个队列有多个消费者时，由于不同的消费者消费消息的速度 是不一样的，顺序无法保证。只有一个队列仅有一个消费者的情况才能保证顺序消费 （不同的业务消息发送到不同的专用的队列）。</strong></p>
+<p><img src="https://blog-images-djx.oss-cn-hangzhou.aliyuncs.com/img/202207310823141.png" alt="image-20220731082357069"></p>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h2 id="消息队列的作用与使用场景？"><a href="#消息队列的作用与使用场景？" class="headerlink" title="消息队列的作用与使用场景？"></a>消息队列的作用与使用场景？</h2><p><strong>消除高并发访问高峰，加快网站的响应速度</strong></p>
+<p>异步处理，应用解耦，流量削锋和消息通讯四个场景</p>
+<p><a href="https://zhuanlan.zhihu.com/p/55712984">消息队列使用的四种场景介绍，有图有解析，一看就懂 - 知乎 (zhihu.com)</a></p>
+<p>异步处理：（注册用户后，发送注册短信和邮箱可以异步发送）</p>
+<p>传统的做法有两种 1.串行的方式；2.并行方式</p>
 ]]></content>
       <categories>
         <category>中间键</category>
@@ -4510,53 +4566,6 @@
       </categories>
   </entry>
   <entry>
-    <title>JAVA域</title>
-    <url>/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
-<p>域的定义：定义类的 <strong>静态属性</strong>。</p>
-<p>域必须在类体中直接定义，不能包含在方法定义中。</p>
-<p>域定义的格式如下：</p>
-<p>   <strong>[修饰符]  类型名  域名；</strong></p>
-<p><strong>注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合；</strong></p>
-<p>​    <strong>public、protected、private表示域的访问权限；</strong></p>
-<p>​     <strong>final表示域为常量，无法改变；</strong></p>
-<p>​     <strong>static说明定义的变量是静态变量；</strong></p>
-<p>​     <strong>transient说明变量为一个临时的变量；</strong></p>
-<p>​     <strong>volatile修饰的变量用在多线程程序中，用来说明备份变量。</strong></p>
-<h2 id="静态域："><a href="#静态域：" class="headerlink" title="静态域："></a><strong>静态域：</strong></h2><p>被static修饰的域成为 <strong>静态域（类域、类变量）</strong> 。</p>
-<p>例如： static int n &#x3D; 18;</p>
-<p><strong>静态域</strong> 是属于整个类的成员变量，存储在类的内存区的 <strong>公共存储单元</strong> 中。（ 也就是说 <strong>任何该类的对象都可以访问它</strong> ，而且访问它得到的都是 <strong>相同的值</strong> ， <strong>如果某一个对象修改它的值，所有对象的值都会一起改变！</strong> )</p>
-<p><strong>注意：这里说的是静态域，静态域，用static修饰的静态域不要和其他域混淆!</strong></p>
-<p>而 <strong>没有被static修饰的域，在不同的对象中，都拥有独立的内存地址，也就是说每一个对象的域值都是不一样的！一定要和静态域相区别！</strong></p>
-<p>静态域可以用过 <strong>类名直接访问</strong> ，也可以用对象来引用。</p>
-<h3 id="静态类的初始化器"><a href="#静态类的初始化器" class="headerlink" title="静态类的初始化器"></a>静态类的初始化器</h3><p>静态类 <strong>不属于某个具体的对象，而是整个类的域</strong> ，所以它的初始化通过 <strong>静态初始化器</strong> 来实现。</p>
-<p>静态初始化器是由关键字static和一对大括号组成的复合语句，目的是对 <strong>类域</strong> 进行初始化。</p>
-<p>静态初始化在所属类被加载到内存时进行。</p>
-<h3 id="静态类的初始化器和构造方法的区别："><a href="#静态类的初始化器和构造方法的区别：" class="headerlink" title="静态类的初始化器和构造方法的区别："></a>静态类的初始化器和构造方法的区别：</h3><ol>
-<li>静态初始化器只能对静态域进行初始化，它不能访问非静态域。</li>
-<li>静态初始化器由关键字static和复合语句组成，静态类的初始值由程序确定好；</li>
-<li>构造方法是一个特殊的方法，它有参数，程序运行时，可以从外部接收数据，将域初始化为不同的值。</li>
-<li>静态初始化器是对类自身进行初始化；而构造方法是对对象进行初始化。</li>
-<li>静态初始化器是在类加载入内存的时候，由系统自动调用进行的；而构造方法实在使用关键字new创建对象时，由系统自动执行，关键字new后面跟的是构造方法。</li>
-</ol>
-<h2 id="最终域："><a href="#最终域：" class="headerlink" title="最终域："></a>最终域：</h2><p>用关键字final修饰的域称为 <strong>最终域</strong> 。</p>
-<p>final修饰的域的取值在程序执行的过程中 <strong>将不会改变</strong> 。（final修饰的变量也如此一旦被赋值就无法被改变）</p>
-<p>例子:”java.lang”包中定义的圆周率PI就是一个最终域。可以表示为“Math.PI”</p>
-<p>注：由于最终域的值固定不变，为了节省空间， <strong>最终域一般用static修饰，为静态最终域</strong>。</p>
-<p>另：</p>
-<p>  由final修饰的方法为最终方法：方法的功能确定，不能被子类中的相同方法覆盖，这样能保证方法实现的一致性。</p>
-<p>  final修饰的类：该类为最终类，不能派生子类，它的内容、属性和方法实现固定不变，与类名形成稳定的映射关系，保证功能实现的准确性。</p>
-<p>​    常见的最终类：例如：System类和InetAddress类、Socket类等。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>域就是定义类的静态属性；分为静态域和最终域。</p>
-<p>最终域不会被改变但是静态域就是一份公共存储空间；</p>
-<p>静态域可以类名调用也可以对象调用，static修饰的static分为静态方法；静态变量；静态域。</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>基础</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Object类</title>
     <url>/2022/06/16/JAVA/%E9%AB%98%E7%BA%A7/Object%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="Object类：（lang包）"><a href="#Object类：（lang包）" class="headerlink" title="Object类：（lang包）"></a>Object类：（<strong>lang</strong>包）</h1><p>1、由于 Java 所有的类都是 Object 类的子类，所以任何 Java 对象都可以调用 Object 类的方法。</p>
@@ -4601,6 +4610,53 @@
       <categories>
         <category>JAVA</category>
         <category>高级</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JAVA域</title>
+    <url>/2022/06/16/JAVA/%E5%9F%BA%E7%A1%80/%E5%9F%9F%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="域"><a href="#域" class="headerlink" title="域"></a><strong>域</strong></h1><p><strong>也称成员变量</strong>，体现了类的状态，而状态的改变由类体的方法实现。</p>
+<p>域的定义：定义类的 <strong>静态属性</strong>。</p>
+<p>域必须在类体中直接定义，不能包含在方法定义中。</p>
+<p>域定义的格式如下：</p>
+<p>   <strong>[修饰符]  类型名  域名；</strong></p>
+<p><strong>注：其中修饰符部分是可选项，可以是关键字public、protected、private、final、static、transient和volatile的一个或多个组合；</strong></p>
+<p>​    <strong>public、protected、private表示域的访问权限；</strong></p>
+<p>​     <strong>final表示域为常量，无法改变；</strong></p>
+<p>​     <strong>static说明定义的变量是静态变量；</strong></p>
+<p>​     <strong>transient说明变量为一个临时的变量；</strong></p>
+<p>​     <strong>volatile修饰的变量用在多线程程序中，用来说明备份变量。</strong></p>
+<h2 id="静态域："><a href="#静态域：" class="headerlink" title="静态域："></a><strong>静态域：</strong></h2><p>被static修饰的域成为 <strong>静态域（类域、类变量）</strong> 。</p>
+<p>例如： static int n &#x3D; 18;</p>
+<p><strong>静态域</strong> 是属于整个类的成员变量，存储在类的内存区的 <strong>公共存储单元</strong> 中。（ 也就是说 <strong>任何该类的对象都可以访问它</strong> ，而且访问它得到的都是 <strong>相同的值</strong> ， <strong>如果某一个对象修改它的值，所有对象的值都会一起改变！</strong> )</p>
+<p><strong>注意：这里说的是静态域，静态域，用static修饰的静态域不要和其他域混淆!</strong></p>
+<p>而 <strong>没有被static修饰的域，在不同的对象中，都拥有独立的内存地址，也就是说每一个对象的域值都是不一样的！一定要和静态域相区别！</strong></p>
+<p>静态域可以用过 <strong>类名直接访问</strong> ，也可以用对象来引用。</p>
+<h3 id="静态类的初始化器"><a href="#静态类的初始化器" class="headerlink" title="静态类的初始化器"></a>静态类的初始化器</h3><p>静态类 <strong>不属于某个具体的对象，而是整个类的域</strong> ，所以它的初始化通过 <strong>静态初始化器</strong> 来实现。</p>
+<p>静态初始化器是由关键字static和一对大括号组成的复合语句，目的是对 <strong>类域</strong> 进行初始化。</p>
+<p>静态初始化在所属类被加载到内存时进行。</p>
+<h3 id="静态类的初始化器和构造方法的区别："><a href="#静态类的初始化器和构造方法的区别：" class="headerlink" title="静态类的初始化器和构造方法的区别："></a>静态类的初始化器和构造方法的区别：</h3><ol>
+<li>静态初始化器只能对静态域进行初始化，它不能访问非静态域。</li>
+<li>静态初始化器由关键字static和复合语句组成，静态类的初始值由程序确定好；</li>
+<li>构造方法是一个特殊的方法，它有参数，程序运行时，可以从外部接收数据，将域初始化为不同的值。</li>
+<li>静态初始化器是对类自身进行初始化；而构造方法是对对象进行初始化。</li>
+<li>静态初始化器是在类加载入内存的时候，由系统自动调用进行的；而构造方法实在使用关键字new创建对象时，由系统自动执行，关键字new后面跟的是构造方法。</li>
+</ol>
+<h2 id="最终域："><a href="#最终域：" class="headerlink" title="最终域："></a>最终域：</h2><p>用关键字final修饰的域称为 <strong>最终域</strong> 。</p>
+<p>final修饰的域的取值在程序执行的过程中 <strong>将不会改变</strong> 。（final修饰的变量也如此一旦被赋值就无法被改变）</p>
+<p>例子:”java.lang”包中定义的圆周率PI就是一个最终域。可以表示为“Math.PI”</p>
+<p>注：由于最终域的值固定不变，为了节省空间， <strong>最终域一般用static修饰，为静态最终域</strong>。</p>
+<p>另：</p>
+<p>  由final修饰的方法为最终方法：方法的功能确定，不能被子类中的相同方法覆盖，这样能保证方法实现的一致性。</p>
+<p>  final修饰的类：该类为最终类，不能派生子类，它的内容、属性和方法实现固定不变，与类名形成稳定的映射关系，保证功能实现的准确性。</p>
+<p>​    常见的最终类：例如：System类和InetAddress类、Socket类等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>域就是定义类的静态属性；分为静态域和最终域。</p>
+<p>最终域不会被改变但是静态域就是一份公共存储空间；</p>
+<p>静态域可以类名调用也可以对象调用，static修饰的static分为静态方法；静态变量；静态域。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>基础</category>
       </categories>
   </entry>
   <entry>
